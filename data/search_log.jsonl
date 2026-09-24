@@ -24,3 +24,37 @@
 {"timestamp": "2026-09-24T07:22:17.381901Z", "source": "Crossref", "query": "ClimateLLM efficient weather forecasting large language models", "hits": 10, "new_candidates": 9}
 {"timestamp": "2026-09-24T07:22:19.965213Z", "source": "Crossref", "query": "Large Models for Time Series and Spatio-Temporal Data Survey Jin", "hits": 10, "new_candidates": 9}
 {"timestamp": "2026-09-24T07:22:21.934521Z", "source": "Crossref", "query": "Position What Can Large Language Models Tell Us about Time Series Analysis", "hits": 10, "new_candidates": 7}
+{"timestamp": "2026-09-24T10:45:19.312065Z", "source": "arXiv", "query": "Curated verified seed list (22 papers)", "hits": 27, "new_candidates": 5}
+{"timestamp": "2026-09-24T10:45:19.313475Z", "source": "Crossref", "query": "Pangu-Weather global weather forecast 3D neural networks", "hits": 10, "new_candidates": 0}
+{"timestamp": "2026-09-24T10:45:19.314215Z", "source": "Crossref", "query": "GraphCast learning skillful medium-range global weather forecasting", "hits": 10, "new_candidates": 0}
+{"timestamp": "2026-09-24T10:45:19.315070Z", "source": "Crossref", "query": "FourCastNet adaptive Fourier neural operators weather", "hits": 10, "new_candidates": 0}
+{"timestamp": "2026-09-24T10:45:19.315651Z", "source": "Crossref", "query": "ClimaX foundation model weather climate", "hits": 10, "new_candidates": 0}
+{"timestamp": "2026-09-24T10:45:19.316612Z", "source": "Crossref", "query": "FuXi cascade machine learning forecasting system 15-day", "hits": 10, "new_candidates": 0}
+{"timestamp": "2026-09-24T10:45:19.318144Z", "source": "Crossref", "query": "FengWu skillful global medium-range weather forecast", "hits": 10, "new_candidates": 0}
+{"timestamp": "2026-09-24T10:45:19.318822Z", "source": "Crossref", "query": "GenCast diffusion ensemble forecasting weather", "hits": 10, "new_candidates": 0}
+{"timestamp": "2026-09-24T10:45:19.319564Z", "source": "Crossref", "query": "Aurora foundation model Earth system atmosphere", "hits": 10, "new_candidates": 0}
+{"timestamp": "2026-09-24T10:45:19.320098Z", "source": "Crossref", "query": "Prithvi WxC foundation model weather climate", "hits": 10, "new_candidates": 0}
+{"timestamp": "2026-09-24T10:45:19.320841Z", "source": "Crossref", "query": "WeatherBench 2 benchmark data-driven global weather", "hits": 10, "new_candidates": 0}
+{"timestamp": "2026-09-24T10:45:19.321264Z", "source": "Crossref", "query": "SatMAE pre-training transformers temporal multi-spectral satellite", "hits": 10, "new_candidates": 0}
+{"timestamp": "2026-09-24T10:45:19.322055Z", "source": "Crossref", "query": "Presto lightweight pre-trained transformers remote sensing timeseries", "hits": 10, "new_candidates": 0}
+{"timestamp": "2026-09-24T10:45:19.322898Z", "source": "Crossref", "query": "Galileo learning global local features remote sensing", "hits": 10, "new_candidates": 0}
+{"timestamp": "2026-09-24T10:45:19.323659Z", "source": "Crossref", "query": "AlphaEarth Foundations embedding field model global mapping", "hits": 10, "new_candidates": 0}
+{"timestamp": "2026-09-24T10:45:19.324470Z", "source": "Crossref", "query": "Foundation Models Generalist Geospatial Artificial Intelligence Prithvi", "hits": 10, "new_candidates": 0}
+{"timestamp": "2026-09-24T10:45:19.325279Z", "source": "Crossref", "query": "Global prediction extreme floods ungauged watersheds Nature", "hits": 10, "new_candidates": 0}
+{"timestamp": "2026-09-24T10:45:19.325937Z", "source": "Crossref", "query": "SeisT foundational deep-learning model earthquake monitoring", "hits": 10, "new_candidates": 0}
+{"timestamp": "2026-09-24T10:45:19.326732Z", "source": "Crossref", "query": "PhaseNet deep-neural-network-based arrival-time picking", "hits": 10, "new_candidates": 0}
+{"timestamp": "2026-09-24T10:45:19.327551Z", "source": "Crossref", "query": "XiHe data-driven model global ocean eddy-resolving", "hits": 10, "new_candidates": 0}
+{"timestamp": "2026-09-24T10:45:19.331149Z", "source": "Crossref", "query": "Surya foundation model heliophysics solar", "hits": 10, "new_candidates": 0}
+{"timestamp": "2026-09-24T10:45:19.331982Z", "source": "Crossref", "query": "SciTS scientific time series understanding generation LLMs", "hits": 10, "new_candidates": 0}
+{"timestamp": "2026-09-24T10:45:19.332408Z", "source": "Crossref", "query": "ClimateAgent multi-agent orchestration climate data science", "hits": 10, "new_candidates": 0}
+{"timestamp": "2026-09-24T10:45:19.332902Z", "source": "Crossref", "query": "ClimateLLM efficient weather forecasting large language models", "hits": 10, "new_candidates": 0}
+{"timestamp": "2026-09-24T10:45:19.335512Z", "source": "Crossref", "query": "Large Models for Time Series and Spatio-Temporal Data Survey Jin", "hits": 10, "new_candidates": 0}
+{"timestamp": "2026-09-24T10:45:19.336099Z", "source": "Crossref", "query": "Position What Can Large Language Models Tell Us about Time Series Analysis", "hits": 10, "new_candidates": 0}
+{"timestamp": "2026-09-24T10:45:21.567157Z", "source": "Crossref", "query": "Spherical Fourier Neural Operators Learning Stable Dynamics Bonev", "hits": 10, "new_candidates": 4}
+{"timestamp": "2026-09-24T10:45:24.610491Z", "source": "Crossref", "query": "Neural General Circulation Models for Weather and Climate Nature", "hits": 10, "new_candidates": 8}
+{"timestamp": "2026-09-24T10:45:27.594906Z", "source": "Crossref", "query": "Caravan A global community dataset for large-sample hydrology", "hits": 10, "new_candidates": 7}
+{"timestamp": "2026-09-24T10:45:30.462498Z", "source": "Crossref", "query": "ClimateBench A Benchmark for Data-Driven Climate Projections", "hits": 10, "new_candidates": 6}
+{"timestamp": "2026-09-24T10:45:33.023637Z", "source": "Crossref", "query": "Neural Plasticity-Inspired Multimodal Foundation Model Earth Observation DOFA", "hits": 10, "new_candidates": 9}
+{"timestamp": "2026-09-24T10:45:35.102512Z", "source": "Crossref", "query": "OceanGPT A Large Language Model for Ocean Science Tasks", "hits": 10, "new_candidates": 7}
+{"timestamp": "2026-09-24T10:45:38.015455Z", "source": "Crossref", "query": "K2 A Foundation Language Model for Geoscience Knowledge Understanding", "hits": 10, "new_candidates": 9}
+{"timestamp": "2026-09-24T10:45:40.591552Z", "source": "Crossref", "query": "GeoChat Grounded Large Vision-Language Model for Remote Sensing", "hits": 10, "new_candidates": 9}

@@ -1,7 +1,7 @@
 # Awesome Scientific Multimodal Time Series Foundation Models and Reasoning LLMs
 ## 科学多模态时序大模型与科学推理大模型前沿进展精选
 
-[![Survey PDF](https://img.shields.io/badge/Paper-PDF-red.svg)](paper/main.pdf) [![PRISMA Included](https://img.shields.io/badge/PRISMA%20Included-25%20papers-brightgreen.svg)](#prisma-systematic-review-statistics) [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE) [![Maintenance](https://img.shields.io/badge/Maintained%20by-Antigravity%20CLI-purple.svg)](#how-this-survey-is-maintained)
+[![Survey PDF](https://img.shields.io/badge/Paper-PDF-red.svg)](paper/main.pdf) [![PRISMA Included](https://img.shields.io/badge/PRISMA%20Included-33%20papers-brightgreen.svg)](#prisma-systematic-review-statistics) [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE) [![Maintenance](https://img.shields.io/badge/Maintained%20by-Antigravity%20CLI-purple.svg)](#how-this-survey-is-maintained)
 
 ## Overview / 项目概述
 
@@ -28,12 +28,12 @@ The taxonomy categorizes the literature across four core dimensions:
 
 ![PRISMA 2020 Flow](paper/figures/prisma_flow.png)
 
-- **Records Identified across Academic APIs**: 272
-- **Unique Candidates Evaluated**: 240
-- **Title/Abstract Excluded**: 83
-- **Full-Text Assessed for Eligibility**: 158
-- **Full-Text Excluded (narrow/regional)**: 133
-- **Studies Rigorously Included**: 25
+- **Records Identified across Academic APIs**: 357
+- **Unique Candidates Evaluated**: 305
+- **Title/Abstract Excluded**: 87
+- **Full-Text Assessed for Eligibility**: 218
+- **Full-Text Excluded (narrow/regional)**: 185
+- **Studies Rigorously Included**: 33
 
 ## Research Landscape & Milestone Timeline
 
@@ -100,6 +100,21 @@ The taxonomy categorizes the literature across four core dimensions:
   - *Architecture*: `Cascade Swin Transformer (Short/Medium/Long-range stages)` | *Params*: `150M` | *Physics*: `Purely data-driven`
   - *Links*: [Paper / DOI](https://doi.org/10.1038/s41612-023-00512-1) | [![Code](https://img.shields.io/badge/Code-GitHub-blue.svg)](https://github.com/tpys/FuXi)
 
+- **Spherical Fourier Neural Operators: Learning Stable Dynamics on the Sphere** (ICML / arXiv:2306.03838 2023)
+  - *Authors*: Bonev, Boris, Kurth, Thorsten, Hundt, Christian et al.
+  - *Architecture*: `Spherical Fourier Neural Operator (SFNO)` | *Params*: `75M` | *Physics*: `Exact spherical rotational equivariance, spectral filtering`
+  - *Links*: [Paper / DOI](https://arxiv.org/abs/2306.03838) | [![Code](https://img.shields.io/badge/Code-GitHub-blue.svg)](https://github.com/neuraloperator/neuraloperator)
+
+- **Neural general circulation models for weather and climate** (Nature 2024)
+  - *Authors*: Kochkov, Dmitrii, Yuval, Janni, Langmore, Ian et al.
+  - *Architecture*: `Differentiable Dynamical Core + 3D Neural Operator` | *Params*: `14.5M` | *Physics*: `Hard conservation laws (mass, momentum, moisture) via dynamical core`
+  - *Links*: [Paper / DOI](https://doi.org/10.1038/s41586-024-07744-y) | [![Code](https://img.shields.io/badge/Code-GitHub-blue.svg)](https://github.com/google-research/neuralgcm)
+
+- **ClimateBench v1.0: A Benchmark for Data‐Driven Climate Projections** (Journal of Advances in Modeling Earth Systems 2022)
+  - *Authors*: Watson‐Parris, D., Rao, Y., Olivié, D. et al.
+  - *Architecture*: `Climate Emulation Benchmark (CNN / GP / RF / ViT)` | *Params*: `Benchmark suite` | *Physics*: `Radiative forcing and energy conservation diagnostics`
+  - *Links*: [Paper / DOI](https://doi.org/10.1029/2021ms002954) | [![Code](https://img.shields.io/badge/Code-GitHub-blue.svg)](https://github.com/duncanwp/ClimateBench)
+
 ### Earth Observation & Remote Sensing Time Series (对地观测与遥感时序)
 
 - **SatMAE: Pre-Training Transformers for Temporal and Multi-Spectral Satellite Imagery** (NeurIPS 2022)
@@ -127,6 +142,16 @@ The taxonomy categorizes the literature across four core dimensions:
   - *Architecture*: `Pixel-level Neural Field Embedding Transformer` | *Params*: `not reported` | *Physics*: `Purely data-driven`
   - *Links*: [Paper / DOI](https://arxiv.org/abs/2507.22291) | `[Code not available]`
 
+- **Neural Plasticity-Inspired Multimodal Foundation Model for Earth Observation** (CVPR / arXiv:2403.15356 2024)
+  - *Authors*: Xiong, Zhitong, Wang, Yi, Zhang, Fahong et al.
+  - *Architecture*: `Dynamic One-For-All (DOFA) Transformer with Wavelength Hypernetwork` | *Params*: `115M (DOFA-Base)` | *Physics*: `Wavelength physical conditioning`
+  - *Links*: [Paper / DOI](https://arxiv.org/abs/2403.15356) | [![Code](https://img.shields.io/badge/Code-GitHub-blue.svg)](https://github.com/zhu-xlab/DOFA)
+
+- **GeoChat: Grounded Large Vision-Language Model for Remote Sensing** (CVPR / arXiv:2311.15826 2024)
+  - *Authors*: Kuckreja, Kartik, Danish, Muhammad Sohail, Naseer, Muzammal et al.
+  - *Architecture*: `Multimodal Vision-Language Model (Vicuna-1.5 + CLIP ViT-L/14 with LoRA)` | *Params*: `7B` | *Physics*: `Spatial grounding and temporal change reasoning`
+  - *Links*: [Paper / DOI](https://arxiv.org/abs/2311.15826) | [![Code](https://img.shields.io/badge/Code-GitHub-blue.svg)](https://github.com/mbzuai-oryx/GeoChat)
+
 ### Hydrology & Extreme Flood Modeling (水文与极端洪水大模型)
 
 - **Global prediction of extreme floods in ungauged watersheds** (Nature 2024)
@@ -134,12 +159,22 @@ The taxonomy categorizes the literature across four core dimensions:
   - *Architecture*: `Spatio-Temporal Long Short-Term Memory Network (EA-LSTM) + River Routing` | *Params*: `5M` | *Physics*: `Hybrid PDE solver`
   - *Links*: [Paper / DOI](https://doi.org/10.1038/s41586-024-07145-1) | [![Code](https://img.shields.io/badge/Code-GitHub-blue.svg)](https://github.com/neuralhydrology/neuralhydrology)
 
+- **Caravan - A global community dataset for large-sample hydrology** (Scientific Data 2023)
+  - *Authors*: Kratzert, Frederik, Nearing, Grey, Addor, Nans et al.
+  - *Architecture*: `Extended Large-Sample Benchmark Suite (LSTM / NeuralHydrology)` | *Params*: `not reported` | *Physics*: `Physically grounded catchment water balance`
+  - *Links*: [Paper / DOI](https://doi.org/10.1038/s41597-023-01975-w) | [![Code](https://img.shields.io/badge/Code-GitHub-blue.svg)](https://github.com/kratzert/Caravan)
+
 ### Ocean Dynamics & Marine Forecasting (海洋动力与数值预报)
 
 - **XiHe: A Data-Driven Model for Global Ocean Eddy-Resolving Forecasting** (arXiv:2402.02995 2024)
   - *Authors*: Wang, Xiang, Wang, Renzhi, Hu, Ningzi et al.
   - *Architecture*: `Hierarchical Ocean Transformer with Land-Ocean Masking` | *Params*: `84M` | *Physics*: `Soft physics loss`
   - *Links*: [Paper / DOI](https://arxiv.org/abs/2402.02995) | `[Code not available]`
+
+- **OceanGPT: A Large Language Model for Ocean Science Tasks** (ACL 2024)
+  - *Authors*: Bi, Zhen, Zhang, Ningyu, Xue, Yida et al.
+  - *Architecture*: `Domain-Adapted LLM with DoInstruct Ocean Corpus` | *Params*: `7B / 13B` | *Physics*: `Oceanographic physical constraint verification`
+  - *Links*: [Paper / DOI](https://doi.org/10.18653/v1/2024.acl-long.184) | [![Code](https://img.shields.io/badge/Code-GitHub-blue.svg)](https://github.com/OceanGPT/OceanGPT)
 
 ### Geophysics & Seismology Foundation Models (地球物理与地震学大模型)
 
@@ -176,6 +211,11 @@ The taxonomy categorizes the literature across four core dimensions:
   - *Authors*: Li, Chenyue, Kim, Hyeonjae, Deng, Wen et al.
   - *Architecture*: `Hierarchical Multi-Agent LLM Orchestrator (Plan-Agent, Data-Agent, Coding-Agent)` | *Params*: `Frontier LLM agent` | *Physics*: `Hybrid PDE solver`
   - *Links*: [Paper / DOI](https://arxiv.org/abs/2511.20109) | `[Code not available]`
+
+- **K2: A Foundation Language Model for Geoscience Knowledge Understanding and Utilization** (WSDM / arXiv:2306.05064 2024)
+  - *Authors*: Deng, Cheng, Zhang, Tianhang, He, Zhongmou et al.
+  - *Architecture*: `Geoscience-adapted LLM + GeoSignal alignment` | *Params*: `7B` | *Physics*: `Geological and physical consistency tuning`
+  - *Links*: [Paper / DOI](https://doi.org/10.1145/3616855.3635772) | [![Code](https://img.shields.io/badge/Code-GitHub-blue.svg)](https://github.com/davendw49/k2)
 
 ### Foundational Surveys & Methodology (基础综述与方法学)
 

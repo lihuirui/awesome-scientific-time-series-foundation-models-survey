@@ -127,18 +127,38 @@ def check_quality_gates():
     if not failed:
         print(f"[OK] All referenced figures ({len(referenced_figures)}) exist on disk.")
 
-    # 7. Check PRISMA counts
+    # 7. Check PRISMA counts & arithmetic consistency (Amendment K)
     if not os.path.exists(PRISMA_FILE):
         print("[FAIL] data/prisma_counts.json missing!")
         failed = True
     else:
         with open(PRISMA_FILE, "r", encoding="utf-8") as f:
             prisma = json.load(f)
-        if prisma.get("studies_included_in_review") != len(included_papers):
-            print(f"[FAIL] PRISMA included count mismatch: {prisma.get('studies_included_in_review')} vs {len(included_papers)}")
+
+        identified = prisma.get("records_identified", 0)
+        after_dedupe = prisma.get("records_after_duplicates_removed", 0)
+        screened = prisma.get("records_screened_title_abstract", 0)
+        excluded_title = prisma.get("records_excluded_title_abstract", 0)
+        assessed = prisma.get("reports_assessed_for_eligibility", 0)
+        excluded_fulltext = prisma.get("reports_excluded_full_text", 0)
+        included = prisma.get("studies_included_in_review", 0)
+
+        # Check arithmetic equations
+        if screened != after_dedupe:
+            print(f"[FAIL] PRISMA screened != after_dedupe: {screened} vs {after_dedupe}")
             failed = True
-        else:
-            print(f"[OK] PRISMA counts valid and synchronized ({prisma['studies_included_in_review']} studies).")
+        if screened - excluded_title != assessed:
+            print(f"[FAIL] PRISMA arithmetic: screened ({screened}) - excluded_title ({excluded_title}) = {screened - excluded_title} != assessed ({assessed})")
+            failed = True
+        if assessed - excluded_fulltext != included:
+            print(f"[FAIL] PRISMA arithmetic: assessed ({assessed}) - excluded_fulltext ({excluded_fulltext}) = {assessed - excluded_fulltext} != included ({included})")
+            failed = True
+        if included != len(included_papers):
+            print(f"[FAIL] PRISMA included count mismatch: {included} vs {len(included_papers)}")
+            failed = True
+
+        if not failed:
+            print(f"[OK] PRISMA counts valid, synchronized, and arithmetically consistent ({included} studies).")
 
     # 8. Check README.md
     if not os.path.exists(README_FILE):

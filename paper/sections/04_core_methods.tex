@@ -37,12 +37,30 @@ Pathak et al.~\cite{pathak2022fourcastnet} deployed Adaptive Fourier Neural Oper
 \end{equation}
 This formulation provides computational complexity quasi-linear in spatial resolution while demonstrating remarkable zero-shot super-resolution and transferability.
 
+\subsubsection{SFNO: Spherical Fourier Neural Operators}
+While planar Fourier transforms accelerate spectral computation, standard 2D FFTs applied to equirectangular latitude-longitude coordinates suffer from severe metric distortions near the poles, where meridians converge. Bonev et al.~\cite{bonev2023sfno} resolved this geometric bottleneck by formulating the Spherical Fourier Neural Operator (SFNO), which solves continuous PDEs directly on the Riemannian manifold of the unit sphere $\mathbb{S}^2 \subset \mathbb{R}^3$.
+
+Let colatitude be $\theta \in [0, \pi]$ and longitude be $\lambda \in [0, 2\pi)$. Any square-integrable scalar atmospheric state $u \in \mathcal{L}^2(\mathbb{S}^2)$ admits an orthogonal expansion in terms of spherical harmonics $Y_\ell^m(\theta, \lambda)$:
+\begin{equation}
+    u(\theta, \lambda) = \sum_{\ell=0}^{L} \sum_{m=-\ell}^{\ell} \hat{u}_\ell^m Y_\ell^m(\theta, \lambda),
+\end{equation}
+where $\ell \in \mathbb{N}_0$ denotes the spherical degree, $m \in \{-\ell, \dots, \ell\}$ is the order, and the orthonormal basis functions are defined via associated Legendre polynomials $P_\ell^m$:
+\begin{equation}
+    Y_\ell^m(\theta, \lambda) = \sqrt{\frac{2\ell+1}{4\pi} \frac{(\ell-m)!}{(\ell+m)!}} P_\ell^m(\cos \theta) e^{i m \lambda}.
+\end{equation}
+Continuous convolution on $\mathbb{S}^2$ with an invariant kernel $\kappa$ is realized through spherical harmonic transforms $\mathcal{SHT}$ and inverse transforms $\mathcal{ISHT}$:
+\begin{equation}
+    (\kappa \star_{\mathbb{S}^2} u)(\theta, \lambda) = \mathcal{ISHT}\left( \mathbf{W}_\ell \cdot \mathcal{SHT}(u)(\ell, m) \right),
+\end{equation}
+where $\mathbf{W}_\ell \in \mathbb{C}^{d_{\text{out}} \times d_{\text{in}}}$ denotes degree-dependent weight tensors. By the convolution theorem on $\mathrm{SO}(3)$, this spherical harmonic formulation provides exact rotational equivariance, eliminates high-latitude numerical artifacts, and ensures long-term spectral stability over multi-day atmospheric rollouts.
+
 \subsection{Multimodal Masked Autoencoders for Earth Observation}
 In the remote sensing domain, observations arrive as asynchronous, multi-spectral satellite imagery.
 \begin{itemize}
     \item \textbf{SatMAE}~\cite{cong2022satmae} introduced a temporal and multi-spectral Vision Transformer trained via masked autoencoding. By decoupling spatial, temporal, and spectral positional embeddings, SatMAE processes multi-temporal revisit sequences with high masking ratios (up to 75\%), outperforming supervised baselines on land cover and crop yield estimation.
     \item \textbf{Presto}~\cite{tseng2023presto} developed a lightweight (1.2M parameters) transformer tailored for pixel-level time series. Presto natively ingests heterogeneous modalities---including Sentinel-1 SAR backscatter, Sentinel-2 multi-spectral bands, elevation, and ERA5 weather---yielding exceptional few-shot transfer performance.
     \item \textbf{Galileo}~\cite{tseng2025galileo} expanded multi-sensor pretraining across spatial-temporal scales using dual global and local contrastive objectives, enabling unified geospatial segmentation and dynamic flood mapping.
+    \item \textbf{DOFA}~\cite{xiong2024dofa} introduced a Dynamic One-For-All foundation architecture inspired by neural plasticity. Recognizing that Earth observation platforms possess disparate band wavelengths and ground sampling distances (GSD), DOFA conditions dynamic weight hypernetworks directly on continuous physical wavelengths $\lambda \in [400\text{ nm}, 14{,}000\text{ nm}]$, unifying optical, SAR, and hyperspectral temporal modalities under a single pre-trained representation.
     \item \textbf{Prithvi}~\cite{jakubik2023prithvi} and its weather-climate counterpart \textbf{Prithvi WxC}~\cite{schmude2024prithviwxc} established open-source geospatial foundation backbones jointly developed by NASA and IBM, scaling to 2.3 billion parameters.
 \end{itemize}
 
@@ -52,3 +70,19 @@ Deterministic models trained with $L_1$ or $L_2$ losses inevitably suffer from v
     \nabla_{\mathcal{X}_{t+1}} \log p(\mathcal{X}_{t+1} \mid \mathcal{X}_t, \sigma).
 \end{equation}
 By sampling stochastic trajectories via reverse-time stochastic differential equations (SDEs), GenCast generates physically sharp 50-member ensemble forecasts that preserve energy spectra and reliably capture extreme weather events (e.g., tropical cyclones and extreme wind gusts) across 15-day horizons.
+
+\subsection{Physical Conservation Constraints and Differentiable Hybrid Solvers}
+A persistent vulnerability of purely data-driven black-box neural networks is their tendency to violate fundamental physical conservation principles over prolonged autoregressive rollouts, leading to unphysical mass dissipation, kinetic energy damping, or moisture divergence. Recent advances address this through three distinct levels of physical integration:
+\begin{enumerate}
+    \item \textbf{Soft Physics Regularization}: Incorporates auxiliary loss penalties that penalize physical inconsistencies during training:
+    \begin{equation}
+        \mathcal{L}_{\text{total}} = \mathcal{L}_{\text{data}} + \lambda_{\text{phys}} \mathcal{L}_{\text{conservation}},
+    \end{equation}
+    where $\mathcal{L}_{\text{conservation}}$ penalizes deviations in global total dry mass, vertical geostrophic balance, or spectral kinetic energy distributions (employed in FourCastNet~\cite{pathak2022fourcastnet} and FengWu~\cite{chen2023fengwu}).
+    \item \textbf{Hard Architectural Invariance}: Enforces conservation laws and symmetry directly into neural layer transformations. For instance, mass-conserving projection operators project predicted surface pressure fields onto the affine subspace satisfying $\int_{\mathbb{S}^2} p_s(\theta, \lambda) d\Omega = M_{\text{dry}}$, ensuring zero numerical mass drift by construction.
+    \item \textbf{Differentiable Hybrid Solvers: NeuralGCM}: Kochkov et al.~\cite{kochkov2024neuralgcm} pioneered a transformative hybrid paradigm by coupling a fully differentiable atmospheric dynamical core with neural network parameterizations. The resolved large-scale hydrodynamics are integrated explicitly by an analytical spectral PDE solver that strictly enforces conservation of mass, momentum, and moisture:
+    \begin{equation}
+        \frac{\partial \mathbf{X}}{\partial t} = \mathcal{F}_{\text{dynamical}}(\mathbf{X}) + \mathcal{N}_{\theta}(\mathbf{X}),
+    \end{equation}
+    where $\mathcal{F}_{\text{dynamical}}$ executes analytical fluid dynamics, while the neural network $\mathcal{N}_{\theta}$ parameterizes sub-grid physical processes (cloud microphysics, moist convection, turbulence, and radiative transfer). NeuralGCM demonstrates unprecedented multi-decadal stability without climate drift, matching the operational deterministic accuracy of ECMWF IFS HRES at 1--10 day weather horizons while preserving global physical conservation laws for decadal climate simulations.
+\end{enumerate}

@@ -135,6 +135,15 @@ def run_search():
         ("Crossref", "ClimateLLM efficient weather forecasting large language models"),
         ("Crossref", "Large Models for Time Series and Spatio-Temporal Data Survey Jin"),
         ("Crossref", "Position What Can Large Language Models Tell Us about Time Series Analysis"),
+        # Iteration 2 Additions: Neural Operators, Hybrid Physics, Hydrology, Ocean, Reasoning
+        ("Crossref", "Spherical Fourier Neural Operators Learning Stable Dynamics Bonev"),
+        ("Crossref", "Neural General Circulation Models for Weather and Climate Nature"),
+        ("Crossref", "Caravan A global community dataset for large-sample hydrology"),
+        ("Crossref", "ClimateBench A Benchmark for Data-Driven Climate Projections"),
+        ("Crossref", "Neural Plasticity-Inspired Multimodal Foundation Model Earth Observation DOFA"),
+        ("Crossref", "OceanGPT A Large Language Model for Ocean Science Tasks"),
+        ("Crossref", "K2 A Foundation Language Model for Geoscience Knowledge Understanding"),
+        ("Crossref", "GeoChat Grounded Large Vision-Language Model for Remote Sensing"),
     ]
 
     verified_arxiv_ids = [
@@ -160,6 +169,11 @@ def run_search():
         "2502.11059",  # ClimateLLM
         "2310.10196",  # Jin et al Survey
         "2402.02713",  # Jin et al Position
+        "2306.03838",  # SFNO (Bonev et al.)
+        "2311.07222",  # NeuralGCM (Kochkov et al.)
+        "2403.15356",  # DOFA (Xiong et al.)
+        "2306.05064",  # K2 (Deng et al.)
+        "2311.15826",  # GeoChat (Kuckreja et al.)
     ]
 
     candidates = {}

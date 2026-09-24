@@ -3825,5 +3825,1035 @@
     "abstract": "<p>Chapter 29 covers how a field of scientific research is often transformed by the influence of ideas or modes of thought from a quite different field. Though this can often be highly beneficial, it can also have negative effects, involving an inappropriate attempted expansion of the domain of the intervening science, something the author of this chapter has referred to in the past as “scientific imperialism.” This chapter explores the application of evolutionary ideas to psychiatry and diagnoses this as an example of such undesirable imperialism. At least in the neo-Darwinian guise in which evolutionary ideas have been applied to psychiatry, they suffer the fatal defect of treating psychiatric conditions as genetically determined responses to the environment. It is argued in this chapter that they should rather be seen as outcomes of a complex and multifactorial developmental process to which evolved genetic factors have very limited relevance.</p>",
     "status": "candidate",
     "retrieved_at": "2026-09-24T07:22:21.934511Z"
+  },
+  {
+    "source": "arXiv",
+    "arxiv_id": "2306.03838",
+    "doi": null,
+    "title": "Spherical Fourier Neural Operators: Learning Stable Dynamics on the Sphere",
+    "authors": [
+      "Bonev, Boris",
+      "Kurth, Thorsten",
+      "Hundt, Christian",
+      "Pathak, Jaideep",
+      "Baust, Maximilian",
+      "Kashinath, Karthik",
+      "Anandkumar, Anima"
+    ],
+    "year": 2023,
+    "abstract": "Fourier Neural Operators (FNOs) have proven to be an efficient and effective method for resolution-independent operator learning in a broad variety of application areas across scientific machine learning. A key reason for their success is their ability to accurately model long-range dependencies in spatio-temporal data by learning global convolutions in a computationally efficient manner. To this end, FNOs rely on the discrete Fourier transform (DFT), however, DFTs cause visual and spectral artifacts as well as pronounced dissipation when learning operators in spherical coordinates since they incorrectly assume a flat geometry. To overcome this limitation, we generalize FNOs on the sphere, introducing Spherical FNOs (SFNOs) for learning operators on spherical geometries. We apply SFNOs to forecasting atmospheric dynamics, and demonstrate stable auto\\-regressive rollouts for a year of simulated time (1,460 steps), while retaining physically plausible dynamics. The SFNO has important implications for machine learning-based simulation of climate dynamics that could eventually help accelerate our response to climate change.",
+    "status": "candidate",
+    "retrieved_at": "2026-09-24T10:45:19.311791Z"
+  },
+  {
+    "source": "arXiv",
+    "arxiv_id": "2311.07222",
+    "doi": null,
+    "title": "Neural General Circulation Models for Weather and Climate",
+    "authors": [
+      "Kochkov, Dmitrii",
+      "Yuval, Janni",
+      "Langmore, Ian",
+      "Norgaard, Peter",
+      "Smith, Jamie",
+      "Mooers, Griffin",
+      "Klöwer, Milan",
+      "Lottes, James",
+      "Rasp, Stephan",
+      "Düben, Peter",
+      "Hatfield, Sam",
+      "Battaglia, Peter",
+      "Sanchez-Gonzalez, Alvaro",
+      "Willson, Matthew",
+      "Brenner, Michael P.",
+      "Hoyer, Stephan"
+    ],
+    "year": 2023,
+    "abstract": "General circulation models (GCMs) are the foundation of weather and climate prediction. GCMs are physics-based simulators which combine a numerical solver for large-scale dynamics with tuned representations for small-scale processes such as cloud formation. Recently, machine learning (ML) models trained on reanalysis data achieved comparable or better skill than GCMs for deterministic weather forecasting. However, these models have not demonstrated improved ensemble forecasts, or shown sufficient stability for long-term weather and climate simulations. Here we present the first GCM that combines a differentiable solver for atmospheric dynamics with ML components, and show that it can generate forecasts of deterministic weather, ensemble weather and climate on par with the best ML and physics-based methods. NeuralGCM is competitive with ML models for 1-10 day forecasts, and with the European Centre for Medium-Range Weather Forecasts ensemble prediction for 1-15 day forecasts. With prescribed sea surface temperature, NeuralGCM can accurately track climate metrics such as global mean temperature for multiple decades, and climate forecasts with 140 km resolution exhibit emergent phenomena such as realistic frequency and trajectories of tropical cyclones. For both weather and climate, our approach offers orders of magnitude computational savings over conventional GCMs. Our results show that end-to-end deep learning is compatible with tasks performed by conventional GCMs, and can enhance the large-scale physical simulations that are essential for understanding and predicting the Earth system.",
+    "status": "candidate",
+    "retrieved_at": "2026-09-24T10:45:19.311904Z"
+  },
+  {
+    "source": "arXiv",
+    "arxiv_id": "2403.15356",
+    "doi": null,
+    "title": "Neural Plasticity-Inspired Multimodal Foundation Model for Earth Observation",
+    "authors": [
+      "Xiong, Zhitong",
+      "Wang, Yi",
+      "Zhang, Fahong",
+      "Stewart, Adam J.",
+      "Hanna, Joëlle",
+      "Borth, Damian",
+      "Papoutsis, Ioannis",
+      "Saux, Bertrand Le",
+      "Camps-Valls, Gustau",
+      "Zhu, Xiao Xiang"
+    ],
+    "year": 2024,
+    "abstract": "Earth observation (EO) in open-world settings presents a unique challenge: different applications rely on diverse sensor modalities, each with varying ground sampling distances, spectral ranges, and numbers of spectral bands. However, existing EO foundation models are typically tailored to specific sensor types, making them inflexible when generalizing across the heterogeneous landscape of EO data. To address this, we propose the Dynamic One-For-All (DOFA) model, a unified, multimodal foundation framework designed for diverse vision tasks in EO. Inspired by neural plasticity, DOFA utilizes a wavelength-conditioned dynamic hypernetwork to process inputs from five distinct satellite sensors flexibly. By continually pretraining on five EO modalities, DOFA achieves state-of-the-art performance across multiple downstream tasks and generalizes well to unseen modalities. Enhanced with hybrid continual pretraining, DOFA+ requires significantly fewer computational resources while outperforming counterparts trained with extensive GPU budgets. Experiments on diverse datasets highlight DOFA&#39;s potential as a foundation for general-purpose vision models in the sensor-diverse EO domain. The code and pre-trained weights are publicly available at https://github.com/zhu-xlab/DOFA.",
+    "status": "candidate",
+    "retrieved_at": "2026-09-24T10:45:19.311958Z"
+  },
+  {
+    "source": "arXiv",
+    "arxiv_id": "2306.05064",
+    "doi": null,
+    "title": "K2: A Foundation Language Model for Geoscience Knowledge Understanding and Utilization",
+    "authors": [
+      "Deng, Cheng",
+      "Zhang, Tianhang",
+      "He, Zhongmou",
+      "Xu, Yi",
+      "Chen, Qiyuan",
+      "Shi, Yuanyuan",
+      "Fu, Luoyi",
+      "Zhang, Weinan",
+      "Wang, Xinbing",
+      "Zhou, Chenghu",
+      "Lin, Zhouhan",
+      "He, Junxian"
+    ],
+    "year": 2023,
+    "abstract": "Large language models (LLMs) have achieved great success in general domains of natural language processing. In this paper, we bring LLMs to the realm of geoscience with the objective of advancing research and applications in this field. To this end, we present the first-ever LLM in geoscience, K2, alongside a suite of resources developed to further promote LLM research within geoscience. For instance, we have curated the first geoscience instruction tuning dataset, GeoSignal, which aims to align LLM responses to geoscience-related user queries. Additionally, we have established the first geoscience benchmark, GeoBench, to evaluate LLMs in the context of geoscience. In this work, we experiment with a complete recipe to adapt a pre-trained general-domain LLM to the geoscience domain. Specifically, we further train the LLaMA-7B model on 5.5B tokens of geoscience text corpus, including over 1 million pieces of geoscience literature, and utilize GeoSignal&#39;s supervised data to fine-tune the model. Moreover, we share a protocol that can efficiently gather domain-specific data and construct domain-supervised data, even in situations where manpower is scarce. Meanwhile, we equip K2 with the abilities of using tools to be a naive geoscience aide. Experiments conducted on the GeoBench demonstrate the effectiveness of our approach and datasets on geoscience knowledge understanding and utilization.We open-source all the training data and K2 model checkpoints at https://github.com/davendw49/k2.",
+    "status": "candidate",
+    "retrieved_at": "2026-09-24T10:45:19.312001Z"
+  },
+  {
+    "source": "arXiv",
+    "arxiv_id": "2311.15826",
+    "doi": null,
+    "title": "GeoChat: Grounded Large Vision-Language Model for Remote Sensing",
+    "authors": [
+      "Kuckreja, Kartik",
+      "Danish, Muhammad Sohail",
+      "Naseer, Muzammal",
+      "Das, Abhijit",
+      "Khan, Salman",
+      "Khan, Fahad Shahbaz"
+    ],
+    "year": 2023,
+    "abstract": "Recent advancements in Large Vision-Language Models (VLMs) have shown great promise in natural image domains, allowing users to hold a dialogue about given visual content. However, such general-domain VLMs perform poorly for Remote Sensing (RS) scenarios, leading to inaccurate or fabricated information when presented with RS domain-specific queries. Such a behavior emerges due to the unique challenges introduced by RS imagery. For example, to handle high-resolution RS imagery with diverse scale changes across categories and many small objects, region-level reasoning is necessary alongside holistic scene interpretation. Furthermore, the lack of domain-specific multimodal instruction following data as well as strong backbone models for RS make it hard for the models to align their behavior with user queries. To address these limitations, we propose GeoChat - the first versatile remote sensing VLM that offers multitask conversational capabilities with high-resolution RS images. Specifically, GeoChat can not only answer image-level queries but also accepts region inputs to hold region-specific dialogue. Furthermore, it can visually ground objects in its responses by referring to their spatial coordinates. To address the lack of domain-specific datasets, we generate a novel RS multimodal instruction-following dataset by extending image-text pairs from existing diverse RS datasets. We establish a comprehensive benchmark for RS multitask conversations and compare with a number of baseline methods. GeoChat demonstrates robust zero-shot performance on various RS tasks, e.g., image and region captioning, visual question answering, scene classification, visually grounded conversations and referring detection. Our code is available at https://github.com/mbzuai-oryx/geochat.",
+    "status": "candidate",
+    "retrieved_at": "2026-09-24T10:45:19.312035Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.21203/rs.3.rs-8218223/v1",
+    "title": "Resolution-Invariant Fluid Dynamics Modeling: Fourier Neural Operators vs. Convolutional Networks",
+    "authors": [
+      "Miglani, Amitoj Singh",
+      "Goswami, Mayank"
+    ],
+    "year": 2025,
+    "container_title": "",
+    "abstract": "<title>Abstract</title>\n                <p>Modeling the dynamics of fluid flow from data has become an important problem in computational physics and data-driven PDE learning, especially as high-resolution simulations remain computationally expensive. Recent operator-learning approaches, such as Fourier Neural Operators (FNOs) \\cite{li2020fno}, promise resolution-independent learning of PDE solution maps, but their practical advantages over traditional deep learning models are still not fully understood. In this work, we study the ability of FNOs to learn Navier–Stokes dynamics under changes in spatial resolution and directly compare their behavior to standard convolutional neural networks (CNNs) \\cite{guo2016cnnfluid,fukami2019superres}. While CNNs learn local, grid-dependent filters, FNOs operate in Fourier space and are designed to approximate solution operators independent of discretization as Fourier transform is itself resolution invariant. We train both models on a single resolution of a high-fidelity Navier–Stokes dataset and evaluate their performance across coarser and finer grids without retraining. Our experiments show that FNOs retain stable accuracy across resolutions, whereas CNNs exhibit significant degradation once the test grid deviates from the training grid. We further evaluate both models on in-distribution and out-of-distribution initial conditions to probe whether FNOs truly capture the underlying fluid physics rather than memorizing a distribution of initial states. To our knowledge, no thorough comparative study between CNNs and FNOs has been conducted in this setting; this work provides a detailed examination of their relative strengths and limitations for data-driven fluid dynamics and climate modeling.</p>",
+    "status": "candidate",
+    "retrieved_at": "2026-09-24T10:45:21.567082Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.5194/gmd-18-5575-2025",
+    "title": "Huge ensembles – Part 1: Design of ensemble weather forecasts using spherical Fourier neural operators",
+    "authors": [
+      "Mahesh, Ankur",
+      "Collins, William D.",
+      "Bonev, Boris",
+      "Brenowitz, Noah",
+      "Cohen, Yair",
+      "Elms, Joshua",
+      "Harrington, Peter",
+      "Kashinath, Karthik",
+      "Kurth, Thorsten",
+      "North, Joshua",
+      "O'Brien, Travis",
+      "Pritchard, Michael",
+      "Pruitt, David",
+      "Risser, Mark",
+      "Subramanian, Shashank",
+      "Willard, Jared"
+    ],
+    "year": 2025,
+    "container_title": "Geoscientific Model Development",
+    "abstract": "<jats:p>Simulating low-likelihood high-impact extreme weather events in a warming world is a significant and challenging task for current ensemble forecasting systems. While these systems presently use up to 100 members, larger ensembles could enrich the sampling of internal variability. They may capture the long tails associated with climate hazards better than traditional ensemble sizes. Due to computational constraints, it is infeasible to generate huge ensembles (comprised of 1000–10 000 members) with traditional, physics-based numerical models. In this two-part paper, we replace traditional numerical simulations with machine learning (ML) to generate hindcasts of huge ensembles. In Part 1, we construct an ensemble weather forecasting system based on spherical Fourier neural operators (SFNOs), and we discuss important design decisions for constructing such an ensemble. The ensemble represents model uncertainty through perturbed-parameter techniques, and it represents initial condition uncertainty through bred vectors, which sample the fastest-growing modes of the forecast. Using the European Centre for Medium-Range Weather Forecasts Integrated Forecasting System (IFS) as a baseline, we develop an evaluation pipeline composed of mean, spectral, and extreme diagnostics. With large-scale, distributed SFNOs with 1.1 billion learned parameters, we achieve calibrated probabilistic forecasts. As the trajectories of the individual members diverge, the ML ensemble mean spectra degrade with lead time, consistent with physical expectations. However, the individual ensemble members' spectra stay constant with lead time. Therefore, these members simulate realistic weather states during the rollout, and the ML ensemble passes a crucial spectral test in the literature. The IFS and ML ensembles have similar extreme forecast indices, and we show that the ML extreme weather forecasts are reliable and discriminating. These diagnostics ensure that the ensemble can reliably simulate the time evolution of the atmosphere, including low-likelihood high-impact extremes. In Part 2, we generate a huge ensemble initialized each day in summer 2023, and we characterize the simulations of extremes.</jats:p>",
+    "status": "candidate",
+    "retrieved_at": "2026-09-24T10:45:21.567131Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1088/1402-4896/ae6bdd/v2/decision1",
+    "title": "Decision letter for \"SLE-FNO: Single-layer extensions for task-agnostic continual learning in Fourier neural operators\"",
+    "authors": [],
+    "year": 2026,
+    "container_title": "",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-24T10:45:21.567140Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1038/s42005-026-02644-1",
+    "title": "Fourier neural operators for learning dynamics in quantum spin systems",
+    "authors": [
+      "Shah, Freya",
+      "Patti, Taylor L.",
+      "Berner, Julius",
+      "Tolooshams, Bahareh",
+      "Kossaifi, Jean",
+      "Anandkumar, Anima"
+    ],
+    "year": 2026,
+    "container_title": "Communications Physics",
+    "abstract": "<jats:title>Abstract</jats:title>\n                  <jats:p>\n                    Fourier Neural Operators (FNOs) excel on functional data tasks, such as those originating from partial differential equations. This renders them effective at simulating the time evolution of quantum wavefunctions, a computationally challenging, yet coveted task. In this manuscript, we use FNOs to model the evolution of random quantum spin systems, chosen due to their representative dynamics. We find that traditional neural networks, such as U-Net, exhibit limited extrapolation beyond the training time interval, whereas FNOs capture the underlying time-evolution operator, generalizing to unseen times. Additionally, we apply FNOs to a compact set of Hamiltonian observables (~ poly(\n                    <jats:italic>n</jats:italic>\n                    )) instead of 2\n                    <jats:sup>\n                      <jats:italic>n</jats:italic>\n                    </jats:sup>\n                    -component wavefunctions, greatly reducing the size of our inputs, outputs, and FNO models. This Hamiltonian observable-based method demonstrates that FNOs can distill information from high to low-dimensional spaces. We perform numerical experiments on a 20-qubit system, extrapolating Hamiltonian observables to twice the training time with a relative error of 5.8%. Notably, relative to numerical time-evolution methods, FNO achieves an inference speedup of approximately 10\n                    <jats:sup>4</jats:sup>\n                     × for 20-qubit systems, underscoring its computational efficiency. This extrapolation of observables past training times stands to fundamentally increase the simulatability of quantum systems beyond the limitations of quantum device coherence and tensor network circuit-depth.\n                  </jats:p>",
+    "status": "candidate",
+    "retrieved_at": "2026-09-24T10:45:21.567154Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.4324/9780203871027-13",
+    "title": "Numerical models of the general circulation, climate and weather prediction",
+    "authors": [],
+    "year": 2009,
+    "container_title": "Atmosphere, Weather and Climate",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-24T10:45:24.610428Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.5194/gmd-12-2797-2019",
+    "title": "Weather and climate forecasting with neural networks: using general circulation models (GCMs) with different complexity as a study ground",
+    "authors": [
+      "Scher, Sebastian",
+      "Messori, Gabriele"
+    ],
+    "year": 2019,
+    "container_title": "Geoscientific Model Development",
+    "abstract": "<jats:p>Recently, there has been growing interest in the possibility of using neural networks for both weather forecasting\nand the generation of climate datasets. We use a bottom–up approach\nfor assessing whether it should, in principle, be possible to do this. We use the relatively simple general circulation models (GCMs) PUMA and PLASIM as a simplified reality on which we train deep neural networks, which we then use for predicting the model weather at lead times of a few days. We specifically assess how the complexity of the climate model affects the neural network's forecast skill and how dependent the skill is on the length of the provided training period. Additionally, we show that using the neural networks to reproduce the climate of general circulation models including a seasonal cycle remains challenging – in contrast to earlier promising results on a model without seasonal cycle.</jats:p>",
+    "status": "candidate",
+    "retrieved_at": "2026-09-24T10:45:24.610456Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.2307/44280042",
+    "title": "SOUTHERN HEMISPHERE GENERAL CIRCULATION AND ITS VARIABILITY",
+    "authors": [
+      "Trenberth"
+    ],
+    "year": 1981,
+    "container_title": "Weather and Climate",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-24T10:45:24.610462Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1093/oso/9780195130720.003.0018",
+    "title": "On Cirrus Modeling for General Circulation and Climate Models",
+    "authors": [
+      "Sundqvist, Hilding"
+    ],
+    "year": 2002,
+    "container_title": "Cirrus",
+    "abstract": "<p>Cirrus clouds are significant regulators of the earth's radiation budget. Cirrus generally have low ice water content, leading to partial transparency to radiation, and a variety of ice crystal types constitutes the cloud. As a consequence, cirrus have complex optical qualities, which are discussed in other chapters of this book. In this chapter, I discuss the appearance and behavior of the cirrus clouds per se and discuss approaches to include those features in numerical models by parameterization. The number of general circulation models (GCMs) containing physically based parameterizations of cloud processes with prognostic equations for water/ice content increased remarkably during the 1990s. Model simulations of the general circulation of the atmosphere have shown a pronounced sensitivity to modeled optical properties of cirrus (e.g., Ramanathan et al. 1983; Senior and Mitchell 1993; Mitchell 1994b; Fowler and Randall 1996a,b; Kristjansson et al. 1998). Most studies with GCMs and climate models have focused on features of radiation and energy budgets and the modulation of these budgets as a consequence of changes in cloudiness quality or other conditions. Much less attention has been paid to the characteristics and realism of the model cloudiness itself (e.g., Liou 1992). Only meager discussions are generally found on these topics from studies in this context. In most cases, zonally averaged and/or bird's-eyeview cloudiness are reported. The reason for this is the sparseness of observational data, which makes it difficult to conduct a detailed verification of the simulated cloud fields. Many papers on model experimentation on this topic do indeed contain statements that uncertainties in cloud behavior constitute a severe weakness of the simulations (Senior and Mitchell 1993; Mitchell 1994). It is also emphasized that substantial improvement in our understanding of the behavior of clouds (not least cirrus) is required for satisfactory confidence in simulations of different climate scenarios. The critical need for high-accuracy measurements of upper-tropospheric water vapor is emphasized for example, in a paper by Stephens et al. (1996) discussing satellite measurements of water vapor. Clouds also have an indirect effect on climatology because their appearance and disappearance (evaporation) modulate the distribution of water vapor in the atmosphere.</p>",
+    "status": "candidate",
+    "retrieved_at": "2026-09-24T10:45:24.610468Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1016/b978-0-12-460817-7.50006-9",
+    "title": "Computational Aspects of Numerical Models for Weather Prediction and Climate Simulation",
+    "authors": [
+      "KASAHARA, AKIRA"
+    ],
+    "year": 1977,
+    "container_title": "Methods in Computational Physics: Advances in Research and Applications",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-24T10:45:24.610473Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1007/978-94-009-3041-4_10",
+    "title": "Parameterization of Condensation and Associated Clouds in Models for Weather Prediction and General Circulation Simulation",
+    "authors": [
+      "Sundqvist, Hilding"
+    ],
+    "year": 1988,
+    "container_title": "Physically-Based Modelling and Simulation of Climate and Climatic Change",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-24T10:45:24.610478Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.5194/wcd-3-777-2022",
+    "title": "Trends in the tropospheric general circulation from 1979 to 2022",
+    "authors": [
+      "Simmons, Adrian J."
+    ],
+    "year": 2022,
+    "container_title": "Weather and Climate Dynamics",
+    "abstract": "<jats:p>Atmospheric general circulation changes from March 1979 to\nFebruary 2022 are examined using the ERA5 reanalysis. Maps of linear trends\nand time series for specific areas are presented. Attention is concentrated\non monthly, seasonal and annual means, but shorter-timescale variability is\nalso considered, including extremes. Changes in near-tropopause winds are\nthe main focus, but related changes in temperature, wind and other variables throughout the troposphere are discussed. Middle- and upper-tropospheric warming is larger in the subtropics and outer tropics than in the deep tropics, except over the Pacific. This is linked with a strengthening and meridional expansion of the tropical easterlies that has received little previous attention. The change occurs predominantly\nover the first half of the period. Warming over several mid-latitude and\nsubtropical land areas comes close to matching the large warming of the\nArctic, in some seasons at least. Westerly upper-level winds in general\nweaken over the Arctic in winter but strengthen in northern middle\nlatitudes, contrary to arguments based on circulation changes due solely to\namplified Arctic warming. The jet-stream region over the eastern North\nAtlantic and western Europe shifts southward. Westerlies strengthen in a\nband stretching south-eastwards from the tropical western Pacific to\nsouthern Australia, as well as in the polar-jet-stream region that surrounds\nAntarctica. Extreme jet-stream winds increase over the North Atlantic. Net kinetic\nenergy also increases, mostly associated with sub-monthly variability along\nthe mid-latitude storm tracks and over the tropical Pacific. Available\npotential energy changes less. Geopotential height shows a distinct pattern\nof change in stationary long-wave structures. There are increases in surface pressure over the North Pacific and southern mid-latitudes and decreases over the Arctic Ocean and offshore of Antarctica. Several comparisons are made between ERA5 and the JRA-55 reanalysis and\nbetween ERA5 and the observations it assimilated. They show reassuring\nagreement, but some regional differences require further investigation.</jats:p>",
+    "status": "candidate",
+    "retrieved_at": "2026-09-24T10:45:24.610483Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.4135/9781452218564.n49",
+    "title": "Atmospheric General Circulation Models",
+    "authors": [],
+    "year": 2012,
+    "container_title": "Encyclopedia of Global Warming &amp; Climate Change",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-24T10:45:24.610487Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.5194/egusphere-egu23-5256",
+    "title": "Caravan - A global community dataset for large-sample hydrology",
+    "authors": [
+      "Kratzert, Frederik",
+      "Nearing, Grey",
+      "Addor, Nans",
+      "Erickson, Tyler",
+      "Gauch, Martin",
+      "Gilon, Oren",
+      "Gudmundsson, Lukas",
+      "Hassidim, Avinatan",
+      "Klotz, Daniel",
+      "Nevo, Sella",
+      "Shalev, Guy",
+      "Matias, Yossi"
+    ],
+    "year": 2023,
+    "container_title": "",
+    "abstract": "<jats:p>High-quality datasets are essential to support hydrological science and modeling. Several datasets exist for specific countries or regions (e.g. the various CAMELS datasets). However, these datasets lack standardization, which makes global studies difficult. Additionally, creating large-sample datasets is a time and resource consuming task, often preventing the release of data that would otherwise be open. Caravan (as in &amp;#8220;a series of camels&amp;#8221;) is an initiative that tries to solve both of these problems by creating an open data processing environment in the cloud for the community to use.Caravan is a globally consistent and open datasetCaravan leverages globally available data sources that are published under an open license to derive meteorological forcings and attributes for any catchment. We use ERA5-Land for meteorological forcings and hydrological reference states (SWE and four levels of soil moisture) and HydroATLAS for the catchment attributes. Currently, Caravan consists of 6830 gauges with daily streamflow data (median record length ~30 years), 9 meteorological variables (from 1981 - 2020) in different daily aggregations, 4 hydrological reference states, and a total of 221 catchment attributes.Caravan is derived entirely in the cloudAll meteorological time series (and hydrological reference states) from ERA5-Land are processed on Google Earth Engine, which removes the burden of downloading and processing large amounts of raw gridded data. Similarly, all catchment attributes are computed on Earth Engine. The code used to derive Caravan is publicly available (https://github.com/kratzert/Caravan/) . Once you have streamflow records and the corresponding catchment polygons, deriving all other data (forcing data and attributes) is a matter of a few hours of actual work. Depending on the number of catchments, their size and spatial distribution, that are being processed at once on Earth Engine , it might take a day or two for Earth Engine to extract meteorological data and catchment attributes.&amp;#160;Most importantly: Caravan is a community projectEven though the existing data in Caravan has good coverage over most climate zones, the spatial coverage is still patchy. Here is where we see Caravan as a community effort. Given the provided code, everybody with access to streamflow data and the authorisation to redistribute it can create a Caravan extension with minimal effort and share the extension with the community, thus contributing to a dynamically growing dataset. A full step-by-step tutorial is available at https://github.com/kratzert/Caravan/wiki. We envision that, with many people participating, this will result in a truly global and spatially consistent, large-sample hydrology dataset. A first Caravan extension was already published by Julian Koch (https://zenodo.org/record/7396466), which increased the number of gauges to 7138, by adding 308 gauges in Denmark.</jats:p>",
+    "status": "candidate",
+    "retrieved_at": "2026-09-24T10:45:27.594827Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.31223/x54j39",
+    "title": "Caravan-Qual: A global scale integration of water quality observations into a large-sample hydrology dataset",
+    "authors": [
+      "Jones, Edward",
+      "Kratzert, Frederik",
+      "van Vliet, Michelle"
+    ],
+    "year": 2025,
+    "container_title": "",
+    "abstract": "<jats:p>Protecting and improving surface water quality is contingent upon understanding the trends and spatial patterns in physical, biological, and chemical conditions and their underlying drivers. This requires observational data, spanning a diverse range of water quality constituents, coupled with contextual environmental data. Here we present the first global-scale integration of water quality into large-sample hydrology (named Caravan-Qual), combining ~70 million observations of 100 water quality constituents with streamflow measurements, meteorological forcing and catchment attributes covering the period 1980-2025. We envisage that the dataset can facilitate a diverse range of empirical analyses (e.g. spatio-temporal analysis across diverse regions, quantification of pollutant loadings and exports, concentration-discharge analysis), in addition to supporting development and evaluation of process-based and data-driven models for water quality prediction and management.</jats:p>",
+    "status": "candidate",
+    "retrieved_at": "2026-09-24T10:45:27.594854Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.5194/hess-28-4219-2024",
+    "title": "Large-sample hydrology – a few camels or a whole caravan?",
+    "authors": [
+      "Clerc-Schwarzenbach, Franziska",
+      "Selleri, Giovanni",
+      "Neri, Mattia",
+      "Toth, Elena",
+      "van Meerveld, Ilja",
+      "Seibert, Jan"
+    ],
+    "year": 2024,
+    "container_title": "Hydrology and Earth System Sciences",
+    "abstract": "<jats:p>\n                    Large-sample datasets containing hydrometeorological time series and catchment attributes for hundreds of catchments in a country, many of them known as “CAMELS” (Catchment Attributes and MEteorology for Large-sample Studies), have revolutionized hydrological modelling and have enabled comparative analyses. The Caravan dataset is a compilation of several (CAMELS and other) large-sample datasets with uniform attribute names and data structures. This simplifies large-sample hydrology across regions, continents, or the globe. However, the use of the Caravan dataset instead of the original CAMELS or other large-sample datasets may affect model results and the conclusions derived thereof. For the Caravan dataset, the meteorological forcing data are based on ERA5-Land reanalysis data. Here, we describe the differences between the original precipitation, temperature, and potential evapotranspiration (\n                    <jats:italic>E</jats:italic>\n                    <jats:sub>pot</jats:sub>\n                    ) data for 1252 catchments in the CAMELS-US, CAMELS-BR, and CAMELS-GB datasets and the forcing data for these catchments in the Caravan dataset. The\n                    <jats:italic>E</jats:italic>\n                    <jats:sub>pot</jats:sub>\n                    in the Caravan dataset is unrealistically high for many catchments, but there are, unsurprisingly, also considerable differences in the precipitation data. We show that the use of the forcing data from the Caravan dataset impairs hydrological model calibration for the vast majority of catchments; i.e. there is a drop in the calibration performance when using the forcing data from the Caravan dataset compared to the original CAMELS datasets. This drop is mainly due to the differences in the precipitation data. Therefore, we suggest extending the Caravan dataset with the forcing data included in the original CAMELS datasets wherever possible so that users can choose which forcing data they want to use or at least indicating clearly that the forcing data in Caravan come with a data quality loss and that using the original datasets is recommended. Moreover, we suggest not using the\n                    <jats:italic>E</jats:italic>\n                    <jats:sub>pot</jats:sub>\n                    data (and derived catchment attributes, such as the aridity index) from the Caravan dataset and instead recommend that these should be replaced with (or based on) alternative\n                    <jats:italic>E</jats:italic>\n                    <jats:sub>pot</jats:sub>\n                    estimates.\n                  </jats:p>",
+    "status": "candidate",
+    "retrieved_at": "2026-09-24T10:45:27.594874Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.5194/essd-2023-49",
+    "title": "A global streamflow indices time series dataset for large-sample hydrological analyses on streamflow regime (until 2021)",
+    "authors": [
+      "Chen, Xinyu",
+      "Jiang, Liguang",
+      "Luo, Yuning",
+      "Liu, Junguo"
+    ],
+    "year": 2023,
+    "container_title": "",
+    "abstract": "<jats:p>Abstract. With the booming big data techniques, large-sample hydrological analysis on streamflow regime is becoming feasible, which could derive robust conclusions on hydrological processes from a big-picture perspective. However, there is not a comprehensive global large-sample dataset for components of the streamflow regime yet. This paper presents a new time series dataset on global streamflow indices calculated from daily streamflow records after data quality control. The dataset contains 79 indices over seven major components of streamflow regime (i.e., magnitude, frequency, duration, changing rate, timing, variability, and recession) of 5548 river reaches globally. The indices time series in the dataset are available until 2021, the lengths of which vary from 30 to 215 years with an average of around 66 years. Restricted-access streamflow data of typical river basins in China are included in the dataset. Compared to existing global datasets, this global dataset covers more indices, especially those characterizing the frequency, duration, changing rate, and recession of streamflow regime. With the dataset, research on streamflow regime will become easier without spending time handling raw streamflow records. This comprehensive dataset will be a valuable resource to the hydrology community to facilitate a wide range of studies, such as studies of hydrological behaviour of a catchment, streamflow regime prediction in data-scarce regions, as well as variations in streamflow regime from a global perspective.</jats:p>",
+    "status": "candidate",
+    "retrieved_at": "2026-09-24T10:45:27.594882Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1038/s41597-026-07352-7",
+    "title": "Caravan-Qual: A global scale integration of stream water quality observations into a large-sample hydrology dataset",
+    "authors": [
+      "Jones, Edward R.",
+      "Kratzert, Frederik",
+      "van Vliet, Michelle T. H."
+    ],
+    "year": 2026,
+    "container_title": "Scientific Data",
+    "abstract": "<jats:title>Abstract</jats:title>\n                  <jats:p>\n                    Protecting and improving surface water quality is contingent upon understanding the trends and spatial patterns in physical, biological, and chemical conditions and their underlying drivers. This requires observational data, spanning a diverse range of water quality constituents, coupled with contextual environmental data. Here we present the first global-scale integration of stream water quality into large-sample hydrology (named\n                    <jats:italic>Caravan-Qual</jats:italic>\n                    ), combining ~96 million observations of 100 constituents with streamflow measurements, meteorological forcing and catchment attributes covering the period 1980–2025. We envisage that the dataset can facilitate a diverse range of empirical analyses (e.g. spatio-temporal analysis across diverse regions, quantification of pollutant loadings and exports, concentration-discharge analysis), in addition to supporting development and evaluation of process-based and data-driven models for water quality prediction and management.\n                  </jats:p>",
+    "status": "candidate",
+    "retrieved_at": "2026-09-24T10:45:27.594889Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.5194/essd-2026-350",
+    "title": "Caravan-CMIP6: Bias-corrected climate model projections for ten large-sample hydrometeorological datasets and over 23,000 global catchments",
+    "authors": [
+      "Ruzzante, Sacha Walde"
+    ],
+    "year": 2026,
+    "container_title": "",
+    "abstract": "<jats:p>Abstract. This data paper introduces Caravan-CMIP6, a dataset of climate change projections for large-sample hydrologic studies. Caravan-CMIP6 includes projections from an ensemble of 12 climate models from the sixth Coupled Model Intercomparison Project (CMIP6), for the historical experiment (1850–2014) and three Shared Socio-economic Pathways (SSPs). The dataset includes projections for all catchments within ten large-sample hydrometeorological datasets: Caravan, CAMELS, CAMELS-AUS-v2, CAMELS-BR, CAMELS-CH CAMELS-CL, CAMELS-COL, CAMELS-DE, CAMELS-GB-v2, CAMELS-IND. For each large-sample hydrometeorological dataset, I provide CMIP6 projections for all meteorological variables that can be readily extracted from climate models, including precipitation, temperature, evapotranspiration, humidity, radiation, pressure, and wind speed. I bias-correct the climate model output to match the observed climatology within each dataset. This dataset can facilitate the use of large-sample hydrologic datasets and models for climate change projection. All raw and bias-corrected data are available at https://doi.org/10.20383/103.01644.</jats:p>",
+    "status": "candidate",
+    "retrieved_at": "2026-09-24T10:45:27.594896Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.5194/egusphere-egu22-10908",
+    "title": "Large Sample, High Dimension Hydrology Dataset Validation: Getting Bit By Bytes",
+    "authors": [
+      "Kovacek, Daniel",
+      "Eugeni, Sophia",
+      "Weijs, Steven"
+    ],
+    "year": 2022,
+    "container_title": "",
+    "abstract": "<jats:p>&amp;lt;p&amp;gt;Many large hydrometeorological datasets have been developed and published in recent years in support of wide applications from physical to machine learning models, and from operations forecasting to prediction in ungauged basins.&amp;amp;#160; The HYSETS database (Arsenault et al. 2019) is one such large-sample dataset featuring numerous physiographic, geologic, and climate attributes associated with over fourteen thousand monitored watersheds in North America and Mexico.&amp;amp;#160; The wide array of geospatial data sources used to extract the many basin attributes described by this dataset, combined with the continental scale of study regions, necessitates the assembly of geospatial data sources with non-uniform properties and the analysis of observations collected by different governing organizations.&amp;lt;/p&amp;gt;&amp;lt;p&amp;gt;In this study, the static basin attribute set derived for the HYSETS database was replicated.&amp;amp;#160; Preliminary results suggest that incorporating updated geospatial data sources such as higher resolution DEM, and the interpretation of basin attribute derivations due to the use of different software packages, can yield distinct estimates of statistical properties of basin attributes with implications for their use as model input data.&amp;amp;#160; At the very least, the preliminary results demonstrate that the greater the size and complexity of a dataset, the greater the likelihood of introducing bias and computational error.&amp;lt;/p&amp;gt;</jats:p>",
+    "status": "candidate",
+    "retrieved_at": "2026-09-24T10:45:27.594902Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1002/essoar.10509765.1",
+    "title": "ClimateBench: A benchmark dataset for data-driven climate projections",
+    "authors": [
+      "Watson-Parris, Duncan",
+      "Rao, Yuhan",
+      "Olivié, Dirk",
+      "Seland, Øyvind",
+      "Nowack, Peer J",
+      "Camps-Valls, Gustau",
+      "Stier, Philip",
+      "Bouabid, Shahine",
+      "Dewey, Maura",
+      "Fons, Emilie",
+      "Gonzalez, Jessenia",
+      "Harder, Paula",
+      "Jeggle, Kai",
+      "Lenhardt, Julien",
+      "Manshausen, Peter",
+      "Novitasari, Maria",
+      "Ricard, Lucile",
+      "Roesch, Carla"
+    ],
+    "year": 2021,
+    "container_title": "",
+    "abstract": "<jats:p>Many different emission pathways exist that are compatible with the\nParis climate agreement, and many more are possible that miss that\ntarget. While some of the most complex Earth System Models have\nsimulated a small selection of Shared Socioeconomic Pathways, it is\nimpractical to use these expensive models to fully explore the space of\npossibilities. Such explorations therefore mostly rely on\none-dimensional impulse response models, or simple pattern scaling\napproaches to approximate the physical climate response to a given\nscenario. Here we present ClimateBench - a benchmarking framework based\non a suite of CMIP, AerChemMIP and DAMIP simulations performed by a full\ncomplexity Earth System Model, and a set of baseline machine learning\nmodels that emulate its response to a variety of forcers. These\nemulators can predict annual mean global distributions of temperature,\ndiurnal temperature range and precipitation (including extreme\nprecipitation) given a wide range of emissions and concentrations of\ncarbon dioxide, methane and aerosols, allowing them to efficiently probe\npreviously unexplored scenarios. We discuss the accuracy and\ninterpretability of these emulators and consider their robustness to\nphysical constraints such as total energy conservation. Future\nopportunities incorporating such physical constraints directly in the\nmachine learning models and using the emulators for detection and\nattribution studies are also discussed. This opens a wide range of\nopportunities to improve prediction, consistency and mathematical\ntractability. We hope that by laying out the principles of climate model\nemulation with clear examples and metrics we encourage others to tackle\nthis important and demanding challenge.</jats:p>",
+    "status": "candidate",
+    "retrieved_at": "2026-09-24T10:45:30.462428Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.5194/egusphere-egu22-3961",
+    "title": "ClimateBench: A benchmark for data-driven climate projections",
+    "authors": [
+      "Watson-Parris, Duncan",
+      "Rao, Yuhan",
+      "Olivié, Dirk",
+      "Seland, Øyvind",
+      "Nowack, Peer",
+      "Camps-Valls, Gustau",
+      "Stier, Philip",
+      "Bouabid, Shahine",
+      "Dewey, Maura",
+      "Fons, Emilie",
+      "Gonzalez, Jessenia",
+      "Harder, Paula",
+      "Jeggle, Kai",
+      "Lenhardt, Julien",
+      "Manshausen, Peter",
+      "Novitasari, Maria",
+      "Ricard, Lucile",
+      "Roesch, Carla"
+    ],
+    "year": 2022,
+    "container_title": "",
+    "abstract": "<jats:p>&amp;lt;p&amp;gt;Exploration of future emissions scenarios mostly relies on one-dimensional impulse response models, or simple pattern scaling approaches to approximate the physical climate response to a given scenario. Such approaches are unable to reliably predict climate variables which respond non-linearly to emissions or forcing (such as precipitation) and must rely on heavily simplified representations of e.g., aerosol, neglecting important spatial dependencies.&amp;lt;/p&amp;gt;&amp;lt;p&amp;gt;Here we present ClimateBench - a benchmark dataset based on a suite of CMIP, AerChemMIP and DAMIP simulations performed by NorESM2, and a set of baseline machine learning models that emulate its response to a variety of forcers. These surrogate models can skilfully predict annual mean global distributions of temperature, diurnal temperature range and precipitation (including extreme precipitation) given a wide range of emissions and concentrations of carbon dioxide, methane and spatially resolved aerosol. We discuss the accuracy and interpretability of these emulators and consider their robustness to physical constraints such as total energy conservation. Future opportunities incorporating such physical constraints directly in the machine learning models and using the emulators for detection and attribution studies are also discussed. This opens a wide range of opportunities to improve prediction, consistency and mathematical tractability.&amp;lt;/p&amp;gt;&amp;lt;p&amp;gt;We hope that by defining a clear baseline with appropriate metrics and providing a variety of baseline models we can bring the power of modern machine learning techniques to bear on the important problem of efficiently and robustly sampling future climates.&amp;lt;/p&amp;gt;</jats:p>",
+    "status": "candidate",
+    "retrieved_at": "2026-09-24T10:45:30.462453Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1088/2515-7620/ae6d92/v2/review1",
+    "title": "Review for \"Future projections of climate-driven tropical flowering phenology\"",
+    "authors": [],
+    "year": 2026,
+    "container_title": "",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-24T10:45:30.462460Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1101/2020.10.08.331496",
+    "title": "Data-driven yield projections suggest large opportunities to improve Europe’s soybean self-sufficiency under climate change",
+    "authors": [
+      "Guilpart, Nicolas",
+      "Iizumi, Toshichika",
+      "Makowski, David"
+    ],
+    "year": 2020,
+    "container_title": "",
+    "abstract": "<jats:title>Abstract</jats:title>\n                <jats:p>Currently, demand for soybean in Europe is mostly fulfilled by imports. However, soybean-growing areas across Europe have been rapidly increasing in response to a rising demand for locally-produced, non-GM soybean in recent years. This raises questions about the suitability of European agro-climatic conditions for soybean production. We used data-driven relationships between climate and soybean yield derived from machine-learning techniques to make yield projections under current and future climate with moderate (RCP 4.5) to intense (RCP 8.5) warming, up to the 2050s and 2090s time horizons. Results suggest that a self-sufficiency level of 50% (100%) would be achievable in Europe under historical and future climate if 4-5% (9-12%) of the current European cropland is dedicated to soybean production. The associated increase in soybean area in Europe would bring environmental benefits, with a potential decrease of nitrogen fertilizer use in Europe by 5-8% (13-18%) and a possible reduction of deforestation in biodiversity hotspots in South America. However, it would also lead to an important reduction in the production of other cultivated species in Europe (e.g. cereals) and a potential increase in the use of irrigation water.</jats:p>",
+    "status": "candidate",
+    "retrieved_at": "2026-09-24T10:45:30.462477Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1029/2021ms002954",
+    "title": "ClimateBench v1.0: A Benchmark for Data‐Driven Climate Projections",
+    "authors": [
+      "Watson‐Parris, D.",
+      "Rao, Y.",
+      "Olivié, D.",
+      "Seland, Ø.",
+      "Nowack, P.",
+      "Camps‐Valls, G.",
+      "Stier, P.",
+      "Bouabid, S.",
+      "Dewey, M.",
+      "Fons, E.",
+      "Gonzalez, J.",
+      "Harder, P.",
+      "Jeggle, K.",
+      "Lenhardt, J.",
+      "Manshausen, P.",
+      "Novitasari, M.",
+      "Ricard, L.",
+      "Roesch, C."
+    ],
+    "year": 2022,
+    "container_title": "Journal of Advances in Modeling Earth Systems",
+    "abstract": "<jats:title>Abstract</jats:title><jats:p>Many different emission pathways exist that are compatible with the Paris climate agreement, and many more are possible that miss that target. While some of the most complex Earth System Models have simulated a small selection of Shared Socioeconomic Pathways, it is impractical to use these expensive models to fully explore the space of possibilities. Such explorations therefore mostly rely on one‐dimensional impulse response models, or simple pattern scaling approaches to approximate the physical climate response to a given scenario. Here we present ClimateBench—the first benchmarking framework based on a suite of Coupled Model Intercomparison Project, AerChemMIP and Detection‐Attribution Model Intercomparison Project simulations performed by a full complexity Earth System Model, and a set of baseline machine learning models that emulate its response to a variety of forcers. These emulators can predict annual mean global distributions of temperature, diurnal temperature range and precipitation (including extreme precipitation) given a wide range of emissions and concentrations of carbon dioxide, methane and aerosols, allowing them to efficiently probe previously unexplored scenarios. We discuss the accuracy and interpretability of these emulators and consider their robustness to physical constraints such as total energy conservation. Future opportunities incorporating such physical constraints directly in the machine learning models and using the emulators for detection and attribution studies are also discussed. This opens a wide range of opportunities to improve prediction, robustness and mathematical tractability. We hope that by laying out the principles of climate model emulation with clear examples and metrics we encourage engagement from statisticians and machine learning specialists keen to tackle this important and demanding challenge.</jats:p>",
+    "status": "candidate",
+    "retrieved_at": "2026-09-24T10:45:30.462486Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1088/2515-7620/ae6d92/v2/decision1",
+    "title": "Decision letter for \"Future projections of climate-driven tropical flowering phenology\"",
+    "authors": [],
+    "year": 2026,
+    "container_title": "",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-24T10:45:30.462492Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.23919/apsar64635.2025.11392423",
+    "title": "Explainable Neural Networks in the Era of Many-Sensor/Multimodal Earth Observation",
+    "authors": [
+      "Hirose, Akira"
+    ],
+    "year": 2025,
+    "container_title": "2025 9th Asia-Pacific Conference on Synthetic Aperture Radar (APSAR)",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-24T10:45:33.023555Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.12681/eadd/60956",
+    "title": "Multimodal self-supervised learning for earth observation",
+    "authors": [
+      "Μπούντος, Νικόλαος-Ιωάννης"
+    ],
+    "year": null,
+    "container_title": "",
+    "abstract": "<jats:p>Η αφθονία πολυτροπικής πληροφορίας που παρέχουν τα όργανα τηλεπισκόπησης δημιουργεί νέες δυνατότητες για τη μελέτη των σύνθετων διεργασιών που διέπουν το σύστημα της Γης. Αυτές οι δυνατότητες ενισχύονται περαιτέρω από τη ραγδαία αύξηση των διαθέσιμων πολυτροπικών δεδομένων γεωπαρατήρησης, δημιουργώντας γόνιμο έδαφος για την ενσωμάτωση μεθόδων βαθιάς μάθησης στον τομέα. Ως αποτέλεσμα, παρατηρείται μια στροφή προς καινοτόμες μεθόδους πρόβλεψης και παρακολούθησης, βασισμένες αποκλειστικά σε δεδομένα παρατήρησης. Αυτή η αναδυόμενη συνέργεια μεταξύ γεωπαρατήρησης και βαθιάς μάθησης μπορεί να συμβάλλει καθοριστικά στην εξέλιξη ενός μεγάλου φάσματος κρίσιμων εφαρμογών με άμεσο όφελος για την κοινωνία, όπως η παρακολούθηση ηφαιστειακής δραστηριότητας, η άμεση χαρτογράφηση πλημμυρικών φαινομένων και η εκτίμηση κινδύνου πυρκαγιάς. Η βαθιά μάθηση έχει επιδείξει αξιοσημείωτη επιτυχία σε διάφορους τομείς, συμπεριλαμβανομένης της Υπολογιστικής Όρασης αλλά και της Επεξεργασίας Φυσικής Γλώσσας. Αυτή η πρόοδος οφείλεται σε μεγάλο βαθμό στη διαθεσιμότητα μεγάλων επισημασμένων συνόλων δεδομένων, όπως το ImageNet, τα οποία επιτρέπουν την εκμάθηση πλούσιων και εκφραστικών αναπαραστάσεων, ενισχύοντας σημαντικά την απόδοση των μοντέλων βαθιάς μάθησης. Οι ιδιαιτερότητες, ωστόσο, του πεδίου της γεωπαρατήρησης θέτουν σημαντικές προκλήσεις και δυσχεραίνουν την επέκταση αυτών των μεθόδων στον τομέα. Η δημιουργία αξιόπιστων συνόλων δεδομένων παρατήρησης Γης αποτελεί χρονοβόρα και δαπανηρή διαδικασία, καθώς απαιτεί εξειδικευμένη τεχνογνωσία για την ερμηνεία και επισημείωση των δεδομένων, ενώ ταυτόχρονα παραμένει ευάλωτη σε θόρυβο επισημείωσης. Επιπρόσθετα, η φύση των εικόνων παρατήρησης Γης διαφέρει θεμελιωδώς από τις συνηθισμένες φυσικές εικόνες. Συγκεκριμένα, χαρακτηρίζονται από έντονη πολυτροπικότητα, εκτείνονται σε διάφορες χωροχρονικές κλίμακες, και παρουσιάζουν μεγάλη ετερογένεια ως προς τα μεγέθη των αποτυπωμένων αντικειμένων, τη χωρική ανάλυση, τον τρόπο λήψης δεδομένων, τους αισθητήρες, και τις περιβαλλοντικές συνθήκες. Σε αντίθεση με το πεδίο των φυσικών εικόνων, όλα τα στοιχεία μια σκηνής παρατήρησης Γης έχουν εν δυνάμει σημασία, καταργώντας πλήρως την έννοια του παρασκηνίου και καθιστώντας τους ορισμούς των αντικειμένων ενδιαφέροντος πλήρως εξαρτώμενους από την εκάστοτε εφαρμογή. Ως αποτέλεσμα, η δημιουργία καλώς ορισμένων συνόλων δεδομένων για κάθε εφαρμογή είναι εξαιρετικά δύσκολη λόγω των αναρίθμητων συνδυασμών εφαρμογών και αισθητήρων. Επιπλέον, η κρισιμότητα των εφαρμογών που σχετίζονται με την παρατήρηση Γης περιπλέκει ακόμα περισσότερο την υιοθέτηση της βαθιάς μάθησης, απαιτώντας αξιόπιστες μεθόδους ικανές να παρέχουν όχι μόνο ακριβείς προβλέψεις αλλά και να εκτιμήσουν την αβεβαιότητα τους. Η παρούσα διατριβή αντιμετωπίζει αυτές τις προκλήσεις εξελίσσοντας τις μεθόδους βαθιάς μάθησης αναπαραστάσεων για παρατήρηση Γης σε τρεις άξονες: α) αναπτύσσοντας εξειδικευμένα μοντέλα και σύνολα δεδομένων για συγκεκριμένες εφαρμογές γεωπαρατήρησης, β) δημιουργώντας γενικές μεθόδους εκμάθησης αναπαραστάσεων ικανές να λειτουργούν αποδοτικά για κάθε εφαρμογή και σύνολο αισθητήρων, οδηγώντας τον τομέα σε ενοποιημένες λύσεις για την εξαγωγή αναπαραστάσεων και γ) μελετώντας τις ικανότητες γενίκευσης προεκπαιδευμένων μοντέλων εκτίμησης αβεβαιότητας, στοχεύοντας σε μια καθολική λύση εκτίμησης αβεβαιότητας ανεξαρτήτως εφαρμογής, χωρίς την ανάγκη για περαιτέρω εκπαίδευση. Συνολικά, οι παραπάνω συνεισφορές αποτελούν σημαντική πρόοδο στο πεδίο της εκμάθησης αναπαραστάσεων για δεδομένα γεωπαρατήρησης, τόσο σε σχέση με την απόδοση των μοντέλων όσο και με την αξιοπιστία τους.</jats:p>",
+    "status": "candidate",
+    "retrieved_at": "2026-09-24T10:45:33.023577Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.5194/egusphere-egu24-19460",
+    "title": "Earth Observation Applications through Neural Embedding Compression from Foundation Models",
+    "authors": [
+      "Gomes, Carlos",
+      "Brunschwiler, Thomas"
+    ],
+    "year": 2025,
+    "container_title": "",
+    "abstract": "<jats:p>Earth observation (EO) repositories comprise Petabytes of data. Due to their widespread use, these repositories experience extremely large volumes of data transfers. For example, users of the Sentinel Data Access System downloaded 78.6 PiB of data in 2022 alone. The transfer of such data volumes between data producers and consumers causes substantial latency and requires significant amounts of energy and vast storage capacities. This work introduces Neural Embedding Compression (NEC), a method that transmits compressed embeddings to users instead of raw data, greatly reducing transfer and storage costs. The approach uses general purpose embeddings from Foundation Models (FM), which can serve multiple downstream tasks and neural compression, which balances between compression rate and the utility of the embeddings. We implemented the method by updating a minor portion of the FM&amp;#8217;s parameters (approximately 10%) for a short training period of about 1% of the original pre-training iterations. NEC&amp;#8217;s effectiveness is assessed through two EO tasks: scene classification and semantic segmentation. When compared to traditional compression methods applied to raw data, NEC maintains similar accuracy levels while reducing data by 75% to 90%. Notably, even with a compression rate of 99.7%, there&amp;#8217;s only a 5% decrease in accuracy for scene classification. In summary, NEC offers a resource-efficient yet effective solution for multi-task EO modeling with minimal transfer of data volumes.</jats:p>",
+    "status": "candidate",
+    "retrieved_at": "2026-09-24T10:45:33.023584Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.52202/078362-0118",
+    "title": "Two-Stream Feature Fusion Strategy for Multimodal Remote Sensing Object Detection in Earth Observation",
+    "authors": [
+      "Gu, Lingyun",
+      "Popov, Eugene",
+      "Dong, Ge"
+    ],
+    "year": 2024,
+    "container_title": "IAF Earth Observation Symposium",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-24T10:45:33.023592Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1016/j.jag.2024.104328",
+    "title": "A gravity-inspired model integrating geospatial and socioeconomic distances for truck origin–destination flows prediction",
+    "authors": [
+      "Zhao, Yibo",
+      "Cheng, Shifen",
+      "Gao, Song",
+      "Lu, Feng"
+    ],
+    "year": 2025,
+    "container_title": "International Journal of Applied Earth Observation and Geoinformation",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-24T10:45:33.023605Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1109/cme67420.2025.11239373",
+    "title": "A Multimodal Depression Diagnosis Model Inspired by Traditional Chinese Medicine’s Observation and Inquiry",
+    "authors": [
+      "Che, Haijun",
+      "Xiao, Lu",
+      "Gu, Enhao",
+      "Fan, Xinqi",
+      "Ni, Shiguang"
+    ],
+    "year": 2025,
+    "container_title": "2025 19th International Conference on Complex Medical Engineering (CME)",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-24T10:45:33.023614Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.5194/egusphere-egu24-1760",
+    "title": "EarthPT: a foundation model for Earth Observation",
+    "authors": [
+      "Smith, Michael",
+      "Fleming, Luke",
+      "Geach, James"
+    ],
+    "year": 2025,
+    "container_title": "",
+    "abstract": "<jats:p>&amp;#160;We introduce EarthPT -- an Earth Observation (EO) pretrained transformer. EarthPT is a 700 million parameter decoding transformer foundation model trained in an autoregressive self-supervised manner and developed specifically with EO use-cases in mind. We demonstrate that EarthPT is an effective forecaster that can accurately predict future pixel-level surface reflectances across the 400-2300 nm range well into the future. For example, forecasts of the evolution of the Normalised Difference Vegetation Index (NDVI) have a typical error of approximately 0.05 (over a natural range of -1 -&gt; 1) at the pixel level over a five month test set horizon, out-performing simple phase-folded models based on historical averaging. We also demonstrate that embeddings learnt by EarthPT hold semantically meaningful information and could be exploited for downstream tasks such as highly granular, dynamic land use classification. Excitingly, we note that the abundance of EO data provides us with -- in theory -- quadrillions of training tokens. Therefore, if we assume that EarthPT follows neural scaling laws akin to those derived for Large Language Models (LLMs), there is currently no data-imposed limit to scaling EarthPT and other similar `Large Observation Models.'EarthPT is available under the MIT licence.</jats:p>",
+    "status": "candidate",
+    "retrieved_at": "2026-09-24T10:45:33.023621Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.52202/085713-2892",
+    "title": "PhySwin: An Efficient and Physically-Informed Foundation Model for Multispectral Earth Observation",
+    "authors": [
+      "Tang, Chong",
+      "Powell, Joseph",
+      "Koch, Dirk",
+      "Mullins, Robert",
+      "Weddell, Alex",
+      "Chauhan, Jagmohan"
+    ],
+    "year": 2025,
+    "container_title": "Advances in Neural Information Processing Systems 38",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-24T10:45:33.023627Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1007/s43621-025-02317-z",
+    "title": "Multimodal graph neural networks for earth observation and sustainable resource management: a comprehensive review and research roadmap",
+    "authors": [
+      "Kaur, Simran",
+      "Sharma, Harshit"
+    ],
+    "year": 2025,
+    "container_title": "Discover Sustainability",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-24T10:45:33.023633Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.18653/v1/2024.acl-long.184",
+    "title": "OceanGPT: A Large Language Model for Ocean Science Tasks",
+    "authors": [
+      "Bi, Zhen",
+      "Zhang, Ningyu",
+      "Xue, Yida",
+      "Ou, Yixin",
+      "Ji, Daxiong",
+      "Zheng, Guozhou",
+      "Chen, Huajun"
+    ],
+    "year": 2024,
+    "container_title": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-24T10:45:35.102437Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.31219/osf.io/jvgc5_v3",
+    "title": "Comparing Large Language Models for Text Classification: Model Selection Across Tasks, Texts, and Languages",
+    "authors": [
+      "Heseltine, Michael"
+    ],
+    "year": 2026,
+    "container_title": "",
+    "abstract": "<p>Large-scale text analysis has grown rapidly as an analytic method in the socialsciences and beyond in recent years and recent advances in large language models(LLMs) have made automated text annotation increasingly viable. This paper focuseson the comparative viability of closed-source and open-source LLMS for textannotation, testing the performance of 32 different LLMs in text classification acrossa range of tasks, text types, and languages. Using data in seven languages across10 country contexts, the results show considerable variation in model performance,highlighting that researchers should carefully consider model selection as part of theirLLM-centered classification strategy. In general, the closed-source GPT-4 exhibits relativelystrong performance across all classification tasks, while open-source alternativessuch as LLama3 and Qwen2.5 also show similar or even superior performance on selecttasks. Many smaller open-source models, however, provide relatively unsatisfactoryperformance on more complex and non-English language coding tasks. The tradeoffsinherent in the use of each model are therefore highlighted to allow researchers to makeinformed decisions about model selection on a specific task-by-task basis.</p>",
+    "status": "candidate",
+    "retrieved_at": "2026-09-24T10:45:35.102459Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.31219/osf.io/7xp6s",
+    "title": "Enhancing Semantic Validity in Large Language Model Tasks Through Automated Grammar Checking",
+    "authors": [
+      "Hawthorne, Jasper",
+      "Radcliffe, Felicity",
+      "Whitaker, Lachlan"
+    ],
+    "year": 2024,
+    "container_title": "",
+    "abstract": "<p>Ensuring the semantic validity of text generated through artificial intelligence remains a significant challenge, particularly as applications in various domains demand higher accuracy and contextual relevance. The integration of grammar checking tools into the workflow of text generation has emerged as a novel and effective solution for enhancing the quality and reliability of outputs. Through systematically assessing the impact of automated grammar checking on the semantic validity of LLM-generated text, significant improvements in coherence, contextual accuracy, grammatical correctness, and readability were observed. The methodology involved generating text via an LLM, applying advanced grammar checking, and evaluating the improvements through rigorous metrics. Results demonstrated marked enhancements in all evaluated aspects, demonstrating the potential of grammar checking to refine the outputs of LLMs. These findings have profound implications for automated content generation, customer service, educational technology, and other critical fields where text accuracy is paramount. The study highlights the necessity of ongoing advancements in grammar checking technologies to maintain and further improve the performance and reliability of AI-driven text generation systems.</p>",
+    "status": "candidate",
+    "retrieved_at": "2026-09-24T10:45:35.102471Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.22215/etd/2025-16544",
+    "title": "Knowledge-Enhanced Language Models: Integrating Structured Knowledge Graphs in Large Language Model for Multiple-Choice Question-Answering Tasks",
+    "authors": [
+      "Zhang, Hongzhi"
+    ],
+    "year": null,
+    "container_title": "",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-24T10:45:35.102478Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.31234/osf.io/snb3a_v2",
+    "title": "Evaluating Large Language Model Performance and Reliability in Scoring Picture Description Tasks for Neuropsychological Assessment",
+    "authors": [
+      "Kleiman, Michael J"
+    ],
+    "year": 2025,
+    "container_title": "",
+    "abstract": "<p>Background: Picture description tasks, such as the Cookie Theft task, are widely used in neuropsychological assessments to detect cognitive impairment. However, manual scoring is time-consuming, requires specialized training, and is subject to interrater variability. Recent advancements in natural language processing, particularly large language models (LLMs), offer a promising solution to automate and standardize the scoring process.Methods: This study evaluated the performance and reliability of five LLMs (GPT-4 Turbo, GPT-4o, Claude 3 Opus, Claude 3 Sonnet, and Llama 3 70b) in scoring the Cookie Theft picture description task. A subset of 25 participants were selected from the DementiaBank corpus. The LLMs were tasked with scoring 22 content units in the participants’ responses using various prompt strategies, including few-shot learning, prompt chaining, and self-consistency. LLM performance was compared to the consensus score of three human raters.Results: LLMs demonstrated comparable accuracy to human raters in scoring the Cookie Theft task, with no significant differences in mean absolute error (MAE) between the best performing models and human raters. Few-shot learning significantly improved LLM performance, while prompt chaining and self-consistency showed limited benefits. Claude 3 Opus and GPT-4o exhibited the highest accuracy and reliability. Notably, LLMs showed significantly higher interrater reliability compared to human raters.Conclusion: The findings demonstrate the potential of LLMs to accurately and reliably score picture description tasks, offering a promising approach to streamline and standardize neuropsychological assessments. By automating the scoring process, clinicians and researchers can benefit from increased efficiency, reduced subjectivity, and improved scalability in evaluating cognitive functions.</p>",
+    "status": "candidate",
+    "retrieved_at": "2026-09-24T10:45:35.102492Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.36227/techrxiv.173808198.86649534/v1",
+    "title": "Large Language Models on Radiation Oncology Tasks: Small Fine-Tuned Models vs. Large Vanilla Model",
+    "authors": [
+      "Wang, Peilong",
+      "Liu, Zhengliang",
+      "Holmes, Jason",
+      "Liu, Tianming",
+      "Liu, Wei"
+    ],
+    "year": 2025,
+    "container_title": "",
+    "abstract": "<jats:p>Purpose: This study compares the performance of small, fine-tuned LLMs with the large original models on two radiation oncology clinical tasks: treatment modality selection and ICD-10 code prediction. Methods: We used data of 403 treatment modality selection cases and 377 ICD-10 code prediction cases. The models used were fine-tuned LLaMA 2 7B and Mistral 7B, as well as the larger LLaMA 3.1 70B and 405B models for comparison. We evaluated the accuracy of all models on these two tasks. Results: Both fine-tuned LLaMA 2 7B and Mistral 7B outperformed LLaMA 3.1 70B and 405B in treatment modality selection task. The fine-tuned LLaMA 2 7B and Mistral 7B models achieved accuracy comparable to the larger models in ICD-10 code prediction. Conclusions: Small models, fine-tuned with radiation oncology data, can achieve performance comparable to-or even surpass-that of larger models.</jats:p>",
+    "status": "candidate",
+    "retrieved_at": "2026-09-24T10:45:35.102503Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1101/2025.11.12.25340106",
+    "title": "Entity-centric evaluation of large language model responses for medical question-answering tasks",
+    "authors": [
+      "Liu, Yi",
+      "Kolachalama, Vijaya B."
+    ],
+    "year": 2025,
+    "container_title": "",
+    "abstract": "<jats:title>Abstract</jats:title>\n                <jats:sec>\n                  <jats:title>Objective</jats:title>\n                  <jats:p>Develop a metric for evaluating the clinical alignment and informativeness of large language model (LLM)-generated responses in medical question-answering (QA) tasks.</jats:p>\n                </jats:sec>\n                <jats:sec>\n                  <jats:title>Materials and methods</jats:title>\n                  <jats:p>We propose EntQA, an entity-centric metric that extracts biomedical entities from patient backgrounds, diagnostic questions and LLM responses using a biomedical named entity recognition model, followed by de-duplication and semantic/lexical matching with thresholds. We computed recall-style coverage scores to quantify entity retention and detect omissions without external resources. We evaluated EntQA on five benchmarks using seven Qwen 2.5 Instruct models (0.5B–72B parameters), comparing it to baselines via Spearman/Kendall correlations with model accuracy at group level, point-biserial correlations at case level, and Spearman correlations with model scaling.</jats:p>\n                </jats:sec>\n                <jats:sec>\n                  <jats:title>Results</jats:title>\n                  <jats:p>EntQA demonstrated consistent positive alignments with accuracy (group-level Spearman up to 0.9286; case-level point-biserial up to 0.0926) and model scaling (Spearman up to 0.252), outperforming baselines which often showed negative or inconsistent correlations (e.g., BERTScore Spearman -0.9286 with accuracy).</jats:p>\n                </jats:sec>\n                <jats:sec>\n                  <jats:title>Conclusion</jats:title>\n                  <jats:p>EntQA offers a scalable, interpretable evaluation for LLM medical QA, outperforming traditional metrics in capturing clinical fidelity and supporting trustworthy healthcare AI through applications in fact-checking and model refinement.</jats:p>\n                </jats:sec>",
+    "status": "candidate",
+    "retrieved_at": "2026-09-24T10:45:35.102508Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1007/s10994-024-06642-8",
+    "title": "Calibrated explanations for regression",
+    "authors": [
+      "Löfström, Tuwe",
+      "Löfström, Helena",
+      "Johansson, Ulf",
+      "Sönströd, Cecilia",
+      "Matela, Rudy"
+    ],
+    "year": 2025,
+    "container_title": "Machine Learning",
+    "abstract": "<jats:title>Abstract</jats:title>\n          <jats:p>Artificial Intelligence (AI) methods are an integral part of modern decision support systems. The best-performing predictive models used in AI-based decision support systems lack transparency. Explainable Artificial Intelligence (XAI) aims to create AI systems that can explain their rationale to human users. Local explanations in XAI can provide information about the causes of individual predictions in terms of feature importance. However, a critical drawback of existing local explanation methods is their inability to quantify the uncertainty associated with a feature’s importance. This paper introduces an extension of a feature importance explanation method, Calibrated Explanations, previously only supporting classification, with support for standard regression and probabilistic regression, i.e., the probability that the target is below an arbitrary threshold. The extension for regression keeps all the benefits of Calibrated Explanations, such as calibration of the prediction from the underlying model with confidence intervals, uncertainty quantification of feature importance, and allows both factual and counterfactual explanations. Calibrated Explanations for regression provides fast, reliable, stable, and robust explanations. Calibrated Explanations for probabilistic regression provides an entirely new way of creating probabilistic explanations from any ordinary regression model, allowing dynamic selection of thresholds. The method is model agnostic with easily understood conditional rules. An implementation in Python is freely available on GitHub and for installation using both  and , making the results in this paper easily replicable.</jats:p>",
+    "status": "candidate",
+    "retrieved_at": "2026-09-24T10:45:38.015383Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.5194/egusphere-egu24-6431",
+    "title": "Geoscience Knowledge Understanding and Utilization via Data-centric Large Language Model",
+    "authors": [
+      "Deng, Cheng",
+      "Zhou, Le",
+      "Xu, Yi",
+      "Zhang, Tianhang",
+      "Lin, Zhouhan",
+      "Wang, Xinbing",
+      "Zhou, Chenghu"
+    ],
+    "year": 2024,
+    "container_title": "",
+    "abstract": "<jats:p>Large language models (LLMs) have made substantial progress in general natural language processing domains. GeoLM represents a significant stride in adapting LLMs for geoscience, with the goal of enhancing research and practical applications in this specialized area. We have developed two distinct models: a 7-billion-parameter LLM named K2, which is trained on a 5.5-billion-token geoscience text corpus that includes over 1 million pieces of geoscience literature, and a 30-billion-parameter LLM, GeoGalactica, trained on an extensive 65-billion-token corpus related to geoscience. Supported by the Deep-time Digital Earth (DDE) project, we preserve the largest text corpus specifically designed for geoscience. The efficacy of LLMs in the geoscience domain is fundamentally linked to the access to and deep understanding of extensive geoscience data. In this respect, data-centric AI is crucial. We put forward a framework, GeoLM, to tackle the challenges of data science within geosciences, integrating techniques such as information extraction, data integration, and mining. The GeoLM framework is dedicated to constructing and applying data-centric Geoscience LLMs, with the aim of enabling the wider scientific community to harness these advanced models for a more profound understanding and effective application of geoscience knowledge.</jats:p>",
+    "status": "candidate",
+    "retrieved_at": "2026-09-24T10:45:38.015409Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.14711/thesis-hdl172499",
+    "title": "Foundation Model Adaptation: From Vision-Language Pretraining to Medical Image Understanding",
+    "authors": [
+      "Wang, Hualiang"
+    ],
+    "year": null,
+    "container_title": "",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-24T10:45:38.015416Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.21437/interspeech.2023-699",
+    "title": "DiffSLU: Knowledge Distillation Based Diffusion Model for Cross-Lingual Spoken Language Understanding",
+    "authors": [
+      "Mao, Tianjun",
+      "Zhang, Chenghong"
+    ],
+    "year": 2023,
+    "container_title": "INTERSPEECH 2023",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-24T10:45:38.015423Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1016/s0166-4115(09)60143-6",
+    "title": "How People Use Context to Resolve Ambiguity: Implications for an Interactive Model of Language Understanding",
+    "authors": [
+      "Glucksberg, Sam"
+    ],
+    "year": 1986,
+    "container_title": "Advances in Psychology",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-24T10:45:38.015429Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.2991/978-94-91216-53-4_2",
+    "title": "Natural Language Understanding and World Knowledge",
+    "authors": [
+      "Ovchinnikova, Ekaterina"
+    ],
+    "year": 2012,
+    "container_title": "Atlantis Thinking Machines",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-24T10:45:38.015434Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1109/iscslp49672.2021.9362087",
+    "title": "Spoken Language Understanding with Sememe Knowledge as Domain Knowledge",
+    "authors": [
+      "Li, Sixia",
+      "Dang, Jianwu",
+      "Wang, Longbiao"
+    ],
+    "year": 2021,
+    "container_title": "2021 12th International Symposium on Chinese Spoken Language Processing (ISCSLP)",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-24T10:45:38.015438Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1115/detc2023-116746",
+    "title": "Document Understanding-Based Design Support: Language Model Based Design Knowledge Extraction",
+    "authors": [
+      "Qiu, Yunjian",
+      "Jin, Yan"
+    ],
+    "year": 2023,
+    "container_title": "Volume 3A: 49th Design Automation Conference (DAC)",
+    "abstract": "<jats:title>Abstract</jats:title>\n               <jats:p>Design knowledge in the vast amount of design reports and documents can be a great resource for designers in their practice. However, capturing such domain-specific information embedded in long-length unstructured texts is always time-consuming and sometimes difficult. Therefore, it is highly desirable for a computer system to automatically extract the main knowledge points and their corresponding inner structures from given documents. In this study of document understanding for design support (DocUDS), a design-perspective knowledge extraction approach is proposed that uses phrase-level domain-specific labeled datasets to finetune a Bidirectional Encoder Representation from Transformers (BERT) model so that it can extract design knowledge from documents. The BERT model finetuning attempts to blend in the domain-specific knowledge of well-recognized domain concepts and is based on the datasets generated from design reports. The model is utilized to map the captured sentences to the main design entities &amp;lt;requirement&amp;gt;, &amp;lt;function&amp;gt;, and &amp;lt;solution&amp;gt;. In addition, this approach uncovers inner relationships among the sentences and constructs overall structures of documents to enhance understanding. The definitions of design perspectives, inter-perspective relations, and intra-perspective relations are introduced, which together capture the main design knowledge points and their relations and constitute an understanding of the design domain knowledge of a text. The case study results have demonstrated the proposed approach’s effectiveness in understanding and extracting relevant design knowledge points.</jats:p>",
+    "status": "candidate",
+    "retrieved_at": "2026-09-24T10:45:38.015444Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.4135/9781036235383.n3",
+    "title": "Knowledge: of Life and Language",
+    "authors": [],
+    "year": 2015,
+    "container_title": "Understanding Reading Comprehension",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-24T10:45:38.015449Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1109/tgrs.2024.3449154",
+    "title": "RS5M and GeoRSCLIP: A Large-Scale Vision- Language Dataset and a Large Vision-Language Model for Remote Sensing",
+    "authors": [
+      "Zhang, Zilun",
+      "Zhao, Tiancheng",
+      "Guo, Yulong",
+      "Yin, Jianwei"
+    ],
+    "year": 2024,
+    "container_title": "IEEE Transactions on Geoscience and Remote Sensing",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-24T10:45:40.591455Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.3390/rs17223727",
+    "title": "Hierarchical Prompt Engineering for Remote Sensing Scene Understanding with Large Vision–Language Models",
+    "authors": [
+      "Chen, Tianyang",
+      "Ai, Jianliang"
+    ],
+    "year": 2025,
+    "container_title": "Remote Sensing",
+    "abstract": "<jats:p>Vision–language models (VLMs) show strong potential for remote-sensing scene classification but still struggle with fine-grained categories and distribution shifts. We introduce a hierarchical prompting framework that decomposes recognition into a coarse-to-fine decision process with structured outputs, combined with parameter-efficient adaptation using LoRA/QLoRA. To evaluate robustness without depending on external benchmarks, we construct five protocol variants of the AID (V0–V4) that systematically vary label granularity, class consolidation, and augmentation settings. Each variant is designed to align with a specific prompting style and hierarchy. The data pipeline follows a strict split-before-augment strategy, in which augmentation is applied only to the training split to avoid train-test leakage. We further audit leakage using rotation/flip–invariant perceptual hashing across splits to ensure reproducibility. Experiments on all five AID variants show that hierarchical prompting consistently outperforms non-hierarchical prompts and matches or exceeds full fine-tuning, while requiring substantially less compute. Ablation studies on prompt design, adaptation strategy, and model capacity—together with confusion matrices and class-wise metrics—indicate improved recognition at both coarse and fine levels, as well as robustness to rotations and flips. The proposed framework provides a strong, reproducible baseline for remote-sensing scene classification under constrained compute and includes complete prompt templates and processing scripts to support replication.</jats:p>",
+    "status": "candidate",
+    "retrieved_at": "2026-09-24T10:45:40.591490Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1016/j.isprsjprs.2025.01.020",
+    "title": "SkyEyeGPT: Unifying remote sensing vision-language tasks via instruction tuning with large language model",
+    "authors": [
+      "Zhan, Yang",
+      "Xiong, Zhitong",
+      "Yuan, Yuan"
+    ],
+    "year": 2025,
+    "container_title": "ISPRS Journal of Photogrammetry and Remote Sensing",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-24T10:45:40.591498Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.3390/rs16091477",
+    "title": "RS-LLaVA: A Large Vision-Language Model for Joint Captioning and Question Answering in Remote Sensing Imagery",
+    "authors": [
+      "Bazi, Yakoub",
+      "Bashmal, Laila",
+      "Al Rahhal, Mohamad Mahmoud",
+      "Ricci, Riccardo",
+      "Melgani, Farid"
+    ],
+    "year": 2024,
+    "container_title": "Remote Sensing",
+    "abstract": "<jats:p>In this paper, we delve into the innovative application of large language models (LLMs) and their extension, large vision-language models (LVLMs), in the field of remote sensing (RS) image analysis. We particularly emphasize their multi-tasking potential with a focus on image captioning and visual question answering (VQA). In particular, we introduce an improved version of the Large Language and Vision Assistant Model (LLaVA), specifically adapted for RS imagery through a low-rank adaptation approach. To evaluate the model performance, we create the RS-instructions dataset, a comprehensive benchmark dataset that integrates four diverse single-task datasets related to captioning and VQA. The experimental results confirm the model’s effectiveness, marking a step forward toward the development of efficient multi-task models for RS image analysis.</jats:p>",
+    "status": "candidate",
+    "retrieved_at": "2026-09-24T10:45:40.591506Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1109/tgrs.2024.3449154/mm1",
+    "title": "RS5M and GeoRSCLIP: A Large Scale Vision-Language Dataset and A Large Vision-Language Model for Remote Sensing_supp1-3449154.pdf",
+    "authors": [
+      "Zhao, Tiancheng"
+    ],
+    "year": null,
+    "container_title": "",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-24T10:45:40.591519Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1117/12.3107088",
+    "title": "Remote sensing image captioning: a survey from encoder-decoder model to large vision-language model",
+    "authors": [
+      "Liu, Chenfei",
+      "Lin, Dong",
+      "Tian, Pengyi",
+      "Yang, Na"
+    ],
+    "year": 2026,
+    "container_title": "International Conference on Computer Vision and Image Computing (CVIC 2025)",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-24T10:45:40.591528Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1109/igarss55030.2025.11242427",
+    "title": "A Vision-Language Framework for Multispectral Scene Representation Using Language-Grounded Features",
+    "authors": [
+      "Karanfil, Enes",
+      "Imamoglu, Nevrez",
+      "Erdem, Aykut",
+      "Erdem, Erkut"
+    ],
+    "year": 2025,
+    "container_title": "IGARSS 2025 - 2025 IEEE International Geoscience and Remote Sensing Symposium",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-24T10:45:40.591534Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1109/lgrs.2025.3623244",
+    "title": "TinyRS-R1: Compact Vision Language Model for Remote Sensing",
+    "authors": [
+      "Köksal, Aybora",
+      "Alatan, A. Aydın"
+    ],
+    "year": 2025,
+    "container_title": "IEEE Geoscience and Remote Sensing Letters",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-24T10:45:40.591543Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1016/j.isprsjprs.2026.06.003",
+    "title": "Remote sensing change captioning meets large language and vision models",
+    "authors": [
+      "Ricci, R.",
+      "Bazi, Y.",
+      "Melgani, F."
+    ],
+    "year": 2026,
+    "container_title": "ISPRS Journal of Photogrammetry and Remote Sensing",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-24T10:45:40.591548Z"
   }
 ]

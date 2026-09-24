@@ -167,28 +167,28 @@ def plot_taxonomy_tree():
     # 4 Main Pillar Categories
     pillars = [
         ("Scientific Domains & Modalities", 12.5, "#DBEAFE", "#2563EB", [
-            ("Weather & Climate", "ERA5, MERRA-2, Radar\n(Pangu, GraphCast, Aurora)"),
-            ("Earth Observation & RS", "Multispectral, SAR, DEM\n(SatMAE, Presto, Galileo)"),
-            ("Hydrology & Oceans", "River gauges, GLORYS12\n(GlobalFlood, XiHe)"),
+            ("Weather & Climate", "ERA5, MERRA-2, Radar\n(Pangu, GraphCast, Aurora, NeuralGCM)"),
+            ("Earth Observation & RS", "Multispectral, SAR, DEM\n(SatMAE, Presto, Galileo, DOFA)"),
+            ("Hydrology & Oceans", "River gauges, GLORYS12\n(GlobalFlood, Caravan, XiHe, OceanGPT)"),
             ("Geophysics & Space", "Waveforms, SDO UV series\n(SeisT, Surya)")
         ]),
         ("Foundation Architectures", 37.5, "#DCFCE7", "#16A34A", [
             ("3D Spatial Transformers", "3D Swin, 3DEST, Perceiver\n(Pangu, Aurora)"),
             ("Multi-Mesh Graph Neural Nets", "Icosahedral spherical mesh\n(GraphCast, GenCast)"),
-            ("Continuous Neural Operators", "AFNO, SFNO, Fourier Spec.\n(FourCastNet)"),
-            ("Multimodal Masked Encoders", "Temporal-spectral masking\n(SatMAE, Presto, Galileo)")
+            ("Continuous Neural Operators", "AFNO, SFNO, Fourier Spec.\n(FourCastNet, SFNO)"),
+            ("Multimodal Masked Encoders", "Temporal-spectral masking\n(SatMAE, Presto, Galileo, DOFA)")
         ]),
         ("Physics Integration Levels", 62.5, "#FEF3C7", "#D97706", [
             ("Purely Data-Driven", "Statistical auto-regression\n(Standard Vision Transformers)"),
-            ("Soft Physics Loss Penalties", "Conservation & dynamic loss\n(FengWu, FourCastNet)"),
+            ("Soft Physics Loss Penalties", "Conservation & dynamic loss\n(FengWu, FourCastNet, SFNO)"),
             ("Hard Architectural Constraints", "Inherent symmetry & projection\n(Spherical Harmonics, Invariance)"),
-            ("Hybrid PDE-Neural Solvers", "Coupled numerical routing\n(GlobalFlood, NeuralHydrology)")
+            ("Hybrid PDE-Neural Solvers", "Coupled numerical solvers\n(NeuralGCM, GlobalFlood, Caravan)")
         ]),
         ("Roles of Reasoning LLMs", 87.5, "#F3E8FF", "#9333EA", [
-            ("Scientific Reasoner", "Cross-domain time series QA\n(SciTS, TimeOmni)"),
+            ("Scientific Reasoner", "Cross-domain time series QA\n(SciTS, TimeOmni, K2, OceanGPT)"),
             ("Contextual Enhancer", "Domain priors & text prefixes\n(ClimateLLM)"),
             ("Autonomous Scientific Agent", "Multi-step tool orchestration\n(ClimateAgent)"),
-            ("Interactive Interface", "Natural language query to code\n(Scientific assistants)")
+            ("Interactive Grounded Interface", "Multimodal chat & change reasoning\n(GeoChat)")
         ])
     ]
 
@@ -290,25 +290,27 @@ def plot_weather_foundation_timeline():
         ("GraphCast", "2022-12", "Multi-Mesh GNN", 2022.98),
         ("ClimaX", "2023-01", "Variable ViT", 2023.08),
         ("Presto", "2023-04", "Lightweight EO", 2023.3),
-        ("FengWu", "2023-04", "Cross-Modal Fuser", 2023.35),
+        ("SFNO", "2023-06", "Spherical Operator", 2023.45),
         ("FuXi", "2023-06", "Cascade Swin", 2023.5),
         ("WeatherBench 2", "2023-08", "Evaluation Suite", 2023.65),
         ("Prithvi-100M", "2023-10", "Geospatial ViT", 2023.8),
         ("GenCast", "2023-12", "Diffusion Ensemble", 2023.95),
-        ("GlobalFlood", "2024-03", "Ungauged Flood AI", 2024.2),
+        ("DOFA", "2024-03", "Plasticity EO", 2024.2),
+        ("GlobalFlood", "2024-03", "Ungauged Flood AI", 2024.25),
         ("Aurora", "2024-05", "1.3B 3D Perceiver", 2024.4),
+        ("NeuralGCM", "2024-07", "Hybrid PDE-AI", 2024.55),
+        ("OceanGPT", "2024-08", "Ocean Science LLM", 2024.62),
         ("Prithvi WxC", "2024-09", "2.3B Climate Model", 2024.7),
         ("Galileo", "2025-02", "Multi-Scale EO", 2025.15),
-        ("Surya", "2025-08", "Heliophysics Model", 2025.65),
         ("SciTS", "2025-10", "Scientific TS LLM", 2025.8),
     ]
 
-    fig, ax = plt.subplots(figsize=(13, 6.5), dpi=300)
+    fig, ax = plt.subplots(figsize=(14, 7), dpi=300)
 
     # Base timeline axis
     ax.axhline(0, color="#334155", lw=2.5, zorder=1)
     ax.set_xlim(2021.8, 2026.2)
-    ax.set_ylim(-3.5, 4.0)
+    ax.set_ylim(-3.8, 4.2)
     ax.axis("off")
 
     years = [2022, 2023, 2024, 2025, 2026]
@@ -316,9 +318,10 @@ def plot_weather_foundation_timeline():
         ax.plot([yr, yr], [-0.3, 0.3], color="#0F172A", lw=2)
         ax.text(yr, -0.6, str(yr), ha="center", va="top", fontsize=11, fontweight="bold", color="#0F172A")
 
-    levels = [1.2, -1.5, 2.3, -2.4, 1.4, -1.6, 2.6, -2.7, 1.3, -1.4, 2.4, -2.5, 1.5, 2.7, -1.6, 1.4, -2.6]
-    colors = ["#2563EB", "#0D9488", "#DC2626", "#D97706", "#7C3AED", "#059669", "#E11D48", "#2563EB",
-              "#475569", "#0D9488", "#DC2626", "#0284C7", "#7C3AED", "#D97706", "#059669", "#E11D48", "#2563EB"]
+    levels = [1.2, -1.5, 2.4, -2.5, 1.4, -1.6, 2.6, -2.7, 1.3, -1.4, 2.5, 1.5, -2.6, 2.7, -1.7, 1.4, 2.8, -1.8, 1.6]
+    colors = ["#2563EB", "#0D9488", "#DC2626", "#D97706", "#7C3AED", "#059669", "#10B981", "#E11D48",
+              "#475569", "#0D9488", "#DC2626", "#B45309", "#0284C7", "#7C3AED", "#6366F1", "#0891B2",
+              "#D97706", "#059669", "#2563EB"]
 
     for i, (name, date_str, arch, x_val) in enumerate(milestones):
         y_lvl = levels[i]
@@ -332,7 +335,7 @@ def plot_weather_foundation_timeline():
         bbox_props = dict(boxstyle="round,pad=0.35,rounding_size=0.3", facecolor="white", edgecolor=c, lw=1.4)
         va = "bottom" if y_lvl > 0 else "top"
         ax.text(x_val, y_lvl, f"{name}\n({date_str})\n{arch}", ha="center", va=va,
-                fontsize=8, fontweight="bold", color="#0F172A", bbox=bbox_props)
+                fontsize=7.8, fontweight="bold", color="#0F172A", bbox=bbox_props)
 
     plt.title("Milestone Timeline of Scientific Foundation Models (2022–2026)",
               fontsize=14, fontweight="bold", pad=15)
@@ -349,30 +352,32 @@ def plot_resolution_vs_leadtime():
         {"name": "Pangu-Weather", "res": 0.25, "lead": 7, "params": 256, "col": "#2563EB"},
         {"name": "GraphCast", "res": 0.25, "lead": 10, "params": 36.7, "col": "#DC2626"},
         {"name": "FourCastNet", "res": 0.25, "lead": 10, "params": 73.5, "col": "#059669"},
+        {"name": "SFNO", "res": 0.25, "lead": 10, "params": 75, "col": "#10B981"},
         {"name": "FuXi", "res": 0.25, "lead": 15, "params": 150, "col": "#D97706"},
         {"name": "FengWu", "res": 0.25, "lead": 10.75, "params": 200, "col": "#7C3AED"},
         {"name": "GenCast", "res": 0.25, "lead": 15, "params": 120, "col": "#E11D48"},
         {"name": "Aurora", "res": 0.10, "lead": 10, "params": 1300, "col": "#0284C7"},
+        {"name": "NeuralGCM", "res": 0.70, "lead": 15, "params": 14.5, "col": "#6366F1"},
         {"name": "XiHe (Ocean)", "res": 0.083, "lead": 10, "params": 84, "col": "#0D9488"},
         {"name": "GlobalFlood", "res": 0.10, "lead": 7, "params": 5, "col": "#B45309"},
     ]
 
-    fig, ax = plt.subplots(figsize=(9, 6.5), dpi=300)
+    fig, ax = plt.subplots(figsize=(9.5, 6.5), dpi=300)
 
     for m in models:
         # Scale marker size by parameter count (log scale)
         s = 80 + 35 * np.log(max(m["params"], 2))
         ax.scatter(m["lead"], m["res"], s=s, color=m["col"], alpha=0.85, edgecolors="#1E293B", lw=1.2, zorder=3)
         # Text label offset
-        offset_y = 0.008 if m["res"] < 0.20 else -0.012
-        offset_x = 0.2
+        offset_y = 0.012 if m["res"] < 0.20 else (-0.025 if m["res"] > 0.5 else -0.015)
+        offset_x = 0.22
         ax.text(m["lead"] + offset_x, m["res"] + offset_y,
                 f"{m['name']}\n({m['res']}°, {m['params']}M)",
-                fontsize=8.5, fontweight="bold", color="#1E293B", zorder=4)
+                fontsize=8.2, fontweight="bold", color="#1E293B", zorder=4)
 
     ax.set_xlabel("Maximum Forecast Lead Time (Days)", fontsize=11, fontweight="bold")
     ax.set_ylabel("Spatial Resolution (Degrees Lat/Lon, lower = finer)", fontsize=11, fontweight="bold")
-    ax.set_ylim(0.04, 0.32)
+    ax.set_ylim(0.04, 0.78)
     ax.set_xlim(5, 17)
     ax.grid(True, linestyle="--", alpha=0.5, zorder=0)
 

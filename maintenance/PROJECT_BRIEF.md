@@ -20,3 +20,11 @@
 - Extra figures: domain × modality heatmap; timeline of weather/climate foundation models; spatial resolution vs. lead
   time (only stated values); model-size vs. training-data table.
 - Coordinate with, but do not duplicate, Jin et al.'s spatio-temporal coverage: this survey is domain-science focused.
+
+
+## Iteration 2 focus (read docs/STATE.md first)
+Prioritize the Top-3 backlog in `docs/STATE.md`. Persistent weakness: **Depth of Analysis** (3.5/5).
+1. Extract WeatherBench 2 / ClimateBench quantitative scores (Z500, T850 RMSE vs HRES) only from verified sources into a results table.
+2. Forward/backward snowball Pangu-Weather, GraphCast, Aurora, Galileo, SciTS; strengthen hydrology and oceanography.
+3. Deepen Sections 4 & 6 (SFNO / conservation constraints; scientific reasoning LLM agents).
+Stay within ~90 minutes; pass `make check`; commit and push; print Chinese report.

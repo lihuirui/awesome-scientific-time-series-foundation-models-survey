@@ -44,9 +44,10 @@ def run_generate_bib():
         venue = p.get("venue", "arXiv")
         doi_or_url = p.get("doi_or_arxiv", "")
 
-        # Escape special TeX characters
-        title_escaped = title.replace("&", r"\&").replace("%", r"\%")
-        venue_escaped = venue.replace("&", r"\&").replace("%", r"\%")
+        # Escape special TeX characters and normalize unicode
+        title_escaped = title.replace("&", r"\&").replace("%", r"\%").replace("\u2010", "-").replace("\u2013", "-").replace("\u2014", "--")
+        venue_escaped = venue.replace("&", r"\&").replace("%", r"\%").replace("\u2010", "-")
+        authors_escaped = authors.replace("\u2010", "-").replace("\u2013", "-").replace("Ø", r"{\O}").replace("é", r"{\'e}").replace("ö", r"{\"o}").replace("ä", r"{\"a}").replace("ü", r"{\"u}")
 
         is_journal = any(j in venue.lower() for j in ["nature", "science", "journal", "npj", "ieee", "james"])
 
@@ -54,7 +55,7 @@ def run_generate_bib():
 
         lines = [f"@{entry_type}{{{key},"]
         lines.append(f"  title = {{{{{title_escaped}}}}},")
-        lines.append(f"  author = {{{authors}}},")
+        lines.append(f"  author = {{{authors_escaped}}},")
         lines.append(f"  year = {{{year}}},")
 
         if is_journal:
