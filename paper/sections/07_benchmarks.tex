@@ -1,0 +1,60 @@
+\section{Evaluation Benchmarks and Model Synthesis}
+\label{sec:benchmarks}
+
+\begin{table*}[t]
+\centering
+\caption{Comprehensive Synthesis of Verified Scientific Multimodal Time Series Foundation Models and Reasoning Systems.}
+\label{tab:foundation_models_summary}
+\scriptsize
+\setlength{\tabcolsep}{3.5pt}
+\begin{tabular}{@{}lp{1.8cm}p{2.8cm}p{3.2cm}cccp{2.8cm}@{}}
+\toprule
+\textbf{Model} & \textbf{Domain} & \textbf{Architectural Backbone} & \textbf{Pretraining Corpus \& Scale} & \textbf{Resolution} & \textbf{Physics Level} & \textbf{Params} & \textbf{Verified Code / Access} \\
+\midrule
+Pangu-Weather~\cite{bi2023pangu} & Weather/Climate & 3D Earth Transformer & ERA5 (1979--2017, 39 yrs) & $0.25^\circ$, 13 lvls & Data-driven & 256M & \href{https://github.com/198808xc/Pangu-Weather}{\texttt{198808xc/Pangu-Weather}} \\
+GraphCast~\cite{lam2023graphcast} & Weather/Climate & Multi-Mesh GNN (Icosahedron) & ERA5 (1979--2017, 39 yrs) & $0.25^\circ$, 37 lvls & Data-driven & 36.7M & \href{https://github.com/google-deepmind/graphcast}{\texttt{deepmind/graphcast}} \\
+FourCastNet~\cite{pathak2022fourcastnet} & Weather/Climate & Adaptive Fourier Neural Operator & ERA5 (1979--2015, 36 yrs) & $0.25^\circ$, 20 lvls & Soft loss & 73.5M & \href{https://github.com/NVlabs/FourCastNet}{\texttt{NVlabs/FourCastNet}} \\
+ClimaX~\cite{nguyen2023climax} & Weather/Climate & Variable-Tokenized ViT & CMIP6 simulations + ERA5 & $1.4^\circ$--$5.6^\circ$ & Data-driven & 107M & \href{https://github.com/microsoft/ClimaX}{\texttt{microsoft/ClimaX}} \\
+FuXi~\cite{chen2023fuxi} & Weather/Climate & Cascade Swin Transformer & ERA5 (1979--2017, 39 yrs) & $0.25^\circ$, 70 lvls & Data-driven & 150M & \href{https://github.com/tpys/FuXi}{\texttt{tpys/FuXi}} \\
+FengWu~\cite{chen2023fengwu} & Weather/Climate & Cross-Modal Attention Transformer & ERA5 (1979--2017, 39 yrs) & $0.25^\circ$, 37 lvls & Soft loss & 200M & \href{https://github.com/OpenEarthLab/FengWu}{\texttt{OpenEarthLab/FengWu}} \\
+GenCast~\cite{price2023gencast} & Weather/Climate & Latent Diffusion Multi-Mesh GNN & ERA5 (1979--2018, 40 yrs) & $0.25^\circ$, 37 lvls & Data-driven & 120M & \href{https://github.com/google-deepmind/graphcast}{\texttt{deepmind/graphcast}} \\
+Aurora~\cite{bodnar2024aurora} & Weather/Climate & 3D Perceiver / Swin Backbone & $>$1 PB (ERA5, HRES, GFS) & $0.10^\circ$, multi & Data-driven & 1.3B & \href{https://github.com/microsoft/aurora}{\texttt{microsoft/aurora}} \\
+Prithvi WxC~\cite{schmude2024prithviwxc} & Weather/Climate & Scalable ViT Encoder-Decoder & MERRA-2 (160 vars, 44 yrs) & $0.50^\circ$, 160 vars & Soft loss & 2.3B & \href{https://github.com/NASA-IMPACT/Prithvi-WxC}{\texttt{NASA-IMPACT/Prithvi-WxC}} \\
+SatMAE~\cite{cong2022satmae} & Earth Observ. & Temporal-Spectral Masked ViT & Sentinel-2, Landsat-8 cubes & $10\text{ m}$--$30\text{ m}$ & Data-driven & 86M--307M & \href{https://github.com/sustainlab-group/SatMAE}{\texttt{sustainlab/SatMAE}} \\
+Presto~\cite{tseng2023presto} & Earth Observ. & Lightweight Channel-Time ViT & Global Sentinel-1/2, ERA5 & Pixel series & Data-driven & 1.2M & \href{https://github.com/nasaharvest/presto}{\texttt{nasaharvest/presto}} \\
+Galileo~\cite{tseng2025galileo} & Earth Observ. & Multi-Scale Masked Transformer & Global multi-sensor satellite & Multi-scale & Data-driven & 100M & \href{https://github.com/nasaharvest/galileo}{\texttt{nasaharvest/galileo}} \\
+Prithvi-100M~\cite{jakubik2023prithvi} & Earth Observ. & Geospatial Masked Autoencoder & NASA HLS reflectance series & $30\text{ m}$ pixel & Data-driven & 100M & \href{https://github.com/NASA-IMPACT/hls-foundation-os}{\texttt{NASA-IMPACT/hls-os}} \\
+AlphaEarth~\cite{brown2025alphaearth} & Earth Observ. & Neural Field Embedding Model & Global Earth observation constellation & $10\text{ m}$ dense & Data-driven & not reported & Google Earth Engine \\
+GlobalFlood~\cite{nearing2024globalflood} & Hydrology & EA-LSTM + River Routing & 5,680 river gauges + ERA5 & Multi-basin & Hybrid PDE & 5M & \href{https://github.com/neuralhydrology/neuralhydrology}{\texttt{neuralhydrology}} \\
+XiHe~\cite{wang2024xihe} & Oceanography & Hierarchical Ocean Transformer & GLORYS12V1 (1993--2020, 28 yrs) & $1/12^\circ$, 50 lvls & Soft loss & 84M & not available \\
+SeisT~\cite{li2024seist} & Seismology & Hierarchical Seismogram ViT & STEAD, INSTANCE ($>$10M waves) & $100\text{ Hz}$ wave & Data-driven & 12M & \href{https://github.com/senli1073/SeisT}{\texttt{senli1073/SeisT}} \\
+PhaseNet~\cite{zhu2019phasenet} & Seismology & 1D Residual U-Net & NCEDC seismic catalogue & $100\text{ Hz}$ wave & Data-driven & 1.2M & \href{https://github.com/AI4EPS/PhaseNet}{\texttt{AI4EPS/PhaseNet}} \\
+Surya~\cite{roy2025surya} & Space Weather & Spatio-Temporal Gated ViT & SDO EUV series (13 yrs) & Multi-spectral & Soft loss & 366M & not available \\
+SciTS~\cite{wu2025scits} & Multi-Discip. & TimeOmni Continuous Tokenizer & SciTS Benchmark (12 domains) & Multi-rate & Data-driven & 8B & \href{https://github.com/OpenTSLab/TimeOmni}{\texttt{OpenTSLab/TimeOmni}} \\
+ClimateAgent~\cite{li2025climateagent} & Multi-Agent & Multi-Agent LLM Orchestrator & Climate-Agent-Bench-85 & Code/Tools & Hybrid PDE & Frontier LLM & not available \\
+ClimateLLM~\cite{li2025climatellm} & Weather/Climate & Fourier Spectral Decomposition & ERA5 Surface Station Series & Global series & Soft loss & 7B & not available \\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+\subsection{Standardized Scientific Evaluation Suites}
+
+\subsubsection{WeatherBench 2: The Operational Standard for Atmospheric AI}
+Prior to 2023, data-driven weather models suffered from disparate evaluation protocols, making direct comparisons difficult. Rasp et al.~\cite{rasp2024weatherbench2} established \textbf{WeatherBench 2} as the official benchmark framework for next-generation global weather models:
+\begin{itemize}
+    \item \textbf{Headline Deterministic Scores}: Evaluates latitude-weighted root mean square error (RMSE) and anomaly correlation coefficient (ACC) against operational ECMWF HRES analyses for key predictive fields: geopotential at 500 hPa ($Z500$), temperature at 850 hPa ($T850$), 2-meter air temperature ($T2m$), and 10-meter wind speed ($U10/V10$).
+    \item \textbf{Probabilistic Metrics}: Computes continuous ranked probability scores (CRPS), spread-error ratios, and brier scores for ensemble predictions.
+    \item \textbf{Physical Consistency Diagnostics}: Measures radially averaged kinetic energy power spectra to detect artificial smoothing or high-frequency numerical noise over extended multi-week rollouts.
+\end{itemize}
+
+\subsubsection{SciTS Benchmark: Evaluating LLM Cross-Disciplinary Reasoning}
+Wu et al.~\cite{wu2025scits} formalized evaluation standards for scientific reasoning across 12 distinct scientific disciplines. Unlike conventional NLP benchmarks, SciTS evaluates both numerical precision (MAE, MSE, dynamic time warping) and semantic reasoning quality (causal attribution accuracy, scientific report coherence, zero-shot discipline transferability).
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\columnwidth]{figures/publications_by_year.png}
+\caption{Annual distribution of scientific time series foundation models and reasoning systems from 2022 to 2026, categorized by scientific domain.}
+\label{fig:pubs_by_year}
+\end{figure}
+
+As shown in Fig.~\ref{fig:pubs_by_year}, while weather and climate models initiated the initial surge in 2022--2023, the frontier in 2024--2026 has rapidly expanded into cross-disciplinary Earth observation, hydrology, space weather, and autonomous reasoning agents.

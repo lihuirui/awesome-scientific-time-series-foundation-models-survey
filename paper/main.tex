@@ -1,0 +1,56 @@
+\documentclass[10pt,journal,compsoc]{IEEEtran}
+
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{url}
+\usepackage{hyperref}
+\usepackage{microtype}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    citecolor=blue,
+    urlcolor=blue
+}
+
+\begin{document}
+
+\title{Foundation Models and Reasoning LLMs for Scientific Multimodal Time Series: A Survey}
+
+\author{Huirui~Li%
+\thanks{H. Li is with the School of Data Science and Artificial Intelligence. Correspondence e-mail: 58367737+lihuirui@users.noreply.github.com.}%
+\thanks{Manuscript version 1.0 (P0/P1 Bootstrap Iteration), September 24, 2026.}
+}
+
+\IEEEtitleabstractindextext{%
+\begin{abstract}
+Time series and spatio-temporal dynamics arising in natural systems---such as global weather, long-term climate, hydrological flood regimes, ocean circulation, earthquake wave propagation, satellite earth observations, and heliophysical radiation---differ fundamentally from generic tabular or urban traffic series. They are governed by continuous non-linear partial differential equations, multi-scale turbulent interactions, heterogeneous spatial geometries, and strict physical conservation laws. Recently, the emergence of pre-trained foundation models (PFMs) and scientific reasoning Large Language Models (LLMs) has instigated a paradigm shift across computational earth and physical sciences. This survey provides the first comprehensive, systematic review of foundation models and reasoning LLMs tailored for scientific multimodal time series. Guided by the PRISMA 2020 methodology, we review landmark architectures developed between 2021 and 2026 across major natural science domains. We introduce a systematic taxonomy structured along four orthogonal axes: (1) scientific domains and multimodal data representations, (2) foundation model architectural backbones (including 3D spherical transformers, multi-mesh graph neural networks, continuous neural operators, and generative diffusion ensembles), (3) levels of physical law integration (from purely data-driven to soft physical penalties and hybrid PDE solvers), and (4) functional roles of LLMs in scientific reasoning (as direct predictors, contextual enhancers, and autonomous tool-orchestrating agents). Furthermore, we curate standardized operational evaluation protocols (such as WeatherBench 2 and SciTS), contrast model scale against forecast horizon, and identify crucial open frontiers spanning universal cross-physics tokenization, physical conservation guarantees, and trustworthy autonomous scientific discovery.
+\end{abstract}
+
+\begin{IEEEkeywords}
+Scientific Foundation Models, Multimodal Time Series, Spatio-Temporal Modeling, Large Language Models, Scientific Reasoning, Weather and Climate Forecasting, Physics-Informed Machine Learning.
+\end{IEEEkeywords}}
+
+\maketitle
+\IEEEdisplaynontitleabstractindextext
+\IEEEpeerreviewmaketitle
+
+\input{sections/01_introduction.tex}
+\input{sections/02_background.tex}
+\input{sections/03_taxonomy.tex}
+\input{sections/04_core_methods.tex}
+\input{sections/05_domain_applications.tex}
+\input{sections/06_reasoning_llms.tex}
+\input{sections/07_benchmarks.tex}
+\input{sections/08_future_directions.tex}
+\input{sections/09_conclusion.tex}
+
+\bibliographystyle{IEEEtran}
+\bibliography{references}
+
+\end{document}

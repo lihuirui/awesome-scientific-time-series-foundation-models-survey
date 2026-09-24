@@ -1,0 +1,54 @@
+\section{Core Foundation Model Architectures}
+\label{sec:core_methods}
+
+\subsection{3D Spatial and Spherical Transformers}
+Traditional 2D Vision Transformers process planar images by dividing them into uniform patches. However, planetary atmospheric states are inherently three-dimensional, structured across latitude, longitude, and geopotential pressure altitudes.
+
+\subsubsection{Pangu-Weather: 3D Earth-Specific Transformer}
+Bi et al.~\cite{bi2023pangu} introduced Pangu-Weather, the first deep learning weather forecasting system to demonstrably surpass top-tier operational NWP models (ECMWF IFS) in medium-range deterministic forecasting accuracy. Pangu-Weather formulates atmospheric prediction using a 3D Earth-Specific Transformer (3DEST) architecture. The state space is divided into 3D cuboid patches of size $2 \times 4 \times 4$ across vertical levels, latitude, and longitude. To account for inhomogeneous spatial dynamics (e.g., Coriolis force variations across latitudes and atmospheric lapse rates across altitudes), 3DEST replaces standard relative position biases with an Earth-Specific Positional Bias (ESPB) matrix indexed explicitly by pressure level and latitude:
+\begin{equation}
+    \text{Attn}(Q, K, V) = \text{Softmax}\left(\frac{QK^T}{\sqrt{d}} + B_{\text{Earth}}(l_i, l_j, \phi_i, \phi_j)\right)V.
+\end{equation}
+To counteract rapid error accumulation during iterative autoregressive rollout, Pangu-Weather trains four distinct models with lead times of 1, 3, 6, and 24 hours. A greedy temporal aggregation algorithm chains these models to generate 7-day global forecasts in seconds.
+
+\subsubsection{FuXi: Cascade Forecasting System}
+Recognizing that predictive uncertainty compounds non-linearly with lead time, Chen et al.~\cite{chen2023fuxi} developed FuXi, a cascade machine learning system consisting of three specialized Swin Transformer stages: FuXi-Short (0--42 hours), FuXi-Medium (42--120 hours), and FuXi-Long (120--360 hours). By dynamically switching between model weights optimized for different forecasting horizons, FuXi significantly curtails the blurring and spectral dissipation common in long-horizon neural forecasts.
+
+\subsubsection{Aurora: Scaling to Planetary Foundation Models}
+Bodnar et al.~\cite{bodnar2024aurora} demonstrated that scaling principles hold in Earth system modeling by introducing Aurora, a 1.3-billion parameter foundation model. Pretrained on over 1 petabyte of heterogeneous atmospheric data---including ERA5, ECMWF HRES, operational IFS analyses, and NOAA GFS---Aurora incorporates a 3D Perceiver architecture capable of accepting arbitrary combinations of vertical levels and surface variables at $0.1^\circ$ operational resolution ($10\text{ km}$ equivalent).
+
+\subsection{Multi-Mesh Spherical Graph Neural Networks}
+
+\subsubsection{GraphCast: Planetary Multi-Mesh Routing}
+Lam et al.~\cite{lam2023graphcast} pioneered an alternative geometric approach by formulating global weather forecasting over a multi-resolution spherical graph. Standard equirectangular projections concentrate excessive grid cells near the poles while diluting them at the equator. GraphCast circumvents this singularity using an Encode-Process-Decode framework operating on a hierarchical icosahedral mesh:
+\begin{enumerate}
+    \item \textbf{Grid-to-Mesh Encoder}: Maps 0.25$^\circ$ latitude-longitude grid variables onto the vertices of a 6-level refined icosahedral mesh $M_6$ ($40{,}962$ nodes, $122{,}880$ spherical edges).
+    \item \textbf{Multi-Mesh Processor}: Employs 16 layers of homogeneous message passing across all hierarchical mesh levels ($M_0$ to $M_6$). Long-range edges in coarse mesh levels ($M_0, M_1$) facilitate rapid, global information propagation across planetary teleconnection pathways in few message-passing hops.
+    \item \textbf{Mesh-to-Grid Decoder}: Projects refined mesh vertex features back to the 0.25$^\circ$ target grid to predict single-step 6-hour temporal increments $\Delta \mathcal{X}_t$.
+\end{enumerate}
+GraphCast is trained with a 12-step autoregressive loss rollout, enabling robust, physically stable 10-day medium-range forecasts that outperform ECMWF HRES on over 90\% of headline verification variables.
+
+\subsection{Continuous Neural Operators}
+
+\subsubsection{FourCastNet: Adaptive Fourier Neural Operators}
+Pathak et al.~\cite{pathak2022fourcastnet} deployed Adaptive Fourier Neural Operators (AFNO) to solve planetary-scale atmospheric PDEs. Conventional spatial convolutions are intrinsically tied to fixed grid resolutions. In contrast, neural operators approximate non-linear mappings between infinite-dimensional function spaces. AFNO transforms tokenized feature representations into the frequency domain via 2D Fast Fourier Transforms (FFT), applies block-diagonal weight multiplications with soft-thresholding sparsity in the frequency domain, and returns to physical space via inverse FFT:
+\begin{equation}
+    z_{\text{out}}(x) = \mathcal{F}^{-1}\left( \text{SoftThreshold}\left(\mathbf{W} \cdot \mathcal{F}(z_{\text{in}})(k) \right) \right) + \mathbf{W}_s z_{\text{in}}(x).
+\end{equation}
+This formulation provides computational complexity quasi-linear in spatial resolution while demonstrating remarkable zero-shot super-resolution and transferability.
+
+\subsection{Multimodal Masked Autoencoders for Earth Observation}
+In the remote sensing domain, observations arrive as asynchronous, multi-spectral satellite imagery.
+\begin{itemize}
+    \item \textbf{SatMAE}~\cite{cong2022satmae} introduced a temporal and multi-spectral Vision Transformer trained via masked autoencoding. By decoupling spatial, temporal, and spectral positional embeddings, SatMAE processes multi-temporal revisit sequences with high masking ratios (up to 75\%), outperforming supervised baselines on land cover and crop yield estimation.
+    \item \textbf{Presto}~\cite{tseng2023presto} developed a lightweight (1.2M parameters) transformer tailored for pixel-level time series. Presto natively ingests heterogeneous modalities---including Sentinel-1 SAR backscatter, Sentinel-2 multi-spectral bands, elevation, and ERA5 weather---yielding exceptional few-shot transfer performance.
+    \item \textbf{Galileo}~\cite{tseng2025galileo} expanded multi-sensor pretraining across spatial-temporal scales using dual global and local contrastive objectives, enabling unified geospatial segmentation and dynamic flood mapping.
+    \item \textbf{Prithvi}~\cite{jakubik2023prithvi} and its weather-climate counterpart \textbf{Prithvi WxC}~\cite{schmude2024prithviwxc} established open-source geospatial foundation backbones jointly developed by NASA and IBM, scaling to 2.3 billion parameters.
+\end{itemize}
+
+\subsection{Probabilistic Diffusion Generative Ensembles}
+Deterministic models trained with $L_1$ or $L_2$ losses inevitably suffer from variance loss at extended lead times, yielding unphysically smoothed atmospheric fields. Price et al.~\cite{price2023gencast} introduced GenCast, a generative diffusion model that formulates medium-range weather prediction as conditioned score matching on spherical multi-mesh graphs:
+\begin{equation}
+    \nabla_{\mathcal{X}_{t+1}} \log p(\mathcal{X}_{t+1} \mid \mathcal{X}_t, \sigma).
+\end{equation}
+By sampling stochastic trajectories via reverse-time stochastic differential equations (SDEs), GenCast generates physically sharp 50-member ensemble forecasts that preserve energy spectra and reliably capture extreme weather events (e.g., tropical cyclones and extreme wind gusts) across 15-day horizons.

@@ -1,0 +1,21 @@
+\section{Scientific Reasoning LLMs and Autonomous Agents}
+\label{sec:reasoning_llms}
+
+\subsection{The Paradigm Shift: From Numerical Fitting to Scientific Reasoning}
+While foundation backbones excel at numerical continuous pattern matching, complex scientific discovery necessitates logical reasoning, physical hypothesis formulation, and contextual interpretation. Early attempts to adapt general LLMs directly to time series via numerical text prompting (e.g., feeding raw floating-point numbers as text tokens) incurred severe limitations: token sequence inflation, numerical precision truncation, and inability to capture continuous derivatives~\cite{jin2024whatcan}. Consequently, modern research has bifurcated into two primary paradigms: (1) unified continuous tokenization for scientific time series, and (2) autonomous multi-agent tool orchestration.
+
+\subsection{Unified Continuous Tokenization: SciTS and TimeOmni}
+Wu et al.~\cite{wu2025scits} introduced \textbf{SciTS}, the first large-scale cross-disciplinary benchmark designed specifically to evaluate LLMs on scientific time series understanding and generation. Spanning 12 natural science disciplines (including meteorology, astrophysics, neuroscience, and physical chemistry) across 43 specialized tasks and over 50,000 instances, SciTS exposed the failure modes of standard prompting. To resolve these deficiencies, the authors proposed \textbf{TimeOmni}, a unified architecture featuring a multi-scale continuous patch tokenizer that projects 1D and multi-dimensional scientific series into dense semantic embeddings aligned with pre-trained LLM latent spaces. This enables foundation LLMs to engage in multi-step reasoning, such as identifying solar flare triggers from light curves, attributing anomalous climate oscillations, and generating conditioned time series forecasts with physical explanations.
+
+\subsection{Frequency-Aware Contextual Integration: ClimateLLM}
+Rather than treating atmospheric series as unstructured text, Li et al.~\cite{li2025climatellm} introduced \textbf{ClimateLLM}. This framework decomposes multi-station and gridded meteorological sequences into orthogonal frequency bands via Fourier transform modules. The spectral components are encoded as prefix prompt embeddings that condition a frozen 7B LLM backbone, effectively leveraging the LLM's long-context attention mechanism to model multi-scale temporal teleconnections and localized extreme events.
+
+\subsection{Autonomous Multi-Agent Climate Workflows: ClimateAgent}
+Moving beyond single-model inference, Li et al.~\cite{li2025climateagent} introduced \textbf{ClimateAgent}, an autonomous multi-agent orchestration framework for complex climate data science. Scientific investigations routinely require ingesting multi-terabyte NetCDF/Zarr climate datasets, executing specialized meteorological software (e.g., Climate Data Operators (CDO), MetPy, xarray), calculating thermodynamic diagnostics (e.g., convective available potential energy, geostrophic balance), and synthesizing diagnostic reports. ClimateAgent organizes frontier LLMs into a collaborative hierarchy:
+\begin{itemize}
+    \item \textbf{Plan-Agent}: Decomposes high-level natural language scientific research goals into rigorous task dependency graphs.
+    \item \textbf{Data-Agent}: Navigates distributed scientific data archives (Copernicus Climate Data Store, NASA Earthdata) to retrieve reanalysis and satellite products.
+    \item \textbf{Coding-Agent}: Synthesizes and executes Python/Bash diagnostic code in secure sandboxed environments with automated error recovery.
+    \item \textbf{Critic-Agent}: Verifies physical plausibility, checking for energy conservation and unit consistency before assembling peer-review-ready figures and reports.
+\end{itemize}
+Evaluated on the standardized \textit{Climate-Agent-Bench-85}, ClimateAgent demonstrated superior autonomous problem-solving capabilities, marking a transition toward self-directed AI co-scientists in natural Earth systems.

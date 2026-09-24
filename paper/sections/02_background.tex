@@ -1,0 +1,62 @@
+\section{Background and Preliminaries}
+\label{sec:background}
+
+\subsection{Formal Data Modality Formulations}
+Scientific multimodal temporal datasets exhibit diverse mathematical structures depending on observation platforms, sensing geometries, and sampling frequencies. We formalize the four dominant scientific temporal modalities as follows:
+
+\subsubsection{In-Situ Station and Gauge Time Series}
+Discrete ground monitoring networks (e.g., weather stations, hydrological streamflow gauges, ocean buoys) record continuous physical variables at fixed geospatial coordinates $(u_i, v_i)$. An in-situ observation sequence is defined as:
+\begin{equation}
+    \mathbf{X}^{(i)} = \{ \mathbf{x}_t^{(i)} \in \mathbb{R}^{C_{\text{station}}} \}_{t=1}^{T},
+\end{equation}
+where $T$ represents the temporal horizon and $C_{\text{station}}$ denotes the recorded physical channels (e.g., precipitation, river discharge, 2-meter air temperature).
+
+\subsubsection{Gridded Global/Regional Reanalysis Tensors}
+Atmospheric and oceanic numerical simulations discretize the planetary sphere $\mathbb{S}^2$ into a regular latitude-longitude grid with $H$ latitudinal points and $W$ longitudinal points across $L$ vertical vertical pressure levels. The state tensor at time step $t$ is expressed as:
+\begin{equation}
+    \mathcal{X}_t \in \mathbb{R}^{H \times W \times L \times C_{\text{grid}}},
+\end{equation}
+where $C_{\text{grid}}$ incorporates upper-air variables (geopotential height $z$, temperature $T$, zonal and meridional wind components $u, v$, specific humidity $q$) alongside surface diagnostic fields (mean sea-level pressure $msl$, surface solar radiation).
+
+\subsubsection{Multi-Spectral Remote Sensing Cubes}
+Earth observation satellites (e.g., Sentinel-2, Landsat-8) capture surface reflectance over space, time, and electromagnetic spectral bands. A multi-temporal remote sensing observation cube is represented as:
+\begin{equation}
+    \mathcal{S}_{1:T} \in \mathbb{R}^{T \times B \times H_s \times W_s},
+\end{equation}
+where $B$ denotes the number of spectral bands (visible RGB, near-infrared, short-wave infrared, synthetic aperture radar polarization), and $(H_s, W_s)$ denotes the spatial pixel footprint.
+
+\subsubsection{High-Frequency Continuous Waveforms}
+Geophysical and seismological networks deploy seismometers recording ground motion acceleration or velocity across three orthogonal physical axes (Vertical $Z$, North-South $N$, East-West $E$). A continuous seismic waveform segment is formalized as:
+\begin{equation}
+    \mathbf{W} \in \mathbb{R}^{3 \times N_s},
+\end{equation}
+where $N_s = f_s \cdot \Delta \tau$ is the number of discrete digital samples collected at sampling frequency $f_s$ (typically 50--100 Hz).
+
+\subsection{Core Problem Formulations}
+
+\subsubsection{Deterministic Autoregressive Rollout Forecasting}
+\begin{equation}
+    \hat{\mathcal{X}}_{t+1:t+K} = \mathcal{M}_\theta(\mathcal{X}_{t-M+1:t}),
+\end{equation}
+optimized via latitude-weighted multi-step rollout loss:
+\begin{equation}
+    \mathcal{L}_{\text{det}} = \sum_{k=1}^K \lambda_k \|\hat{\mathcal{X}}_{t+k} - \mathcal{X}_{t+k}\|_{\mathbf{W}_{\text{lat}}}^2,
+\end{equation}
+where $\|\cdot\|_{\mathbf{W}_{\text{lat}}}$ represents a latitude-weighted norm accounting for spherical grid cell area convergence toward the poles:
+\begin{equation}
+    w_{\text{lat}}(i) = \frac{\cos(\phi_i)}{\frac{1}{H} \sum_{j=1}^H \cos(\phi_j)}.
+\end{equation}
+
+\subsubsection{Probabilistic Ensemble Generation}
+Because chaotic atmospheric and oceanic dynamics exhibit sensitivity to initial conditions (the butterfly effect), deterministic point forecasts blur at longer lead times. Probabilistic foundation models aim to sample from the conditional predictive distribution:
+\begin{equation}
+    p_\theta(\mathcal{X}_{t+1:t+K} \mid \mathcal{X}_{t-M+1:t}),
+\end{equation}
+minimized using Continuous Ranked Probability Score (CRPS) or diffusion score-matching loss objectives~\cite{price2023gencast}.
+
+\subsubsection{Scientific Question-Answering and Autonomous Reasoning}
+Let $\mathcal{Q}$ represent a natural language scientific inquiry, and $\mathcal{D}_{\text{time}}$ represent an associated temporal or spatio-temporal data sequence. A scientific reasoning LLM $\mathcal{F}_{\text{LLM}}$ generates explanatory reasoning chains and structured conclusions $\mathcal{Y}$:
+\begin{equation}
+    \mathcal{Y} = \mathcal{F}_{\text{LLM}}(\mathcal{Q}, \mathcal{E}(\mathcal{D}_{\text{time}})),
+\end{equation}
+where $\mathcal{E}$ is a modality-specific continuous tokenizer or latent temporal encoder~\cite{wu2025scits}.

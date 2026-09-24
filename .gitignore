@@ -1,0 +1,27 @@
+# Template source files (per COMMON_METHOD.md)
+template/
+
+# Raw cached API payloads (per COMMON_METHOD.md)
+data/raw/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+
+# LaTeX build intermediate files
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.synctex.gz
+*.toc
+
+# OS / Editor files
+.DS_Store
+.vscode/
+.idea/

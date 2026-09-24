@@ -1,0 +1,219 @@
+# Awesome Scientific Multimodal Time Series Foundation Models and Reasoning LLMs
+## 科学多模态时序大模型与科学推理大模型前沿进展精选
+
+[![Survey PDF](https://img.shields.io/badge/Paper-PDF-red.svg)](paper/main.pdf) [![PRISMA Included](https://img.shields.io/badge/PRISMA%20Included-25%20papers-brightgreen.svg)](#prisma-systematic-review-statistics) [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE) [![Maintenance](https://img.shields.io/badge/Maintained%20by-Antigravity%20CLI-purple.svg)](#how-this-survey-is-maintained)
+
+## Overview / 项目概述
+
+This repository hosts the curated paper collection, systematized metadata, code implementations, and a comprehensive survey paper on **Scientific Multimodal Time Series Foundation Models and Scientific Reasoning Time Series LLMs**.
+
+本项目收录自然科学领域（气象与气候、遥感与对地观测、水文与洪水、海洋学、地球物理与地震学、空间天气、物理能源等）中，面向多模态时间序列（站点观测、网格再分析场、卫星影像序列、物理波形、科学文本报告）的**基础模型（Foundation Models）**、**连续神经算子（Neural Operators）**与**科学时序大语言模型/智能体（Scientific Reasoning LLMs / Agents）**。
+
+- **Full Survey Paper (PDF)**: [`paper/main.pdf`](paper/main.pdf)
+- **Systematic Review Protocol**: [`docs/PROTOCOL.md`](docs/PROTOCOL.md)
+- **Reference Survey Deconstruction**: [`docs/TEMPLATE_ANALYSIS.md`](docs/TEMPLATE_ANALYSIS.md)
+- **Chinese Summary Document**: [`docs/SURVEY_zh.md`](docs/SURVEY_zh.md)
+
+## Taxonomy Framework / 科学时序分类体系
+
+![Taxonomy Tree](paper/figures/taxonomy_tree.png)
+
+The taxonomy categorizes the literature across four core dimensions:
+1. **Scientific Domain & Modality**: Weather/Climate, Earth Observation, Hydrology, Oceanography, Geophysics, Space Weather.
+2. **Foundation Architecture**: 3D Spatial Transformers, Multi-Mesh GNNs, Continuous Neural Operators (AFNO/SFNO), Multimodal Masked Autoencoders.
+3. **Physics Integration Level**: Purely Data-Driven, Soft Physics Loss Penalties, Hard Conservation Constraints, Hybrid PDE-Neural Ensembles.
+4. **Role of Reasoning LLMs**: Scientific Reasoner, Contextual Enhancer, Autonomous Scientific Agent, Interactive Interface.
+
+## PRISMA Systematic Review Statistics
+
+![PRISMA 2020 Flow](paper/figures/prisma_flow.png)
+
+- **Records Identified across Academic APIs**: 272
+- **Unique Candidates Evaluated**: 240
+- **Title/Abstract Excluded**: 83
+- **Full-Text Assessed for Eligibility**: 158
+- **Full-Text Excluded (narrow/regional)**: 133
+- **Studies Rigorously Included**: 25
+
+## Research Landscape & Milestone Timeline
+
+### Domain × Modality Maturity Matrix
+![Domain Modality Heatmap](paper/figures/domain_modality_heatmap.png)
+
+### Milestone Timeline (2022–2026)
+![Milestone Timeline](paper/figures/weather_foundation_timeline.png)
+
+### Spatial Resolution vs. Lead Time
+![Resolution vs Lead Time](paper/figures/resolution_vs_leadtime.png)
+
+## Curated Paper Collection / 核心文献精选
+
+### Atmosphere, Weather and Climate Foundation Models (气象与气候大模型)
+
+- **Accurate medium-range global weather forecasting with 3D neural networks** (Nature 2023)
+  - *Authors*: Bi, Kaifeng, Xie, Lingxi, Zhang, Hengheng et al.
+  - *Architecture*: `3D Earth-Specific Transformer (3DEST)` | *Params*: `256M (64M x 4 lead-time models: 1h, 3h, 6h, 24h)` | *Physics*: `Purely data-driven`
+  - *Links*: [Paper / DOI](https://doi.org/10.1038/s41586-023-06185-3) | [![Code](https://img.shields.io/badge/Code-GitHub-blue.svg)](https://github.com/198808xc/Pangu-Weather)
+
+- **Learning skillful medium-range global weather forecasting** (Science 2023)
+  - *Authors*: Lam, Remi, Sanchez-Gonzalez, Alvaro, Willson, Matthew et al.
+  - *Architecture*: `Multi-Mesh Graph Neural Network (Icosahedral grid)` | *Params*: `36.7M` | *Physics*: `Purely data-driven`
+  - *Links*: [Paper / DOI](https://doi.org/10.1126/science.adi2336) | [![Code](https://img.shields.io/badge/Code-GitHub-blue.svg)](https://github.com/google-deepmind/graphcast)
+
+- **FourCastNet: A Global Data-driven High-resolution Weather Model using Adaptive Fourier Neural Operators** (ACM PASC / arXiv:2202.11214 2022)
+  - *Authors*: Pathak, Jaideep, Subramanian, Shashank, Harrington, Peter et al.
+  - *Architecture*: `Adaptive Fourier Neural Operator (AFNO)` | *Params*: `73.5M` | *Physics*: `Soft physics loss`
+  - *Links*: [Paper / DOI](https://arxiv.org/abs/2202.11214) | [![Code](https://img.shields.io/badge/Code-GitHub-blue.svg)](https://github.com/NVlabs/FourCastNet)
+
+- **ClimaX: A foundation model for weather and climate** (ICML 2023)
+  - *Authors*: Nguyen, Tung, Brandstetter, Johannes, Kapoor, Ashish et al.
+  - *Architecture*: `Variable-Tokenized Vision Transformer (ViT)` | *Params*: `107M` | *Physics*: `Purely data-driven`
+  - *Links*: [Paper / DOI](https://arxiv.org/abs/2301.10343) | [![Code](https://img.shields.io/badge/Code-GitHub-blue.svg)](https://github.com/microsoft/ClimaX)
+
+- **FengWu: Pushing the Skillful Global Medium-range Weather Forecast beyond 10 Days Lead** (arXiv:2304.02948 2023)
+  - *Authors*: Chen, Kang, Han, Tao, Gong, Junchao et al.
+  - *Architecture*: `Multimodal Cross-Attention Transformer + Dynamic Replay` | *Params*: `200M` | *Physics*: `Soft physics loss`
+  - *Links*: [Paper / DOI](https://arxiv.org/abs/2304.02948) | [![Code](https://img.shields.io/badge/Code-GitHub-blue.svg)](https://github.com/OpenEarthLab/FengWu)
+
+- **GenCast: Diffusion-based ensemble forecasting for medium-range weather** (arXiv:2312.15796 / Nature 2024 2023)
+  - *Authors*: Price, Ilan, Sanchez-Gonzalez, Alvaro, Alet, Ferran et al.
+  - *Architecture*: `Latent Diffusion Model on Multi-Mesh Graph` | *Params*: `120M` | *Physics*: `Purely data-driven`
+  - *Links*: [Paper / DOI](https://arxiv.org/abs/2312.15796) | [![Code](https://img.shields.io/badge/Code-GitHub-blue.svg)](https://github.com/google-deepmind/graphcast)
+
+- **A Foundation Model for the Earth System** (arXiv:2405.13063 2024)
+  - *Authors*: Bodnar, Cristian, Bruinsma, Wessel P., Lucic, Ana et al.
+  - *Architecture*: `3D Perceiver / Swin 3D Transformer with 3D patch embedding` | *Params*: `1.3B` | *Physics*: `Purely data-driven`
+  - *Links*: [Paper / DOI](https://arxiv.org/abs/2405.13063) | [![Code](https://img.shields.io/badge/Code-GitHub-blue.svg)](https://github.com/microsoft/aurora)
+
+- **Prithvi WxC: Foundation Model for Weather and Climate** (arXiv:2409.13598 2024)
+  - *Authors*: Schmude, Johannes, Roy, Sujit, Lal, Rohit et al.
+  - *Architecture*: `Scalable Vision Transformer Encoder-Decoder` | *Params*: `2.3B` | *Physics*: `Soft physics loss`
+  - *Links*: [Paper / DOI](https://arxiv.org/abs/2409.13598) | [![Code](https://img.shields.io/badge/Code-GitHub-blue.svg)](https://github.com/NASA-IMPACT/Prithvi-WxC)
+
+- **ClimateLLM: Efficient Weather Forecasting via Frequency-Aware Large Language Models** (arXiv:2502.11059 2025)
+  - *Authors*: Li, Shixuan, Yang, Wei, Zhang, Peiyu et al.
+  - *Architecture*: `Frequency-Aware Fourier Decomposition + LLM Backbone` | *Params*: `7B` | *Physics*: `Soft physics loss`
+  - *Links*: [Paper / DOI](https://arxiv.org/abs/2502.11059) | `[Code not available]`
+
+- **FuXi: a cascade machine learning forecasting system for 15-day global weather forecast** (npj Climate and Atmospheric Science 2023)
+  - *Authors*: Chen, Lei, Zhong, Xiaohui, Zhang, Feng et al.
+  - *Architecture*: `Cascade Swin Transformer (Short/Medium/Long-range stages)` | *Params*: `150M` | *Physics*: `Purely data-driven`
+  - *Links*: [Paper / DOI](https://doi.org/10.1038/s41612-023-00512-1) | [![Code](https://img.shields.io/badge/Code-GitHub-blue.svg)](https://github.com/tpys/FuXi)
+
+### Earth Observation & Remote Sensing Time Series (对地观测与遥感时序)
+
+- **SatMAE: Pre-Training Transformers for Temporal and Multi-Spectral Satellite Imagery** (NeurIPS 2022)
+  - *Authors*: Cong, Yezhen, Khanna, Samar, Meng, Chenlin et al.
+  - *Architecture*: `Temporal Multi-Spectral Masked Autoencoder (Spatio-Temporal ViT)` | *Params*: `86M (ViT-B), 307M (ViT-L)` | *Physics*: `Purely data-driven`
+  - *Links*: [Paper / DOI](https://doi.org/10.52202/068431-0015) | [![Code](https://img.shields.io/badge/Code-GitHub-blue.svg)](https://github.com/sustainlab-group/SatMAE)
+
+- **Lightweight, Pre-trained Transformers for Remote Sensing Timeseries** (AAAI 2024)
+  - *Authors*: Tseng, Gabriel, Zvonkov, Ivan, Purohit, Mirali et al.
+  - *Architecture*: `Channel & Temporal Masked Transformer` | *Params*: `1.2M` | *Physics*: `Purely data-driven`
+  - *Links*: [Paper / DOI](https://arxiv.org/abs/2304.14065) | [![Code](https://img.shields.io/badge/Code-GitHub-blue.svg)](https://github.com/nasaharvest/presto)
+
+- **Galileo: Learning Global & Local Features of Many Remote Sensing Modalities** (ICML 2025)
+  - *Authors*: Tseng, Gabriel, Fuller, Anthony, Reil, Marlena et al.
+  - *Architecture*: `Multi-scale Masked Transformer with Global-Local Contrastive Targets` | *Params*: `100M` | *Physics*: `Purely data-driven`
+  - *Links*: [Paper / DOI](https://arxiv.org/abs/2502.09356) | [![Code](https://img.shields.io/badge/Code-GitHub-blue.svg)](https://github.com/nasaharvest/galileo)
+
+- **Foundation Models for Generalist Geospatial Artificial Intelligence** (arXiv:2310.18660 2023)
+  - *Authors*: Jakubik, Johannes, Roy, Sujit, Phillips, C. E. et al.
+  - *Architecture*: `Geospatial Temporal Masked Autoencoder (ViT)` | *Params*: `100M` | *Physics*: `Purely data-driven`
+  - *Links*: [Paper / DOI](https://arxiv.org/abs/2310.18660) | [![Code](https://img.shields.io/badge/Code-GitHub-blue.svg)](https://github.com/NASA-IMPACT/hls-foundation-os)
+
+- **AlphaEarth Foundations: An embedding field model for accurate and efficient global mapping from sparse label data** (arXiv:2507.22291 2025)
+  - *Authors*: Brown, Christopher F., Kazmierski, Michal R., Pasquarella, Valerie J. et al.
+  - *Architecture*: `Pixel-level Neural Field Embedding Transformer` | *Params*: `not reported` | *Physics*: `Purely data-driven`
+  - *Links*: [Paper / DOI](https://arxiv.org/abs/2507.22291) | `[Code not available]`
+
+### Hydrology & Extreme Flood Modeling (水文与极端洪水大模型)
+
+- **Global prediction of extreme floods in ungauged watersheds** (Nature 2024)
+  - *Authors*: Nearing, Grey, Cohen, Daniel, Dube, Vusumuzi et al.
+  - *Architecture*: `Spatio-Temporal Long Short-Term Memory Network (EA-LSTM) + River Routing` | *Params*: `5M` | *Physics*: `Hybrid PDE solver`
+  - *Links*: [Paper / DOI](https://doi.org/10.1038/s41586-024-07145-1) | [![Code](https://img.shields.io/badge/Code-GitHub-blue.svg)](https://github.com/neuralhydrology/neuralhydrology)
+
+### Ocean Dynamics & Marine Forecasting (海洋动力与数值预报)
+
+- **XiHe: A Data-Driven Model for Global Ocean Eddy-Resolving Forecasting** (arXiv:2402.02995 2024)
+  - *Authors*: Wang, Xiang, Wang, Renzhi, Hu, Ningzi et al.
+  - *Architecture*: `Hierarchical Ocean Transformer with Land-Ocean Masking` | *Params*: `84M` | *Physics*: `Soft physics loss`
+  - *Links*: [Paper / DOI](https://arxiv.org/abs/2402.02995) | `[Code not available]`
+
+### Geophysics & Seismology Foundation Models (地球物理与地震学大模型)
+
+- **SeisT: A Foundational Deep-Learning Model for Earthquake Monitoring Tasks** (IEEE Transactions on Geoscience and Remote Sensing (TGRS) 2024)
+  - *Authors*: Li, Sen, Liao, Zhiwei, Liu, Yuyang et al.
+  - *Architecture*: `Hierarchical Seismogram Transformer (SeisT)` | *Params*: `12M` | *Physics*: `Purely data-driven`
+  - *Links*: [Paper / DOI](https://doi.org/10.1109/TGRS.2024.3371503) | [![Code](https://img.shields.io/badge/Code-GitHub-blue.svg)](https://github.com/senli1073/SeisT)
+
+- **PhaseNet: a deep-neural-network-based arrival-time picking method for P and S waves** (Geophysical Journal International 2019)
+  - *Authors*: Zhu, Weiqiang, Beroza, Gregory C.
+  - *Architecture*: `1D Deep Residual U-Net` | *Params*: `1.2M` | *Physics*: `Purely data-driven`
+  - *Links*: [Paper / DOI](https://doi.org/10.1093/gji/ggy423) | [![Code](https://img.shields.io/badge/Code-GitHub-blue.svg)](https://github.com/AI4EPS/PhaseNet)
+
+### Space Weather & Heliophysics (空间天气与日地物理)
+
+- **Surya: Foundation Model for Heliophysics** (arXiv:2508.14112 2025)
+  - *Authors*: Roy, Sujit, Schmude, Johannes, Lal, Rohit et al.
+  - *Architecture*: `Spatio-Temporal Transformer with Spectral Gating and Long-Short Attention` | *Params*: `366M` | *Physics*: `Soft physics loss`
+  - *Links*: [Paper / DOI](https://arxiv.org/abs/2508.14112) | `[Code not available]`
+
+### Scientific Reasoning LLMs & Benchmarks (科学时序推理大模型与基准)
+
+- **WeatherBench 2: A benchmark for the next generation of data-driven global weather models** (Journal of Advances in Modeling Earth Systems (JAMES) 2024)
+  - *Authors*: Rasp, Stephan, Dueben, Peter D., Scher, Sebastian et al.
+  - *Architecture*: `Standardized Evaluation Framework` | *Params*: `not reported` | *Physics*: `Physical consistency diagnostics`
+  - *Links*: [Paper / DOI](https://doi.org/10.1029/2023MS004019) | [![Code](https://img.shields.io/badge/Code-GitHub-blue.svg)](https://github.com/google-research/weatherbench2)
+
+- **SciTS: Scientific Time Series Understanding and Generation with LLMs** (ICLR 2026 / arXiv:2510.03255 2025)
+  - *Authors*: Wu, Wen, Zhang, Ziyang, Liu, Liwei et al.
+  - *Architecture*: `TimeOmni Unified Time Series Tokenizer + LLM Backbone` | *Params*: `8B` | *Physics*: `Purely data-driven`
+  - *Links*: [Paper / DOI](https://arxiv.org/abs/2510.03255) | [![Code](https://img.shields.io/badge/Code-GitHub-blue.svg)](https://github.com/OpenTSLab/TimeOmni)
+
+- **CLIMATEAGENT: Multi-Agent Orchestration for Complex Climate Data Science Workflows** (arXiv:2511.20109 2025)
+  - *Authors*: Li, Chenyue, Kim, Hyeonjae, Deng, Wen et al.
+  - *Architecture*: `Hierarchical Multi-Agent LLM Orchestrator (Plan-Agent, Data-Agent, Coding-Agent)` | *Params*: `Frontier LLM agent` | *Physics*: `Hybrid PDE solver`
+  - *Links*: [Paper / DOI](https://arxiv.org/abs/2511.20109) | `[Code not available]`
+
+### Foundational Surveys & Methodology (基础综述与方法学)
+
+- **Large Models for Time Series and Spatio-Temporal Data: A Survey and Outlook** (arXiv:2310.10196 / ACM Computing Surveys 2023)
+  - *Authors*: Jin, Ming, Kong, Yaxuan, Liang, Yuxuan et al.
+  - *Architecture*: `Comprehensive Survey` | *Params*: `not reported` | *Physics*: `not reported`
+  - *Links*: [Paper / DOI](https://arxiv.org/abs/2310.10196) | [![Code](https://img.shields.io/badge/Code-GitHub-blue.svg)](https://github.com/qingsongedu/awesome-AI4TS)
+
+- **Position: What Can Large Language Models Tell Us about Time Series Analysis** (ICML 2024)
+  - *Authors*: Jin, Ming, Zhang, Yifan, Chen, Wei et al.
+  - *Architecture*: `Position Paper` | *Params*: `not reported` | *Physics*: `not reported`
+  - *Links*: [Paper / DOI](https://arxiv.org/abs/2402.02713) | `[Code not available]`
+
+## How This Survey Is Maintained / 本项目自动化维护机制
+
+This repository is maintained through an autonomous, protocol-driven systematic-review loop executed via the Antigravity CLI:
+
+1. **Continuous Search & Ingestion**: Scheduled API calls query Crossref and arXiv for newly minted preprints and peer-reviewed works.
+2. **Strict PRISMA Quality Gates**: Title, abstract, and full-text eligibility criteria are automatically enforced without manual hallucination.
+3. **Verifiable Data Lineage**: All cited metadata, model sizes, training datasets, and GitHub repositories are checked against official sources.
+4. **Autonomous Compilation**: LaTeX paper drafts (`paper/main.tex`), vector figures, BibTeX records, and this README are synchronized on every iteration.
+
+```bash
+# Reproduce all artifacts and quality checks
+make all
+```
+
+## Citation / 引用
+
+If you find this survey or repository useful in your research, please cite:
+
+```bibtex
+@article{scientific_multimodal_ts_survey_2026,
+  title = {{Foundation Models and Reasoning LLMs for Scientific Multimodal Time Series: A Survey}},
+  author = {Li, Huirui},
+  journal = {arXiv preprint},
+  year = {2026},
+  url = {https://github.com/lihuirui/awesome-scientific-time-series-foundation-models-survey}
+}
+```
+

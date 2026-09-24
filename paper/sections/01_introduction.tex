@@ -1,0 +1,43 @@
+\section{Introduction}
+\label{sec:introduction}
+
+Temporal and spatio-temporal dynamics constitute the empirical foundation of the natural sciences. From the planetary atmospheric circulation driving global weather patterns to the sub-surface acoustic vibrations heralding seismic rupture, physical processes unfold across continuous temporal trajectories and multi-scale spatial coordinates. Over the past several decades, the modeling and prediction of these scientific phenomena have predominantly relied on Numerical Weather Prediction (NWP) and classical numerical differential equation solvers, such as the Integrated Forecasting System (IFS) maintained by the European Centre for Medium-Range Weather Forecasts (ECMWF) and finite-difference hydrodynamic models. While physically principled, numerical solvers incur colossal computational burdens, requiring massive supercomputing clusters to perform high-resolution discretization and step-by-step numerical integration.
+
+In parallel, the broader machine learning community has witnessed a revolution driven by pre-trained foundation models (PFMs) and Large Language Models (LLMs). While foundational models initially transformed natural language processing and computer vision, their underlying principles---self-supervised pretraining on planetary-scale corpora, emergent scaling behaviors, and zero-shot downstream transferability---have rapidly migrated into temporal data mining. Earlier general surveys, notably the seminal work by Jin et al.~\cite{jin2023largemodels} and its position sequel~\cite{jin2024whatcan}, comprehensively charted large models for general time series analysis (LM4TS) and spatio-temporal data mining (LM4STD). However, as highlighted in Table~\ref{tab:survey_comparison}, existing overviews focus heavily on urban computing, human mobility trajectories, traffic sensor networks, and generic 1D benchmark datasets (e.g., electricity, weather station benchmarks, exchange rates).
+
+\begin{table*}[t]
+\centering
+\caption{Comparison of This Survey with Existing Literature and Related Temporal Surveys.}
+\label{tab:survey_comparison}
+\scriptsize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{@{}lp{0.6cm}p{2.2cm}p{2.0cm}p{3.2cm}p{2.0cm}p{3.6cm}@{}}
+\toprule
+\textbf{Survey / Study} & \textbf{Year} & \textbf{Scope Focus} & \textbf{Physical Grounding} & \textbf{Multimodal Modalities} & \textbf{LLM Reasoning} & \textbf{Core Domains Covered} \\
+\midrule
+Jin et al.~\cite{jin2023largemodels} & 2023 & General Spatio-Temporal & Moderate & General Multimodal & Limited & Urban traffic, human trajectory, generic time series \\
+Jin et al.~\cite{jin2024whatcan} & 2024 & LLM for Time Series & Low & Text + 1D Series & Moderate (Position) & Benchmark time series forecasting, tokenization \\
+Rasp et al.~\cite{rasp2024weatherbench2} & 2024 & Weather Benchmark & High (Meteorology) & Gridded NWP Reanalysis & None & Global numerical and ML weather forecasting \\
+\textbf{This Survey} & \textbf{2026} & \textbf{Scientific Multimodal} & \textbf{High (PDEs \& Laws)} & \textbf{Gridded + Satellite + Waveforms + Text} & \textbf{Comprehensive (Agents \& SciTS)} & \textbf{Weather/Climate, Earth Observation, Hydrology, Oceans, Seismology, Heliophysics} \\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+Natural physical systems diverge fundamentally from human-generated temporal sequences across several intrinsic dimensions:
+\begin{enumerate}
+    \item \textbf{Governing Physical Laws and Conservation Constraints}: Physical time series are bounded by fundamental conservation laws of mass, energy, momentum, and moisture flux. Models that learn purely statistical correlations often generate unphysical states, such as negative precipitation or violation of energy conservation over extended rollouts.
+    \item \textbf{High-Dimensional Multimodal Representations}: Scientific investigations integrate heterogeneous observation modalities, including 3D atmospheric pressure tensors (e.g., ERA5 reanalysis with geopotential height, temperature, and wind fields), multi-spectral satellite imagery (e.g., Sentinel-2, Landsat), river gauge discharge records, and continuous seismic waveforms.
+    \item \textbf{Continuous Spatio-Temporal Geometries}: The Earth is a non-Euclidean spherical geometry with topological singularities at the poles, rendering standard 2D Euclidean convolutions and planar patch projections geometrically distorted.
+    \item \textbf{The Need for Scientific Reasoning and Autonomous Discovery}: Beyond numerical point prediction, domain scientists demand causal attribution, physical hypothesis testing, and interactive tool orchestration. This has catalyzed the emergence of scientific reasoning LLMs and autonomous scientific agents capable of operating over complex temporal data.
+\end{enumerate}
+
+To bridge this literature gap, this survey delivers the first systematic, domain-science-centered investigation of foundation models and reasoning LLMs developed for scientific multimodal time series. We synthesize breakthroughs from 2021 through 2026 across atmospheric sciences, Earth observation, hydrology, oceanography, seismology, and heliophysics.
+
+\subsection{Contributions of This Survey}
+The primary contributions of this survey are summarized as follows:
+\begin{itemize}
+    \item \textbf{Domain-Science Centered Scoping}: We delimit the survey strictly to natural physical systems, explicitly analyzing the coupling between continuous physics, governing equations, and deep representation architectures.
+    \item \textbf{Four-Dimensional Taxonomy Framework}: We establish an orthogonal classification scheme covering (1) Scientific Domains and Modalities, (2) Foundation Model Architectures, (3) Physics Integration Levels, and (4) Functional Roles of Reasoning LLMs.
+    \item \textbf{Systematic Review Protocol}: Adhering to PRISMA 2020 standards, every candidate study is screened against strict empirical criteria and validated via official academic API records.
+    \item \textbf{Synthesis of Evaluation Protocols and Frontiers}: We analyze standardized scientific benchmarks (such as WeatherBench 2 and SciTS), map spatial resolution against maximum forecast lead time, and delineate critical open challenges in physical conservation, multi-physics tokenization, and autonomous scientific discovery.
+\end{itemize}
