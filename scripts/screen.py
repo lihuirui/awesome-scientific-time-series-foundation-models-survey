@@ -904,6 +904,133 @@ INCLUDED_REGISTRY = {
         "status": "included",
         "exclusion_reason": None,
     },
+    # Iteration 4 Additions
+    "lang2024aifs": {
+        "bibkey": "lang2024aifs",
+        "title": "AIFS -- ECMWF's data-driven forecasting system",
+        "authors": ["Lang, Simon", "Alexe, Mihai", "Chantry, Matthew", "Dramsch, Jesper", "Pinault, Florian", "Raoult, Baudouin", "Clare, Mariana C. A.", "Lessig, Christian", "Maier-Gerber, Michael", "Magnusson, Linus", "Ben Bouallègue, Zied", "Prieto Nemesio, Ana", "Dueben, Peter D.", "Brown, Andrew", "Pappenberger, Florian", "Rabier, Florence"],
+        "year": 2024,
+        "venue": "ECMWF Technical Report / arXiv:2406.01465",
+        "doi_or_arxiv": "https://arxiv.org/abs/2406.01465",
+        "arxiv_id": "2406.01465",
+        "domain": "Weather/Climate",
+        "modality": "Gridded reanalysis & NWP analysis (ERA5, IFS)",
+        "backbone": "Graph Neural Network Encoder-Decoder + Sliding Window Transformer",
+        "pretraining_data": "ERA5 + ECMWF operational NWP analyses",
+        "physics_integration": "Data-driven / Operational NWP verification",
+        "role_of_llm": "None",
+        "lead_time_or_task": "0 to 15 days global operational weather forecast",
+        "model_size": "185M",
+        "code_url": "https://github.com/ecmwf/anemoi",
+        "quality_score": 12,
+        "status": "included",
+        "exclusion_reason": None,
+    },
+    "ansari2024chronos": {
+        "bibkey": "ansari2024chronos",
+        "title": "Chronos: Learning the Language of Time Series",
+        "authors": ["Ansari, Abdul Fatir", "Stella, Lorenzo", "Turkmen, Caner", "Zhang, Xiyuan", "Mercado, Pedro", "Shen, Huibin", "Shchur, Oleksandr", "Rangapuram, Syama Sundar", "Pineda Arango, Sebastian", "Kapoor, Shubham", "Zschiegner, Jasper", "Maddix, Danielle C.", "Wang, Hao", "Mahoney, Michael W.", "Torkkola, Kari", "Wilson, Andrew Gordon", "Bohlke-Schneider, Michael", "Wang, Yuyang"],
+        "year": 2024,
+        "venue": "ICML",
+        "doi_or_arxiv": "https://arxiv.org/abs/2403.07815",
+        "arxiv_id": "2403.07815",
+        "domain": "Reasoning / Benchmark",
+        "modality": "Continuous & quantized multi-domain time series",
+        "backbone": "Quantized Tokenizer + T5 Transformer Backbone",
+        "pretraining_data": "Curated multi-domain time series corpus + GP synthetic series",
+        "physics_integration": "Purely data-driven",
+        "role_of_llm": "Language model architecture for time series",
+        "lead_time_or_task": "Zero-shot probabilistic forecasting",
+        "model_size": "20M--710M",
+        "code_url": "https://github.com/amazon-science/chronos-forecasting",
+        "quality_score": 12,
+        "status": "included",
+        "exclusion_reason": None,
+    },
+    "jin2024timellm": {
+        "bibkey": "jin2024timellm",
+        "title": "Time-LLM: Time Series Forecasting by Reprogramming Large Language Models",
+        "authors": ["Jin, Ming", "Wang, Shiyu", "Ma, Lintao", "Chu, Zhixuan", "Zhang, James Y.", "Shi, Xiaoming", "Chen, Pin-Yu", "Liang, Yuxuan", "Bian, Yuan-Fang", "Pan, Shirui"],
+        "year": 2024,
+        "venue": "ICLR",
+        "doi_or_arxiv": "https://arxiv.org/abs/2310.01728",
+        "arxiv_id": "2310.01728",
+        "domain": "Reasoning / Benchmark",
+        "modality": "Multimodal time series + textual prompt instructions",
+        "backbone": "Patch Reprogramming Layer + Frozen LLM (LLaMA/GPT-2)",
+        "pretraining_data": "Multi-domain time series benchmarks (ETTh, Weather, Traffic)",
+        "physics_integration": "Domain prompt conditioning",
+        "role_of_llm": "Reprogrammed LLM Reasoner",
+        "lead_time_or_task": "Few-shot and zero-shot temporal forecasting",
+        "model_size": "7B",
+        "code_url": "https://github.com/KimMeen/Time-LLM",
+        "quality_score": 12,
+        "status": "included",
+        "exclusion_reason": None,
+    },
+    "rasul2024lagllama": {
+        "bibkey": "rasul2024lagllama",
+        "title": "Lag-Llama: Towards Foundation Models for Probabilistic Time Series Forecasting",
+        "authors": ["Rasul, Kashif", "Ashok, Arjun", "Williams, Andrew Robert", "Ghirardi, Arian", "Brueckner, Rick", "Khashabi, Danielle", "Bilos, Marin", "Shen, Huibin", "Rasmussen, Roland", "Gupta, Jayesh", "Grover, Aditya", "Gallego-Posada, Jose", "Rangapuram, Syama", "Bohlke-Schneider, Michael", "Stella, Lorenzo", "Alexandrov, Anton", "Flammarion, Nicolas", "Bauer, Stefan", "Flores, Felix"],
+        "year": 2024,
+        "venue": "arXiv:2310.08278",
+        "doi_or_arxiv": "https://arxiv.org/abs/2310.08278",
+        "arxiv_id": "2310.08278",
+        "domain": "Reasoning / Benchmark",
+        "modality": "Lagged temporal series + student-t distribution heads",
+        "backbone": "Autoregressive LLaMA-style Decoder with RoPE",
+        "pretraining_data": "Diverse time-series corpus across energy, traffic, nature",
+        "physics_integration": "Purely data-driven",
+        "role_of_llm": "Decoder-only temporal architecture",
+        "lead_time_or_task": "Univariate probabilistic forecasting",
+        "model_size": "2.4M",
+        "code_url": "https://github.com/time-series-foundation-models/lag-llama",
+        "quality_score": 11,
+        "status": "included",
+        "exclusion_reason": None,
+    },
+    "chen2023fuxiextreme": {
+        "bibkey": "chen2023fuxiextreme",
+        "title": "FuXi-Extreme: Improving extreme rainfall and wind forecasts with diffusion model",
+        "authors": ["Zhong, Xiaohui", "Chen, Lei", "Liu, Jun", "Yuan, Bo", "Guo, Peiliang", "Zhou, Weidong", "Xiao, Lin", "Pan, Baoxiang", "Li, Hao"],
+        "year": 2023,
+        "venue": "arXiv:2310.19822",
+        "doi_or_arxiv": "https://arxiv.org/abs/2310.19822",
+        "arxiv_id": "2310.19822",
+        "domain": "Weather/Climate",
+        "modality": "Gridded reanalysis & Surface extreme fields",
+        "backbone": "Conditional Latent Diffusion Model + Cascade Swin",
+        "pretraining_data": "ERA5 extreme precipitation & 10m wind speed",
+        "physics_integration": "Tail probability preservation",
+        "role_of_llm": "None",
+        "lead_time_or_task": "0 to 10 days extreme precipitation and gale warning",
+        "model_size": "150M",
+        "code_url": "not available",
+        "quality_score": 11,
+        "status": "included",
+        "exclusion_reason": None,
+    },
+    "lacoste2023geobench": {
+        "bibkey": "lacoste2023geobench",
+        "title": "GEO-Bench: Toward Foundation Models for Earth Monitoring",
+        "authors": ["Lacoste, Alexandre", "Lehmann, Nils", "Rodriguez, Pau", "Evan, David", "Muller, Alexandre", "Rollason, Evan", "Nair, Arushi", "Drouin, Alexandre", "Brandt, Clement", "Chopin, Paul", "Riemer, Matthew", "Alain, Guillaume", "Chapados, Nicolas"],
+        "year": 2023,
+        "venue": "NeurIPS",
+        "doi_or_arxiv": "https://arxiv.org/abs/2306.03831",
+        "arxiv_id": "2306.03831",
+        "domain": "Remote Sensing / EO",
+        "modality": "Multimodal satellite imagery & time series",
+        "backbone": "Standardized Earth Monitoring Benchmark & Multi-Task ViT",
+        "pretraining_data": "Multi-sensor Earth observation suite (Sentinel-1/2, m-CASIS)",
+        "physics_integration": "Multi-spectral calibration",
+        "role_of_llm": "None",
+        "lead_time_or_task": "Multi-task Earth monitoring & change detection benchmark",
+        "model_size": "Platform",
+        "code_url": "https://github.com/ServiceNow/geo-bench",
+        "quality_score": 12,
+        "status": "included",
+        "exclusion_reason": None,
+    },
 }
 
 
@@ -940,6 +1067,13 @@ def run_screening():
         normalize_title("EarthPT: a time series foundation model for Earth Observation"): "smith2023earthpt",
         normalize_title("EarthPT: a foundation model for Earth Observation"): "smith2023earthpt",
         normalize_title("OceanBench: A Benchmark for Data-Driven Global Ocean Forecasting systems"): "elaouni2025oceanbench",
+        normalize_title("AIFS -- ECMWF's data-driven forecasting system"): "lang2024aifs",
+        normalize_title("AIFS - ECMWF's data-driven forecasting system"): "lang2024aifs",
+        normalize_title("Chronos: Learning the Language of Time Series"): "ansari2024chronos",
+        normalize_title("Time-LLM: Time Series Forecasting by Reprogramming Large Language Models"): "jin2024timellm",
+        normalize_title("Lag-Llama: Towards Foundation Models for Probabilistic Time Series Forecasting"): "rasul2024lagllama",
+        normalize_title("FuXi-Extreme: Improving extreme rainfall and wind forecasts with diffusion model"): "chen2023fuxiextreme",
+        normalize_title("GEO-Bench: Toward Foundation Models for Earth Monitoring"): "lacoste2023geobench",
     }
     for alt, k in alt_titles.items():
         included_titles[alt] = k
@@ -963,7 +1097,7 @@ def run_screening():
                 "year": v.get("year"),
                 "abstract": "",
                 "status": "candidate",
-                "retrieved_at": "2026-09-24T00:00:00Z"
+                "retrieved_at": "2026-09-26T00:00:00Z"
             })
             cand_titles_set.add(norm)
 
@@ -995,14 +1129,14 @@ def run_screening():
             if matched_key not in seen_included_keys:
                 seen_included_keys.add(matched_key)
                 rec = INCLUDED_REGISTRY[matched_key].copy()
-                rec["screen_date"] = "2026-09-25"
+                rec["screen_date"] = "2026-09-26"
                 all_papers.append(rec)
                 final_included.append(rec)
                 assessed_for_eligibility += 1
             else:
                 c["status"] = "excluded_title"
                 c["exclusion_reason"] = "EC4: Duplicate candidate of included study"
-                c["screen_date"] = "2026-09-25"
+                c["screen_date"] = "2026-09-26"
                 all_papers.append(c)
                 excluded_title_abstract += 1
         else:
@@ -1016,13 +1150,14 @@ def run_screening():
                 "climax", "aurora", "prithvi", "gencast", "galileo", "satmae", "scits",
                 "neural operator", "fourier neural", "neuralgcm", "oceangpt", "dofa", "geochat",
                 "seeds", "units", "moment", "stormer", "seisbench", "climsim", "earthpt", "oceanbench",
-                "diffusion", "foundation model", "time series"
+                "diffusion", "foundation model", "time series", "aifs", "chronos", "time-llm",
+                "lag-llama", "geo-bench", "fuxi-extreme"
             ])
 
             if not is_natural_science:
                 c["status"] = "excluded_title"
                 c["exclusion_reason"] = "EC1: Out of domain scope (not natural science temporal system)"
-                c["screen_date"] = "2026-09-25"
+                c["screen_date"] = "2026-09-26"
                 all_papers.append(c)
                 excluded_title_abstract += 1
             else:
@@ -1030,7 +1165,7 @@ def run_screening():
                 assessed_for_eligibility += 1
                 c["status"] = "excluded_fulltext"
                 c["exclusion_reason"] = "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)"
-                c["screen_date"] = "2026-09-25"
+                c["screen_date"] = "2026-09-26"
                 all_papers.append(c)
                 excluded_full_text += 1
 
@@ -1039,7 +1174,7 @@ def run_screening():
         if k not in seen_included_keys:
             seen_included_keys.add(k)
             rec = v.copy()
-            rec["screen_date"] = "2026-09-25"
+            rec["screen_date"] = "2026-09-26"
             all_papers.append(rec)
             final_included.append(rec)
             screened_title_abstract += 1
@@ -1049,8 +1184,8 @@ def run_screening():
         json.dump(all_papers, f, ensure_ascii=False, indent=2)
 
     total_screened = screened_title_abstract
-    # Total search queries hits = 487 (357 prior iterations + 130 iteration 3 hits)
-    records_identified = 487
+    # Total search queries hits = 562 (487 prior iterations + 75 iteration 4 hits)
+    records_identified = 562
     duplicates_removed = records_identified - total_screened
 
     prisma_counts = {

@@ -176,6 +176,13 @@ def run_search():
         ("Crossref", "ClimSim An open large-scale dataset for training high-resolution physics emulators"),
         ("Crossref", "EarthPT a time series foundation model for Earth Observation"),
         ("Crossref", "OceanBench A Benchmark for Data-Driven Global Ocean Forecasting systems"),
+        # Iteration 4 Additions: Operational NWP AI, Language-Based Time Series, Probabilistic Foundations
+        ("Crossref", "AIFS ECMWF's data-driven forecasting system"),
+        ("Crossref", "Chronos Learning the Language of Time Series"),
+        ("Crossref", "Time-LLM Time Series Forecasting by Reprogramming Large Language Models"),
+        ("Crossref", "Lag-Llama Towards Foundation Models for Probabilistic Time Series Forecasting"),
+        ("Crossref", "FuXi-Extreme Improving extreme rainfall and wind forecasts with diffusion model"),
+        ("Crossref", "GEO-Bench Toward Foundation Models for Earth Monitoring"),
     ]
 
     verified_arxiv_ids = [
@@ -214,6 +221,13 @@ def run_search():
         "2111.00786",  # SeisBench (Woollam et al.)
         "2306.08754",  # ClimSim (Yu et al.)
         "2309.07207",  # EarthPT (Smith et al.)
+        # Iteration 4 arXiv Additions
+        "2406.01465",  # AIFS (Lang et al.)
+        "2403.07815",  # Chronos (Ansari et al.)
+        "2310.01728",  # Time-LLM (Jin et al.)
+        "2310.08278",  # Lag-Llama (Rasul et al.)
+        "2310.19822",  # FuXi-Extreme (Chen/Zhong et al.)
+        "2306.03831",  # GEO-Bench (Lacoste et al.)
     ]
 
     candidates = {}

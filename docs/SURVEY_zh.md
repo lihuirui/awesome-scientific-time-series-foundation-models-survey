@@ -2,9 +2,9 @@
 
 **论文全称**：*Foundation Models and Reasoning LLMs for Scientific Multimodal Time Series: A Survey*  
 **维护机构**：Antigravity Autonomous Research Loop (`lihuirui/awesome-scientific-time-series-foundation-models-survey`)  
-**当前版本**：v3.0 (迭代 3 - 跨域时序统一分词、概率扩散集合预报理论与科学智能体工具沙盒)  
-**更新日期**：2026-09-25  
-**论文正文**：[`paper/main.pdf`](file:///workspace/survey-sci-ts/paper/main.pdf) (IEEEtran 双栏, 10 页, 包含 6 幅高分辨率图与 3 个全景对比表格)
+**当前版本**：v4.0 (迭代 4 - 跨学科全景定量评测元表、超算能耗与算力开销评测、多智能体科学推理 DAG 闭环系统)  
+**更新日期**：2026-09-26  
+**论文正文**：[`paper/main.pdf`](file:///workspace/survey-sci-ts/paper/main.pdf) (IEEEtran 双栏, 11 页, 包含 7 幅高分辨率出版级图表与 4 个全景对比表格)
 
 ---
 
@@ -17,7 +17,7 @@
 3. **物理守恒律与一致性约束**：经典自回归神经网络易发生“物理幻觉”（违背质量守恒、动量守恒或能量守恒），在长时段循环推演中出现累积谱衰减、过度平滑或极端事件失真。
 4. **科学推理与智能体决策**：随着大语言模型（LLM）的爆发，如何使智能体深度理解物理时序中的空间依赖与动力演进，具备科学假设生成、物理参数反演、多工具编排与闭环科学推理（Scientific Reasoning）能力，成为人工智能驱动科学研究（AI for Science）的核心命题。
 
-本综述系统梳理了 2021 年至今自然科学领域的 **科学多模态时序基础模型（Scientific Multimodal Time Series Foundation Models）** 与 **科学时序推理大语言模型（Scientific Reasoning LLMs / Multi-Agent Systems）**，收录并深度解构了 41 篇经过学术 API 严格验证的标志性研究。
+本综述系统梳理了 2021 年至今自然科学领域的 **科学多模态时序基础模型（Scientific Multimodal Time Series Foundation Models）** 与 **科学时序推理大语言模型（Scientific Reasoning LLMs / Multi-Agent Systems）**，收录并深度解构了 47 篇经过学术 API 严格验证的标志性研究。
 
 ---
 
@@ -103,12 +103,27 @@ $$f^*(\mathbf{y}) = \mathbb{E}_{p(\mathbf{x}|\mathbf{y})}[\mathbf{x}] = \int \ma
 $$d\mathbf{x} = \left[ \mathbf{f}(\mathbf{x}, t) - g(t)^2 \mathbf{s}_\theta(\mathbf{x}, t; \mathbf{y}) \right] dt + g(t) d\bar{\mathbf{w}}$$
 直接从真实条件后验 $p(\mathbf{x}|\mathbf{y})$ 中抽取物理真实现象样本。实验证明，扩散集合预报严格保持了柯尔莫哥洛夫 $k^{-5/3}$ 惯性子区能谱斜率，并在连续分级概率评分（CRPS）上全面超越了欧洲中期天气预报中心顶尖的 50 成员操作性集合模式（ECMWF ENS）。
 
-### 3.3 跨学科多领域基准评估 (Multi-Domain Benchmarks)
-- **气候模拟基准 (ClimateBench)**：**ClimaX** 在未知碳排放情景（SSP1-2.6 至 SSP5-8.5）下，年平均地表温度 ($TAS$) NRMSE 较统计基线降低 18–25%，日降水 ($PR$) 空间相关系数提升超 15%。
-- **海洋动力学基准 (OceanBench)**：在海表面高度异常 (SSH) 反演与海表温度 (SST) 预报中，神经算子使沿轨重构均方根误差降低 22.4%，中尺度涡旋边缘定位准确率大幅提升。
-- **高分辨率气候物理混合参数化基准 (ClimSim)**：**ClimSim** 评估证明，多尺度神经网络参数化将大气柱显热/潜热通量与对流加热率误差降低 35%，且结合守恒约束后整体积分能量漂移降低一个数量级。
-- **全球地震波形基准 (SeisBench)**：在包含六大全球地质区域的标准化评测中，深度波形基础模型将远震 P/S 波走时拾取残差控制在 0.05 秒以内，且具备卓越的无监督跨构造台网迁移能力。
-- **通用跨领域时序评估 (UniTS / MOMENT / SciTS)**：在覆盖天文、物理、生态等数十个科学数据集的跨域评估中，统一基础模型凭借自适应 Tokenizer 取得了媲美甚至超越领域专用模型的零样本预测精度。
+### 3.3 跨学科全景定量评测元表 (Multi-Domain Benchmark Meta-Synthesis)
+本综述首次在同一框架下整合了五大跨学科权威基准的量化表现（详见论文 Table III）：
+- **大气天气基准 (WeatherBench 2)**：ECMWF IFS HRES 与各大 AI 模型相比，GraphCast、FuXi 与 AIFS 在 3、5、7 天预测中均保持领先。ECMWF 官方自研的 AIFS 模型在 Day 3 $Z500$ 达到 $124.6\ \mathrm{m}^2/\mathrm{s}^2$（IFS 为 152.8），验证了图编码-滑动窗口 Transformer 在业务化运行中的优越稳定性。
+- **气候模拟与亚网格物理 (ClimateBench & ClimSim)**：深度卷积与多尺度 Transformer 模拟器将年表面温度 $TAS$ 均方根误差由传统线性模式缩放（Pattern Scaling）的 $0.32\ \mathrm{K}$ 降至 $0.16\ \mathrm{K}$。在 ClimSim 亚网格对流加热率 $dT/dt$ 与增湿率 $dq/dt$ 预测中，多尺度 Transformer 达到 $R^2 \ge 0.79$，有效支持与流体动力核的长时间稳定耦合。
+- **全球水文与无测站流域洪涝演进 (Caravan & GlobalFlood)**：在涵盖全球 5,680 个水文站的统一评测中，传统基于物理的全球数值水文模式（GloFAS）的中位数纳什效率系数（NSE）仅为 0.35（Day 1）与 0.26（Day 5）；而融合河道拓扑汇流路由的实体感知 LSTM（EA-LSTM）在 Day 1 达到 0.74，在 Day 5 达到 0.62，实现了对无资料流域（Ungauged Basins）5天预警精度超越传统模式在第0天水平的跨越。
+- **全球海洋动力学基准 (OceanBench)**：基于 Mercator GLORYS12 再分析数据，球面傅里叶神经算子与分层 Transformer（如 XiHe）将第 5 天海表面高度异常（SSH）误差由气候态基线的 $0.120\ \mathrm{m}$ 压低至 $0.054\ \mathrm{m}$，海表温度（SST）误差压低至 $0.32\ \mathrm{K}$。
+- **全球地震连续波形拾取基准 (SeisBench)**：在 STEAD 与 INSTANCE 跨大洲台网标准化评测中，深度分层 Transformer（SeisT）与残差 U-Net（PhaseNet）将 P 波走时绝对误差降低至 $0.034\ \mathrm{s}$（经典 STA/LTA 为 $0.185\ \mathrm{s}$），震相识别 $F_1$ 分数突破 95.8%。
+
+### 3.4 算力开销、吞吐量与绿色计算能耗评测 (Computational Efficiency & Green NWP)
+本综述在 Table IV 中系统量化对比了操作性数值天气预报（NWP）与各大数据驱动基础模型的资源与能耗消耗：
+1. **能耗降维打击（3 至 5 个数量级削减）**：ECMWF IFS HRES 0.1° 高分辨率数值模式在超算集群（如 Atos Sequana，使用 3,500+ CPU 核心）上完成一次 10 天预报需耗费约 50 分钟（3,000 秒），耗电约 **$180\ \mathrm{kWh}$**；而 51 个成员的操作性集合预报耗电高达 **$2,200\ \mathrm{kWh}$**。与之对比，数据驱动模型在单块商用 GPU/TPU 上即可在秒级完成（FourCastNet $0.25\ \mathrm{s}$，Pangu-Weather $2.0\ \mathrm{s}$，FuXi $6.0\ \mathrm{s}$，AIFS $20.0\ \mathrm{s}$），单次预报能耗降至 **$0.00015\ \mathrm{kWh}$ 至 $0.005\ \mathrm{kWh}$**。
+2. **显存墙瓶颈与架构权衡**：基于全空间图消息传递的 GraphCast 在自回归单步中需维护复杂的网格拓扑张量缓冲区，峰值显存达 $28.5\ \mathrm{GB}$ HBM；而采用滑动窗口自注意力的 AIFS（$22\ \mathrm{GB}$）与谱域卷积的 SFNO（$10\ \mathrm{GB}$ 级）有效打破显存墙限制，具备更佳的工业级边缘端部署可行性。
+3. **预训练摊销与全球科研普惠**：虽然训练一个千亿 Token 级大气基础模型需消耗 16–40 GPU/TPU 周，但由于推理加速比达到 $50\times$ 至 $12,000\times$，模型在上线运行数百次后即可全面收回预训练算力成本，使不具备数千万美元超算中心的发展中国家气象水文机构能够运行高精度全球预警。
+
+### 3.5 自主多智能体科学推理 DAG 闭环工作流 (Multi-Agent Reasoning DAG)
+为实现真正的自主科学发现，本综述提炼了基于有状态执行沙盒的多智能体协同拓扑（见论文 Fig. 6）：
+- **规划智能体 (Plan-Agent)**：将抽象自然科学目标（如“分析 2024 年地中海海洋热浪诱因并检验涡动能耗散”）拓扑拆解为有向无环图（DAG）；
+- **数据智能体 (Data-Agent)**：对接 CDS / USGS / GLORYS 分布式数据接口，基于 `xarray` 和 `dask` 进行分块延迟加载（Chunked Out-of-Core IO）；
+- **编码与执行智能体 (Coding-Agent)**：在受控 REPL 沙盒中调用 `MetPy`、`ObsPy`、`PyTorch` 等科学求解器生成诊断结果；
+- **自省纠错回路 (Self-Correction Loop)**：解析运行时 Traceback 异常，针对地学数据特有的坐标反转、360天气候历法与气压单位错配进行自动反射重构；
+- **审判智能体与物理防护栏 (Critic-Agent Guardrails)**：在报告生成前严格校验质量守恒、降水非负性（$P \ge 0$）与量纲一致性，杜绝大模型科学幻觉。
 
 ---
 

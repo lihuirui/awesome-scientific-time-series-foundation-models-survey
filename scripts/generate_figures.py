@@ -298,11 +298,15 @@ def plot_weather_foundation_timeline():
         ("Prithvi-100M", "2023-10", "Geospatial ViT", 2023.82, -2.7, "#0D9488"),
         ("GenCast", "2023-12", "Diffusion Ensemble", 2023.95, 1.4, "#DC2626"),
         ("Stormer", "2023-12", "Random Patch ViT", 2023.98, -1.4, "#B45309"),
+        ("Time-LLM", "2023-10", "Reprogrammed LLM", 2023.80, 1.4, "#2563EB"),
+        ("FuXi-Extreme", "2023-10", "Extreme Diffusion", 2023.85, -1.8, "#DC2626"),
         ("MOMENT", "2024-02", "Open TS Foundation", 2024.12, 2.5, "#059669"),
         ("UniTS", "2024-03", "Unified Multi-Task", 2024.20, -2.4, "#7C3AED"),
+        ("Chronos", "2024-03", "Quantized LM TS", 2024.22, 1.6, "#D97706"),
         ("DOFA", "2024-03", "Plasticity EO", 2024.25, 1.3, "#B45309"),
         ("GlobalFlood", "2024-03", "Ungauged Flood AI", 2024.28, -1.5, "#0284C7"),
         ("Aurora", "2024-05", "1.3B 3D Perceiver", 2024.40, 2.7, "#7C3AED"),
+        ("AIFS", "2024-06", "ECMWF GNN-Transformer", 2024.48, 1.5, "#0D9488"),
         ("NeuralGCM", "2024-07", "Hybrid PDE-AI", 2024.55, -2.6, "#6366F1"),
         ("OceanGPT", "2024-08", "Ocean Science LLM", 2024.62, 1.5, "#0891B2"),
         ("Prithvi WxC", "2024-09", "2.3B Climate Model", 2024.72, 2.8, "#D97706"),
@@ -355,6 +359,8 @@ def plot_resolution_vs_leadtime():
         {"name": "FengWu", "res": 0.25, "lead": 10.75, "params": 200, "col": "#7C3AED"},
         {"name": "GenCast", "res": 0.25, "lead": 15, "params": 120, "col": "#E11D48"},
         {"name": "Aurora", "res": 0.10, "lead": 10, "params": 1300, "col": "#0284C7"},
+        {"name": "AIFS", "res": 0.25, "lead": 15, "params": 185, "col": "#0D9488"},
+        {"name": "FuXi-Extreme", "res": 0.25, "lead": 10, "params": 150, "col": "#DC2626"},
         {"name": "NeuralGCM", "res": 0.70, "lead": 15, "params": 14.5, "col": "#6366F1"},
         {"name": "XiHe (Ocean)", "res": 0.083, "lead": 10, "params": 84, "col": "#0D9488"},
         {"name": "GlobalFlood", "res": 0.10, "lead": 7, "params": 5, "col": "#B45309"},
@@ -393,6 +399,100 @@ def plot_resolution_vs_leadtime():
     plt.savefig(os.path.join(FIG_DIR, "resolution_vs_leadtime.pdf"))
     plt.close()
     print("Generated resolution_vs_leadtime.png/.pdf")
+
+
+def plot_agent_reasoning_dag():
+    fig, ax = plt.subplots(figsize=(12, 7.5), dpi=300)
+    ax.set_xlim(0, 100)
+    ax.set_ylim(0, 100)
+    ax.axis("off")
+
+    def draw_box(x, y, w, h, text, title=None, facecolor="#F0F4F8", edgecolor="#1E3A8A", titlecolor="#0F172A"):
+        rect = patches.FancyBboxPatch(
+            (x, y), w, h,
+            boxstyle="round,pad=1.2,rounding_size=1.8",
+            facecolor=facecolor, edgecolor=edgecolor, linewidth=1.6
+        )
+        ax.add_patch(rect)
+        if title:
+            ax.text(x + w / 2, y + h - 2.5, title, ha="center", va="top",
+                    fontsize=9.5, fontweight="bold", color=titlecolor)
+            ax.text(x + w / 2, y + (h - 4.2) / 2, text, ha="center", va="center",
+                    fontsize=8.5, color="#1E293B", multialignment="center")
+        else:
+            ax.text(x + w / 2, y + h / 2, text, ha="center", va="center",
+                    fontsize=8.5, color="#1E293B", multialignment="center")
+
+    def draw_arrow(x1, y1, x2, y2, color="#475569", label=None, label_offset=(0, 2), style="-|>", lw=1.8):
+        ax.annotate("", xy=(x2, y2), xytext=(x1, y1),
+                    arrowprops=dict(arrowstyle=style, color=color, lw=lw, mutation_scale=14))
+        if label:
+            ax.text((x1 + x2) / 2 + label_offset[0], (y1 + y2) / 2 + label_offset[1], label,
+                    ha="center", va="center", fontsize=8.0, fontweight="bold", color=color,
+                    bbox=dict(boxstyle="round,pad=0.2", facecolor="white", edgecolor="none", alpha=0.9))
+
+    # Title
+    ax.text(50, 96.5, "Autonomous Multi-Agent Scientific Reasoning DAG & Verification Loop",
+            ha="center", va="top", fontsize=13, fontweight="bold", color="#0F172A")
+
+    # 1. Scientific Objective
+    draw_box(4, 76, 26, 15,
+             "Natural Science Research Query\nSpatio-Temporal Bounds & Events\n(e.g., Extreme Heatwave / Vortex)",
+             "Scientific Task & Context", facecolor="#EEF2FF", edgecolor="#4338CA", titlecolor="#312E81")
+
+    # 2. Plan-Agent
+    draw_box(37, 76, 26, 15,
+             "Hierarchical Goal Decomposition\nTopological Task Scheduling\nDAG Dependency Formulation",
+             "1. Plan-Agent (DAG Planning)", facecolor="#EFF6FF", edgecolor="#2563EB", titlecolor="#1E40AF")
+
+    # 3. Data-Agent
+    draw_box(70, 76, 26, 15,
+             "CDS, USGS, GLORYS Retrieval\nNetCDF/Zarr Out-of-Core IO\nxarray & dask Tensor Chunking",
+             "2. Data-Agent (Data Sourcing)", facecolor="#ECFDF5", edgecolor="#059669", titlecolor="#065F46")
+
+    # 4. Coding-Agent
+    draw_box(70, 44, 26, 16,
+             "Python / REPL Code Synthesis\nAST Validation & Execution\nMetPy / ObsPy / PyTorch Solvers",
+             "3. Coding-Agent (Execution)", facecolor="#FEF3C7", edgecolor="#D97706", titlecolor="#92400E")
+
+    # 5. Autonomous Error Diagnostics
+    draw_box(37, 44, 26, 16,
+             "Stack Traceback & Error Parsing\nCoordinate Inversion / Axis Alignment\nDynamic Prompt Self-Correction",
+             "4. Self-Correction Loop", facecolor="#FEE2E2", edgecolor="#DC2626", titlecolor="#991B1B")
+
+    # 6. Critic-Agent & Guardrails
+    draw_box(37, 10, 26, 18,
+             "Physical Conservation Laws\nMass/Energy Balance & Continuity\nNon-Negativity (Precip >= 0)\nUnit Consistency & Range Bounds",
+             "5. Critic-Agent (Guardrails)", facecolor="#F5F3FF", edgecolor="#7C3AED", titlecolor="#5B21B6")
+
+    # 7. Scientific Discovery Artifacts
+    draw_box(4, 10, 26, 18,
+             "Publication-Grade Diagnostics\nMulti-Modal Verification Metrics\nStandardized NetCDF Outputs\nSynthesized Research Reports",
+             "6. Scientific Discovery", facecolor="#F0FDF4", edgecolor="#16A34A", titlecolor="#166534")
+
+    # Arrows
+    draw_arrow(30, 83.5, 37, 83.5, color="#4338CA", label="User Intent")
+    draw_arrow(63, 83.5, 70, 83.5, color="#2563EB", label="Task Specs")
+    draw_arrow(83, 76, 83, 60, color="#059669", label="Tensors", label_offset=(4, 0))
+    
+    # Coding to Error Recovery & retry
+    draw_arrow(70, 52, 63, 52, color="#DC2626", label="Exception / Mismatch", label_offset=(0, 2.5))
+    draw_arrow(50, 60, 50, 76, color="#DC2626", label="Refined Plan", label_offset=(5, 0))
+    
+    # Coding to Critic-Agent
+    draw_arrow(75, 44, 58, 28, color="#D97706", label="Raw Output", label_offset=(5, 2))
+    
+    # Critic feedback loop to coding
+    draw_arrow(50, 28, 50, 44, color="#7C3AED", label="Violation Feedback", label_offset=(-7, 0))
+
+    # Critic to Final Discovery
+    draw_arrow(37, 19, 30, 19, color="#16A34A", label="Verified Laws", label_offset=(0, 2.5))
+
+    plt.tight_layout()
+    plt.savefig(os.path.join(FIG_DIR, "agent_reasoning_dag.png"), dpi=300)
+    plt.savefig(os.path.join(FIG_DIR, "agent_reasoning_dag.pdf"))
+    plt.close()
+    print("Generated agent_reasoning_dag.png/.pdf")
 
 
 def plot_publications_by_year():
@@ -450,4 +550,5 @@ if __name__ == "__main__":
     plot_domain_modality_heatmap()
     plot_weather_foundation_timeline()
     plot_resolution_vs_leadtime()
+    plot_agent_reasoning_dag()
     plot_publications_by_year()

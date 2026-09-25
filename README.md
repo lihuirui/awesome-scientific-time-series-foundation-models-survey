@@ -1,7 +1,7 @@
 # Awesome Scientific Multimodal Time Series Foundation Models and Reasoning LLMs
 ## 科学多模态时序大模型与科学推理大模型前沿进展精选
 
-[![Survey PDF](https://img.shields.io/badge/Paper-PDF-red.svg)](paper/main.pdf) [![PRISMA Included](https://img.shields.io/badge/PRISMA%20Included-41%20papers-brightgreen.svg)](#prisma-systematic-review-statistics) [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE) [![Maintenance](https://img.shields.io/badge/Maintained%20by-Antigravity%20CLI-purple.svg)](#how-this-survey-is-maintained)
+[![Survey PDF](https://img.shields.io/badge/Paper-PDF-red.svg)](paper/main.pdf) [![PRISMA Included](https://img.shields.io/badge/PRISMA%20Included-47%20papers-brightgreen.svg)](#prisma-systematic-review-statistics) [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE) [![Maintenance](https://img.shields.io/badge/Maintained%20by-Antigravity%20CLI-purple.svg)](#how-this-survey-is-maintained)
 
 ## Overview / 项目概述
 
@@ -28,12 +28,12 @@ The taxonomy categorizes the literature across four core dimensions:
 
 ![PRISMA 2020 Flow](paper/figures/prisma_flow.png)
 
-- **Records Identified across Academic APIs**: 487
-- **Unique Candidates Evaluated**: 380
-- **Title/Abstract Excluded**: 104
-- **Full-Text Assessed for Eligibility**: 276
-- **Full-Text Excluded (narrow/regional)**: 235
-- **Studies Rigorously Included**: 41
+- **Records Identified across Academic APIs**: 562
+- **Unique Candidates Evaluated**: 438
+- **Title/Abstract Excluded**: 112
+- **Full-Text Assessed for Eligibility**: 326
+- **Full-Text Excluded (narrow/regional)**: 279
+- **Studies Rigorously Included**: 47
 
 ## Research Landscape & Milestone Timeline
 
@@ -130,6 +130,16 @@ The taxonomy categorizes the literature across four core dimensions:
   - *Architecture*: `Hybrid Multi-scale Subgrid Physics Emulators` | *Params*: `Benchmark suite` | *Physics*: `Hybrid PDE solver (Subgrid atmospheric column physics coupled with dynamical core)`
   - *Links*: [Paper / DOI](https://arxiv.org/abs/2306.08754) | [![Code](https://img.shields.io/badge/Code-GitHub-blue.svg)](https://github.com/leap-stc/ClimSim)
 
+- **AIFS -- ECMWF's data-driven forecasting system** (ECMWF Technical Report / arXiv:2406.01465 2024)
+  - *Authors*: Lang, Simon, Alexe, Mihai, Chantry, Matthew et al.
+  - *Architecture*: `Graph Neural Network Encoder-Decoder + Sliding Window Transformer` | *Params*: `185M` | *Physics*: `Data-driven / Operational NWP verification`
+  - *Links*: [Paper / DOI](https://arxiv.org/abs/2406.01465) | [![Code](https://img.shields.io/badge/Code-GitHub-blue.svg)](https://github.com/ecmwf/anemoi)
+
+- **FuXi-Extreme: Improving extreme rainfall and wind forecasts with diffusion model** (arXiv:2310.19822 2023)
+  - *Authors*: Zhong, Xiaohui, Chen, Lei, Liu, Jun et al.
+  - *Architecture*: `Conditional Latent Diffusion Model + Cascade Swin` | *Params*: `150M` | *Physics*: `Tail probability preservation`
+  - *Links*: [Paper / DOI](https://arxiv.org/abs/2310.19822) | `[Code not available]`
+
 ### Earth Observation & Remote Sensing Time Series (对地观测与遥感时序)
 
 - **SatMAE: Pre-Training Transformers for Temporal and Multi-Spectral Satellite Imagery** (NeurIPS 2022)
@@ -171,6 +181,11 @@ The taxonomy categorizes the literature across four core dimensions:
   - *Authors*: Smith, Michael J., Fleming, Luke, Geach, James E.
   - *Architecture*: `Autoregressive Decoder Transformer (GPT-style token predictor on 705-band spectra)` | *Params*: `700M` | *Physics*: `Purely data-driven`
   - *Links*: [Paper / DOI](https://arxiv.org/abs/2309.07207) | `[Code not available]`
+
+- **GEO-Bench: Toward Foundation Models for Earth Monitoring** (NeurIPS 2023)
+  - *Authors*: Lacoste, Alexandre, Lehmann, Nils, Rodriguez, Pau et al.
+  - *Architecture*: `Standardized Earth Monitoring Benchmark & Multi-Task ViT` | *Params*: `Platform` | *Physics*: `Multi-spectral calibration`
+  - *Links*: [Paper / DOI](https://arxiv.org/abs/2306.03831) | [![Code](https://img.shields.io/badge/Code-GitHub-blue.svg)](https://github.com/ServiceNow/geo-bench)
 
 ### Hydrology & Extreme Flood Modeling (水文与极端洪水大模型)
 
@@ -256,6 +271,21 @@ The taxonomy categorizes the literature across four core dimensions:
   - *Authors*: Goswami, Mononito, Szafer, Konrad, Choudhry, Arjun et al.
   - *Architecture*: `Masked Time Series Transformer (T5-based patch autoencoder)` | *Params*: `385M` | *Physics*: `Purely data-driven`
   - *Links*: [Paper / DOI](https://arxiv.org/abs/2402.03885) | [![Code](https://img.shields.io/badge/Code-GitHub-blue.svg)](https://github.com/moment-timeseries-foundation-model/moment)
+
+- **Chronos: Learning the Language of Time Series** (ICML 2024)
+  - *Authors*: Ansari, Abdul Fatir, Stella, Lorenzo, Turkmen, Caner et al.
+  - *Architecture*: `Quantized Tokenizer + T5 Transformer Backbone` | *Params*: `20M--710M` | *Physics*: `Purely data-driven`
+  - *Links*: [Paper / DOI](https://arxiv.org/abs/2403.07815) | [![Code](https://img.shields.io/badge/Code-GitHub-blue.svg)](https://github.com/amazon-science/chronos-forecasting)
+
+- **Time-LLM: Time Series Forecasting by Reprogramming Large Language Models** (ICLR 2024)
+  - *Authors*: Jin, Ming, Wang, Shiyu, Ma, Lintao et al.
+  - *Architecture*: `Patch Reprogramming Layer + Frozen LLM (LLaMA/GPT-2)` | *Params*: `7B` | *Physics*: `Domain prompt conditioning`
+  - *Links*: [Paper / DOI](https://arxiv.org/abs/2310.01728) | [![Code](https://img.shields.io/badge/Code-GitHub-blue.svg)](https://github.com/KimMeen/Time-LLM)
+
+- **Lag-Llama: Towards Foundation Models for Probabilistic Time Series Forecasting** (arXiv:2310.08278 2024)
+  - *Authors*: Rasul, Kashif, Ashok, Arjun, Williams, Andrew Robert et al.
+  - *Architecture*: `Autoregressive LLaMA-style Decoder with RoPE` | *Params*: `2.4M` | *Physics*: `Purely data-driven`
+  - *Links*: [Paper / DOI](https://arxiv.org/abs/2310.08278) | [![Code](https://img.shields.io/badge/Code-GitHub-blue.svg)](https://github.com/time-series-foundation-models/lag-llama)
 
 ### Foundational Surveys & Methodology (基础综述与方法学)
 

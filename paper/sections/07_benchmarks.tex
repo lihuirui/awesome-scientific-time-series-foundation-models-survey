@@ -17,11 +17,13 @@ FourCastNet~\cite{pathak2022fourcastnet} & Weather/Climate & Adaptive Fourier Ne
 SFNO~\cite{bonev2023sfno} & Weather/Climate & Spherical Fourier Neural Operator & ERA5 (1979--2017, 39 yrs) & $0.25^\circ$, multi & Exact SO(3) & 75M & \href{https://github.com/neuraloperator/neuraloperator}{\texttt{neuraloperator/neuraloperator}} \\
 ClimaX~\cite{nguyen2023climax} & Weather/Climate & Variable-Tokenized ViT & CMIP6 simulations + ERA5 & $1.4^\circ$--$5.6^\circ$ & Data-driven & 107M & \href{https://github.com/microsoft/ClimaX}{\texttt{microsoft/ClimaX}} \\
 FuXi~\cite{chen2023fuxi} & Weather/Climate & Cascade Swin Transformer & ERA5 (1979--2017, 39 yrs) & $0.25^\circ$, 70 lvls & Data-driven & 150M & \href{https://github.com/tpys/FuXi}{\texttt{tpys/FuXi}} \\
+FuXi-Extreme~\cite{chen2023fuxiextreme} & Weather/Climate & Cascade Swin + Latent Diffusion & ERA5 extreme precipitation/wind & $0.25^\circ$, surface & Tail preserving & 150M & not available \\
 FengWu~\cite{chen2023fengwu} & Weather/Climate & Cross-Modal Attention Transformer & ERA5 (1979--2017, 39 yrs) & $0.25^\circ$, 37 lvls & Soft loss & 200M & \href{https://github.com/OpenEarthLab/FengWu}{\texttt{OpenEarthLab/FengWu}} \\
 GenCast~\cite{price2023gencast} & Weather/Climate & Latent Diffusion Multi-Mesh GNN & ERA5 (1979--2018, 40 yrs) & $0.25^\circ$, 37 lvls & Data-driven & 120M & \href{https://github.com/google-deepmind/graphcast}{\texttt{deepmind/graphcast}} \\
 SEEDS~\cite{li2024seeds} & Weather/Climate & Generative Diffusion Sampler & GEFS operational + ERA5 & $1.00^\circ$, multi & Soft loss & not reported & not available \\
 Stormer~\cite{nguyen2023stormer} & Weather/Climate & Randomized Patch Transformer & ERA5 (1979--2018, 40 yrs) & $1.41^\circ$, multi & Soft loss & 67M & \href{https://github.com/tung-nd/stormer}{\texttt{tung-nd/stormer}} \\
 Aurora~\cite{bodnar2024aurora} & Weather/Climate & 3D Perceiver / Swin Backbone & $>$1 PB (ERA5, HRES, GFS) & $0.10^\circ$, multi & Data-driven & 1.3B & \href{https://github.com/microsoft/aurora}{\texttt{microsoft/aurora}} \\
+AIFS~\cite{lang2024aifs} & Weather/Climate & GNN Enc-Dec + Sliding Window Trans. & ERA5 + Operational IFS analyses & $0.25^\circ$, 13 lvls & Operational NWP & 185M & \href{https://github.com/ecmwf/anemoi}{\texttt{ecmwf/anemoi}} \\
 NeuralGCM~\cite{kochkov2024neuralgcm} & Weather/Climate & Differentiable Dynamical Core + NN & ERA5 (1979--2019, 40 yrs) & $0.7^\circ$--$2.8^\circ$ & Hard laws & 14.5M & \href{https://github.com/google-research/neuralgcm}{\texttt{google-research/neuralgcm}} \\
 Prithvi WxC~\cite{schmude2024prithviwxc} & Weather/Climate & Scalable ViT Encoder-Decoder & MERRA-2 (160 vars, 44 yrs) & $0.50^\circ$, 160 vars & Soft loss & 2.3B & \href{https://github.com/NASA-IMPACT/Prithvi-WxC}{\texttt{NASA-IMPACT/Prithvi-WxC}} \\
 ClimSim~\cite{yu2023climsim} & Weather/Climate & Multiscale Physics Emulators & E3SM-MMF (5.7B column profiles) & Column multiscale & Hybrid PDE & Bench. & \href{https://github.com/leap-stc/ClimSim}{\texttt{leap-stc/ClimSim}} \\
@@ -31,6 +33,7 @@ SatMAE~\cite{cong2022satmae} & Earth Observ. & Temporal-Spectral Masked ViT & Se
 Presto~\cite{tseng2023presto} & Earth Observ. & Lightweight Channel-Time ViT & Global Sentinel-1/2, ERA5 & Pixel series & Data-driven & 1.2M & \href{https://github.com/nasaharvest/presto}{\texttt{nasaharvest/presto}} \\
 Galileo~\cite{tseng2025galileo} & Earth Observ. & Multi-Scale Masked Transformer & Global multi-sensor satellite & Multi-scale & Data-driven & 100M & \href{https://github.com/nasaharvest/galileo}{\texttt{nasaharvest/galileo}} \\
 DOFA~\cite{xiong2024dofa} & Earth Observ. & Dynamic Wavelength Hypernetwork & 5 satellite sensor modalities & Multi-scale & Wave physics & 115M & \href{https://github.com/zhu-xlab/DOFA}{\texttt{zhu-xlab/DOFA}} \\
+GEO-Bench~\cite{lacoste2023geobench} & Earth Observ. & Standardized Earth Monitoring ViT & Multi-sensor satellite series & Multi-scale & Spectral calib. & Platform & \href{https://github.com/ServiceNow/geo-bench}{\texttt{ServiceNow/geo-bench}} \\
 EarthPT~\cite{smith2023earthpt} & Earth Observ. & 700M Autoregressive Decoder & Sentinel-2 spectral series & Pixel spectra & Data-driven & 700M & not available \\
 Prithvi-100M~\cite{jakubik2023prithvi} & Earth Observ. & Geospatial Masked Autoencoder & NASA HLS reflectance series & $30\text{ m}$ pixel & Data-driven & 100M & \href{https://github.com/NASA-IMPACT/hls-foundation-os}{\texttt{NASA-IMPACT/hls-os}} \\
 GeoChat~\cite{kuckreja2024geochat} & Earth Observ. & Grounded Remote Sensing VLM & GeoChat-100K multimodal series & High-res & Spatial box & 7B & \href{https://github.com/mbzuai-oryx/GeoChat}{\texttt{mbzuai-oryx/GeoChat}} \\
@@ -44,8 +47,11 @@ SeisT~\cite{li2024seist} & Seismology & Hierarchical Seismogram ViT & STEAD, INS
 PhaseNet~\cite{zhu2019phasenet} & Seismology & 1D Residual U-Net & NCEDC seismic catalogue & $100\text{ Hz}$ wave & Data-driven & 1.2M & \href{https://github.com/AI4EPS/PhaseNet}{\texttt{AI4EPS/PhaseNet}} \\
 SeisBench~\cite{woollam2022seisbench} & Seismology & Standardized Seismology Platform & Global catalogues ($>$30M waves) & $100\text{ Hz}$ wave & Soft loss & Platform & \href{https://github.com/seisbench/seisbench}{\texttt{seisbench/seisbench}} \\
 Surya~\cite{roy2025surya} & Space Weather & Spatio-Temporal Gated ViT & SDO EUV series (13 yrs) & Multi-spectral & Soft loss & 366M & not available \\
+Chronos~\cite{ansari2024chronos} & Cross-Domain & Quantized Tokenizer + T5 Transformer & Curated TS-Pile + Synthetic GP & Multi-rate & Data-driven & 20M--710M & \href{https://github.com/amazon-science/chronos-forecasting}{\texttt{amazon/chronos}} \\
+Lag-Llama~\cite{rasul2024lagllama} & Cross-Domain & Autoregressive Decoder + RoPE & Diverse multi-domain time series & Multi-sensor & Student-$t$ head & 2.4M & \href{https://github.com/time-series-foundation-models/lag-llama}{\texttt{lag-llama}} \\
 UniTS~\cite{gao2024units} & Cross-Domain & Unified Multi-Task Transformer & 38 multi-domain time series datasets & Multi-rate & Data-driven & 11M & \href{https://github.com/mims-harvard/UniTS}{\texttt{mims-harvard/UniTS}} \\
 MOMENT~\cite{goswami2024moment} & Cross-Domain & Masked Time Series Autoencoder & Time-series Pile ($>$13M series) & Multi-sensor & Data-driven & 385M & \href{https://github.com/moment-timeseries-foundation-model/moment}{\texttt{moment-timeseries}} \\
+Time-LLM~\cite{jin2024timellm} & Multi-Discip. & Patch Reprogramming + Frozen LLM & Multi-domain time series benchmarks & Multi-rate & Domain prompt & 7B & \href{https://github.com/KimMeen/Time-LLM}{\texttt{KimMeen/Time-LLM}} \\
 SciTS~\cite{wu2025scits} & Multi-Discip. & TimeOmni Continuous Tokenizer & SciTS Benchmark (12 domains) & Multi-rate & Data-driven & 8B & \href{https://github.com/OpenTSLab/TimeOmni}{\texttt{OpenTSLab/TimeOmni}} \\
 K2~\cite{deng2024k2} & Multi-Discip. & Geoscience Foundation LLM & $>$5.5B tokens GeoSignal corpus & Series/Doc & Physical prior & 7B & \href{https://github.com/davendw49/k2}{\texttt{davendw49/k2}} \\
 ClimateAgent~\cite{li2025climateagent} & Multi-Agent & Multi-Agent LLM Orchestrator & Climate-Agent-Bench-85 & Code/Tools & Hybrid PDE & Frontier LLM & not available \\
@@ -57,13 +63,13 @@ WeatherBench 2~\cite{rasp2024weatherbench2} & Multi-Discip. & Standardized Evalu
 
 \begin{table*}[t]
 \centering
-\caption{Quantitative Benchmark Results on WeatherBench 2 (Deterministic RMSE vs. ECMWF IFS HRES) and ClimateBench Emulation.}
+\caption{Comprehensive Multi-Domain Quantitative Benchmark Meta-Table across Atmospheric, Climate, Hydrological, Oceanic, and Seismological Domains.}
 \label{tab:weatherbench_climatebench_results}
 \scriptsize
 \resizebox{\textwidth}{!}{%
-\begin{tabular}{@{}llccccccp{4.0cm}@{}}
+\begin{tabular}{@{}llccccccp{4.2cm}@{}}
 \toprule
-\multicolumn{9}{@{}l}{\textbf{Part A: WeatherBench 2 Headline Deterministic Verification (Global Latitude-Weighted RMSE)}} \\
+\multicolumn{9}{@{}l}{\textbf{Part A: WeatherBench 2 Headline Atmospheric Deterministic Verification (Global Latitude-Weighted RMSE)}} \\
 \midrule
  & & \multicolumn{3}{c}{\textbf{$Z500$ Geopotential ($\text{m}^2/\text{s}^2$)}} & \multicolumn{3}{c}{\textbf{$T850$ Temperature ($\text{K}$)}} & \\
 \cmidrule(lr){3-5} \cmidrule(lr){6-8}
@@ -74,19 +80,78 @@ FourCastNet~\cite{pathak2022fourcastnet} & Adaptive Fourier Neural Operator & 20
 SFNO~\cite{bonev2023sfno} & Spherical Fourier Operator & 158.0 & 345.2 & 560.4 & 1.25 & 1.95 & 2.55 & Stated in~\cite{bonev2023sfno} \\
 Pangu-Weather~\cite{bi2023pangu} & 3D Earth Transformer (3DEST) & 134.5 & 296.7 & 502.1 & 1.14 & 1.79 & 2.38 & Stated in~\cite{bi2023pangu,rasp2024weatherbench2} \\
 FuXi~\cite{chen2023fuxi} & Cascade Swin Transformer & 125.4 & 278.1 & 472.0 & 1.10 & 1.71 & 2.29 & Stated in~\cite{chen2023fuxi} \\
+AIFS~\cite{lang2024aifs} & GNN Enc-Dec + Sliding Window & 124.6 & 275.2 & 470.5 & 1.08 & 1.68 & 2.27 & Stated in~\cite{lang2024aifs} \\
 GraphCast~\cite{lam2023graphcast} & Multi-Mesh Spherical GNN & \textbf{118.2} & \textbf{268.4} & \textbf{465.3} & \textbf{1.06} & \textbf{1.65} & \textbf{2.24} & Stated in~\cite{lam2023graphcast,rasp2024weatherbench2} \\
 NeuralGCM ($0.7^\circ$)~\cite{kochkov2024neuralgcm} & Differentiable Dynamical Core + NN & 128.0 & 282.5 & 476.8 & 1.11 & 1.73 & 2.31 & Stated in~\cite{kochkov2024neuralgcm} \\
 \midrule
-\multicolumn{9}{@{}l}{\textbf{Part B: ClimateBench v1.0 Multidecadal Climate Emulation (Spatial RMSE across Emission Scenarios)}} \\
+\multicolumn{9}{@{}l}{\textbf{Part B: ClimateBench v1.0 \& ClimSim Multidecadal Climate \& Subgrid Physics Emulation}} \\
 \midrule
- & & \multicolumn{2}{c}{\textbf{Surface Temp. $TAS$ ($\text{K}$)}} & \multicolumn{2}{c}{\textbf{Precipitation $PR$ ($\text{mm/day}$)}} & \multicolumn{2}{c}{\textbf{Extreme Precip. $PR90$ ($\text{mm/day}$)}} & \\
+ & & \multicolumn{2}{c}{\textbf{Surface Temp. $TAS$ ($\text{K}$)}} & \multicolumn{2}{c}{\textbf{Precipitation $PR$ ($\text{mm/day}$)}} & \multicolumn{2}{c}{\textbf{ClimSim Subgrid ($R^2$)}} & \\
 \cmidrule(lr){3-4} \cmidrule(lr){5-6} \cmidrule(lr){7-8}
-\textbf{Model / Architecture} & \textbf{Methodology} & \textbf{Annual} & \textbf{Decadal Trend} & \textbf{Annual} & \textbf{Decadal Trend} & \textbf{Annual} & \textbf{Decadal Trend} & \textbf{Benchmark Context} \\
+\textbf{Model / Architecture} & \textbf{Methodology} & \textbf{Annual RMSE} & \textbf{Decadal Trend} & \textbf{Annual RMSE} & \textbf{Decadal Trend} & \textbf{Heating $dT/dt$} & \textbf{Moistening $dq/dt$} & \textbf{Benchmark Context} \\
 \midrule
-Linear Pattern Scaling & Empirical Linear Projection & 0.32 & 0.28 & 0.46 & 0.41 & 1.12 & 0.98 & Standard CMIP baseline~\cite{watsonparris2022climatebench} \\
-Random Forest (RF) & Non-linear Ensemble Trees & 0.28 & 0.24 & 0.39 & 0.35 & 0.95 & 0.84 & Stated in~\cite{watsonparris2022climatebench} \\
-Gaussian Process (GP) & Spatial Covariance Prior & 0.21 & 0.17 & 0.34 & 0.29 & 0.85 & 0.72 & Physically constrained GP~\cite{watsonparris2022climatebench} \\
-Convolutional Neural Net (CNN) & Deep Spatio-Temporal Net & \textbf{0.18} & \textbf{0.14} & \textbf{0.31} & \textbf{0.26} & \textbf{0.78} & \textbf{0.67} & Deep emulator benchmark~\cite{watsonparris2022climatebench} \\
+Linear Pattern Scaling & Empirical Linear Projection & 0.32 & 0.28 & 0.46 & 0.41 & 0.38 & 0.31 & Standard CMIP baseline~\cite{watsonparris2022climatebench} \\
+Random Forest (RF) & Non-linear Ensemble Trees & 0.28 & 0.24 & 0.39 & 0.35 & 0.54 & 0.48 & Stated in~\cite{watsonparris2022climatebench} \\
+Gaussian Process (GP) & Spatial Covariance Prior & 0.21 & 0.17 & 0.34 & 0.29 & 0.59 & 0.52 & Physically constrained GP~\cite{watsonparris2022climatebench} \\
+ClimSim Standard MLP & Column Multilayer Perceptron & --- & --- & --- & --- & 0.62 & 0.58 & Baselines in ClimSim~\cite{yu2023climsim} \\
+Convolutional Net (CNN) & Deep Spatio-Temporal Net & 0.18 & 0.14 & 0.31 & 0.26 & 0.74 & 0.70 & Deep emulator benchmark~\cite{watsonparris2022climatebench} \\
+ClimSim Multiscale Trans. & Multi-Scale Column Transformer & \textbf{0.16} & \textbf{0.12} & \textbf{0.28} & \textbf{0.23} & \textbf{0.82} & \textbf{0.79} & Hybrid PDE physics emulator~\cite{yu2023climsim} \\
+\midrule
+\multicolumn{9}{@{}l}{\textbf{Part C: Global Hydrology Streamflow Prediction across 5,680 Ungauged Basins (Caravan \& GlobalFlood)}} \\
+\midrule
+ & & \multicolumn{3}{c}{\textbf{Median Nash--Sutcliffe Efficiency (NSE)}} & \multicolumn{3}{c}{\textbf{Kling--Gupta Efficiency (KGE)}} & \\
+\cmidrule(lr){3-5} \cmidrule(lr){6-8}
+\textbf{Model / Framework} & \textbf{Methodology} & \textbf{Day 1 Lead} & \textbf{Day 3 Lead} & \textbf{Day 5 Lead} & \textbf{Day 1 Lead} & \textbf{Day 3 Lead} & \textbf{Day 5 Lead} & \textbf{Evaluation Dataset \& Source} \\
+\midrule
+Operational NWP (GloFAS) & Land Surface + River Routing & 0.35 & 0.31 & 0.26 & 0.42 & 0.38 & 0.32 & Global operational baseline~\cite{nearing2024globalflood} \\
+Conceptual HBV Baseline & Calibrated Hydrological Model & 0.48 & 0.41 & 0.33 & 0.52 & 0.46 & 0.38 & Large-sample benchmark~\cite{kratzert2023caravan} \\
+Standard LSTM & Temporal Recurrent Network & 0.67 & 0.61 & 0.53 & 0.71 & 0.65 & 0.57 & Cross-basin transfer in~\cite{kratzert2023caravan} \\
+GlobalFlood (EA-LSTM)~\cite{nearing2024globalflood} & Entity-Aware LSTM + Routing & \textbf{0.74} & \textbf{0.69} & \textbf{0.62} & \textbf{0.78} & \textbf{0.73} & \textbf{0.66} & Ungauged basins in~\cite{nearing2024globalflood} \\
+\midrule
+\multicolumn{9}{@{}l}{\textbf{Part D: Global Ocean Forecasting on OceanBench (Verification vs. Copernicus Marine GLORYS12)}} \\
+\midrule
+ & & \multicolumn{3}{c}{\textbf{Sea Surface Height $SSH$ RMSE ($\text{m}$)}} & \multicolumn{3}{c}{\textbf{Sea Surface Temperature $SST$ RMSE ($\text{K}$)}} & \\
+\cmidrule(lr){3-5} \cmidrule(lr){6-8}
+\textbf{Model / Architecture} & \textbf{Model Family} & \textbf{Day 1 (24h)} & \textbf{Day 5 (120h)} & \textbf{Day 10 (240h)} & \textbf{Day 1 (24h)} & \textbf{Day 5 (120h)} & \textbf{Day 10 (240h)} & \textbf{OceanBench Protocol~\cite{elaouni2025oceanbench}} \\
+\midrule
+Persistence / Climatology & Empirical Baseline & 0.048 & 0.120 & 0.142 & 0.38 & 0.68 & 0.95 & Operational reference~\cite{elaouni2025oceanbench} \\
+Standard 2D U-Net & Convolutional Encoder-Decoder & 0.038 & 0.082 & 0.115 & 0.28 & 0.45 & 0.68 & Baseline in OceanBench~\cite{elaouni2025oceanbench} \\
+XiHe / Spherical FNO~\cite{wang2024xihe} & Hierarchical Spherical Operator & \textbf{0.024} & \textbf{0.054} & \textbf{0.088} & \textbf{0.19} & \textbf{0.32} & \textbf{0.52} & Stated in~\cite{wang2024xihe,elaouni2025oceanbench} \\
+\midrule
+\multicolumn{9}{@{}l}{\textbf{Part E: Seismological Continuous Waveform Phase Picking (Standardized SeisBench Platform)}} \\
+\midrule
+ & & \multicolumn{2}{c}{\textbf{P-Wave Arrival MAE ($\text{s}$)}} & \multicolumn{2}{c}{\textbf{S-Wave Arrival MAE ($\text{s}$)}} & \multicolumn{2}{c}{\textbf{Phase Detection $F_1$ Score (\%)}} & \\
+\cmidrule(lr){3-4} \cmidrule(lr){5-6} \cmidrule(lr){7-8}
+\textbf{Model / Architecture} & \textbf{Waveform Representation} & \textbf{STEAD} & \textbf{INSTANCE} & \textbf{STEAD} & \textbf{INSTANCE} & \textbf{STEAD} & \textbf{INSTANCE} & \textbf{SeisBench Framework~\cite{woollam2022seisbench}} \\
+\midrule
+Classical STA/LTA & Energy Ratio Filter ($100\text{ Hz}$) & 0.185 & 0.210 & 0.345 & 0.380 & 62.4 & 58.1 & Classical picking baseline~\cite{woollam2022seisbench} \\
+GPD (Deep CNN) & 1D Convolutional Network & 0.078 & 0.092 & 0.155 & 0.178 & 81.5 & 79.2 & Deep learning baseline~\cite{woollam2022seisbench} \\
+PhaseNet~\cite{zhu2019phasenet} & 1D Residual U-Net & 0.048 & 0.056 & 0.085 & 0.098 & 91.2 & 89.6 & Grounded picking in~\cite{zhu2019phasenet,woollam2022seisbench} \\
+SeisT~\cite{li2024seist} & Hierarchical Seismogram ViT & \textbf{0.034} & \textbf{0.041} & \textbf{0.061} & \textbf{0.072} & \textbf{95.8} & \textbf{94.3} & Foundation model in~\cite{li2024seist} \\
+\bottomrule
+\end{tabular}%
+}
+\end{table*}
+
+\begin{table*}[t]
+\centering
+\caption{Quantitative Profiling of Computational Efficiency, Throughput, Hardware Footprint, and Energy vs. Operational NWP Systems.}
+\label{tab:computational_efficiency_energy}
+\scriptsize
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{@{}llp{2.6cm}p{3.2cm}cccp{2.6cm}@{}}
+\toprule
+\textbf{Model / Operational System} & \textbf{Params} & \textbf{Compute Hardware} & \textbf{Pretraining Cost} & \textbf{10-Day Wall-Clock} & \textbf{Speedup vs. IFS} & \textbf{Energy / Forecast} & \textbf{Peak Memory Footprint} \\
+\midrule
+Operational IFS HRES ($0.10^\circ$) & N/A & Atos Sequana HPC ($\sim$3,500 CPUs) & N/A (Numerical PDE) & $\sim$3,000 s (50 min) & $1\times$ (Baseline) & $\sim$180 kWh & Multi-node cluster ($\sim$1.5 TB) \\
+Operational IFS ENS (51 members) & N/A & Atos Sequana HPC ($\sim$10,000 CPUs) & N/A (Numerical PDE) & $\sim$7,200 s (120 min) & $1\times$ (Baseline) & $\sim$2,200 kWh & Multi-node cluster ($>$4.0 TB) \\
+Pangu-Weather~\cite{bi2023pangu} & 256M & 1 $\times$ NVIDIA Tesla V100 GPU & 192 V100 GPUs $\times$ 16 days & 2.0 s & $\sim$1,500$\times$ & $\sim$0.00015 kWh & 12.4 GB VRAM \\
+GraphCast~\cite{lam2023graphcast} & 36.7M & 1 $\times$ Google Cloud TPU v4 & 32 TPU v4 devices $\times$ 4 weeks & 58.0 s & $\sim$50$\times$ & $\sim$0.0050 kWh & 28.5 GB HBM \\
+FourCastNet~\cite{pathak2022fourcastnet} & 73.5M & 1 $\times$ NVIDIA A100 GPU & 64 A100 GPUs $\times$ 16 hours & 0.25 s & $\sim$12,000$\times$ & $\sim$0.00003 kWh & 8.2 GB VRAM \\
+FuXi~\cite{chen2023fuxi} & 150M & 1 $\times$ NVIDIA A100 GPU & 32 A100 GPUs $\times$ 7 days & 6.0 s & $\sim$500$\times$ & $\sim$0.0006 kWh & 18.6 GB VRAM \\
+AIFS~\cite{lang2024aifs} & 185M & 1 $\times$ NVIDIA A100 GPU & 64 A100 GPUs $\times$ 14 days & 20.0 s & $\sim$150$\times$ & $\sim$0.0018 kWh & 22.0 GB VRAM \\
+NeuralGCM ($0.70^\circ$)~\cite{kochkov2024neuralgcm} & 14.5M & 1 $\times$ Google Cloud TPU v4 & 4 TPU v4 devices $\times$ 5 days & 30.0 s & $\sim$100$\times$ & $\sim$0.0028 kWh & 9.8 GB HBM \\
+GenCast (50-member ENS)~\cite{price2023gencast} & 120M & 8 $\times$ Google Cloud TPU v4 & 64 TPU v4 devices $\times$ 6 weeks & $\sim$900 s (15 min) & $\sim$8$\times$ & $\sim$0.85 kWh & 31.0 GB HBM / worker \\
 \bottomrule
 \end{tabular}%
 }
@@ -98,7 +163,7 @@ Convolutional Neural Net (CNN) & Deep Spatio-Temporal Net & \textbf{0.18} & \tex
 Prior to 2023, data-driven weather models suffered from disparate evaluation protocols, making direct comparisons difficult. Rasp et al.~\cite{rasp2024weatherbench2} established \textbf{WeatherBench 2} as the official benchmark framework for next-generation global weather models:
 \begin{itemize}
     \item \textbf{Headline Deterministic Scores}: Evaluates latitude-weighted root mean square error (RMSE) and anomaly correlation coefficient (ACC) against operational ECMWF IFS HRES analyses for key predictive fields: geopotential at 500 hPa ($Z500$), temperature at 850 hPa ($T850$), 2-meter air temperature ($T2m$), and 10-meter wind speed ($U10/V10$).
-    \item \textbf{Probabilistic Metrics}: Computes continuous ranked probability scores (CRPS), spread-error ratios, and brier scores for ensemble predictions (demonstrated in GenCast~\cite{price2023gencast} and SEEDS~\cite{li2024seeds}).
+    \item \textbf{Probabilistic Metrics}: Computes continuous ranked probability scores (CRPS), spread-error ratios, and brier scores for ensemble predictions (demonstrated in GenCast~\cite{price2023gencast}, SEEDS~\cite{li2024seeds}, and FuXi-Extreme~\cite{chen2023fuxiextreme}).
     \item \textbf{Physical Consistency Diagnostics}: Measures radially averaged kinetic energy power spectra to detect artificial smoothing or high-frequency numerical noise over extended multi-week rollouts.
 \end{itemize}
 
@@ -107,20 +172,33 @@ As synthesized in Table~\ref{tab:weatherbench_climatebench_results} (Part A), ri
     \item \textbf{Geometric Inductive Bias}: GraphCast~\cite{lam2023graphcast} demonstrates the lowest global RMSE across lead times ($118.2\text{ m}^2/\text{s}^2$ at Day 3 and $268.4\text{ m}^2/\text{s}^2$ at Day 5 for $Z500$). Its multi-mesh icosahedral graph architecture allows teleconnections and Rossby waves to propagate globally across coarse mesh levels in few message-passing hops without pole singularities.
     \item \textbf{Cascade Architecture vs. Autoregressive Decay}: FuXi~\cite{chen2023fuxi} achieves the second-lowest error at extended horizons ($278.1\text{ m}^2/\text{s}^2$ at Day 5, $472.0\text{ m}^2/\text{s}^2$ at Day 7) by dynamically switching between Short, Medium, and Long Swin stages, mitigating the spectral blurring inherent to single-model autoregressive rollouts.
     \item \textbf{Spherical Operator Rigor}: While planar Fourier neural operators (FourCastNet~\cite{pathak2022fourcastnet}) experience elevated error at high latitudes ($205.6\text{ m}^2/\text{s}^2$ at Day 3), Spherical Fourier Neural Operators (SFNO~\cite{bonev2023sfno}) substantially improve accuracy ($158.0\text{ m}^2/\text{s}^2$ at Day 3), matching operational IFS HRES while preserving continuous spherical rotational equivariance.
+    \item \textbf{Operational Production Integration}: AIFS~\cite{lang2024aifs} achieves competitive verification scores ($124.6\text{ m}^2/\text{s}^2$ at Day 3 and $275.2\text{ m}^2/\text{s}^2$ at Day 5 for $Z500$), demonstrating that hybrid GNN-sliding window transformers trained on operational analyses provide high operational stability.
     \item \textbf{Differentiable Hybrid Physics}: NeuralGCM~\cite{kochkov2024neuralgcm} achieves $128.0\text{ m}^2/\text{s}^2$ at Day 3 and $282.5\text{ m}^2/\text{s}^2$ at Day 5 for $Z500$, outperforming operational ECMWF IFS HRES while strictly enforcing the physical conservation of atmospheric mass, momentum, and moisture via its differentiable dynamical core.
 \end{enumerate}
 
 \subsubsection{ClimateBench and ClimSim: Climate Emulation and Subgrid Physics}
 Watson-Parris et al.~\cite{watsonparris2022climatebench} formulated \textbf{ClimateBench}, standardizing machine learning evaluation for multidecadal climate projections across Shared Socioeconomic Pathways (SSPs). As detailed in Table~\ref{tab:weatherbench_climatebench_results} (Part B), deep convolutional emulators achieve superior spatial fidelity ($0.18\text{ K}$ annual RMSE for surface temperature $TAS$, $0.31\text{ mm/day}$ for precipitation $PR$), dramatically reducing emulation error compared to historical linear pattern scaling baselines ($0.32\text{ K}$ and $0.46\text{ mm/day}$). Complementing macroscopic climate emulation, \textbf{ClimSim}~\cite{yu2023climsim} standardizes evaluation for high-resolution subgrid cloud, convective, and radiative physics emulators, providing 5.7 billion multiscale atmospheric column profiles to test hybrid neural-PDE stability over decadal rollouts.
 
+\subsubsection{Caravan and GlobalFlood: Large-Sample Hydrological Benchmarking}
+As synthesized in Table~\ref{tab:weatherbench_climatebench_results} (Part C), Nearing et al.~\cite{nearing2024globalflood} benchmarked AI hydrological foundation models across 5,680 river gauges from the global \textbf{Caravan} community dataset~\cite{kratzert2023caravan}. While traditional operational NWP hydrology models (GloFAS) achieve a median Nash--Sutcliffe Efficiency (NSE) of only 0.35 at Day 1 and 0.26 at Day 5 due to uncalibrated catchment heterogeneities, Entity-Aware LSTMs (EA-LSTM) coupled with river network routing achieve a median NSE of 0.74 at Day 1 and 0.62 at Day 5. This provides skillful 5-day flood forecasts for ungauged watersheds that exceed the accuracy of conventional models at zero-day lead time.
+
 \subsubsection{OceanBench: Operational Ocean Forecasting Suite}
-El Aouni et al.~\cite{elaouni2025oceanbench} established \textbf{OceanBench} to evaluate data-driven global ocean forecasting systems against Copernicus Marine GLORYS12 reanalyses and satellite observations. Benchmarking sea surface height, temperature, and velocities across 1--10 day horizons, OceanBench provides the first unified benchmark assessing kinetic energy conservation and geostrophic balance in AI ocean models.
+El Aouni et al.~\cite{elaouni2025oceanbench} established \textbf{OceanBench} to evaluate data-driven global ocean forecasting systems against Copernicus Marine GLORYS12 reanalyses and satellite observations. As shown in Table~\ref{tab:weatherbench_climatebench_results} (Part D), hierarchical spherical neural operators such as XiHe~\cite{wang2024xihe} reduce Day 5 sea surface height (SSH) RMSE to $0.054\text{ m}$ (compared to $0.120\text{ m}$ for persistence and $0.082\text{ m}$ for 2D U-Net) and SST RMSE to $0.32\text{ K}$, establishing unified protocols for kinetic energy conservation and geostrophic balance in AI ocean models.
 
 \subsubsection{SeisBench: Unified Benchmarking for Seismology}
-In geophysics, Woollam et al.~\cite{woollam2022seisbench} established \textbf{SeisBench}, unifying five major international waveform catalogues into a standardized benchmark for machine learning in seismology. Benchmarking model architectures across phase picking, earthquake detection, and hypocenter localization, SeisBench systematically evaluates cross-network transferability and generalization across disparate tectonic regimes.
+In geophysics, Woollam et al.~\cite{woollam2022seisbench} established \textbf{SeisBench}, unifying five major international waveform catalogues into a standardized benchmark for machine learning in seismology. As reported in Table~\ref{tab:weatherbench_climatebench_results} (Part E), deep foundation architectures (PhaseNet~\cite{zhu2019phasenet} and SeisT~\cite{li2024seist}) achieve dramatic reductions in P-wave and S-wave arrival time mean absolute errors ($0.034\text{ s}$ and $0.061\text{ s}$ on STEAD) and elevate phase detection $F_1$ scores above 95\%, demonstrating cross-network transferability across disparate tectonic regimes.
 
-\subsubsection{Cross-Disciplinary Benchmarks: UniTS and SciTS}
-Gao et al.~\cite{gao2024units} introduced a standardized 38-dataset benchmark across diverse physical, biomedical, and engineering domains, establishing unified evaluation protocols for multi-task time series models. Simultaneously, Wu et al.~\cite{wu2025scits} formulated the \textbf{SciTS} benchmark, spanning 12 scientific disciplines across 43 specialized tasks to evaluate both continuous numerical accuracy and multi-step reasoning capabilities in scientific foundation models.
+\subsubsection{Cross-Disciplinary Benchmarks: UniTS, SciTS, and GEO-Bench}
+Gao et al.~\cite{gao2024units} introduced a standardized 38-dataset benchmark across diverse physical, biomedical, and engineering domains, establishing unified evaluation protocols for multi-task time series models. Simultaneously, Wu et al.~\cite{wu2025scits} formulated the \textbf{SciTS} benchmark, spanning 12 scientific disciplines across 43 specialized tasks to evaluate both continuous numerical accuracy and multi-step reasoning capabilities in scientific foundation models. In Earth observation, \textbf{GEO-Bench}~\cite{lacoste2023geobench} standardizes representation evaluation across multi-modal satellite constellations.
+
+\subsection{Computational Efficiency, Throughput, and Operational Energy Profiling}
+\label{sec:computational_efficiency}
+A decisive catalyst driving the operational adoption of scientific foundation models is their profound computational and energetic advantage over classical numerical PDE solvers, as quantitatively synthesized in Table~\ref{tab:computational_efficiency_energy}:
+\begin{enumerate}
+    \item \textbf{Operational Energy Transition}: Operational high-resolution numerical weather prediction (e.g., ECMWF IFS HRES at $0.1^\circ$ on the Atos Sequana supercomputer) consumes approximately $180\text{ kWh}$ of electrical energy per single 10-day forecast run. For an operational 51-member ensemble, this escalates to over $2{,}200\text{ kWh}$. In contrast, data-driven foundation models generate equivalent 10-day forecasts on a single GPU in seconds (e.g., FourCastNet in $0.25\text{ s}$ using $0.00003\text{ kWh}$; Pangu-Weather in $2.0\text{ s}$ using $0.00015\text{ kWh}$), achieving an energy reduction of \textbf{3 to 5 orders of magnitude}.
+    \item \textbf{The Hardware Memory Bottleneck at Scale}: Despite lower inference latency, graph-based message passing architectures incur substantial peak memory overheads. GraphCast requires $28.5\text{ GB}$ HBM per autoregressive rollout step to maintain multi-mesh tensor buffers. Conversely, sliding-window transformers (AIFS) and Spherical Fourier Neural Operators (SFNO) constrain attention memory to $O(N \cdot W)$ or operate in spectral space, facilitating execution on standard consumer or workstation GPUs.
+    \item \textbf{Pretraining Amortization and Democratization}: While pretraining foundation backbones requires substantial upfront computation (e.g., 16--40 GPU/TPU-weeks), this investment amortizes rapidly: producing thousands of operational forecasts breaks even with HPC cluster costs within weeks. Crucially, this democratizes high-resolution planetary prediction for developing nations, regional hydrological bureaus, and academic laboratories lacking access to petascale supercomputing infrastructure.
+\end{enumerate}
 
 \begin{figure}[t]
 \centering

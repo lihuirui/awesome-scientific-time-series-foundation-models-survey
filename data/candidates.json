@@ -6038,5 +6038,914 @@
     "abstract": "",
     "status": "candidate",
     "retrieved_at": "2026-09-25T15:25:55.812256Z"
+  },
+  {
+    "source": "arXiv",
+    "arxiv_id": "2406.01465",
+    "doi": null,
+    "title": "AIFS -- ECMWF's data-driven forecasting system",
+    "authors": [
+      "Simon Lang",
+      "Mihai Alexe",
+      "Matthew Chantry",
+      "Jesper Dramsch",
+      "Florian Pinault",
+      "Baudouin Raoult",
+      "Mariana C. A. Clare",
+      "Christian Lessig",
+      "Michael Maier-Gerber",
+      "Linus Magnusson",
+      "Zied Ben Bouallègue",
+      "Ana Prieto Nemesio",
+      "Peter D. Dueben",
+      "Andrew Brown",
+      "Florian Pappenberger",
+      "Florence Rabier"
+    ],
+    "year": 2024,
+    "abstract": "Machine learning-based weather forecasting models have quickly emerged as a promising methodology for accurate medium-range global weather forecasting. Here, we introduce the Artificial Intelligence Forecasting System (AIFS), a data driven forecast model developed by the European Centre for Medium-Range Weather Forecasts (ECMWF). AIFS is based on a graph neural network (GNN) encoder and decoder, and a sliding window transformer processor, and is trained on ECMWF's ERA5 re-analysis and ECMWF's operational numerical weather prediction (NWP) analyses. It has a flexible and modular design and supports several levels of parallelism to enable training on high-resolution input data. AIFS forecast skill is assessed by comparing its forecasts to NWP analyses and direct observational data. We show that AIFS produces highly skilled forecasts for upper-air variables, surface weather parameters and tropical cyclone tracks. AIFS is run four times daily alongside ECMWF's physics-based NWP model and forecasts are available to the public under ECMWF's open data policy.",
+    "status": "candidate",
+    "retrieved_at": "2026-09-25T18:38:13.924747Z"
+  },
+  {
+    "source": "arXiv",
+    "arxiv_id": "2403.07815",
+    "doi": null,
+    "title": "Chronos: Learning the Language of Time Series",
+    "authors": [
+      "Abdul Fatir Ansari",
+      "Lorenzo Stella",
+      "Caner Turkmen",
+      "Xiyuan Zhang",
+      "Pedro Mercado",
+      "Huibin Shen",
+      "Oleksandr Shchur",
+      "Syama Sundar Rangapuram",
+      "Sebastian Pineda Arango",
+      "Shubham Kapoor",
+      "Jasper Zschiegner",
+      "Danielle C. Maddix",
+      "Hao Wang",
+      "Michael W. Mahoney",
+      "Kari Torkkola",
+      "Andrew Gordon Wilson",
+      "Michael Bohlke-Schneider",
+      "Yuyang Wang"
+    ],
+    "year": 2024,
+    "abstract": "We introduce Chronos, a simple yet effective framework for pretrained probabilistic time series models. Chronos tokenizes time series values using scaling and quantization into a fixed vocabulary and trains existing transformer-based language model architectures on these tokenized time series via the cross-entropy loss. We pretrained Chronos models based on the T5 family (ranging from 20M to 710M parameters) on a large collection of publicly available datasets, complemented by a synthetic dataset that we generated via Gaussian processes to improve generalization. In a comprehensive benchmark consisting of 42 datasets, and comprising both classical local models and deep learning methods, we show that Chronos models: (a) significantly outperform other methods on datasets that were part of the training corpus; and (b) have comparable and occasionally superior zero-shot performance on new datasets, relative to methods that were trained specifically on them. Our results demonstrate that Chronos models can leverage time series data from diverse domains to improve zero-shot accuracy on unseen forecasting tasks, positioning pretrained models as a viable tool to greatly simplify forecasting pipelines.",
+    "status": "candidate",
+    "retrieved_at": "2026-09-25T18:38:13.924818Z"
+  },
+  {
+    "source": "arXiv",
+    "arxiv_id": "2310.01728",
+    "doi": null,
+    "title": "Time-LLM: Time Series Forecasting by Reprogramming Large Language Models",
+    "authors": [
+      "Ming Jin",
+      "Shiyu Wang",
+      "Lintao Ma",
+      "Zhixuan Chu",
+      "James Y. Zhang",
+      "Xiaoming Shi",
+      "Pin-Yu Chen",
+      "Yuxuan Liang",
+      "Yuan-Fang Li",
+      "Shirui Pan",
+      "Qingsong Wen"
+    ],
+    "year": 2023,
+    "abstract": "Time series forecasting holds significant importance in many real-world dynamic systems and has been extensively studied. Unlike natural language process (NLP) and computer vision (CV), where a single large model can tackle multiple tasks, models for time series forecasting are often specialized, necessitating distinct designs for different tasks and applications. While pre-trained foundation models have made impressive strides in NLP and CV, their development in time series domains has been constrained by data sparsity. Recent studies have revealed that large language models (LLMs) possess robust pattern recognition and reasoning abilities over complex sequences of tokens. However, the challenge remains in effectively aligning the modalities of time series data and natural language to leverage these capabilities. In this work, we present Time-LLM, a reprogramming framework to repurpose LLMs for general time series forecasting with the backbone language models kept intact. We begin by reprogramming the input time series with text prototypes before feeding it into the frozen LLM to align the two modalities. To augment the LLM's ability to reason with time series data, we propose Prompt-as-Prefix (PaP), which enriches the input context and directs the transformation of reprogrammed input patches. The transformed time series patches from the LLM are finally projected to obtain the forecasts. Our comprehensive evaluations demonstrate that Time-LLM is a powerful time series learner that outperforms state-of-the-art, specialized forecasting models. Moreover, Time-LLM excels in both few-shot and zero-shot learning scenarios.",
+    "status": "candidate",
+    "retrieved_at": "2026-09-25T18:38:13.924851Z"
+  },
+  {
+    "source": "arXiv",
+    "arxiv_id": "2310.08278",
+    "doi": null,
+    "title": "Lag-Llama: Towards Foundation Models for Probabilistic Time Series Forecasting",
+    "authors": [
+      "Kashif Rasul",
+      "Arjun Ashok",
+      "Andrew Robert Williams",
+      "Hena Ghonia",
+      "Rishika Bhagwatkar",
+      "Arian Khorasani",
+      "Mohammad Javad Darvishi Bayazi",
+      "George Adamopoulos",
+      "Roland Riachi",
+      "Nadhir Hassen",
+      "Marin Biloš",
+      "Sahil Garg",
+      "Anderson Schneider",
+      "Nicolas Chapados",
+      "Alexandre Drouin",
+      "Valentina Zantedeschi",
+      "Yuriy Nevmyvaka",
+      "Irina Rish"
+    ],
+    "year": 2023,
+    "abstract": "Over the past years, foundation models have caused a paradigm shift in machine learning due to their unprecedented capabilities for zero-shot and few-shot generalization. However, despite the success of foundation models in modalities such as natural language processing and computer vision, the development of foundation models for time series forecasting has lagged behind. We present Lag-Llama, a general-purpose foundation model for univariate probabilistic time series forecasting based on a decoder-only transformer architecture that uses lags as covariates. Lag-Llama is pretrained on a large corpus of diverse time series data from several domains, and demonstrates strong zero-shot generalization capabilities compared to a wide range of forecasting models on downstream datasets across domains. Moreover, when fine-tuned on relatively small fractions of such previously unseen datasets, Lag-Llama achieves state-of-the-art performance, outperforming prior deep learning approaches, emerging as the best general-purpose model on average. Lag-Llama serves as a strong contender to the current state-of-art in time series forecasting and paves the way for future advancements in foundation models tailored to time series data.",
+    "status": "candidate",
+    "retrieved_at": "2026-09-25T18:38:13.924886Z"
+  },
+  {
+    "source": "arXiv",
+    "arxiv_id": "2310.19822",
+    "doi": null,
+    "title": "FuXi-Extreme: Improving extreme rainfall and wind forecasts with diffusion model",
+    "authors": [
+      "Zhong, Xiaohui",
+      "Chen, Lei",
+      "Liu, Jun",
+      "Lin, Chensen",
+      "Qi, Yuan",
+      "Li, Hao"
+    ],
+    "year": 2023,
+    "abstract": "Significant advancements in the development of machine learning (ML) models for weather forecasting have produced remarkable results. State-of-the-art ML-based weather forecast models, such as FuXi, have demonstrated superior statistical forecast performance in comparison to the high-resolution forecasts (HRES) of the European Centre for Medium-Range Weather Forecasts (ECMWF). However, ML models face a common challenge: as forecast lead times increase, they tend to generate increasingly smooth predictions, leading to an underestimation of the intensity of extreme weather events. To address this challenge, we developed the FuXi-Extreme model, which employs a denoising diffusion probabilistic model (DDPM) to restore finer-scale details in the surface forecast data generated by the FuXi model in 5-day forecasts. An evaluation of extreme total precipitation ($\\textrm{TP}$), 10-meter wind speed ($\\textrm{WS10}$), and 2-meter temperature ($\\textrm{T2M}$) illustrates the superior performance of FuXi-Extreme over both FuXi and HRES. Moreover, when evaluating tropical cyclone (TC) forecasts based on International Best Track Archive for Climate Stewardship (IBTrACS) dataset, both FuXi and FuXi-Extreme shows superior performance in TC track forecasts compared to HRES, but they show inferior performance in TC intensity forecasts in comparison to HRES.",
+    "status": "candidate",
+    "retrieved_at": "2026-09-25T18:38:13.924913Z"
+  },
+  {
+    "source": "arXiv",
+    "arxiv_id": "2306.03831",
+    "doi": null,
+    "title": "GEO-Bench: Toward Foundation Models for Earth Monitoring",
+    "authors": [
+      "Alexandre Lacoste",
+      "Nils Lehmann",
+      "Pau Rodriguez",
+      "Evan David Sherwin",
+      "Hannah Kerner",
+      "Björn Lütjens",
+      "Jeremy Andrew Irvin",
+      "David Dao",
+      "Hamed Alemohammad",
+      "Alexandre Drouin",
+      "Mehmet Gunturkun",
+      "Gabriel Huang",
+      "David Vazquez",
+      "Dava Newman",
+      "Yoshua Bengio",
+      "Stefano Ermon",
+      "Xiao Xiang Zhu"
+    ],
+    "year": 2023,
+    "abstract": "Recent progress in self-supervision has shown that pre-training large neural networks on vast amounts of unsupervised data can lead to substantial increases in generalization to downstream tasks. Such models, recently coined foundation models, have been transformational to the field of natural language processing. Variants have also been proposed for image data, but their applicability to remote sensing tasks is limited. To stimulate the development of foundation models for Earth monitoring, we propose a benchmark comprised of six classification and six segmentation tasks, which were carefully curated and adapted to be both relevant to the field and well-suited for model evaluation. We accompany this benchmark with a robust methodology for evaluating models and reporting aggregated results to enable a reliable assessment of progress. Finally, we report results for 20 baselines to gain information about the performance of existing models. We believe that this benchmark will be a driver of progress across a variety of Earth monitoring tasks.",
+    "status": "candidate",
+    "retrieved_at": "2026-09-25T18:38:13.924941Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.5194/egusphere-egu25-12077",
+    "title": "The AIFS: ECMWF&amp;#8217;s data-driven weather forecasting system",
+    "authors": [
+      "Hahner, Sara",
+      ""
+    ],
+    "year": 2025,
+    "container_title": "",
+    "abstract": "<jats:p>Machine learning-based models are rapidly transforming medium-range weather forecasting. The European Centre for Medium-Range Weather Forecasts (ECMWF) has developed the Artificial Intelligence Forecasting System (AIFS), a state-of-the-art data-driven model combining a graph neural network encoder-decoder with a sliding window transformer processor. Trained on ECMWF's ERA5 re-analysis and operational numerical weather prediction analyses, AIFS demonstrates exceptional deterministic forecast skill across upper-air variables, surface weather parameters, and tropical cyclone tracks.Building on this foundation, ECMWF has introduced AIFS-CRPS, a probabilistic extension of AIFS designed for ensemble forecasting. AIFS-CRPS is obtained by training a stochastic model with the Continuous Ranked Probability Score (CRPS) as its loss function. It addresses uncertainties and generates highly skilful probabilistic forecasts. For medium-range timescales, AIFS-CRPS matches or outperforms ECMWF&amp;#8217;s physics-based Integrated Forecasting System ensemble across key variables and lead times.This presentation will highlight recent advancements in deterministic and probabilistic forecasting with AIFS, showcasing its operational readiness and its potential to redefine medium-range forecasting at ECMWF.</jats:p>",
+    "status": "candidate",
+    "retrieved_at": "2026-09-25T18:38:16.748674Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.5194/egusphere-egu26-20244",
+    "title": "AI and Physics-Based Weather Forecasting: A Comparative Study of ECMWF's Operative AIFS and IFS Ensemble Wind Speed Predictions",
+    "authors": [
+      "Kocsis, Mátyás",
+      "Baran, Sándor"
+    ],
+    "year": 2026,
+    "container_title": "",
+    "abstract": "<jats:p>Weather forecasts are issued by numerical weather prediction models, which describe the dynamic behaviour of the atmosphere. Due to the chaotic nature of the atmospheric processes, assessing the uncertainty of forecasts is essential. The state-of-the-art method is to run the prediction models several times with different initialisation and/or parameterisation to obtain an ensemble of forecasts, better representing the possible scenarios.In the last few years, AI-based models have become the centre of attention in weather forecasting due to their accuracy and efficiency. The European Centre for Medium-Range Weather Forecasts (ECMWF) has developed its Artificial Intelligence/Integrated Forecasting System (AIFS) model, which was first to provide data-driven ensemble forecasts in June 2024. Since July 2025, the AIFS ensemble model has been operational and runs in parallel with the physics-based Integrated Forecasting System (IFS) model of ECMWF, which is considered the gold standard in weather prediction. The new AIFS model can generate forecasts ten times faster than the classical physics-based one, while consuming approximately a thousand times less energy.We present the results of our systematic comparison of the performances of the IFS and AIFS models by investigating the accuracy of raw and post-processed 10-metre wind-speed forecasts generated by the two models between July 2025 and November 2025 across several thousand station locations. The post-processed case involves the application of the parametric Ensemble Model Output Statistics method as well as a nonparametric quantile regression approach to correct any systematic biases and dispersion inaccuracies in the raw forecasts, which are usually detectable in the case of ensemble predictions.</jats:p>",
+    "status": "candidate",
+    "retrieved_at": "2026-09-25T18:38:16.748701Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.5194/egusphere-egu26-18643",
+    "title": "AIFS-Compo: A Data-Driven Atmospheric Composition Forecasting System",
+    "authors": [
+      "Harder, Paula",
+      "Flemming, Johannes",
+      "Alexe, Mihai",
+      "Chantry, Matthew"
+    ],
+    "year": 2026,
+    "container_title": "",
+    "abstract": "<jats:p>Machine learning has shown great success in numerical weather prediction. Here, we extend these advances to atmospheric composition forecasting by introducing AIFS-Compo, an AI-based system for predicting aerosols and reactive trace gases. Building on ECMWF’s AI weather forecasting framework, AIFS, we develop a large-scale graph-transformer model trained in two stages: first on CAMS EAC4 reanalysis data, and subsequently on a combination of CAMS analysis and forecast data. The resulting system produces 3-hourly forecasts and jointly uses prognostic variables from both numerical weather prediction and atmospheric composition.When verifying against observations, AIFS-Compo achieves lower errors than the operational IFS-Compo system for 5-day forecasts of aerosol optical depth (AOD) and PM2.5, while showing comparable skill for reactive gases including ozone, carbon monoxide, nitrogen dioxide, and sulfur dioxide. Overall, AIFS-Compo delivers performance competitive with the operational system at a fraction of the computational cost. This efficiency for example enables extension to longer leadtimes, such as 10-day forecasts, supporting applications including early ozone hole prediction.</jats:p>",
+    "status": "candidate",
+    "retrieved_at": "2026-09-25T18:38:16.748710Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.5194/egusphere-egu25-11946",
+    "title": "Representing waves in ECMWF&amp;#8217;s data-based forecasting system AIFS",
+    "authors": [
+      "Hahner, Sara",
+      "Bidlot, Jean",
+      "Kousal, Josh",
+      "Zampieri, Lorenzo",
+      "Chantry, Matthew"
+    ],
+    "year": 2025,
+    "container_title": "",
+    "abstract": "<jats:p>Recent advancements in data-driven weather forecasting have demonstrated superior accuracy compared to traditional physics-based approaches for several components of the Earth system. While prior work on wave forecasting has focused on wave-atmosphere interactions through fine-tuning pre-trained models or training specific forced wave models, we present the results of training a joint model of waves and atmosphere, forecasting the two components simultaneously.Surface winds, which can be well represented by data-driven atmospheric models, and waves are highly coupled. Therefore, we train a joint model of the atmosphere and waves, incorporating several wave fields into the deterministic Artificial Intelligence/Integrated Forecasting System (AIFS) at ECMWF [Lang et al., 2024]. For the training, a new dataset was constructed using ECMWF&amp;#8217;s latest wave model [ECMWF, 2024; Yu et al., 2022]. The updated wave model offers an enhanced representation of wave fields especially under sea ice, resolving challenges with moving missing values.The data-based wave forecasts are competitive with the ECMWF's operational physics-based wave model. Additionally, we present findings on how integrating wave fields enhances surface wind predictions. Through case studies, we illustrate the effectiveness of this approach, highlighting its potential to advance the accuracy and reliability of global weather forecasting systems.&amp;#160;[Lang et al., 2024] Simon Lang, Mihai Alexe, Matthew Chantry, Jesper Dramsch, Florian Pinault, Baudouin Raoult, Mariana C. A. Clare, Christian Lessig, Michael Maier-Gerber, Linus Magnusson, Zied Ben Bouall&amp;#232;gue, Ana Prieto Nemesio, Peter D. Dueben, Andrew Brown, Florian Pappenberger, and Florence Rabier. AIFS &amp;#8211; ECMWF&amp;#8217;s data-driven forecasting system. arXiv preprint arXiv:2406.01465, 2024. https://arxiv.org/abs/2406.01465.[ECMWF, 2024] IFS documentation CY49R1&amp;#8211;Part VII: ECMWF wave model. ECMWF Tech. Rep. CY49R1, 120 pp.[Yu et al., 2022]&amp;#160;Jie Yu, W. Erick Rogers, and David W. Wang. A new method for parameterization of wave dissipation by sea ice. Cold Reg. Sci. Technol. 2022, 199, 103583.</jats:p>",
+    "status": "candidate",
+    "retrieved_at": "2026-09-25T18:38:16.748717Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.5194/egusphere-egu24-17158",
+    "title": "AIFS &amp;#8211; ECMWF&amp;#8217;s Data-Driven Probabilistic Forecasting&amp;#160;",
+    "authors": [
+      "Ben Bouallegue, Zied",
+      "Alexe, Mihai",
+      "Chantry, Matthew",
+      "Clare, Mariana",
+      "Dramsch, Jesper",
+      "Lang, Simon",
+      "Lessig, Christian",
+      "Magnusson, Linus",
+      "Prieto Nemesio, Ana",
+      "Pinault, Florian",
+      "Raoult, Baudouin",
+      "Tietsche, Steffen"
+    ],
+    "year": 2025,
+    "container_title": "",
+    "abstract": "<jats:p>In just two years, the idea of an operational data-driven system for medium-range weather forecasting has been transformed from dream to very real possibility. This has occurred through a series of publications from innovators, which have rapidly improved deterministic forecast skill. Our own evaluation confirms that these forecasts have comparable deterministic skill to NWP models across a range of variables. However, on medium-range timescales probabilistic forecasting, typically achieved through ensembles, is key for providing actionable insights to users. ECMWF is building on top of these recent works to develop a probabilistic forecasting system, AIFS. We will showcase results from our progress towards this system and outline our roadmap to operationalisation.</jats:p>",
+    "status": "candidate",
+    "retrieved_at": "2026-09-25T18:38:16.748725Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1142/9789812775894_0011",
+    "title": "A NEW PARTITIONING APPROACH FOR ECMWF'S INTEGRATED FORECASTING SYSTEM (IFS)",
+    "authors": [
+      "MOZDZYNSKI, GEORGE"
+    ],
+    "year": 2007,
+    "container_title": "Use of High Performance Computing in Meteorology",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-25T18:38:16.748731Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.5194/egusphere-2025-4716",
+    "title": "AIFS 1.1.0: An update to ECMWF's machine-learned weather forecast model AIFS",
+    "authors": [
+      "Moldovan, Gabriel",
+      "Pinnington, Ewan",
+      "Prieto Nemesio, Ana",
+      "Lang, Simon",
+      "Ben Bouallègue, Zied",
+      "Dramsch, Jesper",
+      "Alexe, Mihai",
+      "Santa Cruz, Mario",
+      "Hahner, Sara",
+      "Cook, Harrison",
+      "Theissen, Helen",
+      "Clare, Mariana",
+      "O'Brien, Cathal",
+      "Polster, Jan",
+      "Magnusson, Linus",
+      "Mertes, Gert",
+      "Pinault, Florian",
+      "Raoult, Baudouin",
+      "de Rosnay, Patricia",
+      "Forbes, Richard",
+      "Chantry, Matthew"
+    ],
+    "year": 2025,
+    "container_title": "",
+    "abstract": "<jats:p>Abstract. We present an update to ECMWF's machine-learned weather forecasting model AIFS Single with several key improvements. The model now incorporates physical consistency constraints through bounding layers, an updated training schedule, and an expanded set of variables. The physical constraints substantially improve precipitation forecasts and the new variables show a high level of skill. Upper-air headline scores also show improvement over the previous AIFS version. The AIFS has been fully operational at ECMWF since the 25th of February 2025.</jats:p>",
+    "status": "candidate",
+    "retrieved_at": "2026-09-25T18:38:16.748740Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.37473/dac/10.1101/2020.05.11.20098392",
+    "title": "Forecasting Covid-19 dynamics in Brazil: a data driven approach",
+    "authors": [],
+    "year": null,
+    "container_title": "",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-25T18:38:16.748745Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.5821/dissertation-2117-131415",
+    "title": "Inverse modelling in wildfire spread forecasting: towards a data-driven system",
+    "authors": [
+      "Rios Rubiras, Oriol"
+    ],
+    "year": null,
+    "container_title": "",
+    "abstract": "<jats:p>Wildfires are an ecological phenomenon inherent to earth dynamics and widely spread over the globe. In addition to the environmental impact, when wildfires grow beyond controllable magnitudes, they pose a principal threat to human lives and properties. On many countries, the rural abandonment of last decades, the forest continuity growth and the Wildland Urban Interface increase are exposing entire communities and rendering them vulnerable to a major fire event. Coupled together with a global warming that seems to be enlarging and worsening wildfire-prone weather conditions, the wildfire problem is becoming a recurrent and repetitive natural hazard that is in urgent needs of research development, planning and organizational changes to minimize its impact.\r\nIn this context, the thesis at hand focuses on the development, implementation and initial validation of a wildfire perimeter spread prediction model that might help emergency responders on taking sound decisions to efficiently employ resources and protect valuable assets.  This forecasting model is a particular implementation of a data-driven system. That is, available data are used to improve and calibrate the spread model results with the aim of delivering a more accurate and timely forecast of the fire spread for the upcoming hours. \r\nThis thesis builds up the mentioned system by increasing its complexity and tackling required improvements and adaptations on fuel characterization and wind projection on topography. Initially, a simplified proof of concept that uses front perimeter (isochrones) evolution extracted from infrared imagery of the fire is challenged with data from real-scale burning experiments conducted in Australia. Despite the positive outcome of this initial investigation, some advancements are identified to further upgrade the system. Thus, the following chapters focus on the fuel and wind sub-models together with the spread model topographic upgrade and the different mathematical algorithms and strategies necessary to conduct the data-driven process.\r\nRegarding fuels, the thesis presents an in-depth analysis of fuel characterization to be used by fire spread models. This is done by a thorough sensitivity analysis of the most commonly used fuel characterization systems. In the light of these results, a simplified model that integrates all different fuel properties is proposed to be used by the data-driven framework at hand. \r\nTo properly resolve the wind interaction with the terrain and to couple it into the data-driven system, the WindNinja diagnose software is employed. However, long computational times do not allow for its integration into any data-assimilation strategy. Thus, a full interpolating framework is developed and validated to allow fast and computationally inexpensive wind field updates. This key element becomes then a cornerstone of the full data-driven approach. For the optimization process (embedded into any data-driven systems) six different mathematical algorithms were compared and evaluated. Three of them being line-search strategies and the other three being global search. It was found that the algorithm selection has an impact on the final results in terms of forecast accuracy and computing time. \r\nFinally, the overall system is verified and validated using two source of available data: (1) well characterized, homogeneous slope, medium-scale experimental fires conducted in Portugal and (2) with synthetically generated fronts reproducing a real large-scale fire. These validations were aimed at studying the overall performance, checking the system functionality and highlighting possible flaws and necessary improvements if the tool is to be deployed in a real emergency situation. Whereas the results show the potential of the approach by delivering an acceptable forecast usable for emergency responders, further validations are required to check the robustness and reliability of the tool before using it in operational situations.</jats:p>\n                <jats:p>Els incendis forestals són, al cap i a la, un fenomen ecològic inherent a la dinàmica de la terra i àmpliament escampats per tot el món. A més de l'impacte ambiental, quan els incendis forestals excedeixen, en magnitud i intensitat, la capacitat d’extinció, representen una amenaça per a propietats i vides humanes. En molts països, l’abandó rural de les últimes dècades, el creixement de la continuïtat forestal i l'augment de la interfície urbana-forestal (Wildand-Urban Interface) està comportant l'augment de comunitats exposades al foc forestal alhora que les fan més vulnerables a un gran incendi.\r\nA més a més, l'escalfament global sembla que està afavorint i facilitant la recurrència de les condicions climàtiques propícies pels incendis forestals. El problema de l'incendi forestal s’està convertint en un perill natural recurrent i repetitiu que clama avanços urgents en recerca, planificació i gestió per tal de minimitzar-ne el seu impacte.\r\nEn aquest context, la present tesi se centra en el  desenvolupament, la implementació i la validació inicial d'un model de predicció de la propagació del perímetre d'incendis forestals que podria ajudar als responsables de l’emergència a prendre decisions més oportunes per a emprar els recursos de forma eficient tot protegint els actius valuosos.\r\nAquest model predictiu és una implementació particular d'un sistema basat en dades.\r\nÉs a dir, les dades disponibles s'utilitzen per a millorar i calibrar els resultats del model de propagació del front amb l'objectiu de proporcionar un pronòstic més precís i oportú de l’evolució del perímetre del foc en les pròximes hores.\r\nAquesta tesi construeix el sistema esmentat pas a pas, tot incrementant-ne la seva complexitat i abordant les millores i adaptacions necessàries en cada etapa, per exemple, en la caracterització del combustible i la projecció i interacció del vent amb la topografia.\r\nInicialment, s'utilitzen imatges infraroges de l’evolució del perímetre (isòcrones) de dos cremes experimentals dutes a terme a Austràlia per a realitzar una prova de concepte del sistema. Malgrat el resultat favorable d'aquesta primera investigació, s'identifiquen alguns avenços per millorar-ne l'efectivitat i permetre'n l’aplicació en incendis reals. Així, els capítols següents se centren en els submodels de combustible i vent juntament amb l’actualització topogràfica del model de propagació i els diferents algorismes i estratègies matemàtiques necessàries per dur a terme el procés d’assimilació basat en dades.\r\nPel que fa als combustibles, la tesi presenta una anàlisi en profunditat de la caracterització  dels combustibles que han d'utilitzar els models de propagació de foc. Això es fa mitjançant una anàlisi minuciosa de la sensibilitat dels paràmetres de caracterització del sistema més utilitzats. A la llum d'aquests resultats, es proposa un model simplificat que integri totes les propietats de combustible diferents per ser utilitzat pel model predictiu desenvolupat en la present tesi.\r\nPer resoldre adequadament la interacció del vent amb el terreny i acoblar-la al model de propagació bastat en dades, s'utilitza el programa de diagnòstic WindNinja. Els temps necessaris de computació, però, no permeten la seva directa integració en una estratègia d’assimilació de dades. Així doncs, en aquesta tesi, es desenvolupa i valida un marc interpolador que permeti actualitzacions ràpides i computacionalment assequibles del camp de vents a nivell topogràfic. Aquest element clau es converteix en una peça clau per aconseguir el model de propagació basat en dades que es cerca en aquesta tesi. Per al procés d’optimització (present en qualsevol model conduit per dades) es comparen i s'avaluen sis algorismes matemàtics diferents. Tres d'ells són estratègies de cerca basades en programació lineal i les altres tres són estratègies de recerca global.\r\nL’exploració conclou que la selecció d'algorismes té un gran impacte en els resultats finals en termes de la precisió de pronòstic i temps de computació.\r\nFinalment, tot el sistema es verifica i valida utilitzant les dades de dues fonts disponibles:\r\n(1) incendis experimentals de mitjana escala realitzats a Portugal en un pendent homogeni ben caracteritzat i (2) amb fronts generats sintèticament que reprodueixen un incendi real a gran escala. Aquestes validacions estan orientades a estudiar el rendiment general, comprovar la funcionalitat del sistema això com ressaltar possibles defectes i millores necessàries per tal de poder utilitzar l'eina en una situació d’emergència real.\r\nMalgrat els resultats mostren els potencials del sistema tot proporcionant un pronòstic acceptable, utilitzable com a eina de suport per a la gestió d'una emergència, queda també palès que es requereixen més validacions per comprovar la robustesa i fiabilitat de l'eina abans d'utilitzar-la en situacions operatives.</jats:p>",
+    "status": "candidate",
+    "retrieved_at": "2026-09-25T18:38:16.748751Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.2139/ssrn.4750040",
+    "title": "Data-Driven System Identification, Model Transfer, and Forecasting of Battery Performance with Impedance Measurements",
+    "authors": [
+      "Li, Chenyi",
+      "Zhang, Long"
+    ],
+    "year": 2024,
+    "container_title": "",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-25T18:38:16.748756Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.32038/ltrq.2024.46.10",
+    "title": "It Is About Time: Chronos/Kairos, Transformative Research, and Learning and Development",
+    "authors": [
+      "Negueruela-Azarola, Eduardo"
+    ],
+    "year": 2024,
+    "container_title": "Language Teaching Research Quarterly",
+    "abstract": "<jats:p>This article crafts a distinct conceptualization of time in social sciences through two temporal concepts: Chronos and Kairos. Chronos refers to sequential, linear time, which frames quantitative causality and qualitative documentation in research methodology. Kairos, however, captures time as transformative, conceptual, and emotional moments, representing significant and opportune instances of change. I argue that social sciences should incorporate Kairos to understand time beyond linear temporal sequences. A chronos/kairos distinction allows time to be represented at three levels: (1) a linear continuum for causal, quantitative aspects; (2) a static, analytical framework for qualitative categorization; and (3) a dynamic, creative grid, emphasizing moments that may shape identity in small but consequential ways. Kairos becomes significant in social sciences and education, where teachers and students capture significant moments through art, storytelling, or multimedia. This arts-integrated, action-oriented approach, called Transformative Research (TR), promotes a participatory and creative intervention where research time is not just measured of documented but designed, experienced, and told. Through TR, I advocate for a shift from chronological tracking to fostering Kairos as a path to capture meaningful, transformative experiences, inspiring a more sociocultural, action-grounded approach to research and professional practice.</jats:p>",
+    "status": "candidate",
+    "retrieved_at": "2026-09-25T18:38:18.782952Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.7312/hart20312-009",
+    "title": "6 CHRONOS DESTITUTED, CHRONOS RESTORED",
+    "authors": [],
+    "year": 2022,
+    "container_title": "Chronos",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-25T18:38:18.782974Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1109/itc-cscc66376.2025.11137629",
+    "title": "Zero-Shot Time Series Forecasting of the Online Gig Economy Using the CHRONOS Pretrained Language Model",
+    "authors": [
+      "Abellana, Dharyll Prince M."
+    ],
+    "year": 2025,
+    "container_title": "2025 International Technical Conference on Circuits/Systems, Computers, and Communications (ITC-CSCC)",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-25T18:38:18.782982Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1007/979-8-8688-1276-7_5",
+    "title": "Chronos: Pre-trained Probabilistic Time Series Model",
+    "authors": [
+      "Vishwas, Banglore Vijay Kumar",
+      "Macharla, Sri Ram"
+    ],
+    "year": 2025,
+    "container_title": "Time Series Forecasting Using Generative AI",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-25T18:38:18.782987Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.2307/jj.33902551.6",
+    "title": "Timely Design:",
+    "authors": [],
+    "year": 2026,
+    "container_title": "Visual Vestiges",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-25T18:38:18.782991Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.7312/hart20312-006",
+    "title": "3 NEGOTIATING WITH CHRONOS",
+    "authors": [],
+    "year": 2022,
+    "container_title": "Chronos",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-25T18:38:18.782995Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1515/9798855805987-004",
+    "title": "Chapter 1 Timely Design",
+    "authors": [],
+    "year": 2026,
+    "container_title": "Visual Vestiges",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-25T18:38:18.782999Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.31235/osf.io/xn367",
+    "title": "On kairos time presence in chronos time",
+    "authors": [
+      "Rudokas, Kastytis"
+    ],
+    "year": 2021,
+    "container_title": "",
+    "abstract": "<p>Abstract. This paper attempts to define what is kairos time in terms of cultural spacetime and how it interacts with the linear time chronos. The paper consists of three parts: the first part provides the explanation of the cultural spacetime and time flow in it, the second part presents the proposed concepts of bidirectional time flow patterns, the third part explains the kairos - chronos schematics and attempts to demonstrate the complete picture of cultural spacetime of cultural mankind. The paper is concluded with the derived speculation on the character of the point of the total singularity of cultural spacetime.</p>",
+    "status": "candidate",
+    "retrieved_at": "2026-09-25T18:38:18.783003Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.7312/hart20312-008",
+    "title": "5 IN THE THRALL OF CHRONOS",
+    "authors": [],
+    "year": 2022,
+    "container_title": "Chronos",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-25T18:38:18.783007Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1080/09588221.2025.2500466",
+    "title": "Intrinsic motivational regulation and writing performance in online second language learning classrooms: a time series analysis study",
+    "authors": [
+      "Dong, Li"
+    ],
+    "year": 2025,
+    "container_title": "Computer Assisted Language Learning",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-25T18:38:18.783013Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1007/979-8-8688-1276-7_4",
+    "title": "Time-LLM: Reprogramming Large Language Model",
+    "authors": [
+      "Vishwas, Banglore Vijay Kumar",
+      "Macharla, Sri Ram"
+    ],
+    "year": 2025,
+    "container_title": "Time Series Forecasting Using Generative AI",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-25T18:38:20.842899Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.21203/rs.3.rs-9291769/v1",
+    "title": "CP-LLM: Conformal Calibration for Time Series Interval Forecasting with Frozen Large Language Model",
+    "authors": [
+      "Li, Ke"
+    ],
+    "year": 2026,
+    "container_title": "",
+    "abstract": "<title>Abstract</title>\n                <p>Reliable prediction intervals are essential for deploying time-series forecasting systems in high-stakes domains, yet uncertainty estimates from frozen large language models (LLMs) often deviate from nominal confidence levels. This paper studies interval calibration for multi-step forecasting with frozen LLMs and proposes CP-LLM, a fine-tuning-free two-stage post-hoc framework. In Stage 1, base intervals are constructed from sampled LLM forecasts and augmented with three complementary uncertainty signals: sampling dispersion, temperature sensitivity, and serialization perturbation sensitivity. In Stage 2, base intervals are calibrated on a held-out calibration segment using either Conformalized Quantile Regression (CQR) for relatively stable regimes or Adaptive Conformal Inference (ACI) under temporal distribution shift. Experiments on five public univariate datasets with four API-accessed frozen LLMs show that CP-LLM substantially reduces coverage bias while maintaining competitive interval sharpness. Additional comparisons with traditional forecasting methods, together with ablation and parameter-sensitivity analyses, provide further evidence for the effectiveness of the proposed framework.</p>",
+    "status": "candidate",
+    "retrieved_at": "2026-09-25T18:38:20.842919Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1109/pesgm58988.2026.11693447",
+    "title": "SolarDisagg-LLM: Leveraging Time Series Reprogramming of Large Language Models for Solar Disaggregation",
+    "authors": [
+      "Chen, Mozhi",
+      "Du, Liang",
+      "Wang, Shengyi",
+      "Zhao, Zhenyu"
+    ],
+    "year": 2026,
+    "container_title": "2026 IEEE Power &amp; Energy Society General Meeting (PESGM)",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-25T18:38:20.842929Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.3233/atde260338",
+    "title": "Informer-LLM: Leveraging Large Language Models for Time Series Forecasting via Informer-Based Cross-Modal Reprogramming",
+    "authors": [
+      "Shan, Yaru",
+      "Liu, Yucai"
+    ],
+    "year": 2026,
+    "container_title": "Advances in Transdisciplinary Engineering",
+    "abstract": "<jats:p>Time series forecasting is widely used in applications such as energy systems and financial markets, where accurate prediction is essential for decision-making. Existing approaches are typically developed for specific domains, which limits their ability to generalize across different scenarios. In contrast, large language models (LLMs) have shown strong capabilities in sequence modeling and reasoning. However, applying them to time series data is not straightforward, mainly due to the fundamental difference between continuous temporal signals and discrete token-based representations. To address this challenge, we develop Informer-LLM, a framework that enables pre-trained language models to perform time series forecasting through cross-modal adaptation. Instead of fine-tuning the entire model, our approach keeps the LLM backbone fixed and transforms time series inputs into representations compatible with textual embeddings. We design a reprogramming module based on the Informer architecture to capture temporal dependencies and align them with the semantic space of LLMs. In addition, contextual prompt prefixing (CPP) is introduced to incorporate domain-specific information and improve model reasoning. Experimental results across eight benchmark datasets show that Informer-LLM consistently outperforms existing methods, achieving an average reduction of 12.3% in MSE. The model also performs well in few-shot and zero-shot settings, indicating strong generalization ability in data-limited scenarios.</jats:p>",
+    "status": "candidate",
+    "retrieved_at": "2026-09-25T18:38:20.842943Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1117/12.3073528",
+    "title": "SST-LLM: time series forecasting based on large language models",
+    "authors": [
+      "Hu, Yiyang",
+      "Liao, Haibin",
+      "Wu, Mou",
+      "Yuan, Li"
+    ],
+    "year": 2025,
+    "container_title": "International Symposium on Artificial Intelligence Innovations (IS-AII 2025)",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-25T18:38:20.842952Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.54364/aaiml.2025.52216",
+    "title": "Assessing Lag-Llama in Probabilistic Time Series Forecasting for the Indonesian Stock Market",
+    "authors": [
+      "Nasution, Arbi Haza",
+      "Hanafiah, Anggi",
+      "Monika, Winda",
+      "Sokkalingam, Rajalingam",
+      "Mohamad, Mohd Sham",
+      "Alamsyah, Andry"
+    ],
+    "year": 2025,
+    "container_title": "Advances in Artificial Intelligence and Machine Learning",
+    "abstract": "<jats:p>Accurately predicting stock prices is crucial for investors and policymakers. This paper presents the first empirical evaluation of Lag-Llama, a novel probabilistic time series forecasting model, for predicting stock prices on the Indonesian Stock Exchange (IDX). By applying Lag-Llama to both univariate and multi-time series forecasts of key IDX stocks, we assess its ability to capture temporal patterns and market volatility, particularly in comparison to state-of-the-art models like DeepAR (RNN) and Temporal Fusion Transformer (TFT). Our results show that in fine-tuning scenarios Lag-Llama achieves a Continuous Ranked Probability Score (CRPS) of 0.0195 on a combined dataset of three major stocks (BBCA, BMRI, and AMRT), closely matching TFT (CRPS 0.0179) and outperforming DeepAR (CRPS 0.0270). However, forecasting across broader stock groups (Top 1–9 and Top 10–18 by market capitalization) proves more challenging, with CRPS values rising (e.g. 0.0517 for the Top 1– 9 stocks). This study demonstrates Lag-Llama’s potential as a robust tool for stock price prediction—particularly for select, closely-related stock groupings—offering improved precision and reliability compared to traditional methods.</jats:p>",
+    "status": "candidate",
+    "retrieved_at": "2026-09-25T18:38:23.021646Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.32614/cran.package.ngboostforecast",
+    "title": "ngboostForecast: Probabilistic Time Series Forecasting",
+    "authors": [
+      "Akay, Resul"
+    ],
+    "year": 2022,
+    "container_title": "CRAN: Contributed Packages",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-25T18:38:23.021666Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.5220/0013296100003929",
+    "title": "Towards the Automated Selection of ML Models for Time-Series Data Forecasting",
+    "authors": [
+      "Chen, Yi",
+      "Kantere, Verena"
+    ],
+    "year": 2025,
+    "container_title": "Proceedings of the 27th International Conference on Enterprise Information Systems",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-25T18:38:23.021673Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.4324/9780203182567-16",
+    "title": "Forecasting with Time Series Data and Distributed Lag Models",
+    "authors": [],
+    "year": 2013,
+    "container_title": "Introductory Regression Analysis",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-25T18:38:23.021679Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.2139/ssrn.5156677",
+    "title": "Time-Series Forecasting with Deep Learning and Stochastic Models for Probabilistic Prediction in Financial Markets",
+    "authors": [
+      "Dhanapal, Murugappan"
+    ],
+    "year": 2025,
+    "container_title": "",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-25T18:38:23.021685Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.3390/en18236269",
+    "title": "Assessing Time Series Foundation Models for Probabilistic Electricity Price Forecasting: Toward a Unified Benchmark",
+    "authors": [
+      "Marchesi, Gabriele",
+      "Ballarino, Andrea",
+      "Brusaferri, Alessandro"
+    ],
+    "year": 2025,
+    "container_title": "Energies",
+    "abstract": "<jats:p>Probabilistic electricity price forecasting (PEPF) is a highly complex task with broad economic and operational impact. Recent advances in time series foundation models (TSFMs) offer promising tools to improve PEPF performance. In contrast, PEPF provides a challenging platform for evaluating and accelerating the development of general TSFMs. Despite their potential synergies, TSFMs have received limited attention in the PEPF literature, while the PEPF task remains largely unexplored in the TSFM context. This work aims to bridge these currently parallel research streams, fostering convergence and cross-fertilization to advance both fields. Focusing on Moirai, an open-source probabilistic framework with native covariate support and fine-tuning capabilities, we set up a comprehensive benchmark against specialized neural network-based PEPF methods across multiple market regions characterized by high variability and heterogeneous conditions. Additionally, we systematically explore fine-tuning strategies and model configurations, including context lengths and exogenous variable usage, to assess their impact on probabilistic forecasting accuracy. Experimental results indicate that Moirai provides promising zero-shot predictions, though it still underperforms compared to domain-specific neural networks. Fine-tuning improves calibration, while the architecture does not yet fully leverage exogenous features. Taken together, these observations offer valuable insights to foster future developments. We release our code through an open repository to facilitate collaborative progress within the PEPF and TSFM communities.</jats:p>",
+    "status": "candidate",
+    "retrieved_at": "2026-09-25T18:38:23.021694Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.2139/ssrn.5071353",
+    "title": "Probabilistic Time Series Forecasting via Diffusion Models under Multi-Scale Guidance",
+    "authors": [
+      "Pang, Bowen",
+      "Huang, Liyi",
+      "Feng, Xiangnan",
+      "Wei, Wei"
+    ],
+    "year": 2025,
+    "container_title": "",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-25T18:38:23.021700Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.21203/rs.3.rs-6173427/v1",
+    "title": "Quantitative Portfolio Optimization Framework with Market Regimes Classification, Probabilistic Time Series Forecasting, and Hidden Markov Models",
+    "authors": [
+      "Oliveira, Marcus",
+      "Costa, Gilson"
+    ],
+    "year": 2025,
+    "container_title": "",
+    "abstract": "<title>Abstract</title>\n        <p>This paper introduces a three-step methodology for optimizing an investment portfolio. The first step involves selecting the best performing Exchange-Traded Funds (ETFs) from a comprehensive list of assets for each phase of the market cycle. The second step builds on the first by promoting allocation through the maximization of risk-adjusted returns under uncertainty, using a probabilistic framework. The third step employs a Hidden Markov Model (HMM) approach to model the dynamics of asset returns and volatility, allowing the use of the Mean-Variance framework to optimize allocation. The objective is to propose a framework capable of outperforming the S\\&amp;P 500 benchmark by achieving higher risk-adjusted returns, as confirmed by experimental results, thereby contributing to efficient capital allocation. The third stage, which involves HMM-based allocation optimization, also proves to be very effective in redefining asset weights in stock indices, achieving good performance when applied to IBOVESPA, the main equity index in Brazil. In particular, all proposed steps individually contribute to improving portfolio performance and can be used together or separately. The framework is sufficiently generic to accommodate various time series forecasting methods with different levels of complexity, as well as enables integration with fundamentalist approaches.\nJEL Classification: C15 , G11</p>",
+    "status": "candidate",
+    "retrieved_at": "2026-09-25T18:38:23.021706Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.20944/preprints202502.0009.v1",
+    "title": "Transformer-Based Models for Probabilistic Time Series Forecasting with Explanatory Variables",
+    "authors": [
+      "Caetano, Ricardo",
+      "Oliveira, José Manuel",
+      "Ramos, Patrícia"
+    ],
+    "year": 2025,
+    "container_title": "",
+    "abstract": "<jats:p>Accurate retail demand forecasting is essential for optimizing operations, improving customer satisfaction, and enhancing financial performance. Traditional statistical models often struggle to handle the complexities of retail time series data, which include hierarchical structures, irregular patterns, and external influencing factors. In this study, we evaluate the effectiveness of various Transformer-based models for probabilistic time series forecasting in retail, leveraging the rich explanatory variables provided by the M5 dataset. The models incorporate diverse features, including calendar-related information, selling prices, and socio-economic indicators such as SNAP activities, to capture the temporal, promotional, and socio-economic dynamics influencing sales. Our results demonstrate that Transformer-based models augmented with explanatory variables outperform their counterparts, providing more accurate and reliable forecasts across different horizons. We show that these models can effectively leverage context to improve forecast accuracy and capture uncertainty through probabilistic forecasting methods. This study highlights the potential of deep learning models in retail demand forecasting and underscores the importance of integrating domain-specific variables to achieve robust, context-aware predictions in dynamic retail environments.</jats:p>",
+    "status": "candidate",
+    "retrieved_at": "2026-09-25T18:38:23.021712Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.5194/egusphere-egu26-9078",
+    "title": "Improving forecasts of extreme rainfall induced by landfalling typhoon Bebinca (2024): Evaluating Fuxi, Pangu and Fengwu AI-driven WRF simulations",
+    "authors": [
+      "Wang, Rui"
+    ],
+    "year": 2026,
+    "container_title": "",
+    "abstract": "<jats:p>Accurately forecasting extreme precipitation remains a longstanding challenge in numerical weather prediction (NWP). Recently, data-driven Artificial Intelligence (AI) models have shown promise in improving global weather forecast accuracy, but their potential to enhance moso-scale precipitation forecasts has not been fully explored. This study evaluates the effectiveness of using forecasts from three AI models (Fuxi, Pangu, and Fengwu) compared with those from the traditional Global Forecast System (GFS) to initialize the Weather Research and Forecasting (WRF) model for simulating the extreme rainfall associated with landfalling Typhoon Bebinca (2024), the strongest typhoon to make landfall in Shanghai since 1949. A total of twenty WRF experiments were conducted across multiple initialization times, enabling a systematic and homogenized comparison of forecast performance. Results show that forecasts from the Fuxi and Pangu models provided more reliable and stable initial conditions, leading to improved predictions of typhoon track and extreme precipitation, particularly at longer lead times. Among the three AI models, Fengwu-driven simulations yielded the lowest track errors and demonstrated superior skill at shorter lead times (within 72 hours). Further physical diagnosis revealed that AI-driven WRF simulations produced more realistic thermodynamic structures, including stronger frontogenesis and enhanced convective organization, which contributed to improved rainfall forecasts. These findings underscore that high-quality large-scale initial fields from AI models not only improve the forecasts of synoptic-scale features such as typhoon track and intensity but also exert critical influence on the location and intensity of precipitation associated with mesoscale convective systems.</jats:p>",
+    "status": "candidate",
+    "retrieved_at": "2026-09-25T18:38:25.259736Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.5194/egusphere-egu24-2794",
+    "title": "Improving Distributional Regression Forests for Post-processing Extreme Wind Gust Forecasts&amp;#160;",
+    "authors": [
+      "François, Bastien",
+      "Kivril, Harun",
+      "Schmeits, Maurice",
+      "Whan, Kirien"
+    ],
+    "year": 2025,
+    "container_title": "",
+    "abstract": "<jats:p>Extreme events, such as wind gusts or extreme precipitation, can generate huge impacts on our society. Accurate predictions of such events are thus vital for taking preventive measures. In spite of continued scientific progress in weather forecasting, ensemble forecasts exhibit biases and under-dispersion and have to be calibrated using observations before being used, e.g., in hydrological or renewable energy applications. Several post-processing techniques have therefore been developed and applied over the last decades in order to improve forecast quality. Many existing post-processing methods are parametric, i.e. they assume that the predictive distribution belongs to a class of known probability distributions. Parameters of the assumed distribution are then modeled as functions of predictors obtained from numerical weather prediction models, for example using nonhomogeneous regression or more advanced tree-based methods. One of the main limitations of such methods is that a suitable family of probability distributions has to be selected to describe the distribution of the target variable. This implies that intermediate and high values are modeled with the same parametric distribution, which can lead to suboptimal results for extremes. We propose to adapt an existing distributional tree-based technique (Distributional Regression Forests) used for ensemble post-processing to overcome this limitation by allowing the method to choose different statistical distributions to model intermediate and extreme values. The proposed method is applied to forecasts of 6-hourly maximum wind gusts from 2018 to 2022 over the Netherlands using the ECMWF-IFS ensemble data. Results are compared against several state-of-the-art parametric and non-parametric post-processing methods. In comparison with these alternatives, the proposed algorithm reasonably corrects intermediate values and presents the largest skill improvements for wind gust extremes depending on lead times, stations and thresholds. However, it remains difficult to beat the raw forecasts of extremes. Therefore, it encourages further research on adding more flexibility to parametric methods for the post-processing of extreme weather forecasts.</jats:p>",
+    "status": "candidate",
+    "retrieved_at": "2026-09-25T18:38:25.259762Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.14711/thesis-991013222948503412",
+    "title": "Improving the Prediction and Understanding of South China's Extreme Rainfall",
+    "authors": [
+      "Wang, Yueya"
+    ],
+    "year": null,
+    "container_title": "",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-25T18:38:25.259771Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.5194/egusphere-egu25-17568",
+    "title": "Improving forecasts of extreme precipitation with MAD-WRF mesoscale model",
+    "authors": [
+      "Gelman, Anton",
+      "Morin, Efrat",
+      "Jiménez, Pedro",
+      "Sheu, Rong-Shyang",
+      "Rostkier-Edelstein, Dorita"
+    ],
+    "year": 2025,
+    "container_title": "",
+    "abstract": "<jats:p>The Multi-sensor Advection Diffusion Weather Research and Forecast (MAD-WRF) model is a state-of-the-art addition to the WRF model that includes a fast cloud-initialization procedure, making it more suitable for hydrometeors analysis and clouds forecasts. The MAD-WRF cloud initialization combines a cloud parameterization that infers the presence of clouds based on relative humidity with observations of the cloud mask and cloud top/base height to provide a three-dimensional cloud analysis. During the forecasts, the hydrometeors can be advected and diffused with no microphysics, in what we refer to as the MAD-WRF passive mode. Alternatively, these passive hydrometeors can be integrated into the explicitly resolved hydrometeors during a nudging phase, designated the MAD-WRF active mode (Jim&amp;#233;nez et al., 10.1016/j.solener.2022.04.055). As such, MAD-WRF has been extensively used for solar energy predictions.Here we have investigated the feasibility of using MAD-WRF to improve the accuracy of intense precipitation forecasts. An extreme precipitation event over Israel that led to urban floods and two casualties in Tel-Aviv during January 4th, 2020, has been chosen as a case study. The extreme accumulated precipitation responsible for noon and early afternoon floods was triggered by a persistent cloud train that developed over the area several hours before. MAD-WRF model has been configured with 3-nested domains with 9, 3 and 1 km grid-sizes. We have run MAD-WRF in active mode incorporating satellite-retrieved cloud-top heights provided by the European Space Agency EUMETSAT in all three domains. EUMETSAT data are available in near real-time making it suitable for operational forecasts.Independent precipitation data measured by the Israel Meteorological Service radar at Bet-Dagan (about 10 km south-east of Tel-Aviv) has been used for forecasts verification. Comparison between radar data and MAD-WRF forecasts with and without incorporation of EUMETSAT cloud-tops retrievals reveal the advantage MAD-WRF cloud initialization. The significant improvement in the forecast of the location and rate of the precipitation is observed up to 12 hours ahead in time.On-going work focuses on the evaluation of the precipitation distributions and improvement of the forecast of dry areas.</jats:p>",
+    "status": "candidate",
+    "retrieved_at": "2026-09-25T18:38:25.259779Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1002/essoar.10504316.1",
+    "title": "Intercomparison of the Performance of Four Data Assimilation Schemes in a Limited-Area Model on Forecasts of an Extreme Rainfall Event over the Himalayas",
+    "authors": [
+      "S, Rakesh",
+      "Kutty, Govindan"
+    ],
+    "year": 2020,
+    "container_title": "",
+    "abstract": "<jats:p>This study compares the performance of four data assimilation (DA)\nsystems: Ensemble Adjustment Kalman Filter (EAKF), Variational\n(3DVAR/4DVAR), and Hybrid ensemble-3DVAR (HYBRID) in the Weather\nResearch and Forecast (WRF) model. A heavy rainfall event that produced\nnotorious floods in the Uttarakhand over the Himalayan region is\nconsidered. Observations are assimilated at every 6 h interval and all\nthe conventional observations including cloud tracked-wind from the\nsatellite are used. The forecast initialized from the analysis of four\nDA systems at different lead times is evaluated. A non-cycled nested\nassimilation strategy that provides advantages of increased resolution\nin the DA system is tested. The results indicate that 4DVAR experiments\nproduce more skillful forecasts for wind while both 4DVAR and EAKF\nexperiments show improvement for upper tropospheric temperature\nforecasts as compared to the other experiments. The evaluation of\nrainfall forecast depicts that the 4DVAR DA system has outperformed the\nother DA systems when the effect of high-resolution assimilation is\nmimicked in the system using the nested assimilation strategy. Further\nanalysis of the event indicates that an early merging of the southward\nprotruding trough with the westward-moving monsoon depression has\nresulted in stronger southeastward flow in EAKF and HYBRID experiments,\nwhich is suggested as a potential reason for enhanced precipitation over\nthe Uttarakhand in both the experiments.</jats:p>",
+    "status": "candidate",
+    "retrieved_at": "2026-09-25T18:38:25.259787Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.5194/egusphere-egu22-10916",
+    "title": "Towards use of extreme rainfall forecast and socio-economic data to generate Impact-based forecasts",
+    "authors": [
+      "Singhal, Akshay",
+      "Raman, Ashwin",
+      "Jha, Sanjeev"
+    ],
+    "year": 2022,
+    "container_title": "",
+    "abstract": "<jats:p>&amp;lt;p&amp;gt;Each year India witnesses numerous casualties, economic losses and vast displacement of people due to extreme rainfall events (EREs). One of the reasons for such losses is that the weather warnings associated with the EREs are not properly communicated to the general public. It is essential that the expected impacts are communicated well in advance so that appropriate remedial actions can be taken and losses can be minimized. Several national and regional rainfall forecasting agencies have started issuing risk-based warnings which includes the potential impacts arising due to the EREs. This framework of providing forecast information based on the potential impacts of a hazard is called Impact-Based Forecasting (IBF). In this study, we develop a framework for generating the impact-based forecasts and associated warning matrices for the districts of eastern Uttar Pradesh, India, by integrating the rainfall forecasts and the socio-economic characteristics of the region. The region is densely populated, has relatively poor socio-economic conditions and is prone to frequent EREs. We take into account various sectors such as population, economy and agriculture where maximum impacts are expected to take place. Moreover, we identify the vulnerable districts based on the frequency of the number of extreme rainfall forecasts in the past four years (2017-2020) and the nature of socio-economic conditions. The vulnerable districts are categorized in three categories (low, medium and high) based on the expected impacts. For each of the vulnerable districts, sample IBFs and warning matrices are generated. IBFs inform about the possible impacts different sectors in each district may face on a given day due to the forecasted ERE. On the other hand, warning matrices provide updated information regarding the category of risk for the district a few days in advance. The study is significant since it follows a methodological framework to generate impact-based forecasts and warnings which includes analysis of rainfall forecasts, identification of possible impacts and suggestion of appropriate mitigation actions.&amp;lt;/p&amp;gt;</jats:p>",
+    "status": "candidate",
+    "retrieved_at": "2026-09-25T18:38:25.259792Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.2172/4876",
+    "title": "Tornado, Maximum Wind Gust, and Extreme Rainfall Event Recurrence Frequencies at the Savannah River Site",
+    "authors": [
+      "Weber, A.H."
+    ],
+    "year": 1998,
+    "container_title": "",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-25T18:38:25.259798Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.31274/etd-180810-2071",
+    "title": "The impact of radar data assimilation on warm season rainfall forecasts for use in hydrologic models: examples from extreme rain events in Iowa",
+    "authors": [
+      "Moser, Ben"
+    ],
+    "year": null,
+    "container_title": "",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-25T18:38:25.259805Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.5194/egusphere-egu25-19805",
+    "title": "Spatial Coincidence of Extreme Wind Across European Cities: Evidence from 10,000 Years of Expired ECMWF Forecasts",
+    "authors": [
+      "Dolezal, Petr",
+      "Shuckburgh, Emily"
+    ],
+    "year": 2025,
+    "container_title": "",
+    "abstract": "<jats:p>We present a novel method to construct a 10,000-year event set for European weather using expired ensemble forecasts from ECMWF [1]&amp;#8212;requiring no additional computational effort. Derived from the same numerical model underlying ERA5, this approach naturally extends it more than two orders of magnitude, whilst inherently overrepresenting the climates of the 2010s and 2020s. Hence, it provides a valuable resource for quantifying risks in today&amp;#8217;s already-warmed climateOur evaluation focuses on extreme wind speeds from extra-tropical cyclones impacting major European cities. With a rigorous order statistics framework, we confirm that this dataset replicates the statistical tails of ERA5 for return periods up to RP40 and extends exceedance probability (EP) curves up to RP10,000. Crucially, its physical consistency enables robust analysis of joint distributions across space and time, offering precise insights into compound and correlated risks. Using empirical copulas, we quantify critical conditional probabilities, such as P(Paris = RP100  London = RP50), a task infeasible with only the weather record beyond RP5.This method leverages years of historical computational investments by ECMWF, that created a vast global low-bias source of simulated weather data, fully interchangeable with ERA5 for seamless integration into existing pipelines. Following two years of archive extraction efforts, we compiled a subset of surface variables (t2m, 10m/100m wind, runoff,...) and make it widely available to the community [2].&amp;#160;[1] European Centre for Medium-Range Weather Forecasts (ECMWF) __Atmospheric Model Ensemble extended forecast__ https://www.ecmwf.int/en/forecasts/datasets/set-vi[2] Dolezal P., Expired ECMWF ENSemble Extended forecasts and Reforcasts for Renewable power in Europe. NERC EDS Centre for Environmental Data Analysis,https://catalogue.ceda.ac.uk/uuid/7783f79c7080456088d98a34ca238bfa</jats:p>",
+    "status": "candidate",
+    "retrieved_at": "2026-09-25T18:38:25.259812Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1109/igarss52108.2023.10282643",
+    "title": "Toward Foundation Models for Earth Monitoring: Generalizable Deep Learning Models for Natural Hazard Segmentation",
+    "authors": [
+      "Jakubik, Johannes",
+      "Muszynski, Michal",
+      "Vössing, Michael",
+      "Kühl, Niklas",
+      "Brunschwiler, Thomas"
+    ],
+    "year": 2023,
+    "container_title": "IGARSS 2023 - 2023 IEEE International Geoscience and Remote Sensing Symposium",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-25T18:38:27.397359Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1109/igarss53475.2024.10642780",
+    "title": "PhilEO Bench: Evaluating Geo-Spatial Foundation Models",
+    "authors": [
+      "Fibaek, Casper",
+      "Camilleri, Luke",
+      "Luyts, Andreas",
+      "Dionelis, Nikolaos",
+      "Saux, Bertrand Le"
+    ],
+    "year": 2024,
+    "container_title": "IGARSS 2024 - 2024 IEEE International Geoscience and Remote Sensing Symposium",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-25T18:38:27.397378Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1002/9781118786352.wbieg2206",
+    "title": "Geo‐Foundation Models",
+    "authors": [
+      "Mai, Gengchen"
+    ],
+    "year": 2024,
+    "container_title": "International Encyclopedia of Geography",
+    "abstract": "<jats:p>As a group of task‐agnostic pretrained large‐scale neural network models that can be later adapted to  numerous downstream tasks, foundation models have made a significant impact on academia, industry, and society. Meanwhile, several efforts have been made to develop foundation models for the geoscience domain. They are known as geo‐foundation models (GeoFMs). The necessary steps for GeoFM development were taken in the context of the uniqueness of geographic data and a collaborative effort among academia, industry, and society is necessary to develop a reliable, sustainable, and ethically aware framework.</jats:p>",
+    "status": "candidate",
+    "retrieved_at": "2026-09-25T18:38:27.397385Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.31223/x5rx9z",
+    "title": "Calibrated spatial uncertainty for Earth observation foundation models via Matérn-motivated latent stochastic regularization",
+    "authors": [
+      "Johnson, Daniel"
+    ],
+    "year": 2026,
+    "container_title": "",
+    "abstract": "<jats:p>Earth observation foundation models produce dense spatial embeddings that support transfer learning across sensors and regions, yet these representations carry no explicit spatial statistical model for covariance, smoothness, or uncertainty. Existing deep learning uncertainty methods produce per-pixel variance estimates that ignore spatial dependence, and their calibration is rarely assessed beyond in-distribution data. This study introduces a Matérn-motivated latent stochastic regularization layer for frozen foundation model embeddings. The layer evolves embeddings through a learned Itô stochastic di?erential equation whose linear-case Fokker?Planck stationary distribution recovers the Matérn precision structure of the classical Whittle SPDE; in the implemented nonlinear parameterization, this correspondence serves as a design principle rather than as an explicit spatial di?erential operator. The layer adds fewer than 800,000 parameters with no foundation model retraining. Applied to OlmoEarth embeddings over a 10km × 10km training patch in Indianapolis, USA, the layer achieves 90% prediction interval coverage within 0.8 percentage points of nominal for both NDVI and land surface temperature (LST). Under four-fold within-site spatial block holdout, coverage degrades by 3.9 percentage points for NDVI and 7.7 for LST, compared with 6.1?12.8 for matched-capacity baselines. Under deployment to the full Marion County study area, the layer retains PICP@90 = 82.7% for LST while matched MLP and CNN baselines drop to 73.2?73.3% despite comparable point predictions and similar mean predicted variances. A tract-level analysis at the 38 ◦C summer LST threshold shows this calibration advantage ?ags approximately 33,000 additional residents as warranting heat-exposure investigation under a precautionary decision rule.</jats:p>",
+    "status": "candidate",
+    "retrieved_at": "2026-09-25T18:38:27.397393Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.3997/2214-4609-pdb.246.121",
+    "title": "Multi-disciplinary inversion of Earth models",
+    "authors": [
+      "Dubrule, Olivier",
+      "Escobar and Danila Kuznetsov, Igor"
+    ],
+    "year": 2008,
+    "container_title": "GEO 2008",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-25T18:38:27.397397Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1016/0012-8252(68)90151-7",
+    "title": "Models in applied geo-electromagnetics",
+    "authors": [
+      "Negi, Janardan G.",
+      "Gupta, Chandra P."
+    ],
+    "year": 1968,
+    "container_title": "Earth-Science Reviews",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-25T18:38:27.397401Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1029/2025ea004882",
+    "title": "Where Is Southeast Asian Climate Research Produced? A Bibliometric Analysis of Climate Science Literature",
+    "authors": [
+      "Custado, M. J.",
+      "Cooperdock, E. H. G."
+    ],
+    "year": 2026,
+    "container_title": "Earth and Space Science",
+    "abstract": "<jats:title>Abstract</jats:title>\n                  <jats:p>Authorship in research manuscripts offers a useful lens to examine demographic participation in academic publishing, a process central to the production and dissemination of science. Climate research is particularly important for the 11 countries that comprise Southeast Asia (SEA), where environmental and socioeconomic conditions elevate vulnerability to climate change. In some cases, these factors can limit scientific capacity, highlighting the need for equitable international collaborations. This study quantifies author affiliations, publisher locations, funding acknowledgments, and citations in SEA physical climate science literature using metadata from 729 publications between 2014 and 2023. Collectively as a region, SEA‐affiliated authors comprise 30.8% of all author country‐affiliation counts, with 53.6% of manuscripts including at least one SEA‐affiliated author. However, this authorship distribution is uneven among SEA nations, varying from zero for Timor‐Leste to 7% affiliated with Vietnam. Additionally, country‐level metrics show that the top three countries in authorship (USA, China, and Japan) comprise 37.5% of all authors. These same countries were mentioned 312 times in funding statements, compared to 251 for SEA‐based institutions. Moreover, 90.3% of the articles are published in journals based in the USA and Europe. Manuscripts exclusively authored by non‐SEA researchers on average received more citations than those with at least one SEA author. Together, these results reveal how local and external influences shape SEA climate science, demonstrating how perceptions of representation vary depending on how groups are aggregated. Quantifying these patterns can serve as basis for identifying challenges and opportunities for local participation in SEA climate science research.</jats:p>",
+    "status": "candidate",
+    "retrieved_at": "2026-09-25T18:38:27.397407Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1007/s12665-009-0017-5",
+    "title": "Clay fine fissuring monitoring using miniature geo-electrical resistivity arrays",
+    "authors": [
+      "Sentenac, P.",
+      "Zielinski, M."
+    ],
+    "year": 2009,
+    "container_title": "Environmental Earth Sciences",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-25T18:38:27.397412Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1109/igarss.1991.579948",
+    "title": "Bench Model Testing Of GOMOS Imaging Spectrometer For Atmospheric Ozone.",
+    "authors": [
+      "Astola, H.",
+      "Leppelmeier, G.W.",
+      "Saari, H."
+    ],
+    "year": null,
+    "container_title": "[Proceedings] IGARSS'91 Remote Sensing: Global Monitoring for Earth Management",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-25T18:38:27.397417Z"
   }
 ]
