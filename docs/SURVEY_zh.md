@@ -2,9 +2,9 @@
 
 **论文全称**：*Foundation Models and Reasoning LLMs for Scientific Multimodal Time Series: A Survey*  
 **维护机构**：Antigravity Autonomous Research Loop (`lihuirui/awesome-scientific-time-series-foundation-models-survey`)  
-**当前版本**：v4.0 (迭代 4 - 跨学科全景定量评测元表、超算能耗与算力开销评测、多智能体科学推理 DAG 闭环系统)  
+**当前版本**：v5.0 (迭代 5 - 神经变分数据同化与反演、跨模态多传感器隐空间对齐拓扑、业务化长时漂移与极端异常应急协议)  
 **更新日期**：2026-09-26  
-**论文正文**：[`paper/main.pdf`](file:///workspace/survey-sci-ts/paper/main.pdf) (IEEEtran 双栏, 11 页, 包含 7 幅高分辨率出版级图表与 4 个全景对比表格)
+**论文正文**：[`paper/main.pdf`](file:///workspace/survey-sci-ts/paper/main.pdf) (IEEEtran 双栏, 11 页, 包含 8 幅高分辨率出版级图表与 4 个全景对比表格)
 
 ---
 
@@ -17,7 +17,7 @@
 3. **物理守恒律与一致性约束**：经典自回归神经网络易发生“物理幻觉”（违背质量守恒、动量守恒或能量守恒），在长时段循环推演中出现累积谱衰减、过度平滑或极端事件失真。
 4. **科学推理与智能体决策**：随着大语言模型（LLM）的爆发，如何使智能体深度理解物理时序中的空间依赖与动力演进，具备科学假设生成、物理参数反演、多工具编排与闭环科学推理（Scientific Reasoning）能力，成为人工智能驱动科学研究（AI for Science）的核心命题。
 
-本综述系统梳理了 2021 年至今自然科学领域的 **科学多模态时序基础模型（Scientific Multimodal Time Series Foundation Models）** 与 **科学时序推理大语言模型（Scientific Reasoning LLMs / Multi-Agent Systems）**，收录并深度解构了 47 篇经过学术 API 严格验证的标志性研究。
+本综述系统梳理了 2021 年至今自然科学领域的 **科学多模态时序基础模型（Scientific Multimodal Time Series Foundation Models）** 与 **科学时序推理大语言模型（Scientific Reasoning LLMs / Multi-Agent Systems）**，收录并深度解构了 53 篇经过学术 API 严格验证的标志性研究。
 
 ---
 
@@ -124,6 +124,32 @@ $$d\mathbf{x} = \left[ \mathbf{f}(\mathbf{x}, t) - g(t)^2 \mathbf{s}_\theta(\mat
 - **编码与执行智能体 (Coding-Agent)**：在受控 REPL 沙盒中调用 `MetPy`、`ObsPy`、`PyTorch` 等科学求解器生成诊断结果；
 - **自省纠错回路 (Self-Correction Loop)**：解析运行时 Traceback 异常，针对地学数据特有的坐标反转、360天气候历法与气压单位错配进行自动反射重构；
 - **审判智能体与物理防护栏 (Critic-Agent Guardrails)**：在报告生成前严格校验质量守恒、降水非负性（$P \ge 0$）与量纲一致性，杜绝大模型科学幻觉。
+
+### 3.6 神经变分数据同化与传感器-网格反演 (Neural Data Assimilation & Sensor Inversion)
+传统大模型依赖国家级超算中心预先生成的离线网格化再分析场（ERA5）。本综述系统梳理了将原始非结构化、异步、稀疏传感器观测直接反演为物理协调网格场的最新同化架构（见论文 Section 4 与 Fig. 5）：
+1. **展开式神经四维变分求解器 (Unrolled Neural 4D-Var)**：
+   - 传统 4D-Var 求解依赖复杂庞大的切线性与伴随模式代码（Adjoint Models），计算开销占超算中心 80% 以上。
+   - **4DVarNet**（Fablet et al., JAMES 2021）将变分极小化目标映射为循环展开神经网络：
+     $$\mathbf{x}_0^{(i+1)} = \mathbf{x}_0^{(i)} - \boldsymbol{\Gamma}_\theta \left( \nabla_{\mathbf{x}_0} \mathcal{J}(\mathbf{x}_0^{(i)}), \mathbf{h}^{(i)} \right)$$
+     利用神经网络自适应学习最优下降方向与动态背景误差协方差，在卫星沿轨测高数据反演中成功重建精细中尺度海洋涡旋。
+   - **FengWu-4DVar**（Xiao et al., 2023）利用 FengWu 大气 Transformer 的全局可微性，将 24 小时同化窗内的真实异步探空与卫星辐射观测残差直接反向传播，实现初值分析与动力模式的端到端联合优化，同化速度由小时级提速至秒级。
+2. **生成式得分扩散数据同化 (Score-Based & Diffusion DA)**：
+   - **DiffDA**（Huang et al., 2024）与 **Score-based DA**（Rozet & Louppe, NeurIPS 2023）将同化形式化为稀疏物理约束下的条件生成反演：
+     $$d\mathbf{x} = \left[ \mathbf{f}(\mathbf{x}, t) - g(t)^2 \left( \nabla_\mathbf{x} \log p_t(\mathbf{x}) + \nabla_\mathbf{x} \log p_t(\mathbf{y} \mid \mathbf{x}) \right) \right] dt + g(t) d\bar{\mathbf{w}}$$
+     利用 Tweedie 公式解析推导观测似然梯度，无需手动假定高斯背景误差，即可在天气尺度直接从稀疏测站反演全局高保真大气锋面。
+
+### 3.7 跨模态跨几何隐空间对齐三大范式 (Cross-Modal Latent Alignment Paradigms)
+针对卫星高光谱、SAR 雷达、离散测站与连续网格场的几何差异，本综述提炼出三大多模态融合范式（见论文 Fig. 5）：
+1. **策略 A：早期异构 Patch 投影与 4D 连续时空编码**（如 SatMAE, Presto, Galileo），引入基于地理坐标与物理时间的连续傅里叶位置编码 $\mathbf{PE}(x, y, z, t)$；
+2. **策略 B：潜变量交叉注意力瓶颈 (Latent Cross-Attention Bottleneck)**（如 Aurora, SkySense 1.9B），设计固定容量的潜变量查询组 $\mathbf{Z} \in \mathbb{R}^{M \times D}$，通过交叉注意力吞吐任意密度的传感器 Token，实现计算复杂度与观测点数解耦；
+3. **策略 C：连续物理波长动态超网络 (Dynamic Wavelength Hypernetworks)**（如 DOFA, AnySat），基于物理波长连续嵌入 $\lambda \in [400\text{ nm}, 14{,}000\text{ nm}]$ 动态生成卷积与线性投影权重，实现光学与雷达波段的零样本即插即用适配。
+
+### 3.8 业务化长时漂移、概念漂移与极端气候异常应急协议 (Operational Reliability & Fail-Safe Protocols)
+根据 ECMWF 官方首个业务化统计评估报告（Ben-Bouallegue et al., BAMS 2024），纯数据驱动大模型在投入真实业务预报生产中存在四大现实挑战与应对协议：
+1. **业务分析初值与历史再分析的分布失配 (Analysis Discrepancy)**：在再分析（ERA5，含12小时对称双向观测窗口）上预训练的模型在直接输入截断时延的业务化初值（Operational Analysis）时，第 0 步误差会出现 10%--15% 的异常跳升，需引入业务化在线微调或自适应初值校正缓冲层。
+2. **自回归长步长递推的能谱衰减与平滑效应**：$L_2$ 损失在 5 天以上外推时逐步丢失高频动能，致使锋面与局部大风结构模糊，需引入条件扩散扰动或自回归级联网络进行能谱补偿。
+3. **未见历史极端事件中的物理幻觉风险 (Climate Non-Stationarity)**：面对全球变暖背景下未曾被历史数据覆盖的极端破纪录热穹顶、爆发性气旋或极涡崩溃，纯数据模型可能因支撑集外（Out-of-Distribution）导致动能或比湿不守恒，甚至出现负降水。
+4. **混合双轨并行与安全应急回退机制 (Hybrid Blending & Fail-Safe Handoff)**：业务气象局确立了 AI 模式（如 AIFS）与经典物理数值模式（IFS HRES）并行运行机制，实时监控物理残差与守恒量；当扩散集合离散度或物理偏离度触发阈值时，自动平滑无缝切换回经典数值动力学求解器。
 
 ---
 

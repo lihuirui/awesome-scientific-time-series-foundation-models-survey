@@ -47,9 +47,9 @@ def run_generate_bib():
         # Escape special TeX characters and normalize unicode
         title_escaped = title.replace("&", r"\&").replace("%", r"\%").replace("\u2010", "-").replace("\u2013", "-").replace("\u2014", "--")
         venue_escaped = venue.replace("&", r"\&").replace("%", r"\%").replace("\u2010", "-")
-        authors_escaped = authors.replace("\u2010", "-").replace("\u2013", "-").replace("Ø", r"{\O}").replace("é", r"{\'e}").replace("ö", r"{\"o}").replace("ä", r"{\"a}").replace("ü", r"{\"u}")
+        authors_escaped = authors.replace("\u2010", "-").replace("\u2013", "-").replace("Ø", r"{\O}").replace("é", r"{\'e}").replace("è", r"{\`e}").replace("ç", r"{\c{c}}").replace("ö", r"{\"o}").replace("ä", r"{\"a}").replace("ü", r"{\"u}")
 
-        is_journal = any(j in venue.lower() for j in ["nature", "science", "journal", "npj", "ieee", "james"])
+        is_journal = any(j in venue.lower() for j in ["nature", "science", "journal", "npj", "ieee", "james", "bulletin", "bams"])
 
         entry_type = "article" if is_journal or "arxiv" in venue.lower() else "inproceedings"
 

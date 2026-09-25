@@ -57,17 +57,83 @@ Continuous convolution on $\mathbb{S}^2$ with an invariant kernel $\kappa$ is re
 \end{equation}
 where $\mathbf{W}_\ell \in \mathbb{C}^{d_{\text{out}} \times d_{\text{in}}}$ denotes degree-dependent weight tensors. By the convolution theorem on $\mathrm{SO}(3)$, this spherical harmonic formulation provides exact rotational equivariance, eliminates high-latitude numerical artifacts, and ensures long-term spectral stability over multi-day atmospheric rollouts.
 
-\subsection{Multimodal Masked Autoencoders for Earth Observation}
-In the remote sensing domain, observations arrive as asynchronous, multi-spectral satellite imagery.
+\subsection{Multimodal Masked Autoencoders and Latent Alignments}
+In the remote sensing and Earth observation domains, observations arrive as asynchronous, multi-spectral satellite imagery cubes, irregular in-situ sensor readings, and gridded reanalysis tensors.
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=\textwidth]{figures/multimodal_alignment_arch.pdf}
+\caption{Architectural taxonomy of scientific multimodal cross-attention alignment and neural variational data assimilation across heterogeneous spatial geometries. Left: Multi-source observational modalities spanning satellites, reanalyses, point sensor networks, and asynchronous tracks. Center: Three primary alignment paradigms (Early Heterogeneous Patching, Latent Cross-Attention Bottlenecks, and Dynamic Wavelength Hypernetworks). Right: Unified spatio-temporal foundation backbones and neural variational data assimilation solvers bridging sparse observation streams directly into gridded initial state representations.}
+\label{fig:multimodal_alignment_arch}
+\end{figure*}
+
 \begin{itemize}
     \item \textbf{SatMAE}~\cite{cong2022satmae} introduced a temporal and multi-spectral Vision Transformer trained via masked autoencoding. By decoupling spatial, temporal, and spectral positional embeddings, SatMAE processes multi-temporal revisit sequences with high masking ratios (up to 75\%), outperforming supervised baselines on land cover and crop yield estimation.
     \item \textbf{Presto}~\cite{tseng2023presto} developed a lightweight (1.2M parameters) transformer tailored for pixel-level time series. Presto natively ingests heterogeneous modalities---including Sentinel-1 SAR backscatter, Sentinel-2 multi-spectral bands, elevation, and ERA5 weather---yielding exceptional few-shot transfer performance.
     \item \textbf{Galileo}~\cite{tseng2025galileo} expanded multi-sensor pretraining across spatial-temporal scales using dual global and local contrastive objectives, enabling unified geospatial segmentation and dynamic flood mapping.
+    \item \textbf{SkySense}~\cite{guo2024skysense} established a billion-scale ($1.9\text{B}$ parameter) multi-modal remote sensing foundation model. By formulating a factorized spatio-temporal cross-attention architecture, SkySense jointly pretrains on over 21.5 million multi-modal satellite temporal sequences (combining optical multi-spectral reflectance with synthetic aperture radar SAR backscatter). It establishes state-of-the-art generalist performance across 16 diverse Earth observation benchmarks, including fine-grained crop classification, building damage assessment, and temporal change detection.
     \item \textbf{DOFA}~\cite{xiong2024dofa} introduced a Dynamic One-For-All foundation architecture inspired by neural plasticity. Recognizing that Earth observation platforms possess disparate band wavelengths and ground sampling distances (GSD), DOFA conditions dynamic weight hypernetworks directly on continuous physical wavelengths $\lambda \in [400\text{ nm}, 14{,}000\text{ nm}]$, unifying optical, SAR, and hyperspectral temporal modalities under a single pre-trained representation.
     \item \textbf{GEO-Bench}~\cite{lacoste2023geobench} established a standardized benchmark suite for Earth monitoring foundation models. Unifying multi-temporal Sentinel-1/2, SPOT, and m-CASIS data across regional land-use segmentation and multi-spectral classification, GEO-Bench provides rigorous zero-shot and fine-tuning evaluation protocols for multi-sensor satellite representations.
     \item \textbf{EarthPT}~\cite{smith2023earthpt} developed a 700M-parameter autoregressive decoder foundation model specifically designed for Earth Observation time series. Treating multi-spectral reflectance measurements (400--2300~nm) across Copernicus Sentinel-2 pixel-year revisit sequences as dense temporal tokens, EarthPT predicts future surface reflectance evolutions with high physical fidelity.
     \item \textbf{Prithvi}~\cite{jakubik2023prithvi} and its weather-climate counterpart \textbf{Prithvi WxC}~\cite{schmude2024prithviwxc} established open-source geospatial foundation backbones jointly developed by NASA and IBM, scaling to 2.3 billion parameters.
 \end{itemize}
+
+\subsubsection{Formal Alignment Paradigms across Heterogeneous Geometries}
+As illustrated in Fig.~\ref{fig:multimodal_alignment_arch}, cross-modal integration across disparate spatial geometries follows three dominant architectural paradigms:
+\begin{enumerate}
+    \item \textbf{Strategy A: Early Heterogeneous Patch Projection}: Given heterogeneous modality inputs $\mathbf{X}^{(m)} \in \mathbb{R}^{T_m \times C_m \times H_m \times W_m}$ with disparate channel definitions and Ground Sampling Distances (GSD), modality-specific linear or convolutional patch embedding kernels $\mathbf{E}^{(m)}$ project local spatial-temporal patches into a shared hidden dimension $D$:
+    \begin{equation}
+        \mathbf{h}_i^{(m)} = \mathbf{E}^{(m)} \mathbf{x}_i^{(m)} + \mathbf{PE}(x_i, y_i, z_i, t_i),
+    \end{equation}
+    where $\mathbf{PE}(\cdot)$ denotes a unified continuous 4D Fourier spatio-temporal positional encoding, ensuring coordinate harmonization across disparate satellite swaths and ground station coordinates (utilized in SatMAE~\cite{cong2022satmae} and Presto~\cite{tseng2023presto}).
+    \item \textbf{Strategy B: Latent Cross-Attention Bottlenecks}: When observation token counts $N_{\text{obs}} = \sum_m N_m$ fluctuate dramatically due to dynamic sensor availability or dense planetary grids, feeding all tokens directly into full self-attention scales quadratically as $O(N_{\text{obs}}^2)$. To circumvent this computational explosion, Perceiver-style architectures (Aurora~\cite{bodnar2024aurora}, SkySense~\cite{guo2024skysense}) introduce a fixed bank of learnable latent query tokens $\mathbf{Z} \in \mathbb{R}^{M \times D}$ ($M \ll N_{\text{obs}}$) that attend to the irregular multi-sensor input tokens via cross-attention:
+    \begin{equation}
+        \mathbf{Z}_{\text{aligned}} = \text{Softmax}\left(\frac{\mathbf{Z} \mathbf{W}_Q (\mathbf{H}_{\text{obs}} \mathbf{W}_K)^T}{\sqrt{d}}\right) (\mathbf{H}_{\text{obs}} \mathbf{W}_V),
+    \end{equation}
+    where $\mathbf{H}_{\text{obs}} = [\mathbf{H}^{(1)}; \dots; \mathbf{H}^{(K)}]$ concatenates all available sensor tokens. The spatio-temporal foundation backbone then processes only the constant-size latent state $\mathbf{Z}_{\text{aligned}}$ with linear complexity in input resolution, decoupling observation density from computation.
+    \item \textbf{Strategy C: Dynamic Wavelength Hypernetworks}: To support arbitrary spectral bands without modifying network weights, continuous wavelength hypernetworks (DOFA~\cite{xiong2024dofa}) encode the physical central wavelength $\lambda$ of each spectral channel via harmonic Fourier embeddings $\mathbf{e}_\lambda = [\sin(2^k \pi \lambda), \cos(2^k \pi \lambda)]_{k=0}^{K-1}$. A lightweight Multi-Layer Perceptron (MLP) hypernetwork $\mathcal{H}_\phi$ maps $\mathbf{e}_\lambda$ to generate the convolution or linear projection weights dynamically:
+    \begin{equation}
+        \mathbf{W}_{\text{patch}}(\lambda) = \mathcal{H}_\phi(\mathbf{e}_\lambda) \in \mathbb{R}^{D \times (P^2 \cdot C_{\text{in}})}.
+    \end{equation}
+    This enables zero-shot sensor transfer across optical (e.g., Sentinel-2 10m/20m bands), thermal infrared (Landsat-8/TIRS), and radar backscatter (Sentinel-1 VV/VH) modalities within a unified model.
+\end{enumerate}
+
+\subsection{Neural Data Assimilation and Sensor-to-Grid Variational Inversion}
+\label{sec:neural_data_assimilation}
+A fundamental gap separating operational numerical weather forecasting from purely data-driven foundation models is \textit{data assimilation} (DA): the mathematical process of synthesizing sparse, asynchronous, and noisy physical observations into a physically consistent gridded initial atmospheric or oceanic state $\mathbf{x}_0$. While existing foundation models (e.g., Pangu-Weather, GraphCast) rely entirely on pre-computed gridded reanalyses (ERA5 or operational IFS analyses) produced by supercomputing NWP centers, emerging architectures introduce differentiable variational and score-based neural assimilation solvers to invert raw sensor streams directly into gridded model initial states.
+
+\subsubsection{Variational Formulation and Neural 4D-Var}
+In classical numerical weather prediction, four-dimensional variational data assimilation (4D-Var) optimizes an initial state $\mathbf{x}_0$ over an assimilation window $[t_0, t_K]$ to minimize a penalized least-squares cost function:
+\begin{equation}
+    \mathcal{J}(\mathbf{x}_0) = \frac{1}{2} \|\mathbf{x}_0 - \mathbf{x}_b\|_{\mathbf{B}^{-1}}^2 + \frac{1}{2} \sum_{k=0}^{K} \|\mathbf{y}_k - \mathcal{H}_k(\mathcal{M}_{0 \to k}(\mathbf{x}_0))\|_{\mathbf{R}_k^{-1}}^2,
+    \label{eq:classical_4dvar}
+\end{equation}
+where $\mathbf{x}_b$ is the background prior state, $\mathbf{B}$ is the background error covariance matrix, $\mathbf{y}_k$ denotes sparse observations at time $t_k$, $\mathbf{R}_k$ is the observation error covariance, $\mathcal{H}_k$ is the observation forward operator, and $\mathcal{M}_{0 \to k}$ is the non-linear dynamical forward model. In operational NWP, minimizing Eq.~\eqref{eq:classical_4dvar} requires maintaining complex adjoint code $\mathcal{M}^*$ to compute gradients $\nabla_{\mathbf{x}_0} \mathcal{J}$, consuming up to 80\% of operational supercomputing compute budgets.
+
+To overcome this bottleneck, Fablet et al.~\cite{fablet2021learning} introduced \textbf{4DVarNet}, reformulating variational data assimilation as an end-to-end learnable gradient-based solver. 4DVarNet replaces the analytical minimization loop with an unrolled recurrent neural architecture:
+\begin{equation}
+    \mathbf{x}_0^{(i+1)} = \mathbf{x}_0^{(i)} - \boldsymbol{\Gamma}_\theta \left( \nabla_{\mathbf{x}_0} \mathcal{J}(\mathbf{x}_0^{(i)}), \mathbf{h}^{(i)} \right),
+    \label{eq:neural_4dvar_step}
+\end{equation}
+where $\boldsymbol{\Gamma}_\theta$ is a learned recurrent neural operator (e.g., ConvLSTM or U-Net solver), $\mathbf{h}^{(i)}$ represents internal solver memory states, and the gradient $\nabla_{\mathbf{x}_0} \mathcal{J}$ is computed via automated differentiation through the observation operator $\mathcal{H}_k$ and neural forward dynamics $\mathcal{M}_\phi$. Originally deployed for sea surface height (SSH) reconstruction from sparse satellite altimetry tracks in oceanography, 4DVarNet achieves orders-of-magnitude faster convergence than classical conjugate gradient descent while learning dynamic background error covariances directly from historical data.
+
+Scaling neural data assimilation to global atmospheric forecasting, Xiao et al.~\cite{xiao2023fengwu4dvar} introduced \textbf{FengWu-4DVar}. FengWu-4DVar couples the FengWu multi-scale atmospheric transformer with an unrolled 4D variational optimization loop. By exploiting the end-to-end differentiability of the neural forecasting backbone, FengWu-4DVar directly backpropagates observation residuals from asynchronous in-situ soundings and satellite radiances through 24-hour assimilation windows, generating initialized atmospheric states that match operational ECMWF IFS analysis quality while reducing assimilation wall-clock time from hours to seconds.
+
+\subsubsection{Score-Based and Diffusion Data Assimilation}
+Complementing deterministic variational solvers, generative diffusion models reframe data assimilation as conditional posterior sampling: drawing physical state trajectories $\mathbf{x}_{0:K} \sim p(\mathbf{x}_{0:K} \mid \mathbf{y}_{0:K})$.
+
+Rozet and Louppe~\cite{rozet2023sda} formulated \textbf{Score-based Data Assimilation} (SDA), showing that continuous score-based stochastic differential equations can execute exact spatio-temporal smoothing and filtering over non-linear fluid dynamics without tangent-linear approximations. Given a trained unconditional foundation prior $s_\theta(\mathbf{x}_t, t) \approx \nabla_{\mathbf{x}_t} \log p_t(\mathbf{x}_t)$, SDA conditions the reverse-time generative SDE on sparse partial observations $\mathbf{y}$ via Tweedie's guidance:
+\begin{equation}
+    d\mathbf{x}_t = \left[ \mathbf{f}(\mathbf{x}_t, t) - g(t)^2 \left( \nabla_{\mathbf{x}_t} \log p_t(\mathbf{x}_t) + \nabla_{\mathbf{x}_t} \log p_t(\mathbf{y} \mid \mathbf{x}_t) \right) \right] dt + g(t) \, d\mathbf{\bar{w}}.
+    \label{eq:score_da_sde}
+\end{equation}
+Under Gaussian observation noise $\mathbf{y} \sim \mathcal{N}(\mathbf{H}\mathbf{x}_0, \mathbf{R})$, the intractable conditional score $\nabla_{\mathbf{x}_t} \log p_t(\mathbf{y} \mid \mathbf{x}_t)$ is approximated analytically via the posterior expectation $\hat{\mathbf{x}}_0(\mathbf{x}_t) = \frac{1}{\sqrt{\bar{\alpha}_t}} (\mathbf{x}_t - \sqrt{1 - \bar{\alpha}_t} \boldsymbol{\epsilon}_\theta(\mathbf{x}_t, t))$:
+\begin{equation}
+    \nabla_{\mathbf{x}_t} \log p_t(\mathbf{y} \mid \mathbf{x}_t) \approx \frac{1}{\sqrt{\bar{\alpha}_t}} \mathbf{H}^T \left( \mathbf{H} \boldsymbol{\Sigma}_t \mathbf{H}^T + \mathbf{R} \right)^{-1} \left( \mathbf{y} - \mathbf{H} \hat{\mathbf{x}}_0(\mathbf{x}_t) \right).
+    \label{eq:tweedie_da_gradient}
+\end{equation}
+
+Scaling diffusion assimilation to weather-scale operational state estimation, Huang et al.~\cite{huang2024diffda} introduced \textbf{DiffDA}. DiffDA trains a conditional denoising diffusion probabilistic model (DDPM) conditioned on sparse surface weather station observations and radiosonde soundings. Operating directly on physical observation coordinates, DiffDA samples ensemble analyses that accurately reproduce fine-scale frontal boundaries, atmospheric rivers, and convective storms, demonstrating that neural generative assimilation can bridge heterogeneous sensor observations directly into gridded foundation state spaces.
 
 \subsection{Probabilistic Diffusion and Extreme-Event Ensembles}
 \label{sec:diffusion_ensembles}

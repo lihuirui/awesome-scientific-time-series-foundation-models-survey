@@ -183,6 +183,13 @@ def run_search():
         ("Crossref", "Lag-Llama Towards Foundation Models for Probabilistic Time Series Forecasting"),
         ("Crossref", "FuXi-Extreme Improving extreme rainfall and wind forecasts with diffusion model"),
         ("Crossref", "GEO-Bench Toward Foundation Models for Earth Monitoring"),
+        # Iteration 5 Additions: Neural Data Assimilation, Multimodal Alignment, Operational Reliability
+        ("Crossref", "Learning Variational Data Assimilation Models and Solvers 4DVarNet"),
+        ("Crossref", "FengWu-4DVar Coupling the Data-driven Weather Forecasting Model with 4D Variational Assimilation"),
+        ("Crossref", "DiffDA a Diffusion Model for Weather-scale Data Assimilation"),
+        ("Crossref", "Score-based Data Assimilation Rozet"),
+        ("Crossref", "SkySense A Multi-Modal Remote Sensing Foundation Model Towards Universal Interpretation"),
+        ("Crossref", "The Rise of Data-Driven Weather Forecasting A First Statistical Assessment"),
     ]
 
     verified_arxiv_ids = [
@@ -228,6 +235,13 @@ def run_search():
         "2310.08278",  # Lag-Llama (Rasul et al.)
         "2310.19822",  # FuXi-Extreme (Chen/Zhong et al.)
         "2306.03831",  # GEO-Bench (Lacoste et al.)
+        # Iteration 5 arXiv Additions
+        "2007.12941",  # 4DVarNet (Fablet et al.)
+        "2312.12455",  # FengWu-4DVar (Xiao et al.)
+        "2401.05932",  # DiffDA (Huang et al.)
+        "2306.10574",  # Score-based Data Assimilation (Rozet & Louppe)
+        "2312.10115",  # SkySense (Guo et al.)
+        "2307.10128",  # The Rise of Data-Driven Weather Forecasting (Ben-Bouallegue et al.)
     ]
 
     candidates = {}
@@ -308,6 +322,8 @@ def run_search():
         "10.52202/079017-4463",        # UniTS
         "10.1785/0220210324",          # SeisBench
         "10.52202/085713-0303",        # OceanBench
+        "10.1029/2021ms002572",        # 4DVarNet
+        "10.1175/bams-d-23-0162.1",    # Ben-Bouallegue (BAMS)
     ]
     prev_doi = len(candidates)
     for doi in verified_dois:

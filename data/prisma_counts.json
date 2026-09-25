@@ -1,11 +1,11 @@
 {
-  "records_identified": 562,
-  "records_after_duplicates_removed": 438,
-  "records_screened_title_abstract": 438,
-  "records_excluded_title_abstract": 112,
-  "reports_sought_for_retrieval": 326,
+  "records_identified": 624,
+  "records_after_duplicates_removed": 496,
+  "records_screened_title_abstract": 496,
+  "records_excluded_title_abstract": 116,
+  "reports_sought_for_retrieval": 380,
   "reports_not_retrieved": 0,
-  "reports_assessed_for_eligibility": 326,
-  "reports_excluded_full_text": 279,
-  "studies_included_in_review": 47
+  "reports_assessed_for_eligibility": 380,
+  "reports_excluded_full_text": 327,
+  "studies_included_in_review": 53
 }

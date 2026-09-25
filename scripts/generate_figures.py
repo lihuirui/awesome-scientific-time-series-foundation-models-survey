@@ -298,6 +298,9 @@ def plot_weather_foundation_timeline():
         ("Prithvi-100M", "2023-10", "Geospatial ViT", 2023.82, -2.7, "#0D9488"),
         ("GenCast", "2023-12", "Diffusion Ensemble", 2023.95, 1.4, "#DC2626"),
         ("Stormer", "2023-12", "Random Patch ViT", 2023.98, -1.4, "#B45309"),
+        ("SkySense", "2023-12", "1.9B Multi-Modal", 2023.96, 2.3, "#0D9488"),
+        ("FengWu-4DVar", "2023-12", "Neural 4D-Var", 2023.97, -2.1, "#7C3AED"),
+        ("DiffDA", "2024-01", "Diffusion DA", 2024.06, -1.3, "#DC2626"),
         ("Time-LLM", "2023-10", "Reprogrammed LLM", 2023.80, 1.4, "#2563EB"),
         ("FuXi-Extreme", "2023-10", "Extreme Diffusion", 2023.85, -1.8, "#DC2626"),
         ("MOMENT", "2024-02", "Open TS Foundation", 2024.12, 2.5, "#059669"),
@@ -544,6 +547,115 @@ def plot_publications_by_year():
     print("Generated publications_by_year.png/.pdf")
 
 
+def plot_multimodal_alignment_arch():
+    fig, ax = plt.subplots(figsize=(13.5, 7.8), dpi=300)
+    ax.set_xlim(0, 100)
+    ax.set_ylim(0, 100)
+    ax.axis("off")
+
+    def draw_box(x, y, w, h, text, title=None, facecolor="#F0F4F8", edgecolor="#1E3A8A", titlecolor="#0F172A"):
+        rect = patches.FancyBboxPatch(
+            (x, y), w, h,
+            boxstyle="round,pad=1.0,rounding_size=1.5",
+            facecolor=facecolor, edgecolor=edgecolor, linewidth=1.5
+        )
+        ax.add_patch(rect)
+        if title:
+            ax.text(x + w / 2, y + h - 2.8, title, ha="center", va="top",
+                    fontsize=9.0, fontweight="bold", color=titlecolor)
+            ax.text(x + w / 2, y + (h - 4.2) / 2, text, ha="center", va="center",
+                    fontsize=7.8, color="#1E293B", multialignment="center")
+        else:
+            ax.text(x + w / 2, y + h / 2, text, ha="center", va="center",
+                    fontsize=7.8, color="#1E293B", multialignment="center")
+
+    def draw_arrow(x1, y1, x2, y2, color="#475569", label=None, label_offset=(0, 2), style="-|>", lw=1.6):
+        ax.annotate("", xy=(x2, y2), xytext=(x1, y1),
+                    arrowprops=dict(arrowstyle=style, color=color, lw=lw, mutation_scale=12))
+        if label:
+            ax.text((x1 + x2) / 2 + label_offset[0], (y1 + y2) / 2 + label_offset[1], label,
+                    ha="center", va="center", fontsize=7.5, fontweight="bold", color=color,
+                    bbox=dict(boxstyle="round,pad=0.2", facecolor="white", edgecolor="none", alpha=0.9))
+
+    # Header Title
+    ax.text(50, 97.0, "Scientific Multimodal Cross-Attention Alignment & Neural Inversion Architecture",
+            ha="center", va="top", fontsize=13, fontweight="bold", color="#0F172A")
+
+    # Section 1: Observation Modalities (Left)
+    ax.text(14, 91.5, "1. Heterogeneous Modalities", ha="center", va="center", fontsize=10, fontweight="bold", color="#1E40AF")
+    
+    draw_box(2, 70, 24, 17,
+             "Optical & Radar Satellite Cubes\nSentinel-1/2, Landsat, MODIS\nIrregular revisit & multi-scale\n(X_sat in R^{T x C x H x W})",
+             "Multispectral / SAR Imagery", facecolor="#EFF6FF", edgecolor="#2563EB", titlecolor="#1E40AF")
+             
+    draw_box(2, 48, 24, 17,
+             "Global Gridded Reanalysis\nERA5, IFS Analysis, GFS\nUniform lat-lon / spherical grid\n(X_grid in R^{B x L x H x W})",
+             "Gridded Atmospheric Tensors", facecolor="#ECFDF5", edgecolor="#059669", titlecolor="#065F46")
+
+    draw_box(2, 26, 24, 17,
+             "Sparse In-Situ Sensor Networks\nStreamflow gauges, Seismograms\nWeather stations, Ocean buoys\n(X_point in R^{N x T x D})",
+             "Point Series & Waveforms", facecolor="#FEF3C7", edgecolor="#D97706", titlecolor="#92400E")
+
+    draw_box(2, 4, 24, 17,
+             "Asynchronous Soundings & Tracks\nRadiosondes, Aircraft AMDAR\nSatellite Altimetry (SSH Tracks)\n(y_k at irregular t_k)",
+             "Asynchronous Sensor Tracks", facecolor="#FDF2F8", edgecolor="#DB2777", titlecolor="#9D174D")
+
+    # Section 2: Modality Alignment Strategies (Center)
+    ax.text(49, 91.5, "2. Cross-Modal Alignment Strategies", ha="center", va="center", fontsize=10, fontweight="bold", color="#4338CA")
+
+    # Strategy A
+    draw_box(31, 68, 36, 19,
+             "Modality-Specific Patch Embeddings\nPositional Harmonization: PE(x, y, z, t)\nContinuous coordinate encodings\n(SatMAE, Presto, Galileo)",
+             "Strategy A: Early Heterogeneous Patching",
+             facecolor="#F5F3FF", edgecolor="#6366F1", titlecolor="#3730A3")
+
+    # Strategy B
+    draw_box(31, 37, 36, 26,
+             "Fixed Learnable Latent Query Bank: Z in R^{M x D}\nCrossAttn(Z, X_modality, X_modality)\nDecouples irregular sensor density from backbone compute\nEnables arbitrary multi-sensor conditioning\n(Aurora, SkySense, ClimaX, Prithvi)",
+             "Strategy B: Latent Cross-Attention Bottleneck",
+             facecolor="#EEF2FF", edgecolor="#4F46E5", titlecolor="#312E81")
+
+    # Strategy C
+    draw_box(31, 4, 36, 28,
+             "Continuous Spectral Wavelength Embedding: e_lambda\nDynamic Hypernetwork: H_phi(e_lambda) -> W_kernel\nZero-shot sensor adaptation across arbitrary bands\nContinuous band interpolation (400nm - 2200nm)\n(DOFA, AnySat)",
+             "Strategy C: Dynamic Wavelength Hypernetworks",
+             facecolor="#FFFBEB", edgecolor="#B45309", titlecolor="#78350F")
+
+    # Section 3: Backbone & Variational Neural Inversion (Right)
+    ax.text(85, 91.5, "3. Foundation Backbone & Inversion", ha="center", va="center", fontsize=10, fontweight="bold", color="#065F46")
+
+    draw_box(71, 52, 27, 35,
+             "Spherical Harmonic Transforms (SFNO)\nMulti-Mesh Message Passing (GraphCast)\n3D Earth Transformers (Pangu, FuXi)\nScore-Based Diffusion SDE (GenCast, SEEDS)\nPreserves Kolmogorov Turbulent Spectra",
+             "Unified Spatio-Temporal Backbone",
+             facecolor="#ECFDF5", edgecolor="#059669", titlecolor="#065F46")
+
+    draw_box(71, 4, 27, 43,
+             "Neural 4D-Var Unrolled Solvers\nx_0^{(i+1)} = x_0^{(i)} - Gamma_theta(grad J)\n(4DVarNet, FengWu-4DVar)\n---\nScore-Based Posterior Sampling\ndx = [f(x,t) - g^2(grad log p + grad log p(y|x))] dt\n(DiffDA, Score-based DA)\nSparse Observation -> Gridded Initial State",
+             "Neural Variational Data Assimilation",
+             facecolor="#F0FDF4", edgecolor="#16A34A", titlecolor="#14532D")
+
+    # Connector Arrows
+    # Inputs to Strategy A & B & C
+    draw_arrow(26, 78.5, 31, 78.5, color="#2563EB")
+    draw_arrow(26, 56.5, 31, 56.5, color="#059669")
+    draw_arrow(26, 34.5, 31, 45.0, color="#D97706")
+    draw_arrow(26, 12.5, 31, 16.0, color="#DB2777")
+
+    # Strategies to Backbone
+    draw_arrow(67, 77.5, 71, 77.5, color="#6366F1", label="Aligned Tokens", label_offset=(0, 2))
+    draw_arrow(67, 50.0, 71, 62.0, color="#4F46E5", label="Latent Queries Z", label_offset=(0, 2))
+    draw_arrow(67, 18.0, 71, 22.0, color="#B45309", label="Dynamic Kernels", label_offset=(0, 2))
+    
+    # DA coupling to Backbone
+    draw_arrow(84.5, 47, 84.5, 52, color="#16A34A", label="Optimal x_0", label_offset=(4, 0), style="<|-|>")
+
+    plt.tight_layout()
+    plt.savefig(os.path.join(FIG_DIR, "multimodal_alignment_arch.png"), dpi=300)
+    plt.savefig(os.path.join(FIG_DIR, "multimodal_alignment_arch.pdf"))
+    plt.close()
+    print("Generated multimodal_alignment_arch.png/.pdf")
+
+
 if __name__ == "__main__":
     plot_prisma_flow()
     plot_taxonomy_tree()
@@ -551,4 +663,5 @@ if __name__ == "__main__":
     plot_weather_foundation_timeline()
     plot_resolution_vs_leadtime()
     plot_agent_reasoning_dag()
+    plot_multimodal_alignment_arch()
     plot_publications_by_year()

@@ -8058,6 +8058,1077 @@
     "screen_date": "2026-09-26"
   },
   {
+    "bibkey": "fablet2021learning",
+    "title": "Learning Variational Data Assimilation Models and Solvers",
+    "authors": [
+      "Fablet, Ronan",
+      "Chapron, Bertrand",
+      "Drumetz, Lucas",
+      "M{\\'e}min, Etienne",
+      "Pannekoucke, Olivier",
+      "Rousseau, Fran{\\c{c}}ois"
+    ],
+    "year": 2021,
+    "venue": "JAMES / arXiv:2007.12941",
+    "doi_or_arxiv": "https://doi.org/10.1029/2021MS002572",
+    "arxiv_id": "2007.12941",
+    "doi": "10.1029/2021MS002572",
+    "domain": "Oceanography",
+    "modality": "Gridded reanalysis & Satellite altimetry tracks",
+    "backbone": "Variational Neural Operator (4DVarNet)",
+    "pretraining_data": "SSH and SST satellite observations (Copernicus / CMEMS)",
+    "physics_integration": "Differentiable variational optimization",
+    "role_of_llm": "None",
+    "lead_time_or_task": "Sea surface dynamics reconstruction & state estimation",
+    "model_size": "8.5M",
+    "code_url": "https://github.com/CIA-Oceanix/4dvarnet-core",
+    "quality_score": 12,
+    "status": "included",
+    "exclusion_reason": null,
+    "screen_date": "2026-09-26"
+  },
+  {
+    "bibkey": "xiao2023fengwu4dvar",
+    "title": "FengWu-4DVar: Coupling the Data-driven Weather Forecasting Model with 4D Variational Assimilation",
+    "authors": [
+      "Xiao, Yi",
+      "Bai, Lei",
+      "Xue, Wei",
+      "Chen, Kang",
+      "Shen, Ce",
+      "Hou, Mengying",
+      "Wang, Donghai",
+      "Ouyang, Wanli"
+    ],
+    "year": 2023,
+    "venue": "arXiv:2312.12455",
+    "doi_or_arxiv": "https://arxiv.org/abs/2312.12455",
+    "arxiv_id": "2312.12455",
+    "doi": null,
+    "domain": "Weather/Climate",
+    "modality": "In-situ observations & Gridded reanalysis (ERA5)",
+    "backbone": "Coupled 4D-Var Neural Adjoint + Multi-Scale Transformer",
+    "pretraining_data": "ERA5 & simulated asynchronous atmospheric observations",
+    "physics_integration": "Adjoint variational assimilation",
+    "role_of_llm": "None",
+    "lead_time_or_task": "Global atmospheric data assimilation and 10-day weather forecast",
+    "model_size": "180M",
+    "code_url": "https://github.com/OpenEarthLab/FengWu-4DVar",
+    "quality_score": 12,
+    "status": "included",
+    "exclusion_reason": null,
+    "screen_date": "2026-09-26"
+  },
+  {
+    "bibkey": "huang2024diffda",
+    "title": "DiffDA: a Diffusion Model for Weather-scale Data Assimilation",
+    "authors": [
+      "Huang, Langwen",
+      "Gianinazzi, Lukas",
+      "Yu, Yuejiang",
+      "Dueben, Peter D.",
+      "Hoefler, Torsten"
+    ],
+    "year": 2024,
+    "venue": "arXiv:2401.05932",
+    "doi_or_arxiv": "https://arxiv.org/abs/2401.05932",
+    "arxiv_id": "2401.05932",
+    "doi": null,
+    "domain": "Weather/Climate",
+    "modality": "Sparse surface/sounding observations & Gridded reanalysis",
+    "backbone": "Conditional Denoising Diffusion Probabilistic Model (DDPM)",
+    "pretraining_data": "ERA5 & real station observations",
+    "physics_integration": "Conditional Bayesian posterior sampling",
+    "role_of_llm": "None",
+    "lead_time_or_task": "Probabilistic weather-scale atmospheric state estimation",
+    "model_size": "68M",
+    "code_url": "https://github.com/spcl/DiffDA",
+    "quality_score": 12,
+    "status": "included",
+    "exclusion_reason": null,
+    "screen_date": "2026-09-26"
+  },
+  {
+    "bibkey": "rozet2023sda",
+    "title": "Score-based Data Assimilation",
+    "authors": [
+      "Rozet, Fran{\\c{c}}ois",
+      "Louppe, Gilles"
+    ],
+    "year": 2023,
+    "venue": "NeurIPS",
+    "doi_or_arxiv": "https://arxiv.org/abs/2306.10574",
+    "arxiv_id": "2306.10574",
+    "doi": null,
+    "domain": "Weather/Climate",
+    "modality": "Continuous state trajectories & Sparse noisy observations",
+    "backbone": "Continuous Score-based Stochastic Differential Equations (SDE)",
+    "pretraining_data": "Lorenz-96 & 2D Kolmogorov turbulent flows",
+    "physics_integration": "Continuous adjoint score matching",
+    "role_of_llm": "None",
+    "lead_time_or_task": "Spatio-temporal filtering and smoothing for chaotic fluid trajectories",
+    "model_size": "12M",
+    "code_url": "https://github.com/francois-rozet/sda",
+    "quality_score": 12,
+    "status": "included",
+    "exclusion_reason": null,
+    "screen_date": "2026-09-26"
+  },
+  {
+    "bibkey": "guo2024skysense",
+    "title": "SkySense: A Multi-Modal Remote Sensing Foundation Model Towards Universal Interpretation for Earth Observation Imagery",
+    "authors": [
+      "Guo, Xin",
+      "Lao, Jiangwei",
+      "Dang, Bo",
+      "Zhang, Yingying",
+      "Qiu, Liujun",
+      "Wu, Kang",
+      "Li, Yansheng",
+      "Liang, Dingkang"
+    ],
+    "year": 2024,
+    "venue": "CVPR",
+    "doi_or_arxiv": "https://arxiv.org/abs/2312.10115",
+    "arxiv_id": "2312.10115",
+    "doi": null,
+    "domain": "Remote Sensing / EO",
+    "modality": "Multi-modal satellite imagery (Optical & SAR)",
+    "backbone": "Factorized Multi-Modal Spatio-Temporal ViT (1.9B parameters)",
+    "pretraining_data": "21.5M multi-modal multi-temporal remote sensing image sequences",
+    "physics_integration": "Cross-spectral geographic calibration",
+    "role_of_llm": "None",
+    "lead_time_or_task": "Multi-task Earth observation (classification, detection, segmentation, change detection)",
+    "model_size": "1.9B",
+    "code_url": "https://github.com/Jack-bo1220/SkySense",
+    "quality_score": 12,
+    "status": "included",
+    "exclusion_reason": null,
+    "screen_date": "2026-09-26"
+  },
+  {
+    "bibkey": "benbouallegue2024rise",
+    "title": "The Rise of Data-Driven Weather Forecasting: A First Statistical Assessment of Machine Learning–Based Weather Forecasts in an Operational-Like Context",
+    "authors": [
+      "Ben-Bouallegue, Zied",
+      "Clare, Mariana C. A.",
+      "Magnusson, Linus",
+      "Gascon, Estibaliz",
+      "Maier-Gerber, Michael",
+      "Janousek, Martin",
+      "Rodwell, Mark",
+      "Pinault, Florian",
+      "Alexe, Mihai",
+      "Chantry, Matthew",
+      "Dueben, Peter D."
+    ],
+    "year": 2024,
+    "venue": "Bulletin of the American Meteorological Society (BAMS)",
+    "doi_or_arxiv": "https://doi.org/10.1175/BAMS-D-23-0162.1",
+    "doi": "10.1175/BAMS-D-23-0162.1",
+    "arxiv_id": "2307.10128",
+    "domain": "Weather/Climate",
+    "modality": "Gridded reanalysis & Operational IFS Analysis",
+    "backbone": "Operational NWP Benchmark & Concept Drift Evaluation Protocol",
+    "pretraining_data": "ECMWF operational archive (IFS HRES vs FourCastNet, Pangu, GraphCast)",
+    "physics_integration": "Operational conservation and synoptic verification",
+    "role_of_llm": "None",
+    "lead_time_or_task": "Operational 0-10 day global verification and concept drift evaluation",
+    "model_size": "Platform",
+    "code_url": "not available",
+    "quality_score": 12,
+    "status": "included",
+    "exclusion_reason": null,
+    "screen_date": "2026-09-26"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.5194/egusphere-egu21-15678",
+    "title": "Jointly learning variational data assimilation models and solvers for geophysical dynamics",
+    "authors": [
+      "Fablet, Ronan",
+      "Chapron, Bertrand",
+      "Drumetz, Lucas",
+      "Memin, Etienne",
+      "Pannekoucke, Olivier",
+      "Rousseau, François"
+    ],
+    "year": 2021,
+    "container_title": "",
+    "abstract": "<jats:p>&amp;lt;p&amp;gt;This paper addresses representation learning for the resolution of inverse problems&amp;amp;#160; with geophysical dynamics. Among others, examples of inverse problems of interest include space-time interpolation, short-term forecasting, conditional simulation w.r.t. available observations, downscaling problems&amp;amp;#8230; From a methodological point of view, we rely on a variational data assimilation framework. Data assimilation (DA) aims to reconstruct the time evolution of some state given a series of&amp;amp;#160; observations, possibly noisy and irregularly-sampled. Here, we investigate DA from a machine learning point of view backed by an underlying variational representation.&amp;amp;#160; Using automatic differentiation tools embedded in deep learning frameworks, we introduce end-to-end neural network architectures for variational data assimilation. It comprises two key components: a variational model and a gradient-based solver both implemented as neural networks. A key feature of the proposed end-to-end learning architecture is that we may train the neural networks models using both supervised and unsupervised strategies. We first illustrate applications to the reconstruction of Lorenz-63 and Lorenz-96 systems from partial and noisy observations. Whereas the gain issued from the supervised learning setting emphasizes the relevance of groundtruthed observation dataset for real-world case-studies, these results also suggest new means to design data assimilation models from data. Especially, they suggest that learning task-oriented representations of the underlying dynamics may be beneficial. We further discuss applications to short-term forecasting and sampling design along with preliminary results for the reconstruction of sea surface currents from satellite altimetry data.&amp;amp;#160;&amp;lt;/p&amp;gt;&amp;lt;p&amp;gt;This abstract is supported by a preprint available online: https://arxiv.org/abs/2007.12941&amp;lt;/p&amp;gt;</jats:p>",
+    "status": "excluded_fulltext",
+    "retrieved_at": "2026-09-25T23:44:02.914068Z",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-26"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.5194/egusphere-egu25-4300",
+    "title": "Performance Gains and Advantages of 4DVarNet in End-to-End Learning for Data Assimilation",
+    "authors": [
+      "Roy, Shashank Kumar",
+      "Fablet, Ronan"
+    ],
+    "year": 2025,
+    "container_title": "",
+    "abstract": "<jats:p>The 4D variational assimilation (4DVar) framework is widely used in classical numerical weather prediction and geophysical data assimilation. However, a crucial assumption in 4DVar is that the model state that is close to the true state corresponds to the minimizer of the 4DVar cost function. Using a single-layer quasi-geostrophic (QG) model, we study scenarios where this assumption breaks down, particularly in the presence of model errors and suboptimal initialization. By introducing controlled perturbations in the initial conditions&amp;#8212;we design experiments to investigate the sensitivity of 4DVar solutions. We find that minimizing the 4DVar score does not always correlate with achieving lower accuracy, suggesting the presence of local minima in the optimization process.&amp;#160;4DVarNet, an end-to-end neural network based on variational data assimilation formulation, is trained in a supervised manner to solve the data assimilation task. This study aims to understand the advantage of trainable solvers that solve the same optimization problem using supervised learning, generating more accurate solutions efficiently. Through this case study based on observing system simulation experiments for sea surface geophysical fields, we show that supervised learning can overcome the minimization challenges of 4DVar when faced with observations that are irregular and highly sparse which are critical to address problems in ocean reconstruction. The advantage of learning allows 4DVarNet to discover hidden representations that are suitable for solving specific data assimilation tasks with better accuracy.</jats:p>",
+    "status": "excluded_fulltext",
+    "retrieved_at": "2026-09-25T23:44:02.914096Z",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-26"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.5194/egusphere-egu2020-285",
+    "title": "Learning missing part of physics-based models within a variational data assimilation scheme",
+    "authors": [
+      "Filoche, Arthur",
+      "Brajard, Julien",
+      "Charantonis, Anastase",
+      "Béréziat, Dominique"
+    ],
+    "year": 2020,
+    "container_title": "",
+    "abstract": "<jats:p>\n        &amp;lt;p&amp;gt;The analogy between data assimilation and machine learning has already been shown and is still being investigated to address the problem of improving physics-based models. Even though both techniques learn from data, machine learning focuses on inferring model parameters while data assimilation concentrates on hidden system state estimation with the help of a dynamical model.&amp;amp;#160;&amp;lt;br&amp;gt;&amp;amp;#160;&amp;lt;br&amp;gt;Also, neural networks and more precisely ResNet-like architectures can be seen as dynamical systems and numerical schemes, respectively. They are now considered state of the art in a vast amount of tasks involving spatio-temporal forecasting. But to train such networks, one needs dense and representative data which is rarely the case in earth sciences. At the same time, data assimilation offers a proper Bayesian framework allowing to learn from partial, noisy and indirect observations. Thus, each of this field can profit from the other by providing either a learnable class of dynamical models or dense data sets.&amp;lt;/p&amp;gt;&amp;lt;p&amp;gt;In this work, we benefit from powerful and flexible tools provided by the deep learning community based on automatic differentiation that are clearly suitable for variational data assimilation, avoiding explicit adjoint modelling. We use a hybrid model divided into 2 terms. The first term is a numerical scheme that comes from the discretisation of physics-based equations, the second is a convolutional neural network that represents the unresolved part of the dynamics. From the Data Assimilation point of view, our network can be seen as a particular parametrisation of the model error. We then jointly learn this parameterisation and estimate hidden system states within a variational data assimilation scheme. Indirectly, the issue of incorporating physical knowledge into machine learning models is also addressed.&amp;amp;#160;&amp;lt;/p&amp;gt;&amp;lt;p&amp;gt;We show that the hybrid model improves forecast skill compared to traditional data assimilation techniques. The generalisation of the method on different models and data will also be discussed.&amp;lt;/p&amp;gt;\n        </jats:p>",
+    "status": "excluded_fulltext",
+    "retrieved_at": "2026-09-25T23:44:02.914106Z",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-26"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1017/9781108924238.011",
+    "title": "Variational Data Assimilation",
+    "authors": [],
+    "year": 2022,
+    "container_title": "Principles of Data Assimilation",
+    "abstract": "",
+    "status": "excluded_fulltext",
+    "retrieved_at": "2026-09-25T23:44:02.914111Z",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-26"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1017/9781009024846.007",
+    "title": "Discrete Time Integration in Data Assimilation Variational Principles: Lagrangian and Hamiltonian Formulations",
+    "authors": [],
+    "year": 2022,
+    "container_title": "The Statistical Physics of Data Assimilation and Machine Learning",
+    "abstract": "",
+    "status": "excluded_fulltext",
+    "retrieved_at": "2026-09-25T23:44:02.914118Z",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-26"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1017/9781009024846.004",
+    "title": "SDA Variational Principles",
+    "authors": [],
+    "year": 2022,
+    "container_title": "The Statistical Physics of Data Assimilation and Machine Learning",
+    "abstract": "",
+    "status": "excluded_title",
+    "retrieved_at": "2026-09-25T23:44:02.914122Z",
+    "exclusion_reason": "EC1: Out of domain scope (not natural science temporal system)",
+    "screen_date": "2026-09-26"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.5194/egusphere-egu23-15994",
+    "title": "Uncertainty quantification in variational data assimilation with deep learning",
+    "authors": [
+      "Lafon, Nicolas",
+      "Naveau, Philippe",
+      "Fablet, Ronan"
+    ],
+    "year": 2023,
+    "container_title": "",
+    "abstract": "<jats:p>The spatio-temporal reconstruction of a dynamical process from some observationaldata is at the core of a wide range of applications in geosciences. This is particularly true for weather forecasting, operational oceanography and climate studies. However, the re35 construction of a given dynamic and the prediction of future states must take into ac36 count the uncertainties that affect the system. Thus, the available observational measurements are only provided with a limited accuracy. Besides, the encoded physical equa38 tions that model the evolution of the system do not capture the full complexity of the real system. Finally, the numerical approximation generates a non-negligible error. For these reasons, it seems relevant to calculate a probability distribution of the state system rather than the most probable state. Using recent advances in machine learning techniques for inverse problems, we propose an algorithm that jointly learns a parametric distribution of the state, the dynamics governing the evolution of the parameters, and a solver. Experiments conducted on synthetic reference datasets, as well as on datasets&amp;#160;describing environmental systems, validate our approach.</jats:p>",
+    "status": "excluded_fulltext",
+    "retrieved_at": "2026-09-25T23:44:02.914128Z",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-26"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1007/978-3-540-74703-1_3",
+    "title": "Variational Assimilation",
+    "authors": [
+      "Talagrand, Olivier"
+    ],
+    "year": 2010,
+    "container_title": "Data Assimilation",
+    "abstract": "",
+    "status": "excluded_title",
+    "retrieved_at": "2026-09-25T23:44:02.914134Z",
+    "exclusion_reason": "EC1: Out of domain scope (not natural science temporal system)",
+    "screen_date": "2026-09-26"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.5194/egusphere-egu24-2857",
+    "title": "Coupling the Data-driven Weather Forecasting Model with 4D Variational Assimilation",
+    "authors": [
+      "Xiao, Yi",
+      "Bai, Lei",
+      "Xue, Wei",
+      "Chen, Kang",
+      "Han, Tao",
+      "Ouyang, Wanli"
+    ],
+    "year": 2025,
+    "container_title": "",
+    "abstract": "<jats:p>In recent years, the development of artificial intelligence has led to rapid advances in data-driven weather forecasting models, some of which rival or even surpass traditional methods like Integrated Forecasting System (IFS) in terms of forecasting accuracy. However, existing data-driven weather forecasting models still rely on the analysis fields generated by the traditional assimilation and forecasting system, which hampers the significance of data-driven weather forecasting models regarding both computational cost and forecasting accuracy.Four-dimensional variational assimilation (4DVar) is one of the most popular data assimilation algorithms and has been adopted in numerical weather prediction centers worldwide. This research aims at extending the ability of data-driven weather forecasting models by coupling them with the 4DVar algorithm, i.e., alternatively running the AI forecast and 4DVar to realize a long-term self-contained forecasting system.In the 4DVar algorithm, the forecasting model is embedded into the objective function so that the flow dependencies are taken into account. Realizing the 4DVar algorithm in which the flow dependencies are expressed by the AI weather forecasting model is still a new area to be explored. Previous research has demonstrated the feasibility of using AI forecasting models in 4DVar as flow dependencies with the aid of auto-differentiation in simple dynamic systems, but scaling to the more complicated global weather forecasting faces additional challenges. For example, a differentiable background error covariance matrix needs to be constructed so that auto-differentiation can be implemented. Furthermore, the rapid error accumulation of AI forecasting models reduces the accuracy of flow dependencies in 4DVar and hinders the assimilation accuracy.In this research, we address these challenges by leveraging the following techniques. First, we take advantage of the &amp;#8220;torch-harmonics&amp;#8221; package developed by Nvidia to implement the differentiable spherical convolution for representing horizontal correlations in the background error matrix. Second, we reformulate the 4DVar objective function to take into account the cumulative error of AI weather forecasting model so that the objective function can better represent the error statistics. Third, the temporal aggregation strategy with different time-length AI forecasting models is employed to efficiently build flow dependencies so as to reduce the iterative error of AI forecasting model and improve assimilation accuracy.We conduct this research on the global AI weather forecasting model, FengWu, and couple it with 4DVar to implement the AI weather forecasting system prototype, FengWu-4DVar. Our experiments were conducted with the FengWu forecasting model at 1.4&amp;#176; resolution and the ERA5 simulation observations. With an observation proportion of 15% and the assimilation window of 6 hours, FengWu-4DVar is capable of generating reasonable analysis fields and achieving stable and efficiently cyclic assimilation and forecasting for at least one year, and the root mean square error on the potential height of the analysis field at 500hPa is less than 25m2/s2 on average. Moreover, assimilating observations in a 6-hour window can be realized in less than 30 seconds on one GPU of NVIDIA A100.</jats:p>",
+    "status": "excluded_fulltext",
+    "retrieved_at": "2026-09-25T23:44:05.215438Z",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-26"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1175/mwr-d-13-00394.1",
+    "title": "Intercomparison and Coupling of Ensemble and Four-Dimensional Variational Data Assimilation Methods for the Analysis and Forecasting of Hurricane Karl (2010)",
+    "authors": [
+      "Poterjoy, Jonathan",
+      "Zhang, Fuqing"
+    ],
+    "year": 2014,
+    "container_title": "Monthly Weather Review",
+    "abstract": "<jats:title>Abstract</jats:title><jats:p>This study examines the performance of ensemble and variational data assimilation systems for the Weather Research and Forecasting (WRF) Model. These methods include an ensemble Kalman filter (EnKF), an incremental four-dimensional variational data assimilation (4DVar) system, and a hybrid system that uses a two-way coupling between the two approaches (E4DVar). The three methods are applied to assimilate routinely collected data and field observations over a 10-day period that spans the life cycle of Hurricane Karl (2010), including the pregenesis disturbance that preceded its development into a tropical cyclone. In general, forecasts from the E4DVar analyses are found to produce smaller 48–72-h forecast errors than the benchmark EnKF and 4DVar methods for all variables and verification methods tested in this study. The improved representation of low- and midlevel moisture and vorticity in the E4DVar analyses leads to more accurate track and intensity predictions by this system. In particular, E4DVar analyses provide persistently more skillful genesis and rapid intensification forecasts than the EnKF and 4DVar methods during cycling. The data assimilation experiments also expose additional benefits of the hybrid system in terms of physical balance, computational cost, and the treatment of asynoptic observations near the beginning of the assimilation window. These factors make it a practical data assimilation method for mesoscale analysis and forecasting, and for tropical cyclone prediction.</jats:p>",
+    "status": "excluded_fulltext",
+    "retrieved_at": "2026-09-25T23:44:05.215460Z",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-26"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1175/2007mwr2382.1",
+    "title": "On the Sensitivity Equations of Four-Dimensional Variational (4D-Var) Data Assimilation",
+    "authors": [
+      "Daescu, Dacian N."
+    ],
+    "year": 2008,
+    "container_title": "Monthly Weather Review",
+    "abstract": "<jats:title>Abstract</jats:title>\n               <jats:p>The equations of the forecast sensitivity to observations and to the background estimate in a four-dimensional variational data assimilation system (4D-Var DAS) are derived from the first-order optimality condition in unconstrained minimization. Estimation of the impact of uncertainties in the specification of the error statistics is considered by evaluating the sensitivity to the observation and background error covariance matrices. The information provided by the error covariance sensitivity analysis is used to identify the input components for which improved estimates of the statistical properties of the errors are of most benefit to the analysis and forecast. A close relationship is established between the sensitivities within each input pair data/error covariance such that once the observation and background sensitivities are available the evaluation of the sensitivity to the specification of the corresponding error statistics requires little additional computational effort. The relevance of the 4D-Var sensitivity equations to assess the data impact in practical applications is discussed. Computational issues are addressed and idealized 4D-Var experiments are set up with a finite-volume shallow-water model to illustrate the theoretical concepts. Time-dependent observation sensitivity and potential applications to improve the model forecast are presented. Guidance provided by the sensitivity fields is used to adjust a 4D-Var DAS to achieve forecast error reduction through assimilation of supplementary data and through an accurate specification of a few of the background error variances.</jats:p>",
+    "status": "excluded_fulltext",
+    "retrieved_at": "2026-09-25T23:44:05.215466Z",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-26"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.2139/ssrn.5009006",
+    "title": "Numerical Solution for Nonlinear 4d Variational Data Assimilation (4d-Var) Via Admm",
+    "authors": [
+      "Li, Bowen",
+      "Shi, Bin"
+    ],
+    "year": 2024,
+    "container_title": "",
+    "abstract": "",
+    "status": "excluded_fulltext",
+    "retrieved_at": "2026-09-25T23:44:05.215471Z",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-26"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.5194/amt-2018-263-rc2",
+    "title": "Review: Witold Rohm et al. \"4DVAR  assimilation  of  GNSS  zenith  path  delays  and  precipitable  water into a numerical weather prediction model WRF\"",
+    "authors": [],
+    "year": 2018,
+    "container_title": "",
+    "abstract": "",
+    "status": "excluded_fulltext",
+    "retrieved_at": "2026-09-25T23:44:05.215479Z",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-26"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1175/mwr-d-12-00075.1",
+    "title": "E3DVar: Coupling an Ensemble Kalman Filter with Three-Dimensional Variational Data Assimilation in a Limited-Area Weather Prediction Model and Comparison to E4DVar",
+    "authors": [
+      "Zhang, Fuqing",
+      "Zhang, Meng",
+      "Poterjoy, Jonathan"
+    ],
+    "year": 2013,
+    "container_title": "Monthly Weather Review",
+    "abstract": "<jats:title>Abstract</jats:title>\n               <jats:p>This study examines the performance of a hybrid ensemble-variational data assimilation system (E3DVar) that couples an ensemble Kalman filter (EnKF) with the three-dimensional variational data assimilation (3DVar) system for the Weather Research and Forecasting (WRF) Model. The performance of E3DVar and the component EnKF and 3DVar systems are compared over the eastern United States for June 2003. Conventional sounding and surface observations as well as data from wind profilers, aircraft and ships, and cloud-tracked winds from satellites, are assimilated every 6 h during the experiments, and forecasts are verified using standard sounding observations. Forecasts with 12- to 72-h lead times are found to have noticeably smaller root-mean-square errors when initialized with the E3DVar system, as opposed to the EnKF, especially for the 12-h wind and moisture fields. The E3DVar system demonstrates similar performance as an EnKF, while using less than half the number of ensemble members, and is less sensitive to the use of a multiphysics ensemble to account for model errors. The E3DVar system is also compared with a similar hybrid method that replaces the 3DVar component with the WRF four-dimensional variational data assimilation (4DVar) method (denoted E4DVar). The E4DVar method demonstrated considerable improvements over E3DVar for nearly all model levels and variables at the shorter forecast lead times (12–48 h), but the forecast accuracies of all three ensemble-based methods (EnKF, E3DVar, and E4DVar) converge to similar results at longer lead times (60–72 h). Nevertheless, all methods that used ensemble information produced considerably better forecasts than the two methods that relied solely on static background error covariance (i.e., 3DVar and 4DVar).</jats:p>",
+    "status": "excluded_fulltext",
+    "retrieved_at": "2026-09-25T23:44:05.215486Z",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-26"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1175/mwr-d-16-0264.1",
+    "title": "Weak and Strong Constraints Variational Data Assimilation with the NCOM-4DVAR in the Agulhas Region Using the Representer Method",
+    "authors": [
+      "Ngodock, Hans",
+      "Carrier, Matthew",
+      "Smith, Scott",
+      "Souopgui, Innocent"
+    ],
+    "year": 2017,
+    "container_title": "Monthly Weather Review",
+    "abstract": "<jats:title>Abstract</jats:title>\n               <jats:p>The difference between the strong and weak constraints four-dimensional variational (4DVAR) analyses is examined using the representer method formulation, which expresses the analysis as the sum of a first guess and a finite linear combination of representer functions. The latter are computed analytically for a single observation under both strong and weak constraints assumptions. Even though the strong constraints representer coefficients are different from their weak constraints counterparts, that difference is unable to help the strong constraints compensate for the loss of information that the weak constraints includes. Numerical experiments carried out in the Agulhas retroflection for single and multiobservation assimilations clearly show that the weak constraint 4DVAR produces analyses that fit the observations with significantly higher accuracy than the strong constraints.</jats:p>",
+    "status": "excluded_fulltext",
+    "retrieved_at": "2026-09-25T23:44:05.215492Z",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-26"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.5194/egusphere-egu2020-3812",
+    "title": "System of Multigrid NLS-4DVar Data Assimilation for Numerical Weather Prediction (SNAP)&amp;#65306;System Formulation and Preliminary Evaluation",
+    "authors": [
+      "Zhang, Hongqin",
+      "Tian, Xiangjun"
+    ],
+    "year": 2020,
+    "container_title": "",
+    "abstract": "<jats:p>&amp;lt;p class=&amp;quot;a&amp;quot;&amp;gt;&amp;lt;span lang=&amp;quot;EN-US&amp;quot;&amp;gt;The system of multigrid NLS-4DVar data assimilation for Numerical Weather Prediction (SNAP) is established, building upon the multigrid NLS-4DVar assimilation scheme, the operational Gridpoint Statistical Interpolation (GSI)-based data-processing and observation operator and widely used numerical forecast model WRF (easily replaced by others global/regional model). The multigrid assimilation framework can adequately correct errors from large to small scales to achieve higher assimilation accuracy. Meanwhile, the multigrid strategy can accelerate iteration solution improving the computational efficiency. NLS-4DVar, as an advanced 4DEnVar method, employs the Gauss-Newton iterative method to handle the nonlinear of the 4DVar cost function and provides the flow-dependent background error covariance, which both contribute to the assimilation accuracy. The efficient local correlation matrix decomposition approach and its application in the fast localization scheme of NLS-4DVar and obviating the need of the tangent linear and adjoint model further improve the computational efficiency. The numerical forecast model of SNAP is any optional global/regional model, which makes the application of SNAP very flexible. The analysis variables of SNAP are rather the model state variables than the control variables adopted in the usual 4DVar system. The data-processing and observation operator modules are used from the National Centers for Environmental Prediction (NCEP) operational GSI analysis system, prominent in the various observation operators and the ability to assimilate multi-source observations. Currently, we have achieved the assimilation of conventional observations and we will continue to improve the assimilation of radar and satellite observations in the future. The performance of SNAP was investigated assimilating conventional observations used for the generation of the operational global atmospheric reanalysis product (CRA-40) by the National Meteorological Information Center of China Meteorological Administration. Cyclic assimilation experiments with two windows, which is 6-h for each window, are designed. The results of numerical experiments show that SNAP can absorb observations, improve initial field, and then improve precipitation forecast. &amp;lt;/span&amp;gt;&amp;lt;/p&amp;gt;</jats:p>",
+    "status": "excluded_fulltext",
+    "retrieved_at": "2026-09-25T23:44:05.215497Z",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-26"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1007/s00703-013-0243-y",
+    "title": "Experiments of the WRF three-/four-dimensional variational (3/4DVAR) data assimilation in the forecasting of Antarctic cyclones",
+    "authors": [
+      "Chu, Kekuan",
+      "Xiao, Qingnong",
+      "Liu, Chengsi"
+    ],
+    "year": 2013,
+    "container_title": "Meteorology and Atmospheric Physics",
+    "abstract": "",
+    "status": "excluded_fulltext",
+    "retrieved_at": "2026-09-25T23:44:05.215503Z",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-26"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1007/978-3-319-43415-5_18",
+    "title": "Validation and Operational Implementation of the Navy Coastal Ocean Model Four Dimensional Variational Data Assimilation System (NCOM 4DVAR) in the Okinawa Trough",
+    "authors": [
+      "Smith, Scott",
+      "Ngodock, Hans",
+      "Carrier, Matthew",
+      "Shriver, Jay",
+      "Muscarella, Philip",
+      "Souopgui, Innocent"
+    ],
+    "year": 2016,
+    "container_title": "Data Assimilation for Atmospheric, Oceanic and Hydrologic Applications (Vol. III)",
+    "abstract": "",
+    "status": "excluded_fulltext",
+    "retrieved_at": "2026-09-25T23:44:05.215509Z",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-26"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1515/mcwf-2017-0006",
+    "title": "Data Assimilation in a Multi-Scale Model",
+    "authors": [
+      "Hu, Guannan",
+      "Franzke, Christian L. E."
+    ],
+    "year": 2017,
+    "container_title": "Mathematics of Climate and Weather Forecasting",
+    "abstract": "<jats:title>Abstract</jats:title><jats:p>Data assimilation for multi-scale models is an important contemporary research topic. Especially the role of unresolved scales and model error in data assimilation needs to be systematically addressed. Here we examine these issues using the Ensemble Kalman filter (EnKF) with the two-level Lorenz-96 model as a conceptual prototype model of the multi-scale climate system. We use stochastic parameterization schemes to mitigate the model errors from the unresolved scales. Our results indicate that a third-order autoregressive process performs better than a first-order autoregressive process in the stochastic parameterization schemes, especially for the system with a large time-scale separation.Model errors can also arise from imprecise model parameters. We find that the accuracy of the analysis (an optimal estimate of a model state) is linearly correlated to the forcing error in the Lorenz-96 model. Furthermore, we propose novel observation strategies to deal with the fact that the dimension of the observations is much smaller than the model states. We also propose a new analog method to increase the size of the ensemble when its size is too small.</jats:p>",
+    "status": "excluded_fulltext",
+    "retrieved_at": "2026-09-25T23:44:07.831271Z",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-26"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1175/mwr-d-21-0228.1",
+    "title": "Implications of Multivariate Non-Gaussian Data Assimilation for Multi-scale Weather Prediction",
+    "authors": [
+      "Poterjoy, Jonathan"
+    ],
+    "year": 2022,
+    "container_title": "Monthly Weather Review",
+    "abstract": "<jats:title>Abstract</jats:title>\n<jats:p>Weather prediction models currently operate within a probabilistic framework for generating forecasts conditioned on recent measurements of Earth’s atmosphere. This framework can be conceptualized as one that approximates parts of a Bayesian posterior density estimated under assumptions of Gaussian errors. Gaussian error approximations are appropriate for synoptic-scale atmospheric flow, which experiences quasi-linear error evolution over time scales depicted by measurements, but are often hypothesized to be inappropriate for highly nonlinear, sparsely-observed mesoscale processes. The current study adopts an experimental regional modeling system to examine the impact of Gaussian prior error approximations, which are adopted by ensemble Kalman filters (EnKFs) to generate probabilistic predictions. The analysis is aided by results obtained using recently-introduced particle filter (PF) methodology that relies on an implicit non-parametric representation of prior probability densities—but with added computational expense. The investigation focuses on EnKF and PF comparisons over month-long experiments performed using an extensive domain, which features the development and passage of numerous extratropical and tropical cyclones. The experiments reveal spurious small-scale corrections in EnKF members, which come about from inappropriate Gaussian approximations for priors dominated by alignment uncertainty in mesoscale weather systems. Similar behavior is found in PF members, owing to the use of a localization operator, but to a much lesser extent. This result is reproduced and studied using a low-dimensional model, which permits the use of large sample estimates of the Bayesian posterior distribution. Findings from this study motivate the use of data assimilation techniques that provide a more appropriate specification of multivariate non-Gaussian prior densities or a multi-scale treatment of alignment errors during data assimilation.</jats:p>",
+    "status": "excluded_fulltext",
+    "retrieved_at": "2026-09-25T23:44:07.831293Z",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-26"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.5194/egusphere-egu25-10945",
+    "title": "Diffusion Model Data Assimilation of Sparse Weather Station Observations at Kilometer Scales",
+    "authors": [
+      "Manshausen, Peter",
+      "Cohen, Yair",
+      "Pathak, Jaideep",
+      "Pritchard, Mike",
+      "Garg, Piyush",
+      "Mardani, Morteza",
+      "Kashinath, Karthik",
+      "Byrne, Simon",
+      "Brenowitz, Noah"
+    ],
+    "year": 2025,
+    "container_title": "",
+    "abstract": "<jats:p>Data assimilation of observational data into full atmospheric states is essential for weather forecast model initialization. Recently, methods for deep generative data assimilation have been proposed which allow for using new input data without retraining the model. They could also dramatically accelerate the costly data assimilation process used in operational regional weather models. Here, in a central US testbed, we demonstrate the viability of score-based data assimilation in the context of realistically complex km-scale weather. We train an unconditional diffusion model to generate snapshots of a state-of-the-art km-scale analysis product, the High Resolution Rapid Refresh. Then, using score-based data assimilation to incorporate sparse weather station data, the model produces maps of precipitation and surface winds. The generated fields display physically plausible structures, such as gust fronts, and sensitivity tests confirm learnt physics through multivariate relationships. Preliminary skill analysis shows the approach already outperforms a naive baseline of the High-Resolution Rapid Refresh system itself. By incorporating observations from 40 weather stations, 10% lower RMSEs on left-out stations are attained. Despite some lingering imperfections such as insufficiently disperse ensemble DA estimates, we find the results overall an encouraging proof of concept, and the first at km-scale. It is a ripe time to explore extensions that combine increasingly ambitious regional state generators with an increasing set of in situ, ground-based, and satellite remote sensing data streams.</jats:p>",
+    "status": "excluded_fulltext",
+    "retrieved_at": "2026-09-25T23:44:07.831301Z",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-26"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1002/wea.1982",
+    "title": "Challenges for data assimilation – from convective‐scale to climate",
+    "authors": [
+      "Marriott, Richard"
+    ],
+    "year": 2012,
+    "container_title": "Weather",
+    "abstract": "",
+    "status": "excluded_fulltext",
+    "retrieved_at": "2026-09-25T23:44:07.831311Z",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-26"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1175/mwr-d-23-0100.1",
+    "title": "Assimilation of Satellite Lightning Data in a Storm-Scale Numerical Weather Prediction System Using a 3D-EnVar Data Assimilation Scheme",
+    "authors": [
+      "Combarnous, Pauline",
+      "Martet, Maud",
+      "Caumont, Olivier",
+      "Defer, Éric"
+    ],
+    "year": 2024,
+    "container_title": "Monthly Weather Review",
+    "abstract": "<jats:title>Abstract</jats:title>\n<jats:p>The objective of this study is to prepare the assimilation of the Meteosat Third Generation Lightning Imager (MTG-LI) observations in the regional numerical weather prediction model AROME-France using a 3D-EnVar data assimilation algorithm. As opposed to the current operational configuration of AROME-France data assimilation system, the hydrometeor specific contents are added in the control variable and are thus updated during the assimilation process. Consequently, a lightning observation operator based on the specific contents of snow and graupel is used. As the first MTG satellite was launched in December 2022, the real MTG-LI observations are not available yet, and proxy spaceborne lightning observations generated from ground-based lightning detection network are used. We assess the forecast skills of experiments assimilating lightning in a close to operational configuration by comparing the results to a reference experiment that does not assimilate lightning. In the studied cases, the frequency bias and fraction skill score are improved for brightness temperatures forecasts lower than 280 K up to 4 h after the assimilation, implying a better description of the general cloud cover. The convective cores, identified by brightness temperatures lower than 220 K, are better captured in the first forecast hour but this improvement is not maintained through time and quickly fades.</jats:p>",
+    "status": "excluded_fulltext",
+    "retrieved_at": "2026-09-25T23:44:07.831319Z",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-26"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1175/mwr-d-16-0298.1",
+    "title": "Convective-Scale Data Assimilation for the Weather Research and Forecasting Model Using the Local Particle Filter",
+    "authors": [
+      "Poterjoy, Jonathan",
+      "Sobash, Ryan A.",
+      "Anderson, Jeffrey L."
+    ],
+    "year": 2017,
+    "container_title": "Monthly Weather Review",
+    "abstract": "<jats:title>Abstract</jats:title>\n               <jats:p>Particle filters (PFs) are Monte Carlo data assimilation techniques that operate with no parametric assumptions for prior and posterior errors. A data assimilation method introduced recently, called the local PF, approximates the PF solution within neighborhoods of observations, thus allowing for its use in high-dimensional systems. The current study explores the potential of the local PF for atmospheric data assimilation through cloud-permitting numerical experiments performed for an idealized squall line. Using only 100 ensemble members, experiments using the local PF to assimilate simulated radar measurements demonstrate that the method provides accurate analyses at a cost comparable to ensemble filters currently used in weather models. Comparisons between the local PF and an ensemble Kalman filter demonstrate benefits of the local PF for producing probabilistic analyses of non-Gaussian variables, such as hydrometeor mixing ratios. The local PF also provides more accurate forecasts than the ensemble Kalman filter, despite yielding higher posterior root-mean-square errors. A major advantage of the local PF comes from its ability to produce more physically consistent posterior members than the ensemble Kalman filter, which leads to fewer spurious model adjustments during forecasts. This manuscript presents the first successful application of the local PF in a weather prediction model and discusses implications for real applications where nonlinear measurement operators and nonlinear model processes limit the effectiveness of current Gaussian data assimilation techniques.</jats:p>",
+    "status": "excluded_fulltext",
+    "retrieved_at": "2026-09-25T23:44:07.831327Z",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-26"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1175/mwr3352.1",
+    "title": "Tests of an Ensemble Kalman Filter for Mesoscale and Regional-Scale Data Assimilation. Part II: Imperfect Model Experiments",
+    "authors": [
+      "Meng, Zhiyong",
+      "Zhang, Fuqing"
+    ],
+    "year": 2007,
+    "container_title": "Monthly Weather Review",
+    "abstract": "<jats:title>Abstract</jats:title>\n               <jats:p>In Part I of this two-part work, the feasibility of using an ensemble Kalman filter (EnKF) for mesoscale and regional-scale data assimilation through various observing system simulation experiments was demonstrated assuming a perfect forecast model for a winter snowstorm event that occurred on 24–26 January 2000. The current study seeks to explore the performance of the EnKF for the same event in the presence of significant model errors due to physical parameterizations by assimilating synthetic sounding and surface observations with typical temporal and spatial resolutions. The EnKF performance with imperfect models is also examined for a warm-season mesoscale convective vortex (MCV) event that occurred on 10–13 June 2003. The significance of model error in both warm- and cold-season events is demonstrated when the use of different cumulus parameterization schemes within different ensembles results in significantly different forecasts in terms of both ensemble mean and spread. Nevertheless, the EnKF performed reasonably well in most experiments with the imperfect model assumption (though its performance can sometimes be significantly degraded). As in Part I, where the perfect model assumption was utilized, most analysis error reduction comes from larger scales. Results show that using a combination of different physical parameterization schemes in the ensemble forecast can significantly improve filter performance. A multischeme ensemble has the potential to provide better background error covariance estimation and a smaller ensemble bias. There are noticeable differences in the performance of the EnKF for different flow regimes. In the imperfect scenarios considered, the improvement over the reference ensembles (pure ensemble forecasts without data assimilation) after 24 h of assimilation for the winter snowstorm event ranges from 36% to 67%. This is higher than the 26%–45% improvement noted after 36 h of assimilation for the warm-season MCV event. Scale- and flow-dependent error growth dynamics and predictability are possible causes for the differences in improvement. Compared to the power spectrum analyses for the snowstorm, it is found that forecast errors and ensemble spreads in the warm-season MCV event have relatively smaller power at larger scales and an overall smaller growth rate.</jats:p>",
+    "status": "excluded_fulltext",
+    "retrieved_at": "2026-09-25T23:44:07.831333Z",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-26"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1175/2009mwr2889.1",
+    "title": "The Diffusion Kernel Filter Applied to Lagrangian Data Assimilation",
+    "authors": [
+      "Krause, Paul",
+      "Restrepo, Juan M."
+    ],
+    "year": 2009,
+    "container_title": "Monthly Weather Review",
+    "abstract": "<jats:title>Abstract</jats:title>\n               <jats:p>The diffusion kernel filter is a sequential particle-method approach to data assimilation of time series data and evolutionary models. The method is applicable to nonlinear/non-Gaussian problems. Within branches of prediction it parameterizes small fluctuations of Brownian-driven paths about deterministic paths. Its implementation is relatively straightforward, provided a tangent linear model is available. A by-product of the parameterization is a bound on the infinity norm of the covariance matrix of such fluctuations (divided by the grid model dimension). As such it can be used to define a notion of “prediction” itself. It can also be used to assess the short time sensitivity of the deterministic history to Brownian noise or Gaussian initial perturbations. In pure oceanic Lagrangian data assimilation, the dynamics and the statistics are nonlinear and non-Gaussian, respectively. Both of these characteristics challenge conventional methods, such as the extended Kalman filter and the popular ensemble Kalman filter. The diffusion kernel filter is proposed as an alternative and is evaluated here on a problem that is often used as a test bed for Lagrangian data assimilation: it consists of tracking point vortices and passive drifters, using a dynamical model and data, both of which have known error statistics. It is found that the diffusion kernel filter captures the first few moments of the random dynamics, with a computational cost that is competitive with a particle filter estimation strategy. The authors also introduce a clustered version of the diffusion kernel filter (cDKF), which is shown to be significantly more efficient with regard to computational cost, at the expense of a slight degradation in the description of the statistics of the dynamical history. Upon parallelizing branches of prediction, cDKF can be computationally competitive with EKF.</jats:p>",
+    "status": "excluded_fulltext",
+    "retrieved_at": "2026-09-25T23:44:07.831338Z",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-26"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1175/mwr3101.1",
+    "title": "Tests of an Ensemble Kalman Filter for Mesoscale and Regional-Scale Data Assimilation. Part I: Perfect Model Experiments",
+    "authors": [
+      "Zhang, Fuqing",
+      "Meng, Zhiyong",
+      "Aksoy, Altug"
+    ],
+    "year": 2006,
+    "container_title": "Monthly Weather Review",
+    "abstract": "<jats:title>Abstract</jats:title>\n               <jats:p>Through observing system simulation experiments, this two-part study exploits the potential of using the ensemble Kalman filter (EnKF) for mesoscale and regional-scale data assimilation. Part I focuses on the performance of the EnKF under the perfect model assumption in which the truth simulation is produced with the same model and same initial uncertainties as those of the ensemble, while Part II explores the impacts of model error and ensemble initiation on the filter performance. In this first part, the EnKF is implemented in a nonhydrostatic mesoscale model [the fifth-generation Pennsylvania State University–NCAR Mesoscale Model (MM5)] to assimilate simulated sounding and surface observations derived from simulations of the “surprise” snowstorm of January 2000. This is an explosive East Coast cyclogenesis event with strong error growth at all scales as a result of interactions between convective-, meso-, and subsynoptic-scale dynamics.</jats:p>\n               <jats:p>It is found that the EnKF is very effective in keeping the analysis close to the truth simulation under the perfect model assumption. The EnKF is most effective in reducing larger-scale errors but less effective in reducing errors at smaller, marginally resolvable scales. In the control experiment, in which the truth simulation was produced with the same model and same initial uncertainties as those of the ensemble, a 24-h continuous EnKF assimilation of sounding and surface observations of typical temporal and spatial resolutions is found to reduce the error by as much as 80% (compared to a 24-h forecast without data assimilation) for both observed and unobserved variables including zonal and meridional winds, temperature, and pressure. However, it is observed to be relatively less efficient in correcting errors in the vertical velocity and moisture fields, which have stronger smaller-scale components. The analysis domain-averaged root-mean-square error after 24-h assimilation is ∼1.0–1.5 m s−1 for winds and ∼1.0 K for temperature, which is comparable to or less than typical observational errors. Various sensitivity experiments demonstrated that the EnKF is quite successful in all realistic observational scenarios tested. However, as will be presented in Part II, the EnKF performance may be significantly degraded if an imperfect forecast model is used, as is likely the case when real observations are assimilated.</jats:p>",
+    "status": "excluded_fulltext",
+    "retrieved_at": "2026-09-25T23:44:07.831344Z",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-26"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1002/9781119560463.ch4",
+    "title": "Introduction to Data Assimilation",
+    "authors": [],
+    "year": 2020,
+    "container_title": "Numerical Weather Prediction and Data Assimilation",
+    "abstract": "",
+    "status": "excluded_fulltext",
+    "retrieved_at": "2026-09-25T23:44:07.831348Z",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-26"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.2139/ssrn.4534381",
+    "title": "A Score-Based Filter for Nonlinear Data Assimilation",
+    "authors": [
+      "Bao, Feng",
+      "Zhang, Zezhong",
+      "Zhang, G."
+    ],
+    "year": 2023,
+    "container_title": "",
+    "abstract": "",
+    "status": "excluded_fulltext",
+    "retrieved_at": "2026-09-25T23:44:10.073551Z",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-26"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.5194/egusphere-egu26-6704",
+    "title": "A Novel Sequential Data Assimilation by Conditional Denoising Score Matching",
+    "authors": [
+      "Shen, Zheqi"
+    ],
+    "year": 2026,
+    "container_title": "",
+    "abstract": "<jats:p>This study introduces a novel sequential data assimilation method that uses conditional denoising score matching (CDSM). The CDSM leverages iterative refinement of noisy samples guided by conditional score functions to achieve real-time state estimation by incorporating observational constraints at each time step. Unlike traditional methods, such as variational assimilation and Kalman ffltering, which rely on Gaussian assumptions and can be computationally expensive because of iterations or ensembles, CDSM is based on stochastic differential equations (SDEs). It does not require explicit noise addition or manipulation of probability density functions, thus simplifying the assimilation process and enhancing the computational efficiency. Here, error growth and reduction were modeled using noise addition and denoising processes based on SDEs. This transforms the data assimilation problem into a denoising problem based on conditional score matching. Our approach integrates dynamic models, performs data assimilation through Langevin dynamics at the observation times, and uses the analyzed states for subsequent integration. The noise addition process is embedded in the score model training using neural networks and is not explicitly used in the assimilation process. The results from twin experiments using the Lorenz ‘63 model demonstrate that the CDSM achieves a performance comparable to that of traditional methods in nonlinear systems. This method is robust and flexible with low requirements for training data quality. This is particularly suitable for scenarios in which the observation intervals are much larger than the model integration steps. The CDSM shows great potential for application inlarge-scale numerical and data-driven models.</jats:p>",
+    "status": "excluded_fulltext",
+    "retrieved_at": "2026-09-25T23:44:10.073570Z",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-26"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1016/b978-0-12-804444-5.00020-9",
+    "title": "Ensemble-Based Data Assimilation",
+    "authors": [
+      "Fletcher, Steven J."
+    ],
+    "year": 2017,
+    "container_title": "Data Assimilation for the Geosciences",
+    "abstract": "",
+    "status": "excluded_fulltext",
+    "retrieved_at": "2026-09-25T23:44:10.073575Z",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-26"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.22541/essoar.15003398/v1",
+    "title": "Spatiotemporal Mapping of Sea Surface Height and Temperature Fields from Satellite Observations Using Score-based Data Assimilation",
+    "authors": [
+      "Monkman, Tatsu",
+      "Balwada, Dhruv",
+      "Jones, C Spencer",
+      "Martin, Scott A.",
+      "Smith, K. Shafer"
+    ],
+    "year": 2026,
+    "container_title": "",
+    "abstract": "",
+    "status": "excluded_fulltext",
+    "retrieved_at": "2026-09-25T23:44:10.073582Z",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-26"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1016/b978-0-32-391720-9.00025-5",
+    "title": "Non-Gaussian Based Data Assimilation",
+    "authors": [
+      "Fletcher, Steven J."
+    ],
+    "year": 2023,
+    "container_title": "Data Assimilation for the Geosciences",
+    "abstract": "",
+    "status": "excluded_fulltext",
+    "retrieved_at": "2026-09-25T23:44:10.073591Z",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-26"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1016/b978-0-12-382225-3.00495-3",
+    "title": "DATA ASSIMILATION AND PREDICTABILITY | Ensemble-Based Data Assimilation",
+    "authors": [
+      "Meng, Z.",
+      "Zhang, F."
+    ],
+    "year": 2015,
+    "container_title": "Encyclopedia of Atmospheric Sciences",
+    "abstract": "",
+    "status": "excluded_fulltext",
+    "retrieved_at": "2026-09-25T23:44:10.073596Z",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-26"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.2139/ssrn.5259993",
+    "title": "Ensemble Score Filter for Data Assimilation of Two-Phase Flow Models in Porous Media",
+    "authors": [
+      "Hu, Ruoyu",
+      "Poudel, Sanjeeb",
+      "Bao, Feng",
+      "Lee, Sanghyun"
+    ],
+    "year": 2025,
+    "container_title": "",
+    "abstract": "",
+    "status": "excluded_fulltext",
+    "retrieved_at": "2026-09-25T23:44:10.073603Z",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-26"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1109/iccv51701.2025.00854",
+    "title": "SkySense V2: A Unified Foundation Model for Multi-Modal Remote Sensing",
+    "authors": [
+      "Zhang, Yingying",
+      "Ru, Lixiang",
+      "Wu, Kang",
+      "Yu, Lei",
+      "Liang, Lei",
+      "Li, Yansheng",
+      "Chen, Jingdong"
+    ],
+    "year": 2025,
+    "container_title": "2025 IEEE/CVF International Conference on Computer Vision (ICCV)",
+    "abstract": "",
+    "status": "excluded_fulltext",
+    "retrieved_at": "2026-09-25T23:44:12.379700Z",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-26"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1145/3664647.3680654",
+    "title": "Continual Panoptic Perception: Towards Multi-modal Incremental Interpretation of Remote Sensing Images",
+    "authors": [
+      "Yuan, Bo",
+      "Zhao, Danpei",
+      "Liu, Zhuoran",
+      "Li, Wentao",
+      "Li, Tian"
+    ],
+    "year": 2024,
+    "container_title": "Proceedings of the 32nd ACM International Conference on Multimedia",
+    "abstract": "",
+    "status": "excluded_fulltext",
+    "retrieved_at": "2026-09-25T23:44:12.379721Z",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-26"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1007/978-981-95-5879-7_7",
+    "title": "Joint Intelligent Interpretation of Multimodal Remote Sensing Images",
+    "authors": [
+      "Feng, Pengming",
+      "Chen, Yuanwei",
+      "Lan, Haiyan",
+      "He, Guangjun",
+      "Li, Yang",
+      "Guan, Jian"
+    ],
+    "year": 2026,
+    "container_title": "Towards AI Large Model: Remote Sensing Image Intelligent Interpretation and Application",
+    "abstract": "",
+    "status": "excluded_fulltext",
+    "retrieved_at": "2026-09-25T23:44:12.379728Z",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-26"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.2139/ssrn.5253764",
+    "title": "Multi-Modal Foundation Model for Generalizable Flood Mapping Using Sentinel-1 and Sentinel-2 Remote Sensing Imagery",
+    "authors": [
+      "Zhou, Huan",
+      "Zhang, Mi",
+      "Li, Zhiwei",
+      "Zhao, Yuanxin",
+      "Gong, Jianya"
+    ],
+    "year": 2025,
+    "container_title": "",
+    "abstract": "",
+    "status": "excluded_fulltext",
+    "retrieved_at": "2026-09-25T23:44:12.379735Z",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-26"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.2139/ssrn.4876040",
+    "title": "Vision Foundation Model Guided Multi-Modal Fusion Network for Remote Sensing Semantic Segmentation",
+    "authors": [
+      "Pan, Chen",
+      "Fan, Xijian",
+      "Tjahjadi, Tardi",
+      "Guan, Haiyan",
+      "Ye, Qiaolin",
+      "Fu, Liyong",
+      "Wang, Ruili"
+    ],
+    "year": 2024,
+    "container_title": "",
+    "abstract": "",
+    "status": "excluded_fulltext",
+    "retrieved_at": "2026-09-25T23:44:12.379742Z",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-26"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1007/978-981-95-5879-7_8",
+    "title": "Intelligent Remote Sensing Image Analysis: A Cognitive Platform for Interpretation",
+    "authors": [
+      "Feng, Pengming",
+      "Chen, Yuanwei",
+      "Lan, Haiyan",
+      "He, Guangjun",
+      "Li, Yang",
+      "Guan, Jian"
+    ],
+    "year": 2026,
+    "container_title": "Towards AI Large Model: Remote Sensing Image Intelligent Interpretation and Application",
+    "abstract": "",
+    "status": "excluded_fulltext",
+    "retrieved_at": "2026-09-25T23:44:12.379747Z",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-26"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1038/s44287-025-00208-z",
+    "title": "Advancing Earth observation with a multi-modal remote sensing foundation model",
+    "authors": [
+      "Conti, Silvia"
+    ],
+    "year": 2025,
+    "container_title": "Nature Reviews Electrical Engineering",
+    "abstract": "",
+    "status": "excluded_fulltext",
+    "retrieved_at": "2026-09-25T23:44:12.379753Z",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-26"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1109/prrs.2014.6914290",
+    "title": "FT-RANSAC: Towards robust multi-modal homography estimation",
+    "authors": [
+      "Barclay, Adam",
+      "Kaufmann, Hannes"
+    ],
+    "year": 2014,
+    "container_title": "2014 8th IAPR Workshop on Pattern Reconition in Remote Sensing",
+    "abstract": "",
+    "status": "excluded_title",
+    "retrieved_at": "2026-09-25T23:44:12.379757Z",
+    "exclusion_reason": "EC1: Out of domain scope (not natural science temporal system)",
+    "screen_date": "2026-09-26"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.3390/rs18040662",
+    "title": "Towards Discriminative and Consistent Cross-Modal Alignment for Remote Sensing Image–Text Retrieval",
+    "authors": [
+      "Song, Zihan",
+      "Shu, Yulou",
+      "Li, Wengen",
+      "Guan, Jihong",
+      "Zhang, Yichao"
+    ],
+    "year": 2026,
+    "container_title": "Remote Sensing",
+    "abstract": "<jats:p>As large-scale remote sensing data continue to proliferate, research on remote sensing image–text retrieval (RSITR) has become progressively more prominent. Nevertheless, RSITR still faces two primary challenges. First, remote sensing data exhibit substantially higher intra-modal similarity than typical natural image–text corpora, complicating the discrimination of positive and negative pairs. Second, vision–language models pretrained on natural images (VLP), such as CLIP, are not readily adaptable to remote sensing scenarios without undergoing large-scale remote sensing pretraining that entails substantial cost. To tackle these challenges, we introduce DCCA, a novel framework designed for discriminative and consistent cross-modal alignment. We develop a global contrastive learning strategy with negative pair expansion mechanism to boost representation discrimination when intra-modal similarity is pronounced. Additionally, we introduce a bidirectional distribution matching constraint that jointly aligns intra- and inter-modal distributions, promoting consistent cross-modal alignment beyond the instance level. To further enhance domain adaptation, we propose a remote sensing information injection module that transfers knowledge from a pretrained remote sensing image recognition model into VLP, thereby improving its visual discriminability in remote sensing scenarios. Evaluations conducted on publicly available RSITR benchmarks indicate that DCCA consistently surpasses baseline methods, while attaining performance on par with models trained using large-scale remote sensing datasets under markedly reduced data requirements. These findings verify that the framework is both effective and well-suited for practical deployment.</jats:p>",
+    "status": "excluded_fulltext",
+    "retrieved_at": "2026-09-25T23:44:12.379768Z",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-26"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1175/bams-d-23-0162.1",
+    "title": "The Rise of Data-Driven Weather Forecasting: A First Statistical Assessment of Machine Learning–Based Weather Forecasts in an Operational-Like Context",
+    "authors": [
+      "Ben Bouallègue, Zied",
+      "Clare, Mariana C. A.",
+      "Magnusson, Linus",
+      "Gascón, Estibaliz",
+      "Maier-Gerber, Michael",
+      "Janoušek, Martin",
+      "Rodwell, Mark",
+      "Pinault, Florian",
+      "Dramsch, Jesper S.",
+      "Lang, Simon T. K.",
+      "Raoult, Baudouin",
+      "Rabier, Florence",
+      "Chevallier, Matthieu",
+      "Sandu, Irina",
+      "Dueben, Peter",
+      "Chantry, Matthew",
+      "Pappenberger, Florian"
+    ],
+    "year": 2024,
+    "container_title": "Bulletin of the American Meteorological Society",
+    "abstract": "<jats:title>Abstract</jats:title>\n                  <jats:p>Data-driven modeling based on machine learning (ML) is showing enormous potential for weather forecasting. Rapid progress has been made with impressive results for some applications. The uptake of ML methods could be a game changer for the incremental progress in traditional numerical weather prediction (NWP) known as the “quiet revolution” of weather forecasting. The computational cost of running a forecast with standard NWP systems greatly hinders the improvements that can be made by increasing model resolution and ensemble sizes. An emerging new generation of ML models, developed using high-quality reanalysis datasets like ERA5 for training, allows forecasts that require much lower computational costs and that are highly competitive in terms of accuracy. Here, we compare for the first time ML-generated forecasts with standard NWP-based forecasts in an operational-like context, initialized from the same initial conditions. Focusing on deterministic forecasts, we apply common forecast verification tools to assess to what extent a data-driven forecast produced with one of the recently developed ML models (PanguWeather) matches the quality and attributes of a forecast from one of the leading global NWP systems (the ECMWF IFS). The results are very promising, with comparable accuracy for both global metrics and extreme events, when verified against both the operational IFS analysis and synoptic observations. Overly smooth forecasts, increasing bias with forecast lead time, and poor performance in predicting tropical cyclone intensity are identified as current drawbacks of ML-based forecasts. A new NWP paradigm is emerging relying on inference from ML models and state-of-the-art analysis and reanalysis datasets for forecast initialization and model training.</jats:p>\n                  <jats:sec>\n                    <jats:title>Significance Statement</jats:title>\n                    <jats:p>We compare the traditional approach of generating weather forecasts with a new approach based on machine learning (ML). The traditional approach is based on resolving physical equations with numerical methods and can be quite expensive to run on supercomputers. ML models are trained on a very large dataset that combines observations and physically based models to derive our best estimate of the state of the atmosphere hour after hour, over the past decades. In this work, we assess the forecast performance with statistical tools and a focus on extreme events. Our results suggest that ML models, which are much less expensive to run than standard methods, could have a promising future in numerical weather prediction. Our study also points out weaknesses and limitations that would require further investigations and future ML model improvements.</jats:p>\n                  </jats:sec>",
+    "status": "excluded_title",
+    "retrieved_at": "2026-09-25T23:44:14.573925Z",
+    "exclusion_reason": "EC4: Duplicate candidate of included study",
+    "screen_date": "2026-09-26"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.5194/egusphere-egu26-4536",
+    "title": "Aardvark weather: end-to-end data-driven weather forecasting",
+    "authors": [
+      "Turner, Richard"
+    ],
+    "year": 2026,
+    "container_title": "",
+    "abstract": "<jats:p>Weather forecasting is critical for a range of human activities including transportation, agriculture, industry, as well as the safety of the general public. Over the last two years, machine learning models have shown that they have the potential to transform the complex weather prediction pipeline, but current approaches still rely on numerical weather prediction (NWP) systems, limiting forecast speed and accuracy. In this talk, I will give some of the background on these developments. I will then introduce a machine learning model which can replace the entire operational NWP pipeline. Aardvark Weather, an end-to-end data-driven weather prediction system, ingests raw observations and outputs global gridded forecasts and local station forecasts. Further, it can be optimised end-to-end to maximise performance over quantities of interest. I will show that the system outperforms an operational NWP baseline for multiple variables and lead times for gridded and station forecasts. These forecasts are produced with a remarkably simple neural process model using just 8% of the input data and three orders of magnitude less compute than existing NWP and hybrid AI-NWP methods. We anticipate that Aardvark Weather will be the starting point for a new generation of end-to-end machine learning models for medium-range forecasting.</jats:p>",
+    "status": "excluded_fulltext",
+    "retrieved_at": "2026-09-25T23:44:14.573945Z",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-26"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.22541/essoar.174802937.77365288/v2",
+    "title": "Whose weather is it? A fairness framework for data-driven weather forecasting",
+    "authors": [
+      "Olivetti, Leonardo",
+      "Messori, Gabriele"
+    ],
+    "year": 2025,
+    "container_title": "",
+    "abstract": "<jats:p>As data-driven weather forecasting models increasingly come in operational use,  questions of fairness and equitable access to forecast improvements are gaining  urgency. This paper introduces a conceptual framework for evaluating outcome-based fairness in global data-driven forecasts, drawing on principles from the  algorithmic fairness literature. Specifically, we focus on two criteria: statistical  parity (i.e., comparable improvements across protected groups) and conditional  independence (i.e., no dependence of improvements on protected variables). Using ECMWF’s AIFS model as a case study and IFS HRES as a baseline, we  assess whether forecast improvements are equitably distributed across different  income groups and population densities. We find that although AIFS provides  substantial overall improvements in forecast skill, these gains are unevenly distributed: on average, wealthier and more densely populated areas are more  likely to experience forecast improvements, violating group fairness and conditional independence criteria. We conclude by discussing how fairness-aware  loss functions could be incorporated into data-driven weather forecasting systems and argue for a broader integration of fairness considerations into model  development and evaluation.    </jats:p>",
+    "status": "excluded_fulltext",
+    "retrieved_at": "2026-09-25T23:44:14.573952Z",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-26"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.5194/egusphere-egu25-11668",
+    "title": "Whose weather is it? A fairness perspective on data-driven weather forecasting",
+    "authors": [
+      "Olivetti, Leonardo",
+      "Messori, Gabriele"
+    ],
+    "year": 2025,
+    "container_title": "",
+    "abstract": "<jats:p>Recent years have seen rapid advancements in large-scale data-driven models for weather forecasting. Several of these models can now compete with, and in some respects outperform, physics-based numerical models for medium-range forecasting. They offer significant computational savings and potential forecasting accuracy improvements approximately equivalent to a decade of progress in traditional methods. This progress has prompted announcements from weather institutes across the world about plans to integrate AI-driven models into their operational workflows in the near future.As data-driven models become integral to operational forecasting, critical questions about fairness and equity remain. Studies reveal substantial variations in forecast quality across regions, particularly for extreme weather. Unlike physical models, the disparities in data-driven models often stem from passive design decisions, such as inductive biases and weighting schemes, which may be reassessed and changed, if needed. Moreover, ensuring equitable access to these models, along with the means to effectively utilise and improve them, is essential so that both high- and low-income countries can share in their benefits.This work explores fairness in data-driven weather forecasting, with a focus on outcome-based perspectives. We begin by defining fairness from both process and outcome viewpoints. We then analyse the performance of current data-driven models across different regions and socio-economic groups globally. Our findings reveal significant disparities that may exacerbate pre-existing socio-economic and climate-related vulnerabilities. To address these challenges, we advocate for a deliberate focus on fairness and equity in data-driven model development, emphasising the importance of active design choices to promote equitable outcomes.</jats:p>",
+    "status": "excluded_fulltext",
+    "retrieved_at": "2026-09-25T23:44:14.573959Z",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-26"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.5194/ems2025-661",
+    "title": "Smartphone Pressure Data: Statistical Characteristics, Bias Correction, and Applications in Weather Forecasting",
+    "authors": [
+      "Zhang, Qinghong"
+    ],
+    "year": 2025,
+    "container_title": "",
+    "abstract": "<jats:p>Smartphones are now commonly used, with ownership ranging from 30 to 70 percent of the population in numerous countries. With GPS and pressure sensor installed, smartphones can measure ambient air pressure, and have the potential to be used as meteorological observations. Our recent studies have shown that the pressure of smartphones can be used to describe the strength and location of large-scale vortex, as well as mesoscale surface high and low during thunderstorm events. Nevertheless,  addressing the quality issues of smartphone barometric data owing to human activity and other factors remains a great challenge. Our study indicated that a machine-learning technique could significantly improve the usability of the smartphone data. Since smartphone users are mostly concentrated in urban areas, significantly higher-density pressure coverage is achieved than the conventional surface networks in large cities. However, can these high-density data improve the forecasting ability of weather-related disasters? This presentation will introduce the barometric pressure data observed by smartphones collected from Moji weather app, the bias correction process, and its applications in analysis and forecasting via case studies.We used tropical cyclones (TCs) Lekima in 2019, Hagupit in 2020 and In-fa in 2021 as examples to conduct bias correction on labeled smartphone pressure data from the Moji Weather app. A quality control procedure was proposed utilizing random forest machine learning models. By applying this quality control approach to the selected TCs, we discovered that the performance of the method for labeled data significantly surpassed that for unlabeled data developed in a previous study, reducing the mean absolute error from 3.105 to 0.904 hPa.The smartphone (SPO) and traditional weather stations (TWS) pressure data during a hailstorm that occurred on 30 June 2021 in Beijing, are assimilated into a one-hour frequent 3DVAR system based on WRF model, respectively. The results demonstrate that the spatial density of SPO data is tens of times larger than that of TWS. Compared with the control experiment and assimilation experiment which only use the TWS data, the assimilation experiments with SPO data show significant improvements, in terms of the cold pool and gust front. The improvement of FSS in 10 mm hourly precipitation reached to 3% to 12%. Our findings indicate that high-resolution SPO data have the potential to enhance the forecasting capabilities of mesoscale convective system.</jats:p>",
+    "status": "excluded_fulltext",
+    "retrieved_at": "2026-09-25T23:44:14.573966Z",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-26"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.5194/egusphere-egu26-17711",
+    "title": "Probabilistic Benchmarks and Post-Processing for Data-Driven Weather Forecasting",
+    "authors": [
+      "Biegert, Tobias",
+      "Koster, Nils",
+      "Lerch, Sebastian"
+    ],
+    "year": 2026,
+    "container_title": "",
+    "abstract": "<jats:p>In recent years, significant progress in machine learning technologies has enabled the development of various artificial intelligence weather prediction (AIWP) models, approaching, or even surpassing the skill of numerical weather prediction (NWP) models.However, despite these advancements, several important questions remain open. Most data-driven models primarily focus on deterministic point forecasts and lack the capability to generate probabilistic predictions, which, however, is crucial for optimal decision making and quantifying weather risk in applications. Further, while it has been widely demonstrated that physics-based NWP models substantially benefit from post-processing methods, which aim to correct systematic errors, the use of post-processing for data-driven weather models has not been explored in detail.Our overarching aim thus is to investigate the application of various post-processing techniques to potentially improve predictions, as well as to generate probabilistic forecasts from deterministic AIWP as well as NWP model outputs. We assess whether AI-based weather models benefit from post-processing to a similar extent as physics-based NWP, enabling a fair comparison between post-processed AIWP and NWP forecasts. The resulting post-processed AIWP forecasts also yield a relatively simple probabilistic benchmark for evaluating whether inherently probabilistic AIWP models deliver commensurate skill improvements given their increased computational cost.Experiments are based on the WeatherBench 2 framework, which provides a standardized archive of prominent AIWP as well as operational NWP model outputs. Specifically, we apply a suite of established statistical and machine learning post-processing methods to model outputs for the eight variables defined as headline scores (Z500, T850, Q700, WV850, T2M, WS10, MSLP, TP24hr) in the WeatherBench 2 framework, and systematically evaluate the effectiveness of these methods for improving deterministic and probabilistic forecasts.Results show that post-processed probabilistic forecasts can outperform the ensemble predictions from the European Centre for Medium-Range Weather Forecasts for shorter lead times of up to one week for selected variables, but the results vary across variables, lead times, post-processing methods and forecasting models.</jats:p>",
+    "status": "excluded_fulltext",
+    "retrieved_at": "2026-09-25T23:44:14.573974Z",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-26"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.5194/ems2025-15",
+    "title": "Anemoi: A New Collaborative Framework for Data-driven Weather Forecasting",
+    "authors": [
+      "Wijnands, Jasper",
+      "Jacob, Marek",
+      ""
+    ],
+    "year": 2025,
+    "container_title": "",
+    "abstract": "<jats:p>The Anemoi Framework (EMS Technology Award 2025) represents a pioneering effort in the integration of machine learning (ML) with meteorological forecasting, all developed through a collaborative European initiative. Data-driven machine learning approaches are currently revolutionizing weather prediction with state-of-the-art models outperforming equation-based forecasting system across a wide range of scores. Through this, they have rapidly emerged as candidates for operational weather forecasting systems, delivering accurate forecasts for low computational cost. Designed to enhance the accuracy, efficiency, and accessibility of data-driven weather forecasting, Anemoi builds upon advanced ML techniques and a modular, open-source architecture to democratize access to cutting-edge forecasting tools.The framework is organised into distinct Python packages covering the entire machine learning lifecycle—from the creation of customised datasets from diverse meteorological sources to the development and training of advanced deep learning graph models. Once a model is trained, Anemoi enables users to run it in operations, using the outputs of physics-based NWP analyses or ensembles as initial conditions, while maintaining comprehensive lineage tracking.Anemoi has been instrumental in the development of ML-powered weather models including AIFS (ECMWF), Bris (MET Norway), and AICON (DWD), and supports both global and limited area domain models in both deterministic and ensemble settings. These applications demonstrate Anemoi’s potential to enhance forecasting accuracy by integrating ML techniques into existing systems.More than just a technical framework, Anemoi represents a collaborative effort among meteorological services, researchers, and technologists, fostering knowledge exchange and innovation.</jats:p>",
+    "status": "excluded_fulltext",
+    "retrieved_at": "2026-09-25T23:44:14.573979Z",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-26"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.4172/2332-2594.1000110",
+    "title": "A Method for Improving the Accuracy of Weather Forecasts Based on a Comprehensive Statistical Analysis of Historical Data for the Contiguous United States",
+    "authors": [
+      "W Zhu, Audrey",
+      "Pi, Halton"
+    ],
+    "year": 2014,
+    "container_title": "Journal of Climatology &amp; Weather Forecasting",
+    "abstract": "",
+    "status": "excluded_fulltext",
+    "retrieved_at": "2026-09-25T23:44:14.573987Z",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-26"
+  },
+  {
     "bibkey": "zhu2019phasenet",
     "title": "PhaseNet: a deep-neural-network-based arrival-time picking method for P and S waves",
     "authors": [

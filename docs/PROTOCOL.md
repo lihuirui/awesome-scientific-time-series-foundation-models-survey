@@ -2,7 +2,7 @@
 
 **Protocol Version**: 1.0.0  
 **Initial Date**: 2026-09-24  
-**Last Updated**: 2026-09-24  
+**Last Updated**: 2026-09-26  
 **Framework**: PRISMA 2020 (Preferred Reporting Items for Systematic Reviews and Meta-Analyses)  
 **Survey Project**: *Foundation Models and Reasoning LLMs for Scientific Multimodal Time Series: A Survey*
 
@@ -26,7 +26,7 @@ Based on `maintenance/PROJECT_BRIEF.md`, the survey addresses eight central rese
 ## 2. Review Scope and Eligibility Criteria
 
 ### 2.1 Time Window
-- **Eligibility Window**: `2021-01-01` to `2026-09-24` (continuously updated on each iteration).
+- **Eligibility Window**: `2021-01-01` to `2026-09-26` (continuously updated on each iteration).
 - Seminal prior works (e.g. initial neural operator foundations) may be referenced in background but are not counted in the PRISMA systematic cohort.
 
 ### 2.2 Target Scientific Domains

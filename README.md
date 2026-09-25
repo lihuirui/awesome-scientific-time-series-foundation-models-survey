@@ -1,7 +1,7 @@
 # Awesome Scientific Multimodal Time Series Foundation Models and Reasoning LLMs
 ## 科学多模态时序大模型与科学推理大模型前沿进展精选
 
-[![Survey PDF](https://img.shields.io/badge/Paper-PDF-red.svg)](paper/main.pdf) [![PRISMA Included](https://img.shields.io/badge/PRISMA%20Included-47%20papers-brightgreen.svg)](#prisma-systematic-review-statistics) [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE) [![Maintenance](https://img.shields.io/badge/Maintained%20by-Antigravity%20CLI-purple.svg)](#how-this-survey-is-maintained)
+[![Survey PDF](https://img.shields.io/badge/Paper-PDF-red.svg)](paper/main.pdf) [![PRISMA Included](https://img.shields.io/badge/PRISMA%20Included-53%20papers-brightgreen.svg)](#prisma-systematic-review-statistics) [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE) [![Maintenance](https://img.shields.io/badge/Maintained%20by-Antigravity%20CLI-purple.svg)](#how-this-survey-is-maintained)
 
 ## Overview / 项目概述
 
@@ -28,12 +28,12 @@ The taxonomy categorizes the literature across four core dimensions:
 
 ![PRISMA 2020 Flow](paper/figures/prisma_flow.png)
 
-- **Records Identified across Academic APIs**: 562
-- **Unique Candidates Evaluated**: 438
-- **Title/Abstract Excluded**: 112
-- **Full-Text Assessed for Eligibility**: 326
-- **Full-Text Excluded (narrow/regional)**: 279
-- **Studies Rigorously Included**: 47
+- **Records Identified across Academic APIs**: 624
+- **Unique Candidates Evaluated**: 496
+- **Title/Abstract Excluded**: 116
+- **Full-Text Assessed for Eligibility**: 380
+- **Full-Text Excluded (narrow/regional)**: 327
+- **Studies Rigorously Included**: 53
 
 ## Research Landscape & Milestone Timeline
 
@@ -140,6 +140,26 @@ The taxonomy categorizes the literature across four core dimensions:
   - *Architecture*: `Conditional Latent Diffusion Model + Cascade Swin` | *Params*: `150M` | *Physics*: `Tail probability preservation`
   - *Links*: [Paper / DOI](https://arxiv.org/abs/2310.19822) | `[Code not available]`
 
+- **FengWu-4DVar: Coupling the Data-driven Weather Forecasting Model with 4D Variational Assimilation** (arXiv:2312.12455 2023)
+  - *Authors*: Xiao, Yi, Bai, Lei, Xue, Wei et al.
+  - *Architecture*: `Coupled 4D-Var Neural Adjoint + Multi-Scale Transformer` | *Params*: `180M` | *Physics*: `Adjoint variational assimilation`
+  - *Links*: [Paper / DOI](https://arxiv.org/abs/2312.12455) | [![Code](https://img.shields.io/badge/Code-GitHub-blue.svg)](https://github.com/OpenEarthLab/FengWu-4DVar)
+
+- **DiffDA: a Diffusion Model for Weather-scale Data Assimilation** (arXiv:2401.05932 2024)
+  - *Authors*: Huang, Langwen, Gianinazzi, Lukas, Yu, Yuejiang et al.
+  - *Architecture*: `Conditional Denoising Diffusion Probabilistic Model (DDPM)` | *Params*: `68M` | *Physics*: `Conditional Bayesian posterior sampling`
+  - *Links*: [Paper / DOI](https://arxiv.org/abs/2401.05932) | [![Code](https://img.shields.io/badge/Code-GitHub-blue.svg)](https://github.com/spcl/DiffDA)
+
+- **Score-based Data Assimilation** (NeurIPS 2023)
+  - *Authors*: Rozet, Fran{\c{c}}ois, Louppe, Gilles
+  - *Architecture*: `Continuous Score-based Stochastic Differential Equations (SDE)` | *Params*: `12M` | *Physics*: `Continuous adjoint score matching`
+  - *Links*: [Paper / DOI](https://arxiv.org/abs/2306.10574) | [![Code](https://img.shields.io/badge/Code-GitHub-blue.svg)](https://github.com/francois-rozet/sda)
+
+- **The Rise of Data-Driven Weather Forecasting: A First Statistical Assessment of Machine Learning–Based Weather Forecasts in an Operational-Like Context** (Bulletin of the American Meteorological Society (BAMS) 2024)
+  - *Authors*: Ben-Bouallegue, Zied, Clare, Mariana C. A., Magnusson, Linus et al.
+  - *Architecture*: `Operational NWP Benchmark & Concept Drift Evaluation Protocol` | *Params*: `Platform` | *Physics*: `Operational conservation and synoptic verification`
+  - *Links*: [Paper / DOI](https://doi.org/10.1175/BAMS-D-23-0162.1) | `[Code not available]`
+
 ### Earth Observation & Remote Sensing Time Series (对地观测与遥感时序)
 
 - **SatMAE: Pre-Training Transformers for Temporal and Multi-Spectral Satellite Imagery** (NeurIPS 2022)
@@ -187,6 +207,11 @@ The taxonomy categorizes the literature across four core dimensions:
   - *Architecture*: `Standardized Earth Monitoring Benchmark & Multi-Task ViT` | *Params*: `Platform` | *Physics*: `Multi-spectral calibration`
   - *Links*: [Paper / DOI](https://arxiv.org/abs/2306.03831) | [![Code](https://img.shields.io/badge/Code-GitHub-blue.svg)](https://github.com/ServiceNow/geo-bench)
 
+- **SkySense: A Multi-Modal Remote Sensing Foundation Model Towards Universal Interpretation for Earth Observation Imagery** (CVPR 2024)
+  - *Authors*: Guo, Xin, Lao, Jiangwei, Dang, Bo et al.
+  - *Architecture*: `Factorized Multi-Modal Spatio-Temporal ViT (1.9B parameters)` | *Params*: `1.9B` | *Physics*: `Cross-spectral geographic calibration`
+  - *Links*: [Paper / DOI](https://arxiv.org/abs/2312.10115) | [![Code](https://img.shields.io/badge/Code-GitHub-blue.svg)](https://github.com/Jack-bo1220/SkySense)
+
 ### Hydrology & Extreme Flood Modeling (水文与极端洪水大模型)
 
 - **Global prediction of extreme floods in ungauged watersheds** (Nature 2024)
@@ -215,6 +240,11 @@ The taxonomy categorizes the literature across four core dimensions:
   - *Authors*: Bi, Zhen, Zhang, Ningyu, Xue, Yida et al.
   - *Architecture*: `Domain-Adapted LLM with DoInstruct Ocean Corpus` | *Params*: `7B / 13B` | *Physics*: `Oceanographic physical constraint verification`
   - *Links*: [Paper / DOI](https://doi.org/10.18653/v1/2024.acl-long.184) | [![Code](https://img.shields.io/badge/Code-GitHub-blue.svg)](https://github.com/OceanGPT/OceanGPT)
+
+- **Learning Variational Data Assimilation Models and Solvers** (JAMES / arXiv:2007.12941 2021)
+  - *Authors*: Fablet, Ronan, Chapron, Bertrand, Drumetz, Lucas et al.
+  - *Architecture*: `Variational Neural Operator (4DVarNet)` | *Params*: `8.5M` | *Physics*: `Differentiable variational optimization`
+  - *Links*: [Paper / DOI](https://doi.org/10.1029/2021MS002572) | [![Code](https://img.shields.io/badge/Code-GitHub-blue.svg)](https://github.com/CIA-Oceanix/4dvarnet-core)
 
 ### Geophysics & Seismology Foundation Models (地球物理与地震学大模型)
 
