@@ -61,28 +61,74 @@ In the remote sensing domain, observations arrive as asynchronous, multi-spectra
     \item \textbf{Presto}~\cite{tseng2023presto} developed a lightweight (1.2M parameters) transformer tailored for pixel-level time series. Presto natively ingests heterogeneous modalities---including Sentinel-1 SAR backscatter, Sentinel-2 multi-spectral bands, elevation, and ERA5 weather---yielding exceptional few-shot transfer performance.
     \item \textbf{Galileo}~\cite{tseng2025galileo} expanded multi-sensor pretraining across spatial-temporal scales using dual global and local contrastive objectives, enabling unified geospatial segmentation and dynamic flood mapping.
     \item \textbf{DOFA}~\cite{xiong2024dofa} introduced a Dynamic One-For-All foundation architecture inspired by neural plasticity. Recognizing that Earth observation platforms possess disparate band wavelengths and ground sampling distances (GSD), DOFA conditions dynamic weight hypernetworks directly on continuous physical wavelengths $\lambda \in [400\text{ nm}, 14{,}000\text{ nm}]$, unifying optical, SAR, and hyperspectral temporal modalities under a single pre-trained representation.
+    \item \textbf{EarthPT}~\cite{smith2023earthpt} developed a 700M-parameter autoregressive decoder foundation model specifically designed for Earth Observation time series. Treating multi-spectral reflectance measurements (400--2300~nm) across Copernicus Sentinel-2 pixel-year revisit sequences as dense temporal tokens, EarthPT predicts future surface reflectance evolutions with high physical fidelity.
     \item \textbf{Prithvi}~\cite{jakubik2023prithvi} and its weather-climate counterpart \textbf{Prithvi WxC}~\cite{schmude2024prithviwxc} established open-source geospatial foundation backbones jointly developed by NASA and IBM, scaling to 2.3 billion parameters.
 \end{itemize}
 
-\subsection{Probabilistic Diffusion Generative Ensembles}
-Deterministic models trained with $L_1$ or $L_2$ losses inevitably suffer from variance loss at extended lead times, yielding unphysically smoothed atmospheric fields. Price et al.~\cite{price2023gencast} introduced GenCast, a generative diffusion model that formulates medium-range weather prediction as conditioned score matching on spherical multi-mesh graphs:
+\subsection{Probabilistic Diffusion and Extreme-Event Ensembles}
+\label{sec:diffusion_ensembles}
+A pervasive theoretical limitation of deterministic forecasting models trained under mean squared error ($L_2$) or mean absolute error ($L_1$) losses is their vulnerability to \textit{spectral blurring} and variance dissipation at extended forecast horizons. Formally, given an observation history $\mathbf{y}_{1:t}$ and future atmospheric target $\mathbf{x}_{t+\tau}$, optimizing an $L_2$ regression objective $\min_\theta \mathbb{E}[\|\mathbf{x}_{t+\tau} - f_\theta(\mathbf{y}_{1:t})\|^2]$ provably converges to the conditional posterior mean:
 \begin{equation}
-    \nabla_{\mathcal{X}_{t+1}} \log p(\mathcal{X}_{t+1} \mid \mathcal{X}_t, \sigma).
+    f^*_\theta(\mathbf{y}_{1:t}) = \mathbb{E}[\mathbf{x}_{t+\tau} \mid \mathbf{y}_{1:t}] = \int \mathbf{x} \, p(\mathbf{x} \mid \mathbf{y}_{1:t}) \, d\mathbf{x}.
 \end{equation}
-By sampling stochastic trajectories via reverse-time stochastic differential equations (SDEs), GenCast generates physically sharp 50-member ensemble forecasts that preserve energy spectra and reliably capture extreme weather events (e.g., tropical cyclones and extreme wind gusts) across 15-day horizons.
+Because atmospheric flow exhibits non-linear chaotic dynamics with positive Lyapunov exponents, the true posterior probability density $p(\mathbf{x} \mid \mathbf{y}_{1:t})$ bifurcates into multi-modal trajectories at extended lead times ($\tau \ge 5$ days). Averaging over these distinct physical realizations washes out high-wavenumber turbulent eddies, severely dampens the kinetic energy power spectrum $E(k) \propto k^{-5/3}$ or $k^{-3}$, and underestimates extreme-event tail probabilities $P(\|\mathbf{x}\| > \tau_{\text{threshold}})$.
+
+To resolve this limitation, generative diffusion models reframe weather forecasting as stochastic sampling from the true conditional distribution $p(\mathbf{x} \mid \mathbf{y})$.
+
+\subsubsection{Continuous Score-Based Diffusion Formulation}
+Let the atmospheric state trajectory follow a continuous forward stochastic differential equation (SDE) over diffusion time $s \in [0, 1]$:
+\begin{equation}
+    d\mathbf{x}_s = \mathbf{f}(\mathbf{x}_s, s) \, ds + g(s) \, d\mathbf{w},
+\end{equation}
+where $\mathbf{w}$ is standard Brownian motion, $\mathbf{f}$ represents drift, and $g(s)$ governs noise dispersion. By Anderson's reverse-time theorem, the generative reverse trajectory is governed by:
+\begin{equation}
+    d\mathbf{x}_s = \left[ \mathbf{f}(\mathbf{x}_s, s) - g(s)^2 \nabla_{\mathbf{x}_s} \log p_s(\mathbf{x}_s \mid \mathbf{y}) \right] ds + g(s) \, d\mathbf{\bar{w}},
+\end{equation}
+where $d\mathbf{\bar{w}}$ denotes backward Brownian motion, and the score function $s_\theta(\mathbf{x}_s, s, \mathbf{y}) \approx \nabla_{\mathbf{x}_s} \log p_s(\mathbf{x}_s \mid \mathbf{y})$ is parameterized by a deep neural operator or graph network trained via denoising score matching.
+
+\subsubsection{GenCast and SEEDS: Operational Diffusion Ensembling}
+Price et al.~\cite{price2023gencast} operationalized this paradigm in \textbf{GenCast}, conditioning a score-matching network on spherical multi-mesh graphs using historical 6-hour atmospheric increments $(\mathbf{x}_{t-6\text{h}}, \mathbf{x}_t)$. By sampling 50 stochastic trajectories, GenCast accurately generates medium-range ensemble forecasts that maintain realistic energy spectra up to Day 15, outperforming ECMWF ENS in Continuous Ranked Probability Scores (CRPS) across over 80\% of headline atmospheric variables and drastically improving tropical cyclone track and intensity predictions.
+
+Concurrently, Li et al.~\cite{li2024seeds} introduced \textbf{SEEDS} (Scalable Ensemble Envelope Diffusion Sampler), demonstrating that generative diffusion can emulate operational numerical weather forecast ensembles (such as NOAA GEFS) conditioned on only 1 or 2 deterministic forecast trajectories. SEEDS generates large ensembles (e.g., 50 members) at $1^\circ$ operational resolution orders of magnitude faster than numerical ensembles, precisely reproducing the spread-skill relationship and capturing extreme heatwave and storm tail events without numerical energy collapse.
+
+\subsection{Universal Tokenization and Cross-Domain Temporal Transferability}
+\label{sec:universal_tokenization}
+A major architectural obstacle in scientific foundation models is the profound heterogeneity of physical data representations: regular lat-lon reanalysis grids (ERA5), irregular unstructured meshes (finite-volume ocean models), sparse in-situ station networks (hydrology streamflow gauges), 1D continuous high-frequency waveforms (seismology), and irregular multi-spectral satellite revisits (remote sensing). Recent research develops universal tokenization mechanisms to bridge this divide:
+
+\subsubsection{Unified Multi-Task Architectures: UniTS}
+Gao et al.~\cite{gao2024units} developed \textbf{UniTS}, a unified multi-task foundation model for time series. Unlike domain-specific architectures requiring separate parameterizations for each dataset, UniTS processes arbitrary numbers of variables and sequences by introducing:
+\begin{enumerate}
+    \item \textbf{Sequence-Variable Tokenization}: Decouples temporal sequence patches and variable channels into modular tokens via lightweight linear projections.
+    \item \textbf{Prompt-Conditioned Task Tokens}: Ingests task specification tokens (e.g., forecasting horizon, classification labels, imputation mask) into self-attention layers, conditioning a single shared transformer backbone to execute forecasting, anomaly detection, imputation, and classification across 38 diverse datasets without architectural modification.
+\end{enumerate}
+
+\subsubsection{Open Foundation Models: MOMENT}
+Goswami et al.~\cite{goswami2024moment} introduced \textbf{MOMENT}, an open-source family of foundation models trained on the \textit{Time-series Pile}, a curated corpus of over 13 million diverse sequences spanning earth science sensors, industrial machinery, and physical processes. Using a patched T5-style masked autoencoder architecture, MOMENT establishes consistent zero-shot and few-shot transfer capabilities across diverse scientific temporal benchmarks.
+
+\subsubsection{Atmospheric Patch Randomization: Stormer}
+Nguyen et al.~\cite{nguyen2023stormer} introduced \textbf{Stormer}, demonstrating that a standard Vision Transformer backbone can match or exceed specialized weather forecasting architectures when coupled with two critical physical inductive biases:
+\begin{enumerate}
+    \item \textbf{Randomized Dynamics Objective}: During pretraining, Stormer forecasts atmospheric states across randomized lead times $\Delta t \sim \mathcal{U}(6\text{h}, 120\text{h})$, forcing the model to learn multi-scale continuous temporal dynamics rather than overfitting to fixed autoregressive step sizes.
+    \item \textbf{Pressure-Weighted Vertical Loss}: Weighs atmospheric layer losses proportional to geopotential layer thickness and density, aligning optimization with physical mass distribution.
+\end{enumerate}
+
+\subsubsection{Standardized Waveform Tokenization: SeisBench}
+In geophysics, Woollam et al.~\cite{woollam2022seisbench} established \textbf{SeisBench}, a standardized framework and benchmarking suite unifying 3-component continuous seismic waveform datasets (ETHZ, GEOFON, INSTANCE, SCEDC, STEAD, comprising over 30 million waveforms). By standardizing sampling rates ($100\text{ Hz}$), coordinate rotations, and trace tokenization, SeisBench enables cross-regional foundation pretraining and transferability for phase arrival picking, earthquake detection, and fault rupture localization.
 
 \subsection{Physical Conservation Constraints and Differentiable Hybrid Solvers}
-A persistent vulnerability of purely data-driven black-box neural networks is their tendency to violate fundamental physical conservation principles over prolonged autoregressive rollouts, leading to unphysical mass dissipation, kinetic energy damping, or moisture divergence. Recent advances address this through three distinct levels of physical integration:
+\label{sec:physics_conservation}
+A persistent vulnerability of purely data-driven black-box neural networks is their tendency to violate fundamental physical conservation principles over prolonged autoregressive rollouts, leading to unphysical mass dissipation, kinetic energy damping, or moisture divergence. Recent advances address this through distinct levels of physical integration:
 \begin{enumerate}
     \item \textbf{Soft Physics Regularization}: Incorporates auxiliary loss penalties that penalize physical inconsistencies during training:
     \begin{equation}
         \mathcal{L}_{\text{total}} = \mathcal{L}_{\text{data}} + \lambda_{\text{phys}} \mathcal{L}_{\text{conservation}},
     \end{equation}
-    where $\mathcal{L}_{\text{conservation}}$ penalizes deviations in global total dry mass, vertical geostrophic balance, or spectral kinetic energy distributions (employed in FourCastNet~\cite{pathak2022fourcastnet} and FengWu~\cite{chen2023fengwu}).
-    \item \textbf{Hard Architectural Invariance}: Enforces conservation laws and symmetry directly into neural layer transformations. For instance, mass-conserving projection operators project predicted surface pressure fields onto the affine subspace satisfying $\int_{\mathbb{S}^2} p_s(\theta, \lambda) d\Omega = M_{\text{dry}}$, ensuring zero numerical mass drift by construction.
-    \item \textbf{Differentiable Hybrid Solvers: NeuralGCM}: Kochkov et al.~\cite{kochkov2024neuralgcm} pioneered a transformative hybrid paradigm by coupling a fully differentiable atmospheric dynamical core with neural network parameterizations. The resolved large-scale hydrodynamics are integrated explicitly by an analytical spectral PDE solver that strictly enforces conservation of mass, momentum, and moisture:
+    where $\mathcal{L}_{\text{conservation}}$ penalizes deviations in global total dry mass, vertical geostrophic balance, or spectral kinetic energy distributions (employed in FourCastNet~\cite{pathak2022fourcastnet}, FengWu~\cite{chen2023fengwu}, and Stormer~\cite{nguyen2023stormer}).
+    \item \textbf{Hard Architectural Invariance}: Enforces conservation laws and symmetry directly into neural layer transformations. For instance, SFNO~\cite{bonev2023sfno} guarantees $\mathrm{SO}(3)$ rotational equivariance on the unit sphere $\mathbb{S}^2$, preventing polar singularities and high-latitude numerical distortions by construction.
+    \item \textbf{Hybrid Multiscale Subgrid Parameterization: ClimSim}: Yu et al.~\cite{yu2023climsim} established \textbf{ClimSim}, the largest multiscale dataset and benchmark for training deep learning subgrid physics emulators. In multiscale climate modeling (e.g., E3SM-MMF), macro-scale fluid dynamics are integrated by numerical PDE solvers on coarse grids, while complex micro-scale processes (moist convection, cloud formation, turbulence, and radiative transfer) are parameterized by neural networks. ClimSim provides 5.7 billion high-resolution atmospheric column profiles, benchmarking physics-informed ML architectures on strict conservation of total column water mass and dry static energy.
+    \item \textbf{Differentiable Hybrid Solvers: NeuralGCM}: Kochkov et al.~\cite{kochkov2024neuralgcm} coupled a fully differentiable atmospheric dynamical core with neural network parameterizations. The resolved large-scale hydrodynamics are integrated explicitly by an analytical spectral PDE solver that strictly enforces conservation of mass, momentum, and moisture:
     \begin{equation}
         \frac{\partial \mathbf{X}}{\partial t} = \mathcal{F}_{\text{dynamical}}(\mathbf{X}) + \mathcal{N}_{\theta}(\mathbf{X}),
     \end{equation}
-    where $\mathcal{F}_{\text{dynamical}}$ executes analytical fluid dynamics, while the neural network $\mathcal{N}_{\theta}$ parameterizes sub-grid physical processes (cloud microphysics, moist convection, turbulence, and radiative transfer). NeuralGCM demonstrates unprecedented multi-decadal stability without climate drift, matching the operational deterministic accuracy of ECMWF IFS HRES at 1--10 day weather horizons while preserving global physical conservation laws for decadal climate simulations.
+    where $\mathcal{F}_{\text{dynamical}}$ executes analytical fluid dynamics, while the neural network $\mathcal{N}_{\theta}$ parameterizes sub-grid physical processes. NeuralGCM demonstrates unprecedented multi-decadal stability without climate drift, matching the operational deterministic accuracy of ECMWF IFS HRES at 1--10 day weather horizons while preserving global physical conservation laws for decadal climate simulations.
 \end{enumerate}

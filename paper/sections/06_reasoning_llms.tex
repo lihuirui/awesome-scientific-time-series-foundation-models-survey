@@ -25,3 +25,18 @@ Moving beyond single-model inference, Li et al.~\cite{li2025climateagent} introd
     \item \textbf{Critic-Agent}: Verifies physical plausibility, evaluating dimensional unit consistency and testing for energy conservation bounds before assembling peer-review-ready figures and reports.
 \end{itemize}
 Evaluated on the standardized \textit{Climate-Agent-Bench-85}, ClimateAgent demonstrated an 82\% task completion rate without human intervention, marking a concrete transition from static numerical forecasters to self-directed AI co-scientists capable of hypothesis formulation and autonomous verification in natural Earth systems.
+
+\subsection{Tool Invocation Protocols and Execution Sandboxes for Scientific Co-Scientists}
+\label{sec:agent_tool_interfaces}
+The operational viability of scientific reasoning agents hinges upon robust tool invocation interfaces, execution sandboxes, and verification guardrails:
+\begin{enumerate}
+    \item \textbf{Structured Tool Invocation Protocols}: Frontier reasoning agents communicate with computational tools via structured JSON schema function calls. Rather than generating unconstrained code, agents output verified argument signatures that trigger domain-specific API endpoints (e.g., Copernicus Marine Toolbox, CDS API, USGS Hydro-Data endpoints).
+    \item \textbf{Stateful Computational Sandboxes}: Executing scientific workflows requires stateful REPL (Read-Eval-Print Loop) environments equipped with high-performance domain libraries:
+    \begin{itemize}
+        \item \textit{Atmospheric \& Earth Observation}: \texttt{xarray} and \texttt{dask} for out-of-core chunked tensor operations on multi-terabyte Zarr/NetCDF stores; \texttt{MetPy} for thermodynamic diagrams and vorticity calculations; \texttt{rasterio} and \texttt{rioxarray} for satellite raster projections.
+        \item \textit{Ocean Dynamics}: \texttt{oceanbench} and \texttt{copernicusmarine} client APIs for automated GLORYS and altimetry verification.
+        \item \textit{Geophysics}: \texttt{ObsPy} and \texttt{SeisBench}~\cite{woollam2022seisbench} for streaming waveform filtering, phase picking, and seismic moment tensor inversions.
+    \end{itemize}
+    \item \textbf{Iterative Debugging and Error Recovery Loops}: Scientific data structures present idiosyncratic pitfalls (e.g., latitude axis direction inversions, non-standard calendar coordinates like 360-day climate calendars, unit discrepancies between Pa and hPa). Advanced reasoning agents employ dynamic self-reflection loops: upon encountering execution tracebacks or dimension mismatch errors, the agent parses the stack trace, inspects array metadata (e.g., \texttt{ds.coords}), and generates corrected code blocks autonomously.
+    \item \textbf{Physical Plausibility Verification Guardrails}: To prevent catastrophic hallucinations in critical scientific assessments, the critic agent enforces physical sanity checks prior to final report generation: verifying non-negativity of precipitation ($P \ge 0$), bounded relative humidity ($0\% \le \text{RH} \le 100\%$), thermodynamic energy bounds, and dimensional consistency across derived physical units.
+\end{enumerate}

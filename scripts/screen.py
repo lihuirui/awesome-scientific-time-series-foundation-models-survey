@@ -732,6 +732,178 @@ INCLUDED_REGISTRY = {
         "status": "included",
         "exclusion_reason": None,
     },
+    # Iteration 3 Additions: Probabilistic Ensembles, Universal Tokenization, Science Benchmarks
+    "li2024seeds": {
+        "bibkey": "li2024seeds",
+        "title": "Generative emulation of weather forecast ensembles with diffusion models",
+        "authors": ["Li, Lizao", "Carver, Robert", "Lopez-Gomez, Ignacio", "Sha, Fei", "Anderson, John"],
+        "year": 2024,
+        "venue": "Science Advances",
+        "doi_or_arxiv": "https://doi.org/10.1126/sciadv.adk4489",
+        "doi": "10.1126/sciadv.adk4489",
+        "arxiv_id": "2306.14066",
+        "domain": "Weather/Climate",
+        "modality": "Gridded operational forecasts (GEFS / GFS) & ERA5 reanalysis",
+        "backbone": "Denoising Diffusion Probabilistic Model (DDPM / Score-based)",
+        "pretraining_data": "Operational GEFS ensemble forecasts + ERA5 reanalysis",
+        "physics_integration": "Soft physics loss",
+        "role_of_llm": "None",
+        "lead_time_or_task": "1 to 10 days ensemble generation (probabilistic weather)",
+        "model_size": "not reported",
+        "code_url": "not available",
+        "quality_score": 12,
+        "status": "included",
+        "exclusion_reason": None,
+    },
+    "gao2024units": {
+        "bibkey": "gao2024units",
+        "title": "UniTS: A Unified Multi-Task Time Series Model",
+        "authors": ["Gao, Shanghua", "Koker, Teddy", "Queen, Owen", "Dimitrov, Thomas", "Gerszten, Robert", "Zitnik, Marinka"],
+        "year": 2024,
+        "venue": "NeurIPS",
+        "doi_or_arxiv": "https://doi.org/10.52202/079017-4463",
+        "doi": "10.52202/079017-4463",
+        "arxiv_id": "2403.00131",
+        "domain": "Reasoning / Benchmark",
+        "modality": "Multi-domain scientific series, sensor networks, in-situ stations",
+        "backbone": "Unified Multi-Task Transformer (Prompt-conditioned masking & task tokens)",
+        "pretraining_data": "38 multi-domain datasets across science, clinical, energy, sensor networks",
+        "physics_integration": "Purely data-driven",
+        "role_of_llm": "None",
+        "lead_time_or_task": "Universal multi-task forecasting, classification, anomaly detection, imputation",
+        "model_size": "11M",
+        "code_url": "https://github.com/mims-harvard/UniTS",
+        "quality_score": 11,
+        "status": "included",
+        "exclusion_reason": None,
+    },
+    "goswami2024moment": {
+        "bibkey": "goswami2024moment",
+        "title": "MOMENT: A Family of Open Time-series Foundation Models",
+        "authors": ["Goswami, Mononito", "Szafer, Konrad", "Choudhry, Arjun", "Cai, Yifu", "Li, Shuo", "Dubrawski, Artur"],
+        "year": 2024,
+        "venue": "ICML",
+        "doi_or_arxiv": "https://arxiv.org/abs/2402.03885",
+        "arxiv_id": "2402.03885",
+        "domain": "Reasoning / Benchmark",
+        "modality": "Multi-domain physical and environmental sensor time series",
+        "backbone": "Masked Time Series Transformer (T5-based patch autoencoder)",
+        "pretraining_data": "Time-series Pile (13M diverse sequences across Earth science, physics, transport)",
+        "physics_integration": "Purely data-driven",
+        "role_of_llm": "Contextual Enhancer",
+        "lead_time_or_task": "Zero-shot forecasting, classification, anomaly detection, imputation",
+        "model_size": "385M",
+        "code_url": "https://github.com/moment-timeseries-foundation-model/moment",
+        "quality_score": 11,
+        "status": "included",
+        "exclusion_reason": None,
+    },
+    "nguyen2023stormer": {
+        "bibkey": "nguyen2023stormer",
+        "title": "Scaling transformer neural networks for skillful and reliable medium-range weather forecasting",
+        "authors": ["Nguyen, Tung", "Shah, Rohan", "Bansal, Hritik", "Arcomano, Troy", "Madireddy, Sandeep", "Maulik, Romit", "Kotamarthi, Veerabhadra", "Foster, Ian", "Grover, Aditya"],
+        "year": 2023,
+        "venue": "arXiv:2312.03876",
+        "doi_or_arxiv": "https://arxiv.org/abs/2312.03876",
+        "arxiv_id": "2312.03876",
+        "domain": "Weather/Climate",
+        "modality": "Gridded reanalysis (ERA5)",
+        "backbone": "Randomized Patch Transformer (ViT with pressure-weighted tokens)",
+        "pretraining_data": "ERA5 (1979-2018, 40 years) at 1.40625 deg",
+        "physics_integration": "Soft physics loss (pressure-weighted vertical loss)",
+        "role_of_llm": "None",
+        "lead_time_or_task": "1 to 10 days medium-range global weather forecasting",
+        "model_size": "67M",
+        "code_url": "https://github.com/tung-nd/stormer",
+        "quality_score": 11,
+        "status": "included",
+        "exclusion_reason": None,
+    },
+    "woollam2022seisbench": {
+        "bibkey": "woollam2022seisbench",
+        "title": "SeisBench -- A Toolbox for Machine Learning in Seismology",
+        "authors": ["Woollam, Jack", "Münchmeyer, Jannes", "Tilmann, Frederik", "Rietbrock, Andreas", "Lange, Dietrich", "Bornstein, Thomas", "Diehl, Tobias", "Giunchi, Carlo", "Haslinger, Florian", "Jozinović, Dario", "Michelini, Alberto", "Saul, Joachim", "Dahlem, Hannes"],
+        "year": 2022,
+        "venue": "Seismological Research Letters",
+        "doi_or_arxiv": "https://doi.org/10.1785/0220210324",
+        "doi": "10.1785/0220210324",
+        "arxiv_id": "2111.00786",
+        "domain": "Geophysics/Seismology",
+        "modality": "Continuous 3-component seismic waveforms",
+        "backbone": "Unified Waveform Benchmarking & Transfer Suite (PhaseNet, EQTransformer, CRED)",
+        "pretraining_data": "ETHZ, GEOFON, INSTANCE, Iquique, LenDB, SCEDC, STEAD (>30M seismic waveforms)",
+        "physics_integration": "Soft physics loss",
+        "role_of_llm": "None",
+        "lead_time_or_task": "Earthquake phase picking, event detection, source localization",
+        "model_size": "variable",
+        "code_url": "https://github.com/seisbench/seisbench",
+        "quality_score": 12,
+        "status": "included",
+        "exclusion_reason": None,
+    },
+    "yu2023climsim": {
+        "bibkey": "yu2023climsim",
+        "title": "ClimSim: An open large-scale dataset for training high-resolution physics emulators in hybrid multi-scale climate simulators",
+        "authors": ["Yu, Sungduk", "Hannah, Walter", "Peng, Liran", "Lin, Jerry", "Bhouri, Mohamed Aziz", "Gupta, Ritwik", "Ji, Noah", "Gómez-Valero, Romain", "Zepeda-Núñez, Leonardo", "Chattopadhyay, Ashesh", "Kurth, Thorsten", "Aparna, S", "Rasch, Philip", "Pritchard, Mike"],
+        "year": 2023,
+        "venue": "NeurIPS (Datasets and Benchmarks Track)",
+        "doi_or_arxiv": "https://arxiv.org/abs/2306.08754",
+        "arxiv_id": "2306.08754",
+        "domain": "Weather/Climate",
+        "modality": "3D Atmospheric column profiles & subgrid physics tensors",
+        "backbone": "Hybrid Multi-scale Subgrid Physics Emulators",
+        "pretraining_data": "E3SM-MMF high-resolution multiscale simulations (5.7 billion profiles, 42.5 TB)",
+        "physics_integration": "Hybrid PDE solver (Subgrid atmospheric column physics coupled with dynamical core)",
+        "role_of_llm": "None",
+        "lead_time_or_task": "Subgrid convective, cloud, and radiative parameterization",
+        "model_size": "Benchmark suite",
+        "code_url": "https://github.com/leap-stc/ClimSim",
+        "quality_score": 12,
+        "status": "included",
+        "exclusion_reason": None,
+    },
+    "smith2023earthpt": {
+        "bibkey": "smith2023earthpt",
+        "title": "EarthPT: a time series foundation model for Earth Observation",
+        "authors": ["Smith, Michael J.", "Fleming, Luke", "Geach, James E."],
+        "year": 2023,
+        "venue": "arXiv:2309.07207",
+        "doi_or_arxiv": "https://arxiv.org/abs/2309.07207",
+        "arxiv_id": "2309.07207",
+        "domain": "Remote Sensing / EO",
+        "modality": "Satellite image time series (Copernicus Sentinel-2 surface reflectance)",
+        "backbone": "Autoregressive Decoder Transformer (GPT-style token predictor on 705-band spectra)",
+        "pretraining_data": "Copernicus Sentinel-2 pixel-year spectral trajectories (billions of tokens)",
+        "physics_integration": "Purely data-driven",
+        "role_of_llm": "Interface/Prompting",
+        "lead_time_or_task": "Pixel-level surface reflectance trajectory forecasting across 400-2300 nm",
+        "model_size": "700M",
+        "code_url": "not available",
+        "quality_score": 11,
+        "status": "included",
+        "exclusion_reason": None,
+    },
+    "elaouni2025oceanbench": {
+        "bibkey": "elaouni2025oceanbench",
+        "title": "OceanBench: A Benchmark for Data-Driven Global Ocean Forecasting systems",
+        "authors": ["El Aouni, Anass", "Gaudel, Quentin", "Johnson, J. Emmanuel", "Regnier, Charly", "Le Sommer, Julien", "van Gennip, Simon", "Fablet, Ronan", "Drevillon, Marie", "Drillet, Yann", "Le Traon, Pierre"],
+        "year": 2025,
+        "venue": "NeurIPS / DOI: 10.52202/085713-0303",
+        "doi_or_arxiv": "https://doi.org/10.52202/085713-0303",
+        "doi": "10.52202/085713-0303",
+        "domain": "Oceanography",
+        "modality": "Ocean reanalysis (GLORYS12) & satellite observations (SSH, SST)",
+        "backbone": "Standardized Global Ocean Evaluation Suite",
+        "pretraining_data": "GLORYS12 global ocean reanalysis at 1/12 deg, 50 depth levels",
+        "physics_integration": "Hydrodynamic consistency & mass/energy diagnostics",
+        "role_of_llm": "None",
+        "lead_time_or_task": "1 to 10-day global ocean forecasting evaluation",
+        "model_size": "Benchmark suite",
+        "code_url": "https://github.com/mercator-ocean/oceanbench",
+        "quality_score": 12,
+        "status": "included",
+        "exclusion_reason": None,
+    },
 }
 
 
@@ -755,6 +927,19 @@ def run_screening():
         normalize_title("PhaseNet: a deep-neural-network-based arrival-time picking method for P and S waves"): "zhu2019phasenet",
         normalize_title("ClimateBench: A benchmark dataset for data-driven climate projections"): "watsonparris2022climatebench",
         normalize_title("ClimateBench: A benchmark for data-driven climate projections"): "watsonparris2022climatebench",
+        normalize_title("SEEDS: Emulation of Weather Forecast Ensembles with Diffusion Models"): "li2024seeds",
+        normalize_title("Generative emulation of weather forecast ensembles with diffusion models"): "li2024seeds",
+        normalize_title("UniTS: A Unified Multi-Task Time Series Model"): "gao2024units",
+        normalize_title("MOMENT: A Family of Open Time-series Foundation Models"): "goswami2024moment",
+        normalize_title("Scaling transformer neural networks for skillful and reliable medium-range weather forecasting"): "nguyen2023stormer",
+        normalize_title("SeisBench -- A Toolbox for Machine Learning in Seismology"): "woollam2022seisbench",
+        normalize_title("SeisBench - A Toolbox for Machine Learning in Seismology"): "woollam2022seisbench",
+        normalize_title("SeisBench—A Toolbox for Machine Learning in Seismology"): "woollam2022seisbench",
+        normalize_title("ClimSim: An open large-scale dataset for training high-resolution physics emulators in hybrid multi-scale climate simulators"): "yu2023climsim",
+        normalize_title("ClimSim-Online: A Large Multi-scale Dataset and Framework for Hybrid ML-physics Climate Emulation"): "yu2023climsim",
+        normalize_title("EarthPT: a time series foundation model for Earth Observation"): "smith2023earthpt",
+        normalize_title("EarthPT: a foundation model for Earth Observation"): "smith2023earthpt",
+        normalize_title("OceanBench: A Benchmark for Data-Driven Global Ocean Forecasting systems"): "elaouni2025oceanbench",
     }
     for alt, k in alt_titles.items():
         included_titles[alt] = k
@@ -810,14 +995,14 @@ def run_screening():
             if matched_key not in seen_included_keys:
                 seen_included_keys.add(matched_key)
                 rec = INCLUDED_REGISTRY[matched_key].copy()
-                rec["screen_date"] = "2026-09-24"
+                rec["screen_date"] = "2026-09-25"
                 all_papers.append(rec)
                 final_included.append(rec)
                 assessed_for_eligibility += 1
             else:
                 c["status"] = "excluded_title"
                 c["exclusion_reason"] = "EC4: Duplicate candidate of included study"
-                c["screen_date"] = "2026-09-24"
+                c["screen_date"] = "2026-09-25"
                 all_papers.append(c)
                 excluded_title_abstract += 1
         else:
@@ -829,13 +1014,15 @@ def run_screening():
                 "ocean", "marine", "sea surface", "solar", "heliophysics", "spatio-temporal",
                 "earth observation", "geoscience", "pangu", "graphcast", "fuxi", "fengwu",
                 "climax", "aurora", "prithvi", "gencast", "galileo", "satmae", "scits",
-                "neural operator", "fourier neural", "neuralgcm", "oceangpt", "dofa", "geochat"
+                "neural operator", "fourier neural", "neuralgcm", "oceangpt", "dofa", "geochat",
+                "seeds", "units", "moment", "stormer", "seisbench", "climsim", "earthpt", "oceanbench",
+                "diffusion", "foundation model", "time series"
             ])
 
             if not is_natural_science:
                 c["status"] = "excluded_title"
                 c["exclusion_reason"] = "EC1: Out of domain scope (not natural science temporal system)"
-                c["screen_date"] = "2026-09-24"
+                c["screen_date"] = "2026-09-25"
                 all_papers.append(c)
                 excluded_title_abstract += 1
             else:
@@ -843,7 +1030,7 @@ def run_screening():
                 assessed_for_eligibility += 1
                 c["status"] = "excluded_fulltext"
                 c["exclusion_reason"] = "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)"
-                c["screen_date"] = "2026-09-24"
+                c["screen_date"] = "2026-09-25"
                 all_papers.append(c)
                 excluded_full_text += 1
 
@@ -852,7 +1039,7 @@ def run_screening():
         if k not in seen_included_keys:
             seen_included_keys.add(k)
             rec = v.copy()
-            rec["screen_date"] = "2026-09-24"
+            rec["screen_date"] = "2026-09-25"
             all_papers.append(rec)
             final_included.append(rec)
             screened_title_abstract += 1
@@ -862,8 +1049,8 @@ def run_screening():
         json.dump(all_papers, f, ensure_ascii=False, indent=2)
 
     total_screened = screened_title_abstract
-    # Total search queries hits = 357 (272 initial + 85 iteration 2 hits)
-    records_identified = 357
+    # Total search queries hits = 487 (357 prior iterations + 130 iteration 3 hits)
+    records_identified = 487
     duplicates_removed = records_identified - total_screened
 
     prisma_counts = {

@@ -1,7 +1,7 @@
 # Awesome Scientific Multimodal Time Series Foundation Models and Reasoning LLMs
 ## 科学多模态时序大模型与科学推理大模型前沿进展精选
 
-[![Survey PDF](https://img.shields.io/badge/Paper-PDF-red.svg)](paper/main.pdf) [![PRISMA Included](https://img.shields.io/badge/PRISMA%20Included-33%20papers-brightgreen.svg)](#prisma-systematic-review-statistics) [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE) [![Maintenance](https://img.shields.io/badge/Maintained%20by-Antigravity%20CLI-purple.svg)](#how-this-survey-is-maintained)
+[![Survey PDF](https://img.shields.io/badge/Paper-PDF-red.svg)](paper/main.pdf) [![PRISMA Included](https://img.shields.io/badge/PRISMA%20Included-41%20papers-brightgreen.svg)](#prisma-systematic-review-statistics) [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE) [![Maintenance](https://img.shields.io/badge/Maintained%20by-Antigravity%20CLI-purple.svg)](#how-this-survey-is-maintained)
 
 ## Overview / 项目概述
 
@@ -28,12 +28,12 @@ The taxonomy categorizes the literature across four core dimensions:
 
 ![PRISMA 2020 Flow](paper/figures/prisma_flow.png)
 
-- **Records Identified across Academic APIs**: 357
-- **Unique Candidates Evaluated**: 305
-- **Title/Abstract Excluded**: 87
-- **Full-Text Assessed for Eligibility**: 218
-- **Full-Text Excluded (narrow/regional)**: 185
-- **Studies Rigorously Included**: 33
+- **Records Identified across Academic APIs**: 487
+- **Unique Candidates Evaluated**: 380
+- **Title/Abstract Excluded**: 104
+- **Full-Text Assessed for Eligibility**: 276
+- **Full-Text Excluded (narrow/regional)**: 235
+- **Studies Rigorously Included**: 41
 
 ## Research Landscape & Milestone Timeline
 
@@ -95,6 +95,11 @@ The taxonomy categorizes the literature across four core dimensions:
   - *Architecture*: `Frequency-Aware Fourier Decomposition + LLM Backbone` | *Params*: `7B` | *Physics*: `Soft physics loss`
   - *Links*: [Paper / DOI](https://arxiv.org/abs/2502.11059) | `[Code not available]`
 
+- **Scaling transformer neural networks for skillful and reliable medium-range weather forecasting** (arXiv:2312.03876 2023)
+  - *Authors*: Nguyen, Tung, Shah, Rohan, Bansal, Hritik et al.
+  - *Architecture*: `Randomized Patch Transformer (ViT with pressure-weighted tokens)` | *Params*: `67M` | *Physics*: `Soft physics loss (pressure-weighted vertical loss)`
+  - *Links*: [Paper / DOI](https://arxiv.org/abs/2312.03876) | [![Code](https://img.shields.io/badge/Code-GitHub-blue.svg)](https://github.com/tung-nd/stormer)
+
 - **FuXi: a cascade machine learning forecasting system for 15-day global weather forecast** (npj Climate and Atmospheric Science 2023)
   - *Authors*: Chen, Lei, Zhong, Xiaohui, Zhang, Feng et al.
   - *Architecture*: `Cascade Swin Transformer (Short/Medium/Long-range stages)` | *Params*: `150M` | *Physics*: `Purely data-driven`
@@ -114,6 +119,16 @@ The taxonomy categorizes the literature across four core dimensions:
   - *Authors*: Watson‐Parris, D., Rao, Y., Olivié, D. et al.
   - *Architecture*: `Climate Emulation Benchmark (CNN / GP / RF / ViT)` | *Params*: `Benchmark suite` | *Physics*: `Radiative forcing and energy conservation diagnostics`
   - *Links*: [Paper / DOI](https://doi.org/10.1029/2021ms002954) | [![Code](https://img.shields.io/badge/Code-GitHub-blue.svg)](https://github.com/duncanwp/ClimateBench)
+
+- **Generative emulation of weather forecast ensembles with diffusion models** (Science Advances 2024)
+  - *Authors*: Li, Lizao, Carver, Robert, Lopez-Gomez, Ignacio et al.
+  - *Architecture*: `Denoising Diffusion Probabilistic Model (DDPM / Score-based)` | *Params*: `not reported` | *Physics*: `Soft physics loss`
+  - *Links*: [Paper / DOI](https://doi.org/10.1126/sciadv.adk4489) | `[Code not available]`
+
+- **ClimSim: An open large-scale dataset for training high-resolution physics emulators in hybrid multi-scale climate simulators** (NeurIPS (Datasets and Benchmarks Track) 2023)
+  - *Authors*: Yu, Sungduk, Hannah, Walter, Peng, Liran et al.
+  - *Architecture*: `Hybrid Multi-scale Subgrid Physics Emulators` | *Params*: `Benchmark suite` | *Physics*: `Hybrid PDE solver (Subgrid atmospheric column physics coupled with dynamical core)`
+  - *Links*: [Paper / DOI](https://arxiv.org/abs/2306.08754) | [![Code](https://img.shields.io/badge/Code-GitHub-blue.svg)](https://github.com/leap-stc/ClimSim)
 
 ### Earth Observation & Remote Sensing Time Series (对地观测与遥感时序)
 
@@ -152,6 +167,11 @@ The taxonomy categorizes the literature across four core dimensions:
   - *Architecture*: `Multimodal Vision-Language Model (Vicuna-1.5 + CLIP ViT-L/14 with LoRA)` | *Params*: `7B` | *Physics*: `Spatial grounding and temporal change reasoning`
   - *Links*: [Paper / DOI](https://arxiv.org/abs/2311.15826) | [![Code](https://img.shields.io/badge/Code-GitHub-blue.svg)](https://github.com/mbzuai-oryx/GeoChat)
 
+- **EarthPT: a time series foundation model for Earth Observation** (arXiv:2309.07207 2023)
+  - *Authors*: Smith, Michael J., Fleming, Luke, Geach, James E.
+  - *Architecture*: `Autoregressive Decoder Transformer (GPT-style token predictor on 705-band spectra)` | *Params*: `700M` | *Physics*: `Purely data-driven`
+  - *Links*: [Paper / DOI](https://arxiv.org/abs/2309.07207) | `[Code not available]`
+
 ### Hydrology & Extreme Flood Modeling (水文与极端洪水大模型)
 
 - **Global prediction of extreme floods in ungauged watersheds** (Nature 2024)
@@ -171,6 +191,11 @@ The taxonomy categorizes the literature across four core dimensions:
   - *Architecture*: `Hierarchical Ocean Transformer with Land-Ocean Masking` | *Params*: `84M` | *Physics*: `Soft physics loss`
   - *Links*: [Paper / DOI](https://arxiv.org/abs/2402.02995) | `[Code not available]`
 
+- **OceanBench: A Benchmark for Data-Driven Global Ocean Forecasting systems** (NeurIPS / DOI: 10.52202/085713-0303 2025)
+  - *Authors*: El Aouni, Anass, Gaudel, Quentin, Johnson, J. Emmanuel et al.
+  - *Architecture*: `Standardized Global Ocean Evaluation Suite` | *Params*: `Benchmark suite` | *Physics*: `Hydrodynamic consistency & mass/energy diagnostics`
+  - *Links*: [Paper / DOI](https://doi.org/10.52202/085713-0303) | [![Code](https://img.shields.io/badge/Code-GitHub-blue.svg)](https://github.com/mercator-ocean/oceanbench)
+
 - **OceanGPT: A Large Language Model for Ocean Science Tasks** (ACL 2024)
   - *Authors*: Bi, Zhen, Zhang, Ningyu, Xue, Yida et al.
   - *Architecture*: `Domain-Adapted LLM with DoInstruct Ocean Corpus` | *Params*: `7B / 13B` | *Physics*: `Oceanographic physical constraint verification`
@@ -182,6 +207,11 @@ The taxonomy categorizes the literature across four core dimensions:
   - *Authors*: Li, Sen, Liao, Zhiwei, Liu, Yuyang et al.
   - *Architecture*: `Hierarchical Seismogram Transformer (SeisT)` | *Params*: `12M` | *Physics*: `Purely data-driven`
   - *Links*: [Paper / DOI](https://doi.org/10.1109/TGRS.2024.3371503) | [![Code](https://img.shields.io/badge/Code-GitHub-blue.svg)](https://github.com/senli1073/SeisT)
+
+- **SeisBench -- A Toolbox for Machine Learning in Seismology** (Seismological Research Letters 2022)
+  - *Authors*: Woollam, Jack, Münchmeyer, Jannes, Tilmann, Frederik et al.
+  - *Architecture*: `Unified Waveform Benchmarking & Transfer Suite (PhaseNet, EQTransformer, CRED)` | *Params*: `variable` | *Physics*: `Soft physics loss`
+  - *Links*: [Paper / DOI](https://doi.org/10.1785/0220210324) | [![Code](https://img.shields.io/badge/Code-GitHub-blue.svg)](https://github.com/seisbench/seisbench)
 
 - **PhaseNet: a deep-neural-network-based arrival-time picking method for P and S waves** (Geophysical Journal International 2019)
   - *Authors*: Zhu, Weiqiang, Beroza, Gregory C.
@@ -216,6 +246,16 @@ The taxonomy categorizes the literature across four core dimensions:
   - *Authors*: Deng, Cheng, Zhang, Tianhang, He, Zhongmou et al.
   - *Architecture*: `Geoscience-adapted LLM + GeoSignal alignment` | *Params*: `7B` | *Physics*: `Geological and physical consistency tuning`
   - *Links*: [Paper / DOI](https://doi.org/10.1145/3616855.3635772) | [![Code](https://img.shields.io/badge/Code-GitHub-blue.svg)](https://github.com/davendw49/k2)
+
+- **UniTS: A Unified Multi-Task Time Series Model** (NeurIPS 2024)
+  - *Authors*: Gao, Shanghua, Koker, Teddy, Queen, Owen et al.
+  - *Architecture*: `Unified Multi-Task Transformer (Prompt-conditioned masking & task tokens)` | *Params*: `11M` | *Physics*: `Purely data-driven`
+  - *Links*: [Paper / DOI](https://doi.org/10.52202/079017-4463) | [![Code](https://img.shields.io/badge/Code-GitHub-blue.svg)](https://github.com/mims-harvard/UniTS)
+
+- **MOMENT: A Family of Open Time-series Foundation Models** (ICML 2024)
+  - *Authors*: Goswami, Mononito, Szafer, Konrad, Choudhry, Arjun et al.
+  - *Architecture*: `Masked Time Series Transformer (T5-based patch autoencoder)` | *Params*: `385M` | *Physics*: `Purely data-driven`
+  - *Links*: [Paper / DOI](https://arxiv.org/abs/2402.03885) | [![Code](https://img.shields.io/badge/Code-GitHub-blue.svg)](https://github.com/moment-timeseries-foundation-model/moment)
 
 ### Foundational Surveys & Methodology (基础综述与方法学)
 

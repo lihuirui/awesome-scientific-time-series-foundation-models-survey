@@ -63,6 +63,29 @@ def fetch_crossref(query: str, rows: int = 15):
         return []
 
 
+def fetch_crossref_doi(doi: str):
+    cache_key = "cr_doi_" + re.sub(r"[^a-zA-Z0-9_]", "_", doi) + ".json"
+    cache_path = os.path.join(RAW_DIR, cache_key)
+
+    if os.path.exists(cache_path):
+        with open(cache_path, "r", encoding="utf-8") as f:
+            return json.load(f)
+
+    url = f"https://api.crossref.org/works/{urllib.parse.quote(doi)}"
+    req = urllib.request.Request(url, headers=HEADERS)
+    try:
+        time.sleep(1.0)
+        with urllib.request.urlopen(req, timeout=15) as resp:
+            data = json.loads(resp.read().decode("utf-8"))
+            item = data.get("message", {})
+            with open(cache_path, "w", encoding="utf-8") as f:
+                json.dump(item, f, ensure_ascii=False, indent=2)
+            return item
+    except Exception as e:
+        print(f"[Crossref DOI Error] {doi}: {e}")
+        return None
+
+
 def fetch_arxiv_abs(arxiv_id: str):
     cache_key = f"arxiv_{arxiv_id.replace('/', '_')}.json"
     cache_path = os.path.join(RAW_DIR, cache_key)
@@ -144,6 +167,15 @@ def run_search():
         ("Crossref", "OceanGPT A Large Language Model for Ocean Science Tasks"),
         ("Crossref", "K2 A Foundation Language Model for Geoscience Knowledge Understanding"),
         ("Crossref", "GeoChat Grounded Large Vision-Language Model for Remote Sensing"),
+        # Iteration 3 Additions: Probabilistic Diffusion, Universal Tokenization, Multi-Modal Science Benchmarks
+        ("Crossref", "Generative emulation of weather forecast ensembles with diffusion models SEEDS"),
+        ("Crossref", "UniTS A Unified Multi-Task Time Series Model"),
+        ("Crossref", "MOMENT A Family of Open Time-series Foundation Models"),
+        ("Crossref", "Scaling transformer neural networks for skillful and reliable medium-range weather forecasting Stormer"),
+        ("Crossref", "SeisBench A Toolbox for Machine Learning in Seismology"),
+        ("Crossref", "ClimSim An open large-scale dataset for training high-resolution physics emulators"),
+        ("Crossref", "EarthPT a time series foundation model for Earth Observation"),
+        ("Crossref", "OceanBench A Benchmark for Data-Driven Global Ocean Forecasting systems"),
     ]
 
     verified_arxiv_ids = [
@@ -174,6 +206,14 @@ def run_search():
         "2403.15356",  # DOFA (Xiong et al.)
         "2306.05064",  # K2 (Deng et al.)
         "2311.15826",  # GeoChat (Kuckreja et al.)
+        # Iteration 3 arXiv Additions
+        "2306.14066",  # SEEDS (Li et al.)
+        "2403.00131",  # UniTS (Gao et al.)
+        "2402.03885",  # MOMENT (Goswami et al.)
+        "2312.03876",  # Stormer (Nguyen et al.)
+        "2111.00786",  # SeisBench (Woollam et al.)
+        "2306.08754",  # ClimSim (Yu et al.)
+        "2309.07207",  # EarthPT (Smith et al.)
     ]
 
     candidates = {}
@@ -202,7 +242,7 @@ def run_search():
                     "status": "candidate",
                     "retrieved_at": datetime.utcnow().isoformat() + "Z",
                 }
-    log_query("arXiv", "Curated verified seed list (22 papers)", len(verified_arxiv_ids), len(candidates) - initial_count)
+    log_query("arXiv", f"Curated verified seed list ({len(verified_arxiv_ids)} papers)", len(verified_arxiv_ids), len(candidates) - initial_count)
 
     # 2. Run Crossref systematic queries
     for source, q in queries:
@@ -233,6 +273,54 @@ def run_search():
                     "retrieved_at": datetime.utcnow().isoformat() + "Z",
                 }
         log_query(source, q, len(items), len(candidates) - prev)
+
+    candidate_list = list(candidates.values())
+    
+    # 3. Fetch verified DOIs directly
+    verified_dois = [
+        "10.1038/s41586-023-06185-3",  # Pangu-Weather
+        "10.1126/science.adi2336",     # GraphCast
+        "10.1038/s41612-023-00512-1",  # FuXi
+        "10.1038/s41586-024-07145-1",  # GlobalFlood
+        "10.1029/2023MS004019",        # WeatherBench 2
+        "10.52202/068431-0015",        # SatMAE
+        "10.1093/gji/ggz257",          # PhaseNet
+        "10.1038/s41586-024-07744-y",  # NeuralGCM
+        "10.1038/s41597-023-01975-w",  # Caravan
+        "10.1029/2021ms002954",        # ClimateBench
+        "10.18653/v1/2024.acl-long.184",  # OceanGPT
+        "10.1145/3616855.3635772",     # K2
+        "10.1126/sciadv.adk4489",      # SEEDS
+        "10.52202/079017-4463",        # UniTS
+        "10.1785/0220210324",          # SeisBench
+        "10.52202/085713-0303",        # OceanBench
+    ]
+    prev_doi = len(candidates)
+    for doi in verified_dois:
+        item = fetch_crossref_doi(doi)
+        if item and item.get("title"):
+            t = item.get("title", [""])[0].strip()
+            norm = normalize_title(t)
+            if norm not in candidates:
+                year = None
+                if "issued" in item and "date-parts" in item["issued"]:
+                    year = item["issued"]["date-parts"][0][0]
+                authors = [
+                    f"{a.get('family', '')}, {a.get('given', '')}".strip(", ")
+                    for a in item.get("author", [])
+                ]
+                candidates[norm] = {
+                    "source": "Crossref",
+                    "doi": doi,
+                    "title": t,
+                    "authors": authors,
+                    "year": year,
+                    "container_title": item.get("container-title", [""])[0] if item.get("container-title") else "",
+                    "abstract": item.get("abstract", ""),
+                    "status": "candidate",
+                    "retrieved_at": datetime.utcnow().isoformat() + "Z",
+                }
+    log_query("Crossref", "Verified landmark DOIs (16 papers)", len(verified_dois), len(candidates) - prev_doi)
 
     candidate_list = list(candidates.values())
     with open(CANDIDATES_FILE, "w", encoding="utf-8") as f:

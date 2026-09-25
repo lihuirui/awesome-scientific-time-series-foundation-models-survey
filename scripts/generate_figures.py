@@ -284,33 +284,39 @@ def plot_domain_modality_heatmap():
 
 def plot_weather_foundation_timeline():
     milestones = [
-        ("FourCastNet", "2022-02", "AFNO Operator", 2022.15),
-        ("SatMAE", "2022-07", "Temporal ViT MAE", 2022.55),
-        ("Pangu-Weather", "2022-11", "3D Earth Swin", 2022.88),
-        ("GraphCast", "2022-12", "Multi-Mesh GNN", 2022.98),
-        ("ClimaX", "2023-01", "Variable ViT", 2023.08),
-        ("Presto", "2023-04", "Lightweight EO", 2023.3),
-        ("SFNO", "2023-06", "Spherical Operator", 2023.45),
-        ("FuXi", "2023-06", "Cascade Swin", 2023.5),
-        ("WeatherBench 2", "2023-08", "Evaluation Suite", 2023.65),
-        ("Prithvi-100M", "2023-10", "Geospatial ViT", 2023.8),
-        ("GenCast", "2023-12", "Diffusion Ensemble", 2023.95),
-        ("DOFA", "2024-03", "Plasticity EO", 2024.2),
-        ("GlobalFlood", "2024-03", "Ungauged Flood AI", 2024.25),
-        ("Aurora", "2024-05", "1.3B 3D Perceiver", 2024.4),
-        ("NeuralGCM", "2024-07", "Hybrid PDE-AI", 2024.55),
-        ("OceanGPT", "2024-08", "Ocean Science LLM", 2024.62),
-        ("Prithvi WxC", "2024-09", "2.3B Climate Model", 2024.7),
-        ("Galileo", "2025-02", "Multi-Scale EO", 2025.15),
-        ("SciTS", "2025-10", "Scientific TS LLM", 2025.8),
+        ("FourCastNet", "2022-02", "AFNO Operator", 2022.15, 1.4, "#2563EB"),
+        ("SatMAE", "2022-07", "Temporal ViT MAE", 2022.55, -1.5, "#0D9488"),
+        ("Pangu-Weather", "2022-11", "3D Earth Swin", 2022.88, 2.5, "#DC2626"),
+        ("GraphCast", "2022-12", "Multi-Mesh GNN", 2022.98, -2.6, "#D97706"),
+        ("ClimaX", "2023-01", "Variable ViT", 2023.08, 1.3, "#7C3AED"),
+        ("Presto", "2023-04", "Lightweight EO", 2023.3, -1.4, "#059669"),
+        ("SFNO", "2023-06", "Spherical Operator", 2023.45, 2.7, "#10B981"),
+        ("ClimSim", "2023-06", "Subgrid Physics", 2023.50, -2.5, "#6366F1"),
+        ("SEEDS", "2023-06", "Diffusion Ensembles", 2023.55, 1.6, "#DC2626"),
+        ("FuXi", "2023-06", "Cascade Swin", 2023.60, -1.6, "#E11D48"),
+        ("WeatherBench 2", "2023-08", "Evaluation Suite", 2023.68, 2.6, "#475569"),
+        ("Prithvi-100M", "2023-10", "Geospatial ViT", 2023.82, -2.7, "#0D9488"),
+        ("GenCast", "2023-12", "Diffusion Ensemble", 2023.95, 1.4, "#DC2626"),
+        ("Stormer", "2023-12", "Random Patch ViT", 2023.98, -1.4, "#B45309"),
+        ("MOMENT", "2024-02", "Open TS Foundation", 2024.12, 2.5, "#059669"),
+        ("UniTS", "2024-03", "Unified Multi-Task", 2024.20, -2.4, "#7C3AED"),
+        ("DOFA", "2024-03", "Plasticity EO", 2024.25, 1.3, "#B45309"),
+        ("GlobalFlood", "2024-03", "Ungauged Flood AI", 2024.28, -1.5, "#0284C7"),
+        ("Aurora", "2024-05", "1.3B 3D Perceiver", 2024.40, 2.7, "#7C3AED"),
+        ("NeuralGCM", "2024-07", "Hybrid PDE-AI", 2024.55, -2.6, "#6366F1"),
+        ("OceanGPT", "2024-08", "Ocean Science LLM", 2024.62, 1.5, "#0891B2"),
+        ("Prithvi WxC", "2024-09", "2.3B Climate Model", 2024.72, 2.8, "#D97706"),
+        ("Galileo", "2025-02", "Multi-Scale EO", 2025.15, -1.8, "#059669"),
+        ("OceanBench", "2025-05", "Ocean Dynamics Bench", 2025.40, -2.7, "#0284C7"),
+        ("SciTS", "2025-10", "Scientific TS LLM", 2025.80, 1.6, "#2563EB"),
     ]
 
-    fig, ax = plt.subplots(figsize=(14, 7), dpi=300)
+    fig, ax = plt.subplots(figsize=(15, 7.5), dpi=300)
 
     # Base timeline axis
     ax.axhline(0, color="#334155", lw=2.5, zorder=1)
     ax.set_xlim(2021.8, 2026.2)
-    ax.set_ylim(-3.8, 4.2)
+    ax.set_ylim(-3.9, 4.3)
     ax.axis("off")
 
     years = [2022, 2023, 2024, 2025, 2026]
@@ -318,24 +324,16 @@ def plot_weather_foundation_timeline():
         ax.plot([yr, yr], [-0.3, 0.3], color="#0F172A", lw=2)
         ax.text(yr, -0.6, str(yr), ha="center", va="top", fontsize=11, fontweight="bold", color="#0F172A")
 
-    levels = [1.2, -1.5, 2.4, -2.5, 1.4, -1.6, 2.6, -2.7, 1.3, -1.4, 2.5, 1.5, -2.6, 2.7, -1.7, 1.4, 2.8, -1.8, 1.6]
-    colors = ["#2563EB", "#0D9488", "#DC2626", "#D97706", "#7C3AED", "#059669", "#10B981", "#E11D48",
-              "#475569", "#0D9488", "#DC2626", "#B45309", "#0284C7", "#7C3AED", "#6366F1", "#0891B2",
-              "#D97706", "#059669", "#2563EB"]
-
-    for i, (name, date_str, arch, x_val) in enumerate(milestones):
-        y_lvl = levels[i]
-        c = colors[i % len(colors)]
-
+    for name, date_str, arch, x_val, y_lvl, c in milestones:
         # Stem line
         ax.plot([x_val, x_val], [0, y_lvl], color=c, lw=1.2, linestyle="--", alpha=0.8, zorder=2)
-        ax.scatter([x_val], [0], color=c, s=40, zorder=3)
+        ax.scatter([x_val], [0], color=c, s=36, zorder=3)
 
         # Tag
-        bbox_props = dict(boxstyle="round,pad=0.35,rounding_size=0.3", facecolor="white", edgecolor=c, lw=1.4)
+        bbox_props = dict(boxstyle="round,pad=0.32,rounding_size=0.3", facecolor="white", edgecolor=c, lw=1.3)
         va = "bottom" if y_lvl > 0 else "top"
         ax.text(x_val, y_lvl, f"{name}\n({date_str})\n{arch}", ha="center", va=va,
-                fontsize=7.8, fontweight="bold", color="#0F172A", bbox=bbox_props)
+                fontsize=7.4, fontweight="bold", color="#0F172A", bbox=bbox_props)
 
     plt.title("Milestone Timeline of Scientific Foundation Models (2022–2026)",
               fontsize=14, fontweight="bold", pad=15)
@@ -360,29 +358,31 @@ def plot_resolution_vs_leadtime():
         {"name": "NeuralGCM", "res": 0.70, "lead": 15, "params": 14.5, "col": "#6366F1"},
         {"name": "XiHe (Ocean)", "res": 0.083, "lead": 10, "params": 84, "col": "#0D9488"},
         {"name": "GlobalFlood", "res": 0.10, "lead": 7, "params": 5, "col": "#B45309"},
+        {"name": "Stormer", "res": 1.406, "lead": 10, "params": 67, "col": "#CA8A04"},
+        {"name": "SEEDS", "res": 1.00, "lead": 10, "params": 100, "col": "#EA580C"},
     ]
 
-    fig, ax = plt.subplots(figsize=(9.5, 6.5), dpi=300)
+    fig, ax = plt.subplots(figsize=(10, 7), dpi=300)
 
     for m in models:
         # Scale marker size by parameter count (log scale)
         s = 80 + 35 * np.log(max(m["params"], 2))
         ax.scatter(m["lead"], m["res"], s=s, color=m["col"], alpha=0.85, edgecolors="#1E293B", lw=1.2, zorder=3)
         # Text label offset
-        offset_y = 0.012 if m["res"] < 0.20 else (-0.025 if m["res"] > 0.5 else -0.015)
-        offset_x = 0.22
+        offset_y = 0.02 if m["res"] < 0.20 else (-0.05 if m["res"] > 0.5 else -0.025)
+        offset_x = 0.24
         ax.text(m["lead"] + offset_x, m["res"] + offset_y,
                 f"{m['name']}\n({m['res']}°, {m['params']}M)",
-                fontsize=8.2, fontweight="bold", color="#1E293B", zorder=4)
+                fontsize=8.0, fontweight="bold", color="#1E293B", zorder=4)
 
     ax.set_xlabel("Maximum Forecast Lead Time (Days)", fontsize=11, fontweight="bold")
     ax.set_ylabel("Spatial Resolution (Degrees Lat/Lon, lower = finer)", fontsize=11, fontweight="bold")
-    ax.set_ylim(0.04, 0.78)
+    ax.set_ylim(0.02, 1.58)
     ax.set_xlim(5, 17)
     ax.grid(True, linestyle="--", alpha=0.5, zorder=0)
 
-    # Highlight frontier zone
-    ax.axhspan(0.05, 0.12, color="#EFF6FF", alpha=0.6, label="High-Resolution Frontier (<=0.10°)")
+    # Highlight frontier zones
+    ax.axhspan(0.04, 0.12, color="#EFF6FF", alpha=0.6, label="High-Resolution Planetary Frontier (<=0.10°)")
     ax.axvspan(12, 16.5, color="#F0FDF4", alpha=0.6, label="Extended Medium-Range Frontier (>=12 days)")
 
     ax.legend(loc="upper right", framealpha=0.9)

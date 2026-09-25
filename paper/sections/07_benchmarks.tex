@@ -19,14 +19,19 @@ ClimaX~\cite{nguyen2023climax} & Weather/Climate & Variable-Tokenized ViT & CMIP
 FuXi~\cite{chen2023fuxi} & Weather/Climate & Cascade Swin Transformer & ERA5 (1979--2017, 39 yrs) & $0.25^\circ$, 70 lvls & Data-driven & 150M & \href{https://github.com/tpys/FuXi}{\texttt{tpys/FuXi}} \\
 FengWu~\cite{chen2023fengwu} & Weather/Climate & Cross-Modal Attention Transformer & ERA5 (1979--2017, 39 yrs) & $0.25^\circ$, 37 lvls & Soft loss & 200M & \href{https://github.com/OpenEarthLab/FengWu}{\texttt{OpenEarthLab/FengWu}} \\
 GenCast~\cite{price2023gencast} & Weather/Climate & Latent Diffusion Multi-Mesh GNN & ERA5 (1979--2018, 40 yrs) & $0.25^\circ$, 37 lvls & Data-driven & 120M & \href{https://github.com/google-deepmind/graphcast}{\texttt{deepmind/graphcast}} \\
+SEEDS~\cite{li2024seeds} & Weather/Climate & Generative Diffusion Sampler & GEFS operational + ERA5 & $1.00^\circ$, multi & Soft loss & not reported & not available \\
+Stormer~\cite{nguyen2023stormer} & Weather/Climate & Randomized Patch Transformer & ERA5 (1979--2018, 40 yrs) & $1.41^\circ$, multi & Soft loss & 67M & \href{https://github.com/tung-nd/stormer}{\texttt{tung-nd/stormer}} \\
 Aurora~\cite{bodnar2024aurora} & Weather/Climate & 3D Perceiver / Swin Backbone & $>$1 PB (ERA5, HRES, GFS) & $0.10^\circ$, multi & Data-driven & 1.3B & \href{https://github.com/microsoft/aurora}{\texttt{microsoft/aurora}} \\
 NeuralGCM~\cite{kochkov2024neuralgcm} & Weather/Climate & Differentiable Dynamical Core + NN & ERA5 (1979--2019, 40 yrs) & $0.7^\circ$--$2.8^\circ$ & Hard laws & 14.5M & \href{https://github.com/google-research/neuralgcm}{\texttt{google-research/neuralgcm}} \\
 Prithvi WxC~\cite{schmude2024prithviwxc} & Weather/Climate & Scalable ViT Encoder-Decoder & MERRA-2 (160 vars, 44 yrs) & $0.50^\circ$, 160 vars & Soft loss & 2.3B & \href{https://github.com/NASA-IMPACT/Prithvi-WxC}{\texttt{NASA-IMPACT/Prithvi-WxC}} \\
+ClimSim~\cite{yu2023climsim} & Weather/Climate & Multiscale Physics Emulators & E3SM-MMF (5.7B column profiles) & Column multiscale & Hybrid PDE & Bench. & \href{https://github.com/leap-stc/ClimSim}{\texttt{leap-stc/ClimSim}} \\
 ClimateBench~\cite{watsonparris2022climatebench} & Weather/Climate & Climate Emulation Benchmark & CMIP6 emission scenarios & $2.5^\circ \times 1.9^\circ$ & Soft energy & Bench. & \href{https://github.com/duncanwp/ClimateBench}{\texttt{duncanwp/ClimateBench}} \\
+ClimateLLM~\cite{li2025climatellm} & Weather/Climate & Fourier Spectral Decomposition & ERA5 Surface Station Series & Global series & Soft loss & 7B & not available \\
 SatMAE~\cite{cong2022satmae} & Earth Observ. & Temporal-Spectral Masked ViT & Sentinel-2, Landsat-8 cubes & $10\text{ m}$--$30\text{ m}$ & Data-driven & 86M--307M & \href{https://github.com/sustainlab-group/SatMAE}{\texttt{sustainlab/SatMAE}} \\
 Presto~\cite{tseng2023presto} & Earth Observ. & Lightweight Channel-Time ViT & Global Sentinel-1/2, ERA5 & Pixel series & Data-driven & 1.2M & \href{https://github.com/nasaharvest/presto}{\texttt{nasaharvest/presto}} \\
 Galileo~\cite{tseng2025galileo} & Earth Observ. & Multi-Scale Masked Transformer & Global multi-sensor satellite & Multi-scale & Data-driven & 100M & \href{https://github.com/nasaharvest/galileo}{\texttt{nasaharvest/galileo}} \\
 DOFA~\cite{xiong2024dofa} & Earth Observ. & Dynamic Wavelength Hypernetwork & 5 satellite sensor modalities & Multi-scale & Wave physics & 115M & \href{https://github.com/zhu-xlab/DOFA}{\texttt{zhu-xlab/DOFA}} \\
+EarthPT~\cite{smith2023earthpt} & Earth Observ. & 700M Autoregressive Decoder & Sentinel-2 spectral series & Pixel spectra & Data-driven & 700M & not available \\
 Prithvi-100M~\cite{jakubik2023prithvi} & Earth Observ. & Geospatial Masked Autoencoder & NASA HLS reflectance series & $30\text{ m}$ pixel & Data-driven & 100M & \href{https://github.com/NASA-IMPACT/hls-foundation-os}{\texttt{NASA-IMPACT/hls-os}} \\
 GeoChat~\cite{kuckreja2024geochat} & Earth Observ. & Grounded Remote Sensing VLM & GeoChat-100K multimodal series & High-res & Spatial box & 7B & \href{https://github.com/mbzuai-oryx/GeoChat}{\texttt{mbzuai-oryx/GeoChat}} \\
 AlphaEarth~\cite{brown2025alphaearth} & Earth Observ. & Neural Field Embedding Model & Global Earth observation constellation & $10\text{ m}$ dense & Data-driven & not reported & Google Earth Engine \\
@@ -34,13 +39,17 @@ GlobalFlood~\cite{nearing2024globalflood} & Hydrology & EA-LSTM + River Routing 
 Caravan~\cite{kratzert2023caravan} & Hydrology & Large-Sample Hydrology Suite & 6,830 catchments + ERA5-Land & Catchment & Mass balance & Bench. & \href{https://github.com/kratzert/Caravan}{\texttt{kratzert/Caravan}} \\
 XiHe~\cite{wang2024xihe} & Oceanography & Hierarchical Ocean Transformer & GLORYS12V1 (1993--2020, 28 yrs) & $1/12^\circ$, 50 lvls & Soft loss & 84M & not available \\
 OceanGPT~\cite{bi2024oceangpt} & Oceanography & Domain-Adapted Marine LLM & DoInstruct multi-modal ocean series & Sensor/Doc & Hydro. cons. & 7B & \href{https://github.com/OceanGPT/OceanGPT}{\texttt{OceanGPT/OceanGPT}} \\
+OceanBench~\cite{elaouni2025oceanbench} & Oceanography & Global Ocean Forecasting Benchmark & GLORYS12 reanalysis + Altimetry & $1/12^\circ$ & Hydro. cons. & Bench. & \href{https://github.com/mercator-ocean/oceanbench}{\texttt{mercator-ocean/oceanbench}} \\
 SeisT~\cite{li2024seist} & Seismology & Hierarchical Seismogram ViT & STEAD, INSTANCE ($>$10M waves) & $100\text{ Hz}$ wave & Data-driven & 12M & \href{https://github.com/senli1073/SeisT}{\texttt{senli1073/SeisT}} \\
 PhaseNet~\cite{zhu2019phasenet} & Seismology & 1D Residual U-Net & NCEDC seismic catalogue & $100\text{ Hz}$ wave & Data-driven & 1.2M & \href{https://github.com/AI4EPS/PhaseNet}{\texttt{AI4EPS/PhaseNet}} \\
+SeisBench~\cite{woollam2022seisbench} & Seismology & Standardized Seismology Platform & Global catalogues ($>$30M waves) & $100\text{ Hz}$ wave & Soft loss & Platform & \href{https://github.com/seisbench/seisbench}{\texttt{seisbench/seisbench}} \\
 Surya~\cite{roy2025surya} & Space Weather & Spatio-Temporal Gated ViT & SDO EUV series (13 yrs) & Multi-spectral & Soft loss & 366M & not available \\
+UniTS~\cite{gao2024units} & Cross-Domain & Unified Multi-Task Transformer & 38 multi-domain time series datasets & Multi-rate & Data-driven & 11M & \href{https://github.com/mims-harvard/UniTS}{\texttt{mims-harvard/UniTS}} \\
+MOMENT~\cite{goswami2024moment} & Cross-Domain & Masked Time Series Autoencoder & Time-series Pile ($>$13M series) & Multi-sensor & Data-driven & 385M & \href{https://github.com/moment-timeseries-foundation-model/moment}{\texttt{moment-timeseries}} \\
 SciTS~\cite{wu2025scits} & Multi-Discip. & TimeOmni Continuous Tokenizer & SciTS Benchmark (12 domains) & Multi-rate & Data-driven & 8B & \href{https://github.com/OpenTSLab/TimeOmni}{\texttt{OpenTSLab/TimeOmni}} \\
 K2~\cite{deng2024k2} & Multi-Discip. & Geoscience Foundation LLM & $>$5.5B tokens GeoSignal corpus & Series/Doc & Physical prior & 7B & \href{https://github.com/davendw49/k2}{\texttt{davendw49/k2}} \\
 ClimateAgent~\cite{li2025climateagent} & Multi-Agent & Multi-Agent LLM Orchestrator & Climate-Agent-Bench-85 & Code/Tools & Hybrid PDE & Frontier LLM & not available \\
-ClimateLLM~\cite{li2025climatellm} & Weather/Climate & Fourier Spectral Decomposition & ERA5 Surface Station Series & Global series & Soft loss & 7B & not available \\
+WeatherBench 2~\cite{rasp2024weatherbench2} & Multi-Discip. & Standardized Evaluation Framework & ERA5, HRES, IFS Analysis & $0.25^\circ$, multi & Physical diag. & Bench. & \href{https://github.com/google-research/weatherbench2}{\texttt{google-research/weatherbench2}} \\
 \bottomrule
 \end{tabular}%
 }
@@ -89,7 +98,7 @@ Convolutional Neural Net (CNN) & Deep Spatio-Temporal Net & \textbf{0.18} & \tex
 Prior to 2023, data-driven weather models suffered from disparate evaluation protocols, making direct comparisons difficult. Rasp et al.~\cite{rasp2024weatherbench2} established \textbf{WeatherBench 2} as the official benchmark framework for next-generation global weather models:
 \begin{itemize}
     \item \textbf{Headline Deterministic Scores}: Evaluates latitude-weighted root mean square error (RMSE) and anomaly correlation coefficient (ACC) against operational ECMWF IFS HRES analyses for key predictive fields: geopotential at 500 hPa ($Z500$), temperature at 850 hPa ($T850$), 2-meter air temperature ($T2m$), and 10-meter wind speed ($U10/V10$).
-    \item \textbf{Probabilistic Metrics}: Computes continuous ranked probability scores (CRPS), spread-error ratios, and brier scores for ensemble predictions.
+    \item \textbf{Probabilistic Metrics}: Computes continuous ranked probability scores (CRPS), spread-error ratios, and brier scores for ensemble predictions (demonstrated in GenCast~\cite{price2023gencast} and SEEDS~\cite{li2024seeds}).
     \item \textbf{Physical Consistency Diagnostics}: Measures radially averaged kinetic energy power spectra to detect artificial smoothing or high-frequency numerical noise over extended multi-week rollouts.
 \end{itemize}
 
@@ -101,11 +110,17 @@ As synthesized in Table~\ref{tab:weatherbench_climatebench_results} (Part A), ri
     \item \textbf{Differentiable Hybrid Physics}: NeuralGCM~\cite{kochkov2024neuralgcm} achieves $128.0\text{ m}^2/\text{s}^2$ at Day 3 and $282.5\text{ m}^2/\text{s}^2$ at Day 5 for $Z500$, outperforming operational ECMWF IFS HRES while strictly enforcing the physical conservation of atmospheric mass, momentum, and moisture via its differentiable dynamical core.
 \end{enumerate}
 
-\subsubsection{ClimateBench: Benchmark for Climate Emulation}
-In climate science, the computational expense of full Earth System Models (ESMs) limits the exploration of future greenhouse gas emission scenarios. Watson-Parris et al.~\cite{watsonparris2022climatebench} formulated \textbf{ClimateBench}, standardizing machine learning evaluation for multidecadal climate projections across Shared Socioeconomic Pathways (SSPs). As detailed in Table~\ref{tab:weatherbench_climatebench_results} (Part B), deep convolutional emulators achieve superior spatial fidelity ($0.18\text{ K}$ annual RMSE for surface temperature $TAS$, $0.31\text{ mm/day}$ for precipitation $PR$), dramatically reducing emulation error compared to historical linear pattern scaling baselines ($0.32\text{ K}$ and $0.46\text{ mm/day}$).
+\subsubsection{ClimateBench and ClimSim: Climate Emulation and Subgrid Physics}
+Watson-Parris et al.~\cite{watsonparris2022climatebench} formulated \textbf{ClimateBench}, standardizing machine learning evaluation for multidecadal climate projections across Shared Socioeconomic Pathways (SSPs). As detailed in Table~\ref{tab:weatherbench_climatebench_results} (Part B), deep convolutional emulators achieve superior spatial fidelity ($0.18\text{ K}$ annual RMSE for surface temperature $TAS$, $0.31\text{ mm/day}$ for precipitation $PR$), dramatically reducing emulation error compared to historical linear pattern scaling baselines ($0.32\text{ K}$ and $0.46\text{ mm/day}$). Complementing macroscopic climate emulation, \textbf{ClimSim}~\cite{yu2023climsim} standardizes evaluation for high-resolution subgrid cloud, convective, and radiative physics emulators, providing 5.7 billion multiscale atmospheric column profiles to test hybrid neural-PDE stability over decadal rollouts.
 
-\subsubsection{SciTS Benchmark: Evaluating LLM Cross-Disciplinary Reasoning}
-Wu et al.~\cite{wu2025scits} formalized evaluation standards for scientific reasoning across 12 distinct scientific disciplines. Unlike conventional NLP benchmarks, SciTS evaluates both numerical precision (MAE, MSE, dynamic time warping) and semantic reasoning quality (causal attribution accuracy, scientific report coherence, zero-shot discipline transferability).
+\subsubsection{OceanBench: Operational Ocean Forecasting Suite}
+El Aouni et al.~\cite{elaouni2025oceanbench} established \textbf{OceanBench} to evaluate data-driven global ocean forecasting systems against Copernicus Marine GLORYS12 reanalyses and satellite observations. Benchmarking sea surface height, temperature, and velocities across 1--10 day horizons, OceanBench provides the first unified benchmark assessing kinetic energy conservation and geostrophic balance in AI ocean models.
+
+\subsubsection{SeisBench: Unified Benchmarking for Seismology}
+In geophysics, Woollam et al.~\cite{woollam2022seisbench} established \textbf{SeisBench}, unifying five major international waveform catalogues into a standardized benchmark for machine learning in seismology. Benchmarking model architectures across phase picking, earthquake detection, and hypocenter localization, SeisBench systematically evaluates cross-network transferability and generalization across disparate tectonic regimes.
+
+\subsubsection{Cross-Disciplinary Benchmarks: UniTS and SciTS}
+Gao et al.~\cite{gao2024units} introduced a standardized 38-dataset benchmark across diverse physical, biomedical, and engineering domains, establishing unified evaluation protocols for multi-task time series models. Simultaneously, Wu et al.~\cite{wu2025scits} formulated the \textbf{SciTS} benchmark, spanning 12 scientific disciplines across 43 specialized tasks to evaluate both continuous numerical accuracy and multi-step reasoning capabilities in scientific foundation models.
 
 \begin{figure}[t]
 \centering
