@@ -39,6 +39,7 @@ Based on `maintenance/PROJECT_BRIEF.md`, the survey addresses eight central rese
 7. **Space Weather & Astronomy**: Solar flare prediction, geomagnetic disturbance indices, stellar light curves.
 8. **Geo-Energy & Subsurface**: Physically grounded geothermal reservoir monitoring, carbon capture plume tracking, wind/solar physical power forecasting.
 9. **Scientific Reasoning & Agent Systems**: LLM agents operating over temporal/spatio-temporal scientific datasets and benchmarks (e.g., SciTS).
+10. **Polar Cryosphere & Sea Ice**: Arctic and Antarctic sea ice concentration, sea ice thickness, drift velocity vector fields, ice-shelf and permafrost dynamics.
 
 ### 2.3 Inclusion Criteria (IC)
 - **IC1 (Domain Relevance)**: The paper focuses on natural science domains involving temporal or spatio-temporal dynamics, or develops foundation models / LLM reasoning specifically for scientific temporal data.
@@ -103,7 +104,7 @@ Every included paper in `data/papers.json` is annotated with the following stand
 - `authors`: Author list.
 - `year`: Publication / preprint year.
 - `venue`: Conference, journal, or arXiv identifier.
-- `domain`: One of `Weather/Climate`, `Hydrology`, `Remote Sensing / EO`, `Oceanography`, `Geophysics/Seismology`, `Ecology`, `Space Weather`, `Reasoning / Benchmark`.
+- `domain`: One of `Weather/Climate`, `Hydrology`, `Remote Sensing / EO`, `Oceanography`, `Geophysics/Seismology`, `Ecology`, `Space Weather`, `Reasoning / Benchmark`, `Polar Cryosphere`.
 - `modality`: Combination of `Gridded reanalysis`, `In-situ stations`, `Satellite imagery`, `Waveforms`, `Text/Reports`.
 - `backbone`: Architecture family (e.g. `3D Swin Transformer`, `Graph Neural Network`, `Spherical FNO`, `Diffusion Model`, `LLM Agent`).
 - `pretraining_data`: Dataset name (e.g., `ERA5`, `HRES`, `Sentinel-2`, `Landsat`, `IRIS`) and scale.

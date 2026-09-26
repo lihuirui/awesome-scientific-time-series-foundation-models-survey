@@ -1,7 +1,7 @@
 # Awesome Scientific Multimodal Time Series Foundation Models and Reasoning LLMs
 ## 科学多模态时序大模型与科学推理大模型前沿进展精选
 
-[![Survey PDF](https://img.shields.io/badge/Paper-PDF-red.svg)](paper/main.pdf) [![PRISMA Included](https://img.shields.io/badge/PRISMA%20Included-59%20papers-brightgreen.svg)](#prisma-systematic-review-statistics) [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE) [![Maintenance](https://img.shields.io/badge/Maintained%20by-Antigravity%20CLI-purple.svg)](#how-this-survey-is-maintained)
+[![Survey PDF](https://img.shields.io/badge/Paper-PDF-red.svg)](paper/main.pdf) [![PRISMA Included](https://img.shields.io/badge/PRISMA%20Included-65%20papers-brightgreen.svg)](#prisma-systematic-review-statistics) [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE) [![Maintenance](https://img.shields.io/badge/Maintained%20by-Antigravity%20CLI-purple.svg)](#how-this-survey-is-maintained)
 
 ## Overview / 项目概述
 
@@ -28,12 +28,12 @@ The taxonomy categorizes the literature across four core dimensions:
 
 ![PRISMA 2020 Flow](paper/figures/prisma_flow.png)
 
-- **Records Identified across Academic APIs**: 690
-- **Unique Candidates Evaluated**: 550
-- **Title/Abstract Excluded**: 132
-- **Full-Text Assessed for Eligibility**: 418
-- **Full-Text Excluded (narrow/regional)**: 359
-- **Studies Rigorously Included**: 59
+- **Records Identified across Academic APIs**: 756
+- **Unique Candidates Evaluated**: 607
+- **Title/Abstract Excluded**: 144
+- **Full-Text Assessed for Eligibility**: 463
+- **Full-Text Excluded (narrow/regional)**: 398
+- **Studies Rigorously Included**: 65
 
 ## Research Landscape & Milestone Timeline
 
@@ -180,6 +180,23 @@ The taxonomy categorizes the literature across four core dimensions:
   - *Architecture*: `Spatial-Temporal Deep Generative Model of Radar (DGMR GAN)` | *Params*: `89M` | *Physics*: `Spatial and temporal dual-frequency spectral discrimination`
   - *Links*: [Paper / DOI](https://doi.org/10.1038/s41586-021-03854-z) | [![Code](https://img.shields.io/badge/Code-GitHub-blue.svg)](https://github.com/google-deepmind/deepmind-research)
 
+- **ExtremeCast: Boosting Extreme Value Prediction for Global Weather Forecast** (arXiv:2402.01295 2024)
+  - *Authors*: Xu, Wanghan, Chen, Kang, Han, Tao et al.
+  - *Architecture*: `Extreme-value loss (Exloss) + Training-free uncertainty booster (ExBooster)` | *Params*: `Modular enhancement framework (~100M-200M depending on backbone)` | *Physics*: `Soft physics loss`
+  - *Links*: [Paper / DOI](https://arxiv.org/abs/2402.01295) | [![Code](https://img.shields.io/badge/Code-GitHub-blue.svg)](https://github.com/black-yt/ExtremeCast)
+
+### Polar Cryosphere & Sea Ice Dynamics (极地冰冻圈与海冰动力学大模型)
+
+- **IceBench: A Benchmark for Deep Learning based Sea Ice Type Classification** (arXiv:2503.17877 2025)
+  - *Authors*: Taleghan, Samira Alkaee, Barrett, Andrew P., Meier, Walter N. et al.
+  - *Architecture*: `Standardized benchmark suite evaluating Pixel-based and Patch-based deep neural networks` | *Params*: `Benchmark suite across CNNs, ResNets, and ViT baselines` | *Physics*: `Purely data-driven`
+  - *Links*: [Paper / DOI](https://arxiv.org/abs/2503.17877) | [![Code](https://img.shields.io/badge/Code-GitHub-blue.svg)](https://github.com/bdlab-ucd/IceBench)
+
+- **Seasonal Arctic sea ice forecasting with probabilistic deep learning** (Nature Communications 2021)
+  - *Authors*: Andersson, Tom R., Hosking, J. Scott, Pérez-Ortiz, María et al.
+  - *Architecture*: `Probabilistic U-Net Ensemble with temperature scaling and temperature-moisture conditioning` | *Params*: `15M (ensemble of U-Net architectures)` | *Physics*: `Soft physics loss`
+  - *Links*: [Paper / DOI](https://doi.org/10.1038/s41467-021-25257-4) | [![Code](https://img.shields.io/badge/Code-GitHub-blue.svg)](https://github.com/icenet-ai/icenet)
+
 ### Earth Observation & Remote Sensing Time Series (对地观测与遥感时序)
 
 - **SatMAE: Pre-Training Transformers for Temporal and Multi-Spectral Satellite Imagery** (NeurIPS 2022)
@@ -278,6 +295,11 @@ The taxonomy categorizes the literature across four core dimensions:
   - *Architecture*: `Unified Waveform Benchmarking & Transfer Suite (PhaseNet, EQTransformer, CRED)` | *Params*: `variable` | *Physics*: `Soft physics loss`
   - *Links*: [Paper / DOI](https://doi.org/10.1785/0220210324) | [![Code](https://img.shields.io/badge/Code-GitHub-blue.svg)](https://github.com/seisbench/seisbench)
 
+- **Seismic Wave Propagation and Inversion with Neural Operators** (The Seismic Record 2021)
+  - *Authors*: Yang, Yan, Gao, Angela F., Castellanos, Jorge C. et al.
+  - *Architecture*: `Fourier Neural Operator (FNO) with automatic differentiation for reverse-mode FWI` | *Params*: `1.2M` | *Physics*: `Hybrid PDE solver`
+  - *Links*: [Paper / DOI](https://doi.org/10.1785/0320210026) | [![Code](https://img.shields.io/badge/Code-GitHub-blue.svg)](https://github.com/neuraloperator/neuraloperator)
+
 - **PhaseNet: a deep-neural-network-based arrival-time picking method for P and S waves** (Geophysical Journal International 2019)
   - *Authors*: Zhu, Weiqiang, Beroza, Gregory C.
   - *Architecture*: `1D Deep Residual U-Net` | *Params*: `1.2M` | *Physics*: `Purely data-driven`
@@ -337,6 +359,16 @@ The taxonomy categorizes the literature across four core dimensions:
   - *Architecture*: `Autoregressive LLaMA-style Decoder with RoPE` | *Params*: `2.4M` | *Physics*: `Purely data-driven`
   - *Links*: [Paper / DOI](https://arxiv.org/abs/2310.08278) | [![Code](https://img.shields.io/badge/Code-GitHub-blue.svg)](https://github.com/time-series-foundation-models/lag-llama)
 
+- **The AI Scientist: Towards Fully Automated Open-Ended Scientific Discovery** (arXiv:2408.06292 2024)
+  - *Authors*: Lu, Chris, Lu, Cong, Lange, Robert Tjarko et al.
+  - *Architecture*: `Autonomous Multi-Agent Discovery Loop (Ideation, Code Execution, Paper Writing, Automated Review)` | *Params*: `Frontier LLM (>100B params)` | *Physics*: `Automated hypothesis testing and peer-review evaluation`
+  - *Links*: [Paper / DOI](https://arxiv.org/abs/2408.06292) | [![Code](https://img.shields.io/badge/Code-GitHub-blue.svg)](https://github.com/SakanaAI/AI-Scientist)
+
+- **SciCode: A Research Coding Benchmark Curated by Scientists** (ICML / arXiv:2407.13168 2024)
+  - *Authors*: Tian, Minyang, Gao, Luyu, Zhang, Shizhuo Dylan et al.
+  - *Architecture*: `Multi-step scientific code reasoning and numerical execution benchmark` | *Params*: `Benchmark suite across frontier LLMs` | *Physics*: `Formal differential equation solving and numerical conservation verification`
+  - *Links*: [Paper / DOI](https://arxiv.org/abs/2407.13168) | [![Code](https://img.shields.io/badge/Code-GitHub-blue.svg)](https://github.com/scicode-bench/SciCode)
+
 ### Foundational Surveys & Methodology (基础综述与方法学)
 
 - **Large Models for Time Series and Spatio-Temporal Data: A Survey and Outlook** (arXiv:2310.10196 / ACM Computing Surveys 2023)
@@ -349,15 +381,15 @@ The taxonomy categorizes the literature across four core dimensions:
   - *Architecture*: `Position Paper` | *Params*: `not reported` | *Physics*: `not reported`
   - *Links*: [Paper / DOI](https://arxiv.org/abs/2402.02713) | `[Code not available]`
 
-- **The AI Scientist: Towards Fully Automated Open-Ended Scientific Discovery** (arXiv:2408.06292 2024)
-  - *Authors*: Lu, Chris, Lu, Cong, Lange, Robert Tjarko et al.
-  - *Architecture*: `Autonomous Multi-Agent Discovery Loop (Ideation, Code Execution, Paper Writing, Automated Review)` | *Params*: `Frontier LLM (>100B params)` | *Physics*: `Automated hypothesis testing and peer-review evaluation`
-  - *Links*: [Paper / DOI](https://arxiv.org/abs/2408.06292) | [![Code](https://img.shields.io/badge/Code-GitHub-blue.svg)](https://github.com/SakanaAI/AI-Scientist)
+- **Multi-Grid Tensorized Fourier Neural Operator for High-Resolution PDEs** (TMLR / arXiv:2310.00120 2024)
+  - *Authors*: Kossaifi, Jean, Kovachki, Nikola, Azizzadenesheli, Kamyar et al.
+  - *Architecture*: `Multi-Grid Tensorized Fourier Neural Operator (MG-TFNO) with Tucker / Tensor-Train decompositions` | *Params*: `>150x parameter reduction over standard FNO (0.5M to 5M parameters)` | *Physics*: `Hybrid PDE solver`
+  - *Links*: [Paper / DOI](https://arxiv.org/abs/2310.00120) | [![Code](https://img.shields.io/badge/Code-GitHub-blue.svg)](https://github.com/neuraloperator/neuraloperator)
 
-- **SciCode: A Research Coding Benchmark Curated by Scientists** (ICML / arXiv:2407.13168 2024)
-  - *Authors*: Tian, Minyang, Gao, Luyu, Zhang, Shizhuo Dylan et al.
-  - *Architecture*: `Multi-step scientific code reasoning and numerical execution benchmark` | *Params*: `Benchmark suite across frontier LLMs` | *Physics*: `Formal differential equation solving and numerical conservation verification`
-  - *Links*: [Paper / DOI](https://arxiv.org/abs/2407.13168) | [![Code](https://img.shields.io/badge/Code-GitHub-blue.svg)](https://github.com/scicode-bench/SciCode)
+- **Partitioned Hybrid Quantum Fourier Neural Operators for Scientific Quantum Machine Learning** (arXiv:2507.08746 2025)
+  - *Authors*: Marcandelli, Paolo, He, Yuanchun, Mariani, Stefano et al.
+  - *Architecture*: `Partitioned Hybrid Quantum Fourier Neural Operator (PHQFNO) with Parameterized Quantum Circuits (PQC)` | *Params*: `16-qubit PQC variational layer + classical projection layers` | *Physics*: `Hybrid PDE solver`
+  - *Links*: [Paper / DOI](https://arxiv.org/abs/2507.08746) | `[Code not available]`
 
 ## How This Survey Is Maintained / 本项目自动化维护机制
 

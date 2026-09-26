@@ -266,3 +266,70 @@
 {"timestamp": "2026-09-26T04:40:29.076817Z", "source": "Crossref", "query": "The AI Scientist Towards Fully Automated Open-Ended Scientific Discovery", "hits": 10, "new_candidates": 5}
 {"timestamp": "2026-09-26T04:40:31.353542Z", "source": "Crossref", "query": "SciCode A Research Coding Benchmark Curated by Scientists", "hits": 10, "new_candidates": 9}
 {"timestamp": "2026-09-26T04:40:31.356094Z", "source": "Crossref", "query": "Verified landmark DOIs (16 papers)", "hits": 19, "new_candidates": 0}
+{"timestamp": "2026-09-26T09:41:11.364185Z", "source": "arXiv", "query": "Curated verified seed list (55 papers)", "hits": 55, "new_candidates": 4}
+{"timestamp": "2026-09-26T09:41:11.365138Z", "source": "Crossref", "query": "Pangu-Weather global weather forecast 3D neural networks", "hits": 10, "new_candidates": 0}
+{"timestamp": "2026-09-26T09:41:11.365741Z", "source": "Crossref", "query": "GraphCast learning skillful medium-range global weather forecasting", "hits": 10, "new_candidates": 0}
+{"timestamp": "2026-09-26T09:41:11.366404Z", "source": "Crossref", "query": "FourCastNet adaptive Fourier neural operators weather", "hits": 10, "new_candidates": 0}
+{"timestamp": "2026-09-26T09:41:11.366865Z", "source": "Crossref", "query": "ClimaX foundation model weather climate", "hits": 10, "new_candidates": 0}
+{"timestamp": "2026-09-26T09:41:11.367596Z", "source": "Crossref", "query": "FuXi cascade machine learning forecasting system 15-day", "hits": 10, "new_candidates": 0}
+{"timestamp": "2026-09-26T09:41:11.368652Z", "source": "Crossref", "query": "FengWu skillful global medium-range weather forecast", "hits": 10, "new_candidates": 0}
+{"timestamp": "2026-09-26T09:41:11.369276Z", "source": "Crossref", "query": "GenCast diffusion ensemble forecasting weather", "hits": 10, "new_candidates": 0}
+{"timestamp": "2026-09-26T09:41:11.369868Z", "source": "Crossref", "query": "Aurora foundation model Earth system atmosphere", "hits": 10, "new_candidates": 0}
+{"timestamp": "2026-09-26T09:41:11.370376Z", "source": "Crossref", "query": "Prithvi WxC foundation model weather climate", "hits": 10, "new_candidates": 0}
+{"timestamp": "2026-09-26T09:41:11.371048Z", "source": "Crossref", "query": "WeatherBench 2 benchmark data-driven global weather", "hits": 10, "new_candidates": 0}
+{"timestamp": "2026-09-26T09:41:11.371429Z", "source": "Crossref", "query": "SatMAE pre-training transformers temporal multi-spectral satellite", "hits": 10, "new_candidates": 0}
+{"timestamp": "2026-09-26T09:41:11.372277Z", "source": "Crossref", "query": "Presto lightweight pre-trained transformers remote sensing timeseries", "hits": 10, "new_candidates": 0}
+{"timestamp": "2026-09-26T09:41:11.373089Z", "source": "Crossref", "query": "Galileo learning global local features remote sensing", "hits": 10, "new_candidates": 0}
+{"timestamp": "2026-09-26T09:41:11.373608Z", "source": "Crossref", "query": "AlphaEarth Foundations embedding field model global mapping", "hits": 10, "new_candidates": 0}
+{"timestamp": "2026-09-26T09:41:11.374035Z", "source": "Crossref", "query": "Foundation Models Generalist Geospatial Artificial Intelligence Prithvi", "hits": 10, "new_candidates": 0}
+{"timestamp": "2026-09-26T09:41:11.374678Z", "source": "Crossref", "query": "Global prediction extreme floods ungauged watersheds Nature", "hits": 10, "new_candidates": 0}
+{"timestamp": "2026-09-26T09:41:11.375302Z", "source": "Crossref", "query": "SeisT foundational deep-learning model earthquake monitoring", "hits": 10, "new_candidates": 0}
+{"timestamp": "2026-09-26T09:41:11.376055Z", "source": "Crossref", "query": "PhaseNet deep-neural-network-based arrival-time picking", "hits": 10, "new_candidates": 0}
+{"timestamp": "2026-09-26T09:41:11.376817Z", "source": "Crossref", "query": "XiHe data-driven model global ocean eddy-resolving", "hits": 10, "new_candidates": 0}
+{"timestamp": "2026-09-26T09:41:11.379369Z", "source": "Crossref", "query": "Surya foundation model heliophysics solar", "hits": 10, "new_candidates": 0}
+{"timestamp": "2026-09-26T09:41:11.380119Z", "source": "Crossref", "query": "SciTS scientific time series understanding generation LLMs", "hits": 10, "new_candidates": 0}
+{"timestamp": "2026-09-26T09:41:11.380544Z", "source": "Crossref", "query": "ClimateAgent multi-agent orchestration climate data science", "hits": 10, "new_candidates": 0}
+{"timestamp": "2026-09-26T09:41:11.381007Z", "source": "Crossref", "query": "ClimateLLM efficient weather forecasting large language models", "hits": 10, "new_candidates": 0}
+{"timestamp": "2026-09-26T09:41:11.383134Z", "source": "Crossref", "query": "Large Models for Time Series and Spatio-Temporal Data Survey Jin", "hits": 10, "new_candidates": 0}
+{"timestamp": "2026-09-26T09:41:11.383630Z", "source": "Crossref", "query": "Position What Can Large Language Models Tell Us about Time Series Analysis", "hits": 10, "new_candidates": 0}
+{"timestamp": "2026-09-26T09:41:11.384105Z", "source": "Crossref", "query": "Spherical Fourier Neural Operators Learning Stable Dynamics Bonev", "hits": 10, "new_candidates": 0}
+{"timestamp": "2026-09-26T09:41:11.384884Z", "source": "Crossref", "query": "Neural General Circulation Models for Weather and Climate Nature", "hits": 10, "new_candidates": 0}
+{"timestamp": "2026-09-26T09:41:11.385806Z", "source": "Crossref", "query": "Caravan A global community dataset for large-sample hydrology", "hits": 10, "new_candidates": 0}
+{"timestamp": "2026-09-26T09:41:11.386584Z", "source": "Crossref", "query": "ClimateBench A Benchmark for Data-Driven Climate Projections", "hits": 10, "new_candidates": 0}
+{"timestamp": "2026-09-26T09:41:11.387205Z", "source": "Crossref", "query": "Neural Plasticity-Inspired Multimodal Foundation Model Earth Observation DOFA", "hits": 10, "new_candidates": 0}
+{"timestamp": "2026-09-26T09:41:11.387538Z", "source": "Crossref", "query": "OceanGPT A Large Language Model for Ocean Science Tasks", "hits": 10, "new_candidates": 0}
+{"timestamp": "2026-09-26T09:41:11.388049Z", "source": "Crossref", "query": "K2 A Foundation Language Model for Geoscience Knowledge Understanding", "hits": 10, "new_candidates": 0}
+{"timestamp": "2026-09-26T09:41:11.388746Z", "source": "Crossref", "query": "GeoChat Grounded Large Vision-Language Model for Remote Sensing", "hits": 10, "new_candidates": 0}
+{"timestamp": "2026-09-26T09:41:11.389386Z", "source": "Crossref", "query": "Generative emulation of weather forecast ensembles with diffusion models SEEDS", "hits": 10, "new_candidates": 0}
+{"timestamp": "2026-09-26T09:41:11.390034Z", "source": "Crossref", "query": "UniTS A Unified Multi-Task Time Series Model", "hits": 10, "new_candidates": 0}
+{"timestamp": "2026-09-26T09:41:11.390766Z", "source": "Crossref", "query": "MOMENT A Family of Open Time-series Foundation Models", "hits": 10, "new_candidates": 0}
+{"timestamp": "2026-09-26T09:41:11.391549Z", "source": "Crossref", "query": "Scaling transformer neural networks for skillful and reliable medium-range weather forecasting Stormer", "hits": 10, "new_candidates": 0}
+{"timestamp": "2026-09-26T09:41:11.391986Z", "source": "Crossref", "query": "SeisBench A Toolbox for Machine Learning in Seismology", "hits": 10, "new_candidates": 0}
+{"timestamp": "2026-09-26T09:41:11.392518Z", "source": "Crossref", "query": "ClimSim An open large-scale dataset for training high-resolution physics emulators", "hits": 10, "new_candidates": 0}
+{"timestamp": "2026-09-26T09:41:11.393539Z", "source": "Crossref", "query": "EarthPT a time series foundation model for Earth Observation", "hits": 10, "new_candidates": 0}
+{"timestamp": "2026-09-26T09:41:11.394067Z", "source": "Crossref", "query": "OceanBench A Benchmark for Data-Driven Global Ocean Forecasting systems", "hits": 10, "new_candidates": 0}
+{"timestamp": "2026-09-26T09:41:11.394453Z", "source": "Crossref", "query": "AIFS ECMWF's data-driven forecasting system", "hits": 10, "new_candidates": 0}
+{"timestamp": "2026-09-26T09:41:11.394865Z", "source": "Crossref", "query": "Chronos Learning the Language of Time Series", "hits": 10, "new_candidates": 0}
+{"timestamp": "2026-09-26T09:41:11.395300Z", "source": "Crossref", "query": "Time-LLM Time Series Forecasting by Reprogramming Large Language Models", "hits": 10, "new_candidates": 0}
+{"timestamp": "2026-09-26T09:41:11.395838Z", "source": "Crossref", "query": "Lag-Llama Towards Foundation Models for Probabilistic Time Series Forecasting", "hits": 10, "new_candidates": 0}
+{"timestamp": "2026-09-26T09:41:11.396208Z", "source": "Crossref", "query": "FuXi-Extreme Improving extreme rainfall and wind forecasts with diffusion model", "hits": 10, "new_candidates": 0}
+{"timestamp": "2026-09-26T09:41:11.396730Z", "source": "Crossref", "query": "GEO-Bench Toward Foundation Models for Earth Monitoring", "hits": 10, "new_candidates": 0}
+{"timestamp": "2026-09-26T09:41:11.397250Z", "source": "Crossref", "query": "Learning Variational Data Assimilation Models and Solvers 4DVarNet", "hits": 10, "new_candidates": 0}
+{"timestamp": "2026-09-26T09:41:11.397943Z", "source": "Crossref", "query": "FengWu-4DVar Coupling the Data-driven Weather Forecasting Model with 4D Variational Assimilation", "hits": 10, "new_candidates": 0}
+{"timestamp": "2026-09-26T09:41:11.398707Z", "source": "Crossref", "query": "DiffDA a Diffusion Model for Weather-scale Data Assimilation", "hits": 10, "new_candidates": 0}
+{"timestamp": "2026-09-26T09:41:11.399473Z", "source": "Crossref", "query": "Score-based Data Assimilation Rozet", "hits": 10, "new_candidates": 0}
+{"timestamp": "2026-09-26T09:41:11.400489Z", "source": "Crossref", "query": "SkySense A Multi-Modal Remote Sensing Foundation Model Towards Universal Interpretation", "hits": 10, "new_candidates": 0}
+{"timestamp": "2026-09-26T09:41:11.400984Z", "source": "Crossref", "query": "The Rise of Data-Driven Weather Forecasting A First Statistical Assessment", "hits": 10, "new_candidates": 0}
+{"timestamp": "2026-09-26T09:41:11.401485Z", "source": "Crossref", "query": "ClimODE Climate and Weather Forecasting with Physics-informed Neural ODEs", "hits": 10, "new_candidates": 0}
+{"timestamp": "2026-09-26T09:41:11.402138Z", "source": "Crossref", "query": "Residual Corrective Diffusion Modeling for Km-scale Atmospheric Downscaling CorrDiff", "hits": 10, "new_candidates": 0}
+{"timestamp": "2026-09-26T09:41:11.402610Z", "source": "Crossref", "query": "Deep Learning for Day Forecasts from Sparse Observations MetNet-3", "hits": 10, "new_candidates": 0}
+{"timestamp": "2026-09-26T09:41:11.403016Z", "source": "Crossref", "query": "Skilful precipitation nowcasting using deep generative models of radar DGMR", "hits": 10, "new_candidates": 0}
+{"timestamp": "2026-09-26T09:41:11.403279Z", "source": "Crossref", "query": "The AI Scientist Towards Fully Automated Open-Ended Scientific Discovery", "hits": 10, "new_candidates": 0}
+{"timestamp": "2026-09-26T09:41:11.403682Z", "source": "Crossref", "query": "SciCode A Research Coding Benchmark Curated by Scientists", "hits": 10, "new_candidates": 0}
+{"timestamp": "2026-09-26T09:41:11.404208Z", "source": "Crossref", "query": "ExtremeCast Boosting Extreme Value Prediction for Global Weather Forecast", "hits": 10, "new_candidates": 9}
+{"timestamp": "2026-09-26T09:41:11.404963Z", "source": "Crossref", "query": "Multi Grid Tensorized Fourier Neural Operator for High Resolution PDEs", "hits": 10, "new_candidates": 9}
+{"timestamp": "2026-09-26T09:41:11.405733Z", "source": "Crossref", "query": "Seismic Wave Propagation and Inversion with Neural Operators Yang", "hits": 10, "new_candidates": 10}
+{"timestamp": "2026-09-26T09:41:11.406639Z", "source": "Crossref", "query": "Seasonal Arctic sea ice forecasting with probabilistic deep learning Andersson", "hits": 10, "new_candidates": 9}
+{"timestamp": "2026-09-26T09:41:11.407257Z", "source": "Crossref", "query": "IceBench A Benchmark for Deep Learning based Sea Ice Type Classification", "hits": 10, "new_candidates": 7}
+{"timestamp": "2026-09-26T09:41:11.407985Z", "source": "Crossref", "query": "Partitioned Hybrid Quantum Fourier Neural Operators for Scientific Quantum Machine Learning", "hits": 10, "new_candidates": 9}
+{"timestamp": "2026-09-26T09:41:11.410918Z", "source": "Crossref", "query": "Verified landmark DOIs (16 papers)", "hits": 21, "new_candidates": 0}

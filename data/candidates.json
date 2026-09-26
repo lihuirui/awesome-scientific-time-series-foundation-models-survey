@@ -8705,5 +8705,874 @@
     "abstract": "",
     "status": "candidate",
     "retrieved_at": "2026-09-26T04:40:31.353538Z"
+  },
+  {
+    "source": "arXiv",
+    "arxiv_id": "2402.01295",
+    "doi": null,
+    "title": "ExtremeCast: Boosting Extreme Value Prediction for Global Weather Forecast",
+    "authors": [
+      "Xu, Wanghan",
+      "Chen, Kang",
+      "Han, Tao",
+      "Chen, Hao",
+      "Ouyang, Wanli",
+      "Bai, Lei"
+    ],
+    "year": 2024,
+    "abstract": "Data-driven weather forecast based on machine learning (ML) has experienced rapid development and demonstrated superior performance in the global medium-range forecast compared to traditional physics-based dynamical models. However, most of these ML models struggle with accurately predicting extreme weather, which is related to training loss and the uncertainty of weather systems. Through mathematical analysis, we prove that the use of symmetric losses, such as the Mean Squared Error (MSE), leads to biased predictions and underestimation of extreme values. To address this issue, we introduce Exloss, a novel loss function that performs asymmetric optimization and highlights extreme values to obtain accurate extreme weather forecast. Beyond the evolution in training loss, we introduce a training-free extreme value enhancement module named ExBooster, which captures the uncertainty in prediction outcomes by employing multiple random samples, thereby increasing the hit rate of low-probability extreme events. Combined with an advanced global weather forecast model, extensive experiments show that our solution can achieve state-of-the-art performance in extreme weather prediction, while maintaining the overall forecast accuracy comparable to the top medium-range forecast models.",
+    "status": "candidate",
+    "retrieved_at": "2026-09-26T09:41:11.364043Z"
+  },
+  {
+    "source": "arXiv",
+    "arxiv_id": "2310.00120",
+    "doi": null,
+    "title": "Multi-Grid Tensorized Fourier Neural Operator for High-Resolution PDEs",
+    "authors": [
+      "Kossaifi, Jean",
+      "Kovachki, Nikola",
+      "Azizzadenesheli, Kamyar",
+      "Anandkumar, Anima"
+    ],
+    "year": 2023,
+    "abstract": "Memory complexity and data scarcity have so far prohibited learning solution operators of partial differential equations (PDEs) at high resolutions. We address these limitations by introducing a new data efficient and highly parallelizable operator learning approach with reduced memory requirement and better generalization, called multi-grid tensorized neural operator (MG-TFNO). MG-TFNO scales to large resolutions by leveraging local and global structures of full-scale, real-world phenomena, through a decomposition of both the input domain and the operator&#39;s parameter space. Our contributions are threefold: i) we enable parallelization over input samples with a novel multi-grid-based domain decomposition, ii) we represent the parameters of the model in a high-order latent subspace of the Fourier domain, through a global tensor factorization, resulting in an extreme reduction in the number of parameters and improved generalization, and iii) we propose architectural improvements to the backbone FNO. Our approach can be used in any operator learning setting. We demonstrate superior performance on the turbulent Navier-Stokes equations where we achieve less than half the error with over 150x compression. The tensorization combined with the domain decomposition, yields over 150x reduction in the number of parameters and 7x reduction in the domain size without losses in accuracy, while slightly enabling parallelism.",
+    "status": "candidate",
+    "retrieved_at": "2026-09-26T09:41:11.364110Z"
+  },
+  {
+    "source": "arXiv",
+    "arxiv_id": "2503.17877",
+    "doi": null,
+    "title": "IceBench: A Benchmark for Deep Learning based Sea Ice Type Classification",
+    "authors": [
+      "Taleghan, Samira Alkaee",
+      "Barrett, Andrew P.",
+      "Meier, Walter N.",
+      "Banaei-Kashani, Farnoush"
+    ],
+    "year": 2025,
+    "abstract": "Sea ice plays a critical role in the global climate system and maritime operations, making timely and accurate classification essential. However, traditional manual methods are time-consuming, costly, and have inherent biases. Automating sea ice type classification addresses these challenges by enabling faster, more consistent, and scalable analysis. While both traditional and deep learning approaches have been explored, deep learning models offer a promising direction for improving efficiency and consistency in sea ice classification. However, the absence of a standardized benchmark and comparative study prevents a clear consensus on the best-performing models. To bridge this gap, we introduce \\textit{IceBench}, a comprehensive benchmarking framework for sea ice type classification. Our key contributions are threefold: First, we establish the IceBench benchmarking framework which leverages the existing AI4Arctic Sea Ice Challenge dataset as a standardized dataset, incorporates a comprehensive set of evaluation metrics, and includes representative models from the entire spectrum of sea ice type classification methods categorized in two distinct groups, namely, pixel-based classification methods and patch-based classification methods. IceBench is open-source and allows for convenient integration and evaluation of other sea ice type classification methods; hence, facilitating comparative evaluation of new methods and improving reproducibility in the field. Second, we conduct an in-depth comparative study on representative models to assess their strengths and limitations, providing insights for both practitioners and researchers. Third, we leverage IceBench for systematic experiments addressing key research questions on model transferability across seasons (time) and locations (space), data downscaling, and preprocessing strategies.",
+    "status": "candidate",
+    "retrieved_at": "2026-09-26T09:41:11.364142Z"
+  },
+  {
+    "source": "arXiv",
+    "arxiv_id": "2507.08746",
+    "doi": null,
+    "title": "Partitioned Hybrid Quantum Fourier Neural Operators for Scientific Quantum Machine Learning",
+    "authors": [
+      "Marcandelli, Paolo",
+      "He, Yuanchun",
+      "Mariani, Stefano",
+      "Siena, Martina",
+      "Markidis, Stefano"
+    ],
+    "year": 2025,
+    "abstract": "We introduce the Partitioned Hybrid Quantum Fourier Neural Operator (PHQFNO), a generalization of the Quantum Fourier Neural Operator (QFNO) for scientific machine learning. PHQFNO partitions the Fourier operator computation across classical and quantum resources, enabling tunable quantum-classical hybridization and distributed execution across quantum and classical devices. The method extends QFNOs to higher dimensions and incorporates a message-passing framework to distribute data across different partitions. Input data are encoded into quantum states using unary encoding, and quantum circuit parameters are optimized using a variational scheme. We implement PHQFNO using PennyLane with PyTorch integration and evaluate it on Burgers&#39; equation, incompressible and compressible Navier-Stokes equations. We show that PHQFNO recovers classical FNO accuracy. On incompressible Navier-Stokes, PHQFNO achieves higher accuracy than its classical counterparts. Finally, we perform a sensitivity analysis under input noise, confirming improved stability of PHQFNO over classical baselines.",
+    "status": "candidate",
+    "retrieved_at": "2026-09-26T09:41:11.364167Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1029/2004sw000076",
+    "title": "Prediction performance of space weather forecast centers following the extreme events of October and November 2003",
+    "authors": [
+      "Oler, Cary"
+    ],
+    "year": 2004,
+    "container_title": "Space Weather",
+    "abstract": "<jats:p>A review and analysis of the five strongest interplanetary coronal mass ejection (ICME) events of late October and early November 2003 (the strongest events of the “Halloween” epoch) are studied with respect to the prediction performance of five space weather forecast centers. Accurate time‐of‐arrival predictions and rapid responses to the upstream detection of strong ICMEs are of paramount importance to critical infrastructures such as power companies. Prediction and performance analysis results indicate that (1) the average time‐of‐arrival error for all forecast centers was 9.26 hours, which is consistent with the guidance errors associated with the leading shock propagation prediction models; (2) time‐of‐arrival predictions from Solar Terrestrial Dispatch (STD) surpassed all others in accuracy, with an average time‐of‐arrival prediction error of 1.22 hours; (3) overall, the strongest ICME impact events of 29 and 30 October were the most poorly predicted; (4) the most accurate shock propagation prediction model operated by the Geophysical Institute of the University of Alaska Fairbanks was the HAFv.2 model; and (5) STD provided the most rapid notification to the Northeast Power Coordinating Council concerning the detection and imminent arrival of most of the ICMEs. A better method of conveying time‐of‐arrival prediction information is presented that may be more easily digested by consumers of space weather services.</jats:p>",
+    "status": "candidate",
+    "retrieved_at": "2026-09-26T09:41:11.404146Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.5194/ems2022-383",
+    "title": "Global verification of the 24-hour precipitation forecast of numerical weather prediction models",
+    "authors": [
+      "Schlögl, Sebastian",
+      "Huonder, Ursula",
+      "Müller, Mathias"
+    ],
+    "year": 2022,
+    "container_title": "",
+    "abstract": "<jats:p>&amp;lt;p&amp;gt;Verification of precipitation forecasts are rarely published in scientific literature. This study deals with a verification of the 24-hour-precipitation forecast of the global numerical weather prediction models GFS, ICON, ARPEGE and NEMS, as well as the reanalysis model ERA5.&amp;lt;/p&amp;gt;&amp;lt;p&amp;gt;For model comparison more than 10&amp;amp;#8217;000 precipitation measurements worldwide from the measurement network METAR were used in hourly resolution. Annual, monthly, and daily precipitation sums of the global prediction models were compared with quality-controlled measurements for the year 2020. Continuous error metrics (e.g., mean absolute errors (MAE), mean bias errors (MBE)) as well as categorical error metrics (e.g., probability of detection, false alarm rate, Heidke Skill Score) are calculated for each measurement location separately, as well as averaged by a 2 x 2 degrees grid to account for the unequal global distribution of the measurements.&amp;lt;/p&amp;gt;&amp;lt;p&amp;gt;In general, the model errors are large in equatorial regions, areas close to the coast and in mountainous areas, where the annual precipitation amount is typically large. The best model performance was analysed for the reanalysis model ERA5 with a mean absolute error of 234 mm and a small mean bias error of -6 mm. ICON showed the lowest MAE of the operational weather forecast models (MAE = 253 mm) followed by GFS (MAE = 270 mm), ARPEGE (MAE = 281 mm) and NEMS (MAE = 296 mm). NEMS and ICON tend to underestimate annual precipitation amounts, whereas GFS and ARPEGE tend to overestimate annual precipitation amounts. Daily precipitation events larger than 1 mm were detected most accurate with ICON (HSS = 0.46) and ERA5 (HSS = 0.45), followed by GFS, ARPEGE and NEMS.&amp;lt;/p&amp;gt;&amp;lt;p&amp;gt;For each country, the model with the highest accuracy was determined based on the MAE of annual precipitation sums and based on the accuracy of daily precipitation events. For more than 80 % of all countries worldwide ERA5 or ICON showed the best model performance.&amp;lt;/p&amp;gt;</jats:p>",
+    "status": "candidate",
+    "retrieved_at": "2026-09-26T09:41:11.404159Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.2139/ssrn.4097480",
+    "title": "Probability Density Prediction of Wind Farm Power Generation: Benchmarking Natural Gradient Boosting Approach Using Ensemble Weather Forecast",
+    "authors": [
+      "Fujimoto, Yu",
+      "Nohara, Daisuke",
+      "Kanno, Yuki",
+      "Ohba, Masamich",
+      "Kato, Takuma",
+      "Hayashi, Yasuhiro"
+    ],
+    "year": 2022,
+    "container_title": "",
+    "abstract": "<jats:p>Wind farm (WF) power generation fluctuates depending on the direction and speed of wind. Its prediction has been recognized as an essential elemental technology for grid connections of wind power generation. In particular, a quantitative understanding of the uncertainties in the prediction results is significantly important for designing the operational logic of energy management systems to compensate the unexpected behavior of WF power generation by means of alternative power sources and energy storage systems with appropriate capacities. This study focuses on the difficulties in the statistical learning of prediction models, which have hindered the realization of accurate probability density predictions (PDPs) using large-scale multidimensional data, such as the wind vector field derived using numerical weather prediction (NWP) models, in the PDP task of WF power generation, and discusses a prediction scheme that applies a nonparametric machine learning model based on the concept of natural gradient boosting, which is expected to contribute to overcoming this learning difficulty. This approach effectively uses high-dimensional information obtained from ensemble weather forecasting (EWF) and latest observations to achieve a plausible PDP of WF power generation. The agreement of the results of numerical experiments with data acquired from real-world sites demonstrate the effectiveness of the proposed framework.</jats:p>",
+    "status": "candidate",
+    "retrieved_at": "2026-09-26T09:41:11.404168Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.2139/ssrn.5888383",
+    "title": "Machine Learning Integrated Tail Risk Detection: Combining GARCH Volatility Dynamics, Extreme Value Theory, and Gradient Boosting for Crisis Prediction",
+    "authors": [
+      "Silchenko, Maksim"
+    ],
+    "year": 2026,
+    "container_title": "",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-26T09:41:11.404175Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.5194/egusphere-egu23-8960",
+    "title": "The unequal global distribution of weather forecast accuracy and the value of ground-based observations",
+    "authors": [
+      "Linsenmeier, Manuel",
+      "Shrader, Jeffrey G."
+    ],
+    "year": 2023,
+    "container_title": "",
+    "abstract": "<jats:p>&amp;lt;p class=&amp;quot;western&amp;quot;&amp;gt;Recent appraisals of the value of accurate weather forecasts for labor supply decisions (Song 2022), heat mortality (Shrader et al. 2022), and in the construction sector (Downey et al. 2022) show that they exceed multiple times their production costs. Given the large economic benefits of accurate weather forecasts, differences in forecast accuracy represents an important source of potential economic inequality. This paper examines the global distribution of the accuracy of weather forecasts and critically assesses its implications for global inequalities. The paper first describes the current situation and past trends in the accuracy of forecasts, then examines distributional implications, and finally relates differences in accuracy to climatic, geographical, economic, and institutional factors. To do this, the paper combines historical weather analyses and forecasts from several meteorological agencies with climate reanalysis, station measurements, and high-resolution economic data. To attribute differences in forecast accuracy to differences in measurement infrastructure, the paper makes use of quasi-random historical appearance and disappearance of weather stations using modern econometric methods for causal inference. Prior estimates of the value of forecasts are then used to translate differences in forecast accuracy into economic values. Finally, projections of future climate change are used to inform the discussion about changes in the demand for and benefits of forecasts. The paper builds on previous work on the global distribution of forecast accuracy (e.g. Bauer et al. 2015) by focusing on impact-relevant meteorological variables (2m temperature, precipitation), by conducting the analysis at a more granular spatial resolution (subnational in this paper versus hemisphere in prior work), by combining the analysis of weather forecasts with socioeconomic data, by comprehensively examining both differences in the cross-section and over time, and by using methods of causal inference to attribute changes in forecast accuracy to its determinants. Preliminary results show large improvements in forecast accuracy since 1985 everywhere but especially in relatively poor low-latitude countries in the Global South. These trends can be attributed primarily to the use of satellite data which has led to a global convergence in forecast accuracy. In all years, forecast errors tend to be largest in (relatively rich) mid- and high-latitude countries due to large day-to-day fluctuations. At the same time, measures of forecast skill based on correlations tend to feature lower skill in low-latitude countries and hence worse forecasts in relatively poor world regions. This is particularly problematic because projections of climate models suggest increases in temperature variability especially in those regions of the world. By the time of the EGU conference, results on the other parts of the analysis will also be ready for presentation, including a statistical attribution of differences in weather forecast accuracy to differences in the ground-based monitoring infrastructure.&amp;lt;/p&amp;gt;</jats:p>",
+    "status": "candidate",
+    "retrieved_at": "2026-09-26T09:41:11.404181Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1007/978-1-4419-7695-6_6",
+    "title": "Climate Modeling, Global Warming and Weather Prediction, Introduction to",
+    "authors": [
+      "Grassl, Hartmut"
+    ],
+    "year": 2011,
+    "container_title": "Extreme Environmental Events",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-26T09:41:11.404187Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.54254/2753-8818/2025.21681",
+    "title": "Boosting Extreme Weather Prediction by Fine-tuning a Pre-Trained Large Model: A Study on GraphCast",
+    "authors": [
+      "Zhan, Hengzhi"
+    ],
+    "year": 2025,
+    "container_title": "Theoretical and Natural Science",
+    "abstract": "<jats:p>Large-scale deep learning weather prediction models are revolutionizing the field of weather forecasting. GraphCast is the current state-of-the-art model, but its training is not explicitly designed for predicting extreme weather events. However, extreme weather prediction is more critical because it directly impacts public safety, potentially saving a lot of lives and resources. This paper improves large-scale weather models such as GraphCast by introducing an uncertainty estimation module to differentiate the importance of extreme weather data. We hypothesize and demonstrate that regions with higher uncertainty are more prone to cause prediction errors. By fine-tuning large-scale weather prediction models such as GraphCast with our uncertainty-aware weighting method, we enhance extreme weather forecasting in extreme cases where predictions were previously poor. Our approach provides a pathway for more accurate extreme weather forecasts and a pipeline for future model fine-tuning efforts.</jats:p>",
+    "status": "candidate",
+    "retrieved_at": "2026-09-26T09:41:11.404193Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.5194/ems2024-167",
+    "title": "Improving wind and temperature forecast accuracy using eXtreme Gradient Boosting and Quantile Mapping",
+    "authors": [
+      "Ylinen, Kaisa",
+      "Tack, Andreas"
+    ],
+    "year": 2024,
+    "container_title": "",
+    "abstract": "<jats:p>A machine learning based bias correction for MetCoOp temperature, wind speed and wind gust forecasts has been implemented at the Finnish Meteorological Institute (FMI). The MetCoOp model, with a horizontal resolution of 2.5 km, serves as the primary source of short-range forecasts at FMI. However, like many numerical weather prediction models, it suffers from systematic errors that can negatively affect forecast accuracy. To address this issue, we utilize eXtreme Gradient Boosting (XGB) to correct these systematic errors in wind and temperature forecasts. Although XGB effectively reduces the mean absolute error of the forecasts, it tends to underestimate high wind speeds. To mitigate this limitation, we additionally apply quantile mapping (QM) bias-correction technique for wind speed and wind gust forecasts.Our model uses 2.5 years of training data containing various weather parameters as predictors, including time-lagged variables. Also station and time dependent features such as forecast hour and month, are used. The model is trained to predict forecast errors at station points and subsequently gridded to the original resolution using the gridpp method. The bias correction information is then applied to the original MetCoOp forecast fields of 10-m wind speed, wind gust, and 2-m temperature, resulting in more accurate forecast fields.The machine learning-based model is currently in pre-operational use at FMI, with the primary aim of reducing the manual editing traditionally performed by meteorologists to correct forecast errors. Preliminary verification results indicate that bias-corrected forecasts have smaller errors on average compared to uncorrected MetCoOp forecasts. Importantly, the model improves the accuracy of wind alerts and warnings, thereby providing significant value in critical decision-making situations.</jats:p>",
+    "status": "candidate",
+    "retrieved_at": "2026-09-26T09:41:11.404198Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1175/waf-d-13-00061.1",
+    "title": "Extreme Quantitative Precipitation Forecast Performance at the Weather Prediction Center from 2001 to 2011",
+    "authors": [
+      "Sukovich, Ellen M.",
+      "Ralph, F. Martin",
+      "Barthold, Faye E.",
+      "Reynolds, David W.",
+      "Novak, David R."
+    ],
+    "year": 2014,
+    "container_title": "Weather and Forecasting",
+    "abstract": "<jats:title>Abstract</jats:title>\n               <jats:p>Extreme quantitative precipitation forecast (QPF) performance is baselined and analyzed by NOAA’s Hydrometeorology Testbed (HMT) using 11 yr of 32-km gridded QPFs from NCEP’s Weather Prediction Center (WPC). The analysis uses regional extreme precipitation thresholds, quantitatively defined as the 99th and 99.9th percentile precipitation values of all wet-site days from 2001 to 2011 for each River Forecast Center (RFC) region, to evaluate QPF performance at multiple lead times. Five verification metrics are used: probability of detection (POD), false alarm ratio (FAR), critical success index (CSI), frequency bias, and conditional mean absolute error (MAEcond). Results indicate that extreme QPFs have incrementally improved in forecast accuracy over the 11-yr period. Seasonal extreme QPFs show the highest skill during winter and the lowest skill during summer, although an increase in QPF skill is observed during September, most likely due to landfalling tropical systems. Seasonal extreme QPF skill decreases with increased lead time. Extreme QPF skill is higher over the western and northeastern RFCs and is lower over the central and southeastern RFC regions, likely due to the preponderance of convective events in the central and southeastern regions. This study extends the NOAA HMT study of regional extreme QPF performance in the western United States to include the contiguous United States and applies the regional assessment recommended therein. The method and framework applied here are readily applied to any gridded QPF dataset to define and verify extreme precipitation events.</jats:p>",
+    "status": "candidate",
+    "retrieved_at": "2026-09-26T09:41:11.404204Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.5194/egusphere-egu25-19942",
+    "title": "A Spatial Multi-Grid Neural Operator-Transformer Mdoel for High-Resolution Climate Modeling",
+    "authors": [
+      "Witte, Maximilian",
+      "Meuer, Johannes",
+      "Christopher, Kadow"
+    ],
+    "year": 2025,
+    "container_title": "",
+    "abstract": "<jats:p>High-resolution machine learning faces the challenge of balancing local computation with large physical context windows. GPU memory limitations and the slow training process when distributing the model across multiple GPUs further complicate this task.&amp;#160;We present a transformer model for high-resolution climate-related tasks that uses neural operators within a multi-grid architecture. This approach allows resolution independence, large physical context windows, and the handling of discontinuities such as coastlines.The model is spatially flexible, supporting both regional and global training schemes. It is also independent of the number of input variables, allowing training to be scaled to large numbers of input variables.We demonstrate the ability of the model to scale, both spatially and in terms of variables. The model forms the foundation of an approach to learn from the rich and diverse climate data available, enabling high-resolution downscaling, infilling, and predictions.</jats:p>",
+    "status": "candidate",
+    "retrieved_at": "2026-09-26T09:41:11.404908Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.2139/ssrn.5252012",
+    "title": "Multi-Branch Cnn Super-Resolution and Fourier Neural Operator for High-Resolution Damage Identification",
+    "authors": [
+      "Fei, Jinghao",
+      "Kim, Chul-Woo",
+      "Chen, Debao",
+      "Pan, Hongkang",
+      "Chen, Rongxiu",
+      "Wang, Jiaji"
+    ],
+    "year": 2025,
+    "container_title": "",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-26T09:41:11.404918Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.3390/w17233351",
+    "title": "A Dual-Branch Coupled Fourier Neural Operator for High-Resolution Multi-Phase Flow Modeling in Porous Media",
+    "authors": [
+      "Al Hashim, Hassan",
+      "Elyas, Odai",
+      "Williams, John"
+    ],
+    "year": 2025,
+    "container_title": "Water",
+    "abstract": "<jats:p>This paper investigates a physics-informed surrogate modeling framework for multi-phase flow in porous media based on the Fourier Neural Operator. Traditional numerical simulators, though accurate, suffer from severe computational bottlenecks due to fine-grid discretizations and the iterative solution of highly nonlinear partial differential equations. By parameterizing the kernel integral directly in Fourier space, the operator provides a discretization-invariant mapping between function spaces, enabling efficient spectral convolutions. We introduce a Dual-Branch Adaptive Fourier Neural Operator with a shared Fourier encoder and two decoders: a saturation branch that uses an inverse Fourier transform followed by a multilayer perceptron and a pressure branch that uses a convolutional decoder. Temporal information is injected via Time2Vec embeddings and a causal temporal transformer, conditioning each forward pass on step index and time step to maintain consistent dynamics across horizons. Physics-informed losses couple data fidelity with residuals from mass conservation and Darcy pressure, enforcing the governing constraints in Fourier space; truncated spectral kernels promote generalization across meshes without retraining. On SPE10-style heterogeneities, the model shifts the infinity-norm error mass into the 10−2 to 10−1 band during early transients and sustains lower errors during pseudo-steady state. In zero-shot three-dimensional coarse-to-fine upscaling from 30×110×5 to 60×220×5, it attains R2=0.90, RMSE = 4.4×10−2, and MAE = 3.2×10−2, with more than 90% of voxels below five percent absolute error across five unseen layers, while the end-to-end pipeline runs about three times faster than a full-order fine-grid solve and preserves water-flood fronts and channel connectivity. Benchmarking against established baselines indicates a scalable, high-fidelity alternative for high-resolution multi-phase flow simulation in porous media.</jats:p>",
+    "status": "candidate",
+    "retrieved_at": "2026-09-26T09:41:11.404925Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.2139/ssrn.5956134",
+    "title": "Lightweight Modal Super-Resolution CNN and Fourier Neural Operator for High-Resolution Damage Identification",
+    "authors": [
+      "Fei, Jinghao",
+      "Kim, Chul-Woo",
+      "Chen, Debao",
+      "Pan, Hongkang",
+      "Chen, Rongxiu",
+      "Wang, Jiaji"
+    ],
+    "year": 2025,
+    "container_title": "",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-26T09:41:11.404931Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1109/ainit65432.2025.11035785",
+    "title": "Deep Tensorized Fourier Neural Operator for Electromagnetic Inverse Scattering Problems",
+    "authors": [
+      "Hou, Ding",
+      "Liao, Liusha",
+      "Li, Tianxiang",
+      "Xu, Zhexin"
+    ],
+    "year": 2025,
+    "container_title": "2025 IEEE 6th International Seminar on Artificial Intelligence, Networking and Information Technology (AINIT)",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-26T09:41:11.404936Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.2139/ssrn.5012232",
+    "title": "Accelerated Co2 Storage Optimization Using Multi-Resolution Fourier Neural Operator at the Illinois Basin Decatur Project (Ibdp)",
+    "authors": [
+      "Chan, Chin-Hsiang",
+      "Nagao, Masahiro",
+      "Datta-Gupta, Akhil"
+    ],
+    "year": 2024,
+    "container_title": "",
+    "abstract": "<jats:p>Carbon capture and storage is one of the most promising methods for reducing greenhouse gases, and extensive research has been conducted to examine how to sequester CO2 into subsurface environments, such as depleted oil and gas fields and deep saline aquifers. The injection of CO2 into subsurface formations entails various risks, necessitating a comprehensive evaluation of several factors such as seismic activity, seal integrity, and CO2 leakage. Therefore, a CO2 injection project involves multiple objectives, and these objectives often exhibit trade-offs, rendering the optimization of CO2 injection challenging. Traditional multi-objective optimization requires hundreds of forward simulations, which is computationally prohibitive for large-scale field cases. In this study, we present an efficient deep learning-based workflow for CO2 injection schedule optimization during CO2 sequestration. A data-driven proxy model is developed to accelerate the optimization workflow, which makes it scalable to large-scale field applications. &lt;br&gt;&lt;br&gt;Our deep learning workflow utilizes a recently developed machine learning architecture, Fourier Neural Operator (FNO), as a data-driven proxy model. The input of the proposed FNO model is composed of permeability distribution and CO2 injection schedule, and it estimates pressure and saturation distribution in the reservoir. One of the difficulties of data-driven model is the requirement of large training datasets, involving thousands of numerical simulations. By leveraging the super-resolution feature of the FNO, the model can be trained using low resolution image, and the trained model can predict high resolution image. Therefore, coarse-scale reservoir models can be used for training data generation, resulting in a significant reduction in data generation costs. In our workflow, numerical simulations are run using a coarsened permeability and porosity models with different CO2 injection schedules, which provide coarse-scale pressure and saturation distributions as training data. The FNO model is trained using the generated coarse-scale data, and the trained model can predict fine-scale pressure and saturation distributions with minimal loss of accuracy. For CO2 injection schedule optimization, a multi-objective genetic algorithm is utilized, where the FNO-based proxy model is used as a forward model. The optimization can include several different objectives, such as minimizing pressure increase in the reservoir, maximizing CO2 injection amount and storage efficiency.&lt;br&gt; &lt;br&gt;The power and efficiency of our approach are demonstrated using both synthetic and field applications. We initially demonstrate the advantages of our deep learning-based workflow using a synthetic case of gas injection into an aquifer. Next, we apply our workflow to the Illinois Basin Decatur Project (IBDP), which is a large-scale CO2 injection project into deep saline aquifer in Illinois Basin, USA. For the field application, training data are generated at the coarse-scale for computational efficiency and, 90% computational time reduction is achieved compared with the fine-scale simulations. The accuracy of the trained proxy model is verified by comparing with a commercial reservoir simulator. Finally, the multi-objective optimization workflow is conducted using the FNO-based proxy model. The optimization framework has shown significant improvement across multiple objectives, achieving orders-of-magnitude faster performance compared to traditional workflows that rely on numerical simulation as a forward model.&lt;br&gt; &lt;br&gt;The novelty of this work is the development of multi-resolution FNO-based fast proxy model for reservoir simulation and its application to CO2 injection schedule optimization. The use of super-resolution feature in FNO in conjunction with coarse-scale models reduces substantially the training data generation cost. The proxy model accelerates forward simulation by orders of magnitude and enables evaluation of various optimization scenarios for large-scale field cases.</jats:p>",
+    "status": "candidate",
+    "retrieved_at": "2026-09-26T09:41:11.404945Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.2139/ssrn.6478771",
+    "title": "Multi-Graph Neural Operator for Parametric PDEs on Complex and General Geometries",
+    "authors": [
+      "Zongao, Ye",
+      "yu, limin",
+      "Ma, Fei"
+    ],
+    "year": 2026,
+    "container_title": "",
+    "abstract": "<jats:p>Deep learning surrogate models aimed at accelerating the solution of parametric partial differential equations (PDEs) have made significant progress. These models support data-driven training, allow for physics-informed inductive biases, and can achieve speedups of several orders of magnitude over traditional numerical solvers. Recent advances in operator learning for PDEs have yielded promising improvements. However, capturing the intricate physical correlations across irregular and massive mesh points remains a challenge, particularly for PDEs involving complex geometries and large-scale discretizations. To address these limitations, we propose the Multi-Graph Neural Operator (MGNO), an efficient framework designed to learn intrinsic physical correlations within large-scale and geometrically complex domains. The proposed method introduces a novel graph-informed encoder that adaptively decomposes mesh points into multiple graphs by aggregating points with analogous physical states. These irregular graph representations are subsequently mapped onto a regular latent lattice, enabling the neural operator to model spatial correlations with high fidelity at a significantly reduced computational cost. We evaluate the performance of MGNO across a variety of PDE problems, including three two-dimensional benchmarks and two three-dimensional industrial applications. Experimental results demonstrate that MGNO consistently achieves state-of-the-art performance, yielding a 20.2% reduction in relative error across the Darcy flow, Airfoil, and Plasticity benchmarks. Furthermore, the model exhibits superior performance on industry-standard 3D benchmarks, specifically the Ahmed-Body and Shape-Net Car, underscoring its potential for high-fidelity engineering design in complex fluid dynamics and structural mechanics.</jats:p>",
+    "status": "candidate",
+    "retrieved_at": "2026-09-26T09:41:11.404950Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1109/aict67988.2025.11268565",
+    "title": "+3dB Tensorized High Quality Fourier Transform Tensorized-Arithmetic Trigonometric Transform",
+    "authors": [
+      "Ciftcibasi, Mehmet Emre"
+    ],
+    "year": 2025,
+    "container_title": "2025 IEEE 19th International Conference on Application of Information and Communication Technologies (AICT)",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-26T09:41:11.404955Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1007/s11004-025-10202-8",
+    "title": "DL-NRS Net: A Physics-Informed Fourier Neural Operator Framework for High-Resolution Reconstruction Without High-Resolution Labels",
+    "authors": [
+      "Liu, Jianqiao",
+      "Pan, Huanquan",
+      "Jiang, Su",
+      "Jing, Hongbin",
+      "Zhu, Yiheng"
+    ],
+    "year": 2025,
+    "container_title": "Mathematical Geosciences",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-26T09:41:11.404961Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1785/0320210026",
+    "title": "Seismic Wave Propagation and Inversion with Neural Operators",
+    "authors": [
+      "Yang, Yan",
+      "Gao, Angela F.",
+      "Castellanos, Jorge C.",
+      "Ross, Zachary E.",
+      "Azizzadenesheli, Kamyar",
+      "Clayton, Robert W."
+    ],
+    "year": 2021,
+    "container_title": "The Seismic Record",
+    "abstract": "<jats:title>Abstract</jats:title><jats:p>Seismic wave propagation forms the basis for most aspects of seismological research, yet solving the wave equation is a major computational burden that inhibits the progress of research. This is exacerbated by the fact that new simulations must be performed whenever the velocity structure or source location is perturbed. Here, we explore a prototype framework for learning general solutions using a recently developed machine learning paradigm called neural operator. A trained neural operator can compute a solution in negligible time for any velocity structure or source location. We develop a scheme to train neural operators on an ensemble of simulations performed with random velocity models and source locations. As neural operators are grid free, it is possible to evaluate solutions on higher resolution velocity models than trained on, providing additional computational efficiency. We illustrate the method with the 2D acoustic wave equation and demonstrate the method’s applicability to seismic tomography, using reverse-mode automatic differentiation to compute gradients of the wavefield with respect to the velocity structure. The developed procedure is nearly an order of magnitude faster than using conventional numerical methods for full waveform inversion.</jats:p>",
+    "status": "candidate",
+    "retrieved_at": "2026-09-26T09:41:11.405680Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.2118/9781555631109-02",
+    "title": "Seismic Wave Propagation",
+    "authors": [],
+    "year": 2006,
+    "container_title": "Seismic Inversion",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-26T09:41:11.405686Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1190/1.9781560801870.ch1",
+    "title": "1. Seismic Wave Propagation — Modeling and Inversion",
+    "authors": [],
+    "year": 1997,
+    "container_title": "Seismic Modeling and Imaging with the Complete Wave Equation",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-26T09:41:11.405694Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.2139/ssrn.4857935",
+    "title": "Physics-Informed Neural Network for Seismic Wave Inversion in Layered Semi-Infinite Domain",
+    "authors": [
+      "Ren, Pu",
+      "Rao, Chengping",
+      "Sun, Hao",
+      "Liu, Yang"
+    ],
+    "year": 2024,
+    "container_title": "",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-26T09:41:11.405699Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1017/cbo9781139056250.006",
+    "title": "Models for wave propagation and reflection",
+    "authors": [],
+    "year": 2012,
+    "container_title": "Seismic Imaging and Inversion",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-26T09:41:11.405703Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.5194/egusphere-egu24-2443",
+    "title": "Deep learning generative strategies to enhance 3D physics-based seismic wave propagation: from diffusive super-resolution to 3D Fourier Neural Operators.",
+    "authors": [
+      "Gatti, Filippo",
+      "Lehmann, Fanny",
+      "Gabrielidis, Hugo",
+      "Bertin, Michaël",
+      "Clouteau, Didier",
+      "Vialle, Stéphane"
+    ],
+    "year": 2025,
+    "container_title": "",
+    "abstract": "<jats:p>Estimating the seismic hazard in earthquake-prone regions, in order to assess the risk associated to nuclear facilities, must take into account a large number of uncertainties, and in particular our limited knowledge of the geology. And yet, we know that certain geological features can create site effects that considerably amplify earthquake ground motion. In this work, we provide a quantitative assessment of how largely can earthquake ground motion simulation benefit from deep learning approaches, quantifying the influence of geological heterogeneities on the spatio-temporal nature of the earthquake-induced site response. Two main frameworks are addressed: conditional generative approaches with diffusion models and neural operators. On one hand, generative adversarial learning and diffusions models are compared in a time-series super-resolution context [1]. The main task is to improve the outcome of 3D fault-to-site earthquake numerical simulations (accurate up to 5 Hz [2, 3]) at higher frequencies (5-30 Hz), by learning the low-to-high frequency mapping from seismograms recorded worldwide [1]. The generation is conditioned by the numerical simulation synthetic time-histories, in a one-to-many setup that enables site-specific probabilistic hazard assessment. On the other hand, the successful use of Factorized Fourier Neural Operator (F-FNO) to entirely replace cumbersome 3D elastodynamic numerical simulations is described [4], showing how this approach can pave the way to real-time large-scale digital twins of earthquake prone regions. The trained neural operator learns the relationship between 3D heterogeneous geologies and surface ground motions generated by the propagation of seismic wave through these geologies. The F-FNO is trained on the HEMEW-3D (https://github.com/lehmannfa/HEMEW3D/releases) database, comprising 30000 high-fidelity numerical simulations of earthquake ground motion through generic geologies, performed by employing the high-performance code SEM3D [4]. Next, a smaller database was built specifically for the Teil region (Ard&amp;#232;che, France), where a MW 4.9 moderate shallow earthquake occurred in November 2019 [4]. The F-FNO is then specialized on this database database with just 250 examples. Transfer learning improved the prediction error by 22 %. According to seismological Goodness-of-Fit (GoF) metrics, 91% of predictions have an excellent GoF for the phase (and 62% for the envelope). Ground motion intensity measurements are, on average, slightly underestimated.[1] Gatti, F.; Clouteau, D. Towards Blending Physics-Based Numerical Simulations and Seismic Databases Using Generative Adversarial Network. Computer Methods in Applied Mechanics and Engineering 2020, 372, 113421.https://doi.org/10.1016/j.cma.2020.113421.[2] Touhami, S.; Gatti, F.; Lopez-Caballero, F.; Cottereau, R.; de Abreu Corr&amp;#234;a, L.;Aubry, L.; Clouteau, D. SEM3D: A 3D High-Fidelity Numerical Earthquake Sim-ulator for Broadband (0&amp;#8211;10 Hz) Seismic Response Prediction at a Regional Scale.Geosciences 2022, 12 (3), 112. https://doi.org/10.3390/geosciences12030112. https://github.com/sem3d/SEM[3] Gatti, F.; Carvalho Paludo, L. D.; Svay, A.; Lopez-Caballero, F.-; Cottereau, R.;Clouteau, D. Investigation of the Earthquake Ground Motion Coherence in Het-erogeneous Non-Linear Soil Deposits. Procedia Engineering 2017, 199, 2354&amp;#8211;2359.https://doi.org/10.1016/j.proeng.2017.09.232.[4] Lehmann, F.; Gatti, F.; Bertin, M.; Clouteau, D. Machine Learning Opportunities to Conduct High-Fidelity Earthquake Simulations in Multi-Scale Heterogeneous Geology.Front. Earth Sci. 2022, 10, 1029160. https://doi.org/10.3389/feart.2022.1029160.[4] Lehmann, F.; Gatti, F.; Bertin, M.; Clouteau, D. Fourier Neural Operator Sur-rogate Model to Predict 3D Seismic Waves Propagation. arXiv April 20, 2023.http://arxiv.org/abs/2304.10242 (accessed 2023-04-21).</jats:p>",
+    "status": "candidate",
+    "retrieved_at": "2026-09-26T09:41:11.405711Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.2139/ssrn.6866538",
+    "title": "Curvature-Aware Physics-Informed Neural Operators for Wave Propagation near Schwarzschild Black Holes",
+    "authors": [
+      "lachiany, menachem"
+    ],
+    "year": 2026,
+    "container_title": "",
+    "abstract": "<jats:p>We propose a curvature-aware physics-informed neural operator framework for relativisticsurrogate modeling near Schwarzschild black holes. The central contribution is GeometricResidual Conditioning (GRC), a parametric loss-weighting scheme based on theKretschmann scalar K(r) = 48M2/r6 that adaptively focuses optimization on the highcurvaturenear-horizon region, where standard neural networks suffer from stiffness andspectral bias.The framework is validated in two stages. First, a physics-informed neural networktrained on 400 Schwarzschild geodesic trajectories achieves a ×16 inference speed-up over areference RK45 solver. Across three random seeds, GRC reduces near-horizon reconstructionerror by 7–8% relative to a plain PINN baseline, while ablation experiments show thatremoving GRC degrades performance by ×2.1, more than any other single loss component.Second, a Fourier Neural Operator for scalar wave propagation trained on 300 initial conditionsachieves ϵrel = 0.695 at T = 30M; the curvature-aware variant reduces near-horizonwave error by 10% and lowers prediction variance across test conditions.Both experiments are reported at proof-of-concept scale (CPU, small datasets). The keyfinding is that curvature-aware loss weighting consistently improves near-horizon robustness,a physically meaningful inductive bias for curved-spacetime operator learning. Theframework provides a foundation for future extensions toward Kerr geometries, gravitationalperturbations, and physics-informed operator networks.</jats:p>",
+    "status": "candidate",
+    "retrieved_at": "2026-09-26T09:41:11.405716Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.3997/2214-4609.202438004",
+    "title": "Petrophysical Inversion using the IGMN Neural Model with Uncertainty Propagation",
+    "authors": [
+      "Mazzutti, T.",
+      "Roisenberg, M.",
+      "De Figueiredo, L.P.",
+      "Rodrigues, B.B."
+    ],
+    "year": 2024,
+    "container_title": "Third EAGE Conference on Seismic Inversion",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-26T09:41:11.405721Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1093/gji/ggae342",
+    "title": "Deep neural Helmholtz operators for 3-D elastic wave propagation and inversion",
+    "authors": [
+      "Zou, Caifeng",
+      "Azizzadenesheli, Kamyar",
+      "Ross, Zachary E",
+      "Clayton, Robert W"
+    ],
+    "year": 2024,
+    "container_title": "Geophysical Journal International",
+    "abstract": "<jats:title>SUMMARY</jats:title>\n                  <jats:p>Numerical simulations of seismic wave propagation in heterogeneous 3-D media are central to investigating subsurface structures and understanding earthquake processes, yet are computationally expensive for large problems. This is particularly problematic for full-waveform inversion (FWI), which typically involves numerous runs of the forward process. In machine learning there has been considerable recent work in the area of operator learning, with a new class of models called neural operators allowing for data-driven solutions to partial differential equations. Recent work in seismology has shown that when neural operators are adequately trained, they can significantly shorten the compute time for wave propagation. However, the memory required for the 3-D time domain equations may be prohibitive. In this study, we show that these limitations can be overcome by solving the wave equations in the frequency domain, also known as the Helmholtz equations, since the solutions for a set of frequencies can be determined in parallel. The 3-D Helmholtz neural operator is 40 times more memory-efficient than an equivalent time-domain version. We use a Helmholtz neural operator for 2-D and 3-D elastic wave modelling, achieving two orders of magnitude acceleration compared to a baseline spectral element method. The neural operator accurately generalizes to variable velocity structures and can be evaluated on denser input meshes than used in the training simulations. We also show that when solving for wavefields strictly at the free surface, the accuracy can be significantly improved via a graph neural operator layer. In leveraging automatic differentiation, the proposed method can serve as an alternative to the adjoint-state approach for 3-D FWI, reducing the computation time by a factor of 350.</jats:p>",
+    "status": "candidate",
+    "retrieved_at": "2026-09-26T09:41:11.405726Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1007/978-3-319-16604-9_2",
+    "title": "Anelastic Wave Propagation (AWP)",
+    "authors": [
+      "Chen, Po",
+      "Lee, En-Jui"
+    ],
+    "year": 2015,
+    "container_title": "Full-3D Seismic Waveform Inversion",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-26T09:41:11.405731Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.31223/x5430p",
+    "title": "Seasonal Arctic sea ice forecasting with probabilistic deep learning",
+    "authors": [
+      "Andersson, Tom",
+      "Hosking, J.",
+      "Pérez-Ortiz, Maria",
+      "Paige, Brooks",
+      "Elliott, Andrew",
+      "Russell, Chris",
+      "Law, Stephen",
+      "Jones, Dan",
+      "Wilkinson, Jeremy",
+      "Phillips, Tony",
+      "Tietsche, Steffen",
+      "Sarojini, Beena",
+      "Blanchard-Wrigglesworth, Eduardo",
+      "Aksenov, Yevgeny",
+      "Downie, Rod",
+      "Shuckburgh, Emily"
+    ],
+    "year": 2022,
+    "container_title": "",
+    "abstract": "<jats:p>Anthropogenic warming has led to an unprecedented year-round reduction in Arctic sea ice extent. This has far-reaching consequences for indigenous and local communities, polar ecosystems, and global climate, motivating the need for accurate seasonal sea ice forecasts. While physics-based dynamical models can successfully forecast sea ice concentration several weeks ahead, they struggle to outperform simple statistical models at longer lead times. We present a probabilistic, deep learning sea ice forecasting system, IceNet. The system has been trained on climate simulations and observational data to forecast the next 6 months of monthly-averaged sea ice concentration maps. We show that IceNet advances the range of accurate sea ice forecasts, outperforming a state-of-the-art dynamical model in seasonal forecasts of summer sea ice, particularly for extreme sea ice events. This step-change in sea ice forecasting ability brings us closer to conservation tools that mitigate risks associated with rapid sea ice loss.</jats:p>",
+    "status": "candidate",
+    "retrieved_at": "2026-09-26T09:41:11.406568Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.5194/tc-2021-282",
+    "title": "Probabilistic Gridded Seasonal Sea Ice Presence Forecasting using Sequence to Sequence Learning",
+    "authors": [
+      "Asadi, Nazanin",
+      "Lamontagne, Philippe",
+      "King, Matthew",
+      "Richard, Martin",
+      "Scott, K. Andrea"
+    ],
+    "year": 2021,
+    "container_title": "",
+    "abstract": "<jats:p>Abstract. Accurate and timely forecasts of sea ice conditions are crucial for safe shipping operations in the Canadian Arctic and other ice-infested waters. Given the recent observations on the declining trend of Arctic sea ice extent over the past decades due to global warming, machine learning (ML) approaches are deployed to provide accurate short-term to long-term forecasting. This study unlike previous ML approaches in the sea-ice forecasting domain provides a daily spatial map of the probability of ice in the study domain up to 90 days of lead time. The predictions are further used to predict freeze-up/breakup dates and show their capability to capture these events within a valid time period (7 days) at specific locations of interest to communities.</jats:p>",
+    "status": "candidate",
+    "retrieved_at": "2026-09-26T09:41:11.406579Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.5194/gmd-18-2665-2025",
+    "title": "SICNet\n                    <sub>season</sub>\n                    V1.0: a transformer-based deep learning model for seasonal Arctic sea ice prediction by incorporating sea ice thickness data",
+    "authors": [
+      "Ren, Yibin",
+      "Li, Xiaofeng",
+      "Wang, Yunhe"
+    ],
+    "year": 2025,
+    "container_title": "Geoscientific Model Development",
+    "abstract": "<jats:p>\n                    The Arctic sea ice suffers dramatic retreat in summer and fall, which has far-reaching consequences for the global climate and commercial activities. Accurate seasonal sea ice predictions significantly infer climate change and are crucial for planning commercial activities. However, seasonal prediction of the summer sea ice encounters a significant obstacle known as the spring predictability barrier (SPB): predictions made later than the date of melt onset (roughly May) demonstrate good skill in predicting summer sea ice, while predictions made during or earlier than May exhibit considerably lower skill. This study develops a transformer-based deep learning model, SICNet\n                    <jats:sub>season</jats:sub>\n                    (V1.0), to predict the Arctic sea ice concentration on a seasonal scale. Including spring sea ice thickness (SIT) data in the model significantly improves the prediction skill at the SPB point. A 20-year (2000–2019) test demonstrates that the detrended anomaly correlation coefficient (ACC) of September sea ice extent (sea ice concentration &gt;15 %) predicted by our model during May and April is improved by 7.7 % and 10.61 %, respectively, compared to the ACC predicted by the state-of-the-art dynamic model SEAS5 from the European Centre for Medium-Range Weather Forecasts (ECMWF). Compared with the anomaly persistence benchmark, the mentioned improvement is 41.02 % and 36.33 %. Our deep learning model significantly reduces prediction errors in terms of September's sea ice concentration on seasonal scales compared to SEAS5 and the anomaly persistence model (Persistence). The spring SIT data are key in optimizing the predictions around the SPB, contributing to an enhancement in ACC of more than 20 % in September's sea ice extent (SIE) for 4- to 5-month-lead predictions. Our model achieves good generalizability in predicting the September SIE of 2020–2023.\n                  </jats:p>",
+    "status": "candidate",
+    "retrieved_at": "2026-09-26T09:41:11.406595Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.5194/gmd-2024-200",
+    "title": "SICNet\n                  <sub>season</sub>\n                  V1.0: a transformer-based deep learning model for seasonal Arctic sea ice prediction by integrating sea ice thickness data",
+    "authors": [
+      "Ren, Yibin",
+      "Li, Xiaofeng",
+      "Wang, Yunhe"
+    ],
+    "year": 2024,
+    "container_title": "",
+    "abstract": "<jats:p>Abstract. The Arctic sea ice is suffering dramatic retreating in summer and fall, which has far-reaching consequences on the global climate and commercial activities. Accurate seasonal sea ice predictions are significant in inferring climate change and planning commercial activities. However, seasonally predicting the summer sea ice encounters a significant obstacle known as the spring predictability barrier (SPB): predictions made later than May demonstrate good skill in predicting summer sea ice, while predictions made on or earlier than May exhibit considerably lower skill. This study develops a transformer-based deep-learning model, SICNetseason (V1.0), to predict the Arctic sea ice concentration on a seasonal scale. Including spring sea ice thickness (SIT) data in the model significantly improves the prediction skill at the SPB point. A 20-year (2000–2019) testing demonstrates that the detrended anomaly correlation coefficient (ACC) of Sep. sea ice extent (sea ice concentration &gt; 15 %) predicted by our model at May/Apr. is improved by 7.7 %/10.61 % over the ACC predicted by the state-of-the-art dynamic model from the European Centre for Medium-Range Weather Forecasts (ECMWF). Compared with the anomaly persistence benchmark, the mentioned improvement is 41.02 %/36.33 %. Our deep learning model significantly reduces prediction errors of Sep.'s sea ice concentration on seasonal scales compared to ECMWF and Persistence. The spring SIT data is key in optimizing the SPB, contributing to a more than 20 % ACC enhancement in Sep.'s SIE at four to five months lead predictions. Our model achieves good generalization in predicting the Sep. SIE of 2020–2023.</jats:p>",
+    "status": "candidate",
+    "retrieved_at": "2026-09-26T09:41:11.406606Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1109/csci62032.2023.00018",
+    "title": "Mid-Term Seasonal Arctic Sea Ice Concentration Forecasting Based on CNN-ConvLSTM and Wavelet Multi-Scale Deep Learning Algorithms",
+    "authors": [
+      "Li, Andrew R.",
+      "Wang, Xiaodi"
+    ],
+    "year": 2023,
+    "container_title": "2023 International Conference on Computational Science and Computational Intelligence (CSCI)",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-26T09:41:11.406613Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.5194/essd-2020-332-rc2",
+    "title": "review comments: Arctic sea ice cover data from spaceborne SAR by deep learning",
+    "authors": [],
+    "year": 2021,
+    "container_title": "",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-26T09:41:11.406618Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.5194/tc-2018-108",
+    "title": "The potential of sea ice leads as a predictor for seasonal Arctic sea ice extent prediction",
+    "authors": [
+      "Zhang, Yuanyuan",
+      "Cheng, Xiao",
+      "Liu, Jiping",
+      "Hui, Fengming"
+    ],
+    "year": 2018,
+    "container_title": "",
+    "abstract": "<jats:p>Abstract. The Arctic sea ice extent throughout the melt season is closely associated with initial sea ice state in winter and spring. Sea ice leads are important sites of energy fluxes in the Arctic Ocean, which may play an important role in the evolution of Arctic sea ice. In this study, we examine the potential of sea ice leads as a predictor for seasonal Arctic sea ice extent forecast using a recently developed daily sea ice leads product retrieved from Moderate-Resolution Imaging Spectroradiometer. Our results show that July pan-Arctic sea ice extent can be accurately predicted from the area of sea ice leads integrated from mid-winter to late spring. However, the predictive skills for August and September pan-Arctic sea ice extent are very low. When the area of sea ice leads integrated in the Atlantic and central and west Siberian sector of the Arctic is used, it has a significantly strong relationship (high predictability) with both July and August sea ice extent in the Atlantic and central and west Siberian sector of the Arctic. Thus, the realistic representation of sea ice leads (e.g., the areal coverage) in numerical prediction systems might improve the skill of forecast in the Arctic region.</jats:p>",
+    "status": "candidate",
+    "retrieved_at": "2026-09-26T09:41:11.406625Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.5194/tc-2016-69",
+    "title": "Mechanism   of   Seasonal   Arctic   Sea   Ice   Evolution   and   Arctic   Amplification",
+    "authors": [
+      "Kim, Kwang-Yul",
+      "Hamlington, Benjamin D.",
+      "Na, Hanna",
+      "Kim, Jinju"
+    ],
+    "year": 2016,
+    "container_title": "",
+    "abstract": "<jats:p>Abstract. Sea ice melting is proposed as a primary reason for the Artic amplification, although physical mechanism of the Arctic amplification and its connection with sea ice melting is still in debate. In the present study, monthly ERA-interim reanalysis data are analyzed via cyclostationary empirical orthogonal function analysis to understand the seasonal mechanism of sea ice melting in the Arctic Ocean and the Arctic amplification. While sea ice melting is widespread over much of the perimeter of the Arctic Ocean in summer, sea ice remains to be thin in winter only in the Barents-Kara Seas. Excessive turbulent heat flux through the sea surface exposed to air due to sea ice melting warms the atmospheric column. Warmer air increases the downward longwave radiation and subsequently surface air temperature, which facilitates sea surface remains to be ice free. A 1 % reduction in sea ice concentration in winter leads to ~ 0.76 W m−2 increase in upward heat flux, ~ 0.07 K increase in 850 hPa air temperature, ~ 0.97 W m−2 increase in downward longwave radiation, and ~ 0.26 K increase in surface air temperature. This positive feedback mechanism is not clearly observed in the Laptev, East Siberian, Chukchi, and Beaufort Seas, since sea ice refreezes in late fall (November) before excessive turbulent heat flux is available for warming the atmospheric column in winter. A detailed seasonal heat budget is presented in order to understand specific differences between the Barents-Kara Seas and Laptev, East Siberian, Chukchi, and Beaufort Seas.</jats:p>",
+    "status": "candidate",
+    "retrieved_at": "2026-09-26T09:41:11.406632Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.5194/tcd-8-2923-2014",
+    "title": "Seasonal cycle of solar energy fluxes through Arctic sea ice",
+    "authors": [
+      "Arndt, S.",
+      "Nicolaus, M."
+    ],
+    "year": 2014,
+    "container_title": "",
+    "abstract": "<jats:p>Abstract. Arctic sea ice has not only decreased considerably during the last decades, but also changed its physical properties towards a thinner and more seasonal cover. These changes strongly impact the energy budget and might affect the ice-associated ecosystem of the Arctic. But until now, it is not possible to quantify shortwave energy fluxes through sea ice sufficiently well over large regions and during different seasons. Here, we present a new parameterization of light transmittance through sea ice for all seasons as a function of variable sea ice properties. The annual maximum solar heat flux of 30 × 105 J m−2 occurs in June, then also matching the under ice ocean heat flux. Furthermore, our results suggest that 96% of the total annual solar heat input occurs from May to August, during four months only. Applying the new parameterization on remote sensing and reanalysis data from 1979 to 2011, we find an increase in light transmission of 1.5% a−1 for all regions. Sensitivity studies reveal that the results strongly depend on the timing of melt onset and the correct classification of ice types. Hence, these parameters are of great importance for quantifying under-ice radiation fluxes and the uncertainty of this parameterization. Assuming a two weeks earlier melt onset, the annual budget increases by 20%. Continuing the observed transition from Arctic multi- to first year sea ice could increase light transmittance by another 18%. Furthermore, the increase in light transmission directly contributes to an increase in internal and bottom melt of sea ice, resulting in a positive transmittance-melt feedback process.</jats:p>",
+    "status": "candidate",
+    "retrieved_at": "2026-09-26T09:41:11.406636Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.5194/egusphere-2026-4430",
+    "title": "Deep-learning-based stage-aware classification of Arctic melt ponds and their microtopographic associations from high-resolution UAV imagery",
+    "authors": [
+      "Shen, Wenyu",
+      "Pang, Xiaoping",
+      "Qu, Meng",
+      "Lv, Guokun",
+      "Wu, Xunxiang",
+      "Jiang, Farui",
+      "Shao, Jianbo",
+      "Li, Na"
+    ],
+    "year": 2026,
+    "container_title": "",
+    "abstract": "<jats:p>Abstract. Melt ponds are a key component of the summer Arctic sea-ice surface because their formation and evolution strongly affect surface albedo, energy absorption, meltwater redistribution, and sea-ice mass balance. Most previous remote-sensing studies have treated melt ponds as a single surface class, limiting the characterization of heterogeneous pond states during late-summer melt and refreezing. In this study, we developed MP-Unet, a stage-aware semantic segmentation framework for identifying Open, Transitional, and Frozen Melt Ponds from high-resolution unmanned aerial vehicle imagery acquired during the 14th Chinese National Arctic Research Expedition. MP-Unet integrates residual blocks with channel attention, atrous spatial pyramid pooling, attention-gated skip connections, and an auxiliary binary segmentation head. The full model achieved an F1-score of 0.9440 and a mean intersection over union of 0.7466, with class-specific IoU values of 0.5897, 0.7544, and 0.6539 for Open, Transitional, and Frozen Melt Ponds, respectively. Stage-resolved mapping revealed marked spatial heterogeneity among the five observation sites, while Transitional Melt Ponds accounted for approximately 80.3 % of the total pond area in the pooled sample. Pond area–frequency distributions showed a general scale-dependent decline and a sparse large-area tail, although the strength of the fitted scaling relationship varied among sites. Object-level analysis further showed that Frozen Melt Ponds generally had more compact and regular shapes, whereas Open Melt Ponds exhibited broader circularity distributions extending toward lower values. DEM-assisted analysis indicated significant stage-dependent differences in local relative elevation: Transitional Melt Ponds occupied lower local topographic positions than Frozen Melt Ponds, despite the absence of significant differences in distance to the nearest ridge-like feature. These findings demonstrate that stage-aware classification provides information beyond conventional binary melt pond mapping by linking surface-state identification with pond morphology and local microtopographic position. The proposed framework offers a practical basis for fine-scale observations of Arctic sea-ice surface evolution and for the validation and improvement of satellite and numerical melt pond products.</jats:p>",
+    "status": "candidate",
+    "retrieved_at": "2026-09-26T09:41:11.407204Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1088/1742-6596/2718/1/012013",
+    "title": "A Deep Learning Method for Arctic Sea Ice Type Classification Based on Active-Passive Microwave Data",
+    "authors": [
+      "Huang, Rui",
+      "Xie, Tao",
+      "Wang, Changying"
+    ],
+    "year": 2024,
+    "container_title": "Journal of Physics: Conference Series",
+    "abstract": "<jats:title>Abstract</jats:title>\n               <jats:p>The Arctic-scale classification of sea ice type is important in the fields of macro-monitoring in the Arctic, climate change assessment, and long time-series interannual variability of sea ice. To date, a lack of deep learning-based algorithms for detecting Arctic sea ice types from microwave sensors is comparatively rare. In this study, a sea ice type classification algorithm based on the U-Net-CBAM deep learning semantic segmentation network was developed by carrying out research on sea ice type classification algorithms in the Arctic through the integrated use of ASCAT scatterometer and AMSR2 radiometer data. The results of the study show that the proposed method achieves an impressive average accuracy of 94.1% in extracting sea ice categories using AARI ice maps. The results of the algorithm show a high degree of agreement with the OSI-SAF sea ice type daily products.</jats:p>",
+    "status": "candidate",
+    "retrieved_at": "2026-09-26T09:41:11.407215Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1142/9789811202490_0007",
+    "title": "The Application of Marine Big Data to Sea Ice Classification with Deep Learning",
+    "authors": [],
+    "year": 2019,
+    "container_title": "Marine Big Data",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-26T09:41:11.407221Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.5194/egusphere-2026-1556-supplement",
+    "title": "Supplementary material to \"Seasonal Predictability of Antarctic Sea Ice based on a Deep-learning Approach\"",
+    "authors": [
+      "Baek, Gyeongmin",
+      "Ko, Jiho",
+      "Jin, Emilia Kyung",
+      "Kug, Jong-Seong"
+    ],
+    "year": 2026,
+    "container_title": "",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-26T09:41:11.407228Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.64898/2026.08.12.743255",
+    "title": "A Comprehensive Benchmark of EEG-Based BCI Deep Learning Models for MCI and Dementia Classification",
+    "authors": [
+      "Zaitsev, Vasilii",
+      "Wei, Chun-Shu"
+    ],
+    "year": 2026,
+    "container_title": "",
+    "abstract": "<jats:title>\n                  A\n                  <jats:sc>bstract</jats:sc>\n                </jats:title>\n                <jats:p>Electroencephalography (EEG) is a promising tool for automated detection of mild cognitive impairment (MCI) and dementia, but comparisons across studies are limited by inconsistent datasets and evaluation protocols. This study benchmarks ten deep learning models across four resting-state EEG datasets and eight binary classification tasks using a unified preprocessing pipeline and five-fold subject-wise cross-validation. Each experiment was repeated ten times. SCCNet obtained the highest mean subject-level accuracy, sensitivity, and F1 score, while ShallowConvNet achieved the highest mean segment-level accuracy, specificity, and precision. Subject-level aggregation improved mean accuracy for all evaluated models, and performance varied substantially across datasets and diagnostic tasks. Higher computational cost did not consistently correspond to better classification performance, with several compact architectures remaining competitive with substantially larger models. The results provide a reproducible reference for comparing EEG-based dementia classification models under consistent subject-independent evaluation conditions.</jats:p>",
+    "status": "candidate",
+    "retrieved_at": "2026-09-26T09:41:11.407234Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.31223/x5nm8j",
+    "title": "Enhancing and Interpreting Deep Learning for Sea Ice Charting using the AutoICE Benchmark",
+    "authors": [
+      "Jalayer, Sepideh",
+      "Alkaee Taleghan, Samira",
+      "Pires de Lima, Rafael",
+      "Vahedi, Behzad",
+      "Hughes, Nick",
+      "Banaei-Kashani, Farnoush",
+      "Karimzadeh, Morteza"
+    ],
+    "year": 2025,
+    "container_title": "",
+    "abstract": "<jats:p>Accurate mapping of sea ice is crucial for marine navigation and monitoring climate change. Automating sea ice mapping remains challenging due to remotely-sensed signal ambiguity, the dynamic nature of sea ice, and limited field measurements. The AutoICE challenge recently introduced a benchmark to advance deep learning for sea ice mapping. Top-performing solutions used the U-Net architecture with extra pre/post-processing steps and incorporated location features to obtain higher metrics. However, model interpretation and diagnostics remain limited. In this paper, we develop a customized multi-task DeepLabV3 model and achieve state-of-the-art performance of 87.3% combined score without extra pre- and post-processing, and outperform the current state of the art in predicting Stage of Development (SoD). Our approach enhances generalizability and outperforms current cross-scene sea ice retrieval methods. We further use interpretability methods including Gradient SHAP (Gradient Shapley Additive Explanations) and Gradient-Weighted Class Activation Mapping (Grad-CAM) to shed light on the contribution of individual input features and pixels on model decisions, including the role of geospatial (i.e., location) encoding. While incorporating geospatial encoding seemingly improves inference on the benchmark-designated test set, our additional model interpretation and spatial cross-validation reveal over-reliance on geolocation and overfitting to the test set. This suggests that the top-performing solutions on the AutoICE challenge are likely to lack geographic generalizability, a common issue in remote sensing, made worse by the use of location in the models. As such, we urge caution and recommend the use of spatial cross-validation and interpretability methods when using location information as input for remote sensing applications and further development of sea ice mapping algorithms.</jats:p>",
+    "status": "candidate",
+    "retrieved_at": "2026-09-26T09:41:11.407240Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.2139/ssrn.4948163",
+    "title": "A High-Resolution Sea Ice Concentration Retrieval from Ice-Water Classification Using Sar Imagery and Deep Learning",
+    "authors": [
+      "Zhu, Tingting",
+      "Zhang, Shengkai",
+      "Zhang, Yu",
+      "Xiao, Feng",
+      "Shu, Chanfang",
+      "Li, Ming",
+      "Li, Fei"
+    ],
+    "year": 2024,
+    "container_title": "",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-26T09:41:11.407255Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.62311/nesx/rb4jy-978-81-689340-6-1",
+    "title": "Photonic Quantum Neural Operators for Multiscale Simulation and Scientific Machine Intelligence",
+    "authors": [
+      "Pasupuleti, Murali Krishna"
+    ],
+    "year": 2026,
+    "container_title": "",
+    "abstract": "<jats:p>Abstract:\nPhotonic quantum neural operators provide a research pathway for learning mappings between complex scientific fields while exploiting the bandwidth, interference, and continuous-variable structure of photonic computation. This monograph develops an integrated framework for multiscale simulation and scientific machine intelligence that unifies operator learning, bosonic photonic representation, probabilistic and causal modeling, physics-informed learning, scalable data engineering, and governance. The analysis begins with function-space foundations, cross-scale coupling, uncertainty, and reproducible research design; it then develops statistical formulations for calibration, inverse problems, causal intervention, sensitivity, and validation. A third layer examines hybrid quantum-photonic architectures, geometric and spectral operators, conservation constraints, domain generalization, robustness, interpretability, and safe abstention. The computational lifecycle is extended through scientific data fabrics, distributed training, simulation-to-learning loops, provenance-aware MLOps, and sustainable compute. Applied chapters translate these capabilities into climate and Earth-system modeling, energy and advanced materials, biomedical systems, autonomous manufacturing, robotics, and critical infrastructure. Throughout, the central proposition is that scientific value must be judged by physical consistency, uncertainty quality, reproducibility, resource efficiency, and decision relevance, not predictive accuracy alone. The resulting framework is intended for researchers, engineers, research institutions, industry, and policymakers designing next-generation scientific-computing ecosystems.\nKeywords\nphotonic quantum computing, neural operators, scientific machine learning, multiscale simulation, bosonic computation, continuous-variable quantum systems, operator learning, physics-informed AI, spectral operators, graph neural operators, causal inference, Bayesian calibration, inverse problems, uncertainty quantification, scientific MLOps, photonic accelerators, quantum-AI, distributed scientific computing, reproducibility, sustainable computing, digital twins, scientific governance</jats:p>",
+    "status": "candidate",
+    "retrieved_at": "2026-09-26T09:41:11.407936Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.55529/jaimlnn.61.100.111",
+    "title": "QEML-Net: Quantum-enhanced machine learning for predictive maintenance in industrial IoT environments using hybrid classical-quantum neural networks",
+    "authors": [
+      "Khan, Dr. Inam Ullah"
+    ],
+    "year": 2026,
+    "container_title": "Journal of Artificial Intelligence Machine Learning and Neural Network",
+    "abstract": "<jats:p>The economic value of predictive maintenance (PdM) for industrial IoT machinery is undeniable, as unplanned equipment downtime is estimated to cost industries USD 50 billion a year worldwide. Deep learning techniques have achieved good fault classification results on benchmark datasets, but they are not robust enough to cope with noise in industrial environments, are computationally intensive for use at the edge, and are unable to make good use of the capabilities of quantum computing. In this paper, a new hybrid network, called QEML-Net (Quantum-Enhanced Machine Learning Network), is proposed to combine the ResNet-50 deep residual network with Convolutional Block Attention Modules (CBAM), variational quantum feature enhancement, and a compound hybrid loss function, for efficient fault diagnosis. The framework features a 6-layer, 4-qubit Parameterized Quantum Circuit (PQC) with angle encoding and linear CNOT entanglement that is implemented using PennyLane. Experiments were performed on six harmonized datasets from public PdM which have 57164 samples across eight unified fault categories. The framework was validated with the help of Bayesian hyperparameter optimization, 5-fold stratified cross-validation, ablation studies, and statistical testing. By optimizing the deployment on the edges, QEML-Net got 97.3% accuracy, 96.9% macro-F1 score, AUC of 0.988, and real-time inference performance with 19ms latency and 52FPS throughput on the benchmark dataset. The statistical analysis revealed significant improvement when compared to other methods (p &lt; 0.001). Even when evaluated cross-dataset without fine-tuning, good generalization was achieved with an accuracy of 92.8–94.6%. The results reveal the advantages of combining the quantum variational circuits with deep learning to enhance the classification accuracy, interpretability, and deployment efficiency for the fault diagnosis of industrial IoT.</jats:p>",
+    "status": "candidate",
+    "retrieved_at": "2026-09-26T09:41:11.407946Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1007/s42484-024-00153-4",
+    "title": "Distributed quantum neural networks via partitioned features encoding",
+    "authors": [
+      "Kawase, Yoshiaki"
+    ],
+    "year": 2024,
+    "container_title": "Quantum Machine Intelligence",
+    "abstract": "<jats:title>Abstract</jats:title>\n                  <jats:p>Quantum neural networks are expected to be a promising application in near-term quantum computing, but face challenges such as vanishing gradients during optimization and limited expressibility by a limited number of qubits and shallow circuits. To mitigate these challenges, an approach using distributed quantum neural networks has been proposed to make a prediction by approximating outputs of a large circuit using multiple small circuits. However, the approximation of a large circuit requires an exponential number of small circuit evaluations. Here, we instead propose to distribute partitioned features over multiple small quantum neural networks and use the ensemble of their expectation values to generate predictions. To verify our distributed approach, we demonstrate ten class classification of the Semeion and MNIST handwritten digit datasets. The results of the Semeion dataset imply that while our distributed approach may outperform a single quantum neural network in classification performance, excessive partitioning reduces performance. Nevertheless, for the MNIST dataset, we succeeded in ten class classification with exceeding 96% accuracy. Our proposed method not only achieved highly accurate predictions for a large dataset but also reduced the hardware requirements for each quantum neural network compared to a large single quantum neural network. Our results highlight distributed quantum neural networks as a promising direction for practical quantum machine learning algorithms compatible with near-term quantum devices. We hope that our approach is useful for exploring quantum machine learning applications.</jats:p>",
+    "status": "candidate",
+    "retrieved_at": "2026-09-26T09:41:11.407951Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1103/2tt3-yndr",
+    "title": "Fourier Neural Operators for Time-Periodic Quantum Systems: Learning Floquet Hamiltonians, Observable Dynamics, and Operator Growth",
+    "authors": [
+      "Qi, Zihao",
+      "Peng, Yang",
+      "Earls, Christopher"
+    ],
+    "year": 2026,
+    "container_title": "PRX Quantum",
+    "abstract": "<jats:p>Time-periodic quantum systems exhibit a rich variety of far-from-equilibrium phenomena and serve as ideal platforms for quantum engineering and control. However, simulating their dynamics with conventional numerical methods remains challenging due to the exponential growth of Hilbert space dimension and rapid spreading of entanglement. In this work, we introduce Fourier neural operators (FNOs) as an efficient, accurate, and scalable framework for nonequilibrium quantum dynamics. Parameterized in Fourier space, FNO naturally captures temporal correlations and remains minimally dependent on discretization of time. We demonstrate the versatility of FNO through three complementary learning paradigms: reconstructing effective Floquet Hamiltonians, predicting expectation values of local observables, and learning quantum information spreading. For each learning task, FNO achieves remarkable accuracy, while attaining a significant speedup, compared to exact numerical methods. Moreover, FNO possesses capabilities beyond that of conventional methods, such as predicting all local observables from a subset of measurements without information about the Hamiltonian, as well as extrapolating beyond the time window provided by training data, enabling access to observables and operator-spreading dynamics that might be beyond the coherence time. By employing a spatially local basis, we argue that the computational cost of FNOs scales only polynomially with the system size. Our results establish FNO as a versatile and scalable computation framework that integrates numerical simulations and experimental data seamlessly, with direct implications for extracting meaningful physics from measurements by near-term quantum computers.</jats:p>",
+    "status": "candidate",
+    "retrieved_at": "2026-09-26T09:41:11.407958Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1515/9783111342276-013",
+    "title": "13 Quantum-enhanced neural networks: bridging the quantum algorithm and machine learning",
+    "authors": [
+      "Manoswini, Manisa",
+      "Kumar Nayak, Debasish Swapnesh",
+      "Das, Tejaswini",
+      "Swarnkar, Tripti"
+    ],
+    "year": 2024,
+    "container_title": "Quantum Machine Learning",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-26T09:41:11.407964Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1515/9783111342276-004",
+    "title": "4 Quantum machine learning in finance",
+    "authors": [
+      "Baheti, Kanu Priya",
+      "Dhiman, Purushender"
+    ],
+    "year": 2024,
+    "container_title": "Quantum Machine Learning",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-26T09:41:11.407968Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1007/s42484-025-00295-z",
+    "title": "A hybrid quantum neural network for split learning",
+    "authors": [
+      "Cowlessur, Hevish",
+      "Thapa, Chandra",
+      "Alpcan, Tansu",
+      "Camtepe, Seyit"
+    ],
+    "year": 2025,
+    "container_title": "Quantum Machine Intelligence",
+    "abstract": "<jats:title>Abstract</jats:title>\n                  <jats:p>Quantum machine learning (QML) is an emerging field of research with potential applications to distributed collaborative learning, such as split learning (SL). SL allows resource-constrained clients to collaboratively train ML models with a server, reduce their computational overhead, and enable data privacy by avoiding raw data sharing. Although QML with SL has been studied, the problem remains open in resource-constrained environments where clients lack quantum computing capabilities. Additionally, data privacy leakage between client and server in SL poses risks of reconstruction attacks on the server side. To address these issues, we propose hybrid quantum split learning (HQSL), an application of hybrid QML in SL. HQSL enables classical clients to train models with a hybrid quantum server and curtails reconstruction attacks. Additionally, we introduce a novel qubit-efficient data-loading technique for designing a quantum layer in HQSL, minimizing both the number of qubits and circuit depth. Evaluations on real hardware demonstrate HQSL’s practicality under realistic quantum noise. Experiments on five datasets demonstrate HQSL’s feasibility and ability to enhance classification performance compared to its classical models. Notably, HQSL achieves mean improvements of over 3% in both accuracy and F1-score for the Fashion-MNIST dataset and over 1.5% in both metrics for the Speech Commands dataset. We expand these studies to include up to 100 clients, confirming HQSL’s scalability. Moreover, we introduce a noise-based defense mechanism to tackle reconstruction attacks on the server side. Overall, HQSL enables classical clients to train collaboratively with a hybrid quantum server, improving model performance and resistance against reconstruction attacks.</jats:p>",
+    "status": "candidate",
+    "retrieved_at": "2026-09-26T09:41:11.407973Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1515/9783111342276-008",
+    "title": "8 Decentralized quantum machine learning: distributed quantum computing for enhanced learning",
+    "authors": [
+      "Ishaq, Malik Muzamil",
+      "Haq, Inam Ul",
+      "Gamal, Aya"
+    ],
+    "year": 2024,
+    "container_title": "Quantum Machine Learning",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-26T09:41:11.407979Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1017/9781009504942.007",
+    "title": "Neural-network quantum states",
+    "authors": [],
+    "year": 2025,
+    "container_title": "Machine Learning in Quantum Sciences",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-26T09:41:11.407983Z"
   }
 ]

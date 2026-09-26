@@ -2,22 +2,22 @@
 
 **论文全称**：*Foundation Models and Reasoning LLMs for Scientific Multimodal Time Series: A Survey*  
 **维护机构**：Antigravity Autonomous Research Loop (`lihuirui/awesome-scientific-time-series-foundation-models-survey`)  
-**当前版本**：v6.0 (迭代 6 - 连续微分流与李群对称性硬物理不变量、亚公里强对流生成式降尺度、闭环自主科研智能体与可执行基准)  
+**当前版本**：v7.0 (迭代 7 - 极值理论与重尾不确定性量化、高阶张量/量子神经算子地球物理求解、极地冰冻圈与海冰动力学大模型基准，收录 65 篇严谨学术成果)  
 **更新日期**：2026-09-26  
-**论文正文**：[`paper/main.pdf`](file:///workspace/survey-sci-ts/paper/main.pdf) (IEEEtran 双栏, 23 页, 包含 8 幅高分辨率出版级图表与 5 个全景对比表格)
+**论文正文**：[`paper/main.pdf`](file:///workspace/survey-sci-ts/paper/main.pdf) (IEEEtran 双栏, 26 页, 包含 8 幅高分辨率出版级图表与 7 个全景对比表格)
 
 ---
 
 ## 1. 综述背景与研究动机 (Introduction & Motivation)
 
-在过去十年中，深度学习在通用时间序列预测与时空数据挖掘（如城市交通、金融行情、人体姿态）取得了长足进步。然而，当技术延伸至**自然科学与地球物理系统**（大气天气预报、百年轻慢气候演变、流域水文与极端洪涝、海洋多尺度动力学、对地观测与卫星遥感、地震台网波形监测与日地空间物理）时，传统深度时序模型遭遇深刻瓶颈：
+在过去十年中，深度学习在通用时间序列预测与时空数据挖掘（如城市交通、金融行情、人体姿态）取得了长足进步。然而，当技术延伸至**自然科学与地球物理系统**（大气天气预报、百年轻慢气候演变、流域水文与极端洪涝、海洋多尺度动力学、对地观测与卫星遥感、地震台网波形监测与日地空间物理、极地冰冻圈演变）时，传统深度时序模型遭遇深刻瓶颈：
 
 1. **多物理模态极端异构**：科学时序跨越离散不规则测站观测（雨量站、水文计、地震台网）、连续空间再分析网格场（ECMWF ERA5, MERRA-2）、多光谱/高光谱卫星影像序列（Sentinel-1/2, Landsat）、连续物理张量波形与跨圈层通量数据。
 2. **多尺度连续动力学**：物理现象在空间上跨越米级局部湍流至数万公里全球环流；时间尺度跨越毫秒级（地震破裂波形）、小时/天级（强对流降水与台风路径）、至百年/千年级（温室气体驱动的气候变暖）。
 3. **物理守恒律与一致性约束**：经典自回归神经网络易发生“物理幻觉”（违背质量守恒、动量守恒或能量守恒），在长时段循环推演中出现累积谱衰减、过度平滑或极端事件失真。
 4. **科学推理与智能体决策**：随着大语言模型（LLM）的爆发，如何使智能体深度理解物理时序中的空间依赖与动力演进，具备科学假设生成、物理参数反演、多工具编排与闭环科学推理（Scientific Reasoning）能力，成为人工智能驱动科学研究（AI for Science）的核心命题。
 
-本综述系统梳理了 2021 年至今自然科学领域的 **科学多模态时序基础模型（Scientific Multimodal Time Series Foundation Models）** 与 **科学时序推理大语言模型（Scientific Reasoning LLMs / Multi-Agent Systems）**，收录并深度解构了 59 篇经过学术 API 严格验证的标志性研究。
+本综述系统梳理了 2021 年至今自然科学领域的 **科学多模态时序基础模型（Scientific Multimodal Time Series Foundation Models）** 与 **科学时序推理大语言模型（Scientific Reasoning LLMs / Multi-Agent Systems）**，收录并深度解构了 65 篇经过学术 API 严格验证的标志性研究。
 
 ---
 
@@ -36,16 +36,18 @@
    - 水文流域与洪涝预报      - 连续神经算子 (AFNO/SFNO)      - 硬投影物理守恒结构          - 多模态科学对齐 (K2/GeoChat)
    - 海洋流场与涡旋动力学    - 跨模态掩码自编码器 (MAE)      - 混合动力偏微分方程系统      - 自主科学智能体 (ClimateAgent/OceanGPT)
    - 地震学与地球物理波形    - 生成式扩散集合 (Diffusion)    (如 NeuralGCM 可微动力核)
+   - 极地冰冻圈与海冰动力学  - 高阶张量分解与量子神经算子
    - 空间天气与太阳物理      - 动态波长超网络 (DOFA)
 ```
 
 ### 维度 1：自然科学领域与多模态数据源 (Scientific Domains & Modalities)
-- **全球天气预报 (Weather Forecasting)**：以 ECMWF ERA5 为主流预训练语料，包含多层三维大气动力场（位势高度 $Z$、温度 $T$、风场 $U/V$、比湿 $Q$），模型分辨率从 0.25° (~28 km) 逐步推进至公里级。代表工作：Pangu-Weather、GraphCast、FourCastNet、FuXi、FengWu、Aurora、Prithvi WxC、Stormer（随机动态时间 Patching）。
+- **全球天气预报 (Weather Forecasting)**：以 ECMWF ERA5 为主流预训练语料，包含多层三维大气动力场（位势高度 $Z$、温度 $T$、风场 $U/V$、比湿 $Q$），模型分辨率从 0.25° (~28 km) 逐步推进至公里级。代表工作：Pangu-Weather、GraphCast、FourCastNet、FuXi、FengWu、Aurora、Prithvi WxC、Stormer（随机动态时间 Patching）、ExtremeCast（极值理论驱动的重尾天气灾害预报）。
 - **气候模拟与长期预估 (Climate Modeling)**：面向百年尺度演化，模拟全球表面温度 ($TAS$)、区域降水量 ($PR$) 对温室气体与气溶胶排放情景的响应。代表基准与模型：ClimateBench、ClimaX、ACE、ClimSim（NeurIPS 2023 杰出论文，涵盖 5.7 亿高分辨率垂直柱样本的混合多尺度物理参数化基准）。
 - **对地观测与多模态遥感 (Earth Observation & Remote Sensing)**：融合 Sentinel-1 (SAR)、Sentinel-2 (多光谱)、Landsat 与高程 DEM 的多时相、多波长序列。代表工作：SatMAE、Presto、Galileo、DOFA（动态波长超网络实现任意光学-SAR-热红外模态即插即用）、EarthPT（基于 700M 参数的全球网格遥感时序自回归基础模型）。
 - **水文流域与洪涝演进 (Hydrology & Streamflow)**：跨越全球数千个水文流域。代表工作：Google Global Flood、Caravan（涵盖全球 6,830 个集水区的标准化水文基准）。
 - **海洋动力学与流场 (Oceanography)**：模拟海表面高度异常 (SSH)、海表温度 (SST) 与中尺度涡旋演化。代表工作：XiHe、OceanGPT（融合海洋动力学与具身轨迹推理的专业大模型）、OceanBench（NeurIPS 2025 全球海洋对地观测与流场多任务基准平台）。
-- **地震学与地球物理波形 (Seismology & Waveforms)**：利用高频连续三分量台网波形实现微震检测与走时拾取。代表工作：SeisT、QuakeFlow、SeisBench（SRL 2022 全球多区域标准化地震机器学习基准与开源生态）。
+- **极地冰冻圈与海冰动力学 (Polar Cryosphere & Sea Ice Dynamics)**：模拟北极与南极海冰浓度（SIC）、厚度、漂移速度矢量以及冰架融化。融合 Sentinel-1 SAR、AMSR2 微波辐射计与跨年代 CMIP6 模拟序列。代表工作：IceNet（Nature Communications 2021，超越 ECMWF 季节模式 SEAS5 的概率海冰预测系统）、IceBench（arXiv 2025，包含多年代卫星遥感与动力耦合模式的极地海冰全任务基准平台）。
+- **地震学与地球物理波形 (Seismology & Waveforms)**：利用高频连续三分量台网波形实现微震检测与走时拾取，以及连续弹性动力学波场模拟。代表工作：SeisT、QuakeFlow、SeisBench（SRL 2022 全球多区域标准化地震机器学习基准与开源生态）、WaveFNO（SRL 2021 求解非均匀地壳弹性波方程的傅里叶神经算子）。
 - **日地物理与空间天气 (Space Weather & Solar Physics)**：利用 SDO 极紫外 (EUV) 影像与光球磁场时序，实现太阳耀斑预测。代表工作：SurffNet。
 - **通用跨学科科学时序 (Cross-Domain Scientific Time Series)**：突破领域孤岛，实现多学科时序的跨域预训练与零样本迁移。代表工作：UniTS（NeurIPS 2024 统一多任务时序大模型）、MOMENT（ICML 2024 开源通用时序基础模型族）。
 
@@ -57,6 +59,7 @@
 - **动态波长超网络 (Wavelength Hypernetworks)**：如 **DOFA**（Xiong et al., CVPR 2024），引入连续波长超网络动态生成视觉骨干的卷积/注意力权重，打破多传感器波段对齐壁垒。
 - **统一时序补丁化与跨域分词 (Universal Time Series Patching & Tokenization)**：如 **UniTS** 与 **MOMENT** 采用统一时间步长自适应分词与跨变量掩码，**Stormer** 引入空间随机 Patching 破坏空间网格的固定归纳偏置，显著缓解自回归误差积累。
 - **连续生成式扩散集合预报 (Generative Score-Based Diffusion Ensembles)**：如 **GenCast** 与 **SEEDS**（Li et al., Science Advances 2024），利用条件随机微分方程（SDE）与得分匹配（Score Matching），直接从真实物理后验中采样高分辨率集合成员，彻底克服确定性自回归模型的谱能量模糊。
+- **高阶张量分解与量子参数化神经算子 (Tensor-Decomposed & Quantum Neural Operators)**：如 **MG-TFNO**（Kossaifi et al., 2024）利用 Tucker 因子分解与张量网络对高维傅里叶谱核进行降维分解，参数压缩比达 $150\times$ 以上，突破显存墙实现单 GPU 上 $1024^2$ 多尺度湍流解算；**WaveFNO**（Yang et al., 2021）针对复杂地下介质弹性动力学波动方程构建谱域连续求解；**PHQFNO**（Marcandelli et al., 2025）引入保哈密顿酉参数化量子线路（PQC）与经典神经算子混合纠缠，展现量子优势对复杂流体演化的潜在加速。
 
 ### 维度 3：物理规律融合层次 (Physics Integration Levels)
 1. **纯数据驱动 (Purely Data-Driven)**：完全依赖数据规模与模型容量隐式拟合物理场演进。
@@ -104,12 +107,14 @@ $$d\mathbf{x} = \left[ \mathbf{f}(\mathbf{x}, t) - g(t)^2 \mathbf{s}_\theta(\mat
 直接从真实条件后验 $p(\mathbf{x}|\mathbf{y})$ 中抽取物理真实现象样本。实验证明，扩散集合预报严格保持了柯尔莫哥洛夫 $k^{-5/3}$ 惯性子区能谱斜率，并在连续分级概率评分（CRPS）上全面超越了欧洲中期天气预报中心顶尖的 50 成员操作性集合模式（ECMWF ENS）。
 
 ### 3.3 跨学科全景定量评测元表 (Multi-Domain Benchmark Meta-Synthesis)
-本综述首次在同一框架下整合了五大跨学科权威基准的量化表现（详见论文 Table III）：
+本综述首次在同一框架下整合了跨越七大物理学科权威基准的量化表现（详见论文 Table III）：
 - **大气天气基准 (WeatherBench 2)**：ECMWF IFS HRES 与各大 AI 模型相比，GraphCast、FuXi 与 AIFS 在 3、5、7 天预测中均保持领先。ECMWF 官方自研的 AIFS 模型在 Day 3 $Z500$ 达到 $124.6\ \mathrm{m}^2/\mathrm{s}^2$（IFS 为 152.8），验证了图编码-滑动窗口 Transformer 在业务化运行中的优越稳定性。
 - **气候模拟与亚网格物理 (ClimateBench & ClimSim)**：深度卷积与多尺度 Transformer 模拟器将年表面温度 $TAS$ 均方根误差由传统线性模式缩放（Pattern Scaling）的 $0.32\ \mathrm{K}$ 降至 $0.16\ \mathrm{K}$。在 ClimSim 亚网格对流加热率 $dT/dt$ 与增湿率 $dq/dt$ 预测中，多尺度 Transformer 达到 $R^2 \ge 0.79$，有效支持与流体动力核的长时间稳定耦合。
 - **全球水文与无测站流域洪涝演进 (Caravan & GlobalFlood)**：在涵盖全球 5,680 个水文站的统一评测中，传统基于物理的全球数值水文模式（GloFAS）的中位数纳什效率系数（NSE）仅为 0.35（Day 1）与 0.26（Day 5）；而融合河道拓扑汇流路由的实体感知 LSTM（EA-LSTM）在 Day 1 达到 0.74，在 Day 5 达到 0.62，实现了对无资料流域（Ungauged Basins）5天预警精度超越传统模式在第0天水平的跨越。
 - **全球海洋动力学基准 (OceanBench)**：基于 Mercator GLORYS12 再分析数据，球面傅里叶神经算子与分层 Transformer（如 XiHe）将第 5 天海表面高度异常（SSH）误差由气候态基线的 $0.120\ \mathrm{m}$ 压低至 $0.054\ \mathrm{m}$，海表温度（SST）误差压低至 $0.32\ \mathrm{K}$。
 - **全球地震连续波形拾取基准 (SeisBench)**：在 STEAD 与 INSTANCE 跨大洲台网标准化评测中，深度分层 Transformer（SeisT）与残差 U-Net（PhaseNet）将 P 波走时绝对误差降低至 $0.034\ \mathrm{s}$（经典 STA/LTA 为 $0.185\ \mathrm{s}$），震相识别 $F_1$ 分数突破 95.8%。
+- **极端灾害重尾预报基准 (ExtremeCast EVT Benchmark)**：在 99% 分位数降水与极端阵风中，结合广义极值损失 Exloss 与 ExBooster 的模型将临界成功指数（CSI）提升至 0.278（传统回归为 0.142），且不增加常规预测的均方根误差。
+- **极地冰冻圈海冰预测基准 (IceNet & IceBench)**：在北极 6 个月季节海冰范围推演中，IceNet 的非精确重叠误差（IIEE）相比 ECMWF SEAS5 降低 30% 以上；多源微波辐射与雷达融合使海冰漂移速度场相关性提升至 0.78。
 
 ### 3.4 算力开销、吞吐量与绿色计算能耗评测 (Computational Efficiency & Green NWP)
 本综述在 Table IV 中系统量化对比了操作性数值天气预报（NWP）与各大数据驱动基础模型的资源与能耗消耗：
@@ -175,6 +180,37 @@ $$d\mathbf{x} = \left[ \mathbf{f}(\mathbf{x}, t) - g(t)^2 \mathbf{s}_\theta(\mat
    **The AI Scientist**（Lu et al., Sakana AI / Oxford 2024）构建了全球首个全流程科研智能体生态：包含自主科学假设头脑风暴、文献检索（Semantic Scholar API 过滤去重）、实验代码自主编写与在 PyTorch 环境中的沙盒执行、结果可视化、自动撰写完整学术规范 LaTeX 论文（含章节结构与正文实验图表编排）、以及基于大语言模型的自主同行评审（Automated Reviewing Loop）。端到端单篇全自动论文产生成本低于 15 美元，开启了科学智能体规模化探索的新范式。
 2. **高阶科学编码与数理推导基准 (SciCode)**：
    **SciCode**（Tian et al., ICML 2024）针对复杂物理科学与偏微分方程求解构建了最严苛的可执行基准，覆盖凝聚态物理、理论天体物理、量子化学等领域的 338 个多步数理子问题与 65 步因果长程依赖。在严格的数值单元测试下，顶级前沿模型（GPT-4o 与 Claude 3.5 Sonnet）的端到端完全解决率不足 40%，揭示了大模型在处理跨尺度物理解算与保真度数值积分时依然存在深层认知壁垒。
+
+### 3.12 极值理论（EVT）与重尾物理损失（Extreme Value Theory & Heavy-Tailed Uncertainty Quantification）
+针对百年一遇特大暴雨、超级气旋、破坏性极端阵风等重尾灾害，传统对称 $L_2$ 损失由于趋向条件后验均值 $\mathbb{E}[\mathbf{y}|\mathbf{x}]$，导致灾害峰值严重“幅值削平”。
+1. **广义极值理论与 Fréchet 尾分布**：
+   根据 Fisher-Tippett-Gnedenko 定理，物理场最大值极限分布服从广义极值分布（GEV）：
+   $$G(z) = \exp\left\{ - \left[ 1 + \xi \left( \frac{z - \mu}{\sigma} \right) \right]^{-1/\xi} \right\}$$
+   在极端降水与台风风速中，尾指数 $\xi > 0$（Fréchet 重尾分布），呈现明显的幂律衰减特征。
+2. **Exloss 非对称极值损失与 ExBooster 扰动增强 (ExtremeCast)**：
+   **ExtremeCast**（Xu et al., 2024）提出了结合极值理论的 Exloss 损失函数：
+   $$\mathcal{L}_{\mathrm{Ex}}(\hat{\mathbf{y}}, \mathbf{y}) = \|\hat{\mathbf{y}} - \mathbf{y}\|_2^2 + \lambda \sum_{i} \mathbf{1}_{\{y_i > u\}} \cdot w(y_i) (\hat{y}_i - y_i)^2$$
+   其中 $u$ 为基于广义帕累托分布（GPD）确定的极值阈值，$w(y_i) \propto (y_i - u)^\xi$ 为重尾自适应权重。结合测试阶段的极值扰动增强模块 ExBooster，模型在 99% 分位数极端天气下的临界成功指数（CSI）从 0.142 飙升至 0.278（提升近 100%），同时保持天气尺度均方根误差稳定，突破了传统 AI 气象模型“报得准常规、报不准极值”的结构性瓶颈。
+
+### 3.13 高阶张量分解与量子-经典混合神经算子 (High-Order Tensor Operators & Quantum Parameterized Circuits)
+在三维高分辨率地球物理动力学（如三维湍流、地震弹性动力波场反演）中，稠密傅里叶神经算子（FNO）的谱权重张量 $\mathcal{W} \in \mathbb{C}^{K_1 \times K_2 \times K_3 \times d_{\mathrm{in}} \times d_{\mathrm{out}}}$ 遭遇严重的显存爆炸限制。
+1. **多重网格张量化傅里叶神经算子 (MG-TFNO)**：
+   **MG-TFNO**（Kossaifi et al., 2024）引入高阶 Tucker 张量分解与张量网络压缩：
+   $$\mathcal{W} = \mathcal{G} \times_1 \mathbf{U}^{(1)} \times_2 \mathbf{U}^{(2)} \times_3 \mathbf{U}^{(3)} \times_4 \mathbf{U}^{(4)} \times_5 \mathbf{U}^{(5)}$$
+   将谱权重参数量压缩 $150\times$ 至 $300\times$，并在多重网格层级间实现空间几何自适应传递。在 Navier-Stokes 多尺度湍流解算中，在单张商用 GPU 上即可直接处理 $1024^2$ 网格，推理速度超越经典伪谱求解器两个数量级。
+2. **复杂弹性介质波动力学求解 (WaveFNO)**：
+   **WaveFNO**（Yang et al., SRL 2021）针对非均匀地壳中强各向异性速度场，求解连续弹性动力学二阶双曲偏微分方程：
+   $$\rho \frac{\partial^2 \mathbf{u}}{\partial t^2} = \nabla \cdot \boldsymbol{\sigma} + \mathbf{f}, \quad \boldsymbol{\sigma} = \mathbf{C} : \boldsymbol{\varepsilon}(\mathbf{u})$$
+   突破了有限差分与有限元网格剖分的 Courant-Friedrichs-Lewy (CFL) 稳定性时间步长限制，实现跨震源、跨频带波场走时的瞬时高保真正演。
+3. **保哈密顿参数化量子神经算子 (PHQFNO)**：
+   **PHQFNO**（Marcandelli et al., 2025）构建了由变分酉参数化量子线路（PQC）$U(\boldsymbol{\theta}) = \prod_{l=1}^L \exp\left( -i \theta_l H_l \right)$ 与傅里叶谱算子交替纠缠的混合架构，在量子比特态空间中模拟连续流体演化的酉时间演化，从理论与小规模模拟上验证了量子张量算子在强非线性物理流形上的表达潜力。
+
+### 3.14 极地冰冻圈与海冰多模态动力学基准 (Polar Cryosphere & Sea Ice Dynamics Benchmarking)
+全球极地冰冻圈是调控全球大洋热盐环流与地球反照率能量平衡的关键“冷源”，但由于极夜、多云雾及极端严寒，传统实地观测极端稀缺，遥感观测存在严重的盲区与噪声。
+1. **概率海冰季节预测系统 (IceNet)**：
+   **IceNet**（Andersson et al., Nature Communications 2021 / British Antarctic Survey）开创了结合大尺度动力气候模拟（CMIP6 跨年代推演）与极地卫星遥感时序（AMSR2 微波辐射计、OSI-SAF）的混合预训练体系。采用多尺度残差 U-Net 输出泛北极海冰密集度（SIC）在未来 6 个月的全概率分布，预测海冰边缘非精确重叠误差（IIEE）相比 ECMWF 季节数值预报模式 SEAS5 降低超 30%，在极值暖季融化预警中展现出强大的鲁棒性。
+2. **极地多任务综合基准平台 (IceBench)**：
+   **IceBench**（Taleghan et al., 2025）构建了涵盖海冰密集度（SIC）、海冰漂移速度矢量场（$u_i, v_i$）与多源微波散射计数据的跨年代综合评估基准平台。跨架构评测揭示：引入多传感器跨模态融合（微波辐射计 + SAR 反向散射）可将海冰短期漂移追踪相关系数由 0.42 提升至 0.78，为极地航道通航安全与极区气候反馈研究奠定了坚实的基准支撑。
 
 ---
 

@@ -220,6 +220,7 @@ def plot_taxonomy_tree():
 def plot_domain_modality_heatmap():
     domains = [
         "Weather & Climate",
+        "Polar Cryosphere",
         "Earth Observation / RS",
         "Hydrology & Floods",
         "Oceanography",
@@ -240,6 +241,7 @@ def plot_domain_modality_heatmap():
     # 0 = Unexplored, 1 = Emerging, 2 = Growing, 3 = Highly Mature
     data = np.array([
         [3, 2, 2, 0, 1],  # Weather/Climate
+        [2, 3, 1, 0, 0],  # Polar Cryosphere (IceNet, IceBench)
         [1, 3, 0, 0, 1],  # Remote Sensing
         [2, 1, 3, 0, 1],  # Hydrology
         [3, 1, 1, 0, 0],  # Oceanography
@@ -248,7 +250,7 @@ def plot_domain_modality_heatmap():
         [2, 2, 3, 2, 3],  # Reasoning Benchmarks
     ])
 
-    fig, ax = plt.subplots(figsize=(10, 7), dpi=300)
+    fig, ax = plt.subplots(figsize=(10, 7.5), dpi=300)
     cax = ax.imshow(data, cmap="Blues", aspect="auto", vmin=0, vmax=3)
 
     ax.set_xticks(range(len(modalities)))
@@ -284,7 +286,9 @@ def plot_domain_modality_heatmap():
 
 def plot_weather_foundation_timeline():
     milestones = [
+        ("IceNet", "2021-08", "Sea Ice Prob. U-Net", 2021.65, -1.8, "#0284C7"),
         ("DGMR", "2021-09", "Radar GAN Nowcast", 2021.75, 1.8, "#D97706"),
+        ("WaveFNO", "2021-10", "Seismic FNO Inversion", 2021.82, -2.6, "#7C3AED"),
         ("FourCastNet", "2022-02", "AFNO Operator", 2022.15, 1.4, "#2563EB"),
         ("SatMAE", "2022-07", "Temporal ViT MAE", 2022.55, -1.5, "#0D9488"),
         ("Pangu-Weather", "2022-11", "3D Earth Swin", 2022.88, 2.5, "#DC2626"),
@@ -298,15 +302,17 @@ def plot_weather_foundation_timeline():
         ("FuXi", "2023-06", "Cascade Swin", 2023.60, -1.6, "#E11D48"),
         ("WeatherBench 2", "2023-08", "Evaluation Suite", 2023.68, 2.6, "#475569"),
         ("CorrDiff", "2023-09", "2km Downscaling", 2023.75, -2.2, "#059669"),
+        ("Time-LLM", "2023-10", "Reprogrammed LLM", 2023.80, 1.4, "#2563EB"),
         ("Prithvi-100M", "2023-10", "Geospatial ViT", 2023.82, -2.7, "#0D9488"),
+        ("FuXi-Extreme", "2023-10", "Extreme Diffusion", 2023.85, -1.8, "#DC2626"),
+        ("MG-TFNO", "2023-10", "Tensorized FNO", 2023.88, 1.9, "#10B981"),
         ("GenCast", "2023-12", "Diffusion Ensemble", 2023.95, 1.4, "#DC2626"),
         ("Stormer", "2023-12", "Random Patch ViT", 2023.98, -1.4, "#B45309"),
         ("SkySense", "2023-12", "1.9B Multi-Modal", 2023.96, 2.3, "#0D9488"),
         ("FengWu-4DVar", "2023-12", "Neural 4D-Var", 2023.97, -2.1, "#7C3AED"),
         ("DiffDA", "2024-01", "Diffusion DA", 2024.06, -1.3, "#DC2626"),
-        ("Time-LLM", "2023-10", "Reprogrammed LLM", 2023.80, 1.4, "#2563EB"),
-        ("FuXi-Extreme", "2023-10", "Extreme Diffusion", 2023.85, -1.8, "#DC2626"),
-        ("MOMENT", "2024-02", "Open TS Foundation", 2024.12, 2.5, "#059669"),
+        ("ExtremeCast", "2024-02", "Exloss Extreme Model", 2024.12, 1.5, "#DC2626"),
+        ("MOMENT", "2024-02", "Open TS Foundation", 2024.15, 2.5, "#059669"),
         ("UniTS", "2024-03", "Unified Multi-Task", 2024.20, -2.4, "#7C3AED"),
         ("Chronos", "2024-03", "Quantized LM TS", 2024.22, 1.6, "#D97706"),
         ("DOFA", "2024-03", "Plasticity EO", 2024.25, 1.3, "#B45309"),
@@ -320,7 +326,9 @@ def plot_weather_foundation_timeline():
         ("AI Scientist", "2024-08", "Autonomous Discovery", 2024.65, 2.4, "#DC2626"),
         ("Prithvi WxC", "2024-09", "2.3B Climate Model", 2024.72, 2.8, "#D97706"),
         ("Galileo", "2025-02", "Multi-Scale EO", 2025.15, -1.8, "#059669"),
+        ("IceBench", "2025-03", "SAR Sea Ice Bench", 2025.25, 2.2, "#0284C7"),
         ("OceanBench", "2025-05", "Ocean Dynamics Bench", 2025.40, -2.7, "#0284C7"),
+        ("PHQFNO", "2025-07", "Quantum Hybrid FNO", 2025.55, -2.3, "#4F46E5"),
         ("SciTS", "2025-10", "Scientific TS LLM", 2025.80, 1.6, "#2563EB"),
     ]
 
@@ -517,25 +525,48 @@ def plot_publications_by_year():
     included = [p for p in papers if p.get("status") == "included"]
     years = [2021, 2022, 2023, 2024, 2025, 2026]
     domains = [
-        "Weather/Climate",
+        "Weather & Climate",
+        "Polar Cryosphere",
         "Remote Sensing / EO",
-        "Hydrology",
+        "Hydrology & Floods",
         "Oceanography",
-        "Geophysics/Seismology",
+        "Geophysics / Seismology",
         "Space Weather",
-        "Reasoning / Benchmark"
+        "Reasoning & Agent Benchmarks",
+        "Foundational & Neural Operators",
     ]
+
+    def map_d(raw_d):
+        if "Polar Cryosphere" in raw_d:
+            return "Polar Cryosphere"
+        elif "Weather" in raw_d or "Climate" in raw_d:
+            return "Weather & Climate"
+        elif "Remote Sensing" in raw_d or "EO" in raw_d:
+            return "Remote Sensing / EO"
+        elif "Hydrology" in raw_d:
+            return "Hydrology & Floods"
+        elif "Ocean" in raw_d:
+            return "Oceanography"
+        elif "Geophysics" in raw_d or "Seism" in raw_d:
+            return "Geophysics / Seismology"
+        elif "Space" in raw_d:
+            return "Space Weather"
+        elif "Reasoning" in raw_d or "Cross-domain" in raw_d:
+            return "Reasoning & Agent Benchmarks"
+        elif "Core Methods" in raw_d or "Position" in raw_d or "Foundational" in raw_d:
+            return "Foundational & Neural Operators"
+        return "Foundational & Neural Operators"
 
     domain_counts = {d: {y: 0 for y in years} for d in domains}
     for p in included:
-        d = p.get("domain", "")
+        d = map_d(p.get("domain", ""))
         y = p.get("year")
         if d in domain_counts and y in years:
             domain_counts[d][y] += 1
 
-    fig, ax = plt.subplots(figsize=(9, 5.5), dpi=300)
+    fig, ax = plt.subplots(figsize=(10, 6), dpi=300)
     bottom = np.zeros(len(years))
-    palette = ["#2563EB", "#0D9488", "#D97706", "#0284C7", "#7C3AED", "#E11D48", "#16A34A"]
+    palette = ["#2563EB", "#0284C7", "#0D9488", "#D97706", "#059669", "#7C3AED", "#E11D48", "#16A34A", "#6366F1"]
 
     for idx, d in enumerate(domains):
         counts = [domain_counts[d][y] for y in years]
@@ -550,7 +581,7 @@ def plot_publications_by_year():
     ax.grid(axis="y", linestyle="--", alpha=0.5)
     ax.legend(loc="upper left", bbox_to_anchor=(1.02, 1.0), framealpha=0.9)
 
-    plt.title("Distribution of Scientific Time Series Foundation Papers by Domain",
+    plt.title("Distribution of Scientific Time Series Foundation Papers by Domain (N=65)",
               fontsize=13, fontweight="bold", pad=12)
     plt.tight_layout()
     plt.savefig(os.path.join(FIG_DIR, "publications_by_year.png"), dpi=300)

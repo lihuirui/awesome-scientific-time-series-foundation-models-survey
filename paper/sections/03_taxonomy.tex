@@ -19,6 +19,7 @@ Scientific time series foundation models specialize across distinct physical env
     \item \textbf{Oceanography and Marine Systems}: Involving global eddy-resolving reanalysis fields (e.g., GLORYS12V1), sea surface height anomalies, temperature/salinity profiles, and acoustic sensor logs~\cite{wang2024xihe,elaouni2025oceanbench,bi2024oceangpt}.
     \item \textbf{Geophysics and Seismology}: Continuous 3-component seismic waveforms, phase arrival triggers, fault slip observations, and GPS tectonic deformation velocities~\cite{li2024seist,zhu2019phasenet,woollam2022seisbench}.
     \item \textbf{Space Weather and Heliophysics}: Continuous solar extreme ultraviolet (EUV) magnetograms, solar wind ion velocities, and geomagnetic disturbance indices~\cite{roy2025surya}.
+    \item \textbf{Polar Cryosphere and Sea Ice Dynamics}: Involving satellite synthetic aperture radar (SAR) swaths, microwave radiometer brightness temperatures, ice-sheet altimetry, and continuous sea ice concentration fields governing planetary thermodynamic albedo~\cite{andersson2021icenet,taleghan2025icebench}.
     \item \textbf{Cross-Domain Multimodal Foundations}: Universal time series representations bridging sensor networks, in-situ monitors, and multi-scale physical dynamics~\cite{gao2024units,goswami2024moment}.
 \end{itemize}
 
@@ -37,8 +38,9 @@ We categorize foundation backbones by their spatial-temporal inductive biases:
     \item \textbf{3D Spatial and Spherical Transformers}: Employing 3D Earth-specific patch embeddings, hierarchical Swin-like windowed attention, and vertical pressure-level encodings~\cite{bi2023pangu,bodnar2024aurora,chen2023fuxi,nguyen2023stormer}.
     \item \textbf{Multi-Mesh Graph Neural Networks}: Discretizing the spherical Earth via refined recursive icosahedral meshes to ensure uniform spatial resolution without polar distortions~\cite{lam2023graphcast}.
     \item \textbf{Continuous Neural Operators}: Leveraging Fourier transforms and spherical harmonic convolutions (e.g., AFNO, SFNO) to learn discretization-invariant operators on Riemannian function spaces~\cite{pathak2022fourcastnet,bonev2023sfno}.
+    \item \textbf{High-Order Tensor and Quantum-Classical Hybrid Operators}: Factorizing infinite-dimensional spectral convolution weights via Tucker and Tensor-Train factorizations or embedding spectral transformation into parameterized quantum circuits (PQC) for scalable PDE solving and wavefield tomography~\cite{kossaifi2024multigrid,yang2021seismic,marcandelli2025phqfno}.
     \item \textbf{Multimodal Masked Autoencoders and Continuous Hypernetworks}: Extending masked autoencoding (MAE) across spatial patches, temporal revisit cycles, and dynamic wavelength hypernetworks~\cite{cong2022satmae,tseng2023presto,tseng2025galileo,jakubik2023prithvi,xiong2024dofa,goswami2024moment}.
-    \item \textbf{Generative Diffusion Models}: Utilizing score-based diffusion denoising to generate calibrated, physically perturbed probabilistic weather and extreme event ensembles~\cite{price2023gencast,li2024seeds}.
+    \item \textbf{Generative Diffusion Models}: Utilizing score-based diffusion denoising to generate calibrated, physically perturbed probabilistic weather and extreme event ensembles~\cite{price2023gencast,li2024seeds,xu2024extremecast}.
     \item \textbf{Unified Multi-Task Foundational Transformers}: Applying prompt-conditioned masking and task tokens across heterogeneous time series topologies~\cite{gao2024units,smith2023earthpt}.
 \end{itemize}
 

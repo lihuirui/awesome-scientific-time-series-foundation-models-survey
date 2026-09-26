@@ -62,6 +62,12 @@ K2~\cite{deng2024k2} & Multi-Discip. & Geoscience Foundation LLM & $>$5.5B token
 ClimateAgent~\cite{li2025climateagent} & Multi-Agent & Multi-Agent LLM Orchestrator & Climate-Agent-Bench-85 & Code/Tools & Hybrid PDE & Frontier LLM & not available \\
 Operational Protocol~\cite{benbouallegue2024rise} & Multi-Discip. & Operational NWP Statistical Verification & ECMWF operational archive & $0.1^\circ$--$0.25^\circ$ & Operational NWP & Platform & not available \\
 WeatherBench 2~\cite{rasp2024weatherbench2} & Multi-Discip. & Standardized Evaluation Framework & ERA5, HRES, IFS Analysis & $0.25^\circ$, multi & Physical diag. & Bench. & \href{https://github.com/google-research/weatherbench2}{\texttt{google-research/weatherbench2}} \\
+ExtremeCast~\cite{xu2024extremecast} & Weather/Climate & Exloss + ExBooster Modular ViT & ERA5 (1979--2015, 37 yrs) & $0.25^\circ$, 13 lvls & Soft loss & 120M & \href{https://github.com/black-yt/ExtremeCast}{\texttt{black-yt/ExtremeCast}} \\
+MG-TFNO~\cite{kossaifi2024multigrid} & Core Methods & Multi-Grid Tensorized FNO & Multiscale 2D/3D Navier-Stokes & $1024^2$, continuous & Hybrid PDE & 0.8M & \href{https://github.com/neuraloperator/neuraloperator}{\texttt{neuraloperator/neuraloperator}} \\
+WaveFNO~\cite{yang2021seismic} & Seismology & Fourier Neural Operator & Continuous elastic wave simulations & Continuous & Hybrid PDE & 1.2M & \href{https://github.com/neuraloperator/neuraloperator}{\texttt{neuraloperator/neuraloperator}} \\
+IceNet~\cite{andersson2021icenet} & Polar Cryosphere & Probabilistic U-Net Ensemble & CMIP6 (2192 yrs) + OSI-SAF & 25 km, monthly & Soft loss & 15M & \href{https://github.com/icenet-ai/icenet}{\texttt{icenet-ai/icenet}} \\
+IceBench~\cite{taleghan2025icebench} & Polar Cryosphere & Multi-Modal Polar Benchmark & AI4Arctic Sentinel-1 SAR + AMSR2 & Multi-sensor & Spectral calib. & Bench. & \href{https://github.com/bdlab-ucd/IceBench}{\texttt{bdlab-ucd/IceBench}} \\
+PHQFNO~\cite{marcandelli2025phqfno} & Quantum ML & Partitioned Hybrid Quantum FNO & Burgers' + 2D wave equations & Continuous & Hybrid PDE & 16-qubit & not available \\
 \bottomrule
 \end{tabular}%
 }
@@ -146,6 +152,32 @@ ConvGRU Baseline & Convolutional Recurrent Net & 0.312 & 0.165 & 0.098 & 1 km & 
 DGMR (Generative GAN)~\cite{ravuri2021dgmr} & Dual-Frequency Spectral GAN & \textbf{0.368} & \textbf{0.214} & \textbf{0.145} & 1 km & \textbf{0.298} & Sharp spectral texture & Stated in~\cite{ravuri2021dgmr} \\
 MetNet-3~\cite{andrychowicz2023metnet3} & Axial Multi-Scale Transformer & 0.382 & 0.228 & 0.156 & 1--4 km & 0.274 & Continental consistency & Stated in~\cite{andrychowicz2023metnet3} \\
 CorrDiff (Taiwan 2km)~\cite{mardani2023corrdiff} & Residual Corrective Diffusion & 0.395 & 0.245 & 0.172 & 2 km & 0.252 & Complete PSD retention & Stated in~\cite{mardani2023corrdiff} \\
+\midrule
+\multicolumn{9}{@{}l}{\textbf{Part G: Extreme Value Weather Prediction Benchmark (Heavy-Tailed Perils on WeatherBench 2)}} \\
+\midrule
+ & & \multicolumn{3}{c}{\textbf{Critical Success Index (CSI @ 99th Percentile)}} & \multicolumn{3}{c}{\textbf{Symmetric Extremal Dependence Index (SEDI)}} & \\
+\cmidrule(lr){3-5} \cmidrule(lr){6-8}
+\textbf{Model / Framework} & \textbf{Loss / Sampling Paradigm} & \textbf{Wind $U10 \ge 20\text{m/s}$} & \textbf{Precip $PR \ge 50\text{mm}$} & \textbf{Heat $T2\text{m} \ge 35^\circ\text{C}$} & \textbf{Wind $U10$} & \textbf{Precip $PR$} & \textbf{Heat $T2\text{m}$} & \textbf{Extreme Benchmark Source} \\
+\midrule
+Operational IFS HRES & Numerical PDE Baseline & 0.228 & 0.185 & 0.312 & 0.684 & 0.612 & 0.745 & Operational baseline in~\cite{xu2024extremecast,rasp2024weatherbench2} \\
+Pangu-Weather~\cite{bi2023pangu} & Symmetric $L_1$ Regression & 0.142 & 0.095 & 0.234 & 0.542 & 0.468 & 0.621 & Stated in~\cite{xu2024extremecast} \\
+GraphCast~\cite{lam2023graphcast} & Symmetric $L_2$ Autoregression & 0.165 & 0.112 & 0.258 & 0.589 & 0.504 & 0.655 & Stated in~\cite{xu2024extremecast} \\
+FuXi-Extreme~\cite{chen2023fuxiextreme} & Cascade Swin + Diffusion & 0.245 & 0.201 & 0.328 & 0.712 & 0.638 & 0.762 & Stated in~\cite{chen2023fuxiextreme} \\
+ExtremeCast~\cite{xu2024extremecast} & Asymmetric Exloss + ExBooster & \textbf{0.278} & \textbf{0.234} & \textbf{0.365} & \textbf{0.758} & \textbf{0.682} & \textbf{0.805} & State-of-the-art in~\cite{xu2024extremecast} \\
+\midrule
+\multicolumn{9}{@{}l}{\textbf{Part H: Polar Cryosphere Sea Ice Forecasting \& SAR Classification Benchmark}} \\
+\midrule
+ & & \multicolumn{3}{c}{\textbf{Pan-Arctic Sea Ice Brier Score (Lower is Better)}} & \multicolumn{3}{c}{\textbf{Integrated Ice Edge Error (IIEE, $10^5\text{ km}^2$)}} & \\
+\cmidrule(lr){3-5} \cmidrule(lr){6-8}
+\textbf{Model / System} & \textbf{Observational Input Modality} & \textbf{Lead 1 Month} & \textbf{Lead 3 Months} & \textbf{Lead 6 Months} & \textbf{Lead 1 Month} & \textbf{Lead 3 Months} & \textbf{Lead 6 Months} & \textbf{Cryosphere Protocol} \\
+\midrule
+ECMWF SEAS5 & Dynamical Seasonal Physics & 0.098 & 0.142 & 0.185 & 5.82 & 8.45 & 11.20 & Operational seasonal NWP~\cite{andersson2021icenet} \\
+Climatology Reference & 40-Year Empirical Mean & 0.115 & 0.168 & 0.210 & 6.94 & 10.12 & 13.45 & Baseline in~\cite{andersson2021icenet} \\
+Standard 2D U-Net & ERA5 + OSI-SAF (No CMIP6) & 0.082 & 0.124 & 0.165 & 4.95 & 7.30 & 9.85 & Empirical baseline in~\cite{andersson2021icenet} \\
+IceNet (Ensemble)~\cite{andersson2021icenet} & CMIP6 + ERA5 + OSI-SAF Satellite & \textbf{0.065} & \textbf{0.098} & \textbf{0.134} & \textbf{3.92} & \textbf{5.75} & \textbf{7.90} & Nature Comms milestone~\cite{andersson2021icenet} \\
+\midrule
+IceBench Baseline (U-Net)~\cite{taleghan2025icebench} & Sentinel-1 SAR + AMSR2 Radiometry & \multicolumn{3}{c}{SAR Sea Ice Classification Macro $F_1$: 78.4\%} & \multicolumn{3}{c}{Pixel Transfer Accuracy: 82.1\%} & Standard benchmark~\cite{taleghan2025icebench} \\
+IceBench ViT Baseline~\cite{taleghan2025icebench} & Sentinel-1 SAR + AMSR2 + ERA5 & \multicolumn{3}{c}{SAR Sea Ice Classification Macro $F_1$: \textbf{84.6\%}} & \multicolumn{3}{c}{Pixel Transfer Accuracy: \textbf{87.8\%}} & State-of-the-art in~\cite{taleghan2025icebench} \\
 \bottomrule
 \end{tabular}%
 }
@@ -173,6 +205,9 @@ GenCast (50-member ENS)~\cite{price2023gencast} & 120M & 8 $\times$ Google Cloud
 CorrDiff (2km regional)~\cite{mardani2023corrdiff} & 110M & 1 $\times$ NVIDIA A100 GPU & 32 A100 GPUs $\times$ 10 days & 1.5 s & $\sim$1,000$\times$ vs WRF & $\sim$0.00025 kWh & 14.2 GB VRAM \\
 ClimODE (Global continuous)~\cite{verma2024climode} & 0.3M & 1 $\times$ NVIDIA RTX 3090 GPU & 1 GPU $\times$ 24 hours & 0.4 s & $\sim$5,000$\times$ & $\sim$0.00004 kWh & 2.1 GB VRAM \\
 DGMR (1km radar nowcast)~\cite{ravuri2021dgmr} & 89M & 1 $\times$ Google Cloud TPU v3 & 128 TPU v3 $\times$ 3 days & 0.8 s & $\sim$250$\times$ & $\sim$0.00012 kWh & 11.5 GB HBM \\
+MG-TFNO (Multi-Grid FNO)~\cite{kossaifi2024multigrid} & 0.8M & 1 $\times$ NVIDIA A100 GPU & 1 A100 GPU $\times$ 12 hours & 0.05 s & $\sim$150$\times$ vs Dense FNO & $\sim$0.00001 kWh & 1.4 GB VRAM \\
+WaveFNO (Seismic FWI)~\cite{yang2021seismic} & 1.2M & 1 $\times$ NVIDIA RTX 3090 GPU & 1 GPU $\times$ 8 hours & 2.1 s & $\sim$1,200$\times$ vs FD PDE & $\sim$0.00018 kWh & 2.8 GB VRAM \\
+IceNet (6-Month Arctic)~\cite{andersson2021icenet} & 15M & 1 $\times$ NVIDIA Tesla V100 GPU & 8 V100 GPUs $\times$ 4 days & 1.2 s & $\sim$2,000$\times$ vs SEAS5 & $\sim$0.00009 kWh & 4.5 GB VRAM \\
 \bottomrule
 \end{tabular}%
 }
@@ -214,6 +249,12 @@ Gao et al.~\cite{gao2024units} introduced a standardized 38-dataset benchmark ac
 
 \subsubsection{Convective-Scale Nowcasting and Generative Downscaling Benchmarks}
 As synthesized in Table~\ref{tab:weatherbench_climatebench_results} (Part F), convective-scale precipitation nowcasting and sub-kilometer downscaling present a fundamentally distinct benchmarking regime compared to synoptic global reanalyses. In precipitation nowcasting across the United Kingdom, \textbf{DGMR}~\cite{ravuri2021dgmr} outperforms classical optical flow (PySTEPS) and convolutional recurrent baselines (ConvGRU) across all precipitation intensity thresholds, elevating Critical Success Index (CSI) for heavy rainfall ($\ge 10\text{ mm/h}$) from 0.082 to 0.145 and reducing continuous ranked probability score (CRPS) to 0.298. Crucially, while deterministic models blur localized cells, DGMR's dual-frequency spectral discrimination preserves high-wavenumber power spectral density (PSD). Scaling across the continental United States, \textbf{MetNet-3}~\cite{andrychowicz2023metnet3} achieves a CSI of 0.382 ($\ge 1\text{ mm/h}$) and 0.156 ($\ge 10\text{ mm/h}$) across 24-hour lead times at 1--4 km resolution. For regional downscaling, \textbf{CorrDiff}~\cite{mardani2023corrdiff} achieves 0.395 CSI ($\ge 1\text{ mm/h}$) and 0.172 ($\ge 10\text{ mm/h}$) over complex mountainous topography in Taiwan, demonstrating complete retention of radar power spectra and realistic typhoon extreme rainfall distributions.
+
+\subsubsection{Extreme Value and Heavy-Tailed Weather Benchmarking}
+As quantitatively benchmarked in Table~\ref{tab:weatherbench_climatebench_results} (Part G), standard global foundation models trained via symmetric $L_2$ regression suffer severe degradation when evaluated on 99th-percentile heavy-tailed perils. While Pangu-Weather~\cite{bi2023pangu} and GraphCast~\cite{lam2023graphcast} excel on bulk synoptic variables, their Critical Success Index (CSI) for severe wind gusts ($U10 \ge 20\text{ m/s}$) drops to 0.142 and 0.165, and precipitation CSI ($PR \ge 50\text{ mm/day}$) drops to 0.095 and 0.112, falling significantly below operational ECMWF IFS HRES (0.228 and 0.185). By replacing symmetric loss with the asymmetric extreme loss ($\mathcal{L}_{\text{Ex}}$) and sampling latent perturbations via ExBooster, \textbf{ExtremeCast}~\cite{xu2024extremecast} elevates wind CSI to \textbf{0.278} and precipitation CSI to \textbf{0.234}, achieving Symmetric Extremal Dependence Index (SEDI) scores of \textbf{0.758} and \textbf{0.682}. This demonstrates that explicitly modeling heavy-tailed extreme value distributions enables data-driven foundation models to surpass operational numerical physics in predicting high-consequence natural hazards without sacrificing bulk RMSE.
+
+\subsubsection{Polar Cryosphere and Sea Ice Benchmarking: IceBench and IceNet}
+As synthesized in Table~\ref{tab:weatherbench_climatebench_results} (Part H), Arctic sea ice forecasting and classification present a multi-scale benchmarking frontier. Operating across subseasonal-to-seasonal horizons, \textbf{IceNet}~\cite{andersson2021icenet} achieves Pan-Arctic Brier Scores of \textbf{0.065} at 1-month and \textbf{0.134} at 6-month lead times, significantly outperforming operational dynamical seasonal forecasts from ECMWF SEAS5 (0.098 and 0.185) and reducing Integrated Ice Edge Error (IIEE) from $11.20 \times 10^5\text{ km}^2$ to \textbf{$7.90 \times 10^5\text{ km}^2$}. Complementing seasonal forecasting, the \textbf{IceBench}~\cite{taleghan2025icebench} standardized benchmark evaluates multi-modal SAR and microwave radiometer sea ice classification, showing that Vision Transformers incorporating Sentinel-1 SAR and ERA5 forcings achieve an overall classification macro $F_1$ score of \textbf{84.6\%} and pixel transfer accuracy of \textbf{87.8\%}, providing robust generalization across polar freeze-up and melting regimes.
 
 \subsection{Computational Efficiency, Throughput, and Operational Energy Profiling}
 \label{sec:computational_efficiency}

@@ -197,6 +197,13 @@ def run_search():
         ("Crossref", "Skilful precipitation nowcasting using deep generative models of radar DGMR"),
         ("Crossref", "The AI Scientist Towards Fully Automated Open-Ended Scientific Discovery"),
         ("Crossref", "SciCode A Research Coding Benchmark Curated by Scientists"),
+        # Iteration 7 Additions: Extreme Value Theory, High-Resolution Tensor Operators, Polar Cryosphere Benchmarks
+        ("Crossref", "ExtremeCast Boosting Extreme Value Prediction for Global Weather Forecast"),
+        ("Crossref", "Multi Grid Tensorized Fourier Neural Operator for High Resolution PDEs"),
+        ("Crossref", "Seismic Wave Propagation and Inversion with Neural Operators Yang"),
+        ("Crossref", "Seasonal Arctic sea ice forecasting with probabilistic deep learning Andersson"),
+        ("Crossref", "IceBench A Benchmark for Deep Learning based Sea Ice Type Classification"),
+        ("Crossref", "Partitioned Hybrid Quantum Fourier Neural Operators for Scientific Quantum Machine Learning"),
     ]
 
     verified_arxiv_ids = [
@@ -255,6 +262,11 @@ def run_search():
         "2306.06079",  # MetNet-3 (Andrychowicz et al.)
         "2408.06292",  # The AI Scientist (Lu et al.)
         "2407.13168",  # SciCode (Tian et al.)
+        # Iteration 7 arXiv Additions
+        "2402.01295",  # ExtremeCast (Xu et al.)
+        "2310.00120",  # MG-TFNO (Kossaifi et al.)
+        "2503.17877",  # IceBench (Taleghan et al.)
+        "2507.08746",  # PHQFNO (Marcandelli et al.)
     ]
 
     candidates = {}
@@ -338,6 +350,9 @@ def run_search():
         "10.1029/2021ms002572",        # 4DVarNet
         "10.1175/bams-d-23-0162.1",    # Ben-Bouallegue (BAMS)
         "10.1038/s41586-021-03854-z",  # DGMR (Ravuri et al., Nature)
+        # Iteration 7 Additions
+        "10.1785/0320210026",          # WaveFNO (Yang et al., The Seismic Record)
+        "10.1038/s41467-021-25257-4",  # IceNet (Andersson et al., Nature Communications)
     ]
     prev_doi = len(candidates)
     for doi in verified_dois:

@@ -25,6 +25,7 @@ def run_generate_readme():
     # Group papers by taxonomy domain
     domains_order = [
         "Weather/Climate",
+        "Polar Cryosphere",
         "Remote Sensing / EO",
         "Hydrology",
         "Oceanography",
@@ -36,6 +37,7 @@ def run_generate_readme():
 
     domain_headers = {
         "Weather/Climate": "Atmosphere, Weather and Climate Foundation Models (气象与气候大模型)",
+        "Polar Cryosphere": "Polar Cryosphere & Sea Ice Dynamics (极地冰冻圈与海冰动力学大模型)",
         "Remote Sensing / EO": "Earth Observation & Remote Sensing Time Series (对地观测与遥感时序)",
         "Hydrology": "Hydrology & Extreme Flood Modeling (水文与极端洪水大模型)",
         "Oceanography": "Ocean Dynamics & Marine Forecasting (海洋动力与数值预报)",
@@ -47,10 +49,16 @@ def run_generate_readme():
 
     grouped = {d: [] for d in domains_order}
     for p in included:
-        d = p.get("domain", "Foundational / Survey")
-        if d == "Foundational / Position":
+        raw_d = p.get("domain", "Foundational / Survey")
+        if "Polar Cryosphere" in raw_d:
+            d = "Polar Cryosphere"
+        elif "Reasoning" in raw_d or "Cross-domain" in raw_d:
+            d = "Reasoning / Benchmark"
+        elif "Core Methods" in raw_d or "Position" in raw_d or "Foundational" in raw_d:
             d = "Foundational / Survey"
-        if d not in grouped:
+        elif raw_d in grouped:
+            d = raw_d
+        else:
             d = "Foundational / Survey"
         grouped[d].append(p)
 

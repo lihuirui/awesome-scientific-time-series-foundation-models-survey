@@ -271,3 +271,71 @@ which compresses grid cell longitudinal distances towards the poles ($\Delta x \
     strictly preserving planetary rotational symmetry and eliminating polar distortion by construction.
     \item \textbf{Quasi-Uniform Spherical Meshes}: GraphCast~\cite{lam2023graphcast} and AIFS~\cite{lang2024aifs} map irregular spherical domains onto recursive icosahedral multi-mesh tessellations $\mathcal{G} = (\mathcal{V}, \mathcal{E})$. Message-passing edge attributes encode true Riemannian geodesic distances and relative orientation angles, achieving approximate isometry and continuous spatial invariance across the entire planetary sphere.
 \end{enumerate}
+
+\subsection{Extreme Value Theory (EVT) and Heavy-Tailed Uncertainty Quantification}
+\label{sec:extreme_value_theory}
+A profound pathology in contemporary data-driven weather and climate foundation models is their systemic underforecasting of rare, high-impact perils (e.g., flash flood downpours, hurricane wind gusts, extreme heatwaves). Under standard training objectives, neural networks minimize $L_2$ error:
+\begin{equation}
+    \hat{\mathbf{y}} = \arg\min_{\mathbf{f}} \mathbb{E}_{(\mathbf{x}, \mathbf{y}) \sim \mathcal{D}}\left[ \|\mathbf{y} - \mathbf{f}(\mathbf{x})\|_2^2 \right] = \mathbb{E}[\mathbf{y} \mid \mathbf{x}].
+\end{equation}
+Because the conditional expectation $\mathbb{E}[\mathbf{y} \mid \mathbf{x}]$ acts as a statistical mean-seeking operator, minimizing symmetric $L_2$ or $L_1$ loss over climatological distributions inevitably biases predictions toward the bulk mean. Consequently, when confronted with extreme values located in the heavy tails of the distribution, standard foundation backbones suffer from severe amplitude blunting, failing to capture 100-year return period perils.
+
+\subsubsection{Generalized Extreme Value (GEV) Formulations}
+In statistical climatology, the asymptotic distribution of block maxima (e.g., annual maximum daily precipitation or peak gust speed) $M_n = \max\{X_1, \dots, X_n\}$ is uniquely characterized by the Fisher--Tippett--Gnedenko theorem via the Generalized Extreme Value (GEV) distribution:
+\begin{equation}
+    G(z; \mu, \sigma, \xi) = \exp\left\{ - \left[ 1 + \xi \left( \frac{z - \mu}{\sigma} \right) \right]_+^{-1/\xi} \right\},
+    \label{eq:gev_distribution}
+\end{equation}
+where $\mu \in \mathbb{R}$ is the location parameter, $\sigma > 0$ is the scale parameter, and $\xi \in \mathbb{R}$ denotes the shape parameter (tail index), with $[a]_+ \equiv \max(a, 0)$. The tail index $\xi$ determines the qualitative asymptotic decay of natural extremes:
+\begin{itemize}
+    \item \textbf{Fréchet Heavy Tail} ($\xi > 0$): Governs convective precipitation bursts, flash floods, and atmospheric rivers. The survival probability exhibits power-law decay $P(Z > z) \sim z^{-1/\xi}$, meaning extremes occur orders of magnitude more frequently than predicted by light-tailed Gaussian models.
+    \item \textbf{Gumbel Exponential Tail} ($\xi = 0$): Describes moderate wind speed distributions and synoptic temperature fluctuations with exponential decay $P(Z > z) \sim e^{-z/\sigma}$.
+    \item \textbf{Weibull Bounded Tail} ($\xi < 0$): Characterizes bounded atmospheric variables (e.g., relative humidity $\le 100\%$, upper limits on geostrophic wind shear).
+\end{itemize}
+
+\subsubsection{ExtremeCast: Asymmetric Extreme Loss and Uncertainty Boosting}
+To break the mean-seeking regression trap without degrading bulk synoptic accuracy, Xu et al.~\cite{xu2024extremecast} introduced \textbf{ExtremeCast}. ExtremeCast mathematically proves that symmetric loss functions inherently penalize rare overpredictions symmetrically with severe underpredictions, heavily suppressing tail predictions due to the extreme class imbalance ($P(Z > \tau) < 0.01$).
+
+ExtremeCast formulates an asymmetric extreme loss function $\mathcal{L}_{\text{Ex}}$ that dynamically amplifies gradient penalties when true targets exceed high quantile thresholds $\tau$:
+\begin{equation}
+    \mathcal{L}_{\text{Ex}}(\mathbf{y}, \hat{\mathbf{y}}) = \mathcal{L}_{\text{base}}(\mathbf{y}, \hat{\mathbf{y}}) + \alpha \sum_{i=1}^N w(y_i) \cdot \max(0, y_i - \hat{y}_i)^\gamma,
+    \label{eq:exloss}
+\end{equation}
+where $\mathcal{L}_{\text{base}}$ preserves standard MSE/MAE optimization over bulk dynamics, $\alpha > 0$ balances tail prioritization, and $\gamma \ge 1$ enforces super-linear penalties against underforecasting. The weighting factor $w(y_i)$ is formulated using extreme value theory:
+\begin{equation}
+    w(y_i) = \mathbb{I}(y_i \ge \tau) \cdot \left( \frac{y_i - \tau}{\sigma_\tau} \right)^\beta,
+\end{equation}
+where $\tau$ is set to the 95th or 99th climatological percentile and $\sigma_\tau$ represents the tail scale. Furthermore, ExtremeCast incorporates \textbf{ExBooster}, a training-free uncertainty ensemble module that perturbs latent feature representations using calibrated extreme-value noise samples, generating diverse probabilistic realizations that significantly elevate the Critical Success Index (CSI) and Symmetric Extremal Dependence Index (SEDI) for category-5 typhoons, localized wind gusts, and severe heat extremes.
+
+\subsection{High-Order Tensor Decompositions and Quantum-Classical Hybrid Operators}
+\label{sec:tensor_quantum_operators}
+While continuous neural operators (such as FNO and SFNO) offer discretization-invariant PDE solution capabilities, their practical deployment in 3D atmospheric columns, 3D sub-surface seismic imaging, and mantle convection encounters severe memory saturation. A dense Fourier neural operator layer parameterizes spectral weights via a multidimensional complex tensor $\mathcal{W} \in \mathbb{C}^{d_{\text{in}} \times d_{\text{out}} \times K_1 \times \dots \times K_d}$. In high-resolution planetary volumes ($1024 \times 1024 \times 100$), storing and computing $\mathcal{W}$ requires tens of gigabytes of GPU VRAM per layer, creating a major hardware bottleneck.
+
+\subsubsection{Multi-Grid Tensorized Fourier Neural Operators (MG-TFNO)}
+To alleviate this memory complexity, Kossaifi et al.~\cite{kossaifi2024multigrid} introduced the Multi-Grid Tensorized Fourier Neural Operator (\textbf{MG-TFNO}). MG-TFNO parameterizes the spectral convolution weights in a high-order latent subspace using tensor factorizations, specifically Tucker and Tensor-Train (Matrix Product State, MPS) decompositions:
+\begin{equation}
+    \mathcal{W}(i_1, i_2, k_1, \dots, k_d) \approx \sum_{r_1=1}^{R_1} \dots \sum_{r_{d+2}=1}^{R_{d+2}} \mathcal{G}(r_1, \dots, r_{d+2}) \prod_{m=1}^{d+2} \mathbf{U}^{(m)}(j_m, r_m),
+    \label{eq:tucker_fno}
+\end{equation}
+where $\mathcal{G} \in \mathbb{C}^{R_1 \times \dots \times R_{d+2}}$ is a low-rank core tensor with ranks $R_m \ll \min(d_m, K_m)$, and $\mathbf{U}^{(m)}$ are orthogonal factor matrices. Coupled with multi-grid domain decomposition that parallelizes local and global frequency representations, MG-TFNO achieves over \textbf{150$\times$ parameter reduction} (compressing over 120M dense parameters to $<0.8\text{M}$) while improving zero-shot super-resolution and out-of-distribution numerical stability on 2D/3D Navier--Stokes turbulence and Helmholtz acoustic wavefields.
+
+\subsubsection{WaveFNO: Continuous Seismic Wavefield Modeling and Full-Waveform Inversion}
+Applying continuous neural operators to solid-Earth geophysics, Yang et al.~\cite{yang2021seismic} pioneered \textbf{WaveFNO} for seismic wave propagation and full-waveform inversion (FWI). Seismic wave propagation in heterogeneous media is governed by the elastodynamic wave equation:
+\begin{equation}
+    \rho(\mathbf{x}) \frac{\partial^2 \mathbf{u}(\mathbf{x}, t)}{\partial t^2} = \nabla \cdot \boldsymbol{\sigma}(\mathbf{x}, t) + \mathbf{f}(\mathbf{x}, t), \quad \boldsymbol{\sigma} = \mathbf{C}(\mathbf{x}) : \frac{1}{2}\left( \nabla \mathbf{u} + (\nabla \mathbf{u})^T \right),
+    \label{eq:elastodynamic_wave}
+\end{equation}
+where $\mathbf{u}(\mathbf{x}, t)$ is the continuous displacement wavefield, $\rho$ is density, $\boldsymbol{\sigma}$ is the stress tensor, $\mathbf{C}$ is the elastic stiffness tensor, and $\mathbf{f}$ represents tectonic or exploration source terms. WaveFNO directly learns the non-linear solution operator $\mathcal{G}_\theta: c(\mathbf{x}) \mapsto \mathbf{u}(\mathbf{x}, t)$ mapping subsurface velocity models $c(\mathbf{x})$ to continuous wavefield trajectories. Because the learned operator $\mathcal{G}_\theta$ is continuously differentiable with respect to its inputs, seismic full-waveform inversion is executed via reverse-mode automatic differentiation:
+\begin{equation}
+    c^* = \arg\min_{c} \frac{1}{2} \sum_{r=1}^R \int_0^T \|\mathbf{u}_{\text{obs}}^{(r)}(t) - \mathcal{G}_\theta(c)(\mathbf{x}_r, t)\|_2^2 \, dt + \lambda \mathcal{R}(c),
+    \label{eq:fwi_objective}
+\end{equation}
+computing exact subsurface acoustic velocity updates $\nabla_c \mathcal{J}$ in seconds on a single GPU. This avoids the hundreds of computationally prohibitive numerical finite-difference wavefield solves required by classical adjoint-state FWI workflows while avoiding cycle-skipping traps.
+
+\subsubsection{Partitioned Hybrid Quantum Fourier Neural Operators (PHQFNO)}
+At the outer algorithmic frontier, Marcandelli et al.~\cite{marcandelli2025phqfno} introduced the Partitioned Hybrid Quantum Fourier Neural Operator (\textbf{PHQFNO}), establishing the first continuous neural operator architecture combining classical tensor decomposition with Parameterized Quantum Circuits (PQC). PHQFNO partitions the spectral transformation across classical tensor operators and variational quantum circuits executed on Noisy Intermediate-Scale Quantum (NISQ) devices. Input spectral modes are embedded into multi-qubit quantum states $|\psi(k)\rangle$ using quantum amplitude encoding, followed by parameterized unitary evolution:
+\begin{equation}
+    U(\boldsymbol{\theta}) = \prod_{l=1}^L \exp\left( -i \theta_l H_l \right) W_{\text{entangle}},
+    \label{eq:quantum_operator}
+\end{equation}
+where $H_l \in \{X, Y, Z\}^{\otimes n}$ represent multi-qubit Pauli observables and $W_{\text{entangle}}$ is a non-local entangling layer. PHQFNO provides an architectural roadmap for continuous scientific machine learning, demonstrating that quantum entanglement can bypass classical tensor contraction bottlenecks when solving high-dimensional multi-physics differential equations.
