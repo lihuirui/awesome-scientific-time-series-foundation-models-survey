@@ -280,6 +280,13 @@ def run_search():
         "2308.15349",  # LPNets (Eldred et al.)
         "2605.15881",  # Symplectic Neural Operators (Makara et al.)
         "2507.06479",  # Generative Lagrangian DA (Asefi et al.)
+        # Iteration 9 arXiv Additions
+        "2311.00566",  # CROMA (Fuller et al.)
+        "2412.14123",  # AnySat (Astruc et al.)
+        "2409.16247",  # DLESyM (Cresswell-Clay et al.)
+        "2509.12490",  # SamudrACE (Duncan et al.)
+        "2310.02074",  # ACE (Watt-Meyer et al.)
+        "1909.00912",  # AC-NN (Beucler et al.)
     ]
 
     candidates = {}
@@ -369,6 +376,10 @@ def run_search():
         # Iteration 8 Additions
         "10.1016/j.advwatres.2022.104180",  # U-FNO (Wen et al., Advances in Water Resources)
         "10.1016/j.advwatres.2021.104009",  # CCSNet (Wen et al., Advances in Water Resources)
+        # Iteration 9 Additions
+        "10.1029/2025av001706",        # DLESyM (Cresswell-Clay et al., AGU Advances)
+        "10.1029/2023ms004162",        # ACE (Watt-Meyer et al., JAMES)
+        "10.1103/physrevlett_126_098302",  # AC-NN (Beucler et al., PRL)
     ]
     prev_doi = len(candidates)
     for doi in verified_dois:

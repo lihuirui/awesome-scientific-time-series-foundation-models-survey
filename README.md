@@ -1,7 +1,7 @@
 # Awesome Scientific Multimodal Time Series Foundation Models and Reasoning LLMs
 ## 科学多模态时序大模型与科学推理大模型前沿进展精选
 
-[![Survey PDF](https://img.shields.io/badge/Paper-PDF-red.svg)](paper/main.pdf) [![PRISMA Included](https://img.shields.io/badge/PRISMA%20Included-71%20papers-brightgreen.svg)](#prisma-systematic-review-statistics) [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE) [![Maintenance](https://img.shields.io/badge/Maintained%20by-Antigravity%20CLI-purple.svg)](#how-this-survey-is-maintained)
+[![Survey PDF](https://img.shields.io/badge/Paper-PDF-red.svg)](paper/main.pdf) [![PRISMA Included](https://img.shields.io/badge/PRISMA%20Included-77%20papers-brightgreen.svg)](#prisma-systematic-review-statistics) [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE) [![Maintenance](https://img.shields.io/badge/Maintained%20by-Antigravity%20CLI-purple.svg)](#how-this-survey-is-maintained)
 
 ## Overview / 项目概述
 
@@ -28,12 +28,12 @@ The taxonomy categorizes the literature across four core dimensions:
 
 ![PRISMA 2020 Flow](paper/figures/prisma_flow.png)
 
-- **Records Identified across Academic APIs**: 816
-- **Unique Candidates Evaluated**: 656
+- **Records Identified across Academic APIs**: 880
+- **Unique Candidates Evaluated**: 662
 - **Title/Abstract Excluded**: 156
-- **Full-Text Assessed for Eligibility**: 500
+- **Full-Text Assessed for Eligibility**: 506
 - **Full-Text Excluded (narrow/regional)**: 429
-- **Studies Rigorously Included**: 71
+- **Studies Rigorously Included**: 77
 
 ## Research Landscape & Milestone Timeline
 
@@ -185,6 +185,26 @@ The taxonomy categorizes the literature across four core dimensions:
   - *Architecture*: `Extreme-value loss (Exloss) + Training-free uncertainty booster (ExBooster)` | *Params*: `Modular enhancement framework (~100M-200M depending on backbone)` | *Physics*: `Soft physics loss`
   - *Links*: [Paper / DOI](https://arxiv.org/abs/2402.01295) | [![Code](https://img.shields.io/badge/Code-GitHub-blue.svg)](https://github.com/black-yt/ExtremeCast)
 
+- **A Deep Learning Earth System Model for Efficient Simulation of the Observed Climate** (AGU Advances 2025)
+  - *Authors*: Cresswell-Clay, Nathaniel, Durran, Dale R., Brenowitz, Noah D. et al.
+  - *Architecture*: `Dual HEALPix Spherical U-Net Atmosphere-Ocean Coupler` | *Params*: `42M` | *Physics*: `Soft physics loss`
+  - *Links*: [Paper / DOI](https://doi.org/10.1029/2025AV001706) | [![Code](https://img.shields.io/badge/Code-GitHub-blue.svg)](https://github.com/AtmosSci-DLESM/DLESyM)
+
+- **SamudrACE: Fast and Accurate Coupled Climate Modeling with 3D Ocean and Atmosphere Emulators** (Geophysical Research Letters / arXiv:2509.12490 2025)
+  - *Authors*: Duncan, James P. C., Dheeshjith, Surya, Arcomano, Troy et al.
+  - *Architecture*: `Coupled Spherical FNO (ACE Atmosphere) + 3D Ocean Emulator (Samudra)` | *Params*: `520M` | *Physics*: `Hard conservation constraints`
+  - *Links*: [Paper / DOI](https://arxiv.org/abs/2509.12490) | [![Code](https://img.shields.io/badge/Code-GitHub-blue.svg)](https://github.com/ai2cm/ace)
+
+- **ACE: A Fast, Skillful Learned Global Atmospheric Model for Climate Prediction** (Journal of Advances in Modeling Earth Systems 2024)
+  - *Authors*: Watt-Meyer, Oliver, Dresdner, Gideon, McGibbon, Jeremy et al.
+  - *Architecture*: `Spherical Fourier Neural Operator (SFNO) with subgrid parameterization` | *Params*: `82M` | *Physics*: `Hard conservation constraints`
+  - *Links*: [Paper / DOI](https://doi.org/10.1029/2023MS004162) | [![Code](https://img.shields.io/badge/Code-GitHub-blue.svg)](https://github.com/ai2cm/ace)
+
+- **Enforcing Analytic Constraints in Neural-Networks Emulating Physical Systems** (Physical Review Letters 2021)
+  - *Authors*: Beucler, Tom, Pritchard, Michael, Rasp, Stephan et al.
+  - *Architecture*: `Analytically Constrained Neural Network (AC-NN) for subgrid convection` | *Params*: `2.1M` | *Physics*: `Hard constraint projection`
+  - *Links*: [Paper / DOI](https://doi.org/10.1103/PhysRevLett.126.098302) | [![Code](https://img.shields.io/badge/Code-GitHub-blue.svg)](https://github.com/tbeucler/CBRAIN-CAM)
+
 ### Polar Cryosphere & Sea Ice Dynamics (极地冰冻圈与海冰动力学大模型)
 
 - **IceBench: A Benchmark for Deep Learning based Sea Ice Type Classification** (arXiv:2503.17877 2025)
@@ -248,6 +268,16 @@ The taxonomy categorizes the literature across four core dimensions:
   - *Authors*: Guo, Xin, Lao, Jiangwei, Dang, Bo et al.
   - *Architecture*: `Factorized Multi-Modal Spatio-Temporal ViT (1.9B parameters)` | *Params*: `1.9B` | *Physics*: `Cross-spectral geographic calibration`
   - *Links*: [Paper / DOI](https://arxiv.org/abs/2312.10115) | [![Code](https://img.shields.io/badge/Code-GitHub-blue.svg)](https://github.com/Jack-bo1220/SkySense)
+
+- **CROMA: Remote Sensing Representations with Contrastive Radar-Optical Masked Autoencoders** (NeurIPS 2023)
+  - *Authors*: Fuller, Anthony, Millard, Koreen, Green, James R.
+  - *Architecture*: `Contrastive Radar-Optical Masked Autoencoder (CROMA, 2D/X-ALiBi)` | *Params*: `108M` | *Physics*: `Purely data-driven`
+  - *Links*: [Paper / DOI](https://arxiv.org/abs/2311.00566) | [![Code](https://img.shields.io/badge/Code-GitHub-blue.svg)](https://github.com/antofuller/CROMA)
+
+- **AnySat: One Earth Observation Model for Many Resolutions, Scales, and Modalities** (CVPR / arXiv:2412.14123 2024)
+  - *Authors*: Astruc, Guillaume, Gonthier, Nicolas, Mallet, Clement et al.
+  - *Architecture*: `Scale-Adaptive Joint Embedding Predictive Architecture (JEPA)` | *Params*: `125M` | *Physics*: `Purely data-driven`
+  - *Links*: [Paper / DOI](https://arxiv.org/abs/2412.14123) | [![Code](https://img.shields.io/badge/Code-GitHub-blue.svg)](https://github.com/gastruc/AnySat)
 
 ### Hydrology & Extreme Flood Modeling (水文与极端洪水大模型)
 

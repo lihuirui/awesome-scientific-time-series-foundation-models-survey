@@ -288,6 +288,7 @@ def plot_domain_modality_heatmap():
 
 def plot_weather_foundation_timeline():
     milestones = [
+        ("AC-NN", "2021-03", "Constrained Convection", 2021.22, 1.8, "#6366F1"),
         ("IceNet", "2021-08", "Sea Ice Prob. U-Net", 2021.65, -1.8, "#0284C7"),
         ("DGMR", "2021-09", "Radar GAN Nowcast", 2021.75, 1.8, "#D97706"),
         ("CCSNet", "2021-06", "CO2 Storage Suite", 2021.48, 2.3, "#059669"),
@@ -310,6 +311,7 @@ def plot_weather_foundation_timeline():
         ("CorrDiff", "2023-09", "2km Downscaling", 2023.75, -2.2, "#059669"),
         ("Time-LLM", "2023-10", "Reprogrammed LLM", 2023.80, 1.4, "#2563EB"),
         ("Prithvi-100M", "2023-10", "Geospatial ViT", 2023.82, -2.7, "#0D9488"),
+        ("CROMA", "2023-11", "Radar-Optical MAE", 2023.90, -2.4, "#059669"),
         ("FuXi-Extreme", "2023-10", "Extreme Diffusion", 2023.85, -1.8, "#DC2626"),
         ("MG-TFNO", "2023-10", "Tensorized FNO", 2023.88, 1.9, "#10B981"),
         ("GenCast", "2023-12", "Diffusion Ensemble", 2023.95, 1.4, "#DC2626"),
@@ -319,10 +321,11 @@ def plot_weather_foundation_timeline():
         ("DiffDA", "2024-01", "Diffusion DA", 2024.06, -1.3, "#DC2626"),
         ("ExtremeCast", "2024-02", "Exloss Extreme Model", 2024.12, 1.5, "#DC2626"),
         ("MOMENT", "2024-02", "Open TS Foundation", 2024.15, 2.5, "#059669"),
-        ("UniTS", "2024-03", "Unified Multi-Task", 2024.20, -2.4, "#7C3AED"),
-        ("Chronos", "2024-03", "Quantized LM TS", 2024.22, 1.6, "#D97706"),
-        ("DOFA", "2024-03", "Plasticity EO", 2024.25, 1.3, "#B45309"),
-        ("GlobalFlood", "2024-03", "Ungauged Flood AI", 2024.28, -1.5, "#0284C7"),
+        ("ACE", "2024-03", "100-Yr Climate SFNO", 2024.20, 2.7, "#10B981"),
+        ("UniTS", "2024-03", "Unified Multi-Task", 2024.23, -2.4, "#7C3AED"),
+        ("Chronos", "2024-03", "Quantized LM TS", 2024.25, 1.6, "#D97706"),
+        ("DOFA", "2024-03", "Plasticity EO", 2024.27, 1.3, "#B45309"),
+        ("GlobalFlood", "2024-03", "Ungauged Flood AI", 2024.29, -1.5, "#0284C7"),
         ("ClimODE", "2024-04", "Neural ODE Flow", 2024.32, 2.2, "#10B981"),
         ("Aurora", "2024-05", "1.3B 3D Perceiver", 2024.40, 2.7, "#7C3AED"),
         ("AIFS", "2024-06", "ECMWF GNN-Transformer", 2024.48, 1.5, "#0D9488"),
@@ -331,11 +334,14 @@ def plot_weather_foundation_timeline():
         ("OceanGPT", "2024-08", "Ocean Science LLM", 2024.62, 1.5, "#0891B2"),
         ("AI Scientist", "2024-08", "Autonomous Discovery", 2024.65, 2.4, "#DC2626"),
         ("Prithvi WxC", "2024-09", "2.3B Climate Model", 2024.72, 2.8, "#D97706"),
+        ("DLESyM", "2024-09", "Coupled Earth System", 2024.76, -2.5, "#0284C7"),
+        ("AnySat", "2024-12", "Any-Scale Multi-Sensor", 2024.96, 2.1, "#0D9488"),
         ("Galileo", "2025-02", "Multi-Scale EO", 2025.15, -1.8, "#059669"),
         ("IceBench", "2025-03", "SAR Sea Ice Bench", 2025.25, 2.2, "#0284C7"),
         ("OceanBench", "2025-05", "Ocean Dynamics Bench", 2025.40, -2.7, "#0284C7"),
         ("PHQFNO", "2025-07", "Quantum Hybrid FNO", 2025.55, -2.3, "#4F46E5"),
         ("LagDA", "2025-07", "Sparse Lagrangian DA", 2025.58, 1.8, "#0284C7"),
+        ("SamudrACE", "2025-09", "Coupled 3D Ocean-Atmos", 2025.72, -2.6, "#4F46E5"),
         ("SciTS", "2025-10", "Scientific TS LLM", 2025.80, 1.6, "#2563EB"),
         ("SNO", "2026-05", "Symplectic Operator", 2026.38, 2.1, "#6366F1"),
     ]
@@ -392,6 +398,7 @@ def plot_resolution_vs_leadtime():
         {"name": "Stormer", "res": 1.406, "lead": 10, "params": 67, "col": "#CA8A04", "dx": 0.25, "dy": -0.04, "ha": "left"},
         {"name": "SEEDS", "res": 1.00, "lead": 10, "params": 100, "col": "#EA580C", "dx": 0.25, "dy": -0.04, "ha": "left"},
         {"name": "NeuralGCM", "res": 0.70, "lead": 15, "params": 14.5, "col": "#6366F1", "dx": 0.25, "dy": -0.04, "ha": "left"},
+        {"name": "ACE", "res": 1.00, "lead": 15, "params": 82, "col": "#10B981", "dx": -0.28, "dy": -0.06, "ha": "right"},
         {"name": "FuXi", "res": 0.25, "lead": 15, "params": 150, "col": "#D97706", "dx": 0.28, "dy": 0.06, "ha": "left"},
         {"name": "GenCast", "res": 0.25, "lead": 15, "params": 120, "col": "#E11D48", "dx": -0.28, "dy": 0.05, "ha": "right"},
         {"name": "AIFS", "res": 0.25, "lead": 15, "params": 185, "col": "#0D9488", "dx": 0.28, "dy": -0.06, "ha": "left"},
@@ -592,7 +599,7 @@ def plot_publications_by_year():
     ax.grid(axis="y", linestyle="--", alpha=0.5)
     ax.legend(loc="upper left", bbox_to_anchor=(1.02, 1.0), framealpha=0.9)
 
-    plt.title("Distribution of Scientific Time Series Foundation Papers by Domain (N=65)",
+    plt.title(f"Distribution of Scientific Time Series Foundation Papers by Domain (N={len(included)})",
               fontsize=13, fontweight="bold", pad=12)
     plt.tight_layout()
     plt.savefig(os.path.join(FIG_DIR, "publications_by_year.png"), dpi=300)

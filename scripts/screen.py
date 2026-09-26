@@ -1565,6 +1565,136 @@ INCLUDED_REGISTRY = {
         "status": "included",
         "exclusion_reason": None,
     },
+    # Iteration 9 Additions
+    "fuller2023croma": {
+        "bibkey": "fuller2023croma",
+        "title": "CROMA: Remote Sensing Representations with Contrastive Radar-Optical Masked Autoencoders",
+        "authors": ["Fuller, Anthony", "Millard, Koreen", "Green, James R."],
+        "year": 2023,
+        "venue": "NeurIPS",
+        "doi_or_arxiv": "https://arxiv.org/abs/2311.00566",
+        "arxiv_id": "2311.00566",
+        "domain": "Remote Sensing / EO",
+        "modality": "Satellite imagery (Sentinel-1 SAR, Sentinel-2 Optical)",
+        "backbone": "Contrastive Radar-Optical Masked Autoencoder (CROMA, 2D/X-ALiBi)",
+        "pretraining_data": "4M aligned Sentinel-1 and Sentinel-2 120x120 patches",
+        "physics_integration": "Purely data-driven",
+        "role_of_llm": "None",
+        "lead_time_or_task": "Multimodal land cover classification, segmentation, and spatial extrapolation",
+        "model_size": "108M",
+        "code_url": "https://github.com/antofuller/CROMA",
+        "quality_score": 11,
+        "status": "included",
+        "exclusion_reason": None,
+    },
+    "astruc2024anysat": {
+        "bibkey": "astruc2024anysat",
+        "title": "AnySat: One Earth Observation Model for Many Resolutions, Scales, and Modalities",
+        "authors": ["Astruc, Guillaume", "Gonthier, Nicolas", "Mallet, Clement", "Landrieu, Loic"],
+        "year": 2024,
+        "venue": "CVPR / arXiv:2412.14123",
+        "doi_or_arxiv": "https://arxiv.org/abs/2412.14123",
+        "arxiv_id": "2412.14123",
+        "domain": "Remote Sensing / EO",
+        "modality": "Satellite imagery & Aerial (Optical, SAR, Elevation, Hyperspectral)",
+        "backbone": "Scale-Adaptive Joint Embedding Predictive Architecture (JEPA)",
+        "pretraining_data": "GeoPlex dataset (11 sensors, 0.2m to 500m resolution)",
+        "physics_integration": "Purely data-driven",
+        "role_of_llm": "None",
+        "lead_time_or_task": "Universal remote sensing representation across arbitrary ground sampling distances",
+        "model_size": "125M",
+        "code_url": "https://github.com/gastruc/AnySat",
+        "quality_score": 12,
+        "status": "included",
+        "exclusion_reason": None,
+    },
+    "cresswellclay2024dlesym": {
+        "bibkey": "cresswellclay2024dlesym",
+        "title": "A Deep Learning Earth System Model for Efficient Simulation of the Observed Climate",
+        "authors": ["Cresswell-Clay, Nathaniel", "Durran, Dale R.", "Brenowitz, Noah D.", "Kashinath, Karthik"],
+        "year": 2025,
+        "venue": "AGU Advances",
+        "doi": "10.1029/2025AV001706",
+        "doi_or_arxiv": "https://doi.org/10.1029/2025AV001706",
+        "arxiv_id": "2409.16247",
+        "domain": "Weather/Climate",
+        "modality": "Gridded reanalysis (ERA5 atmospheric tensors, ORAS5 ocean reanalysis)",
+        "backbone": "Dual HEALPix Spherical U-Net Atmosphere-Ocean Coupler",
+        "pretraining_data": "ERA5 (1979-2020) + ORAS5 ocean temperature/salinity",
+        "physics_integration": "Soft physics loss",
+        "role_of_llm": "None",
+        "lead_time_or_task": "1,000-year coupled climate simulation and multi-decadal ENSO emulation",
+        "model_size": "42M",
+        "code_url": "https://github.com/AtmosSci-DLESM/DLESyM",
+        "quality_score": 12,
+        "status": "included",
+        "exclusion_reason": None,
+    },
+    "duncan2025samudrace": {
+        "bibkey": "duncan2025samudrace",
+        "title": "SamudrACE: Fast and Accurate Coupled Climate Modeling with 3D Ocean and Atmosphere Emulators",
+        "authors": ["Duncan, James P. C.", "Dheeshjith, Surya", "Arcomano, Troy", "Busecke, Julius", "Clark, Spencer K.", "McGibbon, Jeremy", "Watt-Meyer, Oliver", "Brenowitz, Noah D.", "Zanna, Laure", "Bretherton, Christopher S."],
+        "year": 2025,
+        "venue": "Geophysical Research Letters / arXiv:2509.12490",
+        "doi_or_arxiv": "https://arxiv.org/abs/2509.12490",
+        "arxiv_id": "2509.12490",
+        "domain": "Weather/Climate",
+        "modality": "Gridded reanalysis (Atmosphere pressure levels, ocean depth levels, sea ice)",
+        "backbone": "Coupled Spherical FNO (ACE Atmosphere) + 3D Ocean Emulator (Samudra)",
+        "pretraining_data": "E3SMv2 / E3SMv3 fully coupled simulation data (1-degree resolution, 145 2D fields)",
+        "physics_integration": "Hard conservation constraints",
+        "role_of_llm": "None",
+        "lead_time_or_task": "Centuries-long coupled Earth system simulation (1,100 simulated years/day)",
+        "model_size": "520M",
+        "code_url": "https://github.com/ai2cm/ace",
+        "quality_score": 12,
+        "status": "included",
+        "exclusion_reason": None,
+    },
+    "wattmeyer2024ace": {
+        "bibkey": "wattmeyer2024ace",
+        "title": "ACE: A Fast, Skillful Learned Global Atmospheric Model for Climate Prediction",
+        "authors": ["Watt-Meyer, Oliver", "Dresdner, Gideon", "McGibbon, Jeremy", "Clark, Spencer K.", "Duncan, James", "Brenowitz, Noah D.", "Kashinath, Karthik", "Pritchard, Michael S.", "Bonev, Boris", "Bretherton, Christopher S."],
+        "year": 2024,
+        "venue": "Journal of Advances in Modeling Earth Systems",
+        "doi": "10.1029/2023MS004162",
+        "doi_or_arxiv": "https://doi.org/10.1029/2023MS004162",
+        "arxiv_id": "2310.02074",
+        "domain": "Weather/Climate",
+        "modality": "Gridded reanalysis (FV3GFS 1-degree global atmosphere, 82 variables)",
+        "backbone": "Spherical Fourier Neural Operator (SFNO) with subgrid parameterization",
+        "pretraining_data": "FV3GFS 100-year continuous simulation dataset",
+        "physics_integration": "Hard conservation constraints",
+        "role_of_llm": "None",
+        "lead_time_or_task": "100-year stable climate rollout and decadal atmospheric prediction",
+        "model_size": "82M",
+        "code_url": "https://github.com/ai2cm/ace",
+        "quality_score": 12,
+        "status": "included",
+        "exclusion_reason": None,
+    },
+    "beucler2021enforcing": {
+        "bibkey": "beucler2021enforcing",
+        "title": "Enforcing Analytic Constraints in Neural-Networks Emulating Physical Systems",
+        "authors": ["Beucler, Tom", "Pritchard, Michael", "Rasp, Stephan", "Ott, Jordan", "Baldi, Pierre", "Gentine, Pierre"],
+        "year": 2021,
+        "venue": "Physical Review Letters",
+        "doi": "10.1103/PhysRevLett.126.098302",
+        "doi_or_arxiv": "https://doi.org/10.1103/PhysRevLett.126.098302",
+        "arxiv_id": "1909.00912",
+        "domain": "Weather/Climate",
+        "modality": "In-situ / Gridded atmospheric columns (convective subgrid heating, moistening)",
+        "backbone": "Analytically Constrained Neural Network (AC-NN) for subgrid convection",
+        "pretraining_data": "SPCAM (Super-Parameterized Community Atmosphere Model, 100M column profiles)",
+        "physics_integration": "Hard constraint projection",
+        "role_of_llm": "None",
+        "lead_time_or_task": "Machine-precision conservation of enthalpy and mass in multi-scale climate simulators",
+        "model_size": "2.1M",
+        "code_url": "https://github.com/tbeucler/CBRAIN-CAM",
+        "quality_score": 12,
+        "status": "included",
+        "exclusion_reason": None,
+    },
 }
 
 
@@ -1639,6 +1769,13 @@ def run_screening():
         normalize_title("Lie-Poisson Neural Networks (LPNets): Data-Based Computing of Hamiltonian Systems with Symmetries"): "eldred2023lpnets",
         normalize_title("Symplectic Neural Operators for Learning Infinite Dimensional Hamiltonian Systems"): "makara2026symplectic",
         normalize_title("Generative Lagrangian data assimilation for ocean dynamics under extreme sparsity"): "asefi2025lagrangian",
+        normalize_title("CROMA: Remote Sensing Representations with Contrastive Radar-Optical Masked Autoencoders"): "fuller2023croma",
+        normalize_title("CROMA: Remote Sensing Representations with Contrastive Radar Optical Masked Autoencoders"): "fuller2023croma",
+        normalize_title("AnySat: One Earth Observation Model for Many Resolutions, Scales, and Modalities"): "astruc2024anysat",
+        normalize_title("A Deep Learning Earth System Model for Efficient Simulation of the Observed Climate"): "cresswellclay2024dlesym",
+        normalize_title("SamudrACE: Fast and Accurate Coupled Climate Modeling with 3D Ocean and Atmosphere Emulators"): "duncan2025samudrace",
+        normalize_title("ACE: A Fast, Skillful Learned Global Atmospheric Model for Climate Prediction"): "wattmeyer2024ace",
+        normalize_title("Enforcing Analytic Constraints in Neural-Networks Emulating Physical Systems"): "beucler2021enforcing",
     }
     for alt, k in alt_titles.items():
         included_titles[alt] = k
@@ -1662,7 +1799,7 @@ def run_screening():
                 "year": v.get("year"),
                 "abstract": "",
                 "status": "candidate",
-                "retrieved_at": "2026-09-26T00:00:00Z"
+                "retrieved_at": "2026-09-27T00:00:00Z"
             })
             cand_titles_set.add(norm)
 
@@ -1694,14 +1831,14 @@ def run_screening():
             if matched_key not in seen_included_keys:
                 seen_included_keys.add(matched_key)
                 rec = INCLUDED_REGISTRY[matched_key].copy()
-                rec["screen_date"] = "2026-09-26"
+                rec["screen_date"] = "2026-09-27"
                 all_papers.append(rec)
                 final_included.append(rec)
                 assessed_for_eligibility += 1
             else:
                 c["status"] = "excluded_title"
                 c["exclusion_reason"] = "EC4: Duplicate candidate of included study"
-                c["screen_date"] = "2026-09-26"
+                c["screen_date"] = "2026-09-27"
                 all_papers.append(c)
                 excluded_title_abstract += 1
         else:
@@ -1722,13 +1859,15 @@ def run_screening():
                 "precipitation nowcasting", "downscaling", "neural ode", "convective",
                 "extremecast", "icebench", "icenet", "sea ice", "quantum fourier", "tensorized", "wavefno",
                 "u-fno", "ccsnet", "geo-fno", "lie-poisson", "lpnet", "symplectic", "darcy",
-                "lagrangian data assimilation", "co2 storage", "plume", "carbon sequestration"
+                "lagrangian data assimilation", "co2 storage", "plume", "carbon sequestration",
+                "croma", "anysat", "dlesym", "samudrace", "subgrid", "microphysical", "enthalpy",
+                "atmosphere-ocean", "coupled climate"
             ])
 
             if not is_natural_science:
                 c["status"] = "excluded_title"
                 c["exclusion_reason"] = "EC1: Out of domain scope (not natural science temporal system)"
-                c["screen_date"] = "2026-09-26"
+                c["screen_date"] = "2026-09-27"
                 all_papers.append(c)
                 excluded_title_abstract += 1
             else:
@@ -1736,7 +1875,7 @@ def run_screening():
                 assessed_for_eligibility += 1
                 c["status"] = "excluded_fulltext"
                 c["exclusion_reason"] = "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)"
-                c["screen_date"] = "2026-09-26"
+                c["screen_date"] = "2026-09-27"
                 all_papers.append(c)
                 excluded_full_text += 1
 
@@ -1745,7 +1884,7 @@ def run_screening():
         if k not in seen_included_keys:
             seen_included_keys.add(k)
             rec = v.copy()
-            rec["screen_date"] = "2026-09-26"
+            rec["screen_date"] = "2026-09-27"
             all_papers.append(rec)
             final_included.append(rec)
             screened_title_abstract += 1
@@ -1755,8 +1894,8 @@ def run_screening():
         json.dump(all_papers, f, ensure_ascii=False, indent=2)
 
     total_screened = screened_title_abstract
-    # Total search queries hits = 816 (756 prior iterations + 60 iteration 8 hits)
-    records_identified = 816
+    # Total search queries hits = 880 (816 prior iterations + 64 iteration 9 hits)
+    records_identified = 880
     duplicates_removed = records_identified - total_screened
 
     prisma_counts = {

@@ -408,3 +408,68 @@ Traditional data assimilation methods (such as Ensemble Kalman Filtering or 4D-V
 \end{equation}
 where $N_d$ is the number of active drifters covering less than $0.5\%$ of the spatial basin. LagDA leverages continuous spatio-temporal attention to bridge sparse Lagrangian trajectory tokens with Eulerian spatial grids. By modeling the posterior distribution over continuous velocity $\mathbf{u} = (u, v)$, sea surface height (SSH), and relative vorticity $\zeta = \partial_x v - \partial_y u$, LagDA reconstructs submesoscale eddies and Western Boundary Currents with over $60\%$ error reduction relative to classical variational interpolation, providing a foundational methodology for integrating autonomous marine sensor fleets into planetary Earth system models.
 
+\subsection{Analytic Conservation Enforcing and Subgrid Microphysics in Climate Emulators}
+\label{sec:analytic_conservation_subgrid}
+Global climate models and neural planetary emulators operate on discretized horizontal grids ($\Delta x \approx 25\text{--}100\text{ km}$), leaving moist convective updrafts, turbulent boundary-layer mixing, and cloud microphysical transformations unresolved at subgrid scales ($< 5\text{ km}$). Let an atmospheric column state be decomposed via Reynolds filtering into resolved dynamics $\overline{\mathbf{X}} = (\overline{\mathbf{u}}, \overline{T}, \overline{q})$ and subgrid turbulent fluctuations $\mathbf{X}' = (\mathbf{u}', T', q')$. The filtered thermodynamic energy and moisture conservation equations read:
+\begin{align}
+    \frac{\partial \overline{T}}{\partial t} + \overline{\mathbf{u}} \cdot \nabla \overline{T} &= -\frac{\partial (\overline{\omega' T'})}{\partial p} + \frac{L_v}{c_p} \overline{C} + \mathcal{Q}_{\text{rad}} \equiv P_T(\overline{\mathbf{X}}), \label{eq:subgrid_heating} \\
+    \frac{\partial \overline{q}}{\partial t} + \overline{\mathbf{u}} \cdot \nabla \overline{q} &= -\frac{\partial (\overline{\omega' q'})}{\partial p} - \overline{C} \equiv P_q(\overline{\mathbf{X}}), \label{eq:subgrid_moistening}
+\end{align}
+where $\overline{C}$ is the net condensation rate, $L_v$ is latent heat of vaporization, $c_p$ is specific heat, and $P_T, P_q$ denote the subgrid parameterization mappings. When classical unconstrained neural networks emulate $P_T$ and $P_q$, unphysical numerical artifacts (such as negative precipitation $P < 0$ or spurious column energy creation) accumulate rapidly, triggering numerical explosion or unphysical climate drift within weeks of coupled simulation.
+
+\subsubsection{Analytically Constrained Neural Networks (AC-NN)}
+To resolve this foundational flaw, Beucler et al.~\cite{beucler2021enforcing} formulated \textbf{Analytically Constrained Neural Networks (AC-NN)}, mathematically proving that linear and non-linear physical conservation laws can be enforced within neural network computational graphs to machine precision. Consider an emulated physical system subject to $M$ linear equality constraints:
+\begin{equation}
+    \mathbf{C}(\mathbf{x}) \hat{\mathbf{y}} = \mathbf{d}(\mathbf{x}), \quad \mathbf{C} \in \mathbb{R}^{M \times K}, \quad \mathbf{d} \in \mathbb{R}^M,
+    \label{eq:linear_constraints}
+\end{equation}
+where $\hat{\mathbf{y}} \in \mathbb{R}^K$ represents the model's output vector (e.g., vertical profiles of convective heating rate $Q_1 \equiv c_p P_T$ and apparent drying rate $Q_2 \equiv -L_v P_q$). In columnar atmospheric physics, Eq.~(\ref{eq:linear_constraints}) encapsulates column-integrated enthalpy and total moisture conservation:
+\begin{align}
+    \langle Q_1 \rangle - \langle Q_2 \rangle &= L_v P_{\text{sfc}} + R_{\text{net}} - S_{\text{sfc}}, \label{eq:column_enthalpy} \\
+    \langle Q_2 \rangle &= -L_v (P_{\text{sfc}} - E_{\text{sfc}}), \label{eq:column_water}
+\end{align}
+where $\langle f \rangle = \frac{1}{g} \int_0^{p_s} f(p) \, dp$ represents the mass-weighted vertical integral from surface pressure $p_s$ to the top of atmosphere. 
+
+Instead of adding soft loss penalties (which only approximately penalize violations), AC-NN analytically partitions predicted variables into unconstrained free components $\hat{\mathbf{y}}_{\text{free}} \in \mathbb{R}^{K-M}$ and constrained boundary variables $\hat{\mathbf{y}}_{\text{constrained}} \in \mathbb{R}^M$. Rearranging Eq.~(\ref{eq:linear_constraints}):
+\begin{equation}
+    \mathbf{C}_{\text{free}} \hat{\mathbf{y}}_{\text{free}} + \mathbf{C}_{\text{constrained}} \hat{\mathbf{y}}_{\text{constrained}} = \mathbf{d}(\mathbf{x}).
+\end{equation}
+Assuming full row rank for the constraint matrix, $\mathbf{C}_{\text{constrained}}$ is invertible, allowing exact architectural determination of the remaining variables:
+\begin{equation}
+    \hat{\mathbf{y}}_{\text{constrained}} = \mathbf{C}_{\text{constrained}}^{-1} \left( \mathbf{d}(\mathbf{x}) - \mathbf{C}_{\text{free}} \hat{\mathbf{y}}_{\text{free}} \right).
+    \label{eq:exact_constraint_projection}
+\end{equation}
+Because Eq.~(\ref{eq:exact_constraint_projection}) is implemented as a fixed, parameter-free linear layer at the network's terminal head, the model satisfies column conservation of enthalpy and moisture to \textbf{machine precision} ($\epsilon_{\text{res}} < 10^{-15}$) across all training iterations and arbitrary out-of-distribution inputs, guaranteeing long-term numerical stability in multi-year climate runs without degrading emulation fidelity.
+
+\subsubsection{Ai2 Climate Emulator (ACE): Hundred-Year Stable Planetary Rollouts}
+Scaling physics-constrained neural operators to multi-decadal planetary climate emulation, Watt-Meyer et al.~\cite{wattmeyer2024ace} created \textbf{ACE} (Ai2 Climate Emulator). ACE couples a Spherical Fourier Neural Operator (SFNO) backbone operating on FV3GFS $1^\circ$ global horizontal grids across 82 prognostic 3D and 2D atmospheric fields.
+
+ACE hard-codes structural physical conservation of global dry air mass:
+\begin{equation}
+    M_{\text{dry}} = \int_{\mathbb{S}^2} p_s^{\text{dry}}(\lambda, \theta, t) \, d\Omega = \text{constant},
+\end{equation}
+and total column water vapor, preventing secular mass depletion over century-long autoregressive integrations. In continuous 100-year rollouts ($>146{,}000$ consecutive 6-hour time steps), ACE exhibits unprecedented climate stability: global mean surface temperature drift remains strictly bounded under \textbf{$0.04\text{ K/century}$}, while accurately reproducing the climatological Intertropical Convergence Zone (ITCZ), Hadley cell overturning circulation, and storm track variability. Running at $1{,}400$ simulated years per day on a single GPU, ACE provides an empirical blueprint for replacing expensive atmospheric dynamical cores in climate projection ensembles.
+
+\subsection{Coupled Atmosphere-Ocean-Cryosphere Multi-Agent Emulation and Flux Coupling}
+\label{sec:coupled_earth_emulation}
+A persistent limitation of standalone atmospheric foundation models (e.g., Pangu-Weather, GraphCast, Aurora) is that they treat sea surface temperature (SST) and sea ice concentration (SIC) as prescribed, static boundary conditions. While sufficient for medium-range synoptic weather ($\le 15$ days), this uncoupled formulation fails across subseasonal-to-seasonal (S2S) and decadal timescales, where climate dynamics are governed by reciprocal thermodynamic air-sea-cryosphere feedbacks:
+\begin{align}
+    \boldsymbol{\tau}_{\text{air-sea}} &= \rho_a C_D \|\mathbf{u}_a - \mathbf{u}_o\| (\mathbf{u}_a - \mathbf{u}_o), \label{eq:wind_stress} \\
+    Q_{\text{net}} &= Q_{\text{SW}}^\downarrow (1 - \alpha) - Q_{\text{LW}}^\uparrow + Q_{\text{LW}}^\downarrow - Q_{\text{sens}} - Q_{\text{lat}}, \label{eq:heat_flux} \\
+    F_{\text{fresh}} &= \rho_w \left( E - P - M_{\text{melt}} \right), \label{eq:freshwater_flux}
+\end{align}
+where $\boldsymbol{\tau}$ is wind stress momentum flux, $Q_{\text{net}}$ is interfacial net heat flux, and $F_{\text{fresh}}$ is surface freshwater mass flux.
+
+\subsubsection{DLESyM: Multi-Rate Asynchronous Earth System Coupler}
+To achieve fully coupled planetary climate simulation, Cresswell-Clay et al.~\cite{cresswellclay2024dlesym} introduced \textbf{DLESyM} (Deep Learning Earth System Model). DLESyM formulates Earth system emulation as an asynchronous multi-agent system on equal-area HEALPix spherical grids, structurally decoupling the distinct characteristic dynamical timescales of the atmosphere and ocean:
+\begin{enumerate}
+    \item \textbf{Atmospheric Neural Solver} ($\mathcal{M}_{\text{atm}}$): A spherical U-Net integrating fast synoptic dynamics (3D wind, temperature, humidity, geopotential) at $\Delta t_{\text{atm}} = 12\text{ hours}$.
+    \item \textbf{Ocean-Sea Ice Neural Solver} ($\mathcal{M}_{\text{ocn}}$): A specialized spherical U-Net integrating slow oceanic thermohaline dynamics (3D upper ocean temperature, salinity, currents, sea-ice thickness) at $\Delta t_{\text{ocn}} = 4\text{ days}$.
+\end{enumerate}
+At every 4-day coupling interface, the atmospheric solver computes time-accumulated surface wind stress $\overline{\boldsymbol{\tau}}$ and net heat flux $\overline{Q}_{\text{net}}$, passing them to the ocean solver. In turn, the ocean solver updates the underlying SST and sea-ice concentration fields for the atmospheric model. DLESyM performs stable \textbf{1,000-year continuous coupled simulations} without empirical damping or flux adjustments, maintaining global mean temperature drift below $0.08\text{ K/century}$. Crucially, DLESyM faithfully reproduces the multi-year cycle of the El Ni\~no-Southern Oscillation (ENSO), tropical cyclogenesis statistics, and the Indian Summer Monsoon, demonstrating that data-driven foundation models can capture long-term emergent coupled climate modes.
+
+\subsubsection{SamudrACE: 3D High-Resolution Foundation Earth System Emulation}
+Pushing coupled foundation models to full 3D spatial resolution, Duncan et al.~\cite{duncan2025samudrace} established \textbf{SamudrACE}. SamudrACE couples the 3D atmospheric ACE SFNO foundation emulator ($\Delta t = 6\text{ hours}$) with the 3D Samudra ocean emulator ($\Delta t = 5\text{ days}$), tracking 145 two-dimensional prognostic fields across atmospheric pressure levels and oceanic depth strata at $1^\circ$ global resolution. Interfacial boundary couplers exchange heat, freshwater, and momentum fluxes subject to continuous conservation checks.
+
+In multi-century benchmark evaluations, SamudrACE achieves an unprecedented simulation throughput of \textbf{1,100 simulated years per day (SYPD)} on a single NVIDIA H100 GPU (over $100\times$ faster than numerical coupled GCMs running across thousands of CPU cores on supercomputing clusters). SamudrACE reproduces the full power spectrum and phase-locking of ENSO SST anomalies in the Nino 3.4 region with an RMSE under $0.32\text{ K}$, demonstrating the viability of coupled neural operators for trillion-parameter ensemble climate sensitivity projections.
+

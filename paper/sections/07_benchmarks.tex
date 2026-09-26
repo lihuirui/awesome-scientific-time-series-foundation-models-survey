@@ -74,6 +74,12 @@ Geo-FNO~\cite{li2022geofno} & Core Methods & Deformation-Mapped Neural Operator 
 LPNets~\cite{eldred2023lpnets} & Core Methods & Lie-Poisson Neural Network & Rotating fluid Lie algebras & Continuous & Hard Casimir & 0.8M & \href{https://github.com/vputkaradze/LLPNNs}{\texttt{vputkaradze/LLPNNs}} \\
 SNO~\cite{makara2026symplectic} & Core Methods & Symplectic Neural Operator & Infinite-dim Hamiltonian PDEs & Continuous & Hard Symplectic & 1.5M & not available \\
 LagDA~\cite{asefi2025lagrangian} & Oceanography & Generative Lagrangian Diffusion DA & HYCOM/NCOM drifter trajectories & $<$0.5\% sparse & Kinematic map & 45M & not available \\
+CROMA~\cite{fuller2023croma} & Earth Observ. & Contrastive Radar-Optical MAE & 4M Sentinel-1/2 pairs & Multi-scale & Data-driven & 108M & \href{https://github.com/antofuller/CROMA}{\texttt{antofuller/CROMA}} \\
+AnySat~\cite{astruc2024anysat} & Earth Observ. & Scale-Adaptive JEPA & GeoPlex (11 sensors, 0.2m--500m) & 0.2m--500m & Data-driven & 125M & \href{https://github.com/gastruc/AnySat}{\texttt{gastruc/AnySat}} \\
+DLESyM~\cite{cresswellclay2024dlesym} & Weather/Climate & Dual Spherical HEALPix U-Net & ERA5 + ORAS5 (42 yrs) & Equal-area & Soft loss & 42M & \href{https://github.com/AtmosSci-DLESM/DLESyM}{\texttt{AtmosSci-DLESM/DLESyM}} \\
+SamudrACE~\cite{duncan2025samudrace} & Weather/Climate & Coupled ACE (SFNO) + Samudra 3D & E3SMv2/v3 coupled simulations & $1.00^\circ$, 145 vars & Hard cons. & 520M & \href{https://github.com/ai2cm/ace}{\texttt{ai2cm/ace}} \\
+ACE~\cite{wattmeyer2024ace} & Weather/Climate & Spherical Fourier Neural Operator & FV3GFS 100-yr climate simulation & $1.00^\circ$, 82 vars & Hard cons. & 82M & \href{https://github.com/ai2cm/ace}{\texttt{ai2cm/ace}} \\
+AC-NN~\cite{beucler2021enforcing} & Weather/Climate & Analytically Constrained NN & SPCAM (100M column profiles) & Column multiscale & Exact laws & 2.1M & \href{https://github.com/tbeucler/CBRAIN-CAM}{\texttt{tbeucler/CBRAIN-CAM}} \\
 \bottomrule
 \end{tabular}%
 }
@@ -217,6 +223,39 @@ LPNets~\cite{eldred2023lpnets} & Rotating 2D Euler / Shallow Water & \textbf{$<$
 Optimal Interpolation (OI) & Sparse Lagrangian Trajectories & 0.285 & 4.82 & 0.41 & 42.1\% & Severe spatial blur & 0.5\% basin coverage & Baseline in~\cite{asefi2025lagrangian} \\
 4D-Var Data Assimilation & Variational Inversion & 0.210 & 3.45 & 0.58 & 61.5\% & High-wavenumber loss & 0.5\% basin coverage & Baseline in~\cite{asefi2025lagrangian} \\
 LagDA (Generative Diffusion)~\cite{asefi2025lagrangian} & Conditional Score Diffusion & \textbf{0.092} & \textbf{1.65} & \textbf{0.86} & \textbf{91.4\%} & \textbf{Sharp eddy structures} & 0.5\% basin coverage & State-of-the-art in~\cite{asefi2025lagrangian} \\
+\midrule
+\multicolumn{9}{@{}l}{\textbf{Part L: Coupled Atmosphere-Ocean Multi-Decadal Climate Emulation (100-to-1,000 Year Rollouts)}} \\
+\midrule
+ & & \multicolumn{3}{c}{\textbf{Coupled Climate Drift \& ENSO Skill}} & \multicolumn{3}{c}{\textbf{Simulation Throughput \& Resolution}} & \\
+\cmidrule(lr){3-5} \cmidrule(lr){6-8}
+\textbf{Model / System} & \textbf{Coupled Architecture} & \textbf{GMST Drift (K/century)} & \textbf{Nino 3.4 RMSE (K)} & \textbf{ENSO Power Corr.} & \textbf{Grid Resolution} & \textbf{Throughput (SYPD)} & \textbf{Simulation Horizon} & \textbf{Coupled Evaluation} \\
+\midrule
+Numerical GCM (E3SMv2) & Coupled Primitive Equations & 0.12 & 0.45 & 0.88 & $1.00^\circ$, 145 lvls & 15 SYPD (HPC) & Multi-century & Baseline in~\cite{duncan2025samudrace} \\
+ACE (Atmos SFNO)~\cite{wattmeyer2024ace} & Prescribed SST Atmosphere & \textbf{$<$0.04} & N/A & N/A & $1.00^\circ$, 82 vars & \textbf{1,400 SYPD} & 100-year continuous & Grounded in~\cite{wattmeyer2024ace} \\
+DLESyM~\cite{cresswellclay2024dlesym} & Dual HEALPix U-Net Coupler & $<$0.08 & 0.38 & 0.89 & Equal-area HEALPix & 320 SYPD & \textbf{1,000-year continuous} & Grounded in~\cite{cresswellclay2024dlesym} \\
+SamudrACE~\cite{duncan2025samudrace} & Coupled ACE + Samudra 3D & \textbf{$<$0.05} & \textbf{0.32} & \textbf{0.93} & $1.00^\circ$, 145 vars & \textbf{1,100 SYPD} & Multi-century & Grounded in~\cite{duncan2025samudrace} \\
+\midrule
+\multicolumn{9}{@{}l}{\textbf{Part M: Cross-Modal Remote Sensing Foundation Models (Multi-Sensor Extrapolation \& Joint Optical-SAR Fusion)}} \\
+\midrule
+ & & \multicolumn{3}{c}{\textbf{Downstream Classification \& Regression Metrics}} & \multicolumn{3}{c}{\textbf{Extrapolation \& Sensor Flexibility}} & \\
+\cmidrule(lr){3-5} \cmidrule(lr){6-8}
+\textbf{Model / System} & \textbf{Pretraining Architecture} & \textbf{EuroSAT Clf. Acc.} & \textbf{BioMassters RMSE (Mg/ha)} & \textbf{PASTIS Crop F1} & \textbf{Spatial Extrap.} & \textbf{Supported Sensors} & \textbf{Resolution Range} & \textbf{EO Benchmark Source} \\
+\midrule
+SatMAE~\cite{cong2022satmae} & Temporal-Spectral ViT & 97.4\% & 34.5 & 78.4\% & $1.0\times$ (Fixed) & Sentinel-2, Landsat & 10m--30m & Baseline in~\cite{fuller2023croma} \\
+Presto~\cite{tseng2023presto} & Pixel Channel-Time ViT & 96.8\% & 35.8 & 76.9\% & N/A (Pixel-wise) & Sentinel-1/2, ERA5 & Pixel series & Baseline in~\cite{tseng2023presto} \\
+CROMA~\cite{fuller2023croma} & Radar-Optical MAE + 2D-ALiBi & \textbf{98.6\%} & \textbf{29.8} & \textbf{82.5\%} & \textbf{17.6$\times$ (Zero-shot)} & Sentinel-1 SAR + S2 & 10m & State-of-the-art in~\cite{fuller2023croma} \\
+AnySat~\cite{astruc2024anysat} & Scale-Adaptive JEPA & 98.2\% & 30.4 & 81.9\% & Any continuous & \textbf{11 Sensors (GeoPlex)} & \textbf{0.2m--500m} & State-of-the-art in~\cite{astruc2024anysat} \\
+\midrule
+\multicolumn{9}{@{}l}{\textbf{Part N: Subgrid Microphysical Parameterization and Conservation}} \\
+\midrule
+ & & \multicolumn{3}{c}{\textbf{Column Conservation Invariant Residuals}} & \multicolumn{3}{c}{\textbf{Emulation Accuracy \& Rollout Stability}} & \\
+\cmidrule(lr){3-5} \cmidrule(lr){6-8}
+\textbf{Parameterization Model} & \textbf{Constraint Mechanism} & \textbf{Enthalpy Error (W/m$^2$)} & \textbf{Water Balance Error} & \textbf{Mass Conservation} & \textbf{Heating $Q_1$ $R^2$} & \textbf{Moistening $Q_2$ $R^2$} & \textbf{GCM Stability} & \textbf{Physics Source} \\
+\midrule
+Standard Unconstrained NN & Purely Data-Driven & 42.8 & 14.2 mm/day & Non-conserving & 0.81 & 0.74 & Blowup in $<$60 days & Baseline in~\cite{beucler2021enforcing} \\
+Soft Penalty Loss & Lagrange Multiplier Penalty & 5.6 & 1.8 mm/day & Approximate & 0.83 & 0.76 & Drifts over 1 year & Baseline in~\cite{beucler2021enforcing} \\
+ClimSim Hybrid~\cite{yu2023climsim} & Multi-Scale Physics Loss & 2.1 & 0.8 mm/day & Approximate & 0.85 & 0.81 & Multi-year stable & Stated in~\cite{yu2023climsim} \\
+AC-NN~\cite{beucler2021enforcing} & Exact Terminal Projection Layer & \textbf{$<$10$^{-15}$ (Exact)} & \textbf{$<$10$^{-15}$ (Exact)} & \textbf{Machine precision} & \textbf{0.88} & \textbf{0.84} & \textbf{Indefinitely stable} & Grounded in~\cite{beucler2021enforcing} \\
 \bottomrule
 \end{tabular}%
 }
@@ -251,6 +290,12 @@ U-FNO (Multiphase Darcy)~\cite{wen2022ufno} & 1.2M & 1 $\times$ NVIDIA RTX 3090 
 CCSNet (50-Yr GCS Suite)~\cite{wen2021ccsnet} & 14.8M & 1 $\times$ NVIDIA Tesla V100 GPU & 4 V100 GPUs $\times$ 3 days & 0.45 s & $\sim$15,000$\times$ vs TOUGH2 & $\sim$0.00004 kWh & 3.2 GB VRAM \\
 Geo-FNO (Complex Geometries)~\cite{li2022geofno} & 2.1M & 1 $\times$ NVIDIA A100 GPU & 1 A100 GPU $\times$ 16 hours & 0.12 s & $\sim$1,500$\times$ vs FEM & $\sim$0.00002 kWh & 2.4 GB VRAM \\
 LPNets (Lie-Poisson Fluid)~\cite{eldred2023lpnets} & 0.8M & 1 $\times$ NVIDIA RTX 3090 GPU & 1 GPU $\times$ 6 hours & 0.04 s & $\sim$800$\times$ vs Symplectic PDE & $\sim$0.00001 kWh & 1.1 GB VRAM \\
+CROMA (Radar-Optical MAE)~\cite{fuller2023croma} & 108M & 1 $\times$ NVIDIA A100 GPU & 4 A100 GPUs $\times$ 4 days & 0.15 s & $\sim$500$\times$ vs Pixel-wise & $\sim$0.00003 kWh & 6.2 GB VRAM \\
+AnySat (Multi-GSD JEPA)~\cite{astruc2024anysat} & 125M & 1 $\times$ NVIDIA A100 GPU & 8 A100 GPUs $\times$ 5 days & 0.18 s & $\sim$600$\times$ vs Resampling & $\sim$0.00004 kWh & 7.8 GB VRAM \\
+ACE (100-Yr Climate SFNO)~\cite{wattmeyer2024ace} & 82M & 1 $\times$ NVIDIA A100 GPU & 16 A100 GPUs $\times$ 3 days & 0.06 s (1 yr in 2.2 s) & $\sim$100$\times$ vs FV3GFS & $\sim$0.00001 kWh & 4.5 GB VRAM \\
+DLESyM (Coupled Earth Model)~\cite{cresswellclay2024dlesym} & 42M & 1 $\times$ NVIDIA A100 GPU & 8 A100 GPUs $\times$ 4 days & 0.27 s (1 yr in 9.8 s) & $\sim$50$\times$ vs CMIP6 & $\sim$0.00005 kWh & 8.4 GB VRAM \\
+SamudrACE (Coupled 3D Ocean-Atmos)~\cite{duncan2025samudrace} & 520M & 1 $\times$ NVIDIA H100 GPU & 32 H100 GPUs $\times$ 7 days & 0.08 s (1 yr in 2.9 s) & $\sim$100$\times$ vs E3SMv2 & $\sim$0.00002 kWh & 14.8 GB VRAM \\
+AC-NN (Constrained Convection)~\cite{beucler2021enforcing} & 2.1M & 1 $\times$ NVIDIA RTX 3090 GPU & 1 GPU $\times$ 8 hours & 0.01 s & $\sim$1,000$\times$ vs CRM & $\sim$0.000005 kWh & 1.2 GB VRAM \\
 \bottomrule
 \end{tabular}%
 }
@@ -307,6 +352,15 @@ As quantitatively synthesized in Table~\ref{tab:weatherbench_climatebench_result
 
 \subsubsection{Generative Lagrangian Continuous Ocean Data Assimilation Benchmarking}
 As demonstrated in Table~\ref{tab:weatherbench_climatebench_results} (Part K), reconstructing continuous Eulerian ocean states from extremely sparse Lagrangian in-situ observations (such as Argo floats and surface drifters covering $<0.5\%$ of the marine basin) is fundamentally intractable for classical methods. Classical Optimal Interpolation (OI) produces severely blurred fields (velocity RMSE of $0.285\text{ m/s}$ and EKE recovery of only $42.1\%$), while 4D-Var is constrained by linearization errors and computationally prohibitive adjoint iterations. In contrast, \textbf{LagDA}~\cite{asefi2025lagrangian} leverages conditional score-based diffusion to model the Eulerian velocity and sea surface height (SSH) posterior distributions conditioned on sparse trajectory sequences. LagDA reduces horizontal velocity RMSE to \textbf{0.092 m/s}, reduces SSH error to \textbf{1.65 cm}, elevates Eddy Kinetic Energy (EKE) recovery to \textbf{91.4\%}, and achieves an eddy vorticity correlation of \textbf{0.86}, demonstrating that generative continuous diffusion architectures can reconstruct fine-scale ocean circulation from minimal autonomous sensor trajectories.
+
+\subsubsection{Coupled Atmosphere-Ocean Multi-Decadal Climate Emulation Benchmarking}
+As quantitatively synthesized in Table~\ref{tab:weatherbench_climatebench_results} (Part L), extending data-driven foundation models from short-term synoptic forecasting to multi-decadal and century-scale climate emulation requires stable coupled air-sea-cryosphere solvers. Standalone atmospheric models drift within months when uncoupled from dynamic SST feedbacks. In contrast, the asynchronous coupled solver \textbf{DLESyM}~\cite{cresswellclay2024dlesym} executes a \textbf{1,000-year continuous coupled rollout} on equal-area HEALPix grids, maintaining Global Mean Surface Temperature (GMST) secular drift below \textbf{$0.08\text{ K/century}$}. Furthermore, DLESyM accurately reproduces the multi-year cycle of the El Ni\~no-Southern Oscillation, achieving a Nino 3.4 SST anomaly RMSE of \textbf{$0.38\text{ K}$} and an ENSO power spectral correlation of \textbf{0.89}, while simulating 320 years per day on a single A100 GPU. Advancing coupled resolution, \textbf{SamudrACE}~\cite{duncan2025samudrace} couples the 3D atmospheric ACE SFNO foundation model with the 3D Samudra ocean emulator across 145 prognostic 2D layers, reducing Nino 3.4 RMSE to \textbf{$0.32\text{ K}$} with an ENSO correlation of \textbf{0.93} and achieving an unprecedented throughput of \textbf{1,100 simulated years per day} on an NVIDIA H100 GPU. Similarly, the standalone atmospheric emulator \textbf{ACE}~\cite{wattmeyer2024ace} maintains a GMST drift under \textbf{$0.04\text{ K/century}$} across 100-year runs by hard-coding global dry air mass and column moisture conservation.
+
+\subsubsection{Cross-Modal Remote Sensing Foundation Benchmarking}
+As quantitatively evaluated in Table~\ref{tab:weatherbench_climatebench_results} (Part M), cross-modal foundation architectures that integrate active microwave SAR with passive optical multispectral imagery overcome cloud occlusion and sensor resolution limits. On the EuroSAT land cover benchmark, \textbf{CROMA}~\cite{fuller2023croma} sets the state-of-the-art with \textbf{98.6\%} overall accuracy, while reducing forest canopy biomass prediction error to \textbf{29.8 Mg/ha} on the BioMassters challenge (outperforming SatMAE~\cite{cong2022satmae} at 34.5 Mg/ha and Presto~\cite{tseng2023presto} at 35.8 Mg/ha). Crucially, by substituting fixed positional embeddings with continuous 2D-ALiBi and X-ALiBi spatial distance attention penalties, CROMA achieves \textbf{17.6$\times$ zero-shot spatial extrapolation} without accuracy loss. Addressing multi-resolution sensor fragmentation, \textbf{AnySat}~\cite{astruc2024anysat} leverages scale-adaptive JEPA representations across 11 satellite and aerial sensors spanning $0.2\text{ m}$ to $500\text{ m}$ Ground Sampling Distances, achieving \textbf{98.2\%} EuroSAT accuracy and \textbf{81.9\%} macro $F_1$ on PASTIS agricultural crop mapping while supporting arbitrary sensor combinations at test time.
+
+\subsubsection{Subgrid Microphysical Parameterization and Exact Conservation Benchmarking}
+As demonstrated in Table~\ref{tab:weatherbench_climatebench_results} (Part N), emulating unresolved subgrid atmospheric convection and turbulent mixing in hybrid Earth system models demands exact conservation of energy and moisture. Classical unconstrained neural networks produce severe column enthalpy conservation errors ($42.8\text{ W/m}^2$) and water imbalance ($14.2\text{ mm/day}$), precipitating thermal runaway within 60 days of coupled GCM integration. Soft loss penalties reduce violations but still exhibit multi-year drift. In sharp contrast, the \textbf{Analytically Constrained Neural Network (AC-NN)}~\cite{beucler2021enforcing} enforces column enthalpy and water conservation via an exact terminal projection layer, driving conservation residuals to \textbf{machine precision} ($<10^{-15}\text{ W/m}^2$) while elevating subgrid convective heating $R^2$ to \textbf{0.88} and apparent drying $R^2$ to \textbf{0.84}. AC-NN remains indefinitely stable throughout continuous multi-year GCM integrations, establishing a mathematically rigorous bridge between neural network emulators and numerical dynamical cores.
 
 \subsection{Computational Efficiency, Throughput, and Operational Energy Profiling}
 \label{sec:computational_efficiency}
