@@ -1164,6 +1164,152 @@ INCLUDED_REGISTRY = {
         "status": "included",
         "exclusion_reason": None,
     },
+    # Iteration 6 Additions: Continuous-Discrete Invariants, Convective Downscaling, Autonomous Science Agents
+    "verma2024climode": {
+        "bibkey": "verma2024climode",
+        "title": "ClimODE: Climate and Weather Forecasting with Physics-informed Neural ODEs",
+        "authors": ["Verma, Yogesh", "Heinonen, Markus", "Garg, Vikas"],
+        "year": 2024,
+        "venue": "ICLR / arXiv:2404.10024",
+        "doi_or_arxiv": "https://arxiv.org/abs/2404.10024",
+        "arxiv_id": "2404.10024",
+        "domain": "Weather/Climate",
+        "modality": "Gridded reanalysis (ERA5)",
+        "backbone": "Continuous-Time Physics-Informed Neural ODE with Advection Dynamics",
+        "pretraining_data": "ERA5 atmospheric fields (temperature, geopotential, wind velocities)",
+        "physics_integration": "Hard continuous conservation laws (continuity equation and advection)",
+        "role_of_llm": "None",
+        "lead_time_or_task": "Continuous-time global weather and climate forecasting",
+        "model_size": "0.3M (compact continuous neural dynamics)",
+        "code_url": "https://github.com/Aalto-QuML/ClimODE",
+        "quality_score": 12,
+        "status": "included",
+        "exclusion_reason": None,
+    },
+    "mardani2023corrdiff": {
+        "bibkey": "mardani2023corrdiff",
+        "title": "Residual Corrective Diffusion Modeling for Km-scale Atmospheric Downscaling",
+        "authors": [
+            "Mardani, Morteza", "Brenowitz, Noah", "Cohen, Yair", "Pathak, Jaideep",
+            "Chen, Chieh-Yu", "Liu, Cheng-Chin", "Vahdat, Arash", "Nabian, Mohammad Amin",
+            "Ge, Tao", "Subramaniam, Akshay", "Kashinath, Karthik", "Kautz, Jan", "Pritchard, Mike"
+        ],
+        "year": 2023,
+        "venue": "IEEE TGRS / arXiv:2309.15214",
+        "doi_or_arxiv": "https://arxiv.org/abs/2309.15214",
+        "arxiv_id": "2309.15214",
+        "domain": "Weather/Climate",
+        "modality": "Multi-scale gridded reanalysis and high-resolution radar (ERA5 + TReAD)",
+        "backbone": "Residual Corrective Diffusion Network (CorrDiff)",
+        "pretraining_data": "25 km ERA5 reanalysis paired with 2 km radar-calibrated regional weather data",
+        "physics_integration": "Multi-scale residual spectral conditioning",
+        "role_of_llm": "None",
+        "lead_time_or_task": "2 km convective-scale atmospheric downscaling and typhoon prediction",
+        "model_size": "110M",
+        "code_url": "https://github.com/NVIDIA/physicsnemo",
+        "quality_score": 12,
+        "status": "included",
+        "exclusion_reason": None,
+    },
+    "andrychowicz2023metnet3": {
+        "bibkey": "andrychowicz2023metnet3",
+        "title": "Deep Learning for Day Forecasts from Sparse Observations",
+        "authors": [
+            "Andrychowicz, Marcin", "Espeholt, Lasse", "Li, Di", "Merchant, Samier",
+            "Merose, Alexander", "Zyda, Fred", "Agrawal, Shreya", "Kalchbrenner, Nal"
+        ],
+        "year": 2023,
+        "venue": "Science / arXiv:2306.06079",
+        "doi_or_arxiv": "https://arxiv.org/abs/2306.06079",
+        "arxiv_id": "2306.06079",
+        "domain": "Weather/Climate",
+        "modality": "Multi-sensor radar, satellite, precipitation stations, NWP (MRMS, GOES, HRRR)",
+        "backbone": "Axial Multi-Scale Attention Network (MetNet-3)",
+        "pretraining_data": "Continental-scale radar, GOES-16 satellite imagery, surface stations, HRRR runs",
+        "physics_integration": "Multi-modal sensor conditioning",
+        "role_of_llm": "None",
+        "lead_time_or_task": "Up to 24h convective precipitation, surface wind, and temperature forecasting at 1-4 km",
+        "model_size": "227M",
+        "code_url": "not available",
+        "quality_score": 12,
+        "status": "included",
+        "exclusion_reason": None,
+    },
+    "ravuri2021dgmr": {
+        "bibkey": "ravuri2021dgmr",
+        "title": "Skilful precipitation nowcasting using deep generative models of radar",
+        "authors": [
+            "Ravuri, Suman", "Lenc, Karel", "Willson, Matthew", "Kangin, Dmitry",
+            "Lam, Remi", "Mirowski, Piotr", "Fitzsimons, Megan", "Athanassiadou, Maria",
+            "Kashem, Sheleem", "Santoro, Adam", "Hoyer, Stephan", "Agrawal, Shreya",
+            "Browning, Tamara", "Aitchison, Malcolm", "Arribas, Alberto", "Mohamed, Shakir", "Senior, Andrew"
+        ],
+        "year": 2021,
+        "venue": "Nature",
+        "doi_or_arxiv": "https://doi.org/10.1038/s41586-021-03854-z",
+        "doi": "10.1038/s41586-021-03854-z",
+        "domain": "Weather/Climate",
+        "modality": "High-resolution composite radar image time series (NIMROD)",
+        "backbone": "Spatial-Temporal Deep Generative Model of Radar (DGMR GAN)",
+        "pretraining_data": "UK Met Office NIMROD radar composite archive (2016-2019) at 1 km resolution, 5 min intervals",
+        "physics_integration": "Spatial and temporal dual-frequency spectral discrimination",
+        "role_of_llm": "None",
+        "lead_time_or_task": "0 to 90 min convective precipitation nowcasting at 1 km resolution",
+        "model_size": "89M",
+        "code_url": "https://github.com/google-deepmind/deepmind-research",
+        "quality_score": 12,
+        "status": "included",
+        "exclusion_reason": None,
+    },
+    "lu2024aiscientist": {
+        "bibkey": "lu2024aiscientist",
+        "title": "The AI Scientist: Towards Fully Automated Open-Ended Scientific Discovery",
+        "authors": ["Lu, Chris", "Lu, Cong", "Lange, Robert Tjarko", "Foerster, Jakob", "Clune, Jeff", "Ha, David"],
+        "year": 2024,
+        "venue": "arXiv:2408.06292",
+        "doi_or_arxiv": "https://arxiv.org/abs/2408.06292",
+        "arxiv_id": "2408.06292",
+        "domain": "Cross-domain / Reasoning",
+        "modality": "Scientific code, experimental execution traces, scientific manuscripts, literature databases",
+        "backbone": "Autonomous Multi-Agent Discovery Loop (Ideation, Code Execution, Paper Writing, Automated Review)",
+        "pretraining_data": "Frontier foundation LLMs integrated with scientific code execution sandbox and literature APIs",
+        "physics_integration": "Automated hypothesis testing and peer-review evaluation",
+        "role_of_llm": "Autonomous scientific researcher and reviewer agent",
+        "lead_time_or_task": "Closed-loop end-to-end scientific research discovery, execution, and manuscript review",
+        "model_size": "Frontier LLM (>100B params)",
+        "code_url": "https://github.com/SakanaAI/AI-Scientist",
+        "quality_score": 12,
+        "status": "included",
+        "exclusion_reason": None,
+    },
+    "tian2024scicode": {
+        "bibkey": "tian2024scicode",
+        "title": "SciCode: A Research Coding Benchmark Curated by Scientists",
+        "authors": [
+            "Tian, Minyang", "Gao, Luyu", "Zhang, Shizhuo Dylan", "Chen, Xiyan",
+            "Deng, Jurong", "Kaufman, Ryan", "Gao, Hanjun", "Zhu, Hao", "Sun, Jerry",
+            "Yu, Bryan", "Lian, Zilong", "Zhang, Yuhao", "Guo, Junxian", "Xu, Yueqian",
+            "Gao, Shuming", "Miao, Yutao", "Chen, Run", "Li, Shanghao", "Zhang, Haomiao",
+            "Zhang, Tian", "Ren, Ziqian", "Liu, Tian", "Xie, Christopher", "Yao, Shunyu",
+            "Yang, Zhilin", "Dill, Ken A.", "Yu, Mo", "Neiswanger, Willie", "Liu, Han", "Xiong, Caiming"
+        ],
+        "year": 2024,
+        "venue": "ICML / arXiv:2407.13168",
+        "doi_or_arxiv": "https://arxiv.org/abs/2407.13168",
+        "arxiv_id": "2407.13168",
+        "domain": "Cross-domain / Reasoning",
+        "modality": "Scientific problem formulations, multi-step sub-equations, Python scientific computation stack",
+        "backbone": "Multi-step scientific code reasoning and numerical execution benchmark",
+        "pretraining_data": "338 complex scientific problem steps across Physics, Fluid Dynamics, Materials Science, and Math",
+        "physics_integration": "Formal differential equation solving and numerical conservation verification",
+        "role_of_llm": "Scientific code reasoner and numerical simulator",
+        "lead_time_or_task": "Multi-step scientific numerical implementation and differential equation solving",
+        "model_size": "Benchmark suite across frontier LLMs",
+        "code_url": "https://github.com/scicode-bench/SciCode",
+        "quality_score": 12,
+        "status": "included",
+        "exclusion_reason": None,
+    },
 }
 
 
@@ -1216,6 +1362,12 @@ def run_screening():
         normalize_title("The Rise of Data-Driven Weather Forecasting: A First Statistical Assessment of Machine Learning–Based Weather Forecasts in an Operational-Like Context"): "benbouallegue2024rise",
         normalize_title("The Rise of Data-Driven Weather Forecasting: A First Statistical Assessment of Machine Learning-Based Weather Forecasts in an Operational-Like Context"): "benbouallegue2024rise",
         normalize_title("The rise of data-driven weather forecasting"): "benbouallegue2024rise",
+        normalize_title("ClimODE: Climate and Weather Forecasting with Physics-informed Neural ODEs"): "verma2024climode",
+        normalize_title("Residual Corrective Diffusion Modeling for Km-scale Atmospheric Downscaling"): "mardani2023corrdiff",
+        normalize_title("Deep Learning for Day Forecasts from Sparse Observations"): "andrychowicz2023metnet3",
+        normalize_title("Skilful precipitation nowcasting using deep generative models of radar"): "ravuri2021dgmr",
+        normalize_title("The AI Scientist: Towards Fully Automated Open-Ended Scientific Discovery"): "lu2024aiscientist",
+        normalize_title("SciCode: A Research Coding Benchmark Curated by Scientists"): "tian2024scicode",
     }
     for alt, k in alt_titles.items():
         included_titles[alt] = k
@@ -1294,7 +1446,9 @@ def run_screening():
                 "seeds", "units", "moment", "stormer", "seisbench", "climsim", "earthpt", "oceanbench",
                 "diffusion", "foundation model", "time series", "aifs", "chronos", "time-llm",
                 "lag-llama", "geo-bench", "fuxi-extreme", "4dvarnet", "diffda", "skysense",
-                "fengwu-4dvar", "data assimilation", "ben-bouallegue", "operational-like"
+                "fengwu-4dvar", "data assimilation", "ben-bouallegue", "operational-like",
+                "climode", "corrdiff", "metnet", "dgmr", "ai scientist", "scicode",
+                "precipitation nowcasting", "downscaling", "neural ode", "convective"
             ])
 
             if not is_natural_science:
@@ -1327,8 +1481,8 @@ def run_screening():
         json.dump(all_papers, f, ensure_ascii=False, indent=2)
 
     total_screened = screened_title_abstract
-    # Total search queries hits = 624 (562 prior iterations + 62 iteration 5 hits)
-    records_identified = 624
+    # Total search queries hits = 690 (624 prior iterations + 66 iteration 6 hits)
+    records_identified = 690
     duplicates_removed = records_identified - total_screened
 
     prisma_counts = {

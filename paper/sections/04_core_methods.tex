@@ -209,4 +209,65 @@ A persistent vulnerability of purely data-driven black-box neural networks is th
         \frac{\partial \mathbf{X}}{\partial t} = \mathcal{F}_{\text{dynamical}}(\mathbf{X}) + \mathcal{N}_{\theta}(\mathbf{X}),
     \end{equation}
     where $\mathcal{F}_{\text{dynamical}}$ executes analytical fluid dynamics, while the neural network $\mathcal{N}_{\theta}$ parameterizes sub-grid physical processes. NeuralGCM demonstrates unprecedented multi-decadal stability without climate drift, matching the operational deterministic accuracy of ECMWF IFS HRES at 1--10 day weather horizons while preserving global physical conservation laws for decadal climate simulations.
+    \item \textbf{Continuous Physics-Informed Neural ODE Dynamics: ClimODE}: Verma et al.~\cite{verma2024climode} pioneered \textbf{ClimODE}, fundamentally rethinking scientific time series modeling by replacing discrete multi-step mapping $\mathbf{x}_{t+\Delta t} = \mathcal{M}_\theta(\mathbf{x}_t)$ with continuous differential flow trajectories grounded in fluid mechanics. By explicitly embedding continuity and advective constraints into neural ordinary differential equations, ClimODE achieves global weather forecasting with only 0.3M parameters---over two orders of magnitude smaller than discrete vision transformers---while natively supporting arbitrary continuous-time evaluation intervals.
+\end{enumerate}
+
+\subsection{Continuous-Discrete Physics Invariants, Lie Symmetries, and Geometric Deep Learning}
+\label{sec:continuous_discrete_physics}
+A central mathematical frontier in scientific foundation models is reconciling discrete computational architectures (e.g., attention over tokenized patches, autoregressive discrete rollouts) with the continuous, symmetry-preserving nature of physical laws governing the Earth system.
+
+\subsubsection{Continuous Fluid Advection and Neural Differential Flows}
+Classical discrete autoregressive architectures forecast atmospheric states via discrete recurrence:
+\begin{equation}
+    \mathbf{x}_{k+1} = \mathcal{M}_\theta(\mathbf{x}_k), \quad k \in \{0, 1, \dots, K\},
+\end{equation}
+where $\Delta t = t_{k+1} - t_k$ is strictly locked to a predefined sampling cadence (e.g., $6\text{h}$ in ERA5). This discrete formulation suffers from two fundamental limitations: (1) time-step rigidity, precluding direct assimilation or forecasting at arbitrary asynchronous timestamps, and (2) compounding discretization error, where unconstrained discrete updates accumulate unphysical drift.
+
+In contrast, continuous-time formulation models the planetary atmosphere as a non-linear dynamical system evolving over the continuous manifold $\mathcal{M} = \mathbb{S}^2 \times \mathbb{R}^+$:
+\begin{equation}
+    \frac{d\mathbf{x}(t)}{dt} = \mathbf{f}_\theta(\mathbf{x}(t), t), \quad \mathbf{x}(t) = \mathbf{x}(t_0) + \int_{t_0}^t \mathbf{f}_\theta(\mathbf{x}(\tau), \tau)\, d\tau.
+    \label{eq:neural_ode_continuous}
+\end{equation}
+To enforce physical consistency, ClimODE~\cite{verma2024climode} constrains the learned vector field $\mathbf{f}_\theta$ using the Navier--Stokes transport theorem. The continuous conservation of atmospheric mass density $\rho$ is governed by the continuity PDE:
+\begin{equation}
+    \frac{\partial \rho}{\partial t} + \nabla \cdot (\rho \mathbf{v}_\theta) = 0,
+    \label{eq:continuity_pde}
+\end{equation}
+where $\mathbf{v}_\theta(\mathbf{s}, t) \in T_\mathbf{s}\mathbb{S}^2$ is the neural velocity field over spherical coordinates $\mathbf{s} = (\lambda, \theta)$. Similarly, any scalar tracer field $\phi \in \{T, q, Z\}$ (temperature, specific humidity, geopotential) satisfies the continuous material advection-diffusion relation:
+\begin{equation}
+    \frac{D\phi}{Dt} \equiv \frac{\partial \phi}{\partial t} + (\mathbf{v}_\theta \cdot \nabla)\phi = \mathcal{D}_\theta(\phi) + \mathcal{S}_\theta(\phi, \mathbf{s}, t),
+    \label{eq:advection_pde}
+\end{equation}
+where $\mathcal{D}_\theta$ denotes turbulent sub-grid diffusion and $\mathcal{S}_\theta$ encapsulates radiative source/sink fluxes. Integrating Eq.~(\ref{eq:neural_ode_continuous}) with adaptive-step numerical ODE solvers (e.g., Dormand--Prince 5(4) or adaptive Runge--Kutta) guarantees that the flow remains bounded along physical trajectories, yielding superior long-term stability and eliminating the need for empirical post-hoc smoothing.
+
+\subsubsection{Lie Group Symmetries and Spherical Coordinate Invariance}
+The fundamental equations of geophysical fluid dynamics (primitive equations, shallow-water equations) are invariant under the continuous Lie group of spatial rotations $\mathrm{SO}(3)$ and time translation $\mathbb{R}$. Let $g \in \mathrm{SO}(3)$ represent an arbitrary rigid rotation of the planetary sphere $\mathbb{S}^2$. A scientific foundation operator $\mathcal{F}_\theta: \mathcal{X}(\mathbb{S}^2) \to \mathcal{X}(\mathbb{S}^2)$ is said to be $\mathrm{SO}(3)$-equivariant if and only if:
+\begin{equation}
+    \mathcal{F}_\theta(\pi_g[\mathbf{X}]) = \pi_g[\mathcal{F}_\theta(\mathbf{X})], \quad \forall g \in \mathrm{SO}(3),
+    \label{eq:so3_equivariance}
+\end{equation}
+where $\pi_g$ denotes the group representation acting on the field state $\mathbf{X}$. Crucially, the transformation laws depend on the tensor rank of the physical variables:
+\begin{itemize}
+    \item \textbf{Scalar Tracers} (Geopotential $\Phi$, Surface Temperature $T_{2\text{m}}$, Pressure $p$): Act as rank-0 scalar invariants under coordinate rotation:
+    \begin{equation}
+        \pi_g[\Phi](\mathbf{s}) = \Phi(g^{-1}\mathbf{s}).
+    \end{equation}
+    \item \textbf{Vector Velocity Fields} (Horizontal Wind $\mathbf{u} = (u, v)^T$): Belong to the tangent bundle $T_\mathbf{s}\mathbb{S}^2$ and undergo an orthogonal frame transformation via the differential push-forward:
+    \begin{equation}
+        \pi_g[\mathbf{u}](\mathbf{s}) = \mathbf{J}_g(g^{-1}\mathbf{s}) \, \mathbf{u}(g^{-1}\mathbf{s}),
+    \end{equation}
+    where $\mathbf{J}_g \in \mathrm{SO}(2)$ denotes the local Jacobian transition matrix between tangent spaces.
+\end{itemize}
+Standard planar convolutional networks or naive Vision Transformers applied to equirectangular latitude-longitude projections violate Eq.~(\ref{eq:so3_equivariance}) due to the non-uniform metric tensor:
+\begin{equation}
+    g_{\mathbb{S}^2} = R^2 \left( d\theta^2 + \cos^2\theta \, d\lambda^2 \right),
+\end{equation}
+which compresses grid cell longitudinal distances towards the poles ($\Delta x \to 0$ as $\theta \to \pm \pi/2$), causing severe polar singularities and high-frequency numerical artifacts. In contrast, geometric foundation models resolve this through two elegant paradigms:
+\begin{enumerate}
+    \item \textbf{Spherical Harmonic Harmonic Operators}: SFNO~\cite{bonev2023sfno} projects spatial states into continuous spherical harmonics $Y_\ell^m(\theta, \lambda)$, executing spectral convolutions in the frequency domain where $\mathrm{SO}(3)$ acts block-diagonally via Wigner $D$-matrices:
+    \begin{equation}
+        \widehat{\mathbf{X}}_\ell^m = \int_{\mathbb{S}^2} \mathbf{X}(\mathbf{s}) \, \overline{Y_\ell^m(\mathbf{s})} \, d\Omega(\mathbf{s}),
+    \end{equation}
+    strictly preserving planetary rotational symmetry and eliminating polar distortion by construction.
+    \item \textbf{Quasi-Uniform Spherical Meshes}: GraphCast~\cite{lam2023graphcast} and AIFS~\cite{lang2024aifs} map irregular spherical domains onto recursive icosahedral multi-mesh tessellations $\mathcal{G} = (\mathcal{V}, \mathcal{E})$. Message-passing edge attributes encode true Riemannian geodesic distances and relative orientation angles, achieving approximate isometry and continuous spatial invariance across the entire planetary sphere.
 \end{enumerate}

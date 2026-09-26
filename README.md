@@ -1,7 +1,7 @@
 # Awesome Scientific Multimodal Time Series Foundation Models and Reasoning LLMs
 ## 科学多模态时序大模型与科学推理大模型前沿进展精选
 
-[![Survey PDF](https://img.shields.io/badge/Paper-PDF-red.svg)](paper/main.pdf) [![PRISMA Included](https://img.shields.io/badge/PRISMA%20Included-53%20papers-brightgreen.svg)](#prisma-systematic-review-statistics) [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE) [![Maintenance](https://img.shields.io/badge/Maintained%20by-Antigravity%20CLI-purple.svg)](#how-this-survey-is-maintained)
+[![Survey PDF](https://img.shields.io/badge/Paper-PDF-red.svg)](paper/main.pdf) [![PRISMA Included](https://img.shields.io/badge/PRISMA%20Included-59%20papers-brightgreen.svg)](#prisma-systematic-review-statistics) [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE) [![Maintenance](https://img.shields.io/badge/Maintained%20by-Antigravity%20CLI-purple.svg)](#how-this-survey-is-maintained)
 
 ## Overview / 项目概述
 
@@ -28,12 +28,12 @@ The taxonomy categorizes the literature across four core dimensions:
 
 ![PRISMA 2020 Flow](paper/figures/prisma_flow.png)
 
-- **Records Identified across Academic APIs**: 624
-- **Unique Candidates Evaluated**: 496
-- **Title/Abstract Excluded**: 116
-- **Full-Text Assessed for Eligibility**: 380
-- **Full-Text Excluded (narrow/regional)**: 327
-- **Studies Rigorously Included**: 53
+- **Records Identified across Academic APIs**: 690
+- **Unique Candidates Evaluated**: 550
+- **Title/Abstract Excluded**: 132
+- **Full-Text Assessed for Eligibility**: 418
+- **Full-Text Excluded (narrow/regional)**: 359
+- **Studies Rigorously Included**: 59
 
 ## Research Landscape & Milestone Timeline
 
@@ -159,6 +159,26 @@ The taxonomy categorizes the literature across four core dimensions:
   - *Authors*: Ben-Bouallegue, Zied, Clare, Mariana C. A., Magnusson, Linus et al.
   - *Architecture*: `Operational NWP Benchmark & Concept Drift Evaluation Protocol` | *Params*: `Platform` | *Physics*: `Operational conservation and synoptic verification`
   - *Links*: [Paper / DOI](https://doi.org/10.1175/BAMS-D-23-0162.1) | `[Code not available]`
+
+- **ClimODE: Climate and Weather Forecasting with Physics-informed Neural ODEs** (ICLR / arXiv:2404.10024 2024)
+  - *Authors*: Verma, Yogesh, Heinonen, Markus, Garg, Vikas
+  - *Architecture*: `Continuous-Time Physics-Informed Neural ODE with Advection Dynamics` | *Params*: `0.3M (compact continuous neural dynamics)` | *Physics*: `Hard continuous conservation laws (continuity equation and advection)`
+  - *Links*: [Paper / DOI](https://arxiv.org/abs/2404.10024) | [![Code](https://img.shields.io/badge/Code-GitHub-blue.svg)](https://github.com/Aalto-QuML/ClimODE)
+
+- **Residual Corrective Diffusion Modeling for Km-scale Atmospheric Downscaling** (IEEE TGRS / arXiv:2309.15214 2023)
+  - *Authors*: Mardani, Morteza, Brenowitz, Noah, Cohen, Yair et al.
+  - *Architecture*: `Residual Corrective Diffusion Network (CorrDiff)` | *Params*: `110M` | *Physics*: `Multi-scale residual spectral conditioning`
+  - *Links*: [Paper / DOI](https://arxiv.org/abs/2309.15214) | [![Code](https://img.shields.io/badge/Code-GitHub-blue.svg)](https://github.com/NVIDIA/physicsnemo)
+
+- **Deep Learning for Day Forecasts from Sparse Observations** (Science / arXiv:2306.06079 2023)
+  - *Authors*: Andrychowicz, Marcin, Espeholt, Lasse, Li, Di et al.
+  - *Architecture*: `Axial Multi-Scale Attention Network (MetNet-3)` | *Params*: `227M` | *Physics*: `Multi-modal sensor conditioning`
+  - *Links*: [Paper / DOI](https://arxiv.org/abs/2306.06079) | `[Code not available]`
+
+- **Skilful precipitation nowcasting using deep generative models of radar** (Nature 2021)
+  - *Authors*: Ravuri, Suman, Lenc, Karel, Willson, Matthew et al.
+  - *Architecture*: `Spatial-Temporal Deep Generative Model of Radar (DGMR GAN)` | *Params*: `89M` | *Physics*: `Spatial and temporal dual-frequency spectral discrimination`
+  - *Links*: [Paper / DOI](https://doi.org/10.1038/s41586-021-03854-z) | [![Code](https://img.shields.io/badge/Code-GitHub-blue.svg)](https://github.com/google-deepmind/deepmind-research)
 
 ### Earth Observation & Remote Sensing Time Series (对地观测与遥感时序)
 
@@ -328,6 +348,16 @@ The taxonomy categorizes the literature across four core dimensions:
   - *Authors*: Jin, Ming, Zhang, Yifan, Chen, Wei et al.
   - *Architecture*: `Position Paper` | *Params*: `not reported` | *Physics*: `not reported`
   - *Links*: [Paper / DOI](https://arxiv.org/abs/2402.02713) | `[Code not available]`
+
+- **The AI Scientist: Towards Fully Automated Open-Ended Scientific Discovery** (arXiv:2408.06292 2024)
+  - *Authors*: Lu, Chris, Lu, Cong, Lange, Robert Tjarko et al.
+  - *Architecture*: `Autonomous Multi-Agent Discovery Loop (Ideation, Code Execution, Paper Writing, Automated Review)` | *Params*: `Frontier LLM (>100B params)` | *Physics*: `Automated hypothesis testing and peer-review evaluation`
+  - *Links*: [Paper / DOI](https://arxiv.org/abs/2408.06292) | [![Code](https://img.shields.io/badge/Code-GitHub-blue.svg)](https://github.com/SakanaAI/AI-Scientist)
+
+- **SciCode: A Research Coding Benchmark Curated by Scientists** (ICML / arXiv:2407.13168 2024)
+  - *Authors*: Tian, Minyang, Gao, Luyu, Zhang, Shizhuo Dylan et al.
+  - *Architecture*: `Multi-step scientific code reasoning and numerical execution benchmark` | *Params*: `Benchmark suite across frontier LLMs` | *Physics*: `Formal differential equation solving and numerical conservation verification`
+  - *Links*: [Paper / DOI](https://arxiv.org/abs/2407.13168) | [![Code](https://img.shields.io/badge/Code-GitHub-blue.svg)](https://github.com/scicode-bench/SciCode)
 
 ## How This Survey Is Maintained / 本项目自动化维护机制
 

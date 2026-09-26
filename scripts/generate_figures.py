@@ -167,28 +167,28 @@ def plot_taxonomy_tree():
     # 4 Main Pillar Categories
     pillars = [
         ("Scientific Domains & Modalities", 12.5, "#DBEAFE", "#2563EB", [
-            ("Weather & Climate", "ERA5, MERRA-2, Radar\n(Pangu, GraphCast, Aurora, NeuralGCM)"),
-            ("Earth Observation & RS", "Multispectral, SAR, DEM\n(SatMAE, Presto, Galileo, DOFA)"),
-            ("Hydrology & Oceans", "River gauges, GLORYS12\n(GlobalFlood, Caravan, XiHe, OceanGPT)"),
-            ("Geophysics & Space", "Waveforms, SDO UV series\n(SeisT, Surya)")
+            ("Weather & Climate", "ERA5, High-Res Radar, Reanalysis\n(Pangu, GraphCast, Aurora, DGMR)"),
+            ("Earth Observation & RS", "Multispectral, SAR, DEM Time Series\n(SatMAE, Presto, Galileo, SkySense)"),
+            ("Hydrology & Oceans", "River gauges, GLORYS12, Altimetry\n(GlobalFlood, Caravan, XiHe, 4DVarNet)"),
+            ("Geophysics & Space", "Waveforms, SDO UV series\n(SeisT, Surya, SeisBench)")
         ]),
         ("Foundation Architectures", 37.5, "#DCFCE7", "#16A34A", [
-            ("3D Spatial Transformers", "3D Swin, 3DEST, Perceiver\n(Pangu, Aurora)"),
-            ("Multi-Mesh Graph Neural Nets", "Icosahedral spherical mesh\n(GraphCast, GenCast)"),
-            ("Continuous Neural Operators", "AFNO, SFNO, Fourier Spec.\n(FourCastNet, SFNO)"),
-            ("Multimodal Masked Encoders", "Temporal-spectral masking\n(SatMAE, Presto, Galileo, DOFA)")
+            ("3D Spatial Transformers", "3D Swin, 3DEST, Perceiver\n(Pangu, Aurora, SkySense)"),
+            ("Multi-Mesh GNNs & Operators", "Icosahedral spherical mesh & SFNO\n(GraphCast, AIFS, SFNO)"),
+            ("Continuous & Diffusion Solvers", "Continuous Neural ODEs & Diff.\n(ClimODE, CorrDiff, GenCast, SEEDS)"),
+            ("Multimodal Masked Encoders", "Temporal-spectral masking & Token\n(SatMAE, Presto, Galileo, UniTS)")
         ]),
         ("Physics Integration Levels", 62.5, "#FEF3C7", "#D97706", [
             ("Purely Data-Driven", "Statistical auto-regression\n(Standard Vision Transformers)"),
-            ("Soft Physics Loss Penalties", "Conservation & dynamic loss\n(FengWu, FourCastNet, SFNO)"),
-            ("Hard Architectural Constraints", "Inherent symmetry & projection\n(Spherical Harmonics, Invariance)"),
-            ("Hybrid PDE-Neural Solvers", "Coupled numerical solvers\n(NeuralGCM, GlobalFlood, Caravan)")
+            ("Soft Physics Loss Penalties", "Conservation & dynamic loss\n(FengWu, FourCastNet, Stormer)"),
+            ("Hard Symmetries & Continuous ODEs", "SO(3) Lie equivariance & mass flow\n(SFNO, ClimODE, Continuous Transport)"),
+            ("Hybrid PDE-Neural Solvers", "Coupled numerical solvers & DA\n(NeuralGCM, 4DVarNet, DiffDA)")
         ]),
         ("Roles of Reasoning LLMs", 87.5, "#F3E8FF", "#9333EA", [
             ("Scientific Reasoner", "Cross-domain time series QA\n(SciTS, TimeOmni, K2, OceanGPT)"),
-            ("Contextual Enhancer", "Domain priors & text prefixes\n(ClimateLLM)"),
-            ("Autonomous Scientific Agent", "Multi-step tool orchestration\n(ClimateAgent)"),
-            ("Interactive Grounded Interface", "Multimodal chat & change reasoning\n(GeoChat)")
+            ("Contextual & Reprogrammed LM", "Domain priors & patch reprogramming\n(ClimateLLM, Time-LLM, Chronos)"),
+            ("Autonomous Science Agent", "DAG task orchestration & tool REPL\n(ClimateAgent)"),
+            ("Closed-Loop Experimenter", "Novelty search, code & review\n(The AI Scientist, SciCode)")
         ])
     ]
 
@@ -284,17 +284,20 @@ def plot_domain_modality_heatmap():
 
 def plot_weather_foundation_timeline():
     milestones = [
+        ("DGMR", "2021-09", "Radar GAN Nowcast", 2021.75, 1.8, "#D97706"),
         ("FourCastNet", "2022-02", "AFNO Operator", 2022.15, 1.4, "#2563EB"),
         ("SatMAE", "2022-07", "Temporal ViT MAE", 2022.55, -1.5, "#0D9488"),
         ("Pangu-Weather", "2022-11", "3D Earth Swin", 2022.88, 2.5, "#DC2626"),
         ("GraphCast", "2022-12", "Multi-Mesh GNN", 2022.98, -2.6, "#D97706"),
         ("ClimaX", "2023-01", "Variable ViT", 2023.08, 1.3, "#7C3AED"),
         ("Presto", "2023-04", "Lightweight EO", 2023.3, -1.4, "#059669"),
+        ("MetNet-3", "2023-06", "Convective Nowcast", 2023.48, -1.8, "#2563EB"),
         ("SFNO", "2023-06", "Spherical Operator", 2023.45, 2.7, "#10B981"),
         ("ClimSim", "2023-06", "Subgrid Physics", 2023.50, -2.5, "#6366F1"),
         ("SEEDS", "2023-06", "Diffusion Ensembles", 2023.55, 1.6, "#DC2626"),
         ("FuXi", "2023-06", "Cascade Swin", 2023.60, -1.6, "#E11D48"),
         ("WeatherBench 2", "2023-08", "Evaluation Suite", 2023.68, 2.6, "#475569"),
+        ("CorrDiff", "2023-09", "2km Downscaling", 2023.75, -2.2, "#059669"),
         ("Prithvi-100M", "2023-10", "Geospatial ViT", 2023.82, -2.7, "#0D9488"),
         ("GenCast", "2023-12", "Diffusion Ensemble", 2023.95, 1.4, "#DC2626"),
         ("Stormer", "2023-12", "Random Patch ViT", 2023.98, -1.4, "#B45309"),
@@ -308,25 +311,28 @@ def plot_weather_foundation_timeline():
         ("Chronos", "2024-03", "Quantized LM TS", 2024.22, 1.6, "#D97706"),
         ("DOFA", "2024-03", "Plasticity EO", 2024.25, 1.3, "#B45309"),
         ("GlobalFlood", "2024-03", "Ungauged Flood AI", 2024.28, -1.5, "#0284C7"),
+        ("ClimODE", "2024-04", "Neural ODE Flow", 2024.32, 2.2, "#10B981"),
         ("Aurora", "2024-05", "1.3B 3D Perceiver", 2024.40, 2.7, "#7C3AED"),
         ("AIFS", "2024-06", "ECMWF GNN-Transformer", 2024.48, 1.5, "#0D9488"),
         ("NeuralGCM", "2024-07", "Hybrid PDE-AI", 2024.55, -2.6, "#6366F1"),
+        ("SciCode", "2024-07", "Scientific Coding Bench", 2024.58, -1.6, "#7C3AED"),
         ("OceanGPT", "2024-08", "Ocean Science LLM", 2024.62, 1.5, "#0891B2"),
+        ("AI Scientist", "2024-08", "Autonomous Discovery", 2024.65, 2.4, "#DC2626"),
         ("Prithvi WxC", "2024-09", "2.3B Climate Model", 2024.72, 2.8, "#D97706"),
         ("Galileo", "2025-02", "Multi-Scale EO", 2025.15, -1.8, "#059669"),
         ("OceanBench", "2025-05", "Ocean Dynamics Bench", 2025.40, -2.7, "#0284C7"),
         ("SciTS", "2025-10", "Scientific TS LLM", 2025.80, 1.6, "#2563EB"),
     ]
 
-    fig, ax = plt.subplots(figsize=(15, 7.5), dpi=300)
+    fig, ax = plt.subplots(figsize=(15.5, 7.5), dpi=300)
 
     # Base timeline axis
     ax.axhline(0, color="#334155", lw=2.5, zorder=1)
-    ax.set_xlim(2021.8, 2026.2)
-    ax.set_ylim(-3.9, 4.3)
+    ax.set_xlim(2021.2, 2026.2)
+    ax.set_ylim(-4.1, 4.4)
     ax.axis("off")
 
-    years = [2022, 2023, 2024, 2025, 2026]
+    years = [2021, 2022, 2023, 2024, 2025, 2026]
     for yr in years:
         ax.plot([yr, yr], [-0.3, 0.3], color="#0F172A", lw=2)
         ax.text(yr, -0.6, str(yr), ha="center", va="top", fontsize=11, fontweight="bold", color="#0F172A")
@@ -342,7 +348,7 @@ def plot_weather_foundation_timeline():
         ax.text(x_val, y_lvl, f"{name}\n({date_str})\n{arch}", ha="center", va=va,
                 fontsize=7.4, fontweight="bold", color="#0F172A", bbox=bbox_props)
 
-    plt.title("Milestone Timeline of Scientific Foundation Models (2022–2026)",
+    plt.title("Milestone Timeline of Scientific Foundation Models (2021–2026)",
               fontsize=14, fontweight="bold", pad=15)
     plt.tight_layout()
     plt.savefig(os.path.join(FIG_DIR, "weather_foundation_timeline.png"), dpi=300)
@@ -354,47 +360,53 @@ def plot_weather_foundation_timeline():
 def plot_resolution_vs_leadtime():
     # Stated values directly extracted from verified papers
     models = [
-        {"name": "Pangu-Weather", "res": 0.25, "lead": 7, "params": 256, "col": "#2563EB"},
-        {"name": "GraphCast", "res": 0.25, "lead": 10, "params": 36.7, "col": "#DC2626"},
-        {"name": "FourCastNet", "res": 0.25, "lead": 10, "params": 73.5, "col": "#059669"},
-        {"name": "SFNO", "res": 0.25, "lead": 10, "params": 75, "col": "#10B981"},
-        {"name": "FuXi", "res": 0.25, "lead": 15, "params": 150, "col": "#D97706"},
-        {"name": "FengWu", "res": 0.25, "lead": 10.75, "params": 200, "col": "#7C3AED"},
-        {"name": "GenCast", "res": 0.25, "lead": 15, "params": 120, "col": "#E11D48"},
-        {"name": "Aurora", "res": 0.10, "lead": 10, "params": 1300, "col": "#0284C7"},
-        {"name": "AIFS", "res": 0.25, "lead": 15, "params": 185, "col": "#0D9488"},
-        {"name": "FuXi-Extreme", "res": 0.25, "lead": 10, "params": 150, "col": "#DC2626"},
-        {"name": "NeuralGCM", "res": 0.70, "lead": 15, "params": 14.5, "col": "#6366F1"},
-        {"name": "XiHe (Ocean)", "res": 0.083, "lead": 10, "params": 84, "col": "#0D9488"},
-        {"name": "GlobalFlood", "res": 0.10, "lead": 7, "params": 5, "col": "#B45309"},
-        {"name": "Stormer", "res": 1.406, "lead": 10, "params": 67, "col": "#CA8A04"},
-        {"name": "SEEDS", "res": 1.00, "lead": 10, "params": 100, "col": "#EA580C"},
+        {"name": "DGMR", "res": 0.009, "lead": 0.0625, "params": 89, "col": "#D97706", "dx": 0.25, "dy": 0.02, "ha": "left"},
+        {"name": "MetNet-3", "res": 0.009, "lead": 1.0, "params": 227, "col": "#2563EB", "dx": 0.25, "dy": 0.02, "ha": "left"},
+        {"name": "CorrDiff", "res": 0.018, "lead": 2.0, "params": 110, "col": "#059669", "dx": 0.25, "dy": 0.03, "ha": "left"},
+        {"name": "Pangu-Weather", "res": 0.25, "lead": 7, "params": 256, "col": "#2563EB", "dx": -0.3, "dy": 0.06, "ha": "right"},
+        {"name": "GlobalFlood", "res": 0.10, "lead": 7, "params": 5, "col": "#B45309", "dx": 0.25, "dy": -0.04, "ha": "left"},
+        {"name": "XiHe (Ocean)", "res": 0.083, "lead": 10, "params": 84, "col": "#0D9488", "dx": 0.25, "dy": -0.05, "ha": "left"},
+        {"name": "Aurora", "res": 0.10, "lead": 10, "params": 1300, "col": "#0284C7", "dx": -0.3, "dy": 0.04, "ha": "right"},
+        {"name": "GraphCast", "res": 0.25, "lead": 10, "params": 36.7, "col": "#DC2626", "dx": 0.28, "dy": 0.06, "ha": "left"},
+        {"name": "ClimODE", "res": 0.25, "lead": 10, "params": 0.3, "col": "#10B981", "dx": -0.28, "dy": 0.06, "ha": "right"},
+        {"name": "FourCastNet", "res": 0.25, "lead": 10, "params": 73.5, "col": "#059669", "dx": 0.28, "dy": -0.06, "ha": "left"},
+        {"name": "SFNO", "res": 0.25, "lead": 10, "params": 75, "col": "#10B981", "dx": -0.28, "dy": -0.06, "ha": "right"},
+        {"name": "FuXi-Extreme", "res": 0.25, "lead": 10, "params": 150, "col": "#DC2626", "dx": 0.28, "dy": 0.16, "ha": "left"},
+        {"name": "FengWu", "res": 0.25, "lead": 10.75, "params": 200, "col": "#7C3AED", "dx": 0.28, "dy": -0.06, "ha": "left"},
+        {"name": "Stormer", "res": 1.406, "lead": 10, "params": 67, "col": "#CA8A04", "dx": 0.25, "dy": -0.04, "ha": "left"},
+        {"name": "SEEDS", "res": 1.00, "lead": 10, "params": 100, "col": "#EA580C", "dx": 0.25, "dy": -0.04, "ha": "left"},
+        {"name": "NeuralGCM", "res": 0.70, "lead": 15, "params": 14.5, "col": "#6366F1", "dx": 0.25, "dy": -0.04, "ha": "left"},
+        {"name": "FuXi", "res": 0.25, "lead": 15, "params": 150, "col": "#D97706", "dx": 0.28, "dy": 0.06, "ha": "left"},
+        {"name": "GenCast", "res": 0.25, "lead": 15, "params": 120, "col": "#E11D48", "dx": -0.28, "dy": 0.05, "ha": "right"},
+        {"name": "AIFS", "res": 0.25, "lead": 15, "params": 185, "col": "#0D9488", "dx": 0.28, "dy": -0.06, "ha": "left"},
     ]
 
-    fig, ax = plt.subplots(figsize=(10, 7), dpi=300)
+    fig, ax = plt.subplots(figsize=(11, 7.2), dpi=300)
 
     for m in models:
         # Scale marker size by parameter count (log scale)
-        s = 80 + 35 * np.log(max(m["params"], 2))
+        s = 85 + 35 * np.log(max(m["params"], 0.5))
         ax.scatter(m["lead"], m["res"], s=s, color=m["col"], alpha=0.85, edgecolors="#1E293B", lw=1.2, zorder=3)
-        # Text label offset
-        offset_y = 0.02 if m["res"] < 0.20 else (-0.05 if m["res"] > 0.5 else -0.025)
-        offset_x = 0.24
-        ax.text(m["lead"] + offset_x, m["res"] + offset_y,
+        # Use directional offsets and horizontal alignment to avoid collision
+        dx = m.get("dx", 0.25)
+        dy = m.get("dy", -0.025)
+        ha = m.get("ha", "left")
+        ax.text(m["lead"] + dx, m["res"] + dy,
                 f"{m['name']}\n({m['res']}°, {m['params']}M)",
-                fontsize=8.0, fontweight="bold", color="#1E293B", zorder=4)
+                fontsize=7.8, fontweight="bold", color="#1E293B", ha=ha, zorder=4)
 
     ax.set_xlabel("Maximum Forecast Lead Time (Days)", fontsize=11, fontweight="bold")
     ax.set_ylabel("Spatial Resolution (Degrees Lat/Lon, lower = finer)", fontsize=11, fontweight="bold")
-    ax.set_ylim(0.02, 1.58)
-    ax.set_xlim(5, 17)
+    ax.set_ylim(0.003, 1.58)
+    ax.set_xlim(-0.5, 17)
     ax.grid(True, linestyle="--", alpha=0.5, zorder=0)
 
     # Highlight frontier zones
+    ax.axhspan(0.004, 0.025, color="#FEF3C7", alpha=0.5, label="Sub-Kilometer Convective Frontier (<=0.025°)")
     ax.axhspan(0.04, 0.12, color="#EFF6FF", alpha=0.6, label="High-Resolution Planetary Frontier (<=0.10°)")
     ax.axvspan(12, 16.5, color="#F0FDF4", alpha=0.6, label="Extended Medium-Range Frontier (>=12 days)")
 
-    ax.legend(loc="upper right", framealpha=0.9)
+    ax.legend(loc="upper right", framealpha=0.9, fontsize=8.5)
     plt.title("Spatial Resolution vs. Forecast Lead Time in Stated Literature",
               fontsize=13, fontweight="bold", pad=12)
     plt.tight_layout()
@@ -503,7 +515,7 @@ def plot_publications_by_year():
         papers = json.load(f)
 
     included = [p for p in papers if p.get("status") == "included"]
-    years = [2022, 2023, 2024, 2025, 2026]
+    years = [2021, 2022, 2023, 2024, 2025, 2026]
     domains = [
         "Weather/Climate",
         "Remote Sensing / EO",

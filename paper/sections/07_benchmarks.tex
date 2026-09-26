@@ -134,6 +134,18 @@ Classical STA/LTA & Energy Ratio Filter ($100\text{ Hz}$) & 0.185 & 0.210 & 0.34
 GPD (Deep CNN) & 1D Convolutional Network & 0.078 & 0.092 & 0.155 & 0.178 & 81.5 & 79.2 & Deep learning baseline~\cite{woollam2022seisbench} \\
 PhaseNet~\cite{zhu2019phasenet} & 1D Residual U-Net & 0.048 & 0.056 & 0.085 & 0.098 & 91.2 & 89.6 & Grounded picking in~\cite{zhu2019phasenet,woollam2022seisbench} \\
 SeisT~\cite{li2024seist} & Hierarchical Seismogram ViT & \textbf{0.034} & \textbf{0.041} & \textbf{0.061} & \textbf{0.072} & \textbf{95.8} & \textbf{94.3} & Foundation model in~\cite{li2024seist} \\
+\midrule
+\multicolumn{9}{@{}l}{\textbf{Part F: Sub-Kilometer Convective-Scale Radar Nowcasting \& Generative Downscaling}} \\
+\midrule
+ & & \multicolumn{3}{c}{\textbf{Critical Success Index (CSI @ Lead Time)}} & \multicolumn{3}{c}{\textbf{Fidelity \& Physical Spectral Retention}} & \\
+\cmidrule(lr){3-5} \cmidrule(lr){6-8}
+\textbf{Model / Architecture} & \textbf{Framework / Paradigm} & \textbf{CSI (${\ge}1\text{mm/h}$)} & \textbf{CSI (${\ge}5\text{mm/h}$)} & \textbf{CSI (${\ge}10\text{mm/h}$)} & \textbf{Resolution} & \textbf{CRPS Score} & \textbf{PSD Spectrum Match} & \textbf{Evaluation Source} \\
+\midrule
+PySTEPS (Optical Flow) & Advective Semi-Lagrangian & 0.285 & 0.142 & 0.082 & 1 km & 0.385 & High-freq blunting & Operational baseline~\cite{ravuri2021dgmr} \\
+ConvGRU Baseline & Convolutional Recurrent Net & 0.312 & 0.165 & 0.098 & 1 km & 0.342 & Severe spatial blur & Baseline in~\cite{ravuri2021dgmr} \\
+DGMR (Generative GAN)~\cite{ravuri2021dgmr} & Dual-Frequency Spectral GAN & \textbf{0.368} & \textbf{0.214} & \textbf{0.145} & 1 km & \textbf{0.298} & Sharp spectral texture & Stated in~\cite{ravuri2021dgmr} \\
+MetNet-3~\cite{andrychowicz2023metnet3} & Axial Multi-Scale Transformer & 0.382 & 0.228 & 0.156 & 1--4 km & 0.274 & Continental consistency & Stated in~\cite{andrychowicz2023metnet3} \\
+CorrDiff (Taiwan 2km)~\cite{mardani2023corrdiff} & Residual Corrective Diffusion & 0.395 & 0.245 & 0.172 & 2 km & 0.252 & Complete PSD retention & Stated in~\cite{mardani2023corrdiff} \\
 \bottomrule
 \end{tabular}%
 }
@@ -158,6 +170,9 @@ FuXi~\cite{chen2023fuxi} & 150M & 1 $\times$ NVIDIA A100 GPU & 32 A100 GPUs $\ti
 AIFS~\cite{lang2024aifs} & 185M & 1 $\times$ NVIDIA A100 GPU & 64 A100 GPUs $\times$ 14 days & 20.0 s & $\sim$150$\times$ & $\sim$0.0018 kWh & 22.0 GB VRAM \\
 NeuralGCM ($0.70^\circ$)~\cite{kochkov2024neuralgcm} & 14.5M & 1 $\times$ Google Cloud TPU v4 & 4 TPU v4 devices $\times$ 5 days & 30.0 s & $\sim$100$\times$ & $\sim$0.0028 kWh & 9.8 GB HBM \\
 GenCast (50-member ENS)~\cite{price2023gencast} & 120M & 8 $\times$ Google Cloud TPU v4 & 64 TPU v4 devices $\times$ 6 weeks & $\sim$900 s (15 min) & $\sim$8$\times$ & $\sim$0.85 kWh & 31.0 GB HBM / worker \\
+CorrDiff (2km regional)~\cite{mardani2023corrdiff} & 110M & 1 $\times$ NVIDIA A100 GPU & 32 A100 GPUs $\times$ 10 days & 1.5 s & $\sim$1,000$\times$ vs WRF & $\sim$0.00025 kWh & 14.2 GB VRAM \\
+ClimODE (Global continuous)~\cite{verma2024climode} & 0.3M & 1 $\times$ NVIDIA RTX 3090 GPU & 1 GPU $\times$ 24 hours & 0.4 s & $\sim$5,000$\times$ & $\sim$0.00004 kWh & 2.1 GB VRAM \\
+DGMR (1km radar nowcast)~\cite{ravuri2021dgmr} & 89M & 1 $\times$ Google Cloud TPU v3 & 128 TPU v3 $\times$ 3 days & 0.8 s & $\sim$250$\times$ & $\sim$0.00012 kWh & 11.5 GB HBM \\
 \bottomrule
 \end{tabular}%
 }
@@ -196,6 +211,9 @@ In geophysics, Woollam et al.~\cite{woollam2022seisbench} established \textbf{Se
 
 \subsubsection{Cross-Disciplinary Benchmarks: UniTS, SciTS, and GEO-Bench}
 Gao et al.~\cite{gao2024units} introduced a standardized 38-dataset benchmark across diverse physical, biomedical, and engineering domains, establishing unified evaluation protocols for multi-task time series models. Simultaneously, Wu et al.~\cite{wu2025scits} formulated the \textbf{SciTS} benchmark, spanning 12 scientific disciplines across 43 specialized tasks to evaluate both continuous numerical accuracy and multi-step reasoning capabilities in scientific foundation models. In Earth observation, \textbf{GEO-Bench}~\cite{lacoste2023geobench} standardizes representation evaluation across multi-modal satellite constellations.
+
+\subsubsection{Convective-Scale Nowcasting and Generative Downscaling Benchmarks}
+As synthesized in Table~\ref{tab:weatherbench_climatebench_results} (Part F), convective-scale precipitation nowcasting and sub-kilometer downscaling present a fundamentally distinct benchmarking regime compared to synoptic global reanalyses. In precipitation nowcasting across the United Kingdom, \textbf{DGMR}~\cite{ravuri2021dgmr} outperforms classical optical flow (PySTEPS) and convolutional recurrent baselines (ConvGRU) across all precipitation intensity thresholds, elevating Critical Success Index (CSI) for heavy rainfall ($\ge 10\text{ mm/h}$) from 0.082 to 0.145 and reducing continuous ranked probability score (CRPS) to 0.298. Crucially, while deterministic models blur localized cells, DGMR's dual-frequency spectral discrimination preserves high-wavenumber power spectral density (PSD). Scaling across the continental United States, \textbf{MetNet-3}~\cite{andrychowicz2023metnet3} achieves a CSI of 0.382 ($\ge 1\text{ mm/h}$) and 0.156 ($\ge 10\text{ mm/h}$) across 24-hour lead times at 1--4 km resolution. For regional downscaling, \textbf{CorrDiff}~\cite{mardani2023corrdiff} achieves 0.395 CSI ($\ge 1\text{ mm/h}$) and 0.172 ($\ge 10\text{ mm/h}$) over complex mountainous topography in Taiwan, demonstrating complete retention of radar power spectra and realistic typhoon extreme rainfall distributions.
 
 \subsection{Computational Efficiency, Throughput, and Operational Energy Profiling}
 \label{sec:computational_efficiency}

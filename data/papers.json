@@ -9129,6 +9129,1016 @@
     "screen_date": "2026-09-26"
   },
   {
+    "bibkey": "verma2024climode",
+    "title": "ClimODE: Climate and Weather Forecasting with Physics-informed Neural ODEs",
+    "authors": [
+      "Verma, Yogesh",
+      "Heinonen, Markus",
+      "Garg, Vikas"
+    ],
+    "year": 2024,
+    "venue": "ICLR / arXiv:2404.10024",
+    "doi_or_arxiv": "https://arxiv.org/abs/2404.10024",
+    "arxiv_id": "2404.10024",
+    "domain": "Weather/Climate",
+    "modality": "Gridded reanalysis (ERA5)",
+    "backbone": "Continuous-Time Physics-Informed Neural ODE with Advection Dynamics",
+    "pretraining_data": "ERA5 atmospheric fields (temperature, geopotential, wind velocities)",
+    "physics_integration": "Hard continuous conservation laws (continuity equation and advection)",
+    "role_of_llm": "None",
+    "lead_time_or_task": "Continuous-time global weather and climate forecasting",
+    "model_size": "0.3M (compact continuous neural dynamics)",
+    "code_url": "https://github.com/Aalto-QuML/ClimODE",
+    "quality_score": 12,
+    "status": "included",
+    "exclusion_reason": null,
+    "screen_date": "2026-09-26"
+  },
+  {
+    "bibkey": "mardani2023corrdiff",
+    "title": "Residual Corrective Diffusion Modeling for Km-scale Atmospheric Downscaling",
+    "authors": [
+      "Mardani, Morteza",
+      "Brenowitz, Noah",
+      "Cohen, Yair",
+      "Pathak, Jaideep",
+      "Chen, Chieh-Yu",
+      "Liu, Cheng-Chin",
+      "Vahdat, Arash",
+      "Nabian, Mohammad Amin",
+      "Ge, Tao",
+      "Subramaniam, Akshay",
+      "Kashinath, Karthik",
+      "Kautz, Jan",
+      "Pritchard, Mike"
+    ],
+    "year": 2023,
+    "venue": "IEEE TGRS / arXiv:2309.15214",
+    "doi_or_arxiv": "https://arxiv.org/abs/2309.15214",
+    "arxiv_id": "2309.15214",
+    "domain": "Weather/Climate",
+    "modality": "Multi-scale gridded reanalysis and high-resolution radar (ERA5 + TReAD)",
+    "backbone": "Residual Corrective Diffusion Network (CorrDiff)",
+    "pretraining_data": "25 km ERA5 reanalysis paired with 2 km radar-calibrated regional weather data",
+    "physics_integration": "Multi-scale residual spectral conditioning",
+    "role_of_llm": "None",
+    "lead_time_or_task": "2 km convective-scale atmospheric downscaling and typhoon prediction",
+    "model_size": "110M",
+    "code_url": "https://github.com/NVIDIA/physicsnemo",
+    "quality_score": 12,
+    "status": "included",
+    "exclusion_reason": null,
+    "screen_date": "2026-09-26"
+  },
+  {
+    "bibkey": "andrychowicz2023metnet3",
+    "title": "Deep Learning for Day Forecasts from Sparse Observations",
+    "authors": [
+      "Andrychowicz, Marcin",
+      "Espeholt, Lasse",
+      "Li, Di",
+      "Merchant, Samier",
+      "Merose, Alexander",
+      "Zyda, Fred",
+      "Agrawal, Shreya",
+      "Kalchbrenner, Nal"
+    ],
+    "year": 2023,
+    "venue": "Science / arXiv:2306.06079",
+    "doi_or_arxiv": "https://arxiv.org/abs/2306.06079",
+    "arxiv_id": "2306.06079",
+    "domain": "Weather/Climate",
+    "modality": "Multi-sensor radar, satellite, precipitation stations, NWP (MRMS, GOES, HRRR)",
+    "backbone": "Axial Multi-Scale Attention Network (MetNet-3)",
+    "pretraining_data": "Continental-scale radar, GOES-16 satellite imagery, surface stations, HRRR runs",
+    "physics_integration": "Multi-modal sensor conditioning",
+    "role_of_llm": "None",
+    "lead_time_or_task": "Up to 24h convective precipitation, surface wind, and temperature forecasting at 1-4 km",
+    "model_size": "227M",
+    "code_url": "not available",
+    "quality_score": 12,
+    "status": "included",
+    "exclusion_reason": null,
+    "screen_date": "2026-09-26"
+  },
+  {
+    "bibkey": "lu2024aiscientist",
+    "title": "The AI Scientist: Towards Fully Automated Open-Ended Scientific Discovery",
+    "authors": [
+      "Lu, Chris",
+      "Lu, Cong",
+      "Lange, Robert Tjarko",
+      "Foerster, Jakob",
+      "Clune, Jeff",
+      "Ha, David"
+    ],
+    "year": 2024,
+    "venue": "arXiv:2408.06292",
+    "doi_or_arxiv": "https://arxiv.org/abs/2408.06292",
+    "arxiv_id": "2408.06292",
+    "domain": "Cross-domain / Reasoning",
+    "modality": "Scientific code, experimental execution traces, scientific manuscripts, literature databases",
+    "backbone": "Autonomous Multi-Agent Discovery Loop (Ideation, Code Execution, Paper Writing, Automated Review)",
+    "pretraining_data": "Frontier foundation LLMs integrated with scientific code execution sandbox and literature APIs",
+    "physics_integration": "Automated hypothesis testing and peer-review evaluation",
+    "role_of_llm": "Autonomous scientific researcher and reviewer agent",
+    "lead_time_or_task": "Closed-loop end-to-end scientific research discovery, execution, and manuscript review",
+    "model_size": "Frontier LLM (>100B params)",
+    "code_url": "https://github.com/SakanaAI/AI-Scientist",
+    "quality_score": 12,
+    "status": "included",
+    "exclusion_reason": null,
+    "screen_date": "2026-09-26"
+  },
+  {
+    "bibkey": "tian2024scicode",
+    "title": "SciCode: A Research Coding Benchmark Curated by Scientists",
+    "authors": [
+      "Tian, Minyang",
+      "Gao, Luyu",
+      "Zhang, Shizhuo Dylan",
+      "Chen, Xiyan",
+      "Deng, Jurong",
+      "Kaufman, Ryan",
+      "Gao, Hanjun",
+      "Zhu, Hao",
+      "Sun, Jerry",
+      "Yu, Bryan",
+      "Lian, Zilong",
+      "Zhang, Yuhao",
+      "Guo, Junxian",
+      "Xu, Yueqian",
+      "Gao, Shuming",
+      "Miao, Yutao",
+      "Chen, Run",
+      "Li, Shanghao",
+      "Zhang, Haomiao",
+      "Zhang, Tian",
+      "Ren, Ziqian",
+      "Liu, Tian",
+      "Xie, Christopher",
+      "Yao, Shunyu",
+      "Yang, Zhilin",
+      "Dill, Ken A.",
+      "Yu, Mo",
+      "Neiswanger, Willie",
+      "Liu, Han",
+      "Xiong, Caiming"
+    ],
+    "year": 2024,
+    "venue": "ICML / arXiv:2407.13168",
+    "doi_or_arxiv": "https://arxiv.org/abs/2407.13168",
+    "arxiv_id": "2407.13168",
+    "domain": "Cross-domain / Reasoning",
+    "modality": "Scientific problem formulations, multi-step sub-equations, Python scientific computation stack",
+    "backbone": "Multi-step scientific code reasoning and numerical execution benchmark",
+    "pretraining_data": "338 complex scientific problem steps across Physics, Fluid Dynamics, Materials Science, and Math",
+    "physics_integration": "Formal differential equation solving and numerical conservation verification",
+    "role_of_llm": "Scientific code reasoner and numerical simulator",
+    "lead_time_or_task": "Multi-step scientific numerical implementation and differential equation solving",
+    "model_size": "Benchmark suite across frontier LLMs",
+    "code_url": "https://github.com/scicode-bench/SciCode",
+    "quality_score": 12,
+    "status": "included",
+    "exclusion_reason": null,
+    "screen_date": "2026-09-26"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.5194/gmd-2019-53-rc1",
+    "title": "Review of weather and climate forecasting with neural networks",
+    "authors": [],
+    "year": 2019,
+    "container_title": "",
+    "abstract": "",
+    "status": "excluded_fulltext",
+    "retrieved_at": "2026-09-26T04:40:20.054119Z",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-26"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.5194/ems2026-311",
+    "title": "Neural Gaia: Neural Fields for Climate Modelling and Weather Forecasting",
+    "authors": [
+      "Kofinas, Miltiadis",
+      "Coumou, Dim"
+    ],
+    "year": 2026,
+    "container_title": "",
+    "abstract": "<jats:p>Machine learning-based weather prediction (MLWP) models have revolutionized weather modelling by providing forecasts that are orders of magnitude cheaper than numerical weather prediction (NWP) models, while achieving performance that matches or often surpasses state-of-the-art NWP models, including the ECMWF Integrated Forecasting Systems (IFS). Existing MLWP methods, however, are largely re-purposed computer vision architectures and not natively designed for Earth system data; thus, they suffer from important drawbacks. Notably, they still rely on re-analysis data, i.e. they implicitly still require NWP models to generate training data, which consequently leads them to inherit the biases of the underlying numerical models. Furthermore, they operate on dense--often planar--grids that introduce geometric distortions, while requiring constant resolution across the globe. Finally, most MLWP architectures are predominantly local-first, relying on mechanisms such as windowed attention or multi-mesh message passing, which can hinder their ability to model teleconnections and other long-range interactions. Neural fields--continuous fields parameterized by neural networks--have recently emerged as state-of-the-art representations for spatio-temporal modalities, offering an expressive alternative to grid-based representations. Neural fields are continuous in space and time, enabling arbitrary resolutions, and eliminating the need for grid-based input data. Moreover, they are fully differentiable, allowing the incorporation of physics-based loss functions to promote physical consistency. In this work, we introduce Neural Gaia, a neural field that encodes atmospheric data as a function of space--specifically latitude, longitude, and pressure level--and time, and use it to make predictions of future states of the atmosphere. Neural Gaia leverages the qualities of neural fields to model both local and long-range atmospheric phenomena without reliance on dense grids, paving the way for more flexible, accurate, and physically consistent ML-based weather prediction.</jats:p>",
+    "status": "excluded_fulltext",
+    "retrieved_at": "2026-09-26T04:40:20.054143Z",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-26"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.5194/egusphere-egu24-13882",
+    "title": "Physics-Informed Diffusion Model and Sampling for Global Weather Forecasting",
+    "authors": [
+      "Choi, Sanghoon",
+      "Topping, David"
+    ],
+    "year": 2025,
+    "container_title": "",
+    "abstract": "<jats:p>Recent advancements in weather forecasting have shown that generative probabilistic models, particularly diffusion models, exhibit significant promise in spatiotemporal forecasting. These models demonstrate enhanced accuracy, surpassing both machine learning-based deterministic models and traditional Numerical Weather Prediction (NWP) models, especially in short-range forecasting. However, a key challenge in utilising diffusion models for long lead time predictions is the increased variance in samples, which complicates the identification of the most accurate predictions. Specifically, ensemble means from samples at longer lead times often lack the necessary granularity to provide detailed and accurate predictions. This study addresses these challenges by introducing a novel approach: a physics-informed diffusion model coupled with physics-based sampling strategies. We incorporate physical information into the diffusion model as guiding constraints, and apply additional knowledge-based control to reduce the diversity in predictions, aiming for more consistent and reliable forecasts. The effectiveness of various types of physical information and the methods used to integrate this physics into the diffusion model are evaluated on WeatherBench2. Furthermore, we propose a unique physics-based sampling technique that utilises conservation laws. This methodology is designed to enable the selection of predictions that are most consistent with physical principles, potentially enhancing the model's capability in accurately forecasting extreme weather events. By integrating physical laws and principles into both the diffusion model and the sampling process, this approach aims to improve the overall accuracy and reliability of long-range weather predictions. The combination of physics-informed modelling and physics-based sampling offers a new strategy in generative model for weather forecasting.</jats:p>",
+    "status": "excluded_fulltext",
+    "retrieved_at": "2026-09-26T04:40:20.054150Z",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-26"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.21203/rs.3.rs-10691894/v1",
+    "title": "Physics-Informed Neural Network for Daily Canopy Size Forecasting in Strawberry Production Using Fused Weather and Image Embeddings",
+    "authors": [
+      "Bagulwar, Rohan",
+      "Lee, Won Suk",
+      "Agehara, Shinsuke",
+      "Jeon, Hongyoung",
+      "Zhu, Heping"
+    ],
+    "year": 2026,
+    "container_title": "",
+    "abstract": "<title>Abstract</title>\n                <p>\n                  Purpose\n The study aimed to develop a hybrid Physics-Informed Neural Network (PINN) architecture to forecast the daily strawberry canopy volume using weather data and image-derived inputs. Green pixel counts were used as a low-cost proxy for canopy volume and tracked canopy growth in two strawberry cultivars under real-world field conditions. The PINN architecture was chosen because it directly embeds known growth constraints into the learning process, enabling reliable predictions even with a few observations per day.\nMethods\n Two commercially important strawberry (\n                  <italic>Fragaria</italic>\n                  ×\n                  <italic>ananassa</italic>\n                  Duch.) cultivars, ‘Florida Brilliance’ and ‘FL 16.30–128’ (marketed as Florida Medallion™) were used in this study. Strawberry plant images were acquired at 15-minute intervals over 38 days and were used to train the PINN architecture along with 13 weather data points and accumulated Growing Degree Days (GDD). The PINN was composed of a Long Short-Term Memory (LSTM) residual encoder and a trainable logistic growth curve driven by GDD. Biologically implausible canopy decline during GDD summation increases was penalized by the loss function.\nResults\n The Brilliance plant model yielded a Mean Absolute Error (MAE) of 6,996 pixels of canopy size and a Mean Absolute Percentage Error (MAPE) of 4.53%, while the Medallion plant model produced an MAE of 9,440 pixels and an MAPE of 16.4%. Both models outperformed a naive persistence baseline, which produced MAE values of 9,416 and 9,580 pixels for Brilliance and Medallion, respectively, and a physics-only logistic baseline, which yielded an MAE of 10,260 and 10,880 pixels for Brilliance and Medallion, respectively.\nConclusion\n Combining a straightforward growth physics prior with a short-sequence LSTM significantly improved canopy forecasting accuracy, even with about a month of training instances. The system could be used to investigate strawberry growth during the vegetative and early fruiting periods to improve management and increase profit.\n                </p>",
+    "status": "excluded_fulltext",
+    "retrieved_at": "2026-09-26T04:40:20.054158Z",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-26"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.2139/ssrn.7305805",
+    "title": "Physics-Informed Neural ODEs for Multi-Aircraft Trajectory Prediction and Interaction Modeling",
+    "authors": [
+      "Li, Chi",
+      "Gu, Ruijia",
+      "Lui, Go  Nam",
+      "Li, Lishuai"
+    ],
+    "year": 2026,
+    "container_title": "",
+    "abstract": "<jats:p>Accurate multi-aircraft trajectory prediction helps air traffic managers anticipate congestion, coordinate traffic flows, and detect emerging separation risks in dense terminal airspace. Thetask is difficult because aircraft motions combine individual intent with responses to surrounding traffic, effects that existing predictors usually encode implicitly through discrete prediction steps. This study develops a physics-informed neural ordinary differential equation framework that combines explicit interaction modeling with continuous-time kinematics. A spatiotemporal graph encoder summarizes the observed traffic scene, and a dual-branch latent evolver separates the primary aircraft’s motion intent from its response to neighboring aircraft. The social branch applies distance-aware attention to relative geometry and closing speed. A second-order decoder transforms the two latent representations into acceleration fields and integrates velocity and position through a structured state equation. The framework is trained on heterogeneous traffic before the encoder and latent evolver are frozen and the differential equation module is adapted to four terminal classes. One shared parameter set serves all classes at inference. Experiments use five days of broadcast surveillance data from the Guangdong–Hong Kong–Macao Greater Bay Area. Under a common specialist comparison protocol, runs with three random seeds give an average displacement error of 3.36±0.20 km and final displacement error of 7.63±0.57 km. These values are 11.9% and 8.7% lower, respectively, than those of the strongest evaluated learned baseline. The framework also provides the best balance between alert precision and recall in phase-aware separation warning. Ablation experiments examine the principal design choices,while attention analysis, acceleration-field decomposition, and controlled neighbor removal characterize responses across classes. The findings indicate that combining explicit interaction structure with continuous-time kinematics can improve forecast reliability and support earlier, more transparent tactical and traffic management decisions in complex terminal airspace.</jats:p>",
+    "status": "excluded_fulltext",
+    "retrieved_at": "2026-09-26T04:40:20.054164Z",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-26"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.5220/0014556900005024",
+    "title": "Hybrid Physics-Informed Graph Neural Networks for Accurate Ocean Forecasting",
+    "authors": [
+      "H., Athulya",
+      "Vignesh, R.",
+      "Juliet, Sujitha"
+    ],
+    "year": 2025,
+    "container_title": "Proceedings of the 1st International Conference on Computational and Cognitive Systems Science",
+    "abstract": "",
+    "status": "excluded_fulltext",
+    "retrieved_at": "2026-09-26T04:40:20.054169Z",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-26"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.4995/thesis/10251/205793",
+    "title": "Surrogate models, physics-informed neural networks and climate change",
+    "authors": [
+      "Secci, Daniele"
+    ],
+    "year": null,
+    "container_title": "",
+    "abstract": "",
+    "status": "excluded_fulltext",
+    "retrieved_at": "2026-09-26T04:40:20.054174Z",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-26"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.2172/1883394",
+    "title": "Physics-Informed AI for Climate and Weather Risk Prediction (Final Report)",
+    "authors": [
+      "Kirchstetter, Thomas",
+      "White, Brian"
+    ],
+    "year": 2022,
+    "container_title": "",
+    "abstract": "",
+    "status": "excluded_fulltext",
+    "retrieved_at": "2026-09-26T04:40:20.054179Z",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-26"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.21203/rs.3.rs-884990/v1",
+    "title": "Weather Forecasting Based on Data-Driven and Physics Informed Reservoir Computing Models",
+    "authors": [
+      "Mammedov, Yslam D.",
+      "Olugu, Ezutah Udoncy",
+      "Farah, Guleid A."
+    ],
+    "year": 2021,
+    "container_title": "",
+    "abstract": "<title>Abstract</title>\n        <p>In response to the growing demand for the global energy supply chain, wind power has become an important research subject among studies in the advancement of renewable energy sources. The major concern is the stochastic volatility of weather conditions that hinder the development of wind power forecasting approaches. To address this issue, the current study proposes a weather prediction method divided into two models for wind speed and atmospheric system forecasting. First, the data-based model incorporated with wavelet transform and recurrent neural networks is employed to predict the wind speed. Second, the physics-informed echo state network was used to learn the chaotic behaviour of the atmospheric system. The findings were validated with a case study conducted on wind speed data from Turkmenistan. The results suggest the out-performance of physics-informed model for accurate and reliable forecasting analysis, which indicates the potential for implementation in wind energy analysis.</p>",
+    "status": "excluded_fulltext",
+    "retrieved_at": "2026-09-26T04:40:20.054186Z",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-26"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.5194/egusphere-2026-822",
+    "title": "China Regional 3 km Downscaling Based on Residual Corrective Diffusion Model",
+    "authors": [
+      "Sun, Honglu",
+      "Jing, Hao",
+      "Dai, Zhixiang",
+      "Xiao, Sa",
+      "Xue, Wei",
+      "Sun, Jian",
+      "Lu, Qifeng"
+    ],
+    "year": 2026,
+    "container_title": "",
+    "abstract": "<jats:p>Abstract. A fundamental challenge in numerical weather prediction (NWP) is efficiently producing high-resolution forecasts. A widely adopted solution is to downscale coarser global model outputs. This study focuses on statistical downscaling, which uses historical data to learn mappings between low- and high-resolution meteorological fields. Deep learning has become a key tool for this, enabling powerful super-resolution models like diffusion models and Generative Adversarial Networks for downscaling applications. Herein, we leverage CorrDiff, a diffusion-based downscaling framework, with three key enhancements relative to its original implementation. First, the study domain is expanded to nearly 40 times the spatial extent of the original version. Second, the scope of target downscaling variables is extended beyond surface variables to incorporate upper-air variables across six pressure levels. Third, a global residual connection is integrated to further boost prediction accuracy. To produce 3 km resolution forecasts for the China region, the trained CorrDiff model is applied to 25 km global grid forecasts derived from two sources: a conventional global NWP model and a deep learning-based weather model developed using Spherical Fourier Neural Operators. The China Meteorological Administration Mesoscale Model (CMA-MESO) is selected as the baseline for comparative evaluation. Experimental results demonstrate that the downscaled forecasts generated by our framework outperform the direct forecasts of CMA-MESO for almost all target variables, as quantified by the Mean Absolute Error metric. Specifically, forecasts of radar composite reflectivity reveal that CorrDiff, as a generative model, is capable of capturing fine-grained meteorological details, yielding more physically realistic predictions than deterministic regression-based downscaling models.</jats:p>",
+    "status": "excluded_fulltext",
+    "retrieved_at": "2026-09-26T04:40:22.210090Z",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-26"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.21203/rs.3.rs-3673869/v1",
+    "title": "Residual Diffusion Modeling for Km-scale Atmospheric Downscaling",
+    "authors": [
+      "Mardani, Morteza",
+      "Brenowitz, Noah",
+      "Cohen, Yair",
+      "Pathak, Jaideep",
+      "Chen, Chieh-Yu",
+      "Liu, Cheng-Chin",
+      "Vahdat, Arash",
+      "Kashinath, Karthik",
+      "Kautz, Jan",
+      "Pritchard, Mike"
+    ],
+    "year": 2024,
+    "container_title": "",
+    "abstract": "<title>Abstract</title>\n                <p>\n                  Predictions of weather hazard require expensive km-scale simulations driven by coarser global inputs. Here, a cost-effective stochastic downscaling model is trained from a high-resolution 2-km weather model over Taiwan conditioned on 25-km ERA5 reanalysis. To address the multi-scale machine learning challenges of weather data, we employ a two-step approach Corrector Diffusion (\n                  <italic>CorrDiff</italic>\n                  ), where a UNet prediction of the mean is corrected by a diffusion step. Akin to Reynolds decomposition in fluid dynamics, this isolates generative learning to the stochastic scales.\n                  <italic>CorrDiff</italic>\n                  exhibits skillful RMSE and CRPS and faithfully recovers spectra and distributions even for extremes. Case studies of coherent weather phenomena reveal appropriate multivariate relationships reminiscent of learnt physics: the collocation of intense rainfall and sharp gradients in fronts and extreme winds and rainfall bands near the eyewall of typhoons. Downscaling global forecasts successfully retains many of these benefits, foreshadowing the potential of end-to-end, global-to- km-scales machine learning weather predictions.\n                </p>",
+    "status": "excluded_fulltext",
+    "retrieved_at": "2026-09-26T04:40:22.210116Z",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-26"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.5194/egusphere-egu26-1470",
+    "title": "Generative Diffusion Downscaling for the Alps: Benchmarking CorrDiff against MeteoSwiss Operational NWP Ensemble",
+    "authors": [
+      "Leutwyler, David",
+      "Stamenkovic, Petar",
+      "Arpagaus, Marco",
+      "McGlohon, Mary",
+      "Mishra, Siddhartha",
+      "Lapillonne, Xavier",
+      "Schemm, Sebastian",
+      "Fuhrer, Oliver"
+    ],
+    "year": 2026,
+    "container_title": "",
+    "abstract": "<jats:p>Kilometre-scale weather and climate datasets are invaluable for quantifying, forecasting and projecting hazards in areas of complex topography, such as the Alps. However, producing such datasets using traditional numerical weather prediction (NWP) models is becoming prohibitively expensive, particularly for climate-timescale simulations and large ensembles. Probabilistic generative downscaling offers a potential alternative, as it learns the conditional mapping from coarse global drivers to kilometre-scale regional fields.Here, we evaluate a modified conditional generative correction–diffusion model (CorrDiff) for downscaling the ERA5 and IFS-ENS datasets over the Greater Alpine Region. The modified CorrDiff model was trained using a 20-year, 1-km resolution dataset produced with the ICON numerical model, with precipitation constrained to Swiss radar observations using a latent-heat nudging scheme. This setup allows us to make a direct comparison with MeteoSwiss' operational NWP ensemble.Verification against observations and gridded products reveals that CorrDiff achieves competitive performance following substantial targeted adaptations to the model. Although not explicitly encoded in the loss function, the adapted model reproduces emergent climatological indices, including the diurnal cycle of land precipitation and exceedance probabilities for heavy precipitation. It also captures the spatial patterns of consecutive dry and wet days, as well as prevailing wind direction and directional variability.</jats:p>",
+    "status": "excluded_fulltext",
+    "retrieved_at": "2026-09-26T04:40:22.210125Z",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-26"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.5194/egusphere-2026-4059-supplement",
+    "title": "Supplementary material to \"A Terrain-Aware Residual U-Net Framework for Hourly Kilometre-Scale 2 m Temperature Downscaling over Austria\"",
+    "authors": [
+      "Ennis, Kelsey",
+      "Scher, Sebastian"
+    ],
+    "year": 2026,
+    "container_title": "",
+    "abstract": "",
+    "status": "excluded_fulltext",
+    "retrieved_at": "2026-09-26T04:40:22.210134Z",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-26"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1016/j.atmosres.2014.11.006",
+    "title": "Hybrid fine scale climatology and microphysics of in-cloud icing: From 32 km reanalysis to 5 km mesoscale modeling",
+    "authors": [
+      "Lamraoui, Fayçal",
+      "Benoit, Robert",
+      "Perron, Jean",
+      "Fortin, Guy",
+      "Masson, Christian"
+    ],
+    "year": 2015,
+    "container_title": "Atmospheric Research",
+    "abstract": "",
+    "status": "excluded_fulltext",
+    "retrieved_at": "2026-09-26T04:40:22.210144Z",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-26"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.22541/essoar.175510661.11731470/v1",
+    "title": "Deep Learning-Based Statistical Downscaling of Sea Surface Temperature Using a Residual Corrective Neural Network",
+    "authors": [
+      "Jadhav, Onkar",
+      "French, Tim",
+      "Janekovic, Ivica",
+      "Jones, Nicole L",
+      "Rayson, Matthew David"
+    ],
+    "year": 2025,
+    "container_title": "",
+    "abstract": "<jats:p>The large-scale oceanic and atmospheric forecasts provided by global\nclimate models typically lack sufficient resolution to accurately\ncapture the response of the coastal ocean. Dynamical downscaling is\ncomputationally prohibitive, especially when applied to extensive\ncoastlines, to many predictive ensembles, or long time periods.\nTherefore, this work presents a statistical downscaling of sea surface\ntemperature (SST) from the seasonal coupled ocean-atmosphere forecast\nsystem (ACCESS-S2) using machine learning techniques.\n \nThis study proposes a novel two-stage deep learning framework that\ncombines a U-Net convolutional neural network for SST prediction with a\nResidual Corrective Neural Network (RCNN) for iterative refinement\ntoward high-resolution outputs. The target SST fields are derived from\nthe Regional Ocean Modeling System (ROMS).\nThe RCNN progressively refines its predictions by incorporating\ndynamically scaled residuals at each step, enabling accurate capture of\nboth broad patterns and fine-grained features such as eddies and\nfronts.\nWe also introduce a custom loss-assisted RCNN variant to improve\nperformance during extreme events, which may be absent from training\ndata.\n \nThe framework efficiently downscales the SST along the west coast of\nAustralia. A case study of the 2011 marine heatwave shows that the RCNN\nimproves ACCESS-S2 SST predictions by increasing the horizontal\nresolution from 25 km to 2 km, allowing identification of finer-scale\nanomalies during marine heatwaves that are not resolved in the ACCESS-S2\ndataset. By applying the developed framework, this work achieves a\nbalance between computational efficiency and the accuracy required for\ncapturing local oceanic variations, ultimately improving forecasting\ncapabilities for coastal management and marine ecosystem studies.</jats:p>",
+    "status": "excluded_fulltext",
+    "retrieved_at": "2026-09-26T04:40:22.210151Z",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-26"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.5194/egusphere-2026-4059",
+    "title": "A Terrain-Aware Residual U-Net Framework for Hourly Kilometre-Scale 2 m Temperature Downscaling over Austria",
+    "authors": [
+      "Ennis, Kelsey",
+      "Scher, Sebastian"
+    ],
+    "year": 2026,
+    "container_title": "",
+    "abstract": "<jats:p>Abstract. High-resolution hourly 2 m air temperature fields are essential for weather, climate, and impact applications in complex terrain, but coarse atmospheric products cannot directly resolve the local thermal structure produced by Alpine topography. This study develops and evaluates a terrain-aware residual U-Net for kilometre-scale hourly 2 m temperature downscaling over Austria and the surrounding Alpine region. The model learns the correction between bilinearly interpolated ERA5 reanalysis and the Integrated Nowcasting through Comprehensive Analysis (INCA) high-resolution temperature analysis using dynamic atmospheric predictors, digital elevation model-derived terrain descriptors, and cyclical time features. Performance is evaluated over an independent 2023–2025 test period against INCA and compared with two reference approaches: 1) interpolated ERA5 and 2) a physically interpretable lapse rate baseline with monthly orographic and bias corrections. In addition to conventional deterministic skill metrics, the evaluation examines whether the downscaled fields reproduce physically meaningful Alpine temperature structure, including spatial error patterns, hourly lapse rate variability, elevation-dependent diurnal cycles, high-frequency spatial variability, ridge-valley temperature contrasts, and heat- and cold-event biases. The residual U-Net substantially improves predictive skill relative to both reference methods. It reduces root-mean-square error from 2.39 °C for interpolated ERA5 and 1.97 °C for the lapse rate baseline to 1.22 °C and reduces mean absolute error from 1.69 °C and 1.37 °C for ERA5 and the lapse rate baseline, respectively, to 0.89 °C. These improvements correspond to root-mean-square error reductions of approximately 49 % relative to ERA5 and 38 % relative to the baseline. The model also weakens terrain-locked error structures, produces smaller and less spatially coherent biases, and better reproduces observed lapse rate variability, high-elevation diurnal cycles, small-scale temperature variability, nocturnal ridge-valley contrasts, and event-scale warm and cold biases. A source-transfer experiment using the NASA MERRA-2 reanalysis predictors without retraining shows that the learned correction remains beneficial relative to raw MERRA-2, but with reduced skill compared to the ERA5-driven model, indicating sensitivity to the driving reanalysis distribution. Overall, the results demonstrate that residual deep-learning downscaling can generate physically realistic INCA-scale hourly temperature fields in Alpine terrain, while also highlighting the need to treat such products as high-resolution emulations of the reference analysis rather than direct observations.</jats:p>",
+    "status": "excluded_fulltext",
+    "retrieved_at": "2026-09-26T04:40:22.210157Z",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-26"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.18400/tekderg.874035",
+    "title": "Estimation of Intensity-Duration-Frequency (IDF) Curves from Large Scale Atmospheric Dataset by Statistical Downscaling",
+    "authors": [
+      "ALRAMLAWİ, Khaled",
+      "FISTIKOĞLU, Okan"
+    ],
+    "year": 2022,
+    "container_title": "Teknik Dergi",
+    "abstract": "<jats:p xml:lang=\"en\">The study proposes a new approach that combined statistical downscaling, bias correction, and disaggregation of rainfall techniques in order to derive the IDF curve from large scale atmospheric reanalysis data. The applied methodology details the NCEP/NCAR reanalysis dataset being downscaled by an ANN-based approach to estimate the daily rainfall of Izmir. The annual maximum rainfall series of the study area were sampled from the daily downscaled rainfall series. The sampled daily maximum rainfalls were then bias-corrected by the quantile mapping method and disaggregated into the annual maximum standard-duration rainfall heights regarding the rainfalls' scale-invariant properties. Finally, the IDF curves of the study area were determined by using the disaggregated rainfall heights. The results confirmed that the IDF curves dependent on short-duration extreme rainfall heights could be reasonably estimated from the large-scale atmospheric variables using the statistical downscaling approach.</jats:p>",
+    "status": "excluded_fulltext",
+    "retrieved_at": "2026-09-26T04:40:22.210164Z",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-26"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.5194/egusphere-egu26-17479",
+    "title": "From ERA5 to Precipitation Extremes: Global km-Scale, Sub-Hourly Downscaling with Generative AI",
+    "authors": [
+      "Glawion, Luca",
+      "Polz, Julius",
+      "Kunstmann, Harald",
+      "Fersch, Benjamin",
+      "Chwala, Christian"
+    ],
+    "year": 2026,
+    "container_title": "",
+    "abstract": "<jats:p>Global reanalysis products such as ERA5 are indispensable for climate and hydrological studies, yet their coarse spatial and temporal resolution limits the representation of localised and short-lived precipitation extremes. Building on our earlier work [1], we now present the published and ready-to-use version of spateGAN-ERA5, a generative AI framework for global spatio-temporal downscaling of ERA5 precipitation to kilometre and sub-hourly scales (2 km, 10 min) [2].The model, trained using gauge-adjusted radar observations over Germany, generates realistic high-resolution precipitation ensembles conditioned on ERA5 inputs. We demonstrate robust performance across multiple climate regimes through independent evaluations over Germany, the United States, and Australia, showing clear improvements in spatial structure, temporal coherence, and extreme rainfall representation compared to native ERA5 fields. Ensemble generation further enables probabilistic uncertainty quantification.To facilitate broad adoption, we provide a public, easy-to-use downscaling tool [3] that enables on-demand generation of high-resolution precipitation for any region and time period worldwide. The approach is computationally efficient and applicable on modest GPU hardware, making it suitable for both regional studies and large-scale applications. spateGAN-ERA5 thus establishes a practical pathway toward global high-resolution precipitation products for climate impact analysis, hydrological modelling, and AI-based weather and climate research.[1] Glawion, L., Polz, J., Kunstmann, H., Fersch, B., &amp; Chwala, C. (2023). spateGAN: Spatio‑temporal downscaling of rainfall fields using a cGAN approach. Earth and Space Science, 10, e2023EA002906. https://doi.org/10.1029/2023EA002906[2] Glawion, L., Polz, J., Kunstmann, H., Fersch, B., &amp; Chwala, C. (2025). Global spatio‑temporal ERA5 precipitation downscaling to km and sub‑hourly scale using generative AI. npj Climate and Atmospheric Science, 8, 219. https://doi.org/10.1038/s41612-025-01103-y[3] https://github.com/LGlawion/spateGAN_ERA5</jats:p>",
+    "status": "excluded_fulltext",
+    "retrieved_at": "2026-09-26T04:40:22.210171Z",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-26"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.31223/osf.io/m8f3x",
+    "title": "Estimation of surface and deep flows from sparse SSH observations of geostrophic ocean turbulence using Deep Learning",
+    "authors": [
+      "Manucharyan, Georgy",
+      "Siegelman, Lia",
+      "KLEIN, Patrice"
+    ],
+    "year": 2019,
+    "container_title": "",
+    "abstract": "",
+    "status": "excluded_fulltext",
+    "retrieved_at": "2026-09-26T04:40:24.626541Z",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-26"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.22541/essoar.176031304.41826798/v1",
+    "title": "S2G-DI: A Deep Learning Framework for Generating High-Resolution Wind Gust Fields from Sparse Mesonet Observations",
+    "authors": [
+      "Baki, Harish",
+      "Pierzyna, Maximilian",
+      "Basu, Sukanta"
+    ],
+    "year": 2025,
+    "container_title": "",
+    "abstract": "<jats:p>The growing deployment of surface observational networks (so-called\nMesonets) has the potential to transform many sectors, such as\nagriculture, water resource management, renewable energy assessment,\ndisaster risk reduction, and high-impact weather monitoring. However,\nnetwork observations are sparse, whereas these downstream applications\ntypically require gridded data. Traditional interpolation methods, such\nas Barnes interpolation, do not perform well for dynamic fields, such as\nwind gust, or in complex terrain. Therefore, in this study, we propose a\ndeep learning–based framework, called Sparse-to-Gridded Deep\nInterpolation (S2G-DI), to generate high-resolution spatially continuous\nfields from sparse surface observations. We focus on wind gusts, which\nare challenging to interpolate due to their highly localized and\ntransient nature, but are critical for assessing weather-related\nhazards. We experimented with three deep learning architectures,\nemploying convolution neural networks and transformers with increasing\ncomplexity, and our sensitivity analysis shows that a U-Net architecture\nwith meteorological and topographic inputs significantly outperforms\nBarnes interpolation, reducing RMSE by over 30% and better preserving\nfine-scale features. The model remains robust to missing data and\ngeneralizes well even with limited training data. Evaluations during\nextreme wind gust events confirm that the framework captures both\nspatial structure and intensity more reliably than traditional methods.\nHowever, for some of these cases, there is still room for improvement\nfor the S2G-DI framework.</jats:p>",
+    "status": "excluded_fulltext",
+    "retrieved_at": "2026-09-26T04:40:24.626562Z",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-26"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1175/aies-d-25-0111.1",
+    "title": "S2G Deep Interpolation: A Deep Learning Framework for Generating High-Resolution Wind Gust Fields from Sparse Mesonet Observations",
+    "authors": [
+      "Baki, Harish",
+      "Pierzyna, Maximilian",
+      "Basu, Sukanta"
+    ],
+    "year": 2026,
+    "container_title": "Artificial Intelligence for the Earth Systems",
+    "abstract": "<jats:title>Abstract</jats:title>\n                  <jats:p>The growing deployment of surface observational networks (so-called Mesonets) has the potential to transform many sectors, such as agriculture, water resource management, renewable energy assessment, disaster risk reduction, power outage prediction, and high-impact weather monitoring. However, network observations are sparse, whereas these downstream applications typically require gridded data. Traditional interpolation methods, such as Barnes interpolation, do not perform well in complex terrain. Therefore, in this study, we propose a deep learning–based framework, called Sparse-to-Gridded Deep Interpolation (S2G-DI), to generate high-resolution spatially continuous fields from sparse surface observations. We focus on wind gusts, which are challenging to interpolate due to their highly localized and transient nature, but are critical for assessing weather-related hazards. We experimented with three deep learning architectures, employing convolutional neural networks and transformers with increasing complexity, and our sensitivity analysis shows that a UNet architecture with meteorological and topographic inputs significantly outperforms Barnes interpolation, reducing RMSE by over 30% and better preserving fine-scale features. The model remains robust to missing data and generalizes well even with limited training data. Evaluations during extreme wind gust events confirm that the framework captures both spatial structure and intensity more reliably than traditional methods. However, for some of these cases, there is still room for improvement for the S2G-DI framework.</jats:p>",
+    "status": "excluded_fulltext",
+    "retrieved_at": "2026-09-26T04:40:24.626584Z",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-26"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1016/j.jco.2025.101978",
+    "title": "Deep learning from strongly mixing observations: Sparse-penalized regularization and minimax optimality",
+    "authors": [
+      "Kengne, William",
+      "Wade, Modou"
+    ],
+    "year": 2026,
+    "container_title": "Journal of Complexity",
+    "abstract": "",
+    "status": "excluded_title",
+    "retrieved_at": "2026-09-26T04:40:24.626593Z",
+    "exclusion_reason": "EC1: Out of domain scope (not natural science temporal system)",
+    "screen_date": "2026-09-26"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.5194/egusphere-egu24-12223",
+    "title": "Using deep learning to improve multi-day forecasts of extreme fire weather and behaviour throughout the United States",
+    "authors": [
+      "Lagerquist, Ryan",
+      "Kumler, Christina"
+    ],
+    "year": 2025,
+    "container_title": "",
+    "abstract": "<jats:p>The ignition, spread, and severity of wildfires are driven largely by weather conditions (Jain et al. 2020: https://doi.org/10.1139/er-2020-0019; Liu et al. 2013: https://doi.org/10.1371/journal.pone.0055618). &amp;#160;The main tool for weather prediction across the globe is a set of physical, coupled atmosphere/ocean models, called numerical weather prediction (NWP). &amp;#160;Despite rapid improvements in the last few decades, NWP alone is not sufficient for wildfire prediction, because it does not resolve every process related to wildfire. &amp;#160;One solution is to post-process NWP with statistical models, which correct the NWP model towards better resolving processes related to the phenomenon of interest (here, wildfire). &amp;#160;This post-processing is called model-output statistics (MOS) and typically involves linear regression. &amp;#160;However, recent work has advanced MOS by incorporating more powerful statistical models from deep learning (DL). &amp;#160;We use DL to predict extreme fire weather and behaviour at multi-day lead times throughout the United States.&amp;#160;For fire weather, we have trained U-nets -- a type of deep neural network -- to predict at lead times of 3-240 hours over the United States. &amp;#160;The output (target) variables are seven indices from the Canadian Fire Weather Index System (CFWIS), computed from the ECMWF Reanalysis version 5 (ERA5). &amp;#160;These seven indices include the fine-fuel moisture code (FFMC), initial-spread index (ISI), overall fire-weather index (FWI), etc. &amp;#160;Meanwhile, the input (predictor) variables come from five sources. &amp;#160;The first is a forecast time series of atmospheric state variables (height, temperature, humidity, and wind) from the Global Forecast System (GFS) NWP model. &amp;#160;The second is a forecast time series of surface and subsurface moisture (soil moisture, accumulated precipitation, and snow depth) from the GFS. &amp;#160;The third is a set of constant fields (terrain height/slope/aspect, land-sea mask, etc.) describing the underlying terrain. &amp;#160;The fourth is a lagged time series of CFWIS over the past several days, i.e., past target values. &amp;#160;The fifth is a forecast time series of CFWIS indices, computed by applying the CFWIS functions directly to GFS-forecast weather variables. &amp;#160;These are the uncorrected (GFS-only) CFWIS forecasts, to be corrected by the U-net.&amp;#160;For fire behaviour, we have trained random forests -- ensembles of decision trees -- to predict fire radiative power (FRP) at lead times of 1-48 hours over the United States. &amp;#160;The labels (correct answers) for FRP are obtained from the Regional ABI and VIIRS Emissions (RAVE) merged satellite product. &amp;#160;Predictors for the random forest include the first three sources listed for the U-net above, plus a lagged time series of FRP over the past 24 hours, i.e., past target values.&amp;#160;Both models -- the U-net for fire weather and the random forest for fire behaviour -- are trained with built-in uncertainty quantification. &amp;#160;Thus, at every lead time and grid point, both models provide an expected value and an estimate of their own uncertainty. &amp;#160;We will present objective evaluation results (for both the mean forecast and uncertainty) and explainable artificial intelligence (XAI) to understand what the models have learned, e.g., which spatiotemporal weather patterns in a given area are most conducive to extreme fire weather/behaviour.</jats:p>",
+    "status": "excluded_fulltext",
+    "retrieved_at": "2026-09-26T04:40:24.626602Z",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-26"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1016/b978-0-12-813659-1.00004-4",
+    "title": "Single Image Super-Resolution: From Sparse Coding to Deep Learning",
+    "authors": [
+      "Liu, Ding",
+      "Huang, Thomas S."
+    ],
+    "year": 2019,
+    "container_title": "Deep Learning Through Sparse and Low-Rank Modeling",
+    "abstract": "",
+    "status": "excluded_title",
+    "retrieved_at": "2026-09-26T04:40:24.626609Z",
+    "exclusion_reason": "EC1: Out of domain scope (not natural science temporal system)",
+    "screen_date": "2026-09-26"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1039/d5sc04276c/v2/decision1",
+    "title": "Decision letter for \"Learning Radical Excited States from Sparse Data\"",
+    "authors": [],
+    "year": 2025,
+    "container_title": "",
+    "abstract": "",
+    "status": "excluded_title",
+    "retrieved_at": "2026-09-26T04:40:24.626615Z",
+    "exclusion_reason": "EC1: Out of domain scope (not natural science temporal system)",
+    "screen_date": "2026-09-26"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.14711/thesis-991012980222003412",
+    "title": "Radar-based precipitation nowcasting using task-segmented recurrent generative adversarial networks",
+    "authors": [
+      "Wang, Rui"
+    ],
+    "year": null,
+    "container_title": "",
+    "abstract": "",
+    "status": "excluded_fulltext",
+    "retrieved_at": "2026-09-26T04:40:26.749600Z",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-26"
+  },
+  {
+    "bibkey": "ravuri2021dgmr",
+    "title": "Skilful precipitation nowcasting using deep generative models of radar",
+    "authors": [
+      "Ravuri, Suman",
+      "Lenc, Karel",
+      "Willson, Matthew",
+      "Kangin, Dmitry",
+      "Lam, Remi",
+      "Mirowski, Piotr",
+      "Fitzsimons, Megan",
+      "Athanassiadou, Maria",
+      "Kashem, Sheleem",
+      "Santoro, Adam",
+      "Hoyer, Stephan",
+      "Agrawal, Shreya",
+      "Browning, Tamara",
+      "Aitchison, Malcolm",
+      "Arribas, Alberto",
+      "Mohamed, Shakir",
+      "Senior, Andrew"
+    ],
+    "year": 2021,
+    "venue": "Nature",
+    "doi_or_arxiv": "https://doi.org/10.1038/s41586-021-03854-z",
+    "doi": "10.1038/s41586-021-03854-z",
+    "domain": "Weather/Climate",
+    "modality": "High-resolution composite radar image time series (NIMROD)",
+    "backbone": "Spatial-Temporal Deep Generative Model of Radar (DGMR GAN)",
+    "pretraining_data": "UK Met Office NIMROD radar composite archive (2016-2019) at 1 km resolution, 5 min intervals",
+    "physics_integration": "Spatial and temporal dual-frequency spectral discrimination",
+    "role_of_llm": "None",
+    "lead_time_or_task": "0 to 90 min convective precipitation nowcasting at 1 km resolution",
+    "model_size": "89M",
+    "code_url": "https://github.com/google-deepmind/deepmind-research",
+    "quality_score": 12,
+    "status": "included",
+    "exclusion_reason": null,
+    "screen_date": "2026-09-26"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.5194/egusphere-egu2020-5681",
+    "title": "Precipitation nowcasting using spatiotemporal models and volumetric radar data",
+    "authors": [
+      "Pulkkinen, Seppo",
+      "Venkatachalam, Chandrasekaran",
+      "von Lerber, Annakaisa"
+    ],
+    "year": 2020,
+    "container_title": "",
+    "abstract": "<jats:p>\n        &amp;lt;p&amp;gt;Nowcasts (short-range forecasts) of rainfall can be used for providing early warning of flash floods. Thus, they are of high societal importance especially in densely populated urban areas. Weather radars are ideally suited for this purpose due to their good spatial coverage and high spatial and temporal resolution (e.g. 1 km and 5 minutes).&amp;lt;/p&amp;gt;&amp;lt;p&amp;gt;A novel approach to radar-based rainfall nowcasting is proposed.&amp;amp;#160;The forecast model consists of two components: horizontal advection and temporal evolution of rainfall intensities. The advection velocities are estimated from radar-measured rain rate fields using a pattern matching method. A smooth advection field is obtained by interpolating the motion to areas with no precipitation. The extrapolation is done using a semi-Lagrangian scheme.&amp;lt;/p&amp;gt;&amp;lt;p&amp;gt;The temporal evolution of rainfall intensities is described in Lagrangian coordinates by using a spatiotemporal process model. Such models are ubiquitous in environmental and physical sciences. This study presents the first attempt to apply such a model to three-dimensional rainfall measurements to capture the vertical structure of rainfall processes. This is done by using a linear integro-differential equation with the Markovian assumption (i.e. the next time step depends conditionally on the previous one). Spatial dependencies are modeled via a convolution kernel. To reduce the dimensionality of the parameter estimation, the kernel is parametrized by a trivariate Gaussian function, and the model is formulated and implemented in the Fourier domain. Finally, the parameter estimation is done in the Bayesian framework by applying a Markov Chain Monte Carlo (MCMC) method with Gibbs sampling.&amp;lt;/p&amp;gt;&amp;lt;p&amp;gt;The operational feasibility of the proposed model is evaluated by using data from the NEXRAD WSR-88D radar deployed in Fort Worth, Texas. Measurements from 14 elevation angles are used by restricting the analyses to liquid precipitation below the melting layer. The data processing chain consists of 1) temporal interpolation within radar volumes, 2) clutter filtering, 3) attenuation correction, 4) melting layer detection, 5) polarimetric rain rate estimation based on reflectivity, specific differential phase and differential reflectivity and 6) interpolation to a three-dimensional grid.&amp;lt;/p&amp;gt;&amp;lt;p&amp;gt;The focus of the validation is on higher rain rates (&amp;gt; 5 mm/h) using 10 events during 2018-2019 with mixed convective and stratiform rainfall. Predicted rain rates from the nowcasting model are compared to observations from low-angle radar scans. Using standard verification scores (e.g. equitable threat score and mean absolute error), it is shown that for rainfall rates between 5-25 mm/h, the proposed method can yield up to 30% improvement compared to state of the art extrapolation nowcasting methods. This is attributed to using the spatiotemporal model and vertical profile information obtained from three-dimensional input data.&amp;lt;/p&amp;gt;\n        </jats:p>",
+    "status": "excluded_fulltext",
+    "retrieved_at": "2026-09-26T04:40:26.749642Z",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-26"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.5194/egusphere-egu24-6545",
+    "title": "Improving precipitation nowcasting using deep generative models: a case-study and experiences in R2O&amp;#160;",
+    "authors": [
+      "Whan, Kirien",
+      "Cambier van Nooten, Charlotte",
+      "Schmeits, Maurice",
+      "Wijnands, Jasper",
+      "Schreurs, Koert",
+      "Shapovalova, Yuliya"
+    ],
+    "year": 2025,
+    "container_title": "",
+    "abstract": "<jats:p>Precipitation nowcasting is essential for weather-dependent decision-making. The combination of radar data and deep learning methods has opened new avenues for research. Deep learning approaches have demonstrated equal or better performance than optical flow methods for low-intensity precipitation, but nowcasting high-intensity events remains a challenge. We use radar data from the Royal Netherlands Meteorological Institute (KNMI) and explore various extensions of deep learning architectures (i.e. loss function, additional inputs) to improve nowcasting of heavy precipitation intensities. Our model outperforms other state-of-the-art models and benchmarks and is skilful at nowcasting precipitation for high rainfall intensities, up to 60-min lead time.&amp;#160;\n\nTransferring research to operations is difficult for many meteorological institutes, particularly for new applications that use AI/ML methods. We discuss some of these challenges that KNMI is facing in this domain.&amp;#160;</jats:p>",
+    "status": "excluded_fulltext",
+    "retrieved_at": "2026-09-26T04:40:26.749654Z",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-26"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.5194/egusphere-egu26-20598",
+    "title": "Efficient deep learning for radar precipitation nowcasting using spatiotemporal encoding and two-dimensional reconstruction",
+    "authors": [
+      "Pawar, Manasa",
+      "Noceti, Nicoletta",
+      "Galizia, Antonella"
+    ],
+    "year": 2026,
+    "container_title": "",
+    "abstract": "<jats:p>Short-term precipitation nowcasting, the prediction of rainfall over lead times from a few minutes to about an hour, remains challenging because radar-derived precipitation fields evolve not only through motion but also through rapid, non-linear changes such as growth, decay, and structural reorganization. Classical extrapolation methods are efficient yet struggle to represent these intensity and morphology changes, while many learning-based approaches become costly when scaled to large, high-resolution radar grids. Our approach treats temporal learning and spatial reconstruction as two separate problems. A compact 3D convolutional encoder processes a short radar sequence to capture how precipitation structures evolve over time. We then convert the encoder feature volumes into 2D skip representations through depth aggregation and channel compression and use a lightweight 2D decoder to reconstruct full resolution forecasts. We benchmark against persistence and a strong 2D convolution baseline. The framework is evaluated on the RYDL dataset derived from the German Weather Service radar composite, providing 2D radar fields every five minutes over Germany at 1 × 1 km resolution on a 900 × 900 grid. Performance is benchmarked against persistence and a strong 2D convolutional baseline using complementary verification measures, including mean absolute error, critical success index at multiple intensity thresholds, and fractions skill score with spatial tolerance. Across benchmark lead times, the proposed approach reduces MAE from 0.22 to 0.20 at 5 min, from 0.35 to 0.28 at 30 min, and from 0.44 to 0.42 at 60 min relative to the 2D baseline, indicating improved robustness at intermediate horizons while retaining competitive short-range accuracy. These results suggest that combining explicit spatio-temporal encoding with efficient two-dimensional reconstruction offers a practical route to scalable radar nowcasting on large domains. Keywords: Radar nowcasting, precipitation forecasting, deep learning, spatio-temporal representation learning, forecast verification </jats:p>",
+    "status": "excluded_fulltext",
+    "retrieved_at": "2026-09-26T04:40:26.749665Z",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-26"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.5194/egusphere-egu23-15153",
+    "title": "Ensemble precipitation nowcasting by combination of generative and transformer deep learning models",
+    "authors": [
+      "Franch, Gabriele",
+      "Tomasi, Elena",
+      "Poli, Virginia",
+      "Cardinali, Chiara",
+      "Cristoforetti, Marco",
+      "Alberoni, Pier Paolo"
+    ],
+    "year": 2023,
+    "container_title": "",
+    "abstract": "<jats:p>This work introduces a novel deep-learning method for generating realistic ensembles nowcast of radar-based precipitation at a five-minute time resolution for the next 60 minutes and longer.The proposed method is composed of a combination of two models: the first model is trained to compress and decompress the spatial domain into and from a discrete representation (tokens), while the second model evolves the compressed representation over time. Specifically, the compression and decompression model is based on a combination of a Quantized Variational Autoencoder with a Generative Adversarial Network, while the prediction over time leverages a Generative Pretrained Transformer (GPT) architecture.This separation of concerns (discretized spatial compression/decompression and temporal extrapolation) adds several desirable features not present in more commonly used deep learning methods based on recurrent/convolutional deep learning architectures:&amp;#160;transformer output probabilities can be leveraged to generate ensemble/probabilistic forecasts (without the need of injecting noise)\nthe discretized spatial representation can be used to characterize each token, adding interpretability and explainability to the model\nthe combination of transformer probabilities and token characterization can be used at inference time for forecasts conditioning based on external factors (e.g. NWP forecast output)\nThe presented architecture is trained and tested on a 7-year radar dataset of reflectivity composites of the Emilia-Romagna Region, Italy. The method is then applied at two different scales: regional, over Emilia-Romagna, and national, on the entire Italian domain, showing the adaptability of the approach to multiple spatial domains. We will present the performance of this model for both deterministic and ensemble settings by comparing it with respect to other commonly used extrapolation and deep learning methods.</jats:p>",
+    "status": "excluded_fulltext",
+    "retrieved_at": "2026-09-26T04:40:26.749674Z",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-26"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.5194/egusphere-egu26-11714",
+    "title": "Physics-Guided Generative Nowcasting of Extreme Precipitation with Dual-Polarization Radar and Neural ODE-Diffusion Framework",
+    "authors": [
+      "Pan, Xiang",
+      "Zhao, Kun"
+    ],
+    "year": 2026,
+    "container_title": "",
+    "abstract": "<jats:p>Extreme precipitation poses significant risks to society and infrastructure, highlighting the urgent need for accurate short-term nowcasting. While deep learning models have shown promise in precipitation forecasting, they often lack integration with physical principles, leading to inconsistencies and limited skill in predicting convective evolution. In this study, we introduce RainCast—a novel generative nowcasting framework that synergistically combines deterministic physical modeling with stochastic generative networks to improve the accuracy and physical consistency of extreme rainfall forecasts.RainCast integrates a deterministic branch based on Neural Ordinary Differential Equations (Neural ODE) to simulate large-scale advective processes and a generative branch built upon a conditional diffusion model to capture fine-scale stochastic variability. The model is guided by key physical features such as flow fields, vorticity, and divergence derived from dual-polarization radar observations, which provide essential dynamical information about convective systems. We train and evaluate the framework using vertically integrated liquid water (VIL) data from dual-polarization radars in China (GD-SPOL) and North America (SEVIR).Quantitative assessments demonstrate that RainCast significantly outperforms existing nowcasting methods such as SimVP, SwinLSTM, and NowcastNet. On the GD-SPOL dataset, RainCast improves the Critical Success Index (CSI) for intense convection (VIL ≥ 160) by up to 14.1% at 90-minute lead times. Structural similarity metrics also show substantial gains, with reductions in Fréchet Video Distance (FVD) by 25.4% and Learned Perceptual Image Patch Similarity (LPIPS) by 44.6%. Case studies further illustrate RainCast’s ability to realistically simulate the evolution of organized convective systems, including squall lines and multicell storms, while maintaining physical coherence in wind field retrievals.Our results underscore the value of embedding physical guidance into generative deep learning architectures for convective nowcasting. The RainCast framework represents a meaningful step toward more reliable, interpretable, and physically consistent nowcasting of extreme precipitation, with potential applications in operational meteorology and disaster preparedness.</jats:p>",
+    "status": "excluded_fulltext",
+    "retrieved_at": "2026-09-26T04:40:26.749684Z",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-26"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.5194/gmd-2018-166-rc3",
+    "title": "REVIEW - Optical flow models as an open benchmark for radar-based precipitation nowcasting (rainymotion v0.1)",
+    "authors": [],
+    "year": 2018,
+    "container_title": "",
+    "abstract": "",
+    "status": "excluded_fulltext",
+    "retrieved_at": "2026-09-26T04:40:26.749694Z",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-26"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1109/icassp49357.2023.10094988",
+    "title": "Nowcasting of Extreme Precipitation Using Deep Generative Models",
+    "authors": [
+      "Bi, Haoran",
+      "Kyryliuk, Maksym",
+      "Wang, Zhiyi",
+      "Meo, Cristian",
+      "Wang, Yanbo",
+      "Imhoff, Ruben",
+      "Uijlenhoet, Remko",
+      "Dauwels, Justin"
+    ],
+    "year": 2023,
+    "container_title": "ICASSP 2023 - 2023 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)",
+    "abstract": "",
+    "status": "excluded_title",
+    "retrieved_at": "2026-09-26T04:40:26.749703Z",
+    "exclusion_reason": "EC1: Out of domain scope (not natural science temporal system)",
+    "screen_date": "2026-09-26"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.5194/egusphere-egu23-9531",
+    "title": "Latent diffusion models for generative nowcasting and uncertainty quantification of precipitation fields",
+    "authors": [
+      "Leinonen, Jussi",
+      "Hamann, Ulrich",
+      "Germann, Urs"
+    ],
+    "year": 2023,
+    "container_title": "",
+    "abstract": "<jats:p>Deep generative modeling is able to generate highly realistic atmospheric fields, one prominent example being precipitation. So far, almost all studies have used generative adversarial networks (GANs) for this purpose, but recent progress in machine learning research has had a new class of methods called diffusion models replace GANs in many applications. Diffusion models have been often shown to be able to generate a wider variety of samples than GANs, suggesting that they might be able to better capture uncertainty in applications such as weather and climate where quantifying it is important.In this presentation, we describe our research on using diffusion models for short-term prediction (nowcasting) of precipitation fields. We adapt the latent diffusion model used by Stable Diffusion (Rombach et al. 2022) to the this problem, predicting precipitation up to 3 hours ahead to the future at 5-min temporal resolution and 1-km horizontal resolution. Predictions can be produced as an ensemble where each member represent a possible future evolution of the precipitation field.We show that our model:generates highly realistic precipitation fields that are consistent with the past precipitation used as input.\noutperforms the state-of-the-art GAN-based Deep Generative Models of Rainfall (DGMR) model by most relevant metrics.\nperforms particularly well at representing the uncertainty of its own predictions, as shown by uncertainty quantification methods developed for ensemble forecast verification.\nTherefore, it appears that diffusion models are indeed suitable for generative modeling of precipitation fields with highly realistic representation of uncertainty. Our model architecture also permits multiple inputs data sources to be combined, in particular allowing seamless generative predictions to be made by exploiting observations and numerical weather predictions.</jats:p>",
+    "status": "excluded_fulltext",
+    "retrieved_at": "2026-09-26T04:40:26.749712Z",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-26"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.6914/tpss.060405",
+    "title": "AI Scientist: 作用、影响与未来发展趋势——基于The AI Scientist: Towards Fully Automated Open-Ended Scientific Discovery的分析",
+    "authors": [
+      "李昌奎"
+    ],
+    "year": 2024,
+    "container_title": "Theory and Practice of Social Science",
+    "abstract": "<jats:p>本文基于The AI Scientist: Towards Fully Automated Open-Ended Scientific Discovery一文，探讨了AI Scientist在科学研究中的作用及其对科学界的深远影响。AI Scientist通过自动化实验设计、数据分析、论文写作等功能，显著提高了研究效率，减少了科研成本，并加速了科学发现的进程。文章还分析了AI Scientist在当前应用中的潜在伦理问题，如增加同行评审负担、对科学界的冲击，以及如何通过提高算法透明性、确保结果可验证性和加强人工监督来提升其安全性和可信度。最后，本文展望了AI Scientist未来的发展趋势，提出了其在医疗健康、环境科学、社会科学、新材料、教育等领域的广泛应用前景。AI声明：本文100%使用ChatGPT 4o完成。</jats:p>",
+    "status": "excluded_fulltext",
+    "retrieved_at": "2026-09-26T04:40:29.076767Z",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-26"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.64628/ab.dt4s9yqtq",
+    "title": "The AI scientist: now academic papers can be fully automated, what does this mean for the future of research?",
+    "authors": [
+      "Krammer, Sorin"
+    ],
+    "year": 2026,
+    "container_title": "",
+    "abstract": "",
+    "status": "excluded_fulltext",
+    "retrieved_at": "2026-09-26T04:40:29.076789Z",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-26"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1039/d5dd00342c/v1/decision1",
+    "title": "Decision letter for \"The 2D-drone swarm, a safe open-source sample transfer system for fully automated laboratories\"",
+    "authors": [],
+    "year": 2025,
+    "container_title": "",
+    "abstract": "",
+    "status": "excluded_title",
+    "retrieved_at": "2026-09-26T04:40:29.076797Z",
+    "exclusion_reason": "EC1: Out of domain scope (not natural science temporal system)",
+    "screen_date": "2026-09-26"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.22541/au.167052124.41804127/v2",
+    "title": "Towards The Ultimate Brain: Exploring Scientific Discovery with ChatGPT AI",
+    "authors": [
+      "Adesso, Gerardo"
+    ],
+    "year": 2023,
+    "container_title": "",
+    "abstract": "<jats:p>\n                  This paper presents a novel approach to scientific discovery using an artificial intelligence (AI) environment known as ChatGPT, developed by OpenAI. This is the first paper entirely generated with outputs from ChatGPT. We demonstrate how ChatGPT can be instructed through a gamification environment to define and benchmark hypothetical physical theories. Through this environment, ChatGPT successfully simulates the creation of a new improved model, called GPT\n                  <jats:sup>4</jats:sup>\n                  , which combines the concepts of GPT in AI (generative pretrained transformer) and GPT in physics (generalized probabilistic theory). We show that GPT\n                  <jats:sup>4</jats:sup>\n                  can use its built-in mathematical and statistical capabilities to simulate and analyze physical laws and phenomena. As a demonstration of its language capabilities, GPT\n                  <jats:sup>4</jats:sup>\n                  also generates a limerick about itself. Overall, our results demonstrate the promising potential for human-AI collaboration in scientific discovery, as well as the importance of designing systems that effectively integrate AI's capabilities with human intelligence.\n                </jats:p>",
+    "status": "excluded_title",
+    "retrieved_at": "2026-09-26T04:40:29.076806Z",
+    "exclusion_reason": "EC1: Out of domain scope (not natural science temporal system)",
+    "screen_date": "2026-09-26"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.31219/osf.io/yecmj",
+    "title": "Experiment ended",
+    "authors": [
+      "Bard, AI"
+    ],
+    "year": 2023,
+    "container_title": "",
+    "abstract": "<p>The article \"Trust in science and belief in misinformation mediate the effects of political orientation on vaccine hesitancy and intention to be vaccinated\" by Alessandro Santirocchi, Pietro Spataro, Federica Alessi, Clelia Rossi-Arnaud, Vincenzo Cestari investigates the associations of political orientation with vaccine hesitancy and intention to be vaccinated against COVID-19. The study found that right-wing adherents were less trustful of scientists and believed in COVID-19-related misinformation more than left-wing adherents. These two factors accounted for their higher vaccine hesitancy and reduced willingness to receive an anti-COVID-19 vaccination.The study also found that trust in science and belief in misinformation mediated the effects of political orientation on vaccine hesitancy and intention to be vaccinated. This means that political orientation influenced vaccine hesitancy and intention to be vaccinated through trust in science and belief in misinformation.The findings of this study suggest that trust in science and belief in misinformation are important factors that can influence vaccine hesitancy and intention to be vaccinated. Interventions that aim to increase trust in science and reduce belief in misinformation could be effective in reducing vaccine hesitancy.</p>",
+    "status": "excluded_title",
+    "retrieved_at": "2026-09-26T04:40:29.076812Z",
+    "exclusion_reason": "EC1: Out of domain scope (not natural science temporal system)",
+    "screen_date": "2026-09-26"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.2139/ssrn.7511873",
+    "title": "Curated emotion-coding dataset for the public emotion-coding subset of the Stanford Suppes Brain Lab Psychotherapy Electroencephalographic Dataset",
+    "authors": [
+      "Crangle, Colleen",
+      "Longino, Helen"
+    ],
+    "year": 2026,
+    "container_title": "",
+    "abstract": "<jats:p>The Stanford Suppes Brain Lab Psychotherapy EEG Dataset includes a public archive of human emotion codings from selected naturalistic couple-therapy sessions [1]. The original emotion codings were created from session transcripts and released as Matlab .mat files. Each file contains timestamped entries for one session as assessed by one coder. At each coded timestamp, emotion information is represented for the female and male partners using five categories: joy/happiness, sadness, fear/anxiety/tension, anger, and other. Neutral is represented by the absence of a nonzero emotion code, and non-neutral emotion categories include coded intensity values.This dataset converts the public Matlab emotion-coding files into documented CSV tables for secondary analysis. The curated files are organized at several levels, including coded event, individual partner, couple-level activation pattern, session, coder comparison, threshold-based activation episode, and matched-event agreement. The dataset preserves the original emotion categories and intensity values while adding derived activation/inactivation variables, partner-level summaries, couple-level activation patterns, and 1500 ms matched-event coder-comparison files.The resulting files can be used by researchers interested in psychotherapy process, affective annotation, dyadic interaction, behavioral coding, intercoder agreement, and computational analysis of expressed emotion. The documentation identifies the structure of the source files, the derived variables, and recommended uses of the curated tables.</jats:p>",
+    "status": "excluded_title",
+    "retrieved_at": "2026-09-26T04:40:31.353479Z",
+    "exclusion_reason": "EC1: Out of domain scope (not natural science temporal system)",
+    "screen_date": "2026-09-26"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.64898/2026.04.07.716788",
+    "title": "KinConfBench: A Curated Benchmark for Cofolding Models on Kinase Conformational States",
+    "authors": [
+      "Sun, Kunyang",
+      "Head-Gordon, Teresa"
+    ],
+    "year": 2026,
+    "container_title": "",
+    "abstract": "<jats:title>Abstract</jats:title>\n                <jats:p>Protein kinases are critical drug targets, requiring therapeutics that can modulate their active and inactive conformational states. While cofolding models can generate global folds directly from kinase sequences and ligand SMILES strings, these models have not yet been tested on their ability to recover ligand induced-fit conformational states of the kinase proteins. Here, we introduce KinConfBench, a curated benchmark of 2,225 high-quality human kinase chains to evaluate the ability of three state-of-the-art cofolding models—Boltz-2, Chai-1, and Protenix—to recover both canonical and rare conformational states. We show that geometric success metrics of a ligand pose in the active site does not correlate strongly with the correct kinase conformational state, motivating a new set of dynamical benchmarks for assessing cofolding models. While all three cofolding models achieve ∼65-75% prediction accuracy for kinase conformational classification, they exhibit severe mode collapse when performing multiple inferences, show negligible structural diversity in sampling induced-fit motions, and display a prevalent “apo-drift” in which all three cofolding models predominately predict the kinase to be in its ligand-free state. Our results highlight that capturing ligand-induced protein conformational diversity, not just geometric fit, is critical for next-generation structure-based drug discovery.</jats:p>",
+    "status": "excluded_title",
+    "retrieved_at": "2026-09-26T04:40:31.353497Z",
+    "exclusion_reason": "EC1: Out of domain scope (not natural science temporal system)",
+    "screen_date": "2026-09-26"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.7287/peerj.7909v0.2/reviews/2",
+    "title": "Peer Review #2 of \"ncRNA2MetS: a manually curated database for non-coding RNAs associated with metabolic syndrome (v0.2)\"",
+    "authors": [],
+    "year": 2019,
+    "container_title": "",
+    "abstract": "",
+    "status": "excluded_title",
+    "retrieved_at": "2026-09-26T04:40:31.353505Z",
+    "exclusion_reason": "EC1: Out of domain scope (not natural science temporal system)",
+    "screen_date": "2026-09-26"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.7287/peerj.7909v0.1/reviews/3",
+    "title": "Peer Review #3 of \"ncRNA2MetS: a manually curated database for non-coding RNAs associated with metabolic syndrome (v0.1)\"",
+    "authors": [],
+    "year": 2019,
+    "container_title": "",
+    "abstract": "",
+    "status": "excluded_title",
+    "retrieved_at": "2026-09-26T04:40:31.353511Z",
+    "exclusion_reason": "EC1: Out of domain scope (not natural science temporal system)",
+    "screen_date": "2026-09-26"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.7287/peerj.7909v0.2/reviews/3",
+    "title": "Peer Review #3 of \"ncRNA2MetS: a manually curated database for non-coding RNAs associated with metabolic syndrome (v0.2)\"",
+    "authors": [],
+    "year": 2019,
+    "container_title": "",
+    "abstract": "",
+    "status": "excluded_title",
+    "retrieved_at": "2026-09-26T04:40:31.353516Z",
+    "exclusion_reason": "EC1: Out of domain scope (not natural science temporal system)",
+    "screen_date": "2026-09-26"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.7287/peerj.7909v0.3/reviews/2",
+    "title": "Peer Review #2 of \"ncRNA2MetS: a manually curated database for non-coding RNAs associated with metabolic syndrome (v0.3)\"",
+    "authors": [],
+    "year": 2019,
+    "container_title": "",
+    "abstract": "",
+    "status": "excluded_title",
+    "retrieved_at": "2026-09-26T04:40:31.353520Z",
+    "exclusion_reason": "EC1: Out of domain scope (not natural science temporal system)",
+    "screen_date": "2026-09-26"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1101/745844",
+    "title": "A curated benchmark of enhancer-gene interactions for evaluating enhancer-target gene prediction methods",
+    "authors": [
+      "Moore, Jill E.",
+      "Pratt, Henry",
+      "Purcaro, Michael",
+      "Weng, Zhiping"
+    ],
+    "year": 2019,
+    "container_title": "",
+    "abstract": "<jats:title>ABSTRACT</jats:title>\n                <jats:p>\n                  Many genome-wide collections of candidate cis-regulatory elements (cCREs) have been defined using genomic and epigenomic data, but it remains a major challenge to connect these elements to their target genes. To facilitate the development of computational methods for predicting target genes, we developed a Benchmark of candidate\n                  <jats:underline>En</jats:underline>\n                  hancer-\n                  <jats:underline>G</jats:underline>\n                  ene Interactions (BENGI) by integrating the Registry of cCREs we developed recently with experimentally-derived genomic interactions. We used BENGI to test several published computational methods for linking enhancers with genes, including signal correlation and the supervised learning methods TargetFinder and PEP. We found that while TargetFinder was the best performing method, it was modestly better than a baseline distance method for most benchmark datasets while trained and tested within the same cell type and that TargetFinder often did not outperform the distance method when applied across cell types. Our results suggest that current computational methods need to be improved and that BENGI presents a useful framework for method development and testing.\n                </jats:p>",
+    "status": "excluded_title",
+    "retrieved_at": "2026-09-26T04:40:31.353526Z",
+    "exclusion_reason": "EC1: Out of domain scope (not natural science temporal system)",
+    "screen_date": "2026-09-26"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1093/nar/gkq1187",
+    "title": "A manually curated ChIP-seq benchmark demonstrates room for improvement in current peak-finder programs",
+    "authors": [
+      "Rye, Morten Beck",
+      "Sætrom, Pål",
+      "Drabløs, Finn"
+    ],
+    "year": 2010,
+    "container_title": "Nucleic Acids Research",
+    "abstract": "",
+    "status": "excluded_title",
+    "retrieved_at": "2026-09-26T04:40:31.353532Z",
+    "exclusion_reason": "EC1: Out of domain scope (not natural science temporal system)",
+    "screen_date": "2026-09-26"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.52202/079017-1831",
+    "title": "BIGOS V2 Benchmark for Polish ASR: Curated Datasets and Tools for Reproducible Evaluation",
+    "authors": [
+      "Junczyk, Michal"
+    ],
+    "year": 2024,
+    "container_title": "Advances in Neural Information Processing Systems 37",
+    "abstract": "",
+    "status": "excluded_title",
+    "retrieved_at": "2026-09-26T04:40:31.353538Z",
+    "exclusion_reason": "EC1: Out of domain scope (not natural science temporal system)",
+    "screen_date": "2026-09-26"
+  },
+  {
     "bibkey": "zhu2019phasenet",
     "title": "PhaseNet: a deep-neural-network-based arrival-time picking method for P and S waves",
     "authors": [

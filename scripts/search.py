@@ -190,6 +190,13 @@ def run_search():
         ("Crossref", "Score-based Data Assimilation Rozet"),
         ("Crossref", "SkySense A Multi-Modal Remote Sensing Foundation Model Towards Universal Interpretation"),
         ("Crossref", "The Rise of Data-Driven Weather Forecasting A First Statistical Assessment"),
+        # Iteration 6 Additions: Geometric Physics Invariants, Convective Downscaling, Autonomous Science Agents
+        ("Crossref", "ClimODE Climate and Weather Forecasting with Physics-informed Neural ODEs"),
+        ("Crossref", "Residual Corrective Diffusion Modeling for Km-scale Atmospheric Downscaling CorrDiff"),
+        ("Crossref", "Deep Learning for Day Forecasts from Sparse Observations MetNet-3"),
+        ("Crossref", "Skilful precipitation nowcasting using deep generative models of radar DGMR"),
+        ("Crossref", "The AI Scientist Towards Fully Automated Open-Ended Scientific Discovery"),
+        ("Crossref", "SciCode A Research Coding Benchmark Curated by Scientists"),
     ]
 
     verified_arxiv_ids = [
@@ -242,6 +249,12 @@ def run_search():
         "2306.10574",  # Score-based Data Assimilation (Rozet & Louppe)
         "2312.10115",  # SkySense (Guo et al.)
         "2307.10128",  # The Rise of Data-Driven Weather Forecasting (Ben-Bouallegue et al.)
+        # Iteration 6 arXiv Additions
+        "2404.10024",  # ClimODE (Verma et al.)
+        "2309.15214",  # CorrDiff (Mardani et al.)
+        "2306.06079",  # MetNet-3 (Andrychowicz et al.)
+        "2408.06292",  # The AI Scientist (Lu et al.)
+        "2407.13168",  # SciCode (Tian et al.)
     ]
 
     candidates = {}
@@ -324,6 +337,7 @@ def run_search():
         "10.52202/085713-0303",        # OceanBench
         "10.1029/2021ms002572",        # 4DVarNet
         "10.1175/bams-d-23-0162.1",    # Ben-Bouallegue (BAMS)
+        "10.1038/s41586-021-03854-z",  # DGMR (Ravuri et al., Nature)
     ]
     prev_doi = len(candidates)
     for doi in verified_dois:

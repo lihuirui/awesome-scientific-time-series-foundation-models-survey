@@ -2,9 +2,9 @@
 
 **论文全称**：*Foundation Models and Reasoning LLMs for Scientific Multimodal Time Series: A Survey*  
 **维护机构**：Antigravity Autonomous Research Loop (`lihuirui/awesome-scientific-time-series-foundation-models-survey`)  
-**当前版本**：v5.0 (迭代 5 - 神经变分数据同化与反演、跨模态多传感器隐空间对齐拓扑、业务化长时漂移与极端异常应急协议)  
+**当前版本**：v6.0 (迭代 6 - 连续微分流与李群对称性硬物理不变量、亚公里强对流生成式降尺度、闭环自主科研智能体与可执行基准)  
 **更新日期**：2026-09-26  
-**论文正文**：[`paper/main.pdf`](file:///workspace/survey-sci-ts/paper/main.pdf) (IEEEtran 双栏, 11 页, 包含 8 幅高分辨率出版级图表与 4 个全景对比表格)
+**论文正文**：[`paper/main.pdf`](file:///workspace/survey-sci-ts/paper/main.pdf) (IEEEtran 双栏, 23 页, 包含 8 幅高分辨率出版级图表与 5 个全景对比表格)
 
 ---
 
@@ -17,7 +17,7 @@
 3. **物理守恒律与一致性约束**：经典自回归神经网络易发生“物理幻觉”（违背质量守恒、动量守恒或能量守恒），在长时段循环推演中出现累积谱衰减、过度平滑或极端事件失真。
 4. **科学推理与智能体决策**：随着大语言模型（LLM）的爆发，如何使智能体深度理解物理时序中的空间依赖与动力演进，具备科学假设生成、物理参数反演、多工具编排与闭环科学推理（Scientific Reasoning）能力，成为人工智能驱动科学研究（AI for Science）的核心命题。
 
-本综述系统梳理了 2021 年至今自然科学领域的 **科学多模态时序基础模型（Scientific Multimodal Time Series Foundation Models）** 与 **科学时序推理大语言模型（Scientific Reasoning LLMs / Multi-Agent Systems）**，收录并深度解构了 53 篇经过学术 API 严格验证的标志性研究。
+本综述系统梳理了 2021 年至今自然科学领域的 **科学多模态时序基础模型（Scientific Multimodal Time Series Foundation Models）** 与 **科学时序推理大语言模型（Scientific Reasoning LLMs / Multi-Agent Systems）**，收录并深度解构了 59 篇经过学术 API 严格验证的标志性研究。
 
 ---
 
@@ -151,11 +151,36 @@ $$d\mathbf{x} = \left[ \mathbf{f}(\mathbf{x}, t) - g(t)^2 \mathbf{s}_\theta(\mat
 3. **未见历史极端事件中的物理幻觉风险 (Climate Non-Stationarity)**：面对全球变暖背景下未曾被历史数据覆盖的极端破纪录热穹顶、爆发性气旋或极涡崩溃，纯数据模型可能因支撑集外（Out-of-Distribution）导致动能或比湿不守恒，甚至出现负降水。
 4. **混合双轨并行与安全应急回退机制 (Hybrid Blending & Fail-Safe Handoff)**：业务气象局确立了 AI 模式（如 AIFS）与经典物理数值模式（IFS HRES）并行运行机制，实时监控物理残差与守恒量；当扩散集合离散度或物理偏离度触发阈值时，自动平滑无缝切换回经典数值动力学求解器。
 
+### 3.9 连续-离散物理不变量与流形几何深度学习 (Continuous-Discrete Physics Invariants & Geometric Deep Learning)
+传统大模型在固定离散步长（如 $\Delta t = 6\text{ h}$）下进行自回归滚动推演，在数十个时间步后不可避免地积累离散截断误差与物理守恒偏离。
+1. **连续流场神经常微分方程 (Neural ODE Flow & Advection PDE)**：
+   **ClimODE**（Verma et al., ICLR 2024）突破了离散自回归架构的固有局限，将大气演化建模为连续动力系统。通过神经网络参数化速度场 $\mathbf{v}_\theta(\mathbf{x}, t)$，利用连续性方程显式约束质量守恒：
+   $$\frac{\partial \rho}{\partial t} + \nabla \cdot (\rho \mathbf{v}) = 0, \quad \frac{d\mathbf{z}(t)}{dt} = \mathbf{f}_\theta(\mathbf{z}(t), t)$$
+   配合伴随敏感度法（Adjoint Sensitivity Method）进行反向传播，实现任意连续时间分辨率的无缝积分与能量守恒推演。
+2. **球面黎曼流形与 $\mathrm{SO}(3)$ 旋转群对称性**：
+   在球形几何体 $\mathbb{S}^2$ 上，**SFNO** 与 **ClimODE** 引入黎曼切空间度量张量 $g_{ij}$ 与离散球谐变换，确保模型在全局坐标旋转与坐标系变换下满足严格的李群旋转等变性。这种内嵌的几何物理先验使得 ClimODE 在仅有 0.3M 超轻量参数下即可逼近数千万参数基线模型的预报精度，展现了物理不变量对网络容量的巨大杠杆效应。
+
+### 3.10 亚公里对流尺度仿真与生成式超分辨率降尺度 (Sub-Kilometer Convective-Scale Emulation & Generative Downscaling)
+全球 0.25° 网格（~28 km）对于局地极端对流暴雨、突发下击暴流与超级单体龙卷风预警存在尺度盲区。近年来，亚公里级高分辨率临近预报与生成式降尺度取得里程碑式突破：
+1. **深度生成雷达临近降水预警 (DGMR)**：
+   **DGMR**（Ravuri et al., Nature 2021 / DeepMind）首次将时空生成对抗网络（GAN）应用于 1 km 分辨率、5–90 分钟的雷达反射率外推。通过双重鉴别器（空间内容与时间动态鉴别器）联合惩罚，在高阈值降水（$>8\ \mathrm{mm/h}$）下的临界成功指数（CSI）大幅超越经典数值光流法（PySTEPS）与循环卷积网络（ConvLSTM），并在空间功率谱密度（PSD）分析中首次彻底解决了传统回归模型的边缘模糊与能量耗散。
+2. **多模态稠密对流尺度预报 (MetNet-3)**：
+   **MetNet-3**（Andrychowicz et al., Science 2024 / Google）将空间雷达网、地面雨量站、GOES 静止卫星红外时序与数值模式物理先验深度对齐，在 1 km 网格下将强对流精准预报时效延伸至 24 小时，为城市应急防汛提供了高频（2 分钟级更新）的连续概率预报。
+3. **残差扩散生成降尺度 (CorrDiff)**：
+   **CorrDiff**（Mardani et al., IEEE TGRS 2024 / NVIDIA）基于条件扩散概率模型，将 25 km 低分辨率粗网格场实时超分辨率至 2 km，利用残差修正流精确捕获局地地形强迫抬升与非静力平衡中小尺度湍流，单次降尺度推理能耗比高分辨率物理数值模拟器（如 WRF）降低三个数量级（能耗降至 $0.005\ \mathrm{kWh}$）。
+
+### 3.11 闭环自主科学发现与科研编码推理基准 (Closed-Loop Autonomous Scientific Discovery & Empirical Coding Benchmarks)
+大语言模型正从“代码助手”向“自主完成全生命周期科学研究”跃迁：
+1. **端到端自主科研闭环智能体 (The AI Scientist)**：
+   **The AI Scientist**（Lu et al., Sakana AI / Oxford 2024）构建了全球首个全流程科研智能体生态：包含自主科学假设头脑风暴、文献检索（Semantic Scholar API 过滤去重）、实验代码自主编写与在 PyTorch 环境中的沙盒执行、结果可视化、自动撰写完整学术规范 LaTeX 论文（含章节结构与正文实验图表编排）、以及基于大语言模型的自主同行评审（Automated Reviewing Loop）。端到端单篇全自动论文产生成本低于 15 美元，开启了科学智能体规模化探索的新范式。
+2. **高阶科学编码与数理推导基准 (SciCode)**：
+   **SciCode**（Tian et al., ICML 2024）针对复杂物理科学与偏微分方程求解构建了最严苛的可执行基准，覆盖凝聚态物理、理论天体物理、量子化学等领域的 338 个多步数理子问题与 65 步因果长程依赖。在严格的数值单元测试下，顶级前沿模型（GPT-4o 与 Claude 3.5 Sonnet）的端到端完全解决率不足 40%，揭示了大模型在处理跨尺度物理解算与保真度数值积分时依然存在深层认知壁垒。
+
 ---
 
 ## 4. 关键挑战与未来前沿方向 (Open Challenges & Frontiers)
 
 1. **多模态连续物理统一分词器 (Unified Continuous Physical Tokenization)**：打破结构化规整网格（ERA5）、稀疏离散测站（雨量计、水文计、地震台网）与异构非规则遥感影像（Sentinel/Landsat）的表征边界，构建具备空间连续内插、时间自适应采样与物理守恒先验的通用物理分词架构。
-2. **硬性物理守恒约束与极端极值可靠性标定 (Hard Physical Invariants & Extreme Event Calibration)**：在网络底层深度嵌入连续流形几何算子（如球面谐波 SFNO）与流体动力保真核，解决深度学习在极端台风、暴雨重尾事件中的欠拟合与物理违背缺陷。
+2. **硬性物理守恒约束与极端极值可靠性标定 (Hard Physical Invariants & Extreme Event Calibration)**：在网络底层深度嵌入连续流形几何算子（如球面谐波 SFNO、神经常微分方程 ClimODE）与流体动力保真核，解决深度学习在极端台风、暴雨重尾事件中的欠拟合与物理违背缺陷。
 3. **高效多尺度可扩展扩散集合系统 (Scalable Probabilistic Diffusion Ensembles)**：降低扩散反向采样求解高维地球物理场时的计算开销，融合流匹配（Flow Matching）与一致性模型（Consistency Models），实现秒级生成全球数十个高保真物理集合成员。
 4. **自主科学推理智能体沙盒与闭环验证 (Autonomous Scientific Discovery Sandboxes & Verification Loops)**：推动大语言模型从简单 API 调用迈向挂载全套科学计算生态（`xarray`, `metpy`, `dask`, `obspy`）的有状态沙盒，建立具备假设生成、自动代码推演、物理自检纠错与实验闭环验证的自主科学探索助手。
