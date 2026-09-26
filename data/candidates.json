@@ -9574,5 +9574,747 @@
     "abstract": "",
     "status": "candidate",
     "retrieved_at": "2026-09-26T09:41:11.407983Z"
+  },
+  {
+    "source": "arXiv",
+    "arxiv_id": "2109.03697",
+    "doi": null,
+    "title": "U-FNO -- An enhanced Fourier neural operator-based deep-learning model for multiphase flow",
+    "authors": [
+      "Gege Wen",
+      "Zongyi Li",
+      "Kamyar Azizzadenesheli",
+      "Anima Anandkumar",
+      "Sally M. Benson"
+    ],
+    "year": 2021,
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-26T14:47:54.042794Z"
+  },
+  {
+    "source": "arXiv",
+    "arxiv_id": "2207.05209",
+    "doi": null,
+    "title": "Fourier Neural Operator with Learned Deformations for PDEs on General Geometries",
+    "authors": [
+      "Zongyi Li",
+      "Daniel Zhengyu Huang",
+      "Burigede Liu",
+      "Anima Anandkumar"
+    ],
+    "year": 2022,
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-26T14:47:54.042864Z"
+  },
+  {
+    "source": "arXiv",
+    "arxiv_id": "2308.15349",
+    "doi": null,
+    "title": "Lie-Poisson Neural Networks (LPNets): Data-Based Computing of Hamiltonian Systems with Symmetries",
+    "authors": [
+      "Christopher Eldred",
+      "François Gay-Balmaz",
+      "Sofiia Huraka",
+      "Vakhtang Putkaradze"
+    ],
+    "year": 2023,
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-26T14:47:54.042899Z"
+  },
+  {
+    "source": "arXiv",
+    "arxiv_id": "2605.15881",
+    "doi": null,
+    "title": "Symplectic Neural Operators for Learning Infinite Dimensional Hamiltonian Systems",
+    "authors": [
+      "Yeang Makara",
+      "Yusuke Tanaka",
+      "Takashi Matsubara",
+      "Takaharu Yaguchi"
+    ],
+    "year": 2026,
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-26T14:47:54.042925Z"
+  },
+  {
+    "source": "arXiv",
+    "arxiv_id": "2507.06479",
+    "doi": null,
+    "title": "Generative Lagrangian data assimilation for ocean dynamics under extreme sparsity",
+    "authors": [
+      "Niloofar Asefi",
+      "Leonard Lupin-Jimenez",
+      "Tianning Wu",
+      "Ruoying He",
+      "Ashesh Chattopadhyay"
+    ],
+    "year": 2025,
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-26T14:47:54.042951Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.2139/ssrn.6442462",
+    "title": "Finite Cell–Enhanced Fourier Neural Operator (FC-FNO) for Hyperelasticity in Complex Geometries",
+    "authors": [
+      "Xiao, Yanze",
+      "Han, Shilei",
+      "Tian, Qiang"
+    ],
+    "year": 2026,
+    "container_title": "",
+    "abstract": "<jats:p>The Fourier Neural Operator (FNO) relies on the Fast Fourier Transform (FFT) and is therefore restricted to structured grids on regular domains, limiting its applicability to problems with complex geometries. To overcome this limitation, this paper proposes a Finite Cell–Enhanced Fourier Neural Operator (FC-FNO) framework for solving equilibrium problems in hyperelasticity. By integrating the finite cell method into the FNO architecture, irregular geometries and complex boundaries are embedded into structured background grids compatible with Fourier-based operations. In the proposed framework, the total potential energy is evaluated in a cell-wise manner using hierarchical shape functions and adaptive integration, thereby avoiding the instability associated with automatic differentiation. The potential energy is directly enforced as the training loss, eliminating the need for labeled data while maintaining high accuracy. Numerical examples involving two- and three-dimensional hyperelastic large-deformation problems demonstrate that the proposed FC-FNO accurately and efficiently predicts equilibrium solutions for hyperelastic materials with complex geometries, significantly extending the applicability of Fourier neural operators in computational solid mechanics.</jats:p>",
+    "status": "candidate",
+    "retrieved_at": "2026-09-26T14:47:57.063766Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.2139/ssrn.7269848",
+    "title": "MTL-FNO: A Lightweight Multi-Task Fourier Neural Operator for Sparse Field Reconstruction",
+    "authors": [
+      "Ye, Siyu",
+      "Li, Shihang",
+      "Gong, Zhiqiang",
+      "Zhang, Benrong",
+      "Zhou, Weien",
+      "Huang, Yiyong",
+      "Yao, Wen"
+    ],
+    "year": 2026,
+    "container_title": "",
+    "abstract": "<jats:p>Efficient onboard multi-field sparse reconstruction is essential for the autonomous operation of aerospace vehicles. While existing deep learning models exhibit promise for single-field reconstruction, deploying multiple independent models leads to prohibitive model size growth and fails to exploit cross-field correlations, particularly under few-shot conditions. To address these challenges, we propose a lightweight multi-task Fourier neural operator (MTL-FNO), an end-to-end joint training framework based on hard parameter sharing. First, in each layer, the parameters are divided into shared and task-specific components to capture common features across fields while preserving task-specific characteristics. Moreover, the task-specific fine-tuning parameters are implemented as low-rank terms, achieving substantial model compression. Second, to address the difficulty of co-optimizing shared and task-specific parameters along with their real and imaginary parts, we revisit the spectral convolution of FNO from a polar-form perspective and devise a physically meaningful decoupled optimization scheme. Specifically, we apply polar decomposition to slice-wise disentangle the spectral weight into a unitary tensor encoding phase information and a positive semi-definite tensor characterizing amplitude. By decoupling the optimization of phase and amplitude, our method can effectively mitigate task conflicts. Meanwhile, to preserve unitary geometric fidelity during training, the Cayley transform is introduced to reparameterize the unitary tensor, converting the constrained optimization problem to an unconstrained one. Finally, the effectiveness of the proposed method under few-shot conditions is validated on two representative engineering cases. Results show that MTL-FNO achieves accuracy comparable to or even surpassing that of standard FNO, while reducing total model size by 76% and 60%, respectively.</jats:p>",
+    "status": "candidate",
+    "retrieved_at": "2026-09-26T14:47:57.063790Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.31223/x5pz08",
+    "title": "Fourier Neural Operator Surrogates for Hysteretic Multiphase Flow in Heterogeneous Geological CO2 Storage Reservoirs",
+    "authors": [
+      "Baskaran, Venkateshwaran",
+      "Haque, AKM",
+      "Siddiqui, Numair",
+      "Ramachandran, Hariharan",
+      "Ramkumar, Muthuvairavasamy",
+      "Olutoki, John",
+      "Yogi, Ida",
+      "Adeniyi, Bamidele"
+    ],
+    "year": 2026,
+    "container_title": "",
+    "abstract": "<jats:p>Modeling hysteresis in heterogeneous field-scale reservoirs is essential for estimating residual CO2 trapping capacity and assessing the security of geological storage. This requires accounting for both relative permeability hysteresis and capillary pressure hysteresis, which control path-dependent multiphase flow and the spatial distribution of trapped gas. Because maximum residual gas saturation varies across lithofacies, residual trapping cannot be predicted from saturation alone when reservoir properties are spatially discontinuous. However, full-physics hysteresis-enabled simulations are computationally expensive, making large-scale storage appraisal impractical. To address this challenge, we develop 2D Fourier Neural Operator (FNO) surrogates that predict CO2 and brine saturation fields together with a hysteresis states. The models are evaluated across three complexity levels: Case F, a homogeneous system; Case D, a heterogeneous system with variable porosity and permeability but a single trapping law; and Case M, a multi-lithofacies system with five rock types. Each case is tested under relative permeability-only physics and under coupled relative permeability plus capillary pressure hysteresis. Results show that when trapping behavior is uniform, input fields and flow-condition scalars are sufficient to reproduce saturation evolution with accuracy. In contrast, when residual gas saturation varies by lithofacies, prediction accuracy deteriorates unless rock type is encoded. Adding a categorical rock-type channel restores performance across all cases, including hysteresis-state classification, but reduces robustness under coarse-to-fine grid transfer. These results show that surrogate modeling of heterogeneous CO2 storage requires representation of lithofacies-dependent trapping behavior. Petrophysical fields alone are insufficient to resolve spatially discontinuous hysteresis physics, especially when capillary pressure hysteresis is included.</jats:p>",
+    "status": "candidate",
+    "retrieved_at": "2026-09-26T14:47:57.063800Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.2139/ssrn.4944664",
+    "title": "D-Fno: A Decomposed Fourier Neural Operator for Large-Scale Parametric Partial Differential Equations",
+    "authors": [
+      "Li, Kangjie",
+      "Ye, Wenjing"
+    ],
+    "year": 2024,
+    "container_title": "",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-26T14:47:57.063807Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.2139/ssrn.4654307",
+    "title": "Neural Operator Res-Fno Based on Dual-View Feature Fusion and Fourier Transform",
+    "authors": [
+      "Xu, Jinghong",
+      "Zhou, Yuqian",
+      "Liu, Qian"
+    ],
+    "year": 2023,
+    "container_title": "",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-26T14:47:57.063813Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.3997/2214-4609.202310266",
+    "title": "Three-phase flow reservoir simulation approximation and acceleration using U-shaped Fourier neural operator (U-FNO)",
+    "authors": [
+      "Shishaev, G.",
+      "Salnikov, M.",
+      "Bulatov, V.",
+      "Vetkina, A."
+    ],
+    "year": 2023,
+    "container_title": "84th EAGE Annual Conference &amp; Exhibition",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-26T14:47:57.063819Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.21203/rs.3.rs-4612886/v1",
+    "title": "A Boundary-based Fourier Neural Operator (B-FNO) Method for Efficient Parametric Acoustic Wave Analysis",
+    "authors": [
+      "Li, Ruoyan",
+      "Ye, Wenjing",
+      "Liu, Yijun"
+    ],
+    "year": 2024,
+    "container_title": "",
+    "abstract": "<title>Abstract</title>\n        <p>Repetitive wave analysis is required in various applications involving parametric analyses across different settings. However, traditional numerical methods based on domain discretization become computationally impractical due to the large number of simulations required, especially in unbounded domains. The boundary element method (BEM) is known for its effectiveness in solving wave equations, particularly in unbounded domains. Nevertheless, even with accelerated techniques, large-scale problems and those with high frequencies often necessitate numerous iterations, hampered by ill-conditioned system matrices. As a result, BEM becomes unsuitable for parametric analysis. To address these challenges, surrogate modelling techniques have been developed, and recent advancements in neural operators show promise in constructing surrogate models. However, they still face limitations when efficiently handling exterior and high-dimensional problems. In this study, we propose a novel data-driven surrogate modelling approach called B-FNO, which combines BEM and Fourier neural operator (FNO) for wave analysis in varying domains and frequencies. This approach formulates wave equations as integral formulations and utilizes FNO to map problem boundaries and other parameters to boundary solutions. Compared to existing surrogate modelling techniques, the B-FNO approach offers several advantages. These include reduced problem dimensionality and computational complexity, the ability to handle exterior problems without domain truncation, and significantly improved efficiency and accuracy compared to well-known neural network surrogate models. Moreover, compared to accelerated BEM, the B-FNO approach is better behaved and requires a much smaller number of iterations. We validate the effectiveness of our method through numerical experiments on a series of 2D and 3D benchmark problems, demonstrating its potential for broad application.</p>",
+    "status": "candidate",
+    "retrieved_at": "2026-09-26T14:47:57.063828Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1115/detc2025-168594",
+    "title": "Accelerating Electric-Magnetic Machine Simulation Using the Fourier Neural Operator (FNO)",
+    "authors": [
+      "Guo, Zhengke",
+      "Gu, Xianfeng David",
+      "Chen, Shikui"
+    ],
+    "year": 2025,
+    "container_title": "Volume 3A: 51st Design Automation Conference (DAC)",
+    "abstract": "<jats:title>Abstract</jats:title>\n                  <jats:p>Electrical machines traditionally rely on Finite Element Analysis (FEA) to evaluate or simulate their properties by solving the associated partial differential equations (PDEs). However, FEA is computationally costly, which limits its capability for rapid design iteration and real-time simulations. While recent surrogate models such as Physics-Informed Neural Networks (PINNs) have shown promise, they often suffer from slow convergence and scalability issues in complex geometries. In this paper, we propose the use of the Fourier Neural Operator (FNO) as a resolution-invariant surrogate model to significantly reduce the computation time required for FEA-based PDE solutions in electric machines. Previous research has demonstrated the FNO’s ability to learn mappings for time-sequence problems by approximating operators between function spaces. Building on this, we present a methodology to directly predict the later-state electromagnetic fields of a rotating interior permanent magnet (IPM) motor based on its earlier-stage data by approximating the underlying operator that governs these transitions. Our framework enables full-geometry modeling without relying on segmentation, preserving accuracy while dramatically improving computational efficiency. The model was trained and validated on an FEA dataset with multiple boundary conditions and motor configurations, demonstrating strong generalization across different designs and resolutions. Experimental results show that the proposed FNO method achieves a significant reduction in computational time compared to traditional FEA simulations while maintaining an acceptable level of accuracy. This study highlights the potential of neural operators for accelerating electromagnetic simulations, enabling faster design iterations and offering new possibilities for real-time and optimization-based applications in electric machine design.</jats:p>",
+    "status": "candidate",
+    "retrieved_at": "2026-09-26T14:47:57.063834Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.26226/morressier.612f6737bc981037241008ce",
+    "title": "CCSNet: a deep learning modeling suite for CO2 storage",
+    "authors": [
+      "Wen, Gege",
+      "Hay, Catherine",
+      "Benson, Sally"
+    ],
+    "year": 2021,
+    "container_title": "",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-26T14:47:59.955366Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1016/j.advwatres.2021.104009",
+    "title": "CCSNet: A deep learning modeling suite for CO\n                    <mml:math xmlns:mml=\"http://www.w3.org/1998/Math/MathML\" altimg=\"si7.svg\">\n                      <mml:msub>\n                        <mml:mrow/>\n                        <mml:mn>2</mml:mn>\n                      </mml:msub>\n                    </mml:math>\n                    storage",
+    "authors": [
+      "Wen, Gege",
+      "Hay, Catherine",
+      "Benson, Sally M."
+    ],
+    "year": 2021,
+    "container_title": "Advances in Water Resources",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-26T14:47:59.955402Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1016/b978-008044570-0/50125-2",
+    "title": "CO2 Storage Preface",
+    "authors": [
+      "Benson, Sally M."
+    ],
+    "year": 2005,
+    "container_title": "Carbon Dioxide Capture for Storage in Deep Geologic Formations",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-26T14:47:59.955408Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1016/b978-008044570-0/50126-4",
+    "title": "Overview of Geologic Storage of CO2",
+    "authors": [
+      "Benson, Sally M."
+    ],
+    "year": 2005,
+    "container_title": "Carbon Dioxide Capture for Storage in Deep Geologic Formations",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-26T14:47:59.955414Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.3997/2214-4609.202622118",
+    "title": "An Integrated Deep Learning Framework for Predictive CO2 Storage Modeling",
+    "authors": [
+      "Ali, J.",
+      "Mohanty, W.K.",
+      "Sarkar, S."
+    ],
+    "year": 2026,
+    "container_title": "World CCUS Conference 2026",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-26T14:47:59.955419Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.2139/ssrn.5226149",
+    "title": "Deep Learning-Assisted Thm-Integrated Insar Modeling for Co2 Storage Characterization and Surface Deformation Forecasting",
+    "authors": [
+      "Park, Eunsil",
+      "Kim, Hyunmin",
+      "Shin, Hyundon",
+      "Jo, Honggeun"
+    ],
+    "year": 2025,
+    "container_title": "",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-26T14:47:59.955425Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1016/b978-008044570-0/50157-4",
+    "title": "Prospects for Early Detection and Options for Remediation of Leakage from CO2 Storage Projects",
+    "authors": [
+      "Benson, Sally",
+      "Hepple, Robert"
+    ],
+    "year": 2005,
+    "container_title": "Carbon Dioxide Capture for Storage in Deep Geologic Formations",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-26T14:47:59.955430Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1016/b978-008044570-0/50141-0",
+    "title": "CO2 Storage in Coalbeds: CO2/N2 Injection and Outcrop Seepage Modeling",
+    "authors": [
+      "Wo, Shaochang",
+      "Liang, Jenn-Tai"
+    ],
+    "year": 2005,
+    "container_title": "Carbon Dioxide Capture for Storage in Deep Geologic Formations",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-26T14:47:59.955435Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.2139/ssrn.5521933",
+    "title": "Unified Deep-Learning Workflow for Uncertainty Reduction in Subsurface Carbon Storage Modeling Through Data Assimilation of Seismic-Inverted CO2 Maps",
+    "authors": [
+      "Velasco Lozano, Moises",
+      "Chen, Bailian",
+      "Ma, Zhiwei",
+      "Pawar, Rajesh"
+    ],
+    "year": 2025,
+    "container_title": "",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-26T14:47:59.955442Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.5772/20573",
+    "title": "Heat Transfer and Phase Change in Deep CO2 Injector for CO2 Geological Storage",
+    "authors": [
+      "Sasaki, Kyuro",
+      "Sugai, Yuichi"
+    ],
+    "year": 2011,
+    "container_title": "Two Phase Flow, Phase Change and Numerical Modeling",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-26T14:47:59.955447Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.52202/075280-3093",
+    "title": "Operator Learning with Neural Fields: Tackling PDEs on General Geometries",
+    "authors": [
+      "Serrano, Louis",
+      "Boudec, Lise Le",
+      "Koupaï, Armand Kassaï",
+      "Wang, Thomas X",
+      "Yin, Yuan",
+      "Vittaut, Jean-Noël",
+      "Gallinari, Patrick"
+    ],
+    "year": 2023,
+    "container_title": "Advances in Neural Information Processing Systems 36",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-26T14:48:03.453786Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.2139/ssrn.5572813",
+    "title": "Decomposed Boundary-based Fourier Neural Operator (DB-FNO) Method for Efficient Parametric Acoustic Analysis with Frequency-dependent Boundary Conditions",
+    "authors": [
+      "Li, Ruoyan",
+      "Ye, Wenjing",
+      "Liu, Yijun"
+    ],
+    "year": 2025,
+    "container_title": "",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-26T14:48:03.453806Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.2139/ssrn.5228052",
+    "title": "Multi-Fno: A Multi-Level Fourier Neural Operator for Parametric Partial Differential Equations",
+    "authors": [
+      "Gu, Tao",
+      "Zhang, Chunhua",
+      "Kang, Jiahao",
+      "Liu, Bin",
+      "He, Zhi-Fen",
+      "Li, Bo"
+    ],
+    "year": 2025,
+    "container_title": "",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-26T14:48:03.453812Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.2139/ssrn.6864762",
+    "title": "ED-FNO: An Encoder–Decoder Fourier Neural Operator for Multi-Scale Wave Propagation",
+    "authors": [
+      "Tran, Hang",
+      "Nguyen, Duc  Tien",
+      "Gupta, Abhinav",
+      "Nguyen, Dang  Quynh Anh",
+      "Fu, Song"
+    ],
+    "year": 2026,
+    "container_title": "",
+    "abstract": "<jats:p>Accurate simulation of wave propagation is essential across seismology, acoustics, nondestructive evaluation, and medical imaging, yet conventional numerical solvers become computationally prohibitive when high spatial fidelity, long temporal horizons, or extensive parametric sweeps are required. We introduce the Encoder–Decoder Fourier Neural Operator (ED-FNO), a compact neural surrogate combining spectral convolutions with a U-shaped encoder–decoder topology featuring multi-scale skip connections, enabling simultaneous capture of long-range wave dynamics and fine-scale wavefront features. Unlike standard Fourier Neural Operators, ED-FNO hierarchically encodes wavefields across multiple resolution levels while preserving fine-grained spatial information through skip connections. The model maps physical states including wave speed field, source mask, and wavefield frames to multi-time-step predictions in a single forward pass, generalizing across wave speeds and source positions. We validate the framework in two and three-dimensional settings. In a parameter-matched architectural ablation benchmark, ED-FNO attains a relative L2 error 6.5× lower than that of the standard FNO and 8× lower than that of U-Net across the full wave speed range, while maintaining sub-2-ms GPU inference and an 11× speedup over finite-difference solvers. These results establish ED-FNO as an effective surrogate for fast, generalizable wave simulation and lay the groundwork for real-time predictive modeling and inverse-problem acceleration.</jats:p>",
+    "status": "candidate",
+    "retrieved_at": "2026-09-26T14:48:03.453819Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1016/j.neunet.2025.107441",
+    "title": "CLPNets: Coupled Lie–Poisson neural networks for multi-part Hamiltonian systems with symmetries",
+    "authors": [
+      "Eldred, Christopher",
+      "Gay-Balmaz, François",
+      "Putkaradze, Vakhtang"
+    ],
+    "year": 2025,
+    "container_title": "Neural Networks",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-26T14:48:06.823537Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1016/j.neunet.2026.109691",
+    "title": "Latent Lie-Poisson Neural Networks (LLPNNs): Discovering the motion of Lie-Poisson systems through observable data and latent dynamics",
+    "authors": [
+      "Putkaradze, Vakhtang"
+    ],
+    "year": 2026,
+    "container_title": "Neural Networks",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-26T14:48:06.823555Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1007/978-3-642-01777-3_13",
+    "title": "Poisson Bracket and Lie-Poisson Schemes",
+    "authors": [
+      "Feng, Kang",
+      "Qin, Mengzhao"
+    ],
+    "year": 2010,
+    "container_title": "Symplectic Geometric Algorithms for Hamiltonian Systems",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-26T14:48:06.823560Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1016/j.ifacol.2021.11.080",
+    "title": "Learning Hamiltonian Systems considering System Symmetries in Neural Networks",
+    "authors": [
+      "Dierkes, Eva",
+      "Flaßkamp, Kathrin"
+    ],
+    "year": 2021,
+    "container_title": "IFAC-PapersOnLine",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-26T14:48:06.823566Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1201/b10363-10",
+    "title": "Hamiltonian Formalism for Difference Equations: Symmetries and First Integrals",
+    "authors": [],
+    "year": 2010,
+    "container_title": "Applications of Lie Groups to Difference Equations",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-26T14:48:06.823571Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1007/978-3-7908-1902-1_38",
+    "title": "On Very Large Scale Hamiltonian Neural Nets",
+    "authors": [
+      "Sienko, Wieslaw",
+      "Citko, Wieslaw"
+    ],
+    "year": 2003,
+    "container_title": "Neural Networks and Soft Computing",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-26T14:48:06.823575Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1093/oso/9780198805021.003.0010",
+    "title": "Hamiltonian Systems Based on a Lie Algebra",
+    "authors": [
+      "Rajeev, S. G."
+    ],
+    "year": 2018,
+    "container_title": "Oxford Scholarship Online",
+    "abstract": "<p>There is a remarkable analogy between Euler’s equations for a rigid body and his equations for an ideal fluid. The unifying idea is that of a Lie algebra with an inner product, which is <italic>not</italic> invariant, on it. The concepts of a vector space, Lie algebra, and inner product are reviewed. A hamiltonian dynamical system is derived from each metric Lie algebra. The Virasoro algebra (famous in string theory) is shown to lead to the KdV equation; and in a limiting case, to the Burgers equation for shocks. A hamiltonian formalism for two-dimensional Euler equations is then developed in detail. A discretization of these equations (using a spectral method) is then developed using mathematical ideas from quantum mechanics. Then a hamiltonian formalism for the full three-dimensional Euler equations is developed. The Clebsch variables which provide canonical pairs for fluid dynamics are then explained, in analogy to angular momentum.</p>",
+    "status": "candidate",
+    "retrieved_at": "2026-09-26T14:48:06.823579Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.20944/preprints202603.2329.v1",
+    "title": "Lie Symmetries and Invariants of General Time Dependent Quadratic Hamiltonian System",
+    "authors": [
+      "Yeon, Kyu Hwang",
+      "Pham, Van Huy",
+      "Ryu, Keun Ho"
+    ],
+    "year": 2026,
+    "container_title": "",
+    "abstract": "<jats:p>Eight Lie algebras of point-symmetric groups and corresponding generators are admitted by the equation of motion, which a general time-dependent quadratic Hamiltonian obtains. We show that invariant quantities obtained by eight algebraic generators are the Wronskian constant, three time-dependent conserved quantities, which are quadratic forms in position and momentum, and the trivial, 0. All obtained invariant quantities are represented by auxiliary conditions, which are two linearly independent solutions of a homogeneous differential equation of the equations of motion. Invariant variables associated with an invariant consisting of the linearity of x and p is defined. It shows that if the motion of the system is oscillatory, the Poisson bracket of the two invariant variables 10 is obtained as i, and in the case of monotonic motion, it is obtained as 1.</jats:p>",
+    "status": "candidate",
+    "retrieved_at": "2026-09-26T14:48:06.823584Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1007/978-981-95-2109-8_4",
+    "title": "Symplectic Self-adjointness of Infinite-Dimensional Hamiltonian Operators",
+    "authors": [
+      "Chen, Alatancang",
+      "Wu, Deyu",
+      "Huang, Junjie",
+      "Hou, Guolin"
+    ],
+    "year": 2026,
+    "container_title": "Springer Asia Pacific Mathematics Series",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-26T14:48:10.379421Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1007/978-981-19-7670-4_4",
+    "title": "Infinite-Dimensional Stochastic Hamiltonian Systems",
+    "authors": [
+      "Hong, Jialin",
+      "Sun, Liying"
+    ],
+    "year": 2022,
+    "container_title": "Lecture Notes in Mathematics",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-26T14:48:10.379436Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1007/bfb0073667",
+    "title": "Symplectic structures and hamiltonian systems",
+    "authors": [
+      "Chernoff, Paul Robert",
+      "Marsden, Jerrold Eldon"
+    ],
+    "year": 1974,
+    "container_title": "Lecture Notes in Mathematics",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-26T14:48:10.379441Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1007/bfb0092244",
+    "title": "Symplectic structures and hamiltonian systems in scales of hilbert spaces",
+    "authors": [
+      "Kuksin, Sergej B."
+    ],
+    "year": 1993,
+    "container_title": "Lecture Notes in Mathematics",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-26T14:48:10.379446Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1007/978-981-95-2109-8_2",
+    "title": "Spectra of Infinite-Dimensional Hamiltonian Operators",
+    "authors": [
+      "Chen, Alatancang",
+      "Wu, Deyu",
+      "Huang, Junjie",
+      "Hou, Guolin"
+    ],
+    "year": 2026,
+    "container_title": "Springer Asia Pacific Mathematics Series",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-26T14:48:10.379451Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1007/978-981-95-2109-8_5",
+    "title": "Numerical Range Theory of Infinite-Dimensional Hamiltonian Operators",
+    "authors": [
+      "Chen, Alatancang",
+      "Wu, Deyu",
+      "Huang, Junjie",
+      "Hou, Guolin"
+    ],
+    "year": 2026,
+    "container_title": "Springer Asia Pacific Mathematics Series",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-26T14:48:10.379455Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1007/978-981-95-2109-8_3",
+    "title": "Completeness of Eigenvector System of Infinite-Dimensional Hamiltonian Operators",
+    "authors": [
+      "Chen, Alatancang",
+      "Wu, Deyu",
+      "Huang, Junjie",
+      "Hou, Guolin"
+    ],
+    "year": 2026,
+    "container_title": "Springer Asia Pacific Mathematics Series",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-26T14:48:10.379477Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1007/978-981-95-2109-8_6",
+    "title": "Spectral Theory of Infinite-Dimensional Hamiltonian Operators in Complete Indefinite Inner Product Spaces",
+    "authors": [
+      "Chen, Alatancang",
+      "Wu, Deyu",
+      "Huang, Junjie",
+      "Hou, Guolin"
+    ],
+    "year": 2026,
+    "container_title": "Springer Asia Pacific Mathematics Series",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-26T14:48:10.379488Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1007/978-981-95-2109-8_1",
+    "title": "Hamiltonian Systems",
+    "authors": [
+      "Chen, Alatancang",
+      "Wu, Deyu",
+      "Huang, Junjie",
+      "Hou, Guolin"
+    ],
+    "year": 2026,
+    "container_title": "Springer Asia Pacific Mathematics Series",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-26T14:48:10.379493Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1088/3049-4753/ae0b70/v2/response1",
+    "title": "Author response for \"Generative Lagrangian data assimilation for ocean dynamics under extreme sparsity\"",
+    "authors": [
+      "Niloofar Asefi",
+      "Leonard Lupin-Jimenez",
+      "Tianning Wu",
+      "Ruoying He",
+      "Ashesh Chattopadhyay"
+    ],
+    "year": 2025,
+    "container_title": "",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-26T14:48:13.541320Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1088/3049-4753/ae0b70/v1/review2",
+    "title": "Review for \"Generative Lagrangian data assimilation for ocean dynamics under extreme sparsity\"",
+    "authors": [],
+    "year": 2025,
+    "container_title": "",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-26T14:48:13.541343Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1088/3049-4753/ae0b70/v2/decision1",
+    "title": "Decision letter for \"Generative Lagrangian data assimilation for ocean dynamics under extreme sparsity\"",
+    "authors": [],
+    "year": 2025,
+    "container_title": "",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-26T14:48:13.541354Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1017/cbo9780511535901.008",
+    "title": "Lagrangian data assimilation in ocean general circulation models",
+    "authors": [
+      "Molcard, Anne",
+      "Özgökmen, Tamay M.",
+      "Griffa, Annalisa",
+      "Piterbarg, Leonid I.",
+      "Chin, Toshio M."
+    ],
+    "year": 2007,
+    "container_title": "Lagrangian Analysis and Prediction of Coastal and Ocean Dynamics",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-26T14:48:13.541368Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.5194/egusphere-egu21-10424",
+    "title": "Improving Ocean Circulations Using Lagrangian Data Assimilation of Surface Drifters During Grand Lagrangian Deployments",
+    "authors": [
+      "Sun, Luyu",
+      "Penny, Stephen",
+      "Harrison, Matthew"
+    ],
+    "year": 2021,
+    "container_title": "",
+    "abstract": "<jats:p>&amp;lt;p&amp;gt;Accurate forecast of ocean circulation is important in many aspects. A lack of direct ocean velocity observations has been one of the overarching issues in nowadays operational ocean data assimilation (DA) system. Satellite-tracked surface drifters, providing measurement of near-surface ocean currents, have been of increasing importance in global ocean observation system. In this work, the impact of an augmented-state Lagrangian data assimilation (LaDA) method using Local Ensemble Transform Filter (LETKF) is investigated within a realistic ocean DA system. We use direct location data from 300 surface drifters released in the Gulf of Mexico (GoM) by the Consortium for Advanced Research on Transport of Hydrocarbon in the Environment (CARTHE) during the summer 2012 Grand Lagrangian Deployment (GLAD) experiment. These drifter observations are directly assimilated into a realistic eddy-resolving GoM configuration of the Modular Ocean Model version 6 (MOM6) of the Geophysical Fluid Dynamics Laboratory (GFDL). Ocean states (T/S/U/V) are updated at both the surface and at depth by utilizing dynamic forecast error covariance statistics. Four experiments are conducted: (1) a free run generated by MOM6; 2) a DA experiment assimilating temperature and salinity profile observations from World Ocean Database 2018 (WOD18); and 3) a DA experiment assimilating both drifter and the profile observations. The LaDA results are then compared with the traditional assimilation using the drifter-derived velocity field from the same GLAD database. In addition, we evaluate the impact of the LaDA algorithm on different eddy-permitting and eddy-resolving model resolutions to determine the most effective horizontal resolutions for assimilating drifter position data using LaDA.&amp;lt;/p&amp;gt;</jats:p>",
+    "status": "candidate",
+    "retrieved_at": "2026-09-26T14:48:13.541375Z"
   }
 ]

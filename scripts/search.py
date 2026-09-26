@@ -204,6 +204,13 @@ def run_search():
         ("Crossref", "Seasonal Arctic sea ice forecasting with probabilistic deep learning Andersson"),
         ("Crossref", "IceBench A Benchmark for Deep Learning based Sea Ice Type Classification"),
         ("Crossref", "Partitioned Hybrid Quantum Fourier Neural Operators for Scientific Quantum Machine Learning"),
+        # Iteration 8 Additions: Geo-Energy Reservoirs, Symplectic/Lie-Poisson Operators, Lagrangian In-Situ Assimilation
+        ("Crossref", "U-FNO enhanced Fourier neural operator multiphase flow CO2 Wen"),
+        ("Crossref", "CCSNet deep learning modeling suite for CO2 storage Benson"),
+        ("Crossref", "Fourier Neural Operator with Learned Deformations for PDEs on General Geometries Geo-FNO"),
+        ("Crossref", "Lie-Poisson Neural Networks LPNets Data-Based Computing Hamiltonian Symmetries"),
+        ("Crossref", "Symplectic Neural Operators for Learning Infinite Dimensional Hamiltonian Systems"),
+        ("Crossref", "Generative Lagrangian data assimilation for ocean dynamics under extreme sparsity Asefi"),
     ]
 
     verified_arxiv_ids = [
@@ -267,6 +274,12 @@ def run_search():
         "2310.00120",  # MG-TFNO (Kossaifi et al.)
         "2503.17877",  # IceBench (Taleghan et al.)
         "2507.08746",  # PHQFNO (Marcandelli et al.)
+        # Iteration 8 arXiv Additions
+        "2109.03697",  # U-FNO (Wen et al.)
+        "2207.05209",  # Geo-FNO (Li et al.)
+        "2308.15349",  # LPNets (Eldred et al.)
+        "2605.15881",  # Symplectic Neural Operators (Makara et al.)
+        "2507.06479",  # Generative Lagrangian DA (Asefi et al.)
     ]
 
     candidates = {}
@@ -353,6 +366,9 @@ def run_search():
         # Iteration 7 Additions
         "10.1785/0320210026",          # WaveFNO (Yang et al., The Seismic Record)
         "10.1038/s41467-021-25257-4",  # IceNet (Andersson et al., Nature Communications)
+        # Iteration 8 Additions
+        "10.1016/j.advwatres.2022.104180",  # U-FNO (Wen et al., Advances in Water Resources)
+        "10.1016/j.advwatres.2021.104009",  # CCSNet (Wen et al., Advances in Water Resources)
     ]
     prev_doi = len(candidates)
     for doi in verified_dois:

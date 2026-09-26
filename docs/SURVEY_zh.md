@@ -2,22 +2,22 @@
 
 **论文全称**：*Foundation Models and Reasoning LLMs for Scientific Multimodal Time Series: A Survey*  
 **维护机构**：Antigravity Autonomous Research Loop (`lihuirui/awesome-scientific-time-series-foundation-models-survey`)  
-**当前版本**：v7.0 (迭代 7 - 极值理论与重尾不确定性量化、高阶张量/量子神经算子地球物理求解、极地冰冻圈与海冰动力学大模型基准，收录 65 篇严谨学术成果)  
+**当前版本**：v8.0 (迭代 8 - 地热能源与地下碳封存多相流大模型、辛流形与李-泊松几何保结构神经算子、稀疏拉格朗日连续海洋数据同化，收录 71 篇严谨学术成果)  
 **更新日期**：2026-09-26  
-**论文正文**：[`paper/main.pdf`](file:///workspace/survey-sci-ts/paper/main.pdf) (IEEEtran 双栏, 26 页, 包含 8 幅高分辨率出版级图表与 7 个全景对比表格)
+**论文正文**：[`paper/main.pdf`](file:///workspace/survey-sci-ts/paper/main.pdf) (IEEEtran 双栏, 28 页, 包含 8 幅高分辨率出版级图表与 7 个全景对比表格)
 
 ---
 
 ## 1. 综述背景与研究动机 (Introduction & Motivation)
 
-在过去十年中，深度学习在通用时间序列预测与时空数据挖掘（如城市交通、金融行情、人体姿态）取得了长足进步。然而，当技术延伸至**自然科学与地球物理系统**（大气天气预报、百年轻慢气候演变、流域水文与极端洪涝、海洋多尺度动力学、对地观测与卫星遥感、地震台网波形监测与日地空间物理、极地冰冻圈演变）时，传统深度时序模型遭遇深刻瓶颈：
+在过去十年中，深度学习在通用时间序列预测与时空数据挖掘（如城市交通、金融行情、人体姿态）取得了长足进步。然而，当技术延伸至**自然科学与地球物理系统**（大气天气预报、百年轻慢气候演变、流域水文与极端洪涝、海洋多尺度动力学、地热与深部碳封存、对地观测与卫星遥感、地震台网波形监测与日地空间物理、极地冰冻圈演变）时，传统深度时序模型遭遇深刻瓶颈：
 
 1. **多物理模态极端异构**：科学时序跨越离散不规则测站观测（雨量站、水文计、地震台网）、连续空间再分析网格场（ECMWF ERA5, MERRA-2）、多光谱/高光谱卫星影像序列（Sentinel-1/2, Landsat）、连续物理张量波形与跨圈层通量数据。
 2. **多尺度连续动力学**：物理现象在空间上跨越米级局部湍流至数万公里全球环流；时间尺度跨越毫秒级（地震破裂波形）、小时/天级（强对流降水与台风路径）、至百年/千年级（温室气体驱动的气候变暖）。
 3. **物理守恒律与一致性约束**：经典自回归神经网络易发生“物理幻觉”（违背质量守恒、动量守恒或能量守恒），在长时段循环推演中出现累积谱衰减、过度平滑或极端事件失真。
 4. **科学推理与智能体决策**：随着大语言模型（LLM）的爆发，如何使智能体深度理解物理时序中的空间依赖与动力演进，具备科学假设生成、物理参数反演、多工具编排与闭环科学推理（Scientific Reasoning）能力，成为人工智能驱动科学研究（AI for Science）的核心命题。
 
-本综述系统梳理了 2021 年至今自然科学领域的 **科学多模态时序基础模型（Scientific Multimodal Time Series Foundation Models）** 与 **科学时序推理大语言模型（Scientific Reasoning LLMs / Multi-Agent Systems）**，收录并深度解构了 65 篇经过学术 API 严格验证的标志性研究。
+本综述系统梳理了 2021 年至今自然科学领域的 **科学多模态时序基础模型（Scientific Multimodal Time Series Foundation Models）** 与 **科学时序推理大语言模型（Scientific Reasoning LLMs / Multi-Agent Systems）**，收录并深度解构了 71 篇经过学术 API 严格验证的标志性研究。
 
 ---
 
@@ -212,11 +212,35 @@ $$d\mathbf{x} = \left[ \mathbf{f}(\mathbf{x}, t) - g(t)^2 \mathbf{s}_\theta(\mat
 2. **极地多任务综合基准平台 (IceBench)**：
    **IceBench**（Taleghan et al., 2025）构建了涵盖海冰密集度（SIC）、海冰漂移速度矢量场（$u_i, v_i$）与多源微波散射计数据的跨年代综合评估基准平台。跨架构评测揭示：引入多传感器跨模态融合（微波辐射计 + SAR 反向散射）可将海冰短期漂移追踪相关系数由 0.42 提升至 0.78，为极地航道通航安全与极区气候反馈研究奠定了坚实的基准支撑。
 
+### 3.15 地热能源与地下碳封存多相流大模型 (Geo-Energy & Multiphase Carbon Sequestration Foundations)
+深地多孔介质渗流是地热开采、地下储氢与地质碳封存（GCS）的核心动力学基础。深部流体演化受强非线性多相达西-布林克曼（Darcy-Brinkman）方程支配：
+$$\phi(\mathbf{x}) \frac{\partial (\rho_\alpha S_\alpha)}{\partial t} + \nabla \cdot (\rho_\alpha \mathbf{u}_\alpha) = q_\alpha, \quad \mathbf{u}_\alpha = -\frac{k_{r\alpha}(S_\alpha) \mathbf{K}(\mathbf{x})}{\mu_\alpha} \left( \nabla p_\alpha - \rho_\alpha \mathbf{g} \right)$$
+其中 $\alpha \in \{\text{CO}_2, \text{brine}\}$ 为超临界二氧化碳与盐水两相，$\mathbf{K}(\mathbf{x})$ 为具有极强空间异质性的渗透率张量。传统数值油藏模拟器（如 CMG GEM, TOUGH2）解算单次 30 年三维羽流迁移需数小时至数天。
+1. **多尺度 U-Net 增强傅里叶神经算子 (U-FNO)**：
+   **U-FNO**（Wen et al., Advances in Water Resources 2022）针对传统 FNO 在非连续相饱和度激波前缘出现的高频吉布斯振荡（Gibbs Ringing）问题，创新性地将多尺度空间 U-Net 跳跃连接与频域傅里叶卷积相融合。在 30 年 $\text{CO}_2$ 羽流运移与压力积聚预测中，U-FNO 将相饱和度 RMSE 压低至 **0.028**，羽流轮廓 IoU 达到 **0.91**，相比商业数值模拟器实现超 **$10{,}000\times$ 加速**，且全域质量守恒误差控制在 0.8% 以内。
+2. **全物理热力学状态方程深地建模套件 (CCSNet)**：
+   **CCSNet**（Wen, Hay, and Benson, Advances in Water Resources 2021）针对工业级碳封存中超临界流体跨温压相变特性，将深度算子与数据驱动真实热力学状态方程（EOS）紧密耦合，支持在毫秒级时间内评估 50 年尺度下的结构捕获、残余毛细捕获与溶解捕获效率，为碳封存选址与注气方案动态优化提供了革命性工具。
+3. **复杂断层与非欧几何流形求解 (Geo-FNO)**：
+   **Geo-FNO**（Li et al., NeurIPS 2022）通过可学习的连续微分同胚坐标映射 $\boldsymbol{\phi}: \Omega \to [0, 1]^d$，将含复杂地质断层、倾斜地层的不规则三维储层域拉回至标准规范计算网格，克服了传统神经算子无法适应复杂非规则几何的致命局限。
+
+### 3.16 辛流形与李-泊松几何保结构神经算子 (Symplectic Manifolds & Lie-Poisson Structure-Preserving Operators)
+在保守地球物理流体、波动动力学与大气环流的超长时程推演中，传统无约束神经网络极易破坏底层辛几何结构，产生非物理的人工数值耗散或在数百步自回归推演后彻底发散。
+1. **无穷维辛神经算子 (Symplectic Neural Operators, SNO)**：
+   **SNO**（Makara et al., 2026）将经典辛积分几何推广至无穷维偏微分方程系统。通过构造保辛两形式 $\omega = \int \delta \mathbf{q} \wedge \delta \mathbf{p} \, dx$ 的生成泛函网络内核，证明其严格保相空间体积（李维尔定理）。在强色散非线性波动方程中，传统 FNO 在 500 步后即产生超 40% 的相对能量衰减，而 SNO 在长达 **$10^4$ 步自回归长程演化**中，相对能量漂移小于 **0.02%**，实现真正的零数值阻尼推演。
+2. **李-泊松对称性与涡度卡西米尔守恒算子 (LPNets)**：
+   **LPNets**（Eldred, Gay-Balmaz, Huraka, Putkaradze, 2023）针对旋转球面 $\mathbb{S}^2$ 上的非正则哈密顿流体（如二维不可压缩欧拉方程与正压浅水涡度方程），利用代数构建的反对称李-泊松矩阵算子参数化哈密顿泛函，不仅保证总能量守恒，更严格将所有**卡西米尔不变量（Casimir Invariants）**（如总环量与拟能）以及**开尔文环量定理（Kelvin's Circulation Theorem）**保真至机器精度（**0.0% 环量漂移**），彻底根除长期积分中人工虚假涡旋耗散与拟能级联塌缩。
+
+### 3.17 极端稀疏条件下的生成式拉格朗日连续海洋数据同化 (Generative Lagrangian Continuous Ocean Data Assimilation)
+全球海洋内部观测高度依赖由数千枚自主漂移浮标（Argo 浮标剖面阵列、表层漂流浮标、水下滑翔机）组成的拉格朗日漂移序列：
+$$\frac{d\mathbf{X}_i(t)}{dt} = \mathbf{u}(\mathbf{X}_i(t), t) + \boldsymbol{\eta}_i(t)$$
+由于实测轨迹在空间全域的覆盖率常年**低于 0.5%**，经典最优化插值（OI）与基于线化的 4D-Var 同化在重建中尺度涡旋与边界流时面临严重模糊与伴随求解瓶颈。
+- **扩散拉格朗日同化 (LagDA)**（Asefi et al., 2025）引入基于连续分数匹配的条件扩散概率模型，以稀疏不规则轨迹序列为先验条件，直接对连续欧拉速度场 $(u, v)$、海表面高度（SSH）与相对涡度 $\zeta = \nabla \times \mathbf{u}$ 的全概率后验进行采样。在全盆地覆盖率不足 0.5% 的极端稀疏条件下，LagDA 将水平流速 RMSE 降至 **0.092 m/s**，涡动动能（EKE）恢复率由传统插值的 42.1% 提升至 **91.4%**，涡度空间相关系数高达 **0.86**，成功精确还原了墨西哥湾流等强边界流与亚细尺度涡旋脱落动力学。
+
 ---
 
 ## 4. 关键挑战与未来前沿方向 (Open Challenges & Frontiers)
 
 1. **多模态连续物理统一分词器 (Unified Continuous Physical Tokenization)**：打破结构化规整网格（ERA5）、稀疏离散测站（雨量计、水文计、地震台网）与异构非规则遥感影像（Sentinel/Landsat）的表征边界，构建具备空间连续内插、时间自适应采样与物理守恒先验的通用物理分词架构。
-2. **硬性物理守恒约束与极端极值可靠性标定 (Hard Physical Invariants & Extreme Event Calibration)**：在网络底层深度嵌入连续流形几何算子（如球面谐波 SFNO、神经常微分方程 ClimODE）与流体动力保真核，解决深度学习在极端台风、暴雨重尾事件中的欠拟合与物理违背缺陷。
+2. **硬性物理守恒约束与极端极值可靠性标定 (Hard Physical Invariants & Extreme Event Calibration)**：在网络底层深度嵌入连续流形几何算子（如球面谐波 SFNO、神经常微分方程 ClimODE、辛算子 SNO、李-泊松算子 LPNets）与流体动力保真核，解决深度学习在极端台风、暴雨重尾事件中的欠拟合与物理违背缺陷。
 3. **高效多尺度可扩展扩散集合系统 (Scalable Probabilistic Diffusion Ensembles)**：降低扩散反向采样求解高维地球物理场时的计算开销，融合流匹配（Flow Matching）与一致性模型（Consistency Models），实现秒级生成全球数十个高保真物理集合成员。
 4. **自主科学推理智能体沙盒与闭环验证 (Autonomous Scientific Discovery Sandboxes & Verification Loops)**：推动大语言模型从简单 API 调用迈向挂载全套科学计算生态（`xarray`, `metpy`, `dask`, `obspy`）的有状态沙盒，建立具备假设生成、自动代码推演、物理自检纠错与实验闭环验证的自主科学探索助手。

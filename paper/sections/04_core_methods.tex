@@ -339,3 +339,72 @@ At the outer algorithmic frontier, Marcandelli et al.~\cite{marcandelli2025phqfn
     \label{eq:quantum_operator}
 \end{equation}
 where $H_l \in \{X, Y, Z\}^{\otimes n}$ represent multi-qubit Pauli observables and $W_{\text{entangle}}$ is a non-local entangling layer. PHQFNO provides an architectural roadmap for continuous scientific machine learning, demonstrating that quantum entanglement can bypass classical tensor contraction bottlenecks when solving high-dimensional multi-physics differential equations.
+
+\subsection{Symplectic Manifolds and Lie-Poisson Geometric Neural Operators}
+\label{sec:symplectic_lie_poisson}
+Standard autoregressive forecasting models (whether based on Transformers, GNNs, or unconstrained Fourier neural operators) suffer from progressive secular drift: as rollout horizons extend past hundreds of autoregressive cycles, numerical dissipation inevitably damps physical energy, or unconstrained error accumulation triggers catastrophic numerical blowup. In conservative geophysical fluids, orbital astrodynamics, and wave mechanics, this failure stems from the omission of underlying \textit{symplectic geometry}.
+
+\subsubsection{Infinite-Dimensional Hamiltonian Mechanics and Symplectic Preservation}
+Conservative continuum mechanics can be formulated as infinite-dimensional Hamiltonian partial differential equations on a phase space $\mathcal{M}$ endowed with a canonical symplectic two-form $\omega$:
+\begin{equation}
+    \frac{\partial \mathbf{u}}{\partial t} = \mathcal{J} \frac{\delta \mathcal{H}}{\delta \mathbf{u}},
+    \label{eq:hamiltonian_pde}
+\end{equation}
+where $\mathbf{u} = (\mathbf{q}, \mathbf{p})^T$ denotes canonical generalized coordinates and momenta, $\mathcal{H}[\mathbf{u}] = \int_\Omega \mathcal{E}(\mathbf{q}, \mathbf{p}, \nabla \mathbf{q}, \nabla \mathbf{p}) \, dx$ represents the total energy Hamiltonian functional, and $\mathcal{J}$ is the canonical Poisson operator:
+\begin{equation}
+    \mathcal{J} = \begin{bmatrix} 0 & \mathbf{I} \\ -\mathbf{I} & 0 \end{bmatrix}, \quad \mathcal{J}^* = -\mathcal{J}.
+\end{equation}
+By Liouville's theorem, the continuous flow map $\Phi_t: \mathbf{u}(0) \mapsto \mathbf{u}(t)$ preserves the differential two-form $\omega = \int_\Omega \delta \mathbf{q} \wedge \delta \mathbf{p} \, dx$:
+\begin{equation}
+    \Phi_t^* \omega = \omega \quad \Longleftrightarrow \quad (D\Phi_t)^T \mathcal{J}^{-1} (D\Phi_t) = \mathcal{J}^{-1},
+    \label{eq:symplectic_condition}
+\end{equation}
+which strictly enforces phase-space volume conservation. Makara et al.~\cite{makara2026symplectic} established \textbf{Symplectic Neural Operators (SNO)}, proving that standard Fourier neural operators violate Eq.~(\ref{eq:symplectic_condition}), causing monotonic artificial dissipation in wave and fluid systems. SNO enforces canonical symplectic preservation by structuring the operator kernel as the composition of generating functionals:
+\begin{equation}
+    \mathbf{p}^{n+1} = \mathbf{p}^n - \Delta t \, \frac{\delta \mathcal{H}_\theta}{\delta \mathbf{q}^{n+1}}, \quad \mathbf{q}^{n+1} = \mathbf{q}^n + \Delta t \, \frac{\delta \mathcal{H}_\theta}{\delta \mathbf{p}^n},
+    \label{eq:sno_update}
+\end{equation}
+where $\mathcal{H}_\theta$ is parameterized by a non-local neural operator. By construction, the resulting discrete update operator exactly conserves a shadow Hamiltonian $\widetilde{\mathcal{H}} = \mathcal{H} + \mathcal{O}(\Delta t^2)$, eliminating long-term amplitude decay across $>10^4$ simulation time steps.
+
+\subsubsection{Lie-Poisson Symmetries, Casimir Invariants, and Kelvin's Circulation}
+In rotating planetary atmospheres and oceanic gyres, fluid equations are non-canonical Hamiltonian systems defined on the dual of a Lie algebra $\mathfrak{g}^*$ (e.g., the algebra of divergence-free vector fields on $\mathbb{S}^2$). The dynamics of relative vorticity $\omega$ are governed by the Lie-Poisson equation:
+\begin{equation}
+    \frac{\partial \omega}{\partial t} = \{\omega, \mathcal{H}\} = -\operatorname{ad}^*_{\frac{\delta \mathcal{H}}{\delta \omega}} \omega = - \mathbf{u} \cdot \nabla \omega,
+    \label{eq:lie_poisson_pde}
+\end{equation}
+where $\operatorname{ad}^*$ is the coadjoint operator. A defining mathematical feature of Lie-Poisson systems is the presence of \textbf{Casimir invariants} $\mathcal{C}[\omega]$, functionals that Poisson-commute with every arbitrary Hamiltonian $\{\mathcal{C}, \mathcal{F}\} = 0$ for all $\mathcal{F}$. In 2D and quasi-geostrophic shallow-water atmospheres, every smooth function of vorticity produces a conserved Casimir functional:
+\begin{equation}
+    \mathcal{C}_\Phi[\omega] = \int_{\Omega} \Phi(\omega) \, dx = \text{const},
+\end{equation}
+including total circulation ($\Phi(\omega) = \omega$) and potential enstrophy ($\Phi(\omega) = \omega^2$). Furthermore, by Kelvin's circulation theorem, the circulation around any fluid loop $\Gamma(t)$ advected by the velocity field is invariant:
+\begin{equation}
+    \frac{d}{dt} \oint_{\Gamma(t)} \mathbf{u} \cdot d\mathbf{x} = 0.
+\end{equation}
+Standard data-driven models inevitably destroy Casimir conservation, causing artificial enstrophy cascades and non-physical vortex distortion. Eldred et al.~\cite{eldred2023lpnets} developed \textbf{Lie-Poisson Neural Networks (LPNets)}, enforcing geometric coadjoint orbit preservation:
+\begin{equation}
+    \frac{d\omega}{dt} = \mathbb{B}(\omega) \nabla_\omega \mathcal{H}_\theta(\omega),
+\end{equation}
+where $\mathbb{B}(\omega)$ is an algebraically constructed skew-symmetric Lie-Poisson matrix operator satisfying the Jacobi identity by design. LPNets strictly preserve all Casimir invariants and circulation invariants independently of the neural network weights $\theta$, maintaining stable planetary jet streams, Rossby waves, and atmospheric blocking patterns over multi-month rollouts without empirical damping.
+
+\subsubsection{Learned Coordinate Diffeomorphisms for Complex Domains (Geo-FNO)}
+To apply neural operators across non-Euclidean computational domains, irregular boundaries, and faulted geological formations, Li et al.~\cite{li2022geofno} proposed \textbf{Geo-FNO}. Classical FNO assumes uniform Cartesian grids in Euclidean space $\mathbb{R}^d$, failing on irregular physical geometries. Geo-FNO learns a bijective coordinate diffeomorphism:
+\begin{equation}
+    \boldsymbol{\phi}: \Omega \to [0, 1]^d, \quad \boldsymbol{\xi} = \boldsymbol{\phi}(\mathbf{x}),
+\end{equation}
+which deforms the irregular physical domain $\Omega$ into a canonical periodic unit cube $[0, 1]^d$. Spectral convolution is executed in the latent canonical coordinate space $\boldsymbol{\xi}$, while physical differential operators are transformed via the metric pullback tensor $\mathbf{g}(\mathbf{x}) = (D\boldsymbol{\phi})^T (D\boldsymbol{\phi})$. Geo-FNO enables continuous operator learning on arbitrary 3D geological reservoirs, faulted subsurfaces, and aerodynamic boundary layers without requiring conformal remeshing.
+
+\subsection{Generative Lagrangian Continuous Data Assimilation for Sparse Observables}
+\label{sec:lagrangian_data_assimilation}
+While operational weather models rely on gridded satellite radiances and reanalysis fields, oceanic and environmental monitoring is overwhelmingly constrained by the \textbf{extreme spatial sparsity} and irregular sampling of autonomous in-situ platforms (e.g., Argo profiling floats, drifting surface buoys, underwater gliders). These platforms record physical states along \textit{Lagrangian trajectories}:
+\begin{equation}
+    \frac{d\mathbf{X}_i(t)}{dt} = \mathbf{u}(\mathbf{X}_i(t), t) + \boldsymbol{\eta}_i(t), \quad \mathbf{y}_i(t) = \mathcal{M}(\mathbf{s}(\mathbf{X}_i(t), t)) + \boldsymbol{\epsilon}_i(t),
+    \label{eq:drifter_kinematics}
+\end{equation}
+where $\mathbf{X}_i(t)$ is the drifter position, $\mathbf{u}(\mathbf{x}, t)$ is the continuous Eulerian velocity field, $\boldsymbol{\eta}_i$ represents turbulent dispersion, and $\mathbf{y}_i$ records in-situ temperature, salinity, or pressure.
+
+Traditional data assimilation methods (such as Ensemble Kalman Filtering or 4D-Var) struggle with Lagrangian observations because the forward observation operator is strongly non-linear, non-local, and history-dependent. Asefi et al.~\cite{asefi2025lagrangian} addressed this fundamental challenge with \textbf{Generative Lagrangian Data Assimilation (LagDA)}, formulating continuous ocean state estimation as a conditional score-based diffusion model:
+\begin{equation}
+    p(\mathbf{u}_{1:T} \mid \{\mathbf{X}_i(t_k)\}_{i=1, k=1}^{N_d, K}),
+\end{equation}
+where $N_d$ is the number of active drifters covering less than $0.5\%$ of the spatial basin. LagDA leverages continuous spatio-temporal attention to bridge sparse Lagrangian trajectory tokens with Eulerian spatial grids. By modeling the posterior distribution over continuous velocity $\mathbf{u} = (u, v)$, sea surface height (SSH), and relative vorticity $\zeta = \partial_x v - \partial_y u$, LagDA reconstructs submesoscale eddies and Western Boundary Currents with over $60\%$ error reduction relative to classical variational interpolation, providing a foundational methodology for integrating autonomous marine sensor fleets into planetary Earth system models.
+

@@ -1,7 +1,7 @@
 # Awesome Scientific Multimodal Time Series Foundation Models and Reasoning LLMs
 ## 科学多模态时序大模型与科学推理大模型前沿进展精选
 
-[![Survey PDF](https://img.shields.io/badge/Paper-PDF-red.svg)](paper/main.pdf) [![PRISMA Included](https://img.shields.io/badge/PRISMA%20Included-65%20papers-brightgreen.svg)](#prisma-systematic-review-statistics) [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE) [![Maintenance](https://img.shields.io/badge/Maintained%20by-Antigravity%20CLI-purple.svg)](#how-this-survey-is-maintained)
+[![Survey PDF](https://img.shields.io/badge/Paper-PDF-red.svg)](paper/main.pdf) [![PRISMA Included](https://img.shields.io/badge/PRISMA%20Included-71%20papers-brightgreen.svg)](#prisma-systematic-review-statistics) [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE) [![Maintenance](https://img.shields.io/badge/Maintained%20by-Antigravity%20CLI-purple.svg)](#how-this-survey-is-maintained)
 
 ## Overview / 项目概述
 
@@ -28,12 +28,12 @@ The taxonomy categorizes the literature across four core dimensions:
 
 ![PRISMA 2020 Flow](paper/figures/prisma_flow.png)
 
-- **Records Identified across Academic APIs**: 756
-- **Unique Candidates Evaluated**: 607
-- **Title/Abstract Excluded**: 144
-- **Full-Text Assessed for Eligibility**: 463
-- **Full-Text Excluded (narrow/regional)**: 398
-- **Studies Rigorously Included**: 65
+- **Records Identified across Academic APIs**: 816
+- **Unique Candidates Evaluated**: 656
+- **Title/Abstract Excluded**: 156
+- **Full-Text Assessed for Eligibility**: 500
+- **Full-Text Excluded (narrow/regional)**: 429
+- **Studies Rigorously Included**: 71
 
 ## Research Landscape & Milestone Timeline
 
@@ -283,6 +283,11 @@ The taxonomy categorizes the literature across four core dimensions:
   - *Architecture*: `Variational Neural Operator (4DVarNet)` | *Params*: `8.5M` | *Physics*: `Differentiable variational optimization`
   - *Links*: [Paper / DOI](https://doi.org/10.1029/2021MS002572) | [![Code](https://img.shields.io/badge/Code-GitHub-blue.svg)](https://github.com/CIA-Oceanix/4dvarnet-core)
 
+- **Generative Lagrangian data assimilation for ocean dynamics under extreme sparsity** (arXiv:2507.06479 2025)
+  - *Authors*: Asefi, Niloofar, Lupin-Jimenez, Leonard, Wu, Tianning et al.
+  - *Architecture*: `Generative diffusion-based Lagrangian Data Assimilation (LagDA)` | *Params*: `45M parameters` | *Physics*: `Lagrangian-to-Eulerian fluid kinematic mapping`
+  - *Links*: [Paper / DOI](https://arxiv.org/abs/2507.06479) | `[Code not available]`
+
 ### Geophysics & Seismology Foundation Models (地球物理与地震学大模型)
 
 - **SeisT: A Foundational Deep-Learning Model for Earthquake Monitoring Tasks** (IEEE Transactions on Geoscience and Remote Sensing (TGRS) 2024)
@@ -304,6 +309,18 @@ The taxonomy categorizes the literature across four core dimensions:
   - *Authors*: Zhu, Weiqiang, Beroza, Gregory C.
   - *Architecture*: `1D Deep Residual U-Net` | *Params*: `1.2M` | *Physics*: `Purely data-driven`
   - *Links*: [Paper / DOI](https://doi.org/10.1093/gji/ggy423) | [![Code](https://img.shields.io/badge/Code-GitHub-blue.svg)](https://github.com/AI4EPS/PhaseNet)
+
+### Geo-Energy, Geothermal & Subsurface Carbon Storage (地热与地下碳封存大模型)
+
+- **U-FNO—An enhanced Fourier neural operator-based deep-learning model for multiphase flow** (Advances in Water Resources / arXiv:2109.03697 2022)
+  - *Authors*: Wen, Gege, Li, Zongyi, Azizzadenesheli, Kamyar et al.
+  - *Architecture*: `U-Net enhanced Fourier Neural Operator (U-FNO)` | *Params*: `1.2M parameters` | *Physics*: `Soft physics loss with Darcy-Brinkman mass conservation`
+  - *Links*: [Paper / DOI](https://doi.org/10.1016/j.advwatres.2022.104180) | [![Code](https://img.shields.io/badge/Code-GitHub-blue.svg)](https://github.com/gegewen/ufno)
+
+- **CCSNet: A deep learning modeling suite for CO2 storage** (Advances in Water Resources 2021)
+  - *Authors*: Wen, Gege, Hay, Catherine, Benson, Sally M.
+  - *Architecture*: `Coupled multi-scale CNN/FNO suite with data-driven equation of state (EOS)` | *Params*: `14.8M parameters (suite total)` | *Physics*: `Thermodynamic equation-of-state coupling and mass conservation`
+  - *Links*: [Paper / DOI](https://doi.org/10.1016/j.advwatres.2021.104009) | [![Code](https://img.shields.io/badge/Code-GitHub-blue.svg)](https://github.com/gegewen/ccsnet_v1.0)
 
 ### Space Weather & Heliophysics (空间天气与日地物理)
 
@@ -390,6 +407,21 @@ The taxonomy categorizes the literature across four core dimensions:
   - *Authors*: Marcandelli, Paolo, He, Yuanchun, Mariani, Stefano et al.
   - *Architecture*: `Partitioned Hybrid Quantum Fourier Neural Operator (PHQFNO) with Parameterized Quantum Circuits (PQC)` | *Params*: `16-qubit PQC variational layer + classical projection layers` | *Physics*: `Hybrid PDE solver`
   - *Links*: [Paper / DOI](https://arxiv.org/abs/2507.08746) | `[Code not available]`
+
+- **Fourier Neural Operator with Learned Deformations for PDEs on General Geometries** (NeurIPS / arXiv:2207.05209 2022)
+  - *Authors*: Li, Zongyi, Huang, Daniel Zhengyu, Liu, Burigede et al.
+  - *Architecture*: `Geo-FNO (Deformation-mapped Fourier Neural Operator)` | *Params*: `2.1M parameters` | *Physics*: `Geometric diffeomorphism mapping to canonical latent space`
+  - *Links*: [Paper / DOI](https://arxiv.org/abs/2207.05209) | [![Code](https://img.shields.io/badge/Code-GitHub-blue.svg)](https://github.com/zongyi-li/geo-fno)
+
+- **Lie-Poisson Neural Networks (LPNets): Data-Based Computing of Hamiltonian Systems with Symmetries** (arXiv:2308.15349 2023)
+  - *Authors*: Eldred, Christopher, Gay-Balmaz, François, Huraka, Sofiia et al.
+  - *Architecture*: `Lie-Poisson Neural Network (LPNet) with skew-symmetric Poisson bracket structure` | *Params*: `0.8M parameters` | *Physics*: `Hard geometric projection preserving Casimir invariants and Kelvin's circulation theorem`
+  - *Links*: [Paper / DOI](https://arxiv.org/abs/2308.15349) | [![Code](https://img.shields.io/badge/Code-GitHub-blue.svg)](https://github.com/vputkaradze/LLPNNs)
+
+- **Symplectic Neural Operators for Learning Infinite Dimensional Hamiltonian Systems** (arXiv:2605.15881 2026)
+  - *Authors*: Makara, Yeang, Tanaka, Yusuke, Matsubara, Takashi et al.
+  - *Architecture*: `Symplectic Neural Operator (SNO) with canonical symplectic 2-form structure` | *Params*: `1.5M parameters` | *Physics*: `Hard canonical symplectic geometric invariance (J-skew symmetry)`
+  - *Links*: [Paper / DOI](https://arxiv.org/abs/2605.15881) | `[Code not available]`
 
 ## How This Survey Is Maintained / 本项目自动化维护机制
 

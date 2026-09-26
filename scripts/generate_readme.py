@@ -30,6 +30,7 @@ def run_generate_readme():
         "Hydrology",
         "Oceanography",
         "Geophysics/Seismology",
+        "Geo-Energy / Subsurface",
         "Space Weather",
         "Reasoning / Benchmark",
         "Foundational / Survey",
@@ -42,6 +43,7 @@ def run_generate_readme():
         "Hydrology": "Hydrology & Extreme Flood Modeling (水文与极端洪水大模型)",
         "Oceanography": "Ocean Dynamics & Marine Forecasting (海洋动力与数值预报)",
         "Geophysics/Seismology": "Geophysics & Seismology Foundation Models (地球物理与地震学大模型)",
+        "Geo-Energy / Subsurface": "Geo-Energy, Geothermal & Subsurface Carbon Storage (地热与地下碳封存大模型)",
         "Space Weather": "Space Weather & Heliophysics (空间天气与日地物理)",
         "Reasoning / Benchmark": "Scientific Reasoning LLMs & Benchmarks (科学时序推理大模型与基准)",
         "Foundational / Survey": "Foundational Surveys & Methodology (基础综述与方法学)",
@@ -52,6 +54,10 @@ def run_generate_readme():
         raw_d = p.get("domain", "Foundational / Survey")
         if "Polar Cryosphere" in raw_d:
             d = "Polar Cryosphere"
+        elif "Geo-Energy" in raw_d or "Subsurface" in raw_d:
+            d = "Geo-Energy / Subsurface"
+        elif "Oceanography" in raw_d:
+            d = "Oceanography"
         elif "Reasoning" in raw_d or "Cross-domain" in raw_d:
             d = "Reasoning / Benchmark"
         elif "Core Methods" in raw_d or "Position" in raw_d or "Foundational" in raw_d:

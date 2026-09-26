@@ -20,10 +20,11 @@ Scientific time series foundation models specialize across distinct physical env
     \item \textbf{Geophysics and Seismology}: Continuous 3-component seismic waveforms, phase arrival triggers, fault slip observations, and GPS tectonic deformation velocities~\cite{li2024seist,zhu2019phasenet,woollam2022seisbench}.
     \item \textbf{Space Weather and Heliophysics}: Continuous solar extreme ultraviolet (EUV) magnetograms, solar wind ion velocities, and geomagnetic disturbance indices~\cite{roy2025surya}.
     \item \textbf{Polar Cryosphere and Sea Ice Dynamics}: Involving satellite synthetic aperture radar (SAR) swaths, microwave radiometer brightness temperatures, ice-sheet altimetry, and continuous sea ice concentration fields governing planetary thermodynamic albedo~\cite{andersson2021icenet,taleghan2025icebench}.
+    \item \textbf{Geo-Energy and Subsurface Reservoirs}: Multiphase fluid flow in heterogeneous porous media, geological carbon sequestration (GCS) plume migration, geothermal reservoir temperature/pressure dynamics, and high-pressure equation-of-state (EOS) phase behavior~\cite{wen2022ufno,wen2021ccsnet}.
     \item \textbf{Cross-Domain Multimodal Foundations}: Universal time series representations bridging sensor networks, in-situ monitors, and multi-scale physical dynamics~\cite{gao2024units,goswami2024moment}.
 \end{itemize}
 
-As visualized in the Domain $\times$ Modality Research Maturity Matrix (Fig.~\ref{fig:domain_modality_heatmap}), while gridded weather reanalysis and multi-spectral satellite imagery have achieved high maturity, cross-modal integration (e.g., coupling continuous waveforms with satellite imagery or ground gauges with scientific text logs) remains an active frontier.
+As visualized in the Domain $\times$ Modality Research Maturity Matrix (Fig.~\ref{fig:domain_modality_heatmap}), while gridded weather reanalysis and multi-spectral satellite imagery have achieved high maturity, cross-modal integration (e.g., coupling continuous waveforms with satellite imagery, subsurface permeability with multiphase plumes, or ground gauges with scientific text logs) remains an active frontier.
 
 \begin{figure}[t]
 \centering
@@ -38,9 +39,11 @@ We categorize foundation backbones by their spatial-temporal inductive biases:
     \item \textbf{3D Spatial and Spherical Transformers}: Employing 3D Earth-specific patch embeddings, hierarchical Swin-like windowed attention, and vertical pressure-level encodings~\cite{bi2023pangu,bodnar2024aurora,chen2023fuxi,nguyen2023stormer}.
     \item \textbf{Multi-Mesh Graph Neural Networks}: Discretizing the spherical Earth via refined recursive icosahedral meshes to ensure uniform spatial resolution without polar distortions~\cite{lam2023graphcast}.
     \item \textbf{Continuous Neural Operators}: Leveraging Fourier transforms and spherical harmonic convolutions (e.g., AFNO, SFNO) to learn discretization-invariant operators on Riemannian function spaces~\cite{pathak2022fourcastnet,bonev2023sfno}.
+    \item \textbf{Deformation and Geometry-Adapted Neural Operators}: Mapping complex non-Euclidean computational domains, irregular boundaries, and faulted subsurface formations into canonical coordinate spaces via learned coordinate diffeomorphisms (Geo-FNO)~\cite{li2022geofno}.
+    \item \textbf{Symplectic and Lie-Poisson Geometric Operators}: Structuring operator layers according to canonical symplectic 2-forms or non-canonical Lie-Poisson brackets to guarantee exact preservation of Hamiltonian energy, Casimir invariants, and Kelvin's circulation theorem~\cite{makara2026symplectic,eldred2023lpnets}.
     \item \textbf{High-Order Tensor and Quantum-Classical Hybrid Operators}: Factorizing infinite-dimensional spectral convolution weights via Tucker and Tensor-Train factorizations or embedding spectral transformation into parameterized quantum circuits (PQC) for scalable PDE solving and wavefield tomography~\cite{kossaifi2024multigrid,yang2021seismic,marcandelli2025phqfno}.
     \item \textbf{Multimodal Masked Autoencoders and Continuous Hypernetworks}: Extending masked autoencoding (MAE) across spatial patches, temporal revisit cycles, and dynamic wavelength hypernetworks~\cite{cong2022satmae,tseng2023presto,tseng2025galileo,jakubik2023prithvi,xiong2024dofa,goswami2024moment}.
-    \item \textbf{Generative Diffusion Models}: Utilizing score-based diffusion denoising to generate calibrated, physically perturbed probabilistic weather and extreme event ensembles~\cite{price2023gencast,li2024seeds,xu2024extremecast}.
+    \item \textbf{Generative Diffusion and Lagrangian Assimilation Models}: Utilizing score-based diffusion denoising to generate calibrated probabilistic ensembles and assimilate sparse, irregular Lagrangian drifter trajectories into dense Eulerian state estimates~\cite{price2023gencast,li2024seeds,xu2024extremecast,asefi2025lagrangian}.
     \item \textbf{Unified Multi-Task Foundational Transformers}: Applying prompt-conditioned masking and task tokens across heterogeneous time series topologies~\cite{gao2024units,smith2023earthpt}.
 \end{itemize}
 
@@ -48,9 +51,9 @@ We categorize foundation backbones by their spatial-temporal inductive biases:
 The physical fidelity of deep learning models ranges along four distinct levels:
 \begin{enumerate}
     \item \textbf{Purely Data-Driven}: Models optimize statistical reconstruction (e.g., mean squared error, MAE) over historical datasets without explicit differential constraints, relying solely on model capacity to reflect physical dynamics~\cite{bi2023pangu,lam2023graphcast,smith2023earthpt}.
-    \item \textbf{Soft Physics Loss Penalties}: Physical conservation principles (e.g., kinetic energy conservation, mass balance, divergence-free constraints, vertical pressure weighting) are formulated as penalty terms within the training loss function~\cite{chen2023fengwu,pathak2022fourcastnet,nguyen2023stormer,li2024seeds}.
-    \item \textbf{Hard Architectural Conservation Constraints}: Structural projections (e.g., spherical harmonics basis expansion, divergence-free projection layers) guarantee that model predictions strictly satisfy conservation laws by construction~\cite{bonev2023sfno}.
-    \item \textbf{Hybrid PDE-Neural Solvers}: Deep neural representations parameterize unresolved subgrid physical processes (convection, clouds, turbulence) coupled directly to differentiable numerical fluid dynamical cores~\cite{kochkov2024neuralgcm,yu2023climsim,nearing2024globalflood}.
+    \item \textbf{Soft Physics Loss Penalties}: Physical conservation principles (e.g., kinetic energy conservation, mass balance, divergence-free constraints, vertical pressure weighting) are formulated as penalty terms within the training loss function~\cite{chen2023fengwu,pathak2022fourcastnet,nguyen2023stormer,li2024seeds,wen2022ufno}.
+    \item \textbf{Hard Architectural Conservation Constraints}: Structural projections and geometric invariants (e.g., spherical harmonics basis expansion, divergence-free projection layers, canonical symplectic structure, Lie-Poisson Casimirs) guarantee that predictions strictly satisfy conservation laws by construction~\cite{bonev2023sfno,makara2026symplectic,eldred2023lpnets}.
+    \item \textbf{Hybrid PDE-Neural Solvers}: Deep neural representations parameterize unresolved subgrid physical processes (convection, clouds, turbulence, reservoir multiphase equilibria) coupled directly to differentiable numerical fluid dynamical cores~\cite{kochkov2024neuralgcm,yu2023climsim,nearing2024globalflood,wen2021ccsnet}.
 \end{enumerate}
 
 \subsection{Dimension 4: Functional Roles of Reasoning LLMs}

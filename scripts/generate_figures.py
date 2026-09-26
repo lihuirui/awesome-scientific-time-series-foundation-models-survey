@@ -225,6 +225,7 @@ def plot_domain_modality_heatmap():
         "Hydrology & Floods",
         "Oceanography",
         "Geophysics / Seismology",
+        "Geo-Energy & Reservoirs",
         "Space Weather / Solar",
         "Reasoning Benchmarks"
     ]
@@ -244,13 +245,14 @@ def plot_domain_modality_heatmap():
         [2, 3, 1, 0, 0],  # Polar Cryosphere (IceNet, IceBench)
         [1, 3, 0, 0, 1],  # Remote Sensing
         [2, 1, 3, 0, 1],  # Hydrology
-        [3, 1, 1, 0, 0],  # Oceanography
+        [3, 1, 2, 0, 0],  # Oceanography (XiHe, LagDA)
         [0, 0, 1, 3, 0],  # Geophysics
+        [2, 1, 2, 2, 0],  # Geo-Energy & Reservoirs (U-FNO, CCSNet, Geo-FNO)
         [2, 3, 1, 0, 1],  # Space Weather
         [2, 2, 3, 2, 3],  # Reasoning Benchmarks
     ])
 
-    fig, ax = plt.subplots(figsize=(10, 7.5), dpi=300)
+    fig, ax = plt.subplots(figsize=(10, 8.2), dpi=300)
     cax = ax.imshow(data, cmap="Blues", aspect="auto", vmin=0, vmax=3)
 
     ax.set_xticks(range(len(modalities)))
@@ -288,9 +290,12 @@ def plot_weather_foundation_timeline():
     milestones = [
         ("IceNet", "2021-08", "Sea Ice Prob. U-Net", 2021.65, -1.8, "#0284C7"),
         ("DGMR", "2021-09", "Radar GAN Nowcast", 2021.75, 1.8, "#D97706"),
+        ("CCSNet", "2021-06", "CO2 Storage Suite", 2021.48, 2.3, "#059669"),
+        ("U-FNO", "2021-09", "Multiphase Darcy FNO", 2021.72, -1.2, "#10B981"),
         ("WaveFNO", "2021-10", "Seismic FNO Inversion", 2021.82, -2.6, "#7C3AED"),
         ("FourCastNet", "2022-02", "AFNO Operator", 2022.15, 1.4, "#2563EB"),
         ("SatMAE", "2022-07", "Temporal ViT MAE", 2022.55, -1.5, "#0D9488"),
+        ("Geo-FNO", "2022-07", "Learned Deformations", 2022.58, 2.0, "#0891B2"),
         ("Pangu-Weather", "2022-11", "3D Earth Swin", 2022.88, 2.5, "#DC2626"),
         ("GraphCast", "2022-12", "Multi-Mesh GNN", 2022.98, -2.6, "#D97706"),
         ("ClimaX", "2023-01", "Variable ViT", 2023.08, 1.3, "#7C3AED"),
@@ -300,6 +305,7 @@ def plot_weather_foundation_timeline():
         ("ClimSim", "2023-06", "Subgrid Physics", 2023.50, -2.5, "#6366F1"),
         ("SEEDS", "2023-06", "Diffusion Ensembles", 2023.55, 1.6, "#DC2626"),
         ("FuXi", "2023-06", "Cascade Swin", 2023.60, -1.6, "#E11D48"),
+        ("LPNets", "2023-08", "Lie-Poisson Symmetry", 2023.65, -1.2, "#4F46E5"),
         ("WeatherBench 2", "2023-08", "Evaluation Suite", 2023.68, 2.6, "#475569"),
         ("CorrDiff", "2023-09", "2km Downscaling", 2023.75, -2.2, "#059669"),
         ("Time-LLM", "2023-10", "Reprogrammed LLM", 2023.80, 1.4, "#2563EB"),
@@ -329,14 +335,16 @@ def plot_weather_foundation_timeline():
         ("IceBench", "2025-03", "SAR Sea Ice Bench", 2025.25, 2.2, "#0284C7"),
         ("OceanBench", "2025-05", "Ocean Dynamics Bench", 2025.40, -2.7, "#0284C7"),
         ("PHQFNO", "2025-07", "Quantum Hybrid FNO", 2025.55, -2.3, "#4F46E5"),
+        ("LagDA", "2025-07", "Sparse Lagrangian DA", 2025.58, 1.8, "#0284C7"),
         ("SciTS", "2025-10", "Scientific TS LLM", 2025.80, 1.6, "#2563EB"),
+        ("SNO", "2026-05", "Symplectic Operator", 2026.38, 2.1, "#6366F1"),
     ]
 
     fig, ax = plt.subplots(figsize=(15.5, 7.5), dpi=300)
 
     # Base timeline axis
     ax.axhline(0, color="#334155", lw=2.5, zorder=1)
-    ax.set_xlim(2021.2, 2026.2)
+    ax.set_xlim(2021.2, 2026.5)
     ax.set_ylim(-4.1, 4.4)
     ax.axis("off")
 
@@ -531,6 +539,7 @@ def plot_publications_by_year():
         "Hydrology & Floods",
         "Oceanography",
         "Geophysics / Seismology",
+        "Geo-Energy & Reservoirs",
         "Space Weather",
         "Reasoning & Agent Benchmarks",
         "Foundational & Neural Operators",
@@ -539,6 +548,8 @@ def plot_publications_by_year():
     def map_d(raw_d):
         if "Polar Cryosphere" in raw_d:
             return "Polar Cryosphere"
+        elif "Geo-Energy" in raw_d or "Subsurface" in raw_d:
+            return "Geo-Energy & Reservoirs"
         elif "Weather" in raw_d or "Climate" in raw_d:
             return "Weather & Climate"
         elif "Remote Sensing" in raw_d or "EO" in raw_d:
@@ -566,7 +577,7 @@ def plot_publications_by_year():
 
     fig, ax = plt.subplots(figsize=(10, 6), dpi=300)
     bottom = np.zeros(len(years))
-    palette = ["#2563EB", "#0284C7", "#0D9488", "#D97706", "#059669", "#7C3AED", "#E11D48", "#16A34A", "#6366F1"]
+    palette = ["#2563EB", "#0284C7", "#0D9488", "#D97706", "#059669", "#7C3AED", "#10B981", "#E11D48", "#16A34A", "#6366F1"]
 
     for idx, d in enumerate(domains):
         counts = [domain_counts[d][y] for y in years]

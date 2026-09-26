@@ -55,6 +55,34 @@ Addressing long-range seasonal sea ice forecasting, Andersson et al.~\cite{ander
 
 To address the lack of standardized machine learning evaluation across polar remote sensing, Taleghan et al.~\cite{taleghan2025icebench} introduced \textbf{IceBench}, a comprehensive multi-modal benchmark for deep learning-based sea ice type classification. Built upon the AI4Arctic Sea Ice Challenge corpus, IceBench unifies dual-polarization Sentinel-1 Synthetic Aperture Radar (SAR) imagery, AMSR2 microwave radiometer brightness temperatures, and ERA5 atmospheric forcings across operational ice chart labels from the Danish Meteorological Institute (DMI). By standardizing evaluation protocols across pixel-based (U-Net, SegNet) and patch-based (Vision Transformer, ResNet) architectures, IceBench provides the first rigorous benchmark assessing spatial transferability across distinct Arctic sub-regions and temporal transferability across transition seasons (freeze-up versus summer melt).
 
+\subsection{Geo-Energy, Geothermal Reservoirs, and Subsurface Carbon Sequestration}
+\label{sec:geo_energy}
+The transition to zero-carbon energy systems fundamentally depends on deep subsurface reservoirs for geological carbon sequestration (GCS), geothermal energy extraction, and underground hydrogen storage. Subsurface fluid dynamics are governed by non-linear, multi-phase Darcy-Brinkman flow through highly heterogeneous, anisotropic geological formations:
+\begin{equation}
+    \phi(\mathbf{x}) \frac{\partial (\rho_\alpha S_\alpha)}{\partial t} + \nabla \cdot (\rho_\alpha \mathbf{u}_\alpha) = q_\alpha, \quad \mathbf{u}_\alpha = -\frac{k_{r\alpha}(S_\alpha) \mathbf{K}(\mathbf{x})}{\mu_\alpha} \left( \nabla p_\alpha - \rho_\alpha \mathbf{g} \right),
+    \label{eq:multiphase_darcy}
+\end{equation}
+where $\alpha \in \{\text{CO}_2, \text{brine}\}$ denotes fluid phases, $\phi(\mathbf{x})$ is formation porosity, $\mathbf{K}(\mathbf{x})$ is the heterogeneous permeability tensor, $S_\alpha$ is phase saturation ($S_{\text{CO}_2} + S_{\text{brine}} = 1$), $k_{r\alpha}$ is relative permeability, $\mu_\alpha$ is dynamic viscosity, and $p_\alpha$ represents phase pressure. Because traditional numerical reservoir simulators (such as CMG GEM, TOUGH2, or Eclipse) require hours to days per run to solve coupled non-linear pressure-saturation equations on fine 3D computational grids, foundation neural operator models have emerged as high-leverage surrogates for real-time reservoir monitoring, risk assessment, and closed-loop well control.
+
+\subsubsection{U-FNO: Enhanced Multiscale Fourier Neural Operators for Multiphase Flow}
+Addressing the limitations of standard Fourier neural operators on discontinuous fronts, Wen et al.~\cite{wen2022ufno} pioneered the \textbf{U-FNO} (U-Net enhanced Fourier Neural Operator). Standard FNO applies global frequency-domain truncations that exhibit Gibbs oscillations and oversmooth sharp saturation shocks between injected supercritical $\text{CO}_2$ and ambient saline water. U-FNO resolves this by interleaving global 2D/3D Fourier spectral convolution layers with multiscale U-Net spatial skip connections:
+\begin{equation}
+    \mathbf{v}_{l+1}(\mathbf{x}) = \sigma\left( \mathcal{W}_l * \mathbf{v}_l(\mathbf{x}) + \mathbf{W}_{\text{spatial}}^{(l)} \mathbf{v}_l(\mathbf{x}) + \mathcal{U}_{\text{skip}}^{(l)}(\mathbf{v}_l)(\mathbf{x}) \right).
+    \label{eq:ufno_layer}
+\end{equation}
+Trained on extensive multiphase GCS simulation suites under realistic permeability fields with strong spatial correlation lengths, U-FNO accurately forecasts 30-year multi-phase $\text{CO}_2$ gas-phase saturation fronts and pressure buildup maps. U-FNO achieves over a \textbf{$10{,}000\times$ speedup} relative to numerical PDE solvers while reducing gas saturation prediction errors by over $50\%$ compared to standard convolutional architectures, enabling real-time risk evaluation of caprock fracture and induced seismicity.
+
+\subsubsection{CCSNet: Full-Physics Deep Learning Modeling Suite with Real Thermodynamic EOS}
+Scaling operator modeling to industrial carbon capture and storage operations, Wen, Hay, and Benson~\cite{wen2021ccsnet} established \textbf{CCSNet}. Industrial GCS involves complex thermodynamic phase behavior across wide ranges of reservoir temperatures ($30^\circ\text{C}\text{--}120^\circ\text{C}$), pressures ($10\text{--}40\text{ MPa}$), and salinities ($0\text{--}250{,}000\text{ ppm}$). CCSNet couples multi-scale neural operators directly to a data-driven thermodynamic Equation of State (EOS) for supercritical $\text{CO}_2$ and brine:
+\begin{equation}
+    \rho_{\text{CO}_2} = f_{\text{EOS}}(p, T), \quad \mu_{\text{CO}_2} = g_{\text{EOS}}(p, T, \rho_{\text{CO}_2}),
+\end{equation}
+guaranteeing thermodynamic consistency across sub-critical and supercritical fluid regimes. Pretrained on over $20{,}000$ synthetic heterogeneous reservoir simulations across variable injection rates, well configurations, and geological facies, CCSNet evaluates 50-year structural, capillary, and solubility trapping in milliseconds. This empowers field operators to perform real-time optimization of well placement and dynamically steer injection rates to maximize long-term storage security.
+
+\subsubsection{Geo-FNO: Multiphase Flow on Complex and Faulted Geometries}
+Complementing these models, Li et al.~\cite{li2022geofno} demonstrated \textbf{Geo-FNO} on 3D subsurface flow and geomechanical deformation. Natural reservoir strata are rarely simple Cartesian boxes; they contain inclined layers, structural faults, and pinch-outs. By learning smooth coordinate transformations $\boldsymbol{\phi}: \Omega \to [0, 1]^d$, Geo-FNO maps complex faulted geological geometries into canonical reference grids, executing continuous operator inference without losing boundary fidelity or requiring costly unstructured mesh generation.
+
+
 \subsection{Space Weather and Heliophysics}
 Space weather phenomena---including solar flares, coronal mass ejections (CMEs), and geomagnetic storms---exert severe risks on satellite infrastructure and terrestrial power grids. Roy et al.~\cite{roy2025surya} introduced Surya, a 366-million parameter foundation model for heliophysics trained on 13 years of continuous multi-wavelength extreme ultraviolet imagery from NASA's Solar Dynamics Observatory (SDO). Surya incorporates spectral gating and long-short attention to track active region magnetic helicity, delivering state-of-the-art solar flare and solar wind forecasting.
 

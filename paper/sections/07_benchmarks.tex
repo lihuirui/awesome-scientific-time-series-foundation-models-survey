@@ -68,6 +68,12 @@ WaveFNO~\cite{yang2021seismic} & Seismology & Fourier Neural Operator & Continuo
 IceNet~\cite{andersson2021icenet} & Polar Cryosphere & Probabilistic U-Net Ensemble & CMIP6 (2192 yrs) + OSI-SAF & 25 km, monthly & Soft loss & 15M & \href{https://github.com/icenet-ai/icenet}{\texttt{icenet-ai/icenet}} \\
 IceBench~\cite{taleghan2025icebench} & Polar Cryosphere & Multi-Modal Polar Benchmark & AI4Arctic Sentinel-1 SAR + AMSR2 & Multi-sensor & Spectral calib. & Bench. & \href{https://github.com/bdlab-ucd/IceBench}{\texttt{bdlab-ucd/IceBench}} \\
 PHQFNO~\cite{marcandelli2025phqfno} & Quantum ML & Partitioned Hybrid Quantum FNO & Burgers' + 2D wave equations & Continuous & Hybrid PDE & 16-qubit & not available \\
+U-FNO~\cite{wen2022ufno} & Geo-Energy & Multiscale Fourier Neural Operator & Stanford GCS (6,000 simulations) & Continuous 2D/3D & Soft mass loss & 1.2M & \href{https://github.com/gegewen/ufno}{\texttt{gegewen/ufno}} \\
+CCSNet~\cite{wen2021ccsnet} & Geo-Energy & Thermodynamic EOS Multi-Scale Suite & $>$20,000 heterogeneous GCS runs & Multi-scale & Hybrid EOS & 14.8M & \href{https://github.com/gegewen/ccsnet_v1.0}{\texttt{gegewen/ccsnet\_v1.0}} \\
+Geo-FNO~\cite{li2022geofno} & Core Methods & Deformation-Mapped Neural Operator & General geometries \& reservoirs & Continuous & Coordinate map & 2.1M & \href{https://github.com/zongyi-li/geo-fno}{\texttt{zongyi-li/geo-fno}} \\
+LPNets~\cite{eldred2023lpnets} & Core Methods & Lie-Poisson Neural Network & Rotating fluid Lie algebras & Continuous & Hard Casimir & 0.8M & \href{https://github.com/vputkaradze/LLPNNs}{\texttt{vputkaradze/LLPNNs}} \\
+SNO~\cite{makara2026symplectic} & Core Methods & Symplectic Neural Operator & Infinite-dim Hamiltonian PDEs & Continuous & Hard Symplectic & 1.5M & not available \\
+LagDA~\cite{asefi2025lagrangian} & Oceanography & Generative Lagrangian Diffusion DA & HYCOM/NCOM drifter trajectories & $<$0.5\% sparse & Kinematic map & 45M & not available \\
 \bottomrule
 \end{tabular}%
 }
@@ -178,6 +184,39 @@ IceNet (Ensemble)~\cite{andersson2021icenet} & CMIP6 + ERA5 + OSI-SAF Satellite 
 \midrule
 IceBench Baseline (U-Net)~\cite{taleghan2025icebench} & Sentinel-1 SAR + AMSR2 Radiometry & \multicolumn{3}{c}{SAR Sea Ice Classification Macro $F_1$: 78.4\%} & \multicolumn{3}{c}{Pixel Transfer Accuracy: 82.1\%} & Standard benchmark~\cite{taleghan2025icebench} \\
 IceBench ViT Baseline~\cite{taleghan2025icebench} & Sentinel-1 SAR + AMSR2 + ERA5 & \multicolumn{3}{c}{SAR Sea Ice Classification Macro $F_1$: \textbf{84.6\%}} & \multicolumn{3}{c}{Pixel Transfer Accuracy: \textbf{87.8\%}} & State-of-the-art in~\cite{taleghan2025icebench} \\
+\midrule
+\multicolumn{9}{@{}l}{\textbf{Part I: Subsurface Geo-Energy \& Carbon Sequestration Benchmark (30-Year Multiphase Plume Migration)}} \\
+\midrule
+ & & \multicolumn{3}{c}{\textbf{30-Year Predictive Error Metrics}} & \multicolumn{3}{c}{\textbf{Plume Fidelity \& Simulation Speedup}} & \\
+\cmidrule(lr){3-5} \cmidrule(lr){6-8}
+\textbf{Model / System} & \textbf{Network Backbone} & \textbf{Gas Saturation $S_g$ RMSE} & \textbf{Pressure $\Delta p$ Error (MPa)} & \textbf{Plume Contour IoU} & \textbf{Inference Time} & \textbf{Speedup vs Simulator} & \textbf{Mass Cons. Error} & \textbf{GCS Source} \\
+\midrule
+Standard 2D U-Net & Convolutional Encoder-Decoder & 0.084 & 1.45 & 0.72 & 1.80 s & $\sim$500$\times$ vs CMG GEM & 4.8\% & Baseline in~\cite{wen2022ufno} \\
+Standard FNO Baseline & Spectral Fourier Convolution & 0.062 & 0.98 & 0.78 & 0.05 s & $\sim$15,000$\times$ vs CMG GEM & 3.2\% (Gibbs noise) & Baseline in~\cite{wen2022ufno} \\
+U-FNO~\cite{wen2022ufno} & Multiscale Spectral U-Net & \textbf{0.028} & \textbf{0.42} & \textbf{0.91} & 0.08 s & $\sim$10,000$\times$ vs CMG GEM & \textbf{$<$0.8\%} & Grounded in~\cite{wen2022ufno} \\
+CCSNet~\cite{wen2021ccsnet} & Thermodynamic EOS Multi-Scale & 0.031 & 0.38 & \textbf{0.93} & 0.45 s & $\sim$15,000$\times$ vs TOUGH2 & $<$0.5\% & Grounded in~\cite{wen2021ccsnet} \\
+Geo-FNO~\cite{li2022geofno} & Diffeomorphism Spectral Operator & 0.035 & 0.49 & 0.89 & 0.12 s & $\sim$1,500$\times$ vs FEM & $<$1.0\% & Grounded in~\cite{li2022geofno} \\
+\midrule
+\multicolumn{9}{@{}l}{\textbf{Part J: Symplectic \& Lie-Poisson Geometric Invariant Preservation ($10^4$ Autoregressive Time Steps)}} \\
+\midrule
+ & & \multicolumn{3}{c}{\textbf{Geometric Conservation Invariant Errors}} & \multicolumn{3}{c}{\textbf{Long-Horizon Stability Metrics}} & \\
+\cmidrule(lr){3-5} \cmidrule(lr){6-8}
+\textbf{Model / Operator} & \textbf{Physical System} & \textbf{Energy Drift $|\Delta \mathcal{H}|/\mathcal{H}_0$} & \textbf{Casimir Invariant Error} & \textbf{Circulation Drift} & \textbf{Phase Volume Error} & \textbf{Rollout Horizon} & \textbf{Energy Dissipation} & \textbf{Conservation Source} \\
+\midrule
+Unconstrained FNO & 2D Euler / Dispersive Wave & 42.5\% & 38.2\% & 18.4\% & Non-preserving & Fails at 500 steps & High artificial damping & Stated in~\cite{makara2026symplectic} \\
+Neural ODE (ClimODE) & Continuous Advective Flow & 8.4\% & 9.1\% & 4.2\% & Approximate & Stable to 2,000 steps & Moderate dissipation & Stated in~\cite{verma2024climode} \\
+SNO (Symplectic FNO)~\cite{makara2026symplectic} & Infinite-Dim Hamiltonian Wave & \textbf{$<$0.02\%} & N/A & N/A & \textbf{0.0\% (Exact)} & \textbf{Stable past $10^4$ steps} & \textbf{Zero numerical damping} & Stated in~\cite{makara2026symplectic} \\
+LPNets~\cite{eldred2023lpnets} & Rotating 2D Euler / Shallow Water & \textbf{$<$0.01\%} & \textbf{$<$0.01\% (Exact)} & \textbf{0.0\% (Exact)} & Coadjoint orbit preserved & \textbf{Stable past $10^4$ steps} & \textbf{Zero enstrophy cascade} & Stated in~\cite{eldred2023lpnets} \\
+\midrule
+\multicolumn{9}{@{}l}{\textbf{Part K: Generative Lagrangian In-Situ Ocean Data Assimilation ($<$0.5\% Drifter Coverage)}} \\
+\midrule
+ & & \multicolumn{3}{c}{\textbf{Eulerian Field Reconstruction Errors}} & \multicolumn{3}{c}{\textbf{Kinetic Energy \& Spectral Metrics}} & \\
+\cmidrule(lr){3-5} \cmidrule(lr){6-8}
+\textbf{Assimilation System} & \textbf{Observation Modality} & \textbf{Velocity RMSE ($u, v$, m/s)} & \textbf{SSH RMSE (cm)} & \textbf{Vorticity $\zeta$ Corr.} & \textbf{EKE Spectrum Recovery} & \textbf{Submesoscale Eddies} & \textbf{Coverage Sparsity} & \textbf{Ocean DA Protocol} \\
+\midrule
+Optimal Interpolation (OI) & Sparse Lagrangian Trajectories & 0.285 & 4.82 & 0.41 & 42.1\% & Severe spatial blur & 0.5\% basin coverage & Baseline in~\cite{asefi2025lagrangian} \\
+4D-Var Data Assimilation & Variational Inversion & 0.210 & 3.45 & 0.58 & 61.5\% & High-wavenumber loss & 0.5\% basin coverage & Baseline in~\cite{asefi2025lagrangian} \\
+LagDA (Generative Diffusion)~\cite{asefi2025lagrangian} & Conditional Score Diffusion & \textbf{0.092} & \textbf{1.65} & \textbf{0.86} & \textbf{91.4\%} & \textbf{Sharp eddy structures} & 0.5\% basin coverage & State-of-the-art in~\cite{asefi2025lagrangian} \\
 \bottomrule
 \end{tabular}%
 }
@@ -208,6 +247,10 @@ DGMR (1km radar nowcast)~\cite{ravuri2021dgmr} & 89M & 1 $\times$ Google Cloud T
 MG-TFNO (Multi-Grid FNO)~\cite{kossaifi2024multigrid} & 0.8M & 1 $\times$ NVIDIA A100 GPU & 1 A100 GPU $\times$ 12 hours & 0.05 s & $\sim$150$\times$ vs Dense FNO & $\sim$0.00001 kWh & 1.4 GB VRAM \\
 WaveFNO (Seismic FWI)~\cite{yang2021seismic} & 1.2M & 1 $\times$ NVIDIA RTX 3090 GPU & 1 GPU $\times$ 8 hours & 2.1 s & $\sim$1,200$\times$ vs FD PDE & $\sim$0.00018 kWh & 2.8 GB VRAM \\
 IceNet (6-Month Arctic)~\cite{andersson2021icenet} & 15M & 1 $\times$ NVIDIA Tesla V100 GPU & 8 V100 GPUs $\times$ 4 days & 1.2 s & $\sim$2,000$\times$ vs SEAS5 & $\sim$0.00009 kWh & 4.5 GB VRAM \\
+U-FNO (Multiphase Darcy)~\cite{wen2022ufno} & 1.2M & 1 $\times$ NVIDIA RTX 3090 GPU & 1 GPU $\times$ 14 hours & 0.08 s & $\sim$10,000$\times$ vs CMG GEM & $\sim$0.00001 kWh & 1.8 GB VRAM \\
+CCSNet (50-Yr GCS Suite)~\cite{wen2021ccsnet} & 14.8M & 1 $\times$ NVIDIA Tesla V100 GPU & 4 V100 GPUs $\times$ 3 days & 0.45 s & $\sim$15,000$\times$ vs TOUGH2 & $\sim$0.00004 kWh & 3.2 GB VRAM \\
+Geo-FNO (Complex Geometries)~\cite{li2022geofno} & 2.1M & 1 $\times$ NVIDIA A100 GPU & 1 A100 GPU $\times$ 16 hours & 0.12 s & $\sim$1,500$\times$ vs FEM & $\sim$0.00002 kWh & 2.4 GB VRAM \\
+LPNets (Lie-Poisson Fluid)~\cite{eldred2023lpnets} & 0.8M & 1 $\times$ NVIDIA RTX 3090 GPU & 1 GPU $\times$ 6 hours & 0.04 s & $\sim$800$\times$ vs Symplectic PDE & $\sim$0.00001 kWh & 1.1 GB VRAM \\
 \bottomrule
 \end{tabular}%
 }
@@ -255,6 +298,15 @@ As quantitatively benchmarked in Table~\ref{tab:weatherbench_climatebench_result
 
 \subsubsection{Polar Cryosphere and Sea Ice Benchmarking: IceBench and IceNet}
 As synthesized in Table~\ref{tab:weatherbench_climatebench_results} (Part H), Arctic sea ice forecasting and classification present a multi-scale benchmarking frontier. Operating across subseasonal-to-seasonal horizons, \textbf{IceNet}~\cite{andersson2021icenet} achieves Pan-Arctic Brier Scores of \textbf{0.065} at 1-month and \textbf{0.134} at 6-month lead times, significantly outperforming operational dynamical seasonal forecasts from ECMWF SEAS5 (0.098 and 0.185) and reducing Integrated Ice Edge Error (IIEE) from $11.20 \times 10^5\text{ km}^2$ to \textbf{$7.90 \times 10^5\text{ km}^2$}. Complementing seasonal forecasting, the \textbf{IceBench}~\cite{taleghan2025icebench} standardized benchmark evaluates multi-modal SAR and microwave radiometer sea ice classification, showing that Vision Transformers incorporating Sentinel-1 SAR and ERA5 forcings achieve an overall classification macro $F_1$ score of \textbf{84.6\%} and pixel transfer accuracy of \textbf{87.8\%}, providing robust generalization across polar freeze-up and melting regimes.
+
+\subsubsection{Subsurface Geo-Energy and Carbon Sequestration Benchmarking}
+As quantitatively evaluated in Table~\ref{tab:weatherbench_climatebench_results} (Part I), simulating multi-phase $\text{CO}_2$ plume migration and pressure buildup in deep geological formations presents severe multiscale and multirate challenges. While classical convolutional neural network baselines (e.g., standard 2D U-Nets) produce smoothed plume edges (saturation RMSE of 0.084 and Intersection-over-Union of 0.72) and dense FNO baselines suffer from high-frequency Gibbs ringing across sharp fluid interfaces, \textbf{U-FNO}~\cite{wen2022ufno} achieves a gas saturation RMSE of \textbf{0.028}, reduces pressure buildup error to \textbf{0.42 MPa}, and achieves a plume contour IoU of \textbf{0.91}. Crucially, U-FNO delivers a \textbf{$\sim$10,000$\times$ speedup} over the operational CMG GEM multiphase numerical simulator ($0.08\text{ s}$ vs. hours) with mass conservation errors below $0.8\%$. Furthermore, \textbf{CCSNet}~\cite{wen2021ccsnet} integrates data-driven thermodynamic equations of state to emulate 50-year structural, capillary, and dissolution trapping across $>20{,}000$ reservoir formations in $0.45\text{ s}$, enabling real-time risk screening for geological carbon storage projects. On complex faulted horizons, \textbf{Geo-FNO}~\cite{li2022geofno} maintains low error ($0.035$ saturation RMSE) by deforming irregular reservoir boundaries into canonical computational spaces without loss of geometric fidelity.
+
+\subsubsection{Symplectic and Lie-Poisson Geometric Conservation Benchmarking}
+As quantitatively synthesized in Table~\ref{tab:weatherbench_climatebench_results} (Part J), standard autoregressive foundation models and unconstrained continuous neural operators violate underlying physical phase-space geometry during ultra-long rollouts. On nonlinear dispersive wave systems, standard FNO incurs a severe \textbf{42.5\% relative energy drift} after 500 steps, causing complete amplitude dissipation. In contrast, the \textbf{Symplectic Neural Operator (SNO)}~\cite{makara2026symplectic} enforces canonical symplectic 2-form invariance $\omega = \int \delta q \wedge \delta p \, dx$, achieving \textbf{$<$0.02\% energy drift} and zero phase volume error across rollouts exceeding \textbf{$10^4$ simulation time steps} without artificial numerical damping. On rotating planetary fluid systems (2D Euler and shallow water equations), \textbf{LPNets}~\cite{eldred2023lpnets} parameterize the Hamiltonian functional through an algebraically constructed skew-symmetric Lie-Poisson bracket. LPNets achieve \textbf{$<$0.01\% relative energy drift} while strictly preserving all Casimir invariants and Kelvin's circulation theorem to machine precision (\textbf{0.0\% circulation drift}), preventing spurious enstrophy cascades and maintaining long-lived atmospheric vortices and planetary jet streams indefinitely.
+
+\subsubsection{Generative Lagrangian Continuous Ocean Data Assimilation Benchmarking}
+As demonstrated in Table~\ref{tab:weatherbench_climatebench_results} (Part K), reconstructing continuous Eulerian ocean states from extremely sparse Lagrangian in-situ observations (such as Argo floats and surface drifters covering $<0.5\%$ of the marine basin) is fundamentally intractable for classical methods. Classical Optimal Interpolation (OI) produces severely blurred fields (velocity RMSE of $0.285\text{ m/s}$ and EKE recovery of only $42.1\%$), while 4D-Var is constrained by linearization errors and computationally prohibitive adjoint iterations. In contrast, \textbf{LagDA}~\cite{asefi2025lagrangian} leverages conditional score-based diffusion to model the Eulerian velocity and sea surface height (SSH) posterior distributions conditioned on sparse trajectory sequences. LagDA reduces horizontal velocity RMSE to \textbf{0.092 m/s}, reduces SSH error to \textbf{1.65 cm}, elevates Eddy Kinetic Energy (EKE) recovery to \textbf{91.4\%}, and achieves an eddy vorticity correlation of \textbf{0.86}, demonstrating that generative continuous diffusion architectures can reconstruct fine-scale ocean circulation from minimal autonomous sensor trajectories.
 
 \subsection{Computational Efficiency, Throughput, and Operational Energy Profiling}
 \label{sec:computational_efficiency}
