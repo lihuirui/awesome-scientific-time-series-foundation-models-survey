@@ -426,6 +426,7 @@
 ## Iteration 8: Geo-Energy Reservoirs, Symplectic/Lie-Poisson Operators & Sparse Lagrangian Assimilation (P7 $\to$ P8)
 - **Timestamp**: 2026-09-26T22:50:00+08:00
 - **Phase**: P7 $\to$ P8 (Continuous Updates, Geo-Energy Multiphase Reservoirs, Lie-Poisson Symplectic Invariants, Sparse In-Situ Foundation Assimilation)
+- **Git Commit**: `8327eed`
 - **Remote Repository**: `https://github.com/lihuirui/awesome-scientific-time-series-foundation-models-survey`
 
 ### Quantitative Metrics
