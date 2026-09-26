@@ -295,7 +295,7 @@
 ## Iteration 6: Continuous-Discrete Invariants, Convective Downscaling & Closed-Loop Science Agents (P5 $\to$ P6)
 - **Timestamp**: 2026-09-26T12:50:00+08:00
 - **Phase**: P5 $\to$ P6 (Continuous Updates, Lie Group Symmetries & Continuous Physics Invariants, Convective-Scale Emulation & Generative Downscaling, Closed-Loop Autonomous Science Agents, Expansion to 59 Studies)
-- **Git Commit**: `pending`
+- **Git Commit**: `df09100`
 - **Remote Repository**: `https://github.com/lihuirui/awesome-scientific-time-series-foundation-models-survey`
 
 ### Quantitative Metrics
