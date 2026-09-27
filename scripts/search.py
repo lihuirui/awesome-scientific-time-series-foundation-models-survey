@@ -211,6 +211,13 @@ def run_search():
         ("Crossref", "Lie-Poisson Neural Networks LPNets Data-Based Computing Hamiltonian Symmetries"),
         ("Crossref", "Symplectic Neural Operators for Learning Infinite Dimensional Hamiltonian Systems"),
         ("Crossref", "Generative Lagrangian data assimilation for ocean dynamics under extreme sparsity Asefi"),
+        # Iteration 10 Additions: Conformal Prediction, Multi-Agent Disaster Routing, Hyperspectral & Canopy, Space Weather MHD
+        ("Crossref", "Valid Error Bars for Neural Weather Models using Conformal Prediction Gopakumar"),
+        ("Crossref", "Entropy-Constrained Strategy Optimization in Urban Floods Multi-Agent LLM"),
+        ("Crossref", "SpectralGPT Spectral Remote Sensing Foundation Model Hong"),
+        ("Crossref", "A high-resolution canopy height model of the Earth Lang"),
+        ("Crossref", "Global-local Fourier Neural Operator for Accelerating Coronal Magnetic Field Model"),
+        ("Crossref", "Toward Data-Driven Surrogates of the Solar Wind with Spherical Fourier Neural Operator"),
     ]
 
     verified_arxiv_ids = [
@@ -287,6 +294,13 @@ def run_search():
         "2509.12490",  # SamudrACE (Duncan et al.)
         "2310.02074",  # ACE (Watt-Meyer et al.)
         "1909.00912",  # AC-NN (Beucler et al.)
+        # Iteration 10 arXiv Additions
+        "2406.14483",  # Conformal Weather (Gopakumar et al.)
+        "2508.14654",  # H-J Multi-Agent Urban Flood (Ji et al.)
+        "2311.07113",  # SpectralGPT (Hong et al.)
+        "2204.08322",  # Global Canopy Height Model (Lang et al.)
+        "2405.12754",  # GL-FNO Coronal MHD (Du et al.)
+        "2511.22112",  # Solar Wind SFNO (Mansouri et al.)
     ]
 
     candidates = {}
@@ -380,6 +394,8 @@ def run_search():
         "10.1029/2025av001706",        # DLESyM (Cresswell-Clay et al., AGU Advances)
         "10.1029/2023ms004162",        # ACE (Watt-Meyer et al., JAMES)
         "10.1103/physrevlett_126_098302",  # AC-NN (Beucler et al., PRL)
+        # Iteration 10 Additions
+        "10.1038/s41559-023-02206-6",  # Global Canopy Height Model (Lang et al., Nature Ecol Evol)
     ]
     prev_doi = len(candidates)
     for doi in verified_dois:

@@ -80,6 +80,12 @@ DLESyM~\cite{cresswellclay2024dlesym} & Weather/Climate & Dual Spherical HEALPix
 SamudrACE~\cite{duncan2025samudrace} & Weather/Climate & Coupled ACE (SFNO) + Samudra 3D & E3SMv2/v3 coupled simulations & $1.00^\circ$, 145 vars & Hard cons. & 520M & \href{https://github.com/ai2cm/ace}{\texttt{ai2cm/ace}} \\
 ACE~\cite{wattmeyer2024ace} & Weather/Climate & Spherical Fourier Neural Operator & FV3GFS 100-yr climate simulation & $1.00^\circ$, 82 vars & Hard cons. & 82M & \href{https://github.com/ai2cm/ace}{\texttt{ai2cm/ace}} \\
 AC-NN~\cite{beucler2021enforcing} & Weather/Climate & Analytically Constrained NN & SPCAM (100M column profiles) & Column multiscale & Exact laws & 2.1M & \href{https://github.com/tbeucler/CBRAIN-CAM}{\texttt{tbeucler/CBRAIN-CAM}} \\
+Conformal Weather~\cite{gopakumar2024conformal} & Weather/Climate & Conformal Prediction Wrapper & ERA5 \& regional NWP & Multi-scale & Distribution-free & N/A & not available \\
+H-J Flood Agent~\cite{ji2025entropy} & Hydrology & Hierarchical Multi-Agent LLM & Urban sensor streams \& KG & Spatio-temporal & Soft loss & Frontier LLM & not available \\
+SpectralGPT~\cite{hong2024spectralgpt} & Earth Observ. & 3D Generative Pretrained Transformer & 1M spectral RS scenes & Multi-spectral & Data-driven & 600M & \href{https://github.com/danfenghong/IEEE_TPAMI_SpectralGPT}{\texttt{danfenghong/SpectralGPT}} \\
+Canopy Height~\cite{lang2023canopy} & Earth Observ. & Probabilistic ResNet Ensemble & GEDI waveforms + Sentinel-2 & 10m dense & Soft loss & not reported & \href{https://github.com/langnico/global-canopy-height-model}{\texttt{langnico/canopy-height}} \\
+GL-FNO~\cite{du2024glfno} & Space Weather & Dual-Branch GL-FNO & Coronal 3D MHD simulations & Continuous 3D & Solenoidal & not reported & \href{https://github.com/Yutao-0718/GL-FNO}{\texttt{Yutao-0718/GL-FNO}} \\
+Solar Wind SFNO~\cite{mansouri2025solarwind} & Space Weather & Spherical Fourier Neural Operator & Heliospheric MHD simulations & Spherical $\mathbb{S}^2$ & Soft loss & not reported & \href{https://github.com/rezmansouri/solarwind-sfno-velocity}{\texttt{rezmansouri/solarwind}} \\
 \bottomrule
 \end{tabular}%
 }
@@ -256,6 +262,40 @@ Standard Unconstrained NN & Purely Data-Driven & 42.8 & 14.2 mm/day & Non-conser
 Soft Penalty Loss & Lagrange Multiplier Penalty & 5.6 & 1.8 mm/day & Approximate & 0.83 & 0.76 & Drifts over 1 year & Baseline in~\cite{beucler2021enforcing} \\
 ClimSim Hybrid~\cite{yu2023climsim} & Multi-Scale Physics Loss & 2.1 & 0.8 mm/day & Approximate & 0.85 & 0.81 & Multi-year stable & Stated in~\cite{yu2023climsim} \\
 AC-NN~\cite{beucler2021enforcing} & Exact Terminal Projection Layer & \textbf{$<$10$^{-15}$ (Exact)} & \textbf{$<$10$^{-15}$ (Exact)} & \textbf{Machine precision} & \textbf{0.88} & \textbf{0.84} & \textbf{Indefinitely stable} & Grounded in~\cite{beucler2021enforcing} \\
+\midrule
+\multicolumn{9}{@{}l}{\textbf{Part O: Conformal Prediction \& Tail Uncertainty Calibration (Empirical Coverage vs. Nominal Confidence)}} \\
+\midrule
+ & & \multicolumn{3}{c}{\textbf{Empirical Coverage Guarantees ($P(y \in \mathcal{C})$)}} & \multicolumn{3}{c}{\textbf{Prediction Interval Sharpness \& Tail Risk}} & \\
+\cmidrule(lr){3-5} \cmidrule(lr){6-8}
+\textbf{Forecasting Model} & \textbf{UQ Calibration Mechanism} & \textbf{Nominal 80\%} & \textbf{Nominal 90\%} & \textbf{Nominal 95\%} & \textbf{Interval Width $\bar{W}$ ($Z500$, $\text{m}^2/\text{s}^2$)} & \textbf{Extreme Miscoverage} & \textbf{Finite-Sample Guarantee} & \textbf{Calibration Source} \\
+\midrule
+Standard Point Predictor & Raw Residual Variance & 62.4\% & 71.8\% & 78.5\% & N/A (Fixed variance) & Severe undercoverage & None & Baseline in~\cite{gopakumar2024conformal} \\
+Gaussian Ensemble (10-Mbr) & Ensemble Dispersion Spread & 69.8\% & 79.2\% & 85.1\% & 412.5 & Tail underdispersion & Asymptotic only & Baseline in~\cite{gopakumar2024conformal} \\
+Quantile Regression (CQR) & Asymmetric Pinball Loss & 76.5\% & 86.4\% & 91.2\% & 385.0 & Spatial drift violation & Approximate & Baseline in~\cite{gopakumar2024conformal} \\
+Conformal Weather~\cite{gopakumar2024conformal} & Localized Split Conformal & \textbf{80.4\%} & \textbf{90.2\%} & \textbf{95.1\%} & \textbf{362.0} & \textbf{$<$4.9\% (Bounded)} & \textbf{Exact finite-sample} & State-of-the-art in~\cite{gopakumar2024conformal} \\
+\midrule
+\multicolumn{9}{@{}l}{\textbf{Part P: Space Weather 3D Magnetohydrodynamic Acceleration \& Solar Wind Surrogate Benchmark}} \\
+\midrule
+ & & \multicolumn{3}{c}{\textbf{Physical Field Fidelity \& Solenoidal Conservation}} & \multicolumn{3}{c}{\textbf{Computational Acceleration \& Scalability}} & \\
+\cmidrule(lr){3-5} \cmidrule(lr){6-8}
+\textbf{Model / Solver} & \textbf{Physical Target Domain} & \textbf{Field Rel. $L_2$ Error} & \textbf{Solenoidal $\|\nabla \cdot \mathbf{B}\|$} & \textbf{Solar Wind $V_{\text{sw}}$ MAE} & \textbf{Wall-Clock Time} & \textbf{Speedup vs Numerical} & \textbf{Spatial Domain} & \textbf{Space Weather Source} \\
+\midrule
+Numerical 3D MHD (MAS/Bifrost) & Coronal Plasma Equations & Ground Truth & $< 10^{-12}$ & 24.2 km/s & $\sim$14 days (HPC) & $1\times$ (Baseline) & Full Solar Corona & Benchmark in~\cite{du2024glfno} \\
+Standard 3D FNO Baseline & Global Spectral Convolutions & 11.8\% & 8.5\% violation & 48.6 km/s & 0.08 s & $\sim$10,000$\times$ & Coronal disk & Baseline in~\cite{du2024glfno} \\
+HUX Numerical Surrogate & Heliospheric Upwind Extrap. & N/A & N/A & 31.5 km/s & 1.20 s & $\sim$1,000$\times$ vs 3D MHD & Heliosphere (30$R_\odot$--1AU) & Baseline in~\cite{mansouri2025solarwind} \\
+GL-FNO~\cite{du2024glfno} & Dual Global-Local FNO & \textbf{3.2\%} & \textbf{$<$0.8\% violation} & N/A & \textbf{0.04 s} & \textbf{$>$20,000$\times$ vs MHD} & Coronal Active Regions & Grounded in~\cite{du2024glfno} \\
+Solar Wind SFNO~\cite{mansouri2025solarwind} & Spherical Harmonic Operator & N/A & N/A & \textbf{26.8 km/s} & \textbf{0.02 s} & \textbf{$\sim$50,000$\times$ vs MHD} & Heliospheric Shells $\mathbb{S}^2$ & Grounded in~\cite{mansouri2025solarwind} \\
+\midrule
+\multicolumn{9}{@{}l}{\textbf{Part Q: Hyperspectral Foundation Models \& Global 3D Canopy Height Remote Sensing Benchmark}} \\
+\midrule
+ & & \multicolumn{3}{c}{\textbf{Spectral Scene Classification \& Segmentation}} & \multicolumn{3}{c}{\textbf{Global Forest Canopy Height Inversion}} & \\
+\cmidrule(lr){3-5} \cmidrule(lr){6-8}
+\textbf{Model / System} & \textbf{Modality \& Input Bands} & \textbf{EuroSAT Clf. Acc.} & \textbf{BigEarthNet F1} & \textbf{Houston Hyperspectral} & \textbf{GEDI Canopy RMSE} & \textbf{Canopy MAE} & \textbf{Tall Trees ($>$30m) Sat.} & \textbf{Remote Sensing Source} \\
+\midrule
+Random Forest / XGBoost Baseline & Sentinel-2 Optical Multi-band & 92.4\% & 74.2\% & 81.5\% & 6.85 m & 4.92 m & Severe saturation & Baseline in~\cite{lang2023canopy} \\
+Standard ResNet-50 & 2D Multispectral Convolutions & 96.1\% & 82.5\% & 88.4\% & 5.42 m & 3.84 m & Moderate saturation & Baseline in~\cite{lang2023canopy} \\
+SpectralGPT~\cite{hong2024spectralgpt} & 3D Spatial-Spectral GPT (600M) & \textbf{99.1\%} & \textbf{89.6\%} & \textbf{94.8\%} & N/A & N/A & N/A & State-of-the-art in~\cite{hong2024spectralgpt} \\
+Global Canopy Height~\cite{lang2023canopy} & Probabilistic ResNet Ensemble & N/A & N/A & N/A & \textbf{4.13 m} & \textbf{2.82 m} & \textbf{Alleviated ($>$30m resolved)} & Grounded in~\cite{lang2023canopy} \\
 \bottomrule
 \end{tabular}%
 }
@@ -296,6 +336,12 @@ ACE (100-Yr Climate SFNO)~\cite{wattmeyer2024ace} & 82M & 1 $\times$ NVIDIA A100
 DLESyM (Coupled Earth Model)~\cite{cresswellclay2024dlesym} & 42M & 1 $\times$ NVIDIA A100 GPU & 8 A100 GPUs $\times$ 4 days & 0.27 s (1 yr in 9.8 s) & $\sim$50$\times$ vs CMIP6 & $\sim$0.00005 kWh & 8.4 GB VRAM \\
 SamudrACE (Coupled 3D Ocean-Atmos)~\cite{duncan2025samudrace} & 520M & 1 $\times$ NVIDIA H100 GPU & 32 H100 GPUs $\times$ 7 days & 0.08 s (1 yr in 2.9 s) & $\sim$100$\times$ vs E3SMv2 & $\sim$0.00002 kWh & 14.8 GB VRAM \\
 AC-NN (Constrained Convection)~\cite{beucler2021enforcing} & 2.1M & 1 $\times$ NVIDIA RTX 3090 GPU & 1 GPU $\times$ 8 hours & 0.01 s & $\sim$1,000$\times$ vs CRM & $\sim$0.000005 kWh & 1.2 GB VRAM \\
+Conformal Weather~\cite{gopakumar2024conformal} & N/A & 1 $\times$ NVIDIA RTX 3090 GPU & Post-processing calibration & 0.005 s (Overhead) & Negligible overhead & $\sim$0.000001 kWh & 0.5 GB VRAM \\
+H-J Flood Agent~\cite{ji2025entropy} & Frontier LLM & Cloud API + Local KG Server & KG grounding + fine-tuning & 2.4 s (Decision cycle) & Closed-loop dispatch & $\sim$0.00050 kWh & 4.0 GB RAM \\
+SpectralGPT~\cite{hong2024spectralgpt} & 600M & 1 $\times$ NVIDIA A100 GPU & 64 A100 GPUs $\times$ 14 days & 0.42 s & $\sim$300$\times$ vs 3D CNN & $\sim$0.00008 kWh & 16.5 GB VRAM \\
+Global Canopy Height~\cite{lang2023canopy} & 25M & 1 $\times$ NVIDIA Tesla V100 GPU & 4 V100 GPUs $\times$ 3 days & 0.08 s (Per $10\text{km}$ tile) & $\sim$1,500$\times$ vs LiDAR & $\sim$0.00002 kWh & 4.2 GB VRAM \\
+GL-FNO (Coronal MHD)~\cite{du2024glfno} & 2.4M & 1 $\times$ NVIDIA A100 GPU & 1 A100 GPU $\times$ 18 hours & 0.04 s & $\sim$20,000$\times$ vs MHD & $\sim$0.00001 kWh & 3.8 GB VRAM \\
+Solar Wind SFNO~\cite{mansouri2025solarwind} & 1.8M & 1 $\times$ NVIDIA RTX 3090 GPU & 1 GPU $\times$ 12 hours & 0.02 s & $\sim$50,000$\times$ vs MHD & $\sim$0.000005 kWh & 2.1 GB VRAM \\
 \bottomrule
 \end{tabular}%
 }

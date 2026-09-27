@@ -344,6 +344,12 @@ def plot_weather_foundation_timeline():
         ("SamudrACE", "2025-09", "Coupled 3D Ocean-Atmos", 2025.72, -2.6, "#4F46E5"),
         ("SciTS", "2025-10", "Scientific TS LLM", 2025.80, 1.6, "#2563EB"),
         ("SNO", "2026-05", "Symplectic Operator", 2026.38, 2.1, "#6366F1"),
+        ("SpectralGPT", "2023-11", "3D Spectral GPT", 2023.92, -2.0, "#0D9488"),
+        ("GL-FNO", "2024-05", "Coronal MHD FNO", 2024.42, -1.9, "#EA580C"),
+        ("Conformal Weather", "2024-06", "Conformal Bounds", 2024.46, 2.3, "#059669"),
+        ("Canopy Height", "2023-04", "10m GEDI Ensemble", 2023.32, 2.2, "#059669"),
+        ("H-J Floods", "2025-08", "Hierarchical Agent", 2025.65, 2.4, "#2563EB"),
+        ("SolarWind SFNO", "2025-11", "Heliospheric SFNO", 2025.90, -1.9, "#EA580C"),
     ]
 
     fig, ax = plt.subplots(figsize=(15.5, 7.5), dpi=300)

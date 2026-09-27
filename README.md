@@ -1,7 +1,7 @@
 # Awesome Scientific Multimodal Time Series Foundation Models and Reasoning LLMs
 ## 科学多模态时序大模型与科学推理大模型前沿进展精选
 
-[![Survey PDF](https://img.shields.io/badge/Paper-PDF-red.svg)](paper/main.pdf) [![PRISMA Included](https://img.shields.io/badge/PRISMA%20Included-77%20papers-brightgreen.svg)](#prisma-systematic-review-statistics) [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE) [![Maintenance](https://img.shields.io/badge/Maintained%20by-Antigravity%20CLI-purple.svg)](#how-this-survey-is-maintained)
+[![Survey PDF](https://img.shields.io/badge/Paper-PDF-red.svg)](paper/main.pdf) [![PRISMA Included](https://img.shields.io/badge/PRISMA%20Included-83%20papers-brightgreen.svg)](#prisma-systematic-review-statistics) [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE) [![Maintenance](https://img.shields.io/badge/Maintained%20by-Antigravity%20CLI-purple.svg)](#how-this-survey-is-maintained)
 
 ## Overview / 项目概述
 
@@ -28,12 +28,12 @@ The taxonomy categorizes the literature across four core dimensions:
 
 ![PRISMA 2020 Flow](paper/figures/prisma_flow.png)
 
-- **Records Identified across Academic APIs**: 880
-- **Unique Candidates Evaluated**: 662
-- **Title/Abstract Excluded**: 156
-- **Full-Text Assessed for Eligibility**: 506
-- **Full-Text Excluded (narrow/regional)**: 429
-- **Studies Rigorously Included**: 77
+- **Records Identified across Academic APIs**: 944
+- **Unique Candidates Evaluated**: 719
+- **Title/Abstract Excluded**: 171
+- **Full-Text Assessed for Eligibility**: 548
+- **Full-Text Excluded (narrow/regional)**: 465
+- **Studies Rigorously Included**: 83
 
 ## Research Landscape & Milestone Timeline
 
@@ -205,6 +205,11 @@ The taxonomy categorizes the literature across four core dimensions:
   - *Architecture*: `Analytically Constrained Neural Network (AC-NN) for subgrid convection` | *Params*: `2.1M` | *Physics*: `Hard constraint projection`
   - *Links*: [Paper / DOI](https://doi.org/10.1103/PhysRevLett.126.098302) | [![Code](https://img.shields.io/badge/Code-GitHub-blue.svg)](https://github.com/tbeucler/CBRAIN-CAM)
 
+- **Valid Error Bars for Neural Weather Models using Conformal Prediction** (arXiv:2406.14483 2024)
+  - *Authors*: Gopakumar, Vignesh, Oskarsson, Joel, Gray, Ander et al.
+  - *Architecture*: `Model-Agnostic Conformal Prediction Wrapper` | *Params*: `not reported` | *Physics*: `Soft physics loss`
+  - *Links*: [Paper / DOI](https://arxiv.org/abs/2406.14483) | `[Code not available]`
+
 ### Polar Cryosphere & Sea Ice Dynamics (极地冰冻圈与海冰动力学大模型)
 
 - **IceBench: A Benchmark for Deep Learning based Sea Ice Type Classification** (arXiv:2503.17877 2025)
@@ -279,6 +284,16 @@ The taxonomy categorizes the literature across four core dimensions:
   - *Architecture*: `Scale-Adaptive Joint Embedding Predictive Architecture (JEPA)` | *Params*: `125M` | *Physics*: `Purely data-driven`
   - *Links*: [Paper / DOI](https://arxiv.org/abs/2412.14123) | [![Code](https://img.shields.io/badge/Code-GitHub-blue.svg)](https://github.com/gastruc/AnySat)
 
+- **SpectralGPT: Spectral Remote Sensing Foundation Model** (IEEE TPAMI 2024)
+  - *Authors*: Hong, Danfeng, Zhang, Bing, Li, Xuyang et al.
+  - *Architecture*: `3D Generative Pretrained Transformer (3D GPT)` | *Params*: `600M` | *Physics*: `Purely data-driven`
+  - *Links*: [Paper / DOI](https://arxiv.org/abs/2311.07113) | [![Code](https://img.shields.io/badge/Code-GitHub-blue.svg)](https://github.com/danfenghong/IEEE_TPAMI_SpectralGPT)
+
+- **A high-resolution canopy height model of the Earth** (Nature Ecology & Evolution 2023)
+  - *Authors*: Lang, Nico, Jetz, Walter, Schindler, Konrad et al.
+  - *Architecture*: `Probabilistic Residual Ensemble CNN` | *Params*: `not reported` | *Physics*: `Soft physics loss`
+  - *Links*: [Paper / DOI](https://doi.org/10.1038/s41559-023-02206-6) | [![Code](https://img.shields.io/badge/Code-GitHub-blue.svg)](https://github.com/langnico/global-canopy-height-model)
+
 ### Hydrology & Extreme Flood Modeling (水文与极端洪水大模型)
 
 - **Global prediction of extreme floods in ungauged watersheds** (Nature 2024)
@@ -290,6 +305,11 @@ The taxonomy categorizes the literature across four core dimensions:
   - *Authors*: Kratzert, Frederik, Nearing, Grey, Addor, Nans et al.
   - *Architecture*: `Extended Large-Sample Benchmark Suite (LSTM / NeuralHydrology)` | *Params*: `not reported` | *Physics*: `Physically grounded catchment water balance`
   - *Links*: [Paper / DOI](https://doi.org/10.1038/s41597-023-01975-w) | [![Code](https://img.shields.io/badge/Code-GitHub-blue.svg)](https://github.com/kratzert/Caravan)
+
+- **Entropy-Constrained Strategy Optimization in Urban Floods: A Multi-Agent Framework with LLM and Knowledge Graph Integration** (arXiv:2508.14654 2025)
+  - *Authors*: Ji, Peilin, Xue, Xiao, Wang, Simeng et al.
+  - *Architecture*: `Hierarchical Multi-Agent LLM (H-J) with Knowledge Graphs` | *Params*: `not reported` | *Physics*: `Soft physics loss`
+  - *Links*: [Paper / DOI](https://arxiv.org/abs/2508.14654) | `[Code not available]`
 
 ### Ocean Dynamics & Marine Forecasting (海洋动力与数值预报)
 
@@ -358,6 +378,16 @@ The taxonomy categorizes the literature across four core dimensions:
   - *Authors*: Roy, Sujit, Schmude, Johannes, Lal, Rohit et al.
   - *Architecture*: `Spatio-Temporal Transformer with Spectral Gating and Long-Short Attention` | *Params*: `366M` | *Physics*: `Soft physics loss`
   - *Links*: [Paper / DOI](https://arxiv.org/abs/2508.14112) | `[Code not available]`
+
+- **Global-local Fourier Neural Operator for Accelerating Coronal Magnetic Field Model** (arXiv:2405.12754 2024)
+  - *Authors*: Du, Yutao, Li, Qin, Gnanasambandam, Raghav et al.
+  - *Architecture*: `Dual-Branch Global-Local Fourier Neural Operator (GL-FNO)` | *Params*: `not reported` | *Physics*: `Soft physics loss`
+  - *Links*: [Paper / DOI](https://arxiv.org/abs/2405.12754) | [![Code](https://img.shields.io/badge/Code-GitHub-blue.svg)](https://github.com/Yutao-0718/GL-FNO)
+
+- **Toward Data-Driven Surrogates of the Solar Wind with Spherical Fourier Neural Operator** (IEEE ICMLA / arXiv:2511.22112 2025)
+  - *Authors*: Mansouri, Reza, Kempton, Dustin, Riley, Pete et al.
+  - *Architecture*: `Spherical Fourier Neural Operator (SFNO)` | *Params*: `not reported` | *Physics*: `Soft physics loss`
+  - *Links*: [Paper / DOI](https://arxiv.org/abs/2511.22112) | [![Code](https://img.shields.io/badge/Code-GitHub-blue.svg)](https://github.com/rezmansouri/solarwind-sfno-velocity)
 
 ### Scientific Reasoning LLMs & Benchmarks (科学时序推理大模型与基准)
 

@@ -473,3 +473,75 @@ Pushing coupled foundation models to full 3D spatial resolution, Duncan et al.~\
 
 In multi-century benchmark evaluations, SamudrACE achieves an unprecedented simulation throughput of \textbf{1,100 simulated years per day (SYPD)} on a single NVIDIA H100 GPU (over $100\times$ faster than numerical coupled GCMs running across thousands of CPU cores on supercomputing clusters). SamudrACE reproduces the full power spectrum and phase-locking of ENSO SST anomalies in the Nino 3.4 region with an RMSE under $0.32\text{ K}$, demonstrating the viability of coupled neural operators for trillion-parameter ensemble climate sensitivity projections.
 
+\subsection{Distribution-Free Conformal Prediction \& Tail Risk Bounds in Neural Weather Forecasts}
+\label{sec:conformal_prediction_weather}
+While modern deep learning weather models (e.g., Pangu-Weather, GraphCast, FuXi, Aurora) deliver competitive deterministic point forecasts, they routinely fail to provide statistically rigorous, calibrated uncertainty estimates. In operational weather forecasting, downstream decision makers (e.g., aviation routing, agricultural planting, disaster flood evacuation) require reliable confidence intervals with formal guarantees, particularly during high-impact, rare extreme weather events where ensemble spread often collapses.
+
+\subsubsection{Split Conformal Prediction on Continuous Spatio-Temporal Grids}
+Addressing this critical gap, Gopakumar et al.~\cite{gopakumar2024conformal} formulated a distribution-free, model-agnostic conformal prediction framework as a post-processing layer for neural weather models. Consider a pre-trained neural weather model $\hat{f}: \mathcal{X} \to \mathcal{Y}$ mapping historical atmospheric states $\mathbf{x} \in \mathbb{R}^{C \times H \times W}$ to lead-time forecasts $\mathbf{y} \in \mathbb{R}^{C \times H \times W}$. Split conformal prediction partitions the historical verification data into a training set and an independent calibration set $\mathcal{D}_{\text{cal}} = \{(\mathbf{x}_i, \mathbf{y}_i)\}_{i=1}^n$.
+
+For each variable $c$, vertical level $l$, spatial grid point $(h, w)$, and lead time $t$, we define a non-conformity score measuring the discrepancy between the prediction and ground truth. Under absolute residual non-conformity:
+\begin{equation}
+    s_i^{(c, l, h, w, t)} = \left| y_i^{(c, l, h, w, t)} - \hat{f}(\mathbf{x}_i)^{(c, l, h, w, t)} \right|.
+    \label{eq:conformal_score}
+\end{equation}
+Alternatively, for models predicting conditional quantile intervals $[\hat{q}_{\alpha/2}(\mathbf{x}), \hat{q}_{1-\alpha/2}(\mathbf{x})]$ (e.g., via pinball loss or ensemble percentiles), the conformalized quantile regression (CQR) non-conformity score is formulated as:
+\begin{equation}
+    s_i = \max\left( \hat{q}_{\alpha/2}(\mathbf{x}_i) - y_i, \, y_i - \hat{q}_{1-\alpha/2}(\mathbf{x}_i) \right).
+    \label{eq:cqr_score}
+\end{equation}
+Given a desired user-specified coverage level $1 - \alpha \in (0, 1)$ (e.g., $90\%$ or $95\%$), the conformal threshold $\hat{q}_{1-\alpha}$ is computed as the empirical $\lceil (n+1)(1-\alpha) \rceil / n$ quantile of the calibration scores $\{s_1, \dots, s_n\}$:
+\begin{equation}
+    \hat{q}_{1-\alpha} = \text{Quantile}\left( \{s_i\}_{i=1}^n, \, \frac{\lceil (n+1)(1-\alpha) \rceil}{n} \right).
+\end{equation}
+For an unseen test input $\mathbf{x}_{n+1}$, the conformal prediction set is constructed as:
+\begin{equation}
+    \mathcal{C}_{1-\alpha}(\mathbf{x}_{n+1}) = \left[ \hat{f}(\mathbf{x}_{n+1}) - \hat{q}_{1-\alpha}, \, \hat{f}(\mathbf{x}_{n+1}) + \hat{q}_{1-\alpha} \right].
+    \label{eq:conformal_interval}
+\end{equation}
+Under the assumption of exchangeability among calibration and test samples, conformal prediction mathematically guarantees finite-sample marginal coverage:
+\begin{equation}
+    P\left( \mathbf{y}_{n+1} \in \mathcal{C}_{1-\alpha}(\mathbf{x}_{n+1}) \right) \ge 1 - \alpha.
+    \label{eq:conformal_guarantee}
+\end{equation}
+
+\subsubsection{Resolving Spatio-Temporal Non-Exchangeability \& Tail Extremes}
+In numerical weather prediction, physical atmospheric turbulence violates exchangeability due to strong spatial teleconnections, diurnal cycles, and seasonal distribution shifts. Gopakumar et al.~\cite{gopakumar2024conformal} resolve this by introducing:
+\begin{enumerate}
+    \item \textbf{Localized Spatio-Temporal Calibration Bins}: Rather than aggregating global scores, non-conformity distributions are conditioned on geographic clusters (e.g., maritime vs. continental vs. polar regimes) and lead-time horizons ($t \in [1, 10]\text{ days}$), capturing heteroskedastic spatial error variance.
+    \item \textbf{Online Rolling Calibration}: To track seasonal non-stationarity, calibration sets are updated autoregressively over a sliding window $\mathcal{W}_{\text{cal}}$ of preceding days, preserving temporal validity without model retraining.
+\end{enumerate}
+Evaluated on operational limited-area weather forecasts across Northern Europe (Nordic domain) and global ERA5 benchmarks, the conformal framework achieves exact empirical coverage ($90.2\%$ for nominal $90\%$, and $95.1\%$ for nominal $95\%$) across geopotential $Z500$, temperature $T850$, and surface wind fields. This resolves the chronic underdispersion of neural point predictors while maintaining tight prediction interval bandwidths $\bar{W}$, offering a rigorous bridge between black-box foundation models and operational risk assessment.
+
+\subsection{Magnetohydrodynamic Neural Operators \& Coronal Solar Wind Surrogates}
+\label{sec:mhd_neural_operators}
+Space weather phenomena---including solar flares, coronal mass ejections (CMEs), and geomagnetic substorms---are governed by 3D non-linear \textbf{Magnetohydrodynamics (MHD)}. Planetary space environment forecasting requires simulating the coupled plasma-magnetic interaction from the solar photosphere across the solar corona to the Earth's magnetosphere. The ideal 3D MHD equations governing compressible, magnetized astrophysical plasma state $\mathbf{U} = (\rho, \rho\mathbf{u}, \mathbf{B}, E)$ read:
+\begin{align}
+    \frac{\partial \rho}{\partial t} + \nabla \cdot (\rho \mathbf{u}) &= 0, \label{eq:mhd_continuity} \\
+    \frac{\partial (\rho \mathbf{u})}{\partial t} + \nabla \cdot \left( \rho \mathbf{u} \mathbf{u}^T + \left(p + \frac{\|\mathbf{B}\|^2}{2\mu_0}\right) \mathbf{I} - \frac{\mathbf{B}\mathbf{B}^T}{\mu_0} \right) &= \rho \mathbf{g}, \label{eq:mhd_momentum} \\
+    \frac{\partial \mathbf{B}}{\partial t} - \nabla \times (\mathbf{u} \times \mathbf{B}) &= \eta \nabla^2 \mathbf{B}, \label{eq:mhd_induction} \\
+    \nabla \cdot \mathbf{B} &= 0, \label{eq:mhd_solenoidal}
+\end{align}
+where $\rho$ is plasma mass density, $\mathbf{u}$ is plasma bulk velocity, $\mathbf{B}$ is magnetic flux density vector, $p$ is thermal gas pressure, $\mu_0$ is magnetic permeability, $\eta$ is magnetic resistivity, and Eq.~(\ref{eq:mhd_solenoidal}) enforces the divergence-free solenoidal constraint. Traditional numerical MHD solvers (e.g., MAS, BATS-R-US, Bifrost) require millions of CPU core-hours per Carrington rotation ($\sim 27.3\text{ days}$), rendering real-time operational solar storm warnings intractable.
+
+\subsubsection{Global-Local Fourier Neural Operators (GL-FNO)}
+To overcome the extreme computational bottleneck of coronal MHD simulations, Du et al.~\cite{du2024glfno} introduced \textbf{Global-Local Fourier Neural Operators (GL-FNO)}. Coronal magnetic fields exhibit an extreme multiscale dichotomy: macroscale magnetic flux ropes and open-field coronal holes span the entire solar disk ($R_\odot \approx 7 \times 10^5\text{ km}$), while localized magnetic reconnection triggering solar flares occurs within compact active regions ($< 0.05 R_\odot$).
+
+GL-FNO decouples this multiscale problem into a dual-branch spectral operator architecture:
+\begin{enumerate}
+    \item \textbf{Global FNO Branch} ($\mathcal{F}_{\text{global}}$): Ingests spatially downsampled full-disk vector magnetograms $\mathbf{x}_{\text{global}} \in \mathbb{R}^{C \times H_{\text{down}} \times W_{\text{down}}}$, employing low-frequency Fourier spectral convolutions to resolve global magnetic topology, dipolar field orientation, and large-scale open/closed boundary contours.
+    \item \textbf{Local FNO Branch} ($\mathcal{F}_{\text{local}}$): Ingests high-resolution localized active region patches $\mathbf{x}_{\text{local}} \in \mathbb{R}^{C \times H \times W}$, capturing steep magnetic shear angles, current sheets ($\mathbf{J} = \nabla \times \mathbf{B} / \mu_0$), and intense local Lorentz forces $(\mathbf{J} \times \mathbf{B})$.
+\end{enumerate}
+The global and local latent representations are fused via cross-attention gated feature modulation:
+\begin{equation}
+    \mathbf{z}_{\text{fused}} = \mathcal{W}_{\text{local}} \mathbf{z}_{\text{local}} + \gamma \cdot \text{CrossAttn}(\mathbf{z}_{\text{local}}, \mathbf{z}_{\text{global}}),
+\end{equation}
+where $\gamma$ is a learnable gating parameter. GL-FNO enforces the solenoidal constraint Eq.~(\ref{eq:mhd_solenoidal}) by training with a divergence loss penalty $\|\nabla \cdot \mathbf{B}\|_2^2$. In benchmark evaluations against high-fidelity 3D MHD numerical simulations, GL-FNO predicts the complete 3D coronal magnetic field in \textbf{0.04 seconds}, achieving an acceleration of over \textbf{$20{,}000\times$} relative to classical numerical MHD solvers while maintaining a relative $L_2$ magnetic field error below $3.2\%$.
+
+\subsubsection{Spherical Fourier Neural Operators for Heliospheric Solar Wind Surrogates}
+Complementing coronal simulations, Mansouri et al.~\cite{mansouri2025solarwind} developed the first \textbf{Spherical Fourier Neural Operator (SFNO)} surrogate for steady-state solar wind velocity modeling across the inner heliosphere (from $30 R_\odot$ out to Earth's orbit at $1\text{ AU} \approx 215 R_\odot$). Solar wind propagation is modeled across concentric spherical shells $\mathbb{S}^2$, where radial velocity $V_{\text{sw}}(\theta, \phi, r)$ is advected outward by supersonic plasma streams:
+\begin{equation}
+    V_{\text{sw}}(\theta, \phi, r_{k+1}) = \mathcal{K}_{\text{SFNO}} \left( V_{\text{sw}}(\theta, \phi, r_k) \right).
+\end{equation}
+By transforming radial shell slices via spherical harmonics $Y_\ell^m(\theta, \phi)$, the SFNO surrogate captures non-linear stream interaction regions (SIRs) where fast solar wind streams ($> 700\text{ km/s}$) collide with slow ambient wind ($< 400\text{ km/s}$), creating shock waves that drive severe geomagnetic storms. In comparisons against the standard numerical surrogate HUX (Heliospheric Upwind eXtrapolation), the Solar Wind SFNO matches numerical accuracy with mean absolute error $< 28\text{ km/s}$ while executing full heliospheric forecasts in under 20 milliseconds, providing an essential foundation for real-time planetary space weather defense.
+

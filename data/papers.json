@@ -12250,6 +12250,1059 @@
     "screen_date": "2026-09-27"
   },
   {
+    "bibkey": "gopakumar2024conformal",
+    "title": "Valid Error Bars for Neural Weather Models using Conformal Prediction",
+    "authors": [
+      "Gopakumar, Vignesh",
+      "Oskarsson, Joel",
+      "Gray, Ander",
+      "Zanisi, Lorenzo",
+      "Pamela, Stanislas",
+      "Giles, Daniel",
+      "Kusner, Matt",
+      "Deisenroth, Marc"
+    ],
+    "year": 2024,
+    "venue": "arXiv:2406.14483",
+    "doi_or_arxiv": "https://arxiv.org/abs/2406.14483",
+    "arxiv_id": "2406.14483",
+    "domain": "Weather/Climate",
+    "modality": "Gridded reanalysis & Regional NWP (ERA5, Nordic domain)",
+    "backbone": "Model-Agnostic Conformal Prediction Wrapper",
+    "pretraining_data": "ERA5 & regional atmospheric reanalysis",
+    "physics_integration": "Soft physics loss",
+    "role_of_llm": "None",
+    "lead_time_or_task": "Statistically valid finite-sample error bounds and calibrated uncertainty for all variables and lead times",
+    "model_size": "not reported",
+    "code_url": "not available",
+    "quality_score": 11,
+    "status": "included",
+    "exclusion_reason": null,
+    "screen_date": "2026-09-27"
+  },
+  {
+    "bibkey": "ji2025entropy",
+    "title": "Entropy-Constrained Strategy Optimization in Urban Floods: A Multi-Agent Framework with LLM and Knowledge Graph Integration",
+    "authors": [
+      "Ji, Peilin",
+      "Xue, Xiao",
+      "Wang, Simeng",
+      "Yan, Wenhao"
+    ],
+    "year": 2025,
+    "venue": "arXiv:2508.14654",
+    "doi_or_arxiv": "https://arxiv.org/abs/2508.14654",
+    "arxiv_id": "2508.14654",
+    "domain": "Hydrology",
+    "modality": "In-situ stations & Urban hydrology / spatio-temporal graphs",
+    "backbone": "Hierarchical Multi-Agent LLM (H-J) with Knowledge Graphs",
+    "pretraining_data": "Real-world urban topology, hydrodynamic sensor time series & domain KG",
+    "physics_integration": "Soft physics loss",
+    "role_of_llm": "Autonomous Agent",
+    "lead_time_or_task": "Closed-loop emergency dispatch, evacuation routing, and traffic control under extreme flood surges",
+    "model_size": "not reported",
+    "code_url": "not available",
+    "quality_score": 11,
+    "status": "included",
+    "exclusion_reason": null,
+    "screen_date": "2026-09-27"
+  },
+  {
+    "bibkey": "hong2024spectralgpt",
+    "title": "SpectralGPT: Spectral Remote Sensing Foundation Model",
+    "authors": [
+      "Hong, Danfeng",
+      "Zhang, Bing",
+      "Li, Xuyang",
+      "Li, Yuxuan",
+      "Li, Chenyu",
+      "Yao, Jing",
+      "Yokoya, Naoto",
+      "Li, Hao",
+      "Ghamisi, Pedram",
+      "Jia, Xiuping",
+      "Plaza, Antonio",
+      "Gamba, Paolo",
+      "Benediktsson, Jon Atli",
+      "Chanussot, Jocelyn"
+    ],
+    "year": 2024,
+    "venue": "IEEE TPAMI",
+    "doi_or_arxiv": "https://arxiv.org/abs/2311.07113",
+    "arxiv_id": "2311.07113",
+    "domain": "Remote Sensing / EO",
+    "modality": "Satellite hyperspectral & multispectral imagery (Sentinel-2, airborne cubes)",
+    "backbone": "3D Generative Pretrained Transformer (3D GPT)",
+    "pretraining_data": "1 million spectral RS images spanning diverse resolutions and temporal series",
+    "physics_integration": "Purely data-driven",
+    "role_of_llm": "None",
+    "lead_time_or_task": "Scene classification, semantic segmentation, change detection, and spectral unmixing",
+    "model_size": "600M",
+    "code_url": "https://github.com/danfenghong/IEEE_TPAMI_SpectralGPT",
+    "quality_score": 12,
+    "status": "included",
+    "exclusion_reason": null,
+    "screen_date": "2026-09-27"
+  },
+  {
+    "bibkey": "lang2023canopy",
+    "title": "A high-resolution canopy height model of the Earth",
+    "authors": [
+      "Lang, Nico",
+      "Jetz, Walter",
+      "Schindler, Konrad",
+      "Wegner, Jan Dirk"
+    ],
+    "year": 2023,
+    "venue": "Nature Ecology & Evolution",
+    "doi": "10.1038/s41559-023-02206-6",
+    "doi_or_arxiv": "https://doi.org/10.1038/s41559-023-02206-6",
+    "arxiv_id": "2204.08322",
+    "domain": "Remote Sensing / EO",
+    "modality": "Satellite imagery & Spaceborne LiDAR waveforms (Sentinel-2 + GEDI)",
+    "backbone": "Probabilistic Residual Ensemble CNN",
+    "pretraining_data": "Global GEDI LiDAR waveform profiles and Sentinel-2 multi-spectral temporal composites",
+    "physics_integration": "Soft physics loss",
+    "role_of_llm": "None",
+    "lead_time_or_task": "10m wall-to-wall global canopy height and carbon stock retrieval",
+    "model_size": "not reported",
+    "code_url": "https://github.com/langnico/global-canopy-height-model",
+    "quality_score": 12,
+    "status": "included",
+    "exclusion_reason": null,
+    "screen_date": "2026-09-27"
+  },
+  {
+    "bibkey": "du2024glfno",
+    "title": "Global-local Fourier Neural Operator for Accelerating Coronal Magnetic Field Model",
+    "authors": [
+      "Du, Yutao",
+      "Li, Qin",
+      "Gnanasambandam, Raghav",
+      "Du, Mengnan",
+      "Wang, Haimin",
+      "Shen, Bo"
+    ],
+    "year": 2024,
+    "venue": "arXiv:2405.12754",
+    "doi_or_arxiv": "https://arxiv.org/abs/2405.12754",
+    "arxiv_id": "2405.12754",
+    "domain": "Space Weather",
+    "modality": "Solar magnetograms & 3D coronal MHD fields",
+    "backbone": "Dual-Branch Global-Local Fourier Neural Operator (GL-FNO)",
+    "pretraining_data": "3D Magnetohydrodynamic coronal field simulations & SDO/HMI magnetograms",
+    "physics_integration": "Soft physics loss",
+    "role_of_llm": "None",
+    "lead_time_or_task": "Coronal magnetic field simulation, >20,000x acceleration over numerical MHD",
+    "model_size": "not reported",
+    "code_url": "https://github.com/Yutao-0718/GL-FNO",
+    "quality_score": 11,
+    "status": "included",
+    "exclusion_reason": null,
+    "screen_date": "2026-09-27"
+  },
+  {
+    "bibkey": "mansouri2025solarwind",
+    "title": "Toward Data-Driven Surrogates of the Solar Wind with Spherical Fourier Neural Operator",
+    "authors": [
+      "Mansouri, Reza",
+      "Kempton, Dustin",
+      "Riley, Pete",
+      "Angryk, Rafal"
+    ],
+    "year": 2025,
+    "venue": "IEEE ICMLA / arXiv:2511.22112",
+    "doi_or_arxiv": "https://arxiv.org/abs/2511.22112",
+    "arxiv_id": "2511.22112",
+    "domain": "Space Weather",
+    "modality": "Spherical solar wind velocity and plasma tensors",
+    "backbone": "Spherical Fourier Neural Operator (SFNO)",
+    "pretraining_data": "Heliospheric 3D MHD numerical simulations (HUX / MAS)",
+    "physics_integration": "Soft physics loss",
+    "role_of_llm": "None",
+    "lead_time_or_task": "Real-time steady-state solar wind velocity surrogate modeling across the heliosphere",
+    "model_size": "not reported",
+    "code_url": "https://github.com/rezmansouri/solarwind-sfno-velocity",
+    "quality_score": 11,
+    "status": "included",
+    "exclusion_reason": null,
+    "screen_date": "2026-09-27"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.5194/egusphere-egu25-17783",
+    "title": "Valid Prediction Intervals for Weather Forecasting with Conformal Prediction",
+    "authors": [
+      "Mortier, Thomas",
+      "Decancq, Cas",
+      "Sale, Yusuf",
+      "Javanmardi, Alireza",
+      "Waegeman, Willem",
+      "Hüllermeier, Eyke",
+      "Miralles, Diego G."
+    ],
+    "year": 2025,
+    "container_title": "",
+    "abstract": "<jats:p>In recent years, machine learning has emerged as a promising alternative to numerical weather prediction models, offering the potential for cost-effective and accurate forecasts. However, a significant limitation of current machine learning methods for weather forecasting is the lack of principled and efficient uncertainty quantification&amp;#8212;a key element given the complexity of the Earth's climate system and the challenges in modeling its processes and feedback mechanisms. Inadequate uncertainty quantification and reporting undermines trust in and the practical use of current weather forecasting methods (Eyring et al., 2024).Uncertainty quantification methods for weather forecasting typically use prediction intervals and can be categorized into Bayesian and frequentist approaches. Bayesian methods, while theoretically appealing, often involve restrictive assumptions and do not scale well to the complexity of spatio-temporal data. Frequentist approaches, such as ensemble-based methods, are widely used in weather forecasting and include techniques like perturbing initial states with noise (Bi et al., 2023; Scher et al., 2021), varying neural network parameters (Graubner et al., 2022), or training generative models (Price et al., 2023). However, most frequentist methods provide only asymptotically valid prediction intervals, which may not suffice in all weather forecasting applications.Conformal prediction (CP) is a promising uncertainty quantification framework that delivers valid and efficient prediction intervals for any learning algorithm, without requiring assumptions about the underlying data distribution (Vovk et al., 2005). Despite its growing popularity in the machine learning and statistics communities, traditional CP methods are not tailored to spatio-temporal data in weather forecasting. This is due to challenges arising from spatial and temporal dependencies&amp;#8212;such as spatial autocorrelation and temporal dynamics&amp;#8212;that violate the exchangeability assumption underlying standard CP methods. Several recent studies attempted to address these challenges by introducing new CP algorithms specifically designed for various types of non-exchangeability (Oliveira et al., 2024). However, these adaptations face several limitations, including high computational complexity, asymptotic guarantees, and/or the need for recalibration of prediction intervals.In this presentation, we will evaluate CP methods in the context of weather forecasting and discuss several limitations. In addition, we will highlight recent advances and discuss potential future directions that could address challenges underlying the use of CP in weather forecasting.References:Eyring, V., et al. Pushing the Frontiers in Climate Modelling and Analysis with Machine Learning. Nature Climate Change, 2024.Leutbecher, M., et al. Ensemble Forecasting. JCP, 2008.Bi, K., et al. Accurate Medium-range Global Weather Forecasting with 3D Neural Networks. Nature, 2023.Scher, S., et al. Ensemble Methods for Neural Network-based Weather Forecasts. JAMES, 2021.Graubner, A., et al. Calibration of Large Neural Weather Models. NeurIPS, 2022.Price, I., et al. Probabilistic Weather Forecasting with Machine Learning. Nature, 2025.Vovk, V., et al. Algorithmic learning in a random world. New York: Springer, 2005.Oliveira, R.I., et al. Split Conformal Prediction and Non-exchangeable Data. JMLR, 2024.</jats:p>",
+    "status": "excluded_fulltext",
+    "retrieved_at": "2026-09-27T00:35:38.883834Z",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-27"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.5194/ems2025-221",
+    "title": "Forecast Error Diagnostics in Neural Weather Models Using Gridpoint Relaxation",
+    "authors": [
+      "Perkan, Uroš",
+      "Zaplotnik, Žiga",
+      "Skok, Gregor"
+    ],
+    "year": 2025,
+    "container_title": "",
+    "abstract": "<jats:p>In physics-based numerical weather prediction models, underlying physical laws and numerical discretisation schemes offer some interpretability of the simulated processes and point to potential sources of errors. In contrast, data-driven deep-learning (DL) models lack explicit physics-based interpretation of their predictions. However, the low computational cost and auto-differentiable implementation allow for fast and extensive diagnostics of the origins of forecast errors using well-established explainable AI methods and traditional diagnostics tools. Here, we combine saliency maps and gridpoint relaxation to perform a multivariate regional analysis of the sources of forecast errors in global DL weather forecasting.We developed ConvCastNet, a DL global weather prediction model based on depth-wise separable convolutional neural networks. The model predicts 6 atmospheric variables at 13 pressure levels and includes 2 additional single-level prognostic and 7 constant input fields. The forecast is computed on a 3-degree lon-lat grid and uses 12-hour autoregressive time stepping to roll out the forecast. ConvCastNet achieves significant success in predicting geopotential at the 500 hPa pressure level, with 8.5 days of useful forecast (based on an anomaly correlation coefficient greater than 0.6), which makes it a suitable tool for diagnostics of the origin of the forecast error.We use ConvCastNet to systematically nudge subdomains of the forecast fields for 1) planetary boundary layer, 2) stratosphere, and 3) tropics towards a \"true\" weather state (reanalysis) and monitor the forecast skill improvements beyond selected subdomains. Our results show that an 8-day mid-latitude weather forecast improves significantly with relaxation in the stratosphere, whereas relaxation in the tropics has no significant impact on mid-latitude. This highlights the importance of accurately representing the stratosphere for medium-range weather prediction and the limited impact of tropical variability on mid-latitude forecasts.Additionally, we investigate the relationship between model error sensitivity to initial conditions and relaxation experiments. By utilising the model's auto-differentiability, we analyse saliency maps, i.e. the gradients of the forecast errors with respect to input fields, to identify overlapping regions of large error sensitivity and high impact of relaxation to the truth. We find the model sensitivity largely consistent with physics-based expectations, with local errors being sensitive to the upstream dynamics and varying sensitivity to different variables and pressure levels. We believe that this combined approach provides valuable heuristics for diagnosing neural model errors and guiding targeted model improvements.</jats:p>",
+    "status": "excluded_fulltext",
+    "retrieved_at": "2026-09-27T00:35:38.883855Z",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-27"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.31274/cc-20240624-413",
+    "title": "Conformal prediction intervals for neural networks using cross validation",
+    "authors": [
+      "Khaki, Saeed"
+    ],
+    "year": 2020,
+    "container_title": "",
+    "abstract": "",
+    "status": "excluded_fulltext",
+    "retrieved_at": "2026-09-27T00:35:38.883862Z",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-27"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1101/2022.11.14.516396",
+    "title": "Tracking lexical and semantic prediction error underlying the N400 using artificial neural network models of sentence processing",
+    "authors": [
+      "Lopopolo, Alessandro",
+      "Rabovsky, Milena"
+    ],
+    "year": 2022,
+    "container_title": "",
+    "abstract": "<jats:title>Abstract</jats:title>\n                <jats:p>Recent research has shown that the internal dynamics of an artificial neural network model of sentence comprehension displayed a similar pattern to the amplitude of the N400 in several conditions known to modulate this event-related potential. These results led Rabovsky, Hansen, and McClelland (2018) to suggest that the N400 might reflect change in an implicit predictive representation of meaning corresponding to semantic prediction error. This explanation stands as an alternative to the hypothesis that the N400 reflects lexical prediction error as estimated by word surprisal (Frank, Otten, Galli, &amp; Vigliocco, 2015). In the present study, we directly model the amplitude of the N400 elicited during naturalistic sentence processing by using as predictor the update of the distributed representation of sentence meaning generated by a Sentence Gestalt model (McClelland, St. John, &amp; Taraban, 1989) trained on a large-scale text corpus. This enables a quantitative prediction of N400 amplitudes based on a cognitively motivated model, as well as quantitative comparison of this model to alternative models of the N400. Specifically, we compare the update measure from the SG model to surprisal estimated by a comparable language model trained on next word prediction. Our results suggest that both Sentence Gestalt update and surprisal predict aspects of N400 amplitudes. Thus, we argue that N400 amplitudes might reflect two distinct but probably closely related sub-processes that contribute to the processing of a sentence.</jats:p>",
+    "status": "excluded_title",
+    "retrieved_at": "2026-09-27T00:35:38.883868Z",
+    "exclusion_reason": "EC1: Out of domain scope (not natural science temporal system)",
+    "screen_date": "2026-09-27"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1175//2560.1",
+    "title": "Comparative Analysis of Conformal Mappings Used in Limited-Area Models of Numerical Weather Prediction",
+    "authors": [
+      "Bourchtein, Andrei",
+      "Bourchtein, Ludmila"
+    ],
+    "year": 2003,
+    "container_title": "Monthly Weather Review",
+    "abstract": "<jats:title>Abstract</jats:title>\n               <jats:p>Conformal separable projections from a sphere onto a plane are introduced to generalize the concept of conformal stereographic, conic, and cylindrical projections. The concept of equivalence of projections is used for partition of all considered projections into equivalence classes. The variation coefficient is defined as the ratio between maximum and minimum mesh sizes of numerical grids. The problem of minimization of this coefficient inside each equivalence class is studied. The obtained variation coefficients from all classes are compared and the principal relation among stereographic, cylindrical, and conic projections is established. The stereographic conformal projection is indicated as that which generates the “best” numerical grids for numerical weather prediction limited-area models.</jats:p>",
+    "status": "excluded_fulltext",
+    "retrieved_at": "2026-09-27T00:35:38.883873Z",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-27"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.7717/peerj.3092/fig-3",
+    "title": "Figure 3: Relative importance of variables in the prediction models using the gradient boosting approach (grey bars for introduction models and black bars for establishment models).",
+    "authors": [],
+    "year": null,
+    "container_title": "",
+    "abstract": "",
+    "status": "excluded_title",
+    "retrieved_at": "2026-09-27T00:35:38.883881Z",
+    "exclusion_reason": "EC1: Out of domain scope (not natural science temporal system)",
+    "screen_date": "2026-09-27"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.2139/ssrn.6931103",
+    "title": "Conformal Prediction is Not Closed Under Composition: Characterising the Minimal Valid Rule for Multi-Stage Pipelines",
+    "authors": [
+      "Pourrahim, Ali"
+    ],
+    "year": 2026,
+    "container_title": "",
+    "abstract": "<jats:p>Conformal prediction gives marginal coverage for a single model, but composing K stages naively destroys end-to-end validity. We show that the class of path-wise valid composition rules is not closed under the two natural operations-point-prediction chaining and set intersectionand characterise what replaces them. The poset of path-wise valid rules (Definition 1), ordered by set inclusion, has a well-defined infimum: the Minkowski-sum cascade CCI(x) (Theorem 4). This is our central result: CCI is the unique minimal path-wise valid rule, proved via a feasible-chain characterisation lemma; any rule producing a strictly smaller set fails to cover Y for some distribution satisfying the calibration assumptions. As a direct corollary of the minimality theorem, CCI achieves finite-sample marginal coverage&amp;nbsp;&lt;span&gt;$Pr(y\\in CCI(x))\\ge1-\\sum_{i=1}^{K}\\alpha_{i}$&lt;/span&gt;&amp;nbsp;i under i.i.d. calibration on true intermediate targets, distribution-free with respect to the inter-stage conditionals and with no nuisance parameters. Practical extensions-Neyman budget allocation, relaxed calibration via importance weighting when true intermediates are unavailable, and multivariate ellipsoidal sets-make the framework immediately applicable to real pipelines.</jats:p>",
+    "status": "excluded_fulltext",
+    "retrieved_at": "2026-09-27T00:35:38.883893Z",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-27"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1007/978-3-7908-1902-1_107",
+    "title": "Training of Neural Network Wiener Models with Recursive Prediction Error Algorithm",
+    "authors": [
+      "Janczak, Andrzej"
+    ],
+    "year": 2003,
+    "container_title": "Neural Networks and Soft Computing",
+    "abstract": "",
+    "status": "excluded_title",
+    "retrieved_at": "2026-09-27T00:35:38.883898Z",
+    "exclusion_reason": "EC1: Out of domain scope (not natural science temporal system)",
+    "screen_date": "2026-09-27"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.2139/ssrn.7156458",
+    "title": "Sequentially Valid Uncertainty: A Bound on Coverage Degradation for Dropout-Informed Conformal Prediction under Regime Shift",
+    "authors": [
+      "Albayaydh, Wael  S."
+    ],
+    "year": 2026,
+    "container_title": "",
+    "abstract": "<jats:p>Monte Carlo (MC) dropout turned an existing regularization trick into a cheap way to get predictive uncertainty from any dropout-trained network, but its uncertainty estimates carry no coverage guarantee and are known to be systematically miscalibrated, particularly under distribution shift. Conformal prediction supplies the missing guarantee, but the classical guarantee requires exchangeable data-an assumption time series violate by construction. Recent work (MC-CP, EPICSCORE, DCP) has begun fusing dropout-derived uncertainty with conformal calibration for sequential data, but treats the fusion as an algorithmic design choice, targeting approximate marginal coverage empirically without a provable account of how the coverage gap scales with the severity of the exchangeability violation. We provide that account. We studentize the conformal nonconformity score by the MC-dropout predictive standard deviation, wrap it in an ACI-style online quantile tracker (DS-ACP), and prove three results: the resulting long-run coverage guarantee is scoreagnostic-inherited from ACI itself rather than a new property of studentization (Lemma 1); an explicit, non-fitted worst-case bound on the finite-time coverage gap via a local exchangeability-violation coefficient δ t (Proposition 1), confirmed in a controlled synthetic experiment where the measured gap correlates with δ t at r = 0.98 (R 2 = 0.96); and a generalization of that bound to arbitrary (not just piecewise-constant) dropout bias via a triangle-inequality argument over pairwise rescaling distances, requiring no linearization and verified numerically in 30/30 randomized configurations (Proposition 2). The paper's distinctive contribution is this diagnostic account of why and by how much dropout-informed conformal scores can fail-not a claim that studentization reliably improves interval efficiency in practice, which we test directly and do not find: on a real trained network, naive MC-dropout variance initially made DS-ACP worse than a raw-residual baseline, traced to a missing aleatoric-variance term and fixed with a held-out variance-floor estimate; but on real electricity and M4 hourly benchmarks (15 series each, two datasets unrelated in domain and scale), an apparent width-efficiency advantage that replicated across seeds for one client did not survive extension to more series, and the same null result replicated independently on the second dataset. We report this retraction directly rather than let the earlier, more favorable result stand. We further run the official code of a real competing system (EPICSCORE) as a baseline; an initial comparison was confounded by a mismatched point predictor, and correcting for it substantially narrows the apparent gap while a smaller, real effect remains. Code, data-access instructions, and full experimental logs for every reported result are released in the supplementary material. Preprint. Under review.</jats:p>",
+    "status": "excluded_fulltext",
+    "retrieved_at": "2026-09-27T00:35:38.883903Z",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-27"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1109/mrs66243.2025.11357267",
+    "title": "GameChat: Multi-LLM Dialogue for Safe, Agile, and Socially Optimal Multi-Agent Navigation in Constrained Environments",
+    "authors": [
+      "Mahadevan, Vagul",
+      "Zhang, Shangtong",
+      "Chandra, Rohan"
+    ],
+    "year": 2025,
+    "container_title": "2025 IEEE International Symposium on Multi-Robot and Multi-Agent Systems (MRS)",
+    "abstract": "",
+    "status": "excluded_title",
+    "retrieved_at": "2026-09-27T00:35:41.802745Z",
+    "exclusion_reason": "EC1: Out of domain scope (not natural science temporal system)",
+    "screen_date": "2026-09-27"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.2139/ssrn.7162224",
+    "title": "Self-Refining Topology Optimization via an LLM-Based Multi-Agent Framework",
+    "authors": [
+      "Park, Hyunjee",
+      "Chung, Hayoung"
+    ],
+    "year": 2026,
+    "container_title": "",
+    "abstract": "<jats:p>Topology optimization is a widely used design method that produces optimized material distributions for prescribed objectives and constraints through well-established numerical algorithms. Throughout the workflow, engineers make a series of decisions ranging from setting and adjusting numerical parameters to assessing whether the converged design meets considerations beyond those explicitly included in the optimization problem, such as physical feasibility. These decisions, which draw on domain expertise, interfere with the autonomous design process.To address this difficulty, this study presents TopOptAgents, a multi-agent system for automating not only the design process but also decision-making during the key stages of the topology optimization process. TopOptAgents consists of six LLM-based agents collaborating through iterative self-refinement cycles spanning problem formulation, validation, code generation and execution, and quality assessment of the optimized structure. This process enables error correction and progressive improvement of both the optimization setup and resulting design. The framework is demonstrated on optimization problems selected to cover a range of settings that differ in their literature coverage and numerical characteristics.The benefits of iterative self-refinement are found to be particularly pronounced for problem classes where the pretrained language model has limited prior exposure, such as formulations whose literature and open-source implementations are comparatively sparse. In such cases, the proposed framework reliably produces converged designs where a single state-of-the-art LLM struggles, suggesting that self-refinement broadens the range of topology optimization problems that LLM-based automation can reliably address.</jats:p>",
+    "status": "excluded_title",
+    "retrieved_at": "2026-09-27T00:35:41.802765Z",
+    "exclusion_reason": "EC1: Out of domain scope (not natural science temporal system)",
+    "screen_date": "2026-09-27"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1109/cloud72782.2026.00018",
+    "title": "LLM-Based Multi-Agent Collaboration for Constrained Multi-Objective Container Placement",
+    "authors": [
+      "Sarkar, Suvarthi",
+      "Hazra, Abhishek",
+      "Mittal, Akshat",
+      "Sahu, Aryabartta"
+    ],
+    "year": 2026,
+    "container_title": "2026 IEEE 19th International Conference on Cloud Computing (CLOUD)",
+    "abstract": "",
+    "status": "excluded_title",
+    "retrieved_at": "2026-09-27T00:35:41.802772Z",
+    "exclusion_reason": "EC1: Out of domain scope (not natural science temporal system)",
+    "screen_date": "2026-09-27"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1109/southeastcon63549.2026.11476226",
+    "title": "Multi-Agent LLM Closed-Loop Optimization for NP-Hard Problems",
+    "authors": [
+      "Nair, Kiran",
+      "Singh, Bikash Chandra"
+    ],
+    "year": 2026,
+    "container_title": "SoutheastCon 2026",
+    "abstract": "",
+    "status": "excluded_title",
+    "retrieved_at": "2026-09-27T00:35:41.802777Z",
+    "exclusion_reason": "EC1: Out of domain scope (not natural science temporal system)",
+    "screen_date": "2026-09-27"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.32657/10356/48033",
+    "title": "A distributed multi-agent system approach for solving constrained optimization problems using probability collectives",
+    "authors": [
+      "Anand, Jayant Kulkarni"
+    ],
+    "year": null,
+    "container_title": "",
+    "abstract": "",
+    "status": "excluded_title",
+    "retrieved_at": "2026-09-27T00:35:41.802783Z",
+    "exclusion_reason": "EC1: Out of domain scope (not natural science temporal system)",
+    "screen_date": "2026-09-27"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1145/3749421.3749436",
+    "title": "ALAS: A Stateful Multi-LLM Agent Framework for Disruption-Aware Planning",
+    "authors": [],
+    "year": 2025,
+    "container_title": "Multi-LLM Agent Collaborative Intelligence",
+    "abstract": "",
+    "status": "excluded_title",
+    "retrieved_at": "2026-09-27T00:35:41.802788Z",
+    "exclusion_reason": "EC1: Out of domain scope (not natural science temporal system)",
+    "screen_date": "2026-09-27"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1145/3764926.3771951",
+    "title": "Urban-MAS: Human-Centered Urban Prediction with LLM-Based Multi Agent System",
+    "authors": [
+      "Lou, Shangyu"
+    ],
+    "year": 2025,
+    "container_title": "Proceedings of the 3rd ACM SIGSPATIAL International Workshop on Advances in Urban-AI",
+    "abstract": "",
+    "status": "excluded_title",
+    "retrieved_at": "2026-09-27T00:35:41.802793Z",
+    "exclusion_reason": "EC1: Out of domain scope (not natural science temporal system)",
+    "screen_date": "2026-09-27"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.2139/ssrn.6321179",
+    "title": "Graph Attention Multi-Agent Proximal Policy Optimization for Constrained Dynamic Scheduling in Industrial IoT-Edge Systems",
+    "authors": [
+      "Basingab, Mohammed"
+    ],
+    "year": 2026,
+    "container_title": "",
+    "abstract": "<jats:p>The rapidly increasing Industrial Internet of Things (IIoT) and Mobile Edge Computing (MEC) framework presents fundamental Operations Research (OR) challenges in managing dynamic, decentralized resource scheduling across heterogeneous industrial devices. Traditional centralized optimization methods fail under rapidly changing network conditions and complex device interactions, causing Service Level Agreement (SLA) violations for mission-critical services. This paper presents Graph Attention Multi-Agent Proximal Policy Optimization (GAT-MAPPO), a novel decentralized multi-agent reinforcement learning framework that integrates dynamic Graph Attention Networks (GAT) into MAPPO critic architecture for topology-aware constrained scheduling. We validate GAT-MAPPO through comprehensive industrial deployment at an operational automotive manufacturing facility spanning 12,000 m² with 78 heterogeneous devices including Siemens S7-1500 PLCs, KUKA robotic arms, and MiR AGVs connected via private 5G infrastructure. A ten-week deployment study comprising baseline characterization, shadow deployment, and full production operation demonstrates that GAT-MAPPO achieves 11.4 percentage point improvement in Overall Equipment Effectiveness (OEE), 83% reduction in network-related production stops, and 64% reduction in URLLC 99th percentile latency compared to the legacy priority-based scheduler. Simulation-to-reality validation shows strong correlation (R² = 0.94) between digital twin predictions and measured performance. The framework scales near-linearly to 100+ agents while maintaining sub-2ms inference latency, establishing GAT-MAPPO as a production-ready solution for next-generation smart manufacturing.</jats:p>",
+    "status": "excluded_title",
+    "retrieved_at": "2026-09-27T00:35:41.802807Z",
+    "exclusion_reason": "EC1: Out of domain scope (not natural science temporal system)",
+    "screen_date": "2026-09-27"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.3390/rs10010152",
+    "title": "Onboard Spectral and Spatial Cloud Detection for Hyperspectral Remote Sensing Images",
+    "authors": [
+      "Li, Haoyang",
+      "Zheng, Hong",
+      "Han, Chuanzhao",
+      "Wang, Haibo",
+      "Miao, Min"
+    ],
+    "year": 2018,
+    "container_title": "Remote Sensing",
+    "abstract": "<jats:p>The accurate onboard detection of clouds in hyperspectral images before lossless compression is beneficial. However, conventional onboard cloud detection methods are not applicable all the time, especially for shadowed clouds or darkened snow-covered surfaces that are not identified in normalized difference snow index (NDSI) tests. In this paper, we propose a new spectral-spatial classification strategy to enhance the performance of an orbiting cloud screen obtained on hyperspectral images by integrating a threshold exponential spectral angle map (TESAM), adaptive Markov random field (aMRF) and dynamic stochastic resonance (DSR). TESAM is applied to roughly classify cloud pixels based on spectral information. Then aMRF is used to do optimal process by using spatial information, which improved the classification performance significantly. Nevertheless, misclassifications occur due to noisy data in the onboard environments, and DSR is employed to eliminate noise data produced by aMRF in binary labeled images. We used level 0.5 data from Hyperion as a dataset, and the average tested accuracy of the proposed algorithm was 96.28% by test. This method can provide cloud mask for the on-going EO-1 and related satellites with the same spectral settings without manual intervention. Experiments indicate that the proposed method has better performance than the conventional onboard cloud detection methods or current state-of-the-art hyperspectral classification methods.</jats:p>",
+    "status": "excluded_fulltext",
+    "retrieved_at": "2026-09-27T00:35:44.664294Z",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-27"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1007/978-3-030-02017-0_4",
+    "title": "The Linear Spectral Mixture Model",
+    "authors": [
+      "Shimabukuro, Yosio Edemir",
+      "Ponzoni, Flávio Jorge"
+    ],
+    "year": 2018,
+    "container_title": "Springer Remote Sensing/Photogrammetry",
+    "abstract": "",
+    "status": "excluded_title",
+    "retrieved_at": "2026-09-27T00:35:44.664318Z",
+    "exclusion_reason": "EC1: Out of domain scope (not natural science temporal system)",
+    "screen_date": "2026-09-27"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1109/cvpr52733.2024.02616",
+    "title": "S2MAE: A Spatial-Spectral Pretraining Foundation Model for Spectral Remote Sensing Data",
+    "authors": [
+      "Li, Xuyang",
+      "Hong, Danfeng",
+      "Chanussot, Jocelyn"
+    ],
+    "year": 2024,
+    "container_title": "2024 IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)",
+    "abstract": "",
+    "status": "excluded_fulltext",
+    "retrieved_at": "2026-09-27T00:35:44.664326Z",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-27"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1109/tgrs.2016.2574331",
+    "title": "Spectral Unmixing Using a Sparse Multiple-Endmember Spectral Mixture Model",
+    "authors": [
+      "Chen, Fen",
+      "Wang, Ke",
+      "Tang, Ting Feng"
+    ],
+    "year": 2016,
+    "container_title": "IEEE Transactions on Geoscience and Remote Sensing",
+    "abstract": "",
+    "status": "excluded_title",
+    "retrieved_at": "2026-09-27T00:35:44.664332Z",
+    "exclusion_reason": "EC1: Out of domain scope (not natural science temporal system)",
+    "screen_date": "2026-09-27"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1016/0034-4257(77)90012-8",
+    "title": "Applications of suits spectral model to wheat",
+    "authors": [
+      "Chance, J.E."
+    ],
+    "year": 1977,
+    "container_title": "Remote Sensing of Environment",
+    "abstract": "",
+    "status": "excluded_title",
+    "retrieved_at": "2026-09-27T00:35:44.664336Z",
+    "exclusion_reason": "EC1: Out of domain scope (not natural science temporal system)",
+    "screen_date": "2026-09-27"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.3390/rs16152692",
+    "title": "DDSR: Degradation-Aware Diffusion Model for Spectral Reconstruction from RGB Images",
+    "authors": [
+      "Chen, Yunlai",
+      "Zhang, Xiaoyan"
+    ],
+    "year": 2024,
+    "container_title": "Remote Sensing",
+    "abstract": "<jats:p>The reconstruction of hyperspectral images (HSIs) from RGB images is an attractive low-cost approach to recover hyperspectral information. However, existing approaches focus on learning an end-to-end mapping of RGB images and their corresponding HSIs with neural networks, which makes it difficult to ensure generalization due to the fact that they are trained on data with a specific degradation process. As a new paradigm of generative models, the diffusion model has shown great potential in image restoration, especially in noisy contexts. To address the unstable generalization ability of end-to-end models while exploiting the powerful ability of the diffusion model, we propose a degradation-aware diffusion model. The degradation process from HSI to RGB is modeled as a combination of multiple degradation operators, which are used to guide the inverse process of the diffusion model by utilizing a degradation-aware correction. By integrating the degradation-aware correction to the diffusion model, we obtain an efficient solver for spectral reconstruction, which is robust to different degradation patterns. Experiment results on various public datasets demonstrate that our method achieves competitive performance and shows a promising generalization ability.</jats:p>",
+    "status": "excluded_fulltext",
+    "retrieved_at": "2026-09-27T00:35:44.664342Z",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-27"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.3390/rs8090748",
+    "title": "Spectral-Spatial Classification of Hyperspectral Images Using Joint Bilateral Filter and Graph Cut Based Model",
+    "authors": [
+      "Wang, Yi",
+      "Song, Haiwei",
+      "Zhang, Yan"
+    ],
+    "year": 2016,
+    "container_title": "Remote Sensing",
+    "abstract": "<jats:p>Hyperspectral image classification can be achieved by modeling an energy minimization problem on a graph of image pixels. In this paper, an effective spectral-spatial classification method for hyperspectral images based on joint bilateral filtering (JBF) and graph cut segmentation is proposed. In this method, a novel technique for labeling regions obtained by the spectral-spatial segmentation process is presented. Our method includes the following steps. First, the probabilistic support vector machines (SVM) classifier is used to estimate probabilities belonging to each information class. Second, an extended JBF is employed to perform image smoothing on the probability maps. By using our JBF process, salt-and-pepper classification noise in homogeneous regions can be effectively smoothed out while object boundaries in the original image are better preserved as well. Third, a sequence of modified bi-labeling graph cut models is constructed for each information class to extract the desirable object belonging to the corresponding class from the smoothed probability maps. Finally, a classification map is achieved by merging the segmentation maps obtained in the last step using a simple and effective rule. Experimental results based on three benchmark airborne hyperspectral datasets with different resolutions and contexts demonstrate that our method can achieve 8.56%–13.68% higher overall accuracies than the pixel-wise SVM classifier. The performance of our method was further compared to several classical hyperspectral image classification methods using objective quantitative measures and a visual qualitative evaluation.</jats:p>",
+    "status": "excluded_fulltext",
+    "retrieved_at": "2026-09-27T00:35:44.664347Z",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-27"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1007/978-3-030-02017-0",
+    "title": "Spectral Mixture for Remote Sensing",
+    "authors": [
+      "Shimabukuro, Yosio Edemir",
+      "Ponzoni, Flávio Jorge"
+    ],
+    "year": 2019,
+    "container_title": "Springer Remote Sensing/Photogrammetry",
+    "abstract": "",
+    "status": "excluded_fulltext",
+    "retrieved_at": "2026-09-27T00:35:44.664351Z",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-27"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1109/igarss53475.2024.10640534",
+    "title": "Domain Knowledge-Aware Remote Sensing Foundation Model for Flood Detection in Multi-Spectral Imagery",
+    "authors": [
+      "Li, Yansheng",
+      "Dang, Bo",
+      "Wei, Fanyi",
+      "Tan, Jieyi",
+      "Lin, Yangjie"
+    ],
+    "year": 2024,
+    "container_title": "IGARSS 2024 - 2024 IEEE International Geoscience and Remote Sensing Symposium",
+    "abstract": "",
+    "status": "excluded_fulltext",
+    "retrieved_at": "2026-09-27T00:35:44.664357Z",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-27"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1038/s41559-024-02371-2",
+    "title": "Publisher Correction: A high-resolution canopy height model of the Earth",
+    "authors": [
+      "Lang, Nico",
+      "Jetz, Walter",
+      "Schindler, Konrad",
+      "Wegner, Jan Dirk"
+    ],
+    "year": 2024,
+    "container_title": "Nature Ecology &amp; Evolution",
+    "abstract": "",
+    "status": "excluded_fulltext",
+    "retrieved_at": "2026-09-27T00:35:47.626728Z",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-27"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.20944/preprints202601.1755.v1",
+    "title": "Assessment of Three High-Resolution Forest Canopy Height Products in China",
+    "authors": [
+      "Cao, Yue",
+      "Ma, Jie",
+      "Wang, Ran",
+      "Zhang, Chunhua",
+      "Zhou, Di",
+      "Man, Haoran",
+      "Lu, Dan"
+    ],
+    "year": 2026,
+    "container_title": "",
+    "abstract": "<jats:p>Large-scale mapping of forest canopy height (FCH) is crucial for accurately understanding ecosystem succession and forest carbon sinks. Recently, three high-resolution FCH products have been released, including global forest canopy height (GFCH), NNGI_FCH_China (NNGI_FCH), and ETH_GlobalCanopyHeight (ETH_GCH). This study provides a detailed assessment of these FCH products across China from forest area, spatial consistency, and overall accuracy using forest inventory, CLCD and field measurement data. The results showed that NNGI_FCH had the smallest relative error of 13.9% and achieved better estimates of forest area in all regions but the north and northeast regions. GFCH had the highest spatial consistency of 71.2% nationwide, followed by NNGI_FCH (69.7%), which performed slightly better than GFCH in the east and northwest regions. ETH_GCH exhibited the lowest spatial consistency of 35.6% and remained below 50% across all regions except the northeast and south regions. ETH_GCH demonstrated the highest overall accuracy across the country, with R2 and RMSE of 0.56 and 4.40 m, followed by NNGI_FCH (R2=0.48, RMSE=4.14 m) and GFCH (R2=0.48, RMSE=4.15 m). Validation results of ETH_GCH were relatively stable in different regions of China, while those of NNGI_FCH varied more but still outperformed GFCH. This study offers valuable insights by evaluating large-scale FCH products, which will be a key basis for in-depth studies on the utilization and improvement of future FCH mapping.</jats:p>",
+    "status": "excluded_fulltext",
+    "retrieved_at": "2026-09-27T00:35:47.626752Z",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-27"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.18475/cjos.v54i2.a21",
+    "title": "Integrating a High-Resolution Canopy Height Model With a Sentinel-1/2 Fused Product in Google Earth Engine for Mangrove Species Mapping in the Caroni Swamp",
+    "authors": [
+      "Ramsewak, Deanesh",
+      "Jagassar, Arvind"
+    ],
+    "year": 2024,
+    "container_title": "Caribbean Journal of Science",
+    "abstract": "",
+    "status": "excluded_fulltext",
+    "retrieved_at": "2026-09-27T00:35:47.626763Z",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-27"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.2139/ssrn.5131273",
+    "title": "Upscaling Canopy Height Model of Mangroves from Very High-Resolution Stereo Images to Synthetic Aperture Radar Data Through Calibrated Gedi Metrics",
+    "authors": [
+      "SANAM, HUMAIRA",
+      "Lakshmanan, Gnanappazham",
+      "Kanu, Bishal"
+    ],
+    "year": 2025,
+    "container_title": "",
+    "abstract": "",
+    "status": "excluded_fulltext",
+    "retrieved_at": "2026-09-27T00:35:47.626774Z",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-27"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.5194/egusphere-egu24-8420",
+    "title": "Bayesian model averaging of AI models for the high resolution mapping of the forest canopy height",
+    "authors": [
+      "Besic, Nikola",
+      "Picard, Nicolas",
+      "Vega, Cédric",
+      "Renaud, Jean-Pierre",
+      "Schwartz, Martin",
+      "Planells, Milena",
+      "Ciais, Philippe"
+    ],
+    "year": 2025,
+    "container_title": "",
+    "abstract": "<jats:p>The development of high resolution mapping models of forest attributes based on employing machine or deep learning techniques has&amp;#160;increasingly accelerated in the last couple of years. The consequence of this is the widespread availability of multiple sources of information, which can either lead to a potential&amp;#160;confusion, or to a possibility to get an \"extended&amp;#8221; insight into the state of our forests by interpreting these sources jointly. This contribution aims at addressing the latter, by relying on the Bayesian model averaging (BMA) approach.BMA is a method that can be used in building a consensus from an ensemble of different model predictions. It can be seen as weighted mean of different predictions with weights reflecting the predictive performances of different models, or as a finite mixture model which estimates the probability that each observation from the independent validation dataset has been generated by one of the models belonging to the ensemble. BMA can thus be used to diagnose and understand the difference in the predictions and to possibly interpret them.The predictions in our case are the forest canopy height estimations for the metropolitan France coming from 5 different AI models [1-5], while the independent validation dataset comes from the French National Forest Inventory (NFI) disposing with some 6000 plots per year, distributed across the territory of interest. For every plot we have several measurements/estimations of the forest canopy height out of which the following two are considered in this study: h_m &amp;#8211; the maximum total height (from the tree's base level to the terminal bud of the tree's main stem) measured within the plot, and h_dom &amp;#8211; the average height of the seven largest dominant trees per hectare.In this contribution we present for every considered plot the dominant model with respect to both references i.e. the model having the highest probability to be the one generating measurements/estimations at NFI plot (h_m and h_dom). We present as well as the respective inter-model and the intra-model variance estimations, allowing us to propose a series of hypotheses concerning the established differences between predictions of individual models in function of their specificities.[1] Schwartz, M., et al.: FORMS: Forest Multiple Source height, wood volume, and biomass maps in France at 10 to 30&amp;#8201;m resolution based on Sentinel-1, Sentinel-2, and Global Ecosystem Dynamics Investigation (GEDI) data with a deep learning approach, Earth Syst. Sci. Data, 15, 4927&amp;#8211;4945,&amp;#160;2023, https://doi.org/10.5194/essd-15-4927-2023[2] Lang, N., et al.: A high-resolution canopy height model of the Earth,&amp;#160;Nat Ecol&amp;#160;Evol&amp;#160;7, 1778&amp;#8211;1789, 2023. https://doi.org/10.1038/s41559-023-02206-6[3] Morin, D. et al.: Improving Heterogeneous Forest Height Maps by Integrating GEDI-Based Forest Height Information in a Multi-Sensor Mapping Process, Remote Sens.,&amp;#160;14, 2079. 2022, https://doi.org/10.3390/rs14092079[4] Potapov, P.,&amp;#160;et al.: Mapping global forest canopy height through integration of GEDI and Landsat data, Remote Sensing of Environment, 253, 2021, https://doi.org/10.1016/j.rse.2020.112165.[5] Liu, S.&amp;#160;et al.: The overlooked contribution of trees outside forests to tree cover and woody biomass across Europe, Sci. Adv. 9, eadh4097, 2023, 10.1126/sciadv.adh4097.</jats:p>",
+    "status": "excluded_fulltext",
+    "retrieved_at": "2026-09-27T00:35:47.626784Z",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-27"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.3390/rs17091594",
+    "title": "Unified Deep Learning Model for Global Prediction of Aboveground Biomass, Canopy Height, and Cover from High-Resolution, Multi-Sensor Satellite Imagery",
+    "authors": [
+      "Weber, Manuel",
+      "Beneke, Carly",
+      "Wheeler, Clyde"
+    ],
+    "year": 2025,
+    "container_title": "Remote Sensing",
+    "abstract": "<jats:p>Regular measurement of carbon stock in the world’s forests is critical for carbon accounting and reporting under national and international climate initiatives and for scientific research but has been largely limited in scalability and temporal resolution due to a lack of ground-based assessments. Increasing efforts have been made to address these challenges by incorporating remotely sensed data. We present a new methodology that uses multi-sensor, multispectral imagery at a resolution of 10 m and a deep learning-based model that unifies the prediction of aboveground biomass density (AGBD), canopy height (CH), and canopy cover (CC), as well as uncertainty estimations for all three quantities. The model architecture is a custom Feature Pyramid Network consisting of an encoder, decoder, and multiple prediction heads, all based on convolutional neural networks. It is trained on millions of globally sampled GEDI-L2/L4 measurements. We validate the capability of the model by deploying it over the entire globe for the year 2023 as well as annually from 2016 to 2023 over selected areas. The model achieves a mean absolute error for AGBD (CH, CC) of 26.1 Mg/ha (3.7 m, 9.9%) and a root mean squared error of 50.6 Mg/ha (5.4 m, 15.8%) on a globally sampled test dataset, demonstrating a significant improvement over previously published results. We also report the model performance against independently collected ground measurements published in the literature, which show a high degree of correlation across varying conditions. We further show that our pre-trained model facilitates seamless transferability to other GEDI variables due to its multi-head architecture.</jats:p>",
+    "status": "excluded_fulltext",
+    "retrieved_at": "2026-09-27T00:35:47.626794Z",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-27"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1134/s1064562425700267",
+    "title": "Employing Synthetic Canopy Height Model Data to Enhance Tree Identification in High-Resolution Satellite Imagery",
+    "authors": [
+      "Grigorev, A. V.",
+      "Leislya, A. A.",
+      "Semenov, K. S."
+    ],
+    "year": 2025,
+    "container_title": "Doklady Mathematics",
+    "abstract": "",
+    "status": "excluded_fulltext",
+    "retrieved_at": "2026-09-27T00:35:47.626804Z",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-27"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.64898/2026.08.25.728853",
+    "title": "SatCHM (Satellite Canopy Height Model): Leveraging deep learning for site-specific sub-meter canopy height predictions",
+    "authors": [
+      "Mitchell, Mia",
+      "Abolt, Charles",
+      "Crennen, Zachary",
+      "Marcato, Agnese",
+      "Atchley, Adam"
+    ],
+    "year": 2026,
+    "container_title": "",
+    "abstract": "<jats:title>Abstract</jats:title>\n                <jats:p>High-resolution monitoring of forest structure and productivity is essential for effective natural resource management. However, monitoring approaches such as field-based forest inventories or extensive lidar campaigns are costly, time-intensive, and spatially limited. Therefore, inexpensive and accessible methods are needed. SatCHM (Satellite Canopy Height Model) was developed to be an accessible and open-source tool for researchers, allowing for site-specific and temporally flexible predictions of canopy height with limited computational resources. SatCHM requires four inputs: panchromatic satellite imagery, solar and sensor angle metadata of satellite imagery, digital elevation models (DEMs), and lidar-produced CHMs for an area of interest. After SatCHM pre-processes inputs, data is loaded into a collection of convolutional neural networks (CNNs) for image-to-image regression. This ensemble cooperates to yield high-resolution predictions (up to 0.5-meter) of three-dimensional tree structure with discernible tree crowns across a broader defined area of interest. After calculating the mean absolute error for each prediction output, the median of these mean absolute errors was 6.06 meters.</jats:p>",
+    "status": "excluded_fulltext",
+    "retrieved_at": "2026-09-27T00:35:47.626814Z",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-27"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1088/1755-1307/1/1/012062",
+    "title": "The impact of high resolution surface properties retrieved from Satellite in the urban canopy model",
+    "authors": [
+      "Kim, Y M",
+      "Byon, J Y",
+      "Choi, Y J"
+    ],
+    "year": 2008,
+    "container_title": "IOP Conference Series: Earth and Environmental Science",
+    "abstract": "",
+    "status": "excluded_fulltext",
+    "retrieved_at": "2026-09-27T00:35:47.626823Z",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-27"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1017/s1743921306001682",
+    "title": "Diagnostics of local and global coronal magnetic field using global coronal waves",
+    "authors": [
+      "Ballai, Istvan"
+    ],
+    "year": 2006,
+    "container_title": "Proceedings of the International Astronomical Union",
+    "abstract": "<jats:p>Large scale eruption events in the solar atmosphere can generate global waves, i.e. waves which propagate over distances comparable to the solar radius. In the low solar corona, global waves observed by SOHO/EIT, generated by coronal mass ejections or flares are usually referred to as EIT waves. Since EIT waves carry information about their environment, they can be used for diagnostics of, e.g. the local and global magnetic field. This contribution presents theoretical models for finding values of magnetic field in the quiet Sun and coronal loops, and explores the physical connection between local and global solar coronal events (e.g. flares and coronal loop oscillations).</jats:p>",
+    "status": "excluded_fulltext",
+    "retrieved_at": "2026-09-27T00:35:50.342149Z",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-27"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.2139/ssrn.6206533",
+    "title": "Physics-informed Fourier neural operator for surrogate prediction of tunnel fire temperature field",
+    "authors": [
+      "Gao, Peng",
+      "Jin, Yinli"
+    ],
+    "year": 2026,
+    "container_title": "",
+    "abstract": "<jats:p>Tunnel fires can create a hazardous environment with high temperatures and strong thermal radiation, seriously threatening evacuation and rescue operations.  However, fire development in enclosed tunnels is rapid, and predicting the subsequent spatiotemporal evolution of the temperature field from limited early-stage information remains a key challenge. This study proposes a surrogate framework called the physics-informed hypernetwork Fourier neural operator (PI-hyperFNO) to rapidly predict the spatiotemporal evolution of tunnel fire temperature field from limited global conditions. The framework introduces a hypernetwork to enable condition-adaptive spectral modulation across Fourier layers and incorporates a physics-informed transport residual together with an explicit initial condition constraint during training. A numerical database of 180 tunnel fire scenarios is established by varying fire intensity, ventilation conditions, fire location, and tunnel slope to train and evaluate the proposed framework. The results show that the proposed framework delivers accurate and physically consistent temperature field predictions without relying on time-series data. It achieves a mean relative error below 13\\% and a structural similarity index (SSIM) above 0.89. Benefiting from physics-informed constraints, the framework generalizes well to unseen conditions and can be efficiently transferred to longer tunnels through lightweight fine-tuning. It also supports rapid inference on finer grids and provides at least three orders of magnitude speedup over computational fluid dynamics (CFD) simulations. Moreover, the effects of different PDE constraint configurations and temporal sampling intervals on prediction performance are examined. This study offers a practical complement to high-fidelity simulations for early-stage tunnel fire risk assessment and rescue decision-making.</jats:p>",
+    "status": "excluded_fulltext",
+    "retrieved_at": "2026-09-27T00:35:50.342170Z",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-27"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.2139/ssrn.5113657",
+    "title": "Prediction of Compressor Blade Cascade Flow Field Based on Fourier Neural Operator",
+    "authors": [
+      "Jiang, Lixiang",
+      "Feng, Xinlong",
+      "Xu, Quanyong"
+    ],
+    "year": 2025,
+    "container_title": "",
+    "abstract": "",
+    "status": "excluded_fulltext",
+    "retrieved_at": "2026-09-27T00:35:50.342177Z",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-27"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1109/icdmw69685.2025.00224",
+    "title": "Physics-Informed Attention-Enhanced Fourier Neural Operator for Solar Magnetic Field Extrapolations",
+    "authors": [
+      "Cao, Jinghao",
+      "Li, Qin",
+      "Du, Mengnan",
+      "Wang, Haimin",
+      "Shen, Bo"
+    ],
+    "year": 2025,
+    "container_title": "2025 IEEE International Conference on Data Mining Workshops (ICDMW)",
+    "abstract": "",
+    "status": "excluded_fulltext",
+    "retrieved_at": "2026-09-27T00:35:50.342183Z",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-27"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.3997/2214-4609.202510249",
+    "title": "Velocity Model Estimations with Deep Learning – Field Data Examples with a Fourier Neural Operator Network",
+    "authors": [
+      "Korsmo, Ø.",
+      "Crawley, S.",
+      "Pankov, A.",
+      "Valler, V.",
+      "Chemingui, N."
+    ],
+    "year": 2025,
+    "container_title": "86th EAGE Annual Conference &amp; Exhibition",
+    "abstract": "",
+    "status": "excluded_fulltext",
+    "retrieved_at": "2026-09-27T00:35:50.342195Z",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-27"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.5194/egusphere-egu21-11005",
+    "title": "Global coronal and heliospheric magnetic field modelling for Solar Orbiter",
+    "authors": [
+      "Wiegelmann, Thomas",
+      "Neukirch, Thomas",
+      "Chifu, Iulia",
+      "Inhester, Bernd"
+    ],
+    "year": 2021,
+    "container_title": "",
+    "abstract": "<jats:p>&amp;lt;p&amp;gt;Computing the solar coronal magnetic field and plasma&amp;lt;br&amp;gt;environment is an important research topic on it's own right&amp;lt;br&amp;gt;and also important for space missions like Solar Orbiter to&amp;lt;br&amp;gt;guide the analysis of remote sensing and in-situ instruments.&amp;lt;br&amp;gt;In the inner solar corona plasma forces can be neglected and&amp;lt;br&amp;gt;the field is modelled under the assumption of a vanishing&amp;lt;br&amp;gt;Lorentz-force. Further outwards (above about two solar radii)&amp;lt;br&amp;gt;plasma forces and the solar wind flow has to be considered.&amp;lt;br&amp;gt;Finally in the heliosphere one has to consider that the Sun&amp;lt;br&amp;gt;is rotating and the well known Parker-spiral forms.&amp;lt;br&amp;gt;We have developed codes based on optimization principles&amp;lt;br&amp;gt;to solve nonlinear force-free, magneto-hydro-static and&amp;lt;br&amp;gt;stationary MHD-equilibria. In the present work we want to&amp;lt;br&amp;gt;extend these methods by taking the solar rotation into account.&amp;lt;/p&amp;gt;</jats:p>",
+    "status": "excluded_fulltext",
+    "retrieved_at": "2026-09-27T00:35:50.342201Z",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-27"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1038/s41524-024-01488-z",
+    "title": "Accelerating phase field simulations through a hybrid adaptive Fourier neural operator with U-net backbone",
+    "authors": [
+      "Bonneville, Christophe",
+      "Bieberdorf, Nathan",
+      "Hegde, Arun",
+      "Asta, Mark",
+      "Najm, Habib N.",
+      "Capolungo, Laurent",
+      "Safta, Cosmin"
+    ],
+    "year": 2025,
+    "container_title": "npj Computational Materials",
+    "abstract": "<jats:title>Abstract</jats:title>\n                  <jats:p>\n                    Prolonged contact between a corrosive liquid and metal alloys can cause progressive dealloying. For one such process as liquid-metal dealloying (LMD), phase field models have been developed to understand the mechanisms leading to complex morphologies. However, the LMD governing equations in these models often involve coupled non-linear partial differential equations (PDE), which are challenging to solve numerically. In particular, numerical stiffness in the PDEs requires an extremely refined time step size (on the order of 10\n                    <jats:sup>−12</jats:sup>\n                    <jats:italic>s</jats:italic>\n                    or smaller). This computational bottleneck is especially problematic when running LMD simulation until a late time horizon is required. This motivates the development of surrogate models capable of leaping forward in time, by skipping several consecutive time steps at-once. In this paper, we propose a U-shaped adaptive Fourier neural operator (U-AFNO), a machine learning (ML) based model inspired by recent advances in neural operator learning. U-AFNO employs U-Nets for extracting and reconstructing local features within the physical fields, and passes the latent space through a vision transformer (ViT) implemented in the Fourier space (AFNO). We use U-AFNOs to learn the dynamics of mapping the field at a current time step into a later time step. We also identify global quantities of interest (QoI) describing the corrosion process (e.g., the deformation of the liquid-metal interface, lost metal, etc.) and show that our proposed U-AFNO model is able to accurately predict the field dynamics, in spite of the chaotic nature of LMD. Most notably, our model reproduces the key microstructure statistics and QoIs with a level of accuracy on par with the high-fidelity numerical solver, while achieving a significant 11, 200 × speed-up on a high-resolution grid when comparing the computational expense per time step. Finally, we also investigate the opportunity of using hybrid simulations, in which we alternate forward leaps in time using the U-AFNO with high-fidelity time stepping. We demonstrate that while advantageous for some surrogate model design choices, our proposed U-AFNO model in fully auto-regressive settings consistently outperforms hybrid schemes.\n                  </jats:p>",
+    "status": "excluded_fulltext",
+    "retrieved_at": "2026-09-27T00:35:50.342207Z",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-27"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.21203/rs.3.rs-1415262/v1",
+    "title": "Probing the solar coronal magnetic field with physics-informed neural networks",
+    "authors": [
+      "Jarolim, Robert",
+      "Thalmann, Julia",
+      "Veronig, Astrid",
+      "Podladchikova, Tatiana"
+    ],
+    "year": 2022,
+    "container_title": "",
+    "abstract": "<title>Abstract</title>\n        <p>While the photospheric magnetic field of our Sun is routinely measured, its extent into the upper atmosphere remains elusive.\nWe present a novel approach for coronal magnetic field extrapolation, using a neural network that integrates observational data and the physical force-free magnetic field model. Our method flexibly finds a trade-off between the observation and force-free magnetic field assumption, improving the understanding of the connection between the observation and the underlying physics.\nWe utilize meta-learning concepts to simulate the evolution of active region NOAA 11158. Our simulation of 5 days of observations at full cadence, requires less than 13 hours of total computation time, enabling real-time force-free magnetic field extrapolations. \nA systematic comparison of the time evolution of free magnetic energy and magnetic helicity in the coronal volume, as well as comparison to EUV observations demonstrates the validity of our approach. The obtained temporal and spatial depletion of free magnetic energy unambiguously relates to the observed flare activity.</p>",
+    "status": "excluded_fulltext",
+    "retrieved_at": "2026-09-27T00:35:50.342212Z",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-27"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1109/icdmw69685.2025.00226",
+    "title": "Autoregressive Surrogate Modeling of the Solar Wind with Spherical Fourier Neural Operator",
+    "authors": [
+      "Mansouri, Reza",
+      "Kempton, Dustin J.",
+      "Riley, Pete",
+      "Angryk, Rafal A."
+    ],
+    "year": 2025,
+    "container_title": "2025 IEEE International Conference on Data Mining Workshops (ICDMW)",
+    "abstract": "",
+    "status": "excluded_fulltext",
+    "retrieved_at": "2026-09-27T00:35:52.456607Z",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-27"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.2139/ssrn.6805214",
+    "title": "Predicting stress hotspots in crystal plasticity with Fourier neural operator surrogates",
+    "authors": [
+      "Ramalingam, Ajaikrishna",
+      "Fehlemann, Niklas",
+      "Müntermann, Sebastian"
+    ],
+    "year": 2026,
+    "container_title": "",
+    "abstract": "<jats:p>Crystal plasticity is an essential computational tool for uncovering structure–property relationships in heterogeneous polycrystalline materials, but its computational cost limits iterative, optimization-driven workflows. Existing surrogate models predict homogenized stress-strain curves but fail to accurately resolve critical stress hotspots and suffer significant performance degradation when applied to out-of-distribution microstructures. To address these limitations, we introduce the first Fourier neural operator (FNO) surrogate that predicts full-field crystal plasticity stress directly from crystallographic orientations and grain morphology. We address the lack of consensus over the choice of orientation representation: a controlled benchmark shows the rotation matrix outperforms quaternions, consistent with its continuous embedding of SO(3), whereas lower-dimensional encodings are inherently discontinuous. The surrogate accurately resolves the spatial distribution of stress hotspots across diverse polycrystalline realizations, generalizing without degradation to out-of-distribution microstructures with four times the training grain count. Exploiting the resolution invariance of the learned operator, we study zero-shot super-resolution on finer grids and find that the number of retained Fourier modes governs a trade-off between hotspot fidelity at the training resolution and aliasing-free cross-resolution robustness. Benchmarked against a Fast Fourier Transform-based spectral solver, the surrogate achieves inference speed-ups of up to $126\\times$ on a single CPU core and approximately $80,000\\times$ on a GPU. Consequently, this model enables computationally intensive microstructure optimization workflows for fatigue and damage tolerance, which heavily rely on accurate stress hotspot predictions.</jats:p>",
+    "status": "excluded_fulltext",
+    "retrieved_at": "2026-09-27T00:35:52.456626Z",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-27"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.2139/ssrn.5398351",
+    "title": "On Ai-Learnt Surrogates for Rans Model for Predicting Wind Speeds in Complex Forested Terrain Using Data Driven Neural Networks ⋆,⋆⋆",
+    "authors": [
+      "Lakdawala, Zahra",
+      "Nadeem, M. Waasif",
+      "Kassem, Hassan"
+    ],
+    "year": 2025,
+    "container_title": "",
+    "abstract": "",
+    "status": "excluded_title",
+    "retrieved_at": "2026-09-27T00:35:52.456640Z",
+    "exclusion_reason": "EC1: Out of domain scope (not natural science temporal system)",
+    "screen_date": "2026-09-27"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.2139/ssrn.5066408",
+    "title": "Accelerated CCS Site Screening Using Fourier Neural Operator Based Surrogates for Flow Simulations",
+    "authors": [
+      "Pawar, Suraj",
+      "Chandra, Anirban",
+      "Panda, Aniruddha",
+      "Devarakota, Pandu",
+      "Alpak, Faruk",
+      "Snippe, Jeroen",
+      "Hohl, Detlef"
+    ],
+    "year": 2025,
+    "container_title": "",
+    "abstract": "<jats:p>Large-scale deployment of carbon capture and storage (CCS) technology is imperative for mitigating greenhouse gas emissions to combat the effects of climate change. One of the key elements for the success of CCS is the selection of appropriate sites to store the captured CO2. To achieve this goal, various factors such as plume migration, storage capacity, and containment need to be validated over long-time horizons. Flow simulators, which accurately model the complex interplay of buoyancy, viscous, and capillary forces, are typically used for modeling plume migration, and thereby optimizing storage efficiency subject to subsurface constraints. However, large reservoirs and long-time horizons associated with CCS often render conventional flow simulators computationally expensive and time-consuming to apply. The computational efficiency challenge is further intensified for site screening applications in which typically large ensembles of forward simulations are necessary due to the uncertainty associated with subsurface variables such as formation dip, geological properties, and a plethora of CO2 trapping parameters. We develop a novel FNO-based surrogate modeling framework for the rapid prediction of plume-migration quantified by spatio-temporal evolution of CO2 mass accumulation and saturation fields. The FNO is a neural network architecture that can approximate underlying physics such as multiphase/multicomponent reservoir simulation equations by using large, annotated datasets of input-output pairs, rather than explicitly relying on the underlying PDEs in the optimized loss as in the case of physics-informed neural networks (PINNs). Finite-volume method based subsurface fluid flow simulation is used to generate a comprehensive data set for a wide range of realistic subsurface parameters that are encountered in CCS sites globally. The outcome of the surrogate model is spatial distributions of CO2 accumulation and saturation for multiple time snapshots from end-of-injection to the end of a long-term migration period (1000 years post end-of-injection). To evaluate the performance of FNO-based surrogate models in the context of CCS site screening applications, we propose a range of novel physics-based metrics, such as plume distance to the injection location. Results on a set of blind data show very comparable accuracy results vis-à-vis numerical simulation. We also obtain three to four orders of magnitude computational acceleration with trained FNO-based surrogate models with minimal sacrifice of prediction accuracy of CO2 mass accumulation and saturation. The FNO based surrogate model is designed to accelerate large-scale deployment of CCS via more rapid and effective quantification of subsurface uncertainties for site screening purposes.</jats:p>",
+    "status": "excluded_fulltext",
+    "retrieved_at": "2026-09-27T00:35:52.456647Z",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-27"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.2139/ssrn.7174081",
+    "title": "Beyond Fixed-Grid Accuracy: Fourier Neural Operator Surrogates for Deployment-Oriented Seismic Response Assessment",
+    "authors": [
+      "Jiang, Jun",
+      "Dong, Chao",
+      "Ma, Yixuan",
+      "Xiong, Chen",
+      "Wang, Xuguang",
+      "Alam, M. Shahria"
+    ],
+    "year": 2026,
+    "container_title": "",
+    "abstract": "<jats:p>Floor acceleration histories are essential for floor response spectra, acceleration-sensitive nonstructural fragility assessment, and equipment-period screening, yet repeated nonlinear time-history analysis (NTHA) remains computationally expensive. This study provides a deployment-oriented evaluation of Fourier Neural Operators (FNOs) as surrogate models for earthquake-induced floor acceleration prediction, focusing on when operator learning offers practical advantages over conventional sequence models. A database generated from 3,474 K-NET ground motions scaled by 57 amplitude coefficients is used to configure the FNO and benchmark it against BiLSTM, Transformer, ResCNN, UNet, and MLP models. The hyperparameter study shows that retained Fourier modes primarily control FNO accuracy for acceleration histories, and an FNO-Large configuration is selected as a practical balance between spectral capacity and cost. In the standard 50 Hz in-distribution benchmark, BiLSTM and Transformer achieve higher pointwise accuracy than FNO-Large, whereas the remaining baselines are screened out by lower accuracy. BiLSTM is further excluded from deployment-oriented tests because its substantially larger memory demand and training time make it less suitable for practical engineering use. The subsequent evaluation therefore focuses on FNO-Large and Transformer under deployment-relevant shifts. When trained at 20 or 25 Hz and evaluated on the 50 Hz grid, FNO-Large maintains high accuracy (R2 = 0.9319 and 0.9374), whereas Transformer fails in the same resolution-transfer setting. FNO-Large also degrades more smoothly under severe ground-motion and intensity-level scarcity and preserves useful accuracy across six RC structural archetypes. Propagating the predicted histories to FEMA P-58 fragility probabilities, acceleration-exceedance durations, and equipment screening yields decisions consistent with finite element analysis (FEA) results. These findings position FNOs as resolution-robust, data-efficient surrogates for preliminary seismic dynamic response prediction and downstream nonstructural assessment.</jats:p>",
+    "status": "excluded_fulltext",
+    "retrieved_at": "2026-09-27T00:35:52.456654Z",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-27"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1109/icdm65498.2025.00135",
+    "title": "Data-Driven Super-Resolution Reconstruction of Quasi-Geostrophic Turbulence Via Enhanced Diffusion Model and Fourier Neural Operator",
+    "authors": [
+      "Guo, Yanan",
+      "Song, Junqiang",
+      "Cao, Xiaoqun",
+      "Leng, Hongze"
+    ],
+    "year": 2025,
+    "container_title": "2025 IEEE International Conference on Data Mining (ICDM)",
+    "abstract": "",
+    "status": "excluded_fulltext",
+    "retrieved_at": "2026-09-27T00:35:52.456663Z",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-27"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.63044/w26son45",
+    "title": "Exploring Phase-Aware and Physics-Guided Machine Learning Surrogates for a Desiccant Wheel Model Using Fourier Neural Operator (FNO)",
+    "authors": [
+      "Song, Ruizhi",
+      "Liu, Mingzhe",
+      "Yang, Zhiyao",
+      "O'Neill, Zheng"
+    ],
+    "year": 2026,
+    "container_title": "2026 ASHRAE Winter Conference",
+    "abstract": "",
+    "status": "excluded_fulltext",
+    "retrieved_at": "2026-09-27T00:35:52.456670Z",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-27"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.23919/aces-china60289.2023.10249492",
+    "title": "Data-Driven Modeling of Landau Damping by Fourier Neural Operator",
+    "authors": [
+      "Wei, Shichen",
+      "Liu, Yuhong",
+      "Fu, Haiyang",
+      "Dong, Chuanfei",
+      "Wang, Liang"
+    ],
+    "year": 2023,
+    "container_title": "2023 International Applied Computational Electromagnetics Society Symposium (ACES-China)",
+    "abstract": "",
+    "status": "excluded_fulltext",
+    "retrieved_at": "2026-09-27T00:35:52.456691Z",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-27"
+  },
+  {
     "bibkey": "zhu2019phasenet",
     "title": "PhaseNet: a deep-neural-network-based arrival-time picking method for P and S waves",
     "authors": [
