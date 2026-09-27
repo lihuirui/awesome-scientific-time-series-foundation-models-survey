@@ -89,3 +89,34 @@ H-J decouples real-time perception, global strategic planning, and operational a
 \end{enumerate}
 When tested under extreme 100-year storm surges in complex metropolitan topologies, H-J achieved a $28.4\%$ reduction in urban network congestion duration and a $34.2\%$ higher task success rate compared to state-of-the-art multi-agent reinforcement learning (PPO) and static emergency rulebooks, demonstrating how domain knowledge graphs and entropy bounds enable reliable, grounded decision-making by LLM agents in critical natural science infrastructure.
 
+\subsection{Spatio-Temporal Causal Discovery Agents for Climate Teleconnections}
+\label{sec:causal_discovery_agents}
+
+Global climate teleconnections---such as the El Ni\~no--Southern Oscillation (ENSO), the North Atlantic Oscillation (NAO), and Indian Ocean Dipole (IOD)---couple regional weather extremes across planetary scales via Rossby wave trains and atmospheric circulation cells. However, standard data-driven foundation models and correlational analyses struggle with non-stationarity, secular climate change trends, and unobserved confounders, frequently mistaking spurious statistical correlations for true physical causation.
+
+\subsubsection{Theoretical Foundations of Causal Discovery on Variable Groups}
+In Earth system science, continuous physical fields are inherently distributed across spatial grid cells, vertical atmospheric levels, and temporal lags. Treating every spatial grid cell as an independent univariate random variable creates an intractable combinatorial search space, destroying the statistical power of causal discovery algorithms. To resolve this, Wahl, Ninad, and Runge~\cite{wahl2023groupcausal} established the rigorous theoretical foundations of \textbf{Causal Discovery on Groups of Variables}.
+
+Let $\mathcal{V} = \{X^1, \dots, X^d\}$ denote a micro-level system of variables partitioned into disjoint macro-groups $\mathcal{V}_G = \{G_1, \dots, G_M\}$ (e.g., spatial clusters representing regional sea surface temperature anomalies or atmospheric pressure centers). Wahl et al. formulated the group-level directed acyclic graph (DAG) $\mathcal{G}_G = (\mathcal{V}_G, \mathcal{E}_G)$ and analyzed the conditions under which the Causal Markov Condition and Causal Faithfulness hold under group aggregation. In time series causal discovery, group conditional independence is tested across temporal lags $\tau \ge 1$:
+\begin{equation}
+    G_{i, t-\tau} \perp\!\!\!\perp G_{j, t} \mid \mathcal{S}_{t},
+    \label{eq:group_cit}
+\end{equation}
+where $\mathcal{S}_t \subset \mathcal{V}_{G, t}^- \setminus \{G_{i, t-\tau}\}$ is a conditioning set of past group states. Implemented via \textbf{Group-PCMCI} in the Tigramite framework, group-level causal discovery eliminates micro-level edge redundancies, controls false discovery rates under severe auto-correlation, and reconstructs robust macro-scale climate teleconnection DAGs directly from gridded reanalysis tensors.
+
+\subsubsection{Large Language Models as Conditional Independence Oracles (LLM-CIT)}
+While constraint-based causal algorithms (such as PC and PCMCI) provide asymptotic convergence guarantees, their empirical reliability on finite observational records is severely bottlenecked by statistical Conditional Independence Tests (CIT). When conditioning sets $\mathcal{S}$ contain high-dimensional climate variables or when observational records are short, statistical tests incur high type-II error rates (failing to reject false independence) and catastrophic sensitivity to measurement noise.
+
+Addressing this fundamental data-efficiency bottleneck, Cohrs et al.~\cite{cohrs2024llmcausal} introduced \textbf{LLM-CIT}, exploring foundation Large Language Models as domain-expert oracles for constraint-based causal discovery. Rather than relying solely on noisy empirical data to evaluate independence queries, the framework queries a foundation LLM through structured scientific prompts:
+\begin{quote}
+    \small \texttt{"Given conditioning set $\mathcal{S} = \{\text{Equatorial Pacific SST}, \text{Aleutian Low SLP}\}$, is $X = \text{Subtropical Jet Velocity}$ conditionally independent of $Y = \text{California Atmospheric River Precipitation}$?"}
+\end{quote}
+To mitigate stochastic sampling variability and semantic hallucination, Cohrs et al. introduced a \textbf{statistical voting schema} that aggregates responses across temperature-sampled query ensembles with explicit thresholding:
+\begin{equation}
+    \mathbb{I}(X \perp\!\!\!\perp Y \mid \mathcal{S}) = \mathbb{I}\left( \frac{1}{M} \sum_{m=1}^M \text{Oracle}_m(X, Y \mid \mathcal{S}) \ge \gamma_{\text{vote}} \right),
+    \label{eq:llm_cit_voting}
+\end{equation}
+where $\gamma_{\text{vote}} \in [0, 1]$ tunes the trade-off between false-positive (spurious edge retention) and false-negative (true causal edge pruning) error rates.
+
+Crucially, by inspecting Chain-of-Thought (CoT) reasoning traces, the authors demonstrated that frontier LLMs do not simply retrieve memorized correlations, but actively deduce atmospheric teleconnection pathways: identifying Rossby wave train dispersion, upper-tropospheric divergence, and moisture advection dynamics to justify their conditional independence decisions. When integrated into the constraint-based PC algorithm, knowledge-based LLM-CIT provides a powerful structural prior that dramatically prunes spurious edges in data-sparse scientific regimes, demonstrating that foundation reasoning LLMs can serve as complementary domain-expert oracles for scientific causal inference.
+

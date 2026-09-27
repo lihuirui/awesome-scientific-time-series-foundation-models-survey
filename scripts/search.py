@@ -218,6 +218,13 @@ def run_search():
         ("Crossref", "A high-resolution canopy height model of the Earth Lang"),
         ("Crossref", "Global-local Fourier Neural Operator for Accelerating Coronal Magnetic Field Model"),
         ("Crossref", "Toward Data-Driven Surrogates of the Solar Wind with Spherical Fourier Neural Operator"),
+        # Iteration 11 Additions: Clifford Layers, Wall Model LES, SWOT Ocean, STE Internal Waves, LLM Causal Discovery, Group Causal
+        ("Crossref", "Clifford Neural Layers for PDE Modeling Brandstetter"),
+        ("Crossref", "Machine learning building-block-flow wall model for large-eddy simulation Lozano-Duran"),
+        ("Crossref", "Simulation-informed deep learning for enhanced SWOT observations Cutolo"),
+        ("Crossref", "Scale-Translation Equivariant Network for Oceanic Internal Solitary Wave Wan"),
+        ("Crossref", "Large Language Models for Constrained-Based Causal Discovery Cohrs"),
+        ("Crossref", "Foundations of Causal Discovery on Groups of Variables Wahl Runge"),
     ]
 
     verified_arxiv_ids = [
@@ -301,6 +308,13 @@ def run_search():
         "2204.08322",  # Global Canopy Height Model (Lang et al.)
         "2405.12754",  # GL-FNO Coronal MHD (Du et al.)
         "2511.22112",  # Solar Wind SFNO (Mansouri et al.)
+        # Iteration 11 arXiv Additions
+        "2209.04934",  # Clifford Neural Layers (Brandstetter et al.)
+        "2211.07879",  # Building-Block Wall Model (Lozano-Durán & Bae)
+        "2503.21303",  # SWOT Ocean Dynamics (Cutolo et al.)
+        "2406.13060",  # STE Oceanic Internal Solitary Waves (Wan et al.)
+        "2406.07378",  # LLMs for Causal Discovery (Cohrs et al.)
+        "2306.07047",  # Causal Discovery on Variable Groups (Wahl et al.)
     ]
 
     candidates = {}
@@ -396,6 +410,8 @@ def run_search():
         "10.1103/physrevlett_126_098302",  # AC-NN (Beucler et al., PRL)
         # Iteration 10 Additions
         "10.1038/s41559-023-02206-6",  # Global Canopy Height Model (Lang et al., Nature Ecol Evol)
+        # Iteration 11 Additions
+        "10.1017/jfm.2023.331",        # Machine Learning Wall Model (Lozano-Durán & Bae, JFM)
     ]
     prev_doi = len(candidates)
     for doi in verified_dois:

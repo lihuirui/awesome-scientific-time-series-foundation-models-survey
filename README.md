@@ -1,7 +1,7 @@
 # Awesome Scientific Multimodal Time Series Foundation Models and Reasoning LLMs
 ## 科学多模态时序大模型与科学推理大模型前沿进展精选
 
-[![Survey PDF](https://img.shields.io/badge/Paper-PDF-red.svg)](paper/main.pdf) [![PRISMA Included](https://img.shields.io/badge/PRISMA%20Included-83%20papers-brightgreen.svg)](#prisma-systematic-review-statistics) [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE) [![Maintenance](https://img.shields.io/badge/Maintained%20by-Antigravity%20CLI-purple.svg)](#how-this-survey-is-maintained)
+[![Survey PDF](https://img.shields.io/badge/Paper-PDF-red.svg)](paper/main.pdf) [![PRISMA Included](https://img.shields.io/badge/PRISMA%20Included-89%20papers-brightgreen.svg)](#prisma-systematic-review-statistics) [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE) [![Maintenance](https://img.shields.io/badge/Maintained%20by-Antigravity%20CLI-purple.svg)](#how-this-survey-is-maintained)
 
 ## Overview / 项目概述
 
@@ -28,12 +28,12 @@ The taxonomy categorizes the literature across four core dimensions:
 
 ![PRISMA 2020 Flow](paper/figures/prisma_flow.png)
 
-- **Records Identified across Academic APIs**: 944
-- **Unique Candidates Evaluated**: 719
-- **Title/Abstract Excluded**: 171
-- **Full-Text Assessed for Eligibility**: 548
-- **Full-Text Excluded (narrow/regional)**: 465
-- **Studies Rigorously Included**: 83
+- **Records Identified across Academic APIs**: 1032
+- **Unique Candidates Evaluated**: 779
+- **Title/Abstract Excluded**: 191
+- **Full-Text Assessed for Eligibility**: 588
+- **Full-Text Excluded (narrow/regional)**: 499
+- **Studies Rigorously Included**: 89
 
 ## Research Landscape & Milestone Timeline
 
@@ -210,6 +210,16 @@ The taxonomy categorizes the literature across four core dimensions:
   - *Architecture*: `Model-Agnostic Conformal Prediction Wrapper` | *Params*: `not reported` | *Physics*: `Soft physics loss`
   - *Links*: [Paper / DOI](https://arxiv.org/abs/2406.14483) | `[Code not available]`
 
+- **Clifford Neural Layers for PDE Modeling** (ICLR 2023)
+  - *Authors*: Brandstetter, Johannes, van den Berg, Rianne, Welling, Max et al.
+  - *Architecture*: `Clifford Fourier Neural Operator (CFNO)` | *Params*: `3.1M` | *Physics*: `Hard constraint projection`
+  - *Links*: [Paper / DOI](https://arxiv.org/abs/2209.04934) | [![Code](https://img.shields.io/badge/Code-GitHub-blue.svg)](https://github.com/microsoft/cliffordlayers)
+
+- **Machine learning building-block-flow wall model for large-eddy simulation** (Journal of Fluid Mechanics 2023)
+  - *Authors*: Lozano-Durán, Adrián, Bae, H. Jane
+  - *Architecture*: `Dual-Branch Building-Block Classifier & Stress Predictor` | *Params*: `0.12M` | *Physics*: `Hybrid PDE solver`
+  - *Links*: [Paper / DOI](https://doi.org/10.1017/jfm.2023.331) | [![Code](https://img.shields.io/badge/Code-GitHub-blue.svg)](not reported)
+
 ### Polar Cryosphere & Sea Ice Dynamics (极地冰冻圈与海冰动力学大模型)
 
 - **IceBench: A Benchmark for Deep Learning based Sea Ice Type Classification** (arXiv:2503.17877 2025)
@@ -338,6 +348,16 @@ The taxonomy categorizes the literature across four core dimensions:
   - *Architecture*: `Generative diffusion-based Lagrangian Data Assimilation (LagDA)` | *Params*: `45M parameters` | *Physics*: `Lagrangian-to-Eulerian fluid kinematic mapping`
   - *Links*: [Paper / DOI](https://arxiv.org/abs/2507.06479) | `[Code not available]`
 
+- **Simulation-informed deep learning for enhanced SWOT observations of fine-scale ocean dynamics** (arXiv:2503.21303 2025)
+  - *Authors*: Cutolo, Eugenio, Granero-Belinchon, Carlos, Thiraux, Ptashanna et al.
+  - *Architecture*: `Simulation-Informed Generative Ensemble Network (SIMPGEN)` | *Params*: `1.4M` | *Physics*: `Soft physics loss`
+  - *Links*: [Paper / DOI](https://arxiv.org/abs/2503.21303) | [![Code](https://img.shields.io/badge/Code-GitHub-blue.svg)](not reported)
+
+- **Scale-Translation Equivariant Network for Oceanic Internal Solitary Wave Localization** (arXiv:2406.13060 2024)
+  - *Authors*: Wan, Zhang, Wang, Shuo, Zhang, Xudong
+  - *Architecture*: `Scale-Translation Equivariant Convolutional Network (STE-Net)` | *Params*: `8.6M` | *Physics*: `Hard constraint projection`
+  - *Links*: [Paper / DOI](https://arxiv.org/abs/2406.13060) | [![Code](https://img.shields.io/badge/Code-GitHub-blue.svg)](https://github.com/ZhangWan-byte/Internal_Solitary_Wave_Localization)
+
 ### Geophysics & Seismology Foundation Models (地球物理与地震学大模型)
 
 - **SeisT: A Foundational Deep-Learning Model for Earthquake Monitoring Tasks** (IEEE Transactions on Geoscience and Remote Sensing (TGRS) 2024)
@@ -445,6 +465,16 @@ The taxonomy categorizes the literature across four core dimensions:
   - *Authors*: Tian, Minyang, Gao, Luyu, Zhang, Shizhuo Dylan et al.
   - *Architecture*: `Multi-step scientific code reasoning and numerical execution benchmark` | *Params*: `Benchmark suite across frontier LLMs` | *Physics*: `Formal differential equation solving and numerical conservation verification`
   - *Links*: [Paper / DOI](https://arxiv.org/abs/2407.13168) | [![Code](https://img.shields.io/badge/Code-GitHub-blue.svg)](https://github.com/scicode-bench/SciCode)
+
+- **Large Language Models for Constrained-Based Causal Discovery** (arXiv:2406.07378 2024)
+  - *Authors*: Cohrs, Kai-Hendrik, Varando, Gherardo, Diaz, Emiliano et al.
+  - *Architecture*: `Constraint-Based PC Algorithm with LLM Conditional Independence Oracle (LLM-CIT)` | *Params*: `Foundation LLMs (8B to 70B+)` | *Physics*: `Purely data-driven`
+  - *Links*: [Paper / DOI](https://arxiv.org/abs/2406.07378) | [![Code](https://img.shields.io/badge/Code-GitHub-blue.svg)](not reported)
+
+- **Foundations of Causal Discovery on Groups of Variables** (UAI 2023)
+  - *Authors*: Wahl, Jonas, Ninad, Urmi, Runge, Jakob
+  - *Architecture*: `Group-Level Constraint-Based Causal Discovery (Group-PCMCI)` | *Params*: `Non-parametric / kernel-based causal estimators` | *Physics*: `Purely data-driven`
+  - *Links*: [Paper / DOI](https://arxiv.org/abs/2306.07047) | [![Code](https://img.shields.io/badge/Code-GitHub-blue.svg)](https://github.com/jakobrunge/tigramite)
 
 ### Foundational Surveys & Methodology (基础综述与方法学)
 

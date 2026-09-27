@@ -11309,5 +11309,920 @@
     "abstract": "",
     "status": "candidate",
     "retrieved_at": "2026-09-27T00:35:52.456691Z"
+  },
+  {
+    "source": "arXiv",
+    "arxiv_id": "2209.04934",
+    "doi": null,
+    "title": "Clifford Neural Layers for PDE Modeling",
+    "authors": [
+      "Johannes Brandstetter",
+      "Rianne van den Berg",
+      "Max Welling",
+      "Jayesh K. Gupta"
+    ],
+    "year": 2022,
+    "abstract": "Partial differential equations (PDEs) see widespread use in sciences and engineering to describe simulation of physical processes as scalar and vector fields interacting and coevolving over time. Due to the computationally expensive nature of their standard solution methods, neural PDE surrogates have become an active research topic to accelerate these simulations. However, current methods do not explicitly take into account the relationship between different fields and their internal components, which are often correlated. Viewing the time evolution of such correlated fields through the lens of multivector fields allows us to overcome these limitations. Multivector fields consist of scalar, vector, as well as higher-order components, such as bivectors and trivectors. Their algebraic properties, such as multiplication, addition and other arithmetic operations can be described by Clifford algebras. To our knowledge, this paper presents the first usage of such multivector representations together with Clifford convolutions and Clifford Fourier transforms in the context of deep learning. The resulting Clifford neural layers are universally applicable and will find direct use in the areas of fluid dynamics, weather forecasting, and the modeling of physical systems in general. We empirically evaluate the benefit of Clifford neural layers by replacing convolution and Fourier operations in common neural PDE surrogates by their Clifford counterparts on 2D Navier-Stokes and weather modeling tasks, as well as 3D Maxwell equations. For similar parameter count, Clifford neural layers consistently improve generalization capabilities of the tested neural PDE surrogates. Source code for our PyTorch implementation is available at https://microsoft.github.io/cliffordlayers/.",
+    "status": "candidate",
+    "retrieved_at": "2026-09-27T05:44:54.633855Z"
+  },
+  {
+    "source": "arXiv",
+    "arxiv_id": "2211.07879",
+    "doi": null,
+    "title": "Machine learning building-block-flow wall model for large-eddy simulation",
+    "authors": [
+      "Adrián Lozano-Durán",
+      "H. Jane Bae"
+    ],
+    "year": 2022,
+    "abstract": "A wall model for large-eddy simulation (LES) is proposed by devising the flow as a combination of building blocks. The core assumption of the model is that a finite set of simple canonical flows contains the essential physics to predict the wall-shear stress in more complex scenarios. The model is constructed to predict zero/favourable/adverse mean pressure gradient wall turbulence, separation, statistically unsteady turbulence with mean flow three-dimensionality, and laminar flow. The approach is implemented using two types of artificial neural networks: a classifier, which identifies the contribution of each building block in the flow, and a predictor, which estimates the wall-shear stress via combination of the building-block flows. The training data are directly obtained from wall-modelled LES (WMLES) optimised to reproduce the correct mean quantities. This approach guarantees the consistency of the training data with the numerical discretisation and the gridding strategy of the flow solver. The output of the model is accompanied by a confidence score in the prediction that aids the detection of regions where the model underperforms. The model is validated in canonical flows (e.g. laminar/turbulent boundary layers, turbulent channels, turbulent Poiseuille-Couette flow, turbulent pipe) and two realistic aircraft configurations: the NASA Common Research Model High-lift and NASA Juncture Flow experiment. It is shown that the building-block-flow wall model outperforms (or matches) the predictions by an equilibrium wall model. It is also concluded that further improvements in WMLES should incorporate advances in subgrid-scale modelling to minimise error propagation to the wall model.",
+    "status": "candidate",
+    "retrieved_at": "2026-09-27T05:44:54.633921Z"
+  },
+  {
+    "source": "arXiv",
+    "arxiv_id": "2503.21303",
+    "doi": null,
+    "title": "Simulation-informed deep learning for enhanced SWOT observations of fine-scale ocean dynamics",
+    "authors": [
+      "Eugenio Cutolo",
+      "Carlos Granero-Belinchon",
+      "Ptashanna Thiraux",
+      "Jinbo Wang",
+      "Ronan Fablet"
+    ],
+    "year": 2025,
+    "abstract": "Oceanic processes at fine scales are crucial yet difficult to observe accurately due to limitations in satellite and in-situ measurements. The Surface Water and Ocean Topography (SWOT) mission provides high-resolution Sea Surface Height (SSH) data, though noise patterns often obscure fine scale structures. Current methods struggle with noisy data or require extensive supervised training, limiting their effectiveness on real-world observations. We introduce SIMPGEN (Simulation-Informed Metric and Prior for Generative Ensemble Networks), an unsupervised adversarial learning framework combining real SWOT observations with simulated reference data. SIMPGEN leverages wavelet-informed neural metrics to distinguish noisy from clean fields, guiding realistic SSH reconstructions. Applied to SWOT data, SIMPGEN effectively removes noise, preserving fine-scale features better than existing neural methods. This robust, unsupervised approach not only improves SWOT SSH data interpretation but also demonstrates strong potential for broader oceanographic applications, including data assimilation and super-resolution.",
+    "status": "candidate",
+    "retrieved_at": "2026-09-27T05:44:54.633965Z"
+  },
+  {
+    "source": "arXiv",
+    "arxiv_id": "2406.13060",
+    "doi": null,
+    "title": "Scale-Translation Equivariant Network for Oceanic Internal Solitary Wave Localization",
+    "authors": [
+      "Zhang Wan",
+      "Shuo Wang",
+      "Xudong Zhang"
+    ],
+    "year": 2024,
+    "abstract": "Internal solitary waves (ISWs) are gravity waves that are often observed in the interior ocean rather than the surface. They hold significant importance due to their capacity to carry substantial energy, thus influence pollutant transport, oil platform operations, submarine navigation, etc. Researchers have studied ISWs through optical images, synthetic aperture radar (SAR) images, and altimeter data from remote sensing instruments. However, cloud cover in optical remote sensing images variably obscures ground information, leading to blurred or missing surface observations. As such, this paper aims at altimeter-based machine learning solutions to automatically locate ISWs. The challenges, however, lie in the following two aspects: 1) the altimeter data has low resolution, which requires a strong machine learner; 2) labeling data is extremely labor-intensive, leading to very limited data for training. In recent years, the grand progress of deep learning demonstrates strong learning capacity given abundant data. Besides, more recent studies on efficient learning and self-supervised learning laid solid foundations to tackle the aforementioned challenges. In this paper, we propose to inject prior knowledge to achieve a strong and efficient learner. Specifically, intrinsic patterns in altimetry data are efficiently captured using a scale-translation equivariant convolutional neural network (ST-ECNN). By considering inherent symmetries in neural network design, ST-ECNN achieves higher efficiency and better performance than baseline models. Furthermore, we also introduce prior knowledge from massive unsupervised data to enhance our solution using the SimCLR framework for pre-training. Our final solution achieves an overall better performance than baselines on our handcrafted altimetry dataset. Data and codes are available at https://github.com/ZhangWan-byte/Internal_Solitary_Wave_Localization .",
+    "status": "candidate",
+    "retrieved_at": "2026-09-27T05:44:54.633995Z"
+  },
+  {
+    "source": "arXiv",
+    "arxiv_id": "2406.07378",
+    "doi": null,
+    "title": "Large Language Models for Constrained-Based Causal Discovery",
+    "authors": [
+      "Kai-Hendrik Cohrs",
+      "Gherardo Varando",
+      "Emiliano Diaz",
+      "Vasileios Sitokonstantinou",
+      "Gustau Camps-Valls"
+    ],
+    "year": 2024,
+    "abstract": "Causality is essential for understanding complex systems, such as the economy, the brain, and the climate. Constructing causal graphs often relies on either data-driven or expert-driven approaches, both fraught with challenges. The former methods, like the celebrated PC algorithm, face issues with data requirements and assumptions of causal sufficiency, while the latter demand substantial time and domain knowledge. This work explores the capabilities of Large Language Models (LLMs) as an alternative to domain experts for causal graph generation. We frame conditional independence queries as prompts to LLMs and employ the PC algorithm with the answers. The performance of the LLM-based conditional independence oracle on systems with known causal graphs shows a high degree of variability. We improve the performance through a proposed statistical-inspired voting schema that allows some control over false-positive and false-negative rates. Inspecting the chain-of-thought argumentation, we find causal reasoning to justify its answer to a probabilistic query. We show evidence that knowledge-based CIT could eventually become a complementary tool for data-driven causal discovery.",
+    "status": "candidate",
+    "retrieved_at": "2026-09-27T05:44:54.634017Z"
+  },
+  {
+    "source": "arXiv",
+    "arxiv_id": "2306.07047",
+    "doi": null,
+    "title": "Foundations of Causal Discovery on Groups of Variables",
+    "authors": [
+      "Jonas Wahl",
+      "Urmi Ninad",
+      "Jakob Runge"
+    ],
+    "year": 2023,
+    "abstract": "Discovering causal relationships from observational data is a challenging task that relies on assumptions connecting statistical quantities to graphical or algebraic causal models. In this work, we focus on widely employed assumptions for causal discovery when objects of interest are (multivariate) groups of random variables rather than individual (univariate) random variables, as is the case in a variety of problems in scientific domains such as climate science or neuroscience. If the group-level causal models are derived from partitioning a micro-level model into groups, we explore the relationship between micro and group-level causal discovery assumptions. We investigate the conditions under which assumptions like Causal Faithfulness hold or fail to hold. Our analysis encompasses graphical causal models that contain cycles and bidirected edges. We also discuss grouped time series causal graphs and variants thereof as special cases of our general theoretical framework. Thereby, we aim to provide researchers with a solid theoretical foundation for the development and application of causal discovery methods for variable groups.",
+    "status": "candidate",
+    "retrieved_at": "2026-09-27T05:44:54.634037Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.52202/075280-2946",
+    "title": "PDE-Refiner: Achieving Accurate Long Rollouts with Neural PDE Solvers",
+    "authors": [
+      "Lippe, Phillip",
+      "Veeling, Bas",
+      "Perdikaris, Paris",
+      "Turner, Richard",
+      "Brandstetter, Johannes"
+    ],
+    "year": 2023,
+    "container_title": "Advances in Neural Information Processing Systems 36",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-27T05:44:56.706862Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.52202/075280-2748",
+    "title": "Clifford Group Equivariant Neural Networks",
+    "authors": [
+      "Ruhe, David",
+      "Brandstetter, Johannes",
+      "Forré, Patrick"
+    ],
+    "year": 2023,
+    "container_title": "Advances in Neural Information Processing Systems 36",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-27T05:44:56.706879Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1038/s42256-024-00962-z",
+    "title": "Envisioning better benchmarks for machine learning PDE solvers",
+    "authors": [
+      "Brandstetter, Johannes"
+    ],
+    "year": 2024,
+    "container_title": "Nature Machine Intelligence",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-27T05:44:56.706887Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.52202/075280-1216",
+    "title": "Scalable Transformer for PDE Surrogate Modeling",
+    "authors": [
+      "Li, Zijie",
+      "Shu, Dule",
+      "Farimani, Amir Barati"
+    ],
+    "year": 2023,
+    "container_title": "Advances in Neural Information Processing Systems 36",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-27T05:44:56.706891Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.21203/rs.3.rs-10648460/v1",
+    "title": "Fourier Double Gate Physics-Informed Neural Networks for Multiscale PDE Solutions and Spatiotemporal Field Modeling",
+    "authors": [
+      "Zhu, Guangzheng",
+      "Gu, Changgui",
+      "Wang, Hailing"
+    ],
+    "year": 2026,
+    "container_title": "",
+    "abstract": "<title>Abstract</title>\n                <p>Physics-Informed Neural Networks (PINNs) provide an effective framework for forward and inverse problems by jointly optimizing the residuals of partial differential equations together with initial and boundary conditions. However, standard multilayer perceptrons exhibit a pronounced spectral bias, and the different loss terms in PINNs often suffer from gradient and scale imbalance. As a result, PINNs may converge slowly or inadequately satisfy local constraints in mixed-frequency and multiscale problems. To address these issues, this paper combines multiscale Fourier feature encoding, a Double Gate network architecture, and adaptive loss weighting to construct a Fourier Double Gate PINN (FDG-PINN). Experiments on mixed-frequency partial differential equations (PDEs) demonstrate that FDG-PINN achieves lower relative errors under a unified frequency configuration. The FDG-PINN framework is subsequently applied to real-world temperature-field reconstruction and temporal extrapolation over northern South Asia and North China to evaluate its ability to reconstruct and extrapolate temperature fields characterized by complex nonlinear spatiotemporal dynamics.</p>",
+    "status": "candidate",
+    "retrieved_at": "2026-09-27T05:44:56.706897Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.52202/085713-0074",
+    "title": "PDEfuncta: Spectrally-Aware Neural Representation for PDE Solution Modeling",
+    "authors": [
+      "Jo, Minju",
+      "Cho, Woojin",
+      "Balasuriya Mudiyanselage, Uvini",
+      "Lee, Seungjun",
+      "Park, Noseong",
+      "Lee, Kookjin"
+    ],
+    "year": 2025,
+    "container_title": "Advances in Neural Information Processing Systems 38",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-27T05:44:56.706902Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.2139/ssrn.5159474",
+    "title": "Dgno: A Novel Physics-Aware Neural Operator for Solving Forward and Inverse Pde Problems Based on Deep, Generative Probabilistic Modeling",
+    "authors": [
+      "Zang, Yaohua",
+      "Koutsourelakis, Phaedon-Stelios"
+    ],
+    "year": 2025,
+    "container_title": "",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-27T05:44:56.706908Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.14711/thesis-hdl152346",
+    "title": "PDE-Driven Methods for Scientific Discovery: Dislocation Simulation, Protein Design, and Neural PDE Solvers",
+    "authors": [
+      "Huang, Chutian"
+    ],
+    "year": null,
+    "container_title": "",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-27T05:44:56.706913Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.2140/apde.2017.10.1",
+    "title": "Nonlinear boundary layers for rotating fluids",
+    "authors": [
+      "Dalibard, Anne-Laure",
+      "Gérard-Varet, David"
+    ],
+    "year": 2017,
+    "container_title": "Analysis &amp; PDE",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-27T05:44:56.706917Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.2514/6.2023-3425",
+    "title": "Building-Block-Flow Model for Large-Eddy Simulation: Application to NASA CRM-HL",
+    "authors": [
+      "Lozano-Duran, Adrian",
+      "Arranz, Gonzalo",
+      "Ling, Yuenong"
+    ],
+    "year": 2023,
+    "container_title": "AIAA AVIATION 2023 Forum",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-27T05:44:59.479217Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.26226/m.64c26777632e9539aa87d574",
+    "title": "Machine-learning wall-model large-eddy simulation of turbulent flows over realistic rough surfaces",
+    "authors": [
+      "Ma, Rong",
+      "Lozano, Adrian"
+    ],
+    "year": 2023,
+    "container_title": "",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-27T05:44:59.479235Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.2514/6.2024-3686",
+    "title": "Building-Block-Flow Model for Large-Eddy Simulation: GPU Implementation and Application to the CRM-HL",
+    "authors": [
+      "Ling, Yuenong",
+      "Costa, Samuel",
+      "Arranz, Gonzalo",
+      "Goc, Konrad",
+      "Mani, Mory",
+      "Lozano-Duran, Adrian"
+    ],
+    "year": 2024,
+    "container_title": "AIAA AVIATION FORUM AND ASCEND 2024",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-27T05:44:59.479241Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.2514/6.2026-4776",
+    "title": "Machine-Learning-Based Wall-Modeled Large-Eddy Simulation of Entry, Descent, and Landing Vehicles With Surface Roughness",
+    "authors": [
+      "Ma, Rong",
+      "Lozano-Duran, Adrian",
+      "Pederson, Clark"
+    ],
+    "year": 2026,
+    "container_title": "AIAA AVIATION 2026 Forum",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-27T05:44:59.479247Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.52843/cassyni.nl8st0",
+    "title": "Wall model for LES based on building-block flows",
+    "authors": [
+      "Duran, Adrian Lozano"
+    ],
+    "year": 2022,
+    "container_title": "",
+    "abstract": "<jats:p>A wall model for large-eddy simulation is proposed by devising the flow as a collection of building blocks, whose information enables the prediction of the stress as the wall.  The core assumption of the model is that simple canonical flows (such as turbulent channel flows, boundary layers, pipes, ducts, speed bumps, etc) contain the essential flow physics to devise accurate models. Three types of building block units are used to train the model, namely, turbulent channel flows, turbulent ducts, and turbulent boundary layers with separation.  The approach is implemented using two interconnected artificial neural networks: a classifier, which identifies the contribution of each building block in the flow; and a predictor, which estimates the wall stress via non-linear combinations of building-block units.  The output of the model is accompanied by the confidence in the prediction. The latter aids the detection of areas where the model underperforms, such as flow regions that are not representative of the building blocks used to train the model. The model is validated in a realistic aircraft geometry from NASA Juncture Flow Experiment, which is representative of external aerodynamic applications with trailing-edge separation.</jats:p>",
+    "status": "candidate",
+    "retrieved_at": "2026-09-27T05:44:59.479251Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.52843/cassyni.r350bs",
+    "title": "ML-based general-purpose closure model for large-eddy simulation",
+    "authors": [
+      "Duran, Adrian Lozano"
+    ],
+    "year": 2026,
+    "container_title": "",
+    "abstract": "<jats:p>The predictive capabilities of computational fluid dynamics, which are critical to aerodynamic design, depend on the development of accurate closure models. However, no practical model has emerged that is universally applicable across the wide range of flow regimes relevant to industry. We introduce a closure model for large-eddy simulation, referred to as the Building-block Flow Model (BFM). This model is founded on the premise that a finite set of simple flows encapsulates the essential physics needed to predict more complex scenarios. The BFM is implemented using artificial neural networks and introduces five key advancements within the large-eddy simulation framework: (1) it is designed to predict multiple flow regimes, including laminar flow; wall turbulence under zero, favorable, and adverse mean-pressure gradients; separation; wall heat transfer; and wall roughness effects; (2) it leverages information-theoretic dimensional analysis to select the most relevant nondimensional input and output variables; (3) it ensures consistency with numerical schemes and gridding strategies by accounting for numerical errors; (4) it is directly applicable to arbitrary complex geometries; and (5) it provides explainability and confidence in the predictions. The BFM is used to predict key quantities of interest across a wide range of cases, including turbulent pipe flows, rough turbine blades, speed bumps, aircraft in landing configurations, and hypersonic flows in entry, descent, and landing vehicles.</jats:p>",
+    "status": "candidate",
+    "retrieved_at": "2026-09-27T05:44:59.479256Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1017/jfm.2025.29",
+    "title": "Machine-learning wall-model large-eddy simulation accounting for isotropic roughness under local equilibrium",
+    "authors": [
+      "Ma, Rong",
+      "Lozano-Durán, Adrián"
+    ],
+    "year": 2025,
+    "container_title": "Journal of Fluid Mechanics",
+    "abstract": "<jats:p>We introduce a wall model for large-eddy simulation (WMLES) applicable to rough surfaces with Gaussian and non-Gaussian distributions for both the transitionally and fully rough regimes. The model is applicable to arbitrary complex geometries where roughness elements are assumed to be underresolved, i.e. subgrid-scale roughness. The wall model is implemented using a multi-hidden-layer feedforward neural network, with the mean geometric properties of the roughness topology and near-wall flow quantities serving as input. The optimal set of non-dimensional input features is identified using information theory, selecting variables that maximize information about the output while minimizing redundancy among inputs. The model also incorporates a confidence score based on Gaussian process modelling, enabling the detection of potentially low model performance for untrained rough surfaces. The model is trained using a direct numerical simulation (DNS) roughness database comprising approximately 200 cases. The roughness geometries for the database are selected from a large repository through active learning. This approach ensures that the rough surfaces incorporated into the database are the most informative, achieving higher model performance with fewer DNS cases compared with passive learning techniques. The performance of the model is evaluated both <jats:italic>apriori</jats:italic> and <jats:italic>aposteriori</jats:italic> in WMLES of turbulent channel flows with rough walls. Over 550 channel flow cases are considered, including untrained roughness geometries, roughness Reynolds numbers and grid resolutions for both transitionally and fully rough regimes. Our rough-wall model offers higher accuracy than existing models, generally predicting wall shear stress within an accuracy range of 1%–15 %. The performance of the model is also assessed on a high-pressure turbine blade with two different rough surfaces. We show that the new wall model predicts the skin friction and the mean velocity deficit induced by the rough surface on the blade within 1%–10 % accuracy except the region with transition or shock waves. This work extends the building-block flow wall model (BFWM) introduced by Lozano-Durán &amp; Bae (2023. <jats:italic>J. Fluid Mech.</jats:italic><jats:bold>963</jats:bold>, A35) for smooth walls, expanding the BFWM framework to account for rough-wall scenarios.</jats:p>",
+    "status": "candidate",
+    "retrieved_at": "2026-09-27T05:44:59.479261Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.2514/6.2025-2259",
+    "title": "Bow Shockwave Instabilities of the Mars Science Laboratory Using Wall-Modeled Large Eddy Simulation",
+    "authors": [
+      "Anton Alvarez, Adrian",
+      "Lozano-Duran, Adrian"
+    ],
+    "year": 2025,
+    "container_title": "AIAA SCITECH 2025 Forum",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-27T05:44:59.479266Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1038/s44172-024-00278-1",
+    "title": "Building-block-flow computational model for large-eddy simulation of external aerodynamic applications",
+    "authors": [
+      "Arranz, Gonzalo",
+      "Ling, Yuenong",
+      "Costa, Sam",
+      "Goc, Konrad",
+      "Lozano-Durán, Adrián"
+    ],
+    "year": 2024,
+    "container_title": "Communications Engineering",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-27T05:44:59.479271Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.5220/0012078600003546",
+    "title": "Simulation of Steady and Transient 3D Flows via Physics-Informed Deep Learning",
+    "authors": [
+      "Moser, Philipp",
+      "Fenz, Wolfgang",
+      "Thumfart, Stefan",
+      "Ganitzer, Isabell",
+      "Giretzlehner, Michael"
+    ],
+    "year": 2023,
+    "container_title": "Proceedings of the 13th International Conference on Simulation and Modeling Methodologies, Technologies and Applications",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-27T05:45:02.024053Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1038/s41598-026-46210-9",
+    "title": "Deep learning-based oceanic internal wave detection from SWOT satellite imaginary observations",
+    "authors": [
+      "Pang, Shuangyu",
+      "Su, Xiangyu",
+      "Yang, Song"
+    ],
+    "year": 2026,
+    "container_title": "Scientific Reports",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-27T05:45:02.024071Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.5194/egusphere-egu26-15763",
+    "title": "Enhancing subseasonal forecasting skill with land observations and physics-informed deep learning",
+    "authors": [
+      "Ruiz-Vásquez, Melissa",
+      "Oh, Sungmin",
+      "Düben, Peter",
+      "Orth, René"
+    ],
+    "year": 2026,
+    "container_title": "",
+    "abstract": "<jats:p>Subseasonal forecasts, which predict weather patterns from weekly up to seasonal timescales, are crucial to minimize the adverse impacts of extreme weather events, such as heatwaves and droughts, on ecosystems and society. However, forecast skill at subseasonal lead times remains limited, as the chaotic nature of the atmosphere reduces the usefulness of the information contained in atmospheric initial conditions for increasing lead times. In contrast, land surface states, including soil moisture and vegetation anomalies, evolve more slowly and retain memory over weeks, allowing them to persist across subseasonal timescales and making them a potentially important source of predictability. Despite this, most operational weather forecast models represent only the mean seasonal cycle of land conditions, because accurately incorporating land surface anomalies remains challenging and can degrade model performance.In order to address this situation, we develop a prototype of a hybrid weather prediction model to forecast near-surface temperature and surface soil moisture and related extremes. The model leverages the flexibility of deep learning to build on (i) satellite-based land surface observations, (ii) short-range forecasts from the Integrated Forecasting System to inform the model with physically consistent atmospheric evolution, and (iii) previous meteorological conditions sourced from reanalysis data. First results suggest that land surface anomalies exert a stronger influence during extreme conditions, when land memory persists, whereas under average conditions their influence is more evenly shared with atmospheric anomalies. Our study provides a benchmark for integrating land surface information into hybrid forecasting systems and highlights pathways to improve subseasonal prediction and early warning systems.</jats:p>",
+    "status": "candidate",
+    "retrieved_at": "2026-09-27T05:45:02.024077Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.2139/ssrn.4627284",
+    "title": "Real-Time Prediction of Structural Response Using Physics-Informed Frequency Enhanced Deep Learning Approaches",
+    "authors": [
+      "Meng, Shiqiao",
+      "Zhou, Ying"
+    ],
+    "year": 2023,
+    "container_title": "",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-27T05:45:02.024082Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.5194/egusphere-egu24-11336",
+    "title": "FaSt-SWOT field campaigns combining high-resolution observations and modelling for SWOT validation in the Western Mediterranean Sea",
+    "authors": [
+      "Mourre, Baptiste",
+      "Verger-Miralles, Elisabet",
+      "Gómez-Navarro, Laura",
+      "Barceló-Llull, Bàrbara",
+      "Casas, Benjamin",
+      "Combes, Vincent",
+      "Cutolo, Eugenio",
+      "Diaz-Barroso, Lara",
+      "Garcia-Jove, Maximo",
+      "Lizarrán, Irene",
+      "Reyes, Emma",
+      "Tarry, Daniel",
+      "Zarokanellos, Nikolaos",
+      "Pascual, Ananda"
+    ],
+    "year": 2025,
+    "container_title": "",
+    "abstract": "<jats:p>The FaSt-SWOT sea trial experiments, conducted in the Balearic Sea (Western Mediterranean Sea) between 25-28 April and 7-10 May 2023, aimed at collecting multi-platform in-situ observations of meso- and submesoscale ocean structures in the area covered by the SWOT satellite during its initial fast-sampling phase. The general objectives of the FaSt-SWOT project are twofold: 1) participate with these data to the satellite cal/val activities, and 2) improve the characterization and understanding of the fine-scale dynamics by combining in-situ multi-platform and satellite data with high-resolution numerical models and machine-learning-based computational techniques. The experiments consisted in 2 phases both using multi-scale ship-based instruments (CTD, Moving Vessel Profiler, thermosalinograph, ADCP and GoPros), autonomous platforms (surface drifters and gliders), and satellite observations (SST, ocean color and altimetry). In addition, 2km-resolution data-assimilative modelling simulations were produced to provide a complementary view of the fine-scale ocean variability. Finally, machine-learning-based optimization algorithms were also tested to define adaptive sampling strategies during the experiment.&amp;#160;The sampling first focused on a 20km-diameter anticyclonic eddy detected under the swath of the satellite thanks to satellite imagery and drifter trajectories. Several cross-sections of the Moving Vessel Profiler and underwater gliders provided insights into the vertical structure of temperature and salinity fields and the associated signals in chlorophyll and dissolved oxygen. Two gliders were programmed to perform back-and-forth sections during a 3-week time with a 1-day delay between them, allowing to evaluate the temporal variability of the ocean fields at the period of repetitivity of the satellite. The second phase started 9 days after the end of the first one. A 48-hour dense radiator-like pattern was performed by R/V SOCIB, allowing to characterize the evolution of the small eddy observed during the first leg. &amp;#160;A total of 45 surface drifters were deployed during the two phases to evaluate in-situ surface currents and their associated convergence and divergence in the vicinity of the eddy. While conventional altimetry was not able to properly represent the sea level signature of the observed eddy, initial SWOT measurements indicate an improved detection capability by the new satellite. In addition, high-resolution numerical simulations reproduce a small anticyclonic eddy with similar characteristics as that of the observed eddy. These simulations are used to provide a more general understanding of the situation, indicate the origin of the eddy in the frontal area between recent and modified Atlantic waters, and provide insights into the vertical extension of the small mesoscale structure. &amp;#160;We provide here an overview of the whole FaSt-SWOT dataset, including both observing and modelling components. A more detailed analysis of the measurements is provided in a companion presentation.&amp;#160;</jats:p>",
+    "status": "candidate",
+    "retrieved_at": "2026-09-27T05:45:02.024089Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.2118/203934-ms",
+    "title": "Physics Informed Deep Learning for Flow and Transport in Porous Media",
+    "authors": [
+      "Fraces, Cedric G.",
+      "Tchelepi, Hamdi"
+    ],
+    "year": 2021,
+    "container_title": "SPE Reservoir Simulation Conference",
+    "abstract": "<jats:title>Abstract</jats:title>\n               <jats:p>We present our progress on the application of physics informed deep learning to reservoir simulation problems. The model is a neural network that is jointly trained to respect governing physical laws and match boundary conditions. The methodology is hereby used to simulate a 2-phase immiscible transport problem (Buckley-Leverett). The model is able to produce an accurate physical solution both in terms of shock and rarefaction and honors the governing partial differential equation along with initial and boundary conditions. We test various hypothesis (uniform and non-uniform initial conditions) and show that with the proper implementation of physical constraints, a robust solution can be trained within a reasonable amount of time and iterations. We revisit some of the limitations presented in previous work [1] and further the applicability of this method in a forward, pure hyperbolic setup. We also share some practical findings on the application of physics informed neural networks (PINN). We review various network architectures presented in the literature and show tips that helped improve their convergence and accuracy. The proposed methodology is a simple and elegant way to instill physical knowledge to machine-learning algorithms. This alleviates the two most significant shortcomings of machine-learning algorithms: the requirement for large datasets and the reliability of extrapolation. The principles presented can be generalized in innumerable ways in the future and should lead to a new class of algorithms to solve both forward and inverse physical problems.</jats:p>",
+    "status": "candidate",
+    "retrieved_at": "2026-09-27T05:45:02.024094Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.3389/fmars.2024.1151868",
+    "title": "CLOINet: ocean state reconstructions through remote-sensing, in-situ sparse observations and deep learning",
+    "authors": [
+      "Cutolo, Eugenio",
+      "Pascual, Ananda",
+      "Ruiz, Simon",
+      "Zarokanellos, Nikolaos D.",
+      "Fablet, Ronan"
+    ],
+    "year": 2024,
+    "container_title": "Frontiers in Marine Science",
+    "abstract": "<jats:p>\n                    Combining remote-sensing data with\n                    <jats:italic>in-situ</jats:italic>\n                    observations to achieve a comprehensive 3D reconstruction of the ocean state presents significant challenges for traditional interpolation techniques. To address this, we developed the CLuster Optimal Interpolation Neural Network (CLOINet), which combines the robust mathematical framework of the Optimal Interpolation (OI) scheme with a self-supervised clustering approach. CLOINet efficiently segments remote sensing images into clusters to reveal non-local correlations, thereby enhancing fine-scale oceanic reconstructions. We trained our network using outputs from an Ocean General Circulation Model (OGCM), which also facilitated various testing scenarios. Our Observing System Simulation Experiments aimed to reconstruct deep salinity fields using Sea Surface Temperature (SST) or Sea Surface Height (SSH), alongside sparse\n                    <jats:italic>in-situ</jats:italic>\n                    salinity observations. The results showcased a significant reduction in reconstruction error up to 40% and the ability to resolve scales 50% smaller compared to baseline OI techniques. Remarkably, even though CLOINet was trained exclusively on simulated data, it accurately reconstructed an unseen SST field using only glider temperature observations and satellite chlorophyll concentration data. This demonstrates how deep learning networks like CLOINet can potentially lead the integration of modeling and observational efforts in developing an ocean digital twin.\n                  </jats:p>",
+    "status": "candidate",
+    "retrieved_at": "2026-09-27T05:45:02.024100Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.31224/5008",
+    "title": "A Learning-Based Approach for Sensor Calibration in SWOT Sea Surface Height Observations",
+    "authors": [
+      "Veluru, Akhil"
+    ],
+    "year": 2025,
+    "container_title": "",
+    "abstract": "<jats:p>Sea Surface Height (SSH) maps are crucial for observing and analyzing mesoscale ocean surface dy- namics. Traditionally, such maps have been generated using one-dimensional satellite observations. The upcoming Surface Water and Ocean Topography (SWOT) mission introduces a groundbreaking sensor capable of acquiring two-dimensional SSH profiles, enabling observations at previously unresolved spatio-temporal scales. However, a critical challenge lies in separating the true SSH signal from instrument or geophysical errors in the SWOT data. This paper presents a novel learning-based approach for sensor calibration, incorporating a scale decomposition step informed by the structural characteristics of different signals. In a supervised framework, our method achieves state-of-the-art residual error reduction while providing corrections across the full spectrum of observations and imposing weaker constraints on the modeled error signal. These results highlight the potential of advanced learning techniques for improving the accuracy and reliability of SSH measurements in the SWOT mission.</jats:p>",
+    "status": "candidate",
+    "retrieved_at": "2026-09-27T05:45:02.024105Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.2139/ssrn.4829861",
+    "title": "A New Causal Physics-Informed Deep Learning Architecture to Improve Model Performance in Groundwater Level Simulation",
+    "authors": [
+      "ADOMBI, Adoubi Vincent De Paul",
+      "Chesnaux, Romain"
+    ],
+    "year": 2024,
+    "container_title": "",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-27T05:45:02.024110Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1109/joe.2004.841392",
+    "title": "A Case Study of Internal Solitary Wave Propagation During ASIAEX 2001",
+    "authors": [
+      "Liu, A.K.",
+      "Ramp, S.R.",
+      "Zhao, Y.",
+      "Tang, T.Y."
+    ],
+    "year": 2004,
+    "container_title": "IEEE Journal of Oceanic Engineering",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-27T05:45:05.539217Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.22541/essoar.169272229.91795509/v1",
+    "title": "Multi-scale variability of internal solitary wave speed in the Sulu Sea",
+    "authors": [
+      "Li, XiXi",
+      "Liang, Jianjun",
+      "Fan, Kaiguo",
+      "Li, Xiaoming"
+    ],
+    "year": 2023,
+    "container_title": "",
+    "abstract": "<jats:p>Internal solitary waves (ISWs) have considerable energy to drive the\nmixing of water masses in the Sulu Sea. The propagation speed is a\ncritical parameter in demonstrating the dynamic characteristics of ISWs.\nWe collected 1354 groups of ISWs’ speeds from tandem satellite remote\nsensing images with short temporal intervals and analyzed their spatial\nand multi-scale temporal variations in the Sulu Sea. The wave speeds\nincrease exponentially with water depth with a power of 0.26. The\nfortnightly spring/neap tidal currents cause daily variations of wave\nspeeds up to 30%. In addition to the well-recognized stratification\nthat leads to monthly variations of wave speed, the seasonal\ncirculations lead to a maximum decrease of wave speeds by 0.27 m/s. With\nrespect to interannual variations, the wave speeds increase in La Niña\nyears and decrease in El Niño years, caused by the climatic modulation\nof ocean stratification.</jats:p>",
+    "status": "candidate",
+    "retrieved_at": "2026-09-27T05:45:05.539236Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1111/sapm.12100",
+    "title": "Nonlinear Wave Equations for Oceanic Internal Solitary Waves",
+    "authors": [
+      "Grimshaw, Roger"
+    ],
+    "year": 2015,
+    "container_title": "Studies in Applied Mathematics",
+    "abstract": "<jats:p>In the coastal ocean, the interaction of barotropic tidal currents with topographic features such as the continental shelf, sills in narrow straits, and bottom ridges are often observed to generate large amplitude, horizontally propagating internal solitary waves. These are long nonlinear waves and hence can be modeled by equations of the Korteweg–de Vries type. Typically they occur in regions of variable bottom topography, with the consequence that the appropriate nonlinear evolution equation has variable coefficients. Further, as these waves can be long‐lived it is necessary to take account of the effects of the Earth's background rotation. We review this family of model evolution equations and some of their pertinent solutions, obtained both asymptotically and numerically.</jats:p>",
+    "status": "candidate",
+    "retrieved_at": "2026-09-27T05:45:05.539241Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1063/1.33190",
+    "title": "Spectrum for small-scale oceanic internal waves from conservation of wave action",
+    "authors": [
+      "Miklovic, Donald W."
+    ],
+    "year": 1981,
+    "container_title": "AIP Conference Proceedings",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-27T05:45:05.539246Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1109/igarss52108.2023.10283163",
+    "title": "Global Oceanic Internal Solitary Wave Detection Using SAR and MODIS Imagery",
+    "authors": [
+      "Sun, Lina",
+      "Zhang, Jie",
+      "Meng, Junmin",
+      "Hou, Fucheng",
+      "Bao, Sude",
+      "Zhang, Hao"
+    ],
+    "year": 2023,
+    "container_title": "IGARSS 2023 - 2023 IEEE International Geoscience and Remote Sensing Symposium",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-27T05:45:05.539251Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1575/1912/83",
+    "title": "1998 WHOI/IOS/ONR internal solitary wave workshop : contributed papers",
+    "authors": [
+      ""
+    ],
+    "year": 1999,
+    "container_title": "",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-27T05:45:05.539256Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1007/0-306-48024-7_2",
+    "title": "Internal Tide Transformation and Oceanic Internal Solitary Waves",
+    "authors": [
+      "Holloway, Peter",
+      "Pelinovsky, Efim",
+      "Talipova, Tatiana"
+    ],
+    "year": null,
+    "container_title": "Topics in Environmental Fluid Mechanics",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-27T05:45:05.539261Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.2991/cisia-15.2015.211",
+    "title": "Study On Group Velocity Of Oceanic Internal Solitary Wave",
+    "authors": [
+      "Zhang, X.D",
+      "Wang, J.",
+      "Sun, L.N",
+      "Meng, J.M"
+    ],
+    "year": 2015,
+    "container_title": "Advances in Computer Science Research",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-27T05:45:05.539266Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1109/igarss.1998.691683",
+    "title": "On the dependence of radar signatures of oceanic internal solitary waves on wind conditions and internal wave parameters",
+    "authors": [
+      "Brandt, P.",
+      "Romeiser, R.",
+      "Rubino, A."
+    ],
+    "year": 1998,
+    "container_title": "IGARSS '98. Sensing and Managing the Environment. 1998 IEEE International Geoscience and Remote Sensing. Symposium Proceedings. (Cat. No.98CH36174)",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-27T05:45:05.539272Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.25144/18419",
+    "title": "DOPPLER SONAR MEASUREMENTS OF INTERNAL SOLITARY WAVE WAKES",
+    "authors": [
+      "PINKEL, R"
+    ],
+    "year": 2023,
+    "container_title": "Acoustical Oceanography 2001",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-27T05:45:05.539276Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.5194/egusphere-egu24-21883",
+    "title": "Large Language Models for Causal Discovery in the Earth Sciences",
+    "authors": [
+      "Camps-Valls, Gustau",
+      "Cohrs, Kai-Hendrik",
+      "Diaz, Emiliano",
+      "Sitokonstantinou, Vasileios",
+      "Varando, Gherardo"
+    ],
+    "year": 2025,
+    "container_title": "",
+    "abstract": "<jats:p>Causality is essential for understanding complex systems like the Earth and climate, where a plethora of intertwined variables and processes happen in the wild. Constructing causal graphs often relies on either data-driven or expert-driven approaches, both fraught with challenges. The former methods, like the celebrated Peter-Clark (PC) algorithm, face issues with data requirements and assumptions of causal sufficiency, while the latter demand substantial time and expertise.This work explores the capabilities of Large Language Models (LLMs) as an alternative to domain experts for causal graph generation. We frame conditional independence queries as prompts to LLMs and employ the PC algorithm with the answers. The performances of the LLM-based conditional independence oracle on systems with known causal graphs show a high degree of variability. We improve the performance through a proposed statistical-inspired voting schema that allows control over false-positives and false-negatives rates. We apply our chatPC algorithm to understand the causal relations between complex sets of variables (social, economic, conflicts, environmental, and climatic factors) in two pressing problems: population displacement and food insecurity in Africa. We find plausible graphs as corroborated by experts in the humanitarian sector, finding traces of causal reasoning in the model's answers. We posit that LLM-based causality is a new, promising, alternative avenue for automated causality, especially indicated for rapid response and data-scarce regimes.</jats:p>",
+    "status": "candidate",
+    "retrieved_at": "2026-09-27T05:45:07.694295Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1088/2632-2153/ada47f/v2/response1",
+    "title": "Author response for \"Large Language Models for Causal Hypothesis Generation in Science\"",
+    "authors": [
+      "Kai-Hendrik Cohrs",
+      "Emiliano Diaz",
+      "Vasileios Sitokonstantinou",
+      "Gherardo Varando",
+      "Gustau Camps-Valls"
+    ],
+    "year": 2024,
+    "container_title": "",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-27T05:45:07.694315Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.11606/d.45.2026.tde-18032026-165543",
+    "title": "Large language models as tools for Bayesian causal discovery",
+    "authors": [
+      "Videira, Bruna Bazaluk Machado"
+    ],
+    "year": null,
+    "container_title": "",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-27T05:45:07.694321Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1109/fllm67465.2025.11391103",
+    "title": "Agent-guided Causal Discovery with a Small Language Model",
+    "authors": [
+      "Mossop, Brandon",
+      "Choudhury, Salimur"
+    ],
+    "year": 2025,
+    "container_title": "2025 3rd International Conference on Foundation and Large Language Models (FLLM)",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-27T05:45:07.694327Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.2139/ssrn.5182420",
+    "title": "Handling Causal Tasks by Large Language Models: From Discovery to Reasoning",
+    "authors": [
+      "yue, xu",
+      "Chen, Haoxuan",
+      "Wang, Yuan",
+      "Wu, Haijia",
+      "Wang, Shu",
+      "Liu, Li"
+    ],
+    "year": 2025,
+    "container_title": "",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-27T05:45:07.694332Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.2139/ssrn.6116106",
+    "title": "Integer Programming-Constrained Decoding for Reducing constraint-based Hallucinations in Large Language Models",
+    "authors": [
+      "Yodah, Walter"
+    ],
+    "year": 2026,
+    "container_title": "",
+    "abstract": "<jats:p>Large Language Models (LLMs) frequently produce outputs that violate explicit numerical, logical, or structural constraints, a phenomenon that contributes to a class of errors commonly referred to as hallucinations. While existing decoding strategies such as greedy decoding, beam search, and sampling-based methods optimize likelihood, they provide no mechanism for enforcing feasibility during generation. In this work, we propose Integer Programming-Constrained Decoding (IPCD), a decoding framework that integrates mixed-integer constraint enforcement directly into the autoregressive decoding process. IPCD restricts the token-selection trajectory to feasible regions, ensuring exact satisfaction of all hard constraints throughout generation. We operationalize hallucinations as constraint-based hallucinations, defined as violations of explicit numerical, logical, or monotonic constraints, enabling precise quantitative evaluation. IPCD is evaluated against standard decoding strategies, including greedy decoding, beam search, nucleus sampling, Chain-of-Thought decoding, and post-hoc ILP-based projection. Experiments are conducted on both simulated health datasets and real-world clinical benchmarks, including stroke and diabetes risk prediction, under controlled noise perturbations. Across all settings, IPCD substantially reduces constraint violation magnitude and increases feasible generation rates while maintaining competitive predictive accuracy and likelihood retention. Compared to post-hoc ILP decoding, IPCD demonstrates improved robustness by preventing infeasible intermediate states during decoding rather than repairing them after generation. These results highlight IPCD as a principled and practical approach for reducing constraint-based hallucinations in safety-critical applications where numerical and logical consistency is essential.</jats:p>",
+    "status": "candidate",
+    "retrieved_at": "2026-09-27T05:45:07.694339Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.5194/egusphere-egu26-13632",
+    "title": "Causal discovery from equation discovery",
+    "authors": [
+      "Camps-Valls, Gustau",
+      "Guimerà, Roger",
+      "Varando, Gherardo",
+      "Diaz, Emiliano",
+      "Cohrs, Kai-Hendrik",
+      "Sales-Pardo, Marta"
+    ],
+    "year": 2026,
+    "container_title": "",
+    "abstract": "<jats:p>Reliable causal inference is a central challenge in Earth and climate sciences: observational records are limited, interventions are rare or impossible, and process representations in models rely on parametrizations that can introduce strong asymmetries between variables and the causal mechanisms [1,2]. Leveraging these asymmetries, rather than treating them as nuisances, can offer a principled route to causal discovery that is directly aligned with scientific modeling practice [2].We address bivariate causal discovery from the standpoint of equation discovery using the Bayesian Machine Scientist (BMS) framework [3]. Our key contribution is to formalize the theoretical link between Symbolic Regression (SR) and Algorithmic Information Theory (AIT) via the Minimum Description Length (MDL) principle: the more plausible causal direction is the one that admits a shorter joint description in terms of a mechanism plus independent inputs [4]. Building on this connection, we characterize the mathematical properties of the resulting causal criterion, including identifiability and asymptotic consistency, and we analyze the role of core assumptions—most notably the Principle of Independent Causal Mechanisms (ICM)—in the context of geophysical data and climate-model parametrizations [5].We demonstrate the approach on simulated benchmarks and on real Earth-system examples covering both i.i.d. settings and time-series climate data. The results illustrate when and why asymmetric parametrizations help disambiguate causal direction, and they provide a practical pathway to turn discovered governing equations into testable causal hypotheses for Earth and climate science.References[1] Jonas Peters, Dominik Janzing, and Bernhard Schölkopf. Elements of causal inference: foundations and learning algorithms. The MIT Press, 2017.[2] Gustau Camps-Valls, Andreas Gerhardus, Urmi Ninad, Gherardo Varando, Georg Martius, Emili Balaguer-Ballester, Ricardo Vinuesa, Emiliano Diaz, Laure Zanna, and Jakob Runge. Discovering causal relations and equations from data. Physics Reports, 1044:1–68, 2023.[3] Roger Guimera, Ignasi Reichardt, Antoni Aguilar-Mogas, Francesco A. Massucci, Manuel Miranda, Jordi Pallares y Marta Sales-Pardo. A Bayesian machine scientist to aid in the solution of challenging scientific problems. Science Advances, 6(5):eaav6971, 2020.[4] Dominik Janzing, Joris Mooij, Kun Zhang, Jan Lemeire, Jakob Zscheischler, Povilas Daniūsis, Bastian Steudel und Bernhard Schölkopf. Information-geometric approach to inferring causal directions. Artificial Intelligence, 182:1–31, 2012.[5] Sascha Xu, Sarah Mameche, and Jilles Vreeken. Information-theoretic causal discovery in topological order. In The 28th International Conference on Artificial Intelligence and Statistics, 2025.</jats:p>",
+    "status": "candidate",
+    "retrieved_at": "2026-09-27T05:45:07.694343Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.2147/clep.s550565",
+    "title": "Can Contemporary Large Language Models Provide the Domain Knowledge Needed for Causal Inference? Evaluating Automated Causal Graph Discovery Through an ASCVD Case Study",
+    "authors": [
+      "Aziz, Maryam",
+      "Brookhart, M"
+    ],
+    "year": 2025,
+    "container_title": "Clinical Epidemiology",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-27T05:45:07.694350Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1609/aaai.v37i10.26450",
+    "title": "Vector Causal Inference between Two Groups of Variables",
+    "authors": [
+      "Wahl, Jonas",
+      "Ninad, Urmi",
+      "Runge, Jakob"
+    ],
+    "year": 2023,
+    "container_title": "Proceedings of the AAAI Conference on Artificial Intelligence",
+    "abstract": "<jats:p>Methods to identify cause-effect relationships currently mostly assume the variables to be scalar random variables. However, in many fields the objects of interest are vectors or groups of scalar variables.\nWe present a new constraint-based non-parametric approach for inferring the causal relationship between two vector-valued random variables from observational data. Our method employs sparsity estimates of directed and undirected graphs and is based on two new principles for groupwise causal reasoning that we justify theoretically in Pearl's graphical model-based causality framework. Our theoretical considerations are complemented by two new causal discovery algorithms for causal interactions between two random vectors which find the correct causal direction reliably in simulations even if interactions are nonlinear. We evaluate our methods empirically and compare them to other state-of-the-art techniques.</jats:p>",
+    "status": "candidate",
+    "retrieved_at": "2026-09-27T05:45:10.293275Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.5194/egusphere-egu2020-9270",
+    "title": "Causal Discovery for Climate Time Series in the Presence of Unobserved Variables",
+    "authors": [
+      "Gerhardus, Andreas",
+      "Runge, Jakob"
+    ],
+    "year": 2020,
+    "container_title": "",
+    "abstract": "<jats:p>\n        &amp;lt;p&amp;gt;Scientific inquiry seeks to understand natural phenomena by understanding their underlying processes, i.e., by identifying cause and effect. In addition to mere scientific curiosity, an understanding of cause and effect relationships is necessary to predict the effect of changing dynamical regimes and for the attribution of extreme events to potential causes. It is thus an important question to ask how, in cases where controlled experiments are not feasible, causation can still be inferred from the statistical dependencies in observed time series.&amp;lt;/p&amp;gt;&amp;lt;p&amp;gt;A central obstacle for such an inference is the potential existence of unobserved causally relevant variables. Arguably, this is more likely to be the case than not, for example unmeasured deep oceanic variables in atmospheric processes. Unobserved variables can act as confounders (meaning they are a common cause of two or more observed variables) and thus introduce spurious, i.e., non-causal dependencies. Despite these complications, the last three decades have seen the development of so-called causal discovery algorithms (an example being FCI by Spirtes et al., 1999) that are often able to identify spurious associations and to distinguish them from genuine causation. This opens the possibility for a data-driven approach to infer cause and effect relationships among climate variables, thereby contributing to a better understanding of Earth's complex climate system.&amp;lt;/p&amp;gt;&amp;lt;p&amp;gt;These methods are, however, not yet well adapted to some specific challenges that climate time series often come with, e.g. strong autocorrelation, time lags and nonlinearities. To close this methodological gap, we generalize the ideas of the recent PCMCI causal discovery algorithm (Runge et al., 2019) to time series where unobserved causally relevant variables may exist (in contrast, PCMCI made the assumption of no confounding). Further, we present preliminary applications to modes of climate variability.&amp;lt;/p&amp;gt;\n        </jats:p>",
+    "status": "candidate",
+    "retrieved_at": "2026-09-27T05:45:10.293293Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.52202/068431-1178",
+    "title": "Conditional Independence Testing with Heteroskedastic Data and Applications to Causal Discovery",
+    "authors": [
+      "Günther, Wiebke",
+      "Ninad, Urmi",
+      "Wahl, Jonas",
+      "Runge, Jakob"
+    ],
+    "year": 2022,
+    "container_title": "Advances in Neural Information Processing Systems 35",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-27T05:45:10.293301Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.52202/079017-1143",
+    "title": "Causal discovery with endogenous context variables",
+    "authors": [
+      "Günther, Wiebke",
+      "Popescu, Oana-Iuliana",
+      "Rabel, Martin",
+      "Ninad, Urmi",
+      "Gerhardus, Andreas",
+      "Runge, Jakob"
+    ],
+    "year": 2024,
+    "container_title": "Advances in Neural Information Processing Systems 37",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-27T05:45:10.293306Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.5194/egusphere-egu26-20679",
+    "title": "A causal framework for anticipating and managing ecological regime shifts",
+    "authors": [
+      "Lanson, Alexandrine",
+      "Wahl, Jonas",
+      "Runge, Jakob"
+    ],
+    "year": 2026,
+    "container_title": "",
+    "abstract": "<jats:p>Detecting regime shifts in ecological systems is crucial for anticipating changes and guiding management actions or ecosystem restoration. When ecosystems are trapped in an undesirable state, assessing their resilience can provide guidance for deciding how and when to intervene on system to trigger a shift to a more desirable state. By understanding how strongly the system resists change, one can better anticipate the type, intensity and timing of such interventions.To design effective interventions, it is necessary to distinguish causal effects from correlations and determine how acting on a given driver can change the system’s resilience. We show that adopting a causal approach provides tools to measure the resilience of a system — thus how far a bifurcation point is — and the effect of interventions, contributing to better ecosystem management.We illustrate this approach using the example of freshwater eutrophication, where lakes can shift from a clear to a turbid state (and vice-versa). Using observational data combined with knowledge of causal interactions, we outline a protocol to measure system resilience and anticipate the effects of interventions — such as nutrient reduction or biomanipulation — tailored to the current regime. For example, causal effect estimation can help answering questions such as: given the current state of my system, what would be the effect of e.g. removing big fishes from the lake during one month? Should I reduce the resilience of the turbid state beforehand in order for that intervention to be sufficient, by e.g. reducing the nutrient input?The method is designed as a general tool for experts and can be applied across multiple ecosystems exhibiting tipping dynamics. It provides a framework based on explicitly specifying the causal graph linking system variables, identifying which variables can be intervened upon, estimating resilience from observational data, and selecting interventions that achieve a predefined management goal while accounting for associated costs.</jats:p>",
+    "status": "candidate",
+    "retrieved_at": "2026-09-27T05:45:10.293311Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.3150/25-bej1909",
+    "title": "Causal inference on process graphs: Causal structure and effect identification",
+    "authors": [
+      "Reiter, Nicolas-Domenic",
+      "Wahl, Jonas",
+      "Gerhardus, Andreas",
+      "Runge, Jakob"
+    ],
+    "year": 2026,
+    "container_title": "Bernoulli",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-27T05:45:10.293316Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.5194/egusphere-egu21-8584",
+    "title": "A Benchmark for Bivariate Causal Discovery Methods",
+    "authors": [
+      "Käding, Christoph",
+      "Runge, Jakob"
+    ],
+    "year": 2021,
+    "container_title": "",
+    "abstract": "<jats:p>&amp;lt;p&amp;gt;The Earth&amp;amp;#8217;s climate is a highly complex and dynamical system. To better understand and robustly predict it, knowledge about its underlying dynamics and causal dependency structure is required. Since controlled experiments are infeasible in the climate system, observational data-driven approaches are needed. Observational causal inference is a very active research topic and a plethora of methods have been proposed. Each of these approaches comes with inherent strengths, weaknesses, and assumptions about the data generating process as well as further constraints.&amp;lt;br&amp;gt;In this work, we focus on the fundamental case of bivariate causal discovery, i.e., given two data samples X and Y the task is to detect whether X causes Y or Y causes X. We present a large-scale benchmark that represents combinations of various characteristics of data-generating processes and sample sizes. By comparing most of the current state-of-the-art methods, we aim to shed light onto the real-world performance of evaluated methods. Since we employ synthetic data, we are able to precisely control the data characteristics and can unveil the behavior of methods when their underlying assumptions are met or violated. Further, we give a comparison on a set of real-world data with known causal relations to complete our evaluation.&amp;lt;/p&amp;gt;</jats:p>",
+    "status": "candidate",
+    "retrieved_at": "2026-09-27T05:45:10.293320Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.5194/egusphere-egu22-6958",
+    "title": "Causal Discovery in Ensembles of Climate Time Series",
+    "authors": [
+      "Gerhardus, Andreas",
+      "Runge, Jakob"
+    ],
+    "year": 2022,
+    "container_title": "",
+    "abstract": "<jats:p>&amp;lt;p&amp;gt;Understanding the cause and effect relationships that govern natural phenomena is central to the scientific inquiry. While being the gold standard for inferring causal relationships, there are many scenarios in which controlled experiments are not possible. This is for example the case for most aspects of Earth's complex climate system. Causal relationships then have to be learned from statistical dependencies in observational data, a task that is commonly referred to as (observational) causal discovery.&amp;lt;/p&amp;gt;&amp;lt;p&amp;gt;When applied to time series data for learning causal relationships in dynamical systems, methods for causal discovery face additional statistical challenges. This is so because, as licensed by an assumption of stationarity, samples are taken in a sliding window fashion and hence autocorrelated rather than iid. Moreover, strong autocorrelations also often occlude other relevant causal links. The recent PCMCI algorithm (Runge et al., 2019) and its variants PCMCI+ (Runge, 2020) and LPCMCI (Gerhardus and Runge, 2020) address and to some extent alleviate theses issues.&amp;lt;/p&amp;gt;&amp;lt;p&amp;gt;In this contribution we present the Ensemble-PCMCI method, an adaption of PCMCI (and its variants PCMCI+ and LPCMCI) to cases in which the data comprises several time series, i.e., measurements of several instances of the same underlying dynamical system. Samples can then be taken from these different time series instead of a in a sliding window fashion, thus avoiding the issue of autocorrelation and also allowing to relax the stationarity assumption. In particular, this opens the possibility to analyze temporal changes in the underlying causal mechanisms. A potential domain of application are ensemble forecasts.&amp;lt;/p&amp;gt;&amp;lt;p&amp;gt;Related references:&amp;lt;br&amp;gt;Jakob Runge et al. (2019). Detecting and quantifying causal associations in large nonlinear time series datasets. Science Advances 5 eaau4996.&amp;lt;/p&amp;gt;&amp;lt;p&amp;gt;Jakob Runge (2020). Discovering contemporaneous and lagged causal relations in autocorrelated nonlinear time series datasets. In Proceedings of the 36th Conference on Uncertainty in Artificial Intelligence (UAI). Proceedings of Machine Learning Research 124 1388&amp;amp;#8211;1397. PMLR.&amp;lt;/p&amp;gt;&amp;lt;p&amp;gt;Andreas Gerhardus and Jakob Runge (2020). High-recall causal discovery for autocorrelated time series with latent confounders. In Advances in Neural Information Processing Systems 33 12615&amp;amp;#8211;12625. Curran Associates, Inc.&amp;lt;/p&amp;gt;</jats:p>",
+    "status": "candidate",
+    "retrieved_at": "2026-09-27T05:45:10.293324Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.5194/egusphere-egu21-10231",
+    "title": "Causal discovery in climate research: Overview and recent progress",
+    "authors": [
+      "Runge, Jakob",
+      "Gerhardus, Andreas"
+    ],
+    "year": 2021,
+    "container_title": "",
+    "abstract": "<jats:p>&amp;lt;p&amp;gt;Discovering causal dependencies from observational time series datasets is a major problem in better understanding the complex dynamical system Earth. Recent methodological advances have addressed major challenges such as high-dimensionality and nonlinearity (PCMCI, Runge et al. Sci. Adv. 2019), as well as instantaneous causal links (PCMCI+, Runge UAI, 2020) and hidden variables (LPCMCI, Gerhardus and Runge, 2020), but many more remain. In this presentation I will give an overview of challenges and methods and present a recent approach, Ensemble-PCMCI, to analyze ensembles of climate time series. An example for this are initialized ensemble forecasts. Since the individual samples can then be created from several time series instead of different time steps from a single time series, such cases allow to relax the assumption of stationarity and hence to analyze whether and how the underlying causal relationships change over time. We compare Ensemble-PCMCI to other methods and discuss preliminary applications.&amp;lt;/p&amp;gt;&amp;lt;p&amp;gt;Runge et al., Detecting and quantifying causal associations in large nonlinear time series datasets, Science Advances eeaau4996 (2019).&amp;lt;/p&amp;gt;&amp;lt;p&amp;gt;Runge, J. Discovering contemporaneous and lagged causal relations in autocorrelated nonlinear time series datasets. Proceedings of the 36th Conference on Uncertainty in Artificial Intelligence, UAI 2020, Toronto, Canada, 2019, AUAI Press, 2020&amp;lt;/p&amp;gt;&amp;lt;p&amp;gt;Gerhardus, A. &amp;amp; Runge, J. High-recall causal discovery for autocorrelated time series with latent confounders. Advances in Neural Information Processing Systems, 2020, 33&amp;lt;/p&amp;gt;</jats:p>",
+    "status": "candidate",
+    "retrieved_at": "2026-09-27T05:45:10.293329Z"
   }
 ]

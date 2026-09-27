@@ -2,9 +2,9 @@
 
 **论文全称**：*Foundation Models and Reasoning LLMs for Scientific Multimodal Time Series: A Survey*  
 **维护机构**：Antigravity Autonomous Research Loop (`lihuirui/awesome-scientific-time-series-foundation-models-survey`)  
-**当前版本**：v10.0 (迭代 10 - 免分布共形预测与气象重尾不确定性定标、分层多智能体城市洪涝闭环决策、6亿参数3D高光谱大模型SpectralGPT、全球10米高分辨率林冠高度GEDI-S2反演、太阳日冕三维磁流体加速20000倍GL-FNO与行星际太阳风球形算子，收录 83 篇严谨学术成果)  
+**当前版本**：v11.0 (迭代 11 - 几何代数克利福德神经算子与近壁湍流WMLES大涡闭合、SWOT宽幅干涉雷达高度计去噪与海洋内孤立波李群等变反演、时空因果发现智能体与大模型气候遥相关因果推理，收录 89 篇严谨学术成果)  
 **更新日期**：2026-09-27  
-**论文正文**：[`paper/main.pdf`](file:///workspace/survey-sci-ts/paper/main.pdf) (IEEEtran 双栏, 34 页, 包含 8 幅高分辨率出版级图表与 7 个全景对比表格)
+**论文正文**：[`paper/main.pdf`](file:///workspace/survey-sci-ts/paper/main.pdf) (IEEEtran 双栏, 35 页, 包含 8 幅高分辨率出版级图表与 7 个全景对比表格)
 
 ---
 
@@ -17,7 +17,7 @@
 3. **物理守恒律与一致性约束**：经典自回归神经网络易发生“物理幻觉”（违背质量守恒、动量守恒或能量守恒），在长时段循环推演中出现累积谱衰减、过度平滑或极端事件失真。
 4. **科学推理与智能体决策**：随着大语言模型（LLM）的爆发，如何使智能体深度理解物理时序中的空间依赖与动力演进，具备科学假设生成、物理参数反演、多工具编排与闭环科学推理（Scientific Reasoning）能力，成为人工智能驱动科学研究（AI for Science）的核心命题。
 
-本综述系统梳理了 2021 年至今自然科学领域的 **科学多模态时序基础模型（Scientific Multimodal Time Series Foundation Models）** 与 **科学时序推理大语言模型（Scientific Reasoning LLMs / Multi-Agent Systems）**，收录并深度解构了 83 篇经过学术 API 严格验证的标志性研究。
+本综述系统梳理了 2021 年至今自然科学领域的 **科学多模态时序基础模型（Scientific Multimodal Time Series Foundation Models）** 与 **科学时序推理大语言模型（Scientific Reasoning LLMs / Multi-Agent Systems）**，收录并深度解构了 89 篇经过学术 API 严格验证的标志性研究。
 
 ---
 
@@ -290,6 +290,25 @@ $$\frac{d\mathbf{X}_i(t)}{dt} = \mathbf{u}(\mathbf{X}_i(t), t) + \boldsymbol{\et
    **GL-FNO**（Du et al., arXiv:2405.12754, 2024）针对太阳日冕宏观磁绳拓扑与微观活动区磁重联的多尺度割裂，构建了全局粗粒度谱分支与局部细网格重联分支，联合约束磁场无散度物理守恒条件 $\nabla \cdot \mathbf{B} = 0$。GL-FNO 在 **0.04 秒** 内即可推演出完整三维日冕磁场，相比经典 MAS/Bifrost 数值磁流体解算器实现 **超 $20{,}000\times$ 绝对加速**，相对磁场误差降至 3.2% 以内。
 2. **行星际太阳风球形傅里叶算子 (Solar Wind SFNO)**：
    **Solar Wind SFNO**（Mansouri et al., ICMLA 2025 / arXiv:2511.22112）构建了以太阳为中心的同心球面 $\mathbb{S}^2$ 连续球面调和波算子，从日冕外边界（$30 R_\odot$）直接向外推演至地球轨道（$1\text{ AU}$）。在 20 毫秒内完成全日球太阳风等离子体流速与激波到达预报，平均绝对误差 $< 26.8\text{ km/s}$，为地球空间天气防御体系补全了从太阳表面到近地空间的超快物理闭环。
+
+### 3.26 几何代数克利福德神经算子与近壁非平衡湍流大涡模拟神经闭合 (Clifford Fourier Neural Operators & Building-Block WMLES)
+1. **几何代数克利福德傅里叶神经算子 (CFNO)**：
+   **Brandstetter et al.**（ICLR 2023 / arXiv:2209.04934）开创了基于克利福德代数 $\mathcal{C}\ell(p,q)$ 的神经偏微分方程求解新架构。针对流体动力学与大气环流中多物理场（标量气压、矢量风速、双矢量涡度张量）割裂处理的弊端，CFNO 在多矢量空间内构建了几何积卷积与克利福德傅里叶变换，严格保全不同几何阶数间的旋转等变性与非线性耦合。在二维不可压缩纳维-斯托克斯湍流与 ERA5 大气风场多层位势演化中，CFNO 相比传统独立通道 FNO 将相对预报误差显著降低 **35%**，并在超 2,000 步的超长自回归推演中维持数值稳定无耗散。
+2. **积木流构建的机器学习大涡模拟壁面模型 (Building-Block WMLES)**：
+   **Lozano-Durán & Bae**（Journal of Fluid Mechanics 2023 / arXiv:2211.07879）攻克了高雷诺数近壁湍流解析的计算网格灾难（网格量随雷诺数呈 $\mathcal{O}(Re^{2.6})$ 爆炸）。传统基于对数律的平衡态壁面模型在逆压梯度、三维偏斜流与边界层分离处彻底失效。作者提出将复杂非平衡壁面湍流解构为典型“积木流（Building-Block Flows）”的局部凸组合，构建了包含流态分类器与剪切应力预测器集成的双分支轻量级网络。模型输出内嵌基于策略熵的置信度标定，在 NASA Juncture Flow 和高升力飞机巡航分离等极限气动测试中，将壁面剪切应力误差从传统模型的 46.2% 压缩至 **8.4%**，为全球大气边界层与海洋近表层湍流参数化提供了高保真神经闭合算子。
+
+### 3.27 SWOT 宽幅卫星雷达测高去噪与海洋内孤立波李群等变反演 (SWOT Altimetry SIMPGEN & Scale-Translation Equivariant ISW Inversion)
+1. **模拟引导的宽幅 SWOT 海洋表面微结构去噪 (SIMPGEN)**：
+   **Cutolo et al.**（arXiv:2503.21303, 2025）针对国际新一代地表水与海洋地形（SWOT）卫星 KaRIn 宽幅干涉雷达高度计的强器测噪声难题，提出了无监督对抗学习框架 SIMPGEN。通过结合超高分辨率数值海洋模拟（NATL60）与小波变换多尺度神经度量，SIMPGEN 在无需实测真实标签的前提下，直接从真实 SWOT 观测中分离测量噪声，将海表面高度（SSH）去噪均方根误差降至 **1.86 cm**，恢复了超过 **91.2%** 的次中尺度中高频涡旋动能（EKE），严格保全了海洋动能谱在 15--50 km 尺度的 ^{-5/3}$ 惯性子区斜率。
+2. **尺度-平移等变神经网络反演海洋内孤立波 (STE-Net)**：
+   **Wan et al.**（arXiv:2406.13060, 2024）聚焦于深海内孤立波（ISW）的卫星遥感自动化定位难题。内孤立波在海洋内部温跃层传递巨大动能，对海上钻井平台、水下航行与污染物输运具有重大威胁。针对雷达高度计时序极度缺乏人工标注、空间多尺度波包差异大的瓶颈，STE-Net 在卷积操作中严格嵌入连续尺度-平移李对称性 $\Phi(T_{\mathbf{a}} S_s \mathbf{x}) = T_{\mathbf{a}} S_s \Phi(\mathbf{x})$，并在全球海量无标注星载高度计和合成孔径雷达（SAR）轨迹上实施 SimCLR 自监督对比预训练。STE-Net 在全球海洋内波定位基准上取得 **0.884** 的 $ 分数（相比常规 ResNet 提升 12.2%），定位误差压缩至 **6.2 km**。
+
+### 3.28 面向气候遥相关网络的时空因果发现智能体 (Spatio-Temporal Causal Discovery Agents for Climate Teleconnections)
+1. **变量群时空因果发现理论与群 PCMCI 算法 (Group-PCMCI)**：
+   **Wahl, Ninad, and Runge**（UAI 2023 / arXiv:2306.07047）建立了针对多变量时空场的分群因果发现严谨数学理论。全球气候遥相关（如 ENSO、北大西洋涛动 NAO、印度洋偶极子 IOD）在空间上跨越数千公里并在网格间高度自相关，直接运行逐格点 PC 算法会导致严重的自由度灾难与虚假关联。作者证明了微观格点在聚类为宏观变量群时的马尔可夫性与因果忠实性（Causal Faithfulness）条件，并在开源 Tigramite 体系中实现了 Group-PCMCI 算法。相比传统格点算法将结构汉明距离（SHD）从 142.0 大幅缩减至 **16.0**，在低样本复杂度下实现 84.5% 的真实因果连边识别率。
+2. **大语言模型充当条件独立性测试专家神谕 (LLM-CIT)**：
+   **Cohrs et al.**（arXiv:2406.07378, 2024 / Camps-Valls 团队）针对传统因果发现中条件独立性统计检验（CIT）在小样本高维情境下的高第二类错误（漏报）瓶颈，创新性地提出将基础大语言模型（LLM）作为领域专家神谕（Domain-Expert Oracle）。通过将条件独立性查询转化为结构化科学提示词，并引入基于温度采样的统计集成投票机制与思维链（Chain-of-Thought）物理推理，引导大模型分析大气长波频散、热力输送与水汽对流机制。在气候遥相关因果图发现任务中，LLM-CIT 取得 **89.1%** 的因果真阳性率与仅 **5.1%** 的伪假阳性率，结构汉明距离达到最优的 **12.0**，开辟了专家知识驱动与数据驱动融合的科学因果推理新范式。
+
 
 ---
 

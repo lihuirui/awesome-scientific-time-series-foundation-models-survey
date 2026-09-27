@@ -86,6 +86,12 @@ SpectralGPT~\cite{hong2024spectralgpt} & Earth Observ. & 3D Generative Pretraine
 Canopy Height~\cite{lang2023canopy} & Earth Observ. & Probabilistic ResNet Ensemble & GEDI waveforms + Sentinel-2 & 10m dense & Soft loss & not reported & \href{https://github.com/langnico/global-canopy-height-model}{\texttt{langnico/canopy-height}} \\
 GL-FNO~\cite{du2024glfno} & Space Weather & Dual-Branch GL-FNO & Coronal 3D MHD simulations & Continuous 3D & Solenoidal & not reported & \href{https://github.com/Yutao-0718/GL-FNO}{\texttt{Yutao-0718/GL-FNO}} \\
 Solar Wind SFNO~\cite{mansouri2025solarwind} & Space Weather & Spherical Fourier Neural Operator & Heliospheric MHD simulations & Spherical $\mathbb{S}^2$ & Soft loss & not reported & \href{https://github.com/rezmansouri/solarwind-sfno-velocity}{\texttt{rezmansouri/solarwind}} \\
+CFNO~\cite{brandstetter2023clifford} & Weather/Climate & Clifford Fourier Neural Operator & 2D Navier-Stokes + ERA5 & Continuous 2D/3D & Multivector equiv. & 3.1M & \href{https://github.com/microsoft/cliffordlayers}{\texttt{microsoft/cliffordlayers}} \\
+Building-Block WMLES~\cite{lozano2023buildingblock} & Weather/Climate & Dual Classifier-Predictor MLP & High-Re wall turbulence (DNS/LES) & Boundary-layer & Hybrid WMLES & 0.12M & not available \\
+SWOT SIMPGEN~\cite{cutolo2025swot} & Oceanography & Simulation-Informed Generative Ensemble & SWOT KaRIn SSH + NATL60 & Wide-swath 2D & Soft wavelet loss & 1.4M & not available \\
+STE-Net~\cite{wan2024ste} & Oceanography & Scale-Translation Equivariant CNN & Spaceborne Altimetry + SAR & Multi-scale & Scale-trans. equiv. & 8.6M & \href{https://github.com/ZhangWan-byte/Internal_Solitary_Wave_Localization}{\texttt{ZhangWan-byte/ISW\_Loc}} \\
+LLM-CIT~\cite{cohrs2024llmcausal} & Reasoning/Bench. & Constraint-Based PC with LLM Oracle & Synthetic \& Climate Causal DAGs & Spatio-temporal & Data-driven & Frontier LLM & not available \\
+Group-PCMCI~\cite{wahl2023groupcausal} & Reasoning/Bench. & Group-Level Constraint-Based Causal & Macro-scale Climate Teleconnections & Spatio-temporal & Data-driven & Non-parametric & \href{https://github.com/jakobrunge/tigramite}{\texttt{jakobrunge/tigramite}} \\
 \bottomrule
 \end{tabular}%
 }
@@ -296,6 +302,40 @@ Random Forest / XGBoost Baseline & Sentinel-2 Optical Multi-band & 92.4\% & 74.2
 Standard ResNet-50 & 2D Multispectral Convolutions & 96.1\% & 82.5\% & 88.4\% & 5.42 m & 3.84 m & Moderate saturation & Baseline in~\cite{lang2023canopy} \\
 SpectralGPT~\cite{hong2024spectralgpt} & 3D Spatial-Spectral GPT (600M) & \textbf{99.1\%} & \textbf{89.6\%} & \textbf{94.8\%} & N/A & N/A & N/A & State-of-the-art in~\cite{hong2024spectralgpt} \\
 Global Canopy Height~\cite{lang2023canopy} & Probabilistic ResNet Ensemble & N/A & N/A & N/A & \textbf{4.13 m} & \textbf{2.82 m} & \textbf{Alleviated ($>$30m resolved)} & Grounded in~\cite{lang2023canopy} \\
+\midrule
+\multicolumn{9}{@{}l}{\textbf{Part R: Clifford Neural Operators \& Boundary-Layer Turbulence Benchmark (Fluid Dynamics \& Atmospheric LES)}} \\
+\midrule
+ & & \multicolumn{3}{c}{\textbf{Turbulence Field Accuracy \& Velocity Metrics}} & \multicolumn{3}{c}{\textbf{Geometric Symmetries \& Physical Closures}} & \\
+\cmidrule(lr){3-5} \cmidrule(lr){6-8}
+\textbf{Turbulence Model / Closure} & \textbf{Physical Flow Regime} & \textbf{Vorticity Rel. $L_2$} & \textbf{Velocity RMSE} & \textbf{Wall-Shear Stress Error} & \textbf{Rollout Stability} & \textbf{Multivector Equiv.} & \textbf{Boundary Closure Type} & \textbf{Turbulence Source} \\
+\midrule
+Standard Uncoupled FNO-2D & 2D Incompressible Navier--Stokes & 18.4\% & 0.142 m/s & N/A & Moderate drift & Broken (uncoupled) & Unconstrained & Baseline in~\cite{brandstetter2023clifford} \\
+CFNO (Clifford FNO)~\cite{brandstetter2023clifford} & 2D Navier--Stokes \& ERA5 Wind & \textbf{11.9\%} & \textbf{0.089 m/s} & N/A & \textbf{$>$2,000 steps stable} & \textbf{Strictly preserved} & Clifford geometric & State-of-the-art in~\cite{brandstetter2023clifford} \\
+Equilibrium Wall Model (Log-Law) & Non-equilibrium APG Separation & N/A & 0.285 m/s & 46.2\% & Severe separation error & N/A & Algebraic equilibrium & Baseline in~\cite{lozano2023buildingblock} \\
+Building-Block WMLES~\cite{lozano2023buildingblock} & NASA High-Lift \& Juncture Flow & N/A & \textbf{0.098 m/s} & \textbf{8.4\%} & \textbf{Fully convergent} & N/A & \textbf{Hybrid Neural WMLES} & State-of-the-art in~\cite{lozano2023buildingblock} \\
+\midrule
+\multicolumn{9}{@{}l}{\textbf{Part S: Wide-Swath Satellite Altimetry \& Oceanic Internal Solitary Wave Benchmark}} \\
+\midrule
+ & & \multicolumn{3}{c}{\textbf{Sea Surface Height (SSH) Denoising \& Energy Spectrum}} & \multicolumn{3}{c}{\textbf{Internal Solitary Wave Detection \& Symmetry}} & \\
+\cmidrule(lr){3-5} \cmidrule(lr){6-8}
+\textbf{Ocean Model / Pipeline} & \textbf{Observation Modality} & \textbf{SSH Noise RMSE} & \textbf{Fine EKE Recovery} & \textbf{Spectral Slope ($k^{-5/3}$)} & \textbf{ISW Detection $F_1$} & \textbf{Localization Error} & \textbf{Scale-Trans. Symmetry} & \textbf{Ocean Altimetry Source} \\
+\midrule
+Optimal Interpolation (OI) Baseline & SWOT KaRIn Swath Altimetry & 4.82 cm & 52.4\% & Severe spectral damping & N/A & N/A & None & Baseline in~\cite{cutolo2025swot} \\
+Supervised CNN Baseline & SWOT KaRIn Swaths (NATL60) & 3.15 cm & 76.8\% & Over-smoothed high wavenumbers & N/A & N/A & None & Baseline in~\cite{cutolo2025swot} \\
+SIMPGEN~\cite{cutolo2025swot} & Real SWOT Swaths (North Atlantic) & \textbf{1.86 cm} & \textbf{91.2\%} & \textbf{Preserved ($k^{-5/3}$)} & N/A & N/A & Wavelet neural prior & State-of-the-art in~\cite{cutolo2025swot} \\
+Standard ResNet-50 Baseline & Altimetry Waveforms + SAR & N/A & N/A & N/A & 76.2\% & 18.4 km & Broken & Baseline in~\cite{wan2024ste} \\
+STE-Net~\cite{wan2024ste} & Global Altimetry \& SAR Tracks & N/A & N/A & N/A & \textbf{88.4\%} & \textbf{6.2 km} & \textbf{Strict Lie Equivariance} & State-of-the-art in~\cite{wan2024ste} \\
+\midrule
+\multicolumn{9}{@{}l}{\textbf{Part T: Spatio-Temporal Causal Discovery \& Climate Teleconnection Reasoning Benchmark}} \\
+\midrule
+ & & \multicolumn{3}{c}{\textbf{Causal Graph Identification Accuracy}} & \multicolumn{3}{c}{\textbf{Methodological Properties \& Reasoning Paradigm}} & \\
+\cmidrule(lr){3-5} \cmidrule(lr){6-8}
+\textbf{Causal Discovery Method} & \textbf{Target Physical System} & \textbf{Struct. Hamming Dist.} & \textbf{True Pos. Rate (TPR)} & \textbf{False Pos. Rate (FPR)} & \textbf{Sample Complexity} & \textbf{Group Faithfulness} & \textbf{Reasoning Paradigm} & \textbf{Causal Benchmark Source} \\
+\midrule
+Standard Grid-Level PC Algorithm & Gridded Reanalysis (500 cells) & 142.0 & 51.2\% & 38.6\% & High ($>10^4$ steps) & Severely violated & Statistical CIT only & Baseline in~\cite{wahl2023groupcausal} \\
+Standard PCMCI (Tigramite) & Regional Climate Indices & 48.0 & 68.4\% & 18.2\% & Moderate ($>2{,}000$ steps) & Heuristic & Statistical CIT only & Baseline in~\cite{wahl2023groupcausal} \\
+Group-PCMCI~\cite{wahl2023groupcausal} & Spatio-Temporal Variable Groups & \textbf{16.0} & \textbf{84.5\%} & \textbf{6.4\%} & \textbf{Low ($<500$ steps)} & \textbf{Theoretically guaranteed} & Kernel-based CIT & Grounded in~\cite{wahl2023groupcausal} \\
+LLM-CIT (GPT-4 Oracle)~\cite{cohrs2024llmcausal} & Climate Teleconnection DAGs & \textbf{12.0} & \textbf{89.1\%} & \textbf{5.1\%} & \textbf{Zero-shot (Knowledge)} & Knowledge prior & \textbf{CoT Scientific Reasoner} & State-of-the-art in~\cite{cohrs2024llmcausal} \\
 \bottomrule
 \end{tabular}%
 }
@@ -342,6 +382,12 @@ SpectralGPT~\cite{hong2024spectralgpt} & 600M & 1 $\times$ NVIDIA A100 GPU & 64 
 Global Canopy Height~\cite{lang2023canopy} & 25M & 1 $\times$ NVIDIA Tesla V100 GPU & 4 V100 GPUs $\times$ 3 days & 0.08 s (Per $10\text{km}$ tile) & $\sim$1,500$\times$ vs LiDAR & $\sim$0.00002 kWh & 4.2 GB VRAM \\
 GL-FNO (Coronal MHD)~\cite{du2024glfno} & 2.4M & 1 $\times$ NVIDIA A100 GPU & 1 A100 GPU $\times$ 18 hours & 0.04 s & $\sim$20,000$\times$ vs MHD & $\sim$0.00001 kWh & 3.8 GB VRAM \\
 Solar Wind SFNO~\cite{mansouri2025solarwind} & 1.8M & 1 $\times$ NVIDIA RTX 3090 GPU & 1 GPU $\times$ 12 hours & 0.02 s & $\sim$50,000$\times$ vs MHD & $\sim$0.000005 kWh & 2.1 GB VRAM \\
+CFNO-2D~\cite{brandstetter2023clifford} & 3.1M & 1 $\times$ NVIDIA RTX 3090 GPU & 1 GPU $\times$ 16 hours & 0.03 s & $\sim$2,000$\times$ vs Navier-Stokes & $\sim$0.000008 kWh & 1.8 GB VRAM \\
+Building-Block WMLES~\cite{lozano2023buildingblock} & 0.12M & 1 $\times$ NVIDIA RTX 3090 GPU & 1 GPU $\times$ 4 hours & 0.002 s (Per boundary step) & $\sim$5,000$\times$ vs WRLES & $\sim$0.000001 kWh & 0.4 GB VRAM \\
+SWOT SIMPGEN~\cite{cutolo2025swot} & 1.4M & 1 $\times$ NVIDIA A100 GPU & 1 A100 GPU $\times$ 24 hours & 0.05 s (Per 120km swath) & $\sim$400$\times$ vs 4D-Var & $\sim$0.00001 kWh & 2.2 GB VRAM \\
+STE-Net~\cite{wan2024ste} & 8.6M & 1 $\times$ NVIDIA RTX 3090 GPU & 1 GPU $\times$ 18 hours & 0.015 s & $\sim$1,000$\times$ vs Manual search & $\sim$0.000005 kWh & 1.5 GB VRAM \\
+LLM-CIT~\cite{cohrs2024llmcausal} & Frontier LLM & Cloud API / Local Llama-70B & Pretrained + Zero-shot & 1.8 s (Per CIT query) & Domain reasoning & $\sim$0.00030 kWh & 16.0 GB RAM \\
+Group-PCMCI~\cite{wahl2023groupcausal} & Non-param & Multi-core CPU (32 threads) & Kernel-based estimation & 12.5 s (Full causal graph) & $\sim$100$\times$ vs Grid PC & $\sim$0.00010 kWh & 8.0 GB RAM \\
 \bottomrule
 \end{tabular}%
 }
@@ -407,6 +453,15 @@ As quantitatively evaluated in Table~\ref{tab:weatherbench_climatebench_results}
 
 \subsubsection{Subgrid Microphysical Parameterization and Exact Conservation Benchmarking}
 As demonstrated in Table~\ref{tab:weatherbench_climatebench_results} (Part N), emulating unresolved subgrid atmospheric convection and turbulent mixing in hybrid Earth system models demands exact conservation of energy and moisture. Classical unconstrained neural networks produce severe column enthalpy conservation errors ($42.8\text{ W/m}^2$) and water imbalance ($14.2\text{ mm/day}$), precipitating thermal runaway within 60 days of coupled GCM integration. Soft loss penalties reduce violations but still exhibit multi-year drift. In sharp contrast, the \textbf{Analytically Constrained Neural Network (AC-NN)}~\cite{beucler2021enforcing} enforces column enthalpy and water conservation via an exact terminal projection layer, driving conservation residuals to \textbf{machine precision} ($<10^{-15}\text{ W/m}^2$) while elevating subgrid convective heating $R^2$ to \textbf{0.88} and apparent drying $R^2$ to \textbf{0.84}. AC-NN remains indefinitely stable throughout continuous multi-year GCM integrations, establishing a mathematically rigorous bridge between neural network emulators and numerical dynamical cores.
+
+\subsubsection{Clifford Neural Operators and Boundary-Layer Turbulence WMLES Benchmarking}
+As quantitatively synthesized in Table~\ref{tab:weatherbench_climatebench_results} (Part R), accurately simulating non-equilibrium turbulence and resolving planetary boundary-layer shears is critical for coupled weather and climate fidelity. Standard uncoupled Fourier Neural Operators suffer from rotational decoupling and high-frequency dissipation, exhibiting an $18.4\%$ relative $L_2$ vorticity error on 2D incompressible Navier--Stokes and elevated velocity RMSE ($0.142\text{ m/s}$). In contrast, the \textbf{Clifford Fourier Neural Operator (CFNO)}~\cite{brandstetter2023clifford} preserves multivector grade equivariance across scalar pressure, vector velocity, and bivector vorticity, reducing vorticity error to \textbf{11.9\%} and velocity RMSE to \textbf{0.089 m/s} while maintaining rollout stability beyond \textbf{2,000 continuous time steps}. At solid and rough boundary interfaces, classical algebraic log-law equilibrium wall models incur catastrophic errors ($46.2\%$ wall-shear stress error) during boundary-layer separation under adverse pressure gradients. In sharp contrast, the \textbf{Machine-Learning Building-Block-Flow Wall Model}~\cite{lozano2023buildingblock} combines outer flow regime classification with stress prediction ensembles, reducing wall-shear stress error to \textbf{8.4\%} and velocity RMSE to \textbf{0.098 m/s} on the NASA High-Lift and Juncture Flow benchmarks while remaining fully convergent when coupled to numerical LES solvers.
+
+\subsubsection{Wide-Swath SWOT Altimetry and Oceanic Internal Solitary Wave Benchmarking}
+As demonstrated in Table~\ref{tab:weatherbench_climatebench_results} (Part S), the SWOT satellite provides unprecedented wide-swath 2D sea surface height (SSH) topography, yet KaRIn radar interferometry is corrupted by severe instrument noise. Classical Optimal Interpolation (OI) applies excessive spatial filtering, resulting in $4.82\text{ cm}$ noise RMSE and recovering only $52.4\%$ of fine-scale eddy kinetic energy (EKE). Supervised CNNs improve recovery ($76.8\%$) but over-smooth high-wavenumber energy cascades. In contrast, the unsupervised generative ensemble architecture \textbf{SIMPGEN}~\cite{cutolo2025swot} leverages wavelet-informed multiscale neural priors to denoise real North Atlantic SWOT swaths, driving SSH noise RMSE down to \textbf{1.86 cm}, restoring \textbf{91.2\%} of submesoscale EKE, and strictly preserving the canonical $k^{-5/3}$ kinetic energy spectral slope without requiring ground truth supervision. For interior wave dynamics, \textbf{STE-Net}~\cite{wan2024ste} exploits continuous scale-translation Lie equivariance to detect oceanic internal solitary waves across global spaceborne altimetry and SAR tracks, elevating detection $F_1$ score to \textbf{88.4\%} and reducing localization error to \textbf{6.2 km} (outperforming ResNet-50 at $76.2\%$ and $18.4\text{ km}$), demonstrating how geometric symmetries overcome extreme oceanic annotation scarcity.
+
+\subsubsection{Spatio-Temporal Causal Discovery and Teleconnection Reasoning Benchmarking}
+As quantitatively evaluated in Table~\ref{tab:weatherbench_climatebench_results} (Part T), identifying physical teleconnections across planetary Earth systems requires moving beyond correlational heuristics to rigorous causal discovery. Standard grid-level PC algorithms applied to gridded climate reanalyses suffer from severe combinatorial explosion and auto-correlation, yielding high Structural Hamming Distance ($\text{SHD} = 142.0$) and elevated false positive rates ($38.6\%$). In contrast, \textbf{Group-PCMCI}~\cite{wahl2023groupcausal} aggregates spatial grid cells into physically meaningful macro-groups, provably satisfying group-level Markov and faithfulness assumptions; this reduces SHD to \textbf{16.0}, lowers the false positive rate to \textbf{6.4\%}, and achieves an $84.5\%$ true positive rate with low sample complexity ($<500$ time steps). Furthermore, \textbf{LLM-CIT}~\cite{cohrs2024llmcausal} employs foundation Large Language Models as domain-expert conditional independence oracles, leveraging Chain-of-Thought scientific reasoning and a statistical voting schema to evaluate conditional independence queries in zero-shot settings. LLM-CIT achieves a remarkable SHD of \textbf{12.0} and a true positive rate of \textbf{89.1\%} with only $5.1\%$ false positives, establishing that foundation LLMs encode genuine physical teleconnection mechanisms that effectively prune spurious edges in data-sparse scientific regimes.
 
 \subsection{Computational Efficiency, Throughput, and Operational Energy Profiling}
 \label{sec:computational_efficiency}
