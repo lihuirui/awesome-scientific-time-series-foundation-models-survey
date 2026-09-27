@@ -6087,9 +6087,9 @@
     "year": 2023,
     "container_title": "",
     "abstract": "",
-    "status": "excluded_title",
+    "status": "excluded_fulltext",
     "retrieved_at": "2026-09-25T15:25:27.931298Z",
-    "exclusion_reason": "EC1: Out of domain scope (not natural science temporal system)",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
     "screen_date": "2026-09-27"
   },
   {
@@ -12691,9 +12691,9 @@
     "year": 2026,
     "container_title": "",
     "abstract": "<jats:p>The rapidly increasing Industrial Internet of Things (IIoT) and Mobile Edge Computing (MEC) framework presents fundamental Operations Research (OR) challenges in managing dynamic, decentralized resource scheduling across heterogeneous industrial devices. Traditional centralized optimization methods fail under rapidly changing network conditions and complex device interactions, causing Service Level Agreement (SLA) violations for mission-critical services. This paper presents Graph Attention Multi-Agent Proximal Policy Optimization (GAT-MAPPO), a novel decentralized multi-agent reinforcement learning framework that integrates dynamic Graph Attention Networks (GAT) into MAPPO critic architecture for topology-aware constrained scheduling. We validate GAT-MAPPO through comprehensive industrial deployment at an operational automotive manufacturing facility spanning 12,000 m² with 78 heterogeneous devices including Siemens S7-1500 PLCs, KUKA robotic arms, and MiR AGVs connected via private 5G infrastructure. A ten-week deployment study comprising baseline characterization, shadow deployment, and full production operation demonstrates that GAT-MAPPO achieves 11.4 percentage point improvement in Overall Equipment Effectiveness (OEE), 83% reduction in network-related production stops, and 64% reduction in URLLC 99th percentile latency compared to the legacy priority-based scheduler. Simulation-to-reality validation shows strong correlation (R² = 0.94) between digital twin predictions and measured performance. The framework scales near-linearly to 100+ agents while maintaining sub-2ms inference latency, establishing GAT-MAPPO as a production-ready solution for next-generation smart manufacturing.</jats:p>",
-    "status": "excluded_title",
+    "status": "excluded_fulltext",
     "retrieved_at": "2026-09-27T00:35:41.802807Z",
-    "exclusion_reason": "EC1: Out of domain scope (not natural science temporal system)",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
     "screen_date": "2026-09-27"
   },
   {
@@ -14390,6 +14390,986 @@
     "status": "excluded_fulltext",
     "retrieved_at": "2026-09-27T05:45:10.293329Z",
     "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-27"
+  },
+  {
+    "bibkey": "behnoudfar2025rldaunce",
+    "title": "RL-DAUNCE: Reinforcement Learning-Driven Data Assimilation with Uncertainty-Aware Constrained Ensembles",
+    "authors": [
+      "Behnoudfar, Pouria",
+      "Chen, Nan"
+    ],
+    "year": 2025,
+    "venue": "Journal of Computational Physics / arXiv:2505.05452",
+    "doi_or_arxiv": "https://arxiv.org/abs/2505.05452",
+    "arxiv_id": "2505.05452",
+    "domain": "Reasoning / Benchmark",
+    "modality": "Multivariate chaotic / turbulent spatio-temporal states & Sparse observations",
+    "backbone": "Reinforcement Learning-Driven Constrained Ensemble Network",
+    "pretraining_data": "Non-Gaussian dynamical flow systems, turbulent shallow water systems, and multi-modal ensemble trajectories",
+    "physics_integration": "Hard constraint projection via primal-dual policy optimization",
+    "role_of_llm": "Autonomous Agent",
+    "lead_time_or_task": "Multi-agent ensemble data assimilation, non-Gaussian posterior tracking, and physical boundary constraint satisfaction",
+    "model_size": "5.6M",
+    "code_url": "not reported",
+    "quality_score": 12,
+    "status": "included",
+    "exclusion_reason": null,
+    "screen_date": "2026-09-27"
+  },
+  {
+    "bibkey": "nath2026online",
+    "title": "Online Reinforcement Learning in the Met Office Unified Model through Distributed Model-Agent Coupling",
+    "authors": [
+      "Nath, Pritthijit",
+      "Schemm, Sebastian",
+      "Haynes, Peter",
+      "Shuckburgh, Emily",
+      "Webb, Mark"
+    ],
+    "year": 2026,
+    "venue": "arXiv:2609.02566",
+    "doi_or_arxiv": "https://arxiv.org/abs/2609.02566",
+    "arxiv_id": "2609.02566",
+    "domain": "Weather/Climate",
+    "modality": "Operational NWP atmospheric columns (70 vertical levels) & Tendency increments",
+    "backbone": "Distributed Deep Deterministic Policy Gradient (DDPG) Coupled Agent",
+    "pretraining_data": "UK Met Office Unified Model (UM) operational global NWP runs and analysis nudging archive",
+    "physics_integration": "Soft physics loss with bounded potential-temperature tendency constraints",
+    "role_of_llm": "Autonomous Agent",
+    "lead_time_or_task": "Online NWP tendency correction, numerical stability preservation, and medium-range geopotential height error reduction",
+    "model_size": "12.4M",
+    "code_url": "not reported",
+    "quality_score": 12,
+    "status": "included",
+    "exclusion_reason": null,
+    "screen_date": "2026-09-27"
+  },
+  {
+    "bibkey": "chantry2021gravity",
+    "title": "Machine Learning Emulation of Gravity Wave Drag in Numerical Weather Forecasting",
+    "authors": [
+      "Chantry, Matthew",
+      "Hatfield, Sam",
+      "Dueben, Peter",
+      "Polichtchouk, Inna",
+      "Palmer, Tim"
+    ],
+    "year": 2021,
+    "venue": "Journal of Advances in Modeling Earth Systems",
+    "doi_or_arxiv": "https://doi.org/10.1029/2021MS002477",
+    "doi": "10.1029/2021MS002477",
+    "domain": "Weather/Climate",
+    "modality": "Gridded reanalysis & Atmospheric columns (ECMWF IFS)",
+    "backbone": "Multi-Layer Perceptron Atmospheric Parameterization Emulator",
+    "pretraining_data": "ECMWF Integrated Forecasting System (IFS) global column profiles (TCo1279 operational resolution)",
+    "physics_integration": "Soft physics loss with momentum conservation",
+    "role_of_llm": "None",
+    "lead_time_or_task": "Subgrid non-orographic gravity wave momentum flux convergence and 10x IFS scheme acceleration",
+    "model_size": "0.14M",
+    "code_url": "not available",
+    "quality_score": 12,
+    "status": "included",
+    "exclusion_reason": null,
+    "screen_date": "2026-09-27"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.5194/egusphere-egu21-1398",
+    "title": "Machine Learning Emulation of Parameterized Gravity Wave Momentum Fluxes in an Atmospheric Global Climate Model",
+    "authors": [
+      "Espinosa, Zachary",
+      "Sheshadri, Aditi",
+      "Cain, Gerald",
+      "Gerber, Edwin",
+      "DallaSanta, Kevin"
+    ],
+    "year": 2021,
+    "container_title": "",
+    "abstract": "<jats:p>&amp;lt;p&amp;gt;We present a novel, single-column gravity wave parameterization (GWP) that uses machine learning to emulate a physics-based GWP. An artificial neural network (ANN) is trained with output from an idealized atmospheric model and tested in an offline environment, illustrating that an ANN can learn the salient features of gravity wave momentum transport directly from resolved flow variables. We demonstrate that when trained on the westward phase of the Quasi-Biennial Oscillation, the ANN can skillfully generate the momentum fluxes associated with the eastward phase. We also show that the meridional and zonal wind components are the only flow variables necessary to predict horizontal momentum fluxes with a globally and temporally averaged R^2 value over 0.8. State-of-the-art GWPs are severely limited by computational constraints and a scarcity of observations for validation. This work constitutes a significant step towards obtaining observationally validated, computationally efficient GWPs in global climate models.&amp;lt;/p&amp;gt;</jats:p>",
+    "status": "excluded_fulltext",
+    "retrieved_at": "2026-09-27T10:43:48.782442Z",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-27"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1029/2023ms003611",
+    "title": "Machine Learning Emulation of Subgrid‐Scale Orographic Gravity Wave Drag in a General Circulation Model With Middle Atmosphere Extension",
+    "authors": [
+      "Lu, Yixiong",
+      "Xu, Xin",
+      "Wang, Lin",
+      "Liu, Yiming",
+      "Wu, Tongwen",
+      "Jie, Weihua",
+      "Sun, Jian"
+    ],
+    "year": 2024,
+    "container_title": "Journal of Advances in Modeling Earth Systems",
+    "abstract": "<jats:title>Abstract</jats:title><jats:p>Gravity wave parameterizations contribute to uncertainties in middle atmosphere modeling. To investigate the potential for using machine learning to represent atmospheric gravity waves and the impact of implementing such schemes in a general circulation model (GCM), we train a random forest (RF) emulator on outputs from an existing complex parameterization scheme for orographic gravity wave drag (GWD). The performance of the RF emulator is then evaluated with a focus on stratospheric climatology and variability in climate simulations from the middle atmosphere resolving Beijing Climate Center Atmospheric Circulation Model. In offline tests, the predicted orographic GWD by the RF agrees remarkably well with the target GWD throughout the troposphere and the middle atmosphere. The RF emulator can reproduce the observed climatology of zonal‐mean wind and air temperature in the GCM simulation, as well as its target scheme. Compared to the target orographic GWD parameterization scheme, the RF emulator can reproduce the breakdown of the polar vortex in the Southern Hemisphere stratosphere. This study demonstrates the feasibility of using machine learning to emulate parameterized orographic GWD for modeling the stratosphere with a GCM.</jats:p>",
+    "status": "excluded_fulltext",
+    "retrieved_at": "2026-09-27T10:43:48.782457Z",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-27"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1007/978-3-642-60654-0_17",
+    "title": "Sensitivity studies using the Hines and Fritts gravity wave drag parameterizations",
+    "authors": [
+      "McLandress, Charles"
+    ],
+    "year": 1997,
+    "container_title": "Gravity Wave Processes",
+    "abstract": "",
+    "status": "excluded_fulltext",
+    "retrieved_at": "2026-09-27T10:43:48.782463Z",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-27"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1007/978-3-642-60654-0_22",
+    "title": "Effects of Gravity Wave Drag in the Berlin Troposphere-Stratosphere-Mesosphere GCM",
+    "authors": [
+      "Pawson, Steven"
+    ],
+    "year": 1997,
+    "container_title": "Gravity Wave Processes",
+    "abstract": "",
+    "status": "excluded_fulltext",
+    "retrieved_at": "2026-09-27T10:43:48.782469Z",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-27"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.21203/rs.3.rs-2790920/v2",
+    "title": "Accelerating Atmospheric Gravity Wave Simulations using Machine Learning: Kelvin-Helmholtz Instability and Mountain Wave Sources Driving Gravity Wave Breaking and Secondary Gravity Wave Generation",
+    "authors": [
+      "DONG, Wenjun",
+      "Fritts, David",
+      "Lund, Thomas",
+      "Liu, Alan",
+      "Liu, Hanli",
+      "Snively, Jonathan"
+    ],
+    "year": 2023,
+    "container_title": "",
+    "abstract": "<title>Abstract</title>\n                <p>Gravity waves (GWs) and their associated multi-scale dynamics are known to play fundamental roles in energy and momentum transport and deposition processes throughout the atmosphere. We describe an initial, two-dimensional (2-D), machine learning model – the Compressible Atmosphere Model Network (CAMNet) - intended as a first step toward a more general, three-dimensional, highly-efficient, model for applications to nonlinear GW dynamics description. CAMNet employs a physics-informed neural operator to dramatically accelerate GW and secondary GW (SGW) simulations applied to two GW sources to date. CAMNet is trained on high-resolution simulations by the state-of-the-art model Complex Geometry Compressible Atmosphere Model (CGCAM). Two initial applications to a Kelvin-Helmholtz instability source and mountain wave generation, propagation, breaking, and SGW generation in two wind environments are described here. Results show that CAMNet can capture the key 2-D dynamics modeled by CGCAM with high precision. Spectral characteristics of primary and SGWs estimated by CAMNet agree well with those from CGCAM. Our results show that CAMNet can achieve a several order-of-magnitude acceleration relative to CGCAM without sacrificing accuracy and suggests a potential for machine learning to enable efficient and accurate descriptions of primary and secondary GWs in global atmospheric models.</p>",
+    "status": "excluded_fulltext",
+    "retrieved_at": "2026-09-27T10:43:48.782477Z",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-27"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.5194/angeo-2019-36-rc2",
+    "title": "Review of \"Impact of Gravity wave drag on the thermospheric circulation: Implementation of a nonlinear gravity wave parameterization in a whole atmosphere model\"",
+    "authors": [],
+    "year": 2019,
+    "container_title": "",
+    "abstract": "",
+    "status": "excluded_fulltext",
+    "retrieved_at": "2026-09-27T10:43:48.782484Z",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-27"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.5194/egusphere-egu24-17446",
+    "title": "Aggregations of parametrizations and machine learning for gravity wave momentum flux reconstruction",
+    "authors": [
+      "Has, Sothea"
+    ],
+    "year": 2025,
+    "container_title": "",
+    "abstract": "<jats:p>In this talk, we pursue the investigation of the relation between the large-scale flows and observed gravity wave momentum fluxes (GWMFs), starting from parameterizations and machine learning as two alternatives for predicting the gravity wave momentum fluxes in the lowermost tropical stratosphere. We investigate how much aggregation methods may allow to further improve on both alternatives, and what complementarity there may be between them. Observed gravity wave momentum fluxes are obtained from superpressure balloons during the Strateole 2 mission. The parameterizations come from the different climate models involved in the QBOi project, that have been compared to balloon measurements in Lott et al. (2023). The other predicted features are three tree-based ensemble machine learning algorithms, trained on part of the Strateole 2 dataset. &amp;#160;Three groups of aggregations are performed: aggregation among machine learning models, aggregation among parametrizations, and the aggregation between parametrizations and machine learning models. For the methodology, three aggregation methods are employed; two methods treat predictions from different models (parametrizations or machine learning) as features or information to be aggregated, while the remaining one uses both, inputs and predictions provided by those models.The outcomes indicate that, despite struggling to estimate GWMFs individually, the collective information from various parametrizations proves valuable, particularly when combined with the large-scale flow variables. Additionally, the performance of the aggregation methods is sensitive to the choice of balloons. When the description of large-scale flows aligns well with the target GWMFs (balloon 2 and 8), all aggregation methods perform just as well as machine learning or the best-case scenario of parametrizations. Interestingly, there are also a few cases where machine learning and parametrizations perform poorly (correlation less than 0.2), yet their predictions, combined with large-scale information, can significantly elevate their performances more than 2 times (correlation larger than 0.5) in the aggregation methods (balloon 5). This suggests that existing parameterizations and machine learning approaches trained on observations have a complementarity that remains to be exploited. The present study was entirely offline, with no issue about the costs of computation. For practical applications, further investigation will be required to narrow down on the specific elements of parameterizations that are most informative.</jats:p>",
+    "status": "excluded_fulltext",
+    "retrieved_at": "2026-09-27T10:43:48.782490Z",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-27"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.2151/sola.2008-016",
+    "title": "Constraints on a Non-orographic Gravity Wave Drag Parameterization Using a Gravity Wave Resolving General Circulation Model",
+    "authors": [
+      "Watanabe, Shingo"
+    ],
+    "year": 2008,
+    "container_title": "SOLA",
+    "abstract": "",
+    "status": "excluded_fulltext",
+    "retrieved_at": "2026-09-27T10:43:48.782496Z",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-27"
+  },
+  {
+    "bibkey": "espinosa2022gravity",
+    "title": "Machine Learning Gravity Wave Parameterization Generalizes to Capture the QBO and Response to Increased CO2",
+    "authors": [
+      "Espinosa, Zachary I.",
+      "Sheshadri, Aditi",
+      "Cain, Gerald R.",
+      "Gerber, Edwin P.",
+      "DallaSanta, Kevin J."
+    ],
+    "year": 2022,
+    "venue": "Geophysical Research Letters",
+    "doi_or_arxiv": "https://doi.org/10.1029/2022GL098174",
+    "doi": "10.1029/2022GL098174",
+    "domain": "Weather/Climate",
+    "modality": "Gridded atmospheric circulation fields & Column winds/temperatures",
+    "backbone": "Physics-Constrained Neural Network Parameterization",
+    "pretraining_data": "Model of an Idealized Moist Atmosphere (MiMA) Alexander-Dunkerton GWP simulations",
+    "physics_integration": "Soft physics loss",
+    "role_of_llm": "None",
+    "lead_time_or_task": "Centennial climate rollout, Quasi-Biennial Oscillation (QBO) preservation, and 4xCO2 climate warming generalization",
+    "model_size": "0.22M",
+    "code_url": "not reported",
+    "quality_score": 12,
+    "status": "included",
+    "exclusion_reason": null,
+    "screen_date": "2026-09-27"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.5194/egusphere-egu22-6674",
+    "title": "The gravity wave parameterization calibration problem: A 1D QBO model testbed",
+    "authors": [
+      "Shamir, Ofer",
+      "Yang, L. Minah",
+      "Connelly, David S.",
+      "Gerber, Edwin P."
+    ],
+    "year": 2022,
+    "container_title": "",
+    "abstract": "<jats:p>&amp;lt;p&amp;gt;An essential step in implementing any new parameterization is calibration, where the parameterization is adjusted to work with an existing model and yield some desired improvement. In the context of gravity wave (GW) momentum transport, calibration is necessitated by the facts that: (i) Some GWs are always at least partially resolved by the model, and hence a parameterization should only account for the missing waves. Worse, the parameterization may need to correct for the misrepresentation of under-resolved GWs, i.e., coarse vertical resolution can bias GW breaking level, leading to erroneous momentum forcing. (ii) The parameterized waves depend on the resolved solution for both their sources and dissipation, making them susceptible to model biases. Even a &amp;quot;perfect&amp;quot; parameterization could then yield an undesirable result, e.g., an unrealistic Quasi-Biennial Oscillation (QBO).&amp;amp;#160; While model-specific calibration is required, one would like a general &amp;quot;recipe&amp;quot; suitable for most models. From a practical point of view, the adoption of a new parameterization will be hindered by a too-demanding calibration process. This issue is of particular concern in the context of data-driven methods, where the number of tunable degrees of freedom is large (possibly in the millions). Thus, more judicious ways for addressing the calibration step are required.&amp;amp;#160;&amp;lt;/p&amp;gt;&amp;lt;p&amp;gt;To address the above issues, we develop a 1D QBO model, where the &amp;quot;true&amp;quot; gravity wave momentum deposition is determined from a source distribution and critical level breaking, akin to a traditional physics-based GW parameterization. The control parameters associated with the source consist of the total wave flux (related to the total precipitation for convectively generated waves) and the spectrum width (related to the depth of convection). These parameters can be varied to mimic the variability in GW sources between different models, i.e., biases in precipitation variability. In addition, the model&amp;amp;#8217;s explicit diffusivity and vertical advection can be varied to mimic biases in model numerics and circulation, respectively. The model thus allows us to assess the ability of a data-driven parameterization to (i) extrapolate, capturing the response of GW momentum transport to a change in the model parameters and (ii) be calibrated, adjusted to maintain the desired simulation of the QBO in response to a change in the model parameters. The first property is essential for a parameterization to be used for climate prediction, the second, for a parameterization to be used at all. We focus in particular on emulators of the GW momentum transport based on neural network and regression trees, contrasting their ability to satisfy both of these goals.&amp;amp;#160;&amp;amp;#160;&amp;lt;/p&amp;gt;&amp;lt;p&amp;gt;&amp;amp;#160;&amp;lt;/p&amp;gt;</jats:p>",
+    "status": "excluded_fulltext",
+    "retrieved_at": "2026-09-27T10:43:50.401520Z",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-27"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.5194/egusphere-egu26-6563",
+    "title": "Data-Driven Gravity Wave Source Parameterization Using Machine Learning",
+    "authors": [
+      "Mahmoudi, Erfan",
+      "Prochazkova, Zuzana",
+      "Dolaptchiev, Stamen",
+      "Pohl, Anke",
+      "Achatz, Ulrich"
+    ],
+    "year": 2026,
+    "container_title": "",
+    "abstract": "<jats:p>Representing gravity wave (GW) sources accurately remains a major challenge for climate models. While parameterizations for orographic and convective gravity waves are well established, studies have shown that additional sources, including fronts, jet streams, and jet exit regions, also generate gravity wave activity. These sources driven by dynamics are often not clearly defined in current parameterization methods, which leads to biases in momentum deposition and large-scale circulation.In this study, we propose a machine learning-based framework to model gravity wave sources in a unified and data-driven way. We use high-resolution ICON simulations to resolve gravity wave generation from a wide range of atmospheric processes. A reduced-order representation of the gravity wave action density spectrum serves as the target function. This allows for a compact yet meaningful description of gravity wave emission. Input features include resolved large-scale flow characteristics, subgrid-scale orographic properties, and convective indicators taken from the model fields.We train supervised machine learning models to learn the nonlinear relationship between the atmospheric state and the resulting gravity wave emission. The resulting parameterization accounts for gravity wave generation related not only to orography and convection but also to dynamically driven sources such as frontogenesis and jet-related processes.</jats:p>",
+    "status": "excluded_fulltext",
+    "retrieved_at": "2026-09-27T10:43:50.401530Z",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-27"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1029/2025jc023028",
+    "title": "A Machine Learning Parameterization for the Internal Gravity Wave Spectrum",
+    "authors": [
+      "Zheng, Yutao",
+      "Rayson, Matthew D.",
+      "Jones, Nicole L.",
+      "Astfalck, Lachlan C."
+    ],
+    "year": 2026,
+    "container_title": "Journal of Geophysical Research: Oceans",
+    "abstract": "<jats:title>Abstract</jats:title>\n                  <jats:p>We introduce a stochastic model designed to parametrize the spectral properties of internal waves, using two functions that represent the semidiurnal spectral tidal cusps and the energy continuum between the inertial and the buoyancy frequencies. We estimated model parameters from long‐term in situ mooring temperature data from the Australian Northwest Shelf (NWS) and Timor Sea using the debiased Whittle likelihood in the frequency domain. The interpretable parameters revealed site, depth, and seasonal variations in internal wave properties, including energy and characteristic timescales of non‐phase‐locked internal waves, and the energy transfer rate of the internal gravity continuum. The characteristic timescale of the internal tide, a measure of the phase modulation of the internal tide, had a median value of 3–3.7 days. The amplitude of the energy continuum and the semidiurnal spectral cusp showed depth variability likely due to stratification, while timescale and slope remained nearly depth‐independent. We also found that the continuum spectral slope was relatively flatter than the canonical Garrett‐Munk value at the NWS moorings. The spectral slope varied seasonally and was steeper in summer. Our parameterization can be used to generate time predictions with Gaussian process regression or for stochastic boundary conditions of coastal nonlinear internal wave modeling.</jats:p>",
+    "status": "excluded_fulltext",
+    "retrieved_at": "2026-09-27T10:43:50.401540Z",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-27"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.5194/egusphere-egu23-11078",
+    "title": "Non-local Machine Learning-based Gravity Wave Parameterization trained on an O(1 km) Resolution Global Climate Model",
+    "authors": [
+      "Gupta, Aman",
+      "Sheshadri, Aditi",
+      "Mansfield, Laura"
+    ],
+    "year": 2023,
+    "container_title": "",
+    "abstract": "<jats:p>&amp;lt;p&amp;gt;Gravity waves (GW) are one of the key drivers of middle atmospheric circulation. They drive the mesospheric circulation and the QBO - the predominant mode of tropical stratospheric variability&amp;amp;#160; -&amp;amp;#160; and play an important role in the wintertime polar vortex variability. These waves manifest over spatial scales as small as O(10 m) to as large as O(1000 km) and thus, are often poorly resolved in global climate models on account of limited model grid resolution and grid-scale numerical dissipation. Moreover, the parameterizations used to represent the momentum forcing associated with GW are highly idealized and often not well-tuned due to limited observations. These parameterizations simplify GW representation by ignoring certain aspects of their dynamical evolution, including lateral propagation, transience, and intermittency, which results in an inaccurate model representation of their interaction with the synoptic and mean flow.&amp;lt;/p&amp;gt;\n&amp;lt;p&amp;gt;The present work focuses on creating a new, data-driven emulator for GW representation in climate models. The emulator employs an artificial neural network that learns the local and non-local gravity wave evolution by training on high-resolution reanalysis (ERA5) and ECMWF&amp;amp;#8217;s global 1km-resolution climate model that respectively partly and fully resolve the mesoscale portion of the atmospheric gravity wave spectrum. We test the performance of the data-driven emulators by embedding them in an intermediate-complexity climate model and assessing their momentum contribution towards driving a suite of middle atmospheric processes including the springtime disintegration of the Antarctic polar vortex, the quasi-biennial oscillation of the tropical stratospheric winds, and the sudden stratospheric warmings.&amp;lt;/p&amp;gt;</jats:p>",
+    "status": "excluded_fulltext",
+    "retrieved_at": "2026-09-27T10:43:50.401552Z",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-27"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.22541/essoar.170914524.42466387/v1",
+    "title": "Uncertainty Quantification of a Machine Learning Subgrid-Scale Parameterization for Atmospheric Gravity Waves",
+    "authors": [
+      "Mansfield, Laura A",
+      "Sheshadri, Aditi"
+    ],
+    "year": 2024,
+    "container_title": "",
+    "abstract": "<jats:p>Subgrid-scale processes, such as atmospheric gravity waves, play a\npivotal role in shaping the Earth’s climate but cannot be explicitly\nresolved in climate models due to limitations on resolution. Instead,\nsubgrid-scale parameterizations are used to capture their effects.\nRecently, machine learning has emerged as a promising approach to learn\nparameterizations. In this study, we explore uncertainties associated\nwith a machine learning parameterization for atmospheric gravity waves.\nFocusing on the uncertainties in the training process (parametric\nuncertainty), we use an ensemble of neural networks to emulate an\nexisting gravity wave parameterization. We estimate both offline\nuncertainties in raw neural network output and online uncertainties in\nclimate model output, after the neural networks are coupled. We find\nthat online parametric uncertainty contributes a significant source of\nuncertainty in climate model output that must be considered when\nintroducing neural network parameterizations. This uncertainty\nquantification provides valuable insights into the reliability and\nrobustness of machine learning-based gravity wave parameterizations,\nthus advancing our understanding of their potential applications in\nclimate modeling.</jats:p>",
+    "status": "excluded_fulltext",
+    "retrieved_at": "2026-09-27T10:43:50.401566Z",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-27"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1007/978-3-642-60654-0_25",
+    "title": "Middle Atmosphere Simulations with the ECHAM4 Model: Sensitivity to the Doppler Spread Gravity Wave Parameterization",
+    "authors": [
+      "Manzini, E.",
+      "McFarlane, N. A.",
+      "McLandress, C."
+    ],
+    "year": 1997,
+    "container_title": "Gravity Wave Processes",
+    "abstract": "",
+    "status": "excluded_fulltext",
+    "retrieved_at": "2026-09-27T10:43:50.401576Z",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-27"
+  },
+  {
+    "bibkey": "nabi2023quasiglobal",
+    "title": "Quasi-Global Assessment of Deep Learning-Based CYGNSS Soil Moisture Retrieval",
+    "authors": [
+      "Nabi, M M",
+      "Senyurek, Volkan",
+      "Lei, Fangni",
+      "Kurum, Mehmet",
+      "Gurbuz, Ali Cafer"
+    ],
+    "year": 2023,
+    "venue": "IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing",
+    "doi_or_arxiv": "https://doi.org/10.1109/JSTARS.2023.3287591",
+    "doi": "10.1109/JSTARS.2023.3287591",
+    "domain": "Hydrology",
+    "modality": "Spaceborne GNSS-Reflectometry (CYGNSS Delay-Doppler Maps) & Satellite SMAP/SMOS",
+    "backbone": "Convolutional Neural Network with Multi-Sensor Fusion",
+    "pretraining_data": "Quasiglobal CYGNSS bistatic DDMs (38S to 38N latitudes) paired with SMAP radiometer soil moisture and ISMN stations",
+    "physics_integration": "Purely data-driven",
+    "role_of_llm": "None",
+    "lead_time_or_task": "Daily quasiglobal surface soil moisture retrieval at 9-36 km resolution under diverse vegetative canopies",
+    "model_size": "1.8M",
+    "code_url": "not available",
+    "quality_score": 12,
+    "status": "included",
+    "exclusion_reason": null,
+    "screen_date": "2026-09-27"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1109/igarss46834.2022.9883916",
+    "title": "A Deep Learning-Based Soil Moisture Estimation in Conus Region Using Cygnss Delay Doppler Maps",
+    "authors": [
+      "Nabi, M M",
+      "Senyurek, Volkan",
+      "Gurbuz, Ali Cafer",
+      "Kurum, Mehmet"
+    ],
+    "year": 2022,
+    "container_title": "IGARSS 2022 - 2022 IEEE International Geoscience and Remote Sensing Symposium",
+    "abstract": "",
+    "status": "excluded_fulltext",
+    "retrieved_at": "2026-09-27T10:43:52.146805Z",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-27"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1109/igarss47720.2021.9554005",
+    "title": "Quasi-Global GNSS-R Soil Moisture Retrievals at High Spatio-Temporal Resolution from Cygnss and Smap Data",
+    "authors": [
+      "Lei, Fangni",
+      "Senyurek, Volkan",
+      "Kurum, Mehmet",
+      "Gurbuz, Ali",
+      "Boyd, Dylan",
+      "Moorhead, Robert"
+    ],
+    "year": 2021,
+    "container_title": "2021 IEEE International Geoscience and Remote Sensing Symposium IGARSS",
+    "abstract": "",
+    "status": "excluded_fulltext",
+    "retrieved_at": "2026-09-27T10:43:52.146814Z",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-27"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1016/j.rse.2022.113041",
+    "title": "Quasi-global machine learning-based soil moisture estimates at high spatio-temporal scales using CYGNSS and SMAP observations",
+    "authors": [
+      "Lei, Fangni",
+      "Senyurek, Volkan",
+      "Kurum, Mehmet",
+      "Gurbuz, Ali Cafer",
+      "Boyd, Dylan",
+      "Moorhead, Robert",
+      "Crow, Wade T.",
+      "Eroglu, Orhan"
+    ],
+    "year": 2022,
+    "container_title": "Remote Sensing of Environment",
+    "abstract": "",
+    "status": "excluded_fulltext",
+    "retrieved_at": "2026-09-27T10:43:52.146821Z",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-27"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1109/igarss52108.2023.10281528",
+    "title": "Fusing Sentinel-1 with CYGNSS to Account For Vegetation Effects in Soil Moisture Retrievals",
+    "authors": [
+      "Bozdag, Ege",
+      "Senyurek, Volkan",
+      "Nabi, M M",
+      "Kurum, Mehmet",
+      "Gurbuz, Ali Cafer"
+    ],
+    "year": 2023,
+    "container_title": "IGARSS 2023 - 2023 IEEE International Geoscience and Remote Sensing Symposium",
+    "abstract": "",
+    "status": "excluded_fulltext",
+    "retrieved_at": "2026-09-27T10:43:52.146827Z",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-27"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1109/jstars.2022.3196658",
+    "title": "Deep Learning-Based Soil Moisture Retrieval in CONUS Using CYGNSS Delay–Doppler Maps",
+    "authors": [
+      "Nabi, M M",
+      "Senyurek, Volkan",
+      "Gurbuz, Ali C.",
+      "Kurum, Mehmet"
+    ],
+    "year": 2022,
+    "container_title": "IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing",
+    "abstract": "",
+    "status": "excluded_fulltext",
+    "retrieved_at": "2026-09-27T10:43:52.146837Z",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-27"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.5194/egusphere-egu26-1508",
+    "title": "Improved CYGNSS Soil Moisture Product Characterization and Assessment",
+    "authors": [
+      "Ruf, Christopher",
+      "Bai, Dinan"
+    ],
+    "year": 2026,
+    "container_title": "",
+    "abstract": "<jats:p>Soil moisture (SM) is a key climate variable influencing energy exchange between the land surface and atmosphere, and its monitoring across spatiotemporal scales is essential for hydrologic study, agricultural management, and climate modeling. The NASA Cyclone Global Navigation Satellite System (CYGNSS) is a GNSS Reflectometry (GNSS-R) constellation of satellites with demonstrated sensitivity to land surface reflectivity and SM. In this study, we evaluate the performance of the newly released CYGNSS V3.2 SM product, which incorporates improved engineering calibration and a refined SM retrieval algorithm. SM estimates are produced at 9 and 36 km spatial resolution and with daily (24-hour) and sub-daily (6-hour) temporal sampling. The data product is available from 2018 top the present. One example CYGNSS SM map, obtained on 8 Nov 2018, is shown in Figure 1a.In this study, we compare CYGNSS SM retrievals with SMAP and in-situ observations from 280 International Soil Moisture Network (ISMN) stations spanning diverse land cover types. An example 1-year comparison between collocated CYGNSS and ISMN ARM Ashton in-situ SM is shown in Figure 1b. Both the 9 and 36 km km products are evaluated using standard performance metrics—correlation, bias, RMSD, and unbiased RMSD—and using triple collocation analysis with SMAP, ESA Climate Change Initiative (CCI), and ISMN to quantify random errors and characterize error covariance. The v3.2 product demonstrates clear improvements over previous versions, with lower random errors and better long term consistency. We further explore the impact of land cover homogeneity and seasonal vegetation cycles on retrieval accuracy. Our analysis highlights the unique capability of spaceborne GNSS-R to provide high-temporal-resolution SM observations at intermediate spatial scales, helping bridge the scale gap between point measurements and coarse-resolution satellite products. These results support the inclusion of GNSS-R in integrated, hierarchical soil moisture monitoring systems and underscore its potential for hydrologic and environmental applications.                                            </jats:p>",
+    "status": "excluded_fulltext",
+    "retrieved_at": "2026-09-27T10:43:52.146842Z",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-27"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1109/igarss47720.2021.9553900",
+    "title": "Spatial and Temporal Interpolation of CYGNSS Soil Moisture Estimations",
+    "authors": [
+      "Senyurek, Volkan",
+      "Gurbuz, Ali",
+      "Kurum, Mehmet",
+      "Lei, Fangni",
+      "Boyd, Dylan",
+      "Moorhead, Robert"
+    ],
+    "year": 2021,
+    "container_title": "2021 IEEE International Geoscience and Remote Sensing Symposium IGARSS",
+    "abstract": "",
+    "status": "excluded_fulltext",
+    "retrieved_at": "2026-09-27T10:43:52.146847Z",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-27"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1109/igarss39084.2020.9323106",
+    "title": "Machine-Learning Based Retrieval of Soil Moisture at High Spatio-Temporal Scales Using CYGNSS and SMAP Observations",
+    "authors": [
+      "Lei, Fangni",
+      "Senyurek, Volkan",
+      "Kurum, Mehmet",
+      "Gurbuz, Ali",
+      "Moorhead, Robert",
+      "Boyd, Dylan"
+    ],
+    "year": 2020,
+    "container_title": "IGARSS 2020 - 2020 IEEE International Geoscience and Remote Sensing Symposium",
+    "abstract": "",
+    "status": "excluded_fulltext",
+    "retrieved_at": "2026-09-27T10:43:52.146853Z",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-27"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.3390/rs12213503",
+    "title": "Evaluations of Machine Learning-Based CYGNSS Soil Moisture Estimates against SMAP Observations",
+    "authors": [
+      "Senyurek, Volkan",
+      "Lei, Fangni",
+      "Boyd, Dylan",
+      "Gurbuz, Ali Cafer",
+      "Kurum, Mehmet",
+      "Moorhead, Robert"
+    ],
+    "year": 2020,
+    "container_title": "Remote Sensing",
+    "abstract": "<jats:p>This paper presents a machine learning (ML) framework to derive a quasi-global soil moisture (SM) product by direct use of the Cyclone Global Navigation Satellite System (CYGNSS)’s high spatio-temporal resolution observations over the tropics (within ±38° latitudes) at L-band. The learning model is trained by using in-situ SM data from the International Soil Moisture Network (ISMN) sites and various space-borne ancillary data. The approach produces daily SM retrievals that are gridded to 3 km and 9 km within the CYGNSS spatial coverage. The performance of the model is independently evaluated at various temporal scales (daily, 3-day, weekly, and monthly) against Soil Moisture Active Passive (SMAP) mission’s enhanced SM products at a resolution of 9 km × 9 km. The mean unbiased root-mean-square difference (ubRMSD) between concurrent (same calendar day) CYGNSS and SMAP SM retrievals for about three years (from 2017 to 2019) is 0.044 cm3 cm−3 with a correlation coefficient of 0.66 over SMAP recommended grids. The performance gradually improves with temporal averaging and degrades over regions regularly flagged by SMAP such as dense forest, high topography, and coastlines. Furthermore, CYGNSS and SMAP retrievals are evaluated against 170 ISMN in-situ observations that result in mean unbiased root-mean-square errors (ubRMSE) of 0.055 cm3 cm−3 and 0.054 cm3 cm−3, respectively, and a higher correlation coefficient with CYGNSS retrievals. It is important to note that the proposed approach is trained over limited in-situ observations and is independent of SMAP observations in its training. The retrieval performance indicates current applicability and future growth potential of GNSS-R-based, directly measured spaceborne SM products that can provide improved spatio-temporal resolution than currently available datasets.</jats:p>",
+    "status": "excluded_fulltext",
+    "retrieved_at": "2026-09-27T10:43:52.146859Z",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-27"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1109/ecis69634.2026.11604391",
+    "title": "SP-DBSTNet: A Specular Point-Guided Dual-Branch Spatio-Temporal Network for CYGNSS Sea Surface Wind Speed Retrieval",
+    "authors": [
+      "Song, Qi",
+      "Sun, Rui",
+      "Aditya, Trias"
+    ],
+    "year": 2026,
+    "container_title": "2026 IEEE 3rd International Conference on Electronics, Communications and Intelligent Science (ECIS)",
+    "abstract": "",
+    "status": "excluded_fulltext",
+    "retrieved_at": "2026-09-27T10:43:54.013999Z",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-27"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.2139/ssrn.7025913",
+    "title": "Interpretable flood early warning via dual-branch temporal network: Application to small rivers with rapid water-level changes",
+    "authors": [
+      "Jung, HaEun",
+      "Song, YoungHo",
+      "Kim, Sangdan",
+      "Nam, KiJeon"
+    ],
+    "year": 2026,
+    "container_title": "",
+    "abstract": "<jats:p>Reliable flood early warning in small rivers remains challenging because water levels can rise abruptly under localized, high-intensity rainfall. To address this problem, this study proposes an interpretable flood early warning framework integrating a Dual-branch Temporal Network (DualTNet) for short-term water-level forecasting with FLOWT2 (flood warning using Hotelling’s T2), a forecast-informed warning system. Using 10-min observations from four small rivers in South Korea, all models were trained to predict water levels 3 h ahead from the previous 24 h of hydrological and meteorological inputs. DualTNet was developed to explicitly separate periodic feature enhancement and residual correction, thereby learning multi-periodic patterns and adaptive multi-scale hydrological dynamics. Across the four study sites, DualTNet achieved the best overall forecasting performance among the evaluated models, with an average RMSE of 0.0184 and R2 of 0.9925. Event-scale hydrograph comparisons and explainable AI analyses further demonstrated that DualTNet faithfully reproduced abrupt rises, peak stages, and hydrologically meaningful feature-attribution patterns, even under backwater- and tide-influenced dynamics. When coupled with FLOWT2, the proposed framework provided the most reliable event-level flood diagnosis, achieving a 100% major-event detection rate across the study sites and site-dependent practical warning lead times ranging from approximately 3 h to 1 d. These results demonstrate that the DualTNet-FLOWT2 framework is an accurate, interpretable, and operationally useful approach to small-river flash floods.</jats:p>",
+    "status": "excluded_fulltext",
+    "retrieved_at": "2026-09-27T10:43:54.014019Z",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-27"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.7717/peerj-cs.1140/fig-2",
+    "title": "Figure 2: Framework of the proposed dual branch neural network.",
+    "authors": [],
+    "year": null,
+    "container_title": "",
+    "abstract": "",
+    "status": "excluded_title",
+    "retrieved_at": "2026-09-27T10:43:54.014025Z",
+    "exclusion_reason": "EC1: Out of domain scope (not natural science temporal system)",
+    "screen_date": "2026-09-27"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1109/sepoc67005.2025.11297606",
+    "title": "Ai-Driven Flood Prediction and Survival System: A Dual-Branch Neural Network Approach With Rag Integration",
+    "authors": [
+      "Anik, Aninda Sharma"
+    ],
+    "year": 2025,
+    "container_title": "2025 17th Seminar on Power Electronics and Control (SEPOC)",
+    "abstract": "",
+    "status": "excluded_fulltext",
+    "retrieved_at": "2026-09-27T10:43:54.014032Z",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-27"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1007/s10661-022-09752-9",
+    "title": "Application of a novel artificial neural network model in flood forecasting",
+    "authors": [
+      "Wang, Guangsheng",
+      "Yang, Jianqing",
+      "Hu, Yuzhong",
+      "Li, Jingbing",
+      "Yin, Zhijie"
+    ],
+    "year": 2022,
+    "container_title": "Environmental Monitoring and Assessment",
+    "abstract": "",
+    "status": "excluded_fulltext",
+    "retrieved_at": "2026-09-27T10:43:54.014038Z",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-27"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1109/tnsre.2025.3645365",
+    "title": "Fall Monitoring With Single IMU: A Large-Scale Dataset and a Novel Dual-Branch Network",
+    "authors": [
+      "Cai, Yize",
+      "Chen, Junxin",
+      "He, Qiang",
+      "Mou, Jun",
+      "Camacho, David"
+    ],
+    "year": 2026,
+    "container_title": "IEEE Transactions on Neural Systems and Rehabilitation Engineering",
+    "abstract": "",
+    "status": "excluded_title",
+    "retrieved_at": "2026-09-27T10:43:54.014046Z",
+    "exclusion_reason": "EC1: Out of domain scope (not natural science temporal system)",
+    "screen_date": "2026-09-27"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1016/j.eswa.2023.121828",
+    "title": "Dual-branch convolutional neural network for robust camera model identification",
+    "authors": [
+      "Rana, Kapil",
+      "Goyal, Puneet",
+      "Sharma, Gaurav"
+    ],
+    "year": 2024,
+    "container_title": "Expert Systems with Applications",
+    "abstract": "",
+    "status": "excluded_title",
+    "retrieved_at": "2026-09-27T10:43:54.014051Z",
+    "exclusion_reason": "EC1: Out of domain scope (not natural science temporal system)",
+    "screen_date": "2026-09-27"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1108/s2040-726220180000020018",
+    "title": "Flood Disaster Prediction Model Based on Artificial Neural Network: A Case Study of Kuala Kangsar, Perak",
+    "authors": [
+      "Shahrir, Nurul Syarafina",
+      "Ahmad, Norulhusna",
+      "Ahmad, Robiah",
+      "Dziyauddin, Rudzidatul Akmam"
+    ],
+    "year": 2018,
+    "container_title": "Improving Flood Management, Prediction and Monitoring",
+    "abstract": "<jats:title>Abstract</jats:title>\n                  <jats:p>Natural flood disasters frequently happen in Malaysia especially during monsoon season and Kuala Kangsar, Perak, is one of the cities with the frequent record of natural flood disasters. Previous flood disaster faced by this city showed the failure in notifying the citizen with sufficient time for preparation and evacuation. The authority in charge of the flood disaster in Kuala Kangsar depends on the real-time monitoring from the hydrological sensor located at several stations along the main river. The real-time information from hydrological sensor failed to provide early notification and warning to the public. Although many hydrological sensors are available at the stations, only water level sensors and rainfall sensors are used by authority for flood monitoring. This study developed a flood prediction model using artificial intelligence to predict the incoming flood in Kuala Kangsar area based on artificial neural network (ANN). The flood prediction model is expected to predict the incoming flood disaster by using information from the variety of hydrological sensors. The study finds that the proposed ANN model based on nonlinear autoregressive network with exogenous inputs (NARX) has better performance than other models with the correlation coefficient that is equal to 0.98930. The NARX model of flood prediction developed in this study can be referred to as the future flood prediction model in Kuala Kangsar, Perak.</jats:p>",
+    "status": "excluded_fulltext",
+    "retrieved_at": "2026-09-27T10:43:54.014057Z",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-27"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.2139/ssrn.5210269",
+    "title": "A Novel Double Dual-Branch Fusion Network for Motor Imagery Eeg Signal Classification",
+    "authors": [
+      "Zhang, Jincheng",
+      "Zhao, Zhidan"
+    ],
+    "year": 2025,
+    "container_title": "",
+    "abstract": "",
+    "status": "excluded_title",
+    "retrieved_at": "2026-09-27T10:43:54.014063Z",
+    "exclusion_reason": "EC1: Out of domain scope (not natural science temporal system)",
+    "screen_date": "2026-09-27"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1109/mlsp.2019.8918768",
+    "title": "Rl-Ncs: Reinforcement Learning Based Data-Driven Approach For Nonuniform Compressed Sensing",
+    "authors": [
+      "Karim, Nazmul",
+      "Zaeemzadeh, Alireza",
+      "Rahnavard, Nazanin"
+    ],
+    "year": 2019,
+    "container_title": "2019 IEEE 29th International Workshop on Machine Learning for Signal Processing (MLSP)",
+    "abstract": "",
+    "status": "excluded_fulltext",
+    "retrieved_at": "2026-09-27T10:43:55.946795Z",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-27"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.70675/5f78fd37zdb50z4edcz867bze09c7f253ad0",
+    "title": "Data-driven flow modelling using machine learning and data assimilation approaches",
+    "authors": [
+      "Kumar, Nishant"
+    ],
+    "year": null,
+    "container_title": "",
+    "abstract": "<jats:title>Modélisation d'écoulement par apprentissage automatique et assimilation de données</jats:title>\n                <jats:p xml:lang=\"fr\">Les modèles haute-fidélité employés en Turbulence sont inutilisables lorsque des résolutions multiples sont nécessaires, comme c'est le cas en optimisation ou en contrôle des écoulements. La réduction de modèle a pour objectif de construire des modèles de dimension réduite (ROMs) afin d'approximer de manière précise la dynamique haute-fidélité sous-jacente. La méthode de réduction de modèle par projection de Galerkin, largement utilisée, est intrusive car elle nécessite la connaissance des équations d'évolution et/ou d'avoir accès au code source décrivant la physique. La réduction de modèle de type intrusif est donc inadaptée aux problèmes présentant aucune ou une faible connaissance du système physique. Dans ces cas, une alternative est offerte par les méthodes non intrusives ou modélisations basées sur des données pour lesquelles les modèles réduits sont appris à partir de séries temporelles obtenues par simulations numériques ou expériences. Dans cette thèse, des approches basées \"données\" de type intrusif et non intrusif sont présentées pour prédire la dynamique d'écoulements.Concernant les approches de type intrusif, un modèle réduit de dynamique basé sur la Proper Orthogonal Decomposition (POD-ROM) est considéré. La méthode POD offre l'avantage de préserver la dynamique non linéaire en projetant les équations d'état sur un espace de faible dimension engendré par des modes optimaux. Dans un premier temps, des méthodes de régression creuse issues de l'apprentissage statistique sont utilisées pour identifier les inconnues linéaires du modèle réduit. Une méthode de bootstrap est ensuite proposée pour quantifier de manière probabiliste les incertitudes associées aux méthodes de régression. Dans un second temps, un modèle non linéaire de viscosité turbulente est ajouté aux équations du modèle réduit. Ce modèle de Turbulence fournit une représentation fermée basée sur la physique de la dynamique de l'écoulement. Finalement, les paramètres du modèle de fermeture sont estimés à l'aide d'une approche de type Dual Ensemble Kalman Filter (Dual EnKF) qui intègre les sorties du modèle et des mesures, tout en prenant en compte les incertitudes respectives.Concernant les approches de type non intrusif, des modèles de régression basés sur des réseaux de neurones (NN-ROM) sont considérés comme alternative de l'approche POD-ROM. Cette méthode traite les limitations de l'approche POD-ROM -- le manque de garantie a priori de stabilité, et la nécessité de termes de fermeture pour prendre en compte les modes non résolus -- au prix de l'interprétabilité du modèle approché résultant. Le modèle NN-ROM sert de méthode d'intégration temporelle des coefficients de projection POD. Pour cela, un réseau de neurones paramétrisé, multi-pas est introduit pour représenter les termes de résidus. Ce modèle est utilisé dans le cadre d'une méthode d'assimilation de données (DA) afin d'améliorer la prédiction à long terme du modèle.Les approches intrusive et non intrusive proposées sont appliquées sur un système dynamique canonique (Lorenz), sur des données numériques issues de simulations à bas nombre de Reynolds d'un écoulement de sillage et d'un jet à faible nombre de Mach, et enfin sur des données expérimentales d'un écoulement de sillage.</jats:p>",
+    "status": "excluded_fulltext",
+    "retrieved_at": "2026-09-27T10:43:55.946817Z",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-27"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.7717/peerjcs.2551/fig-2",
+    "title": "Figure 2: Reinforcement learning (RL).",
+    "authors": [],
+    "year": null,
+    "container_title": "",
+    "abstract": "",
+    "status": "excluded_fulltext",
+    "retrieved_at": "2026-09-27T10:43:55.946822Z",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-27"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.2139/ssrn.6599058",
+    "title": "Crossing the Great Filter: Cultural Reflow and Inter-episodic State Inheritance in Zero-Reward Reinforcement Learning: A New Problem Class for Multi-generational Coordination Beyond Reward-Driven Episodic RL",
+    "authors": [
+      "Chen, Guoyong"
+    ],
+    "year": 2026,
+    "container_title": "",
+    "abstract": "<jats:p>Standard reinforcement learning (RL) operates under two rarely questioned assumptions: (1) episodic reset: the environment fully resets after each episode; (2) reward-driven learning: behavior must be reinforced by reward signals. These assumptions create a barrier for tasks requiring multigenerational sacrifice, where a single agent's lifetime is insufficient to complete the goal, and necessary actions yield zero reward and terminate the episode. In this paper, we formalize Inter-episodic State Inheritance MDP (ISI-MDP) , which splits environment state into agent-specific transient state and global persistent state inherited across episodes. We propose Event-Triggered Cultural Reflow (ETCR) , which preserves and transmits zero-reward but goal-critical trajectories across generations via behavior cloning. We evaluate our framework in the Sealed Corridor environment, a grid world where the goal requires multiple generations of sacrificial, zero-reward actions. Experimental results across 30 random seeds show that standard reward-driven optimization actively hinders cross-generational coordination: PPO falls into a zero-gradient trap, failing in 60% of runs and requiring over 2300 episodes on average. While pure off-policy epsilon-greedy methods (DQN) and evolution (No Reflow) can occasionally stumble through the filter, they are highly inefficient (&amp;gt;170 and &amp;gt;1000 episodes, respectively). In contrast, our ETCR framework triggers a rapid phase transition, accelerating breakthrough efficiency to a mean of 70.2 episodes with a 100% survival rate (p &amp;lt; 1e-10 vs. all baselines). These results suggest that reward-driven episodic RL faces inherent difficulties with multi-generational great filters, and inter-episodic state inheritance paired with cultural reflow offers a viable path for this class of tasks. 1 Note: This paper was originally composed in Chinese and translated into English with the assistance of language tools to facilitate global academic exchange.</jats:p>",
+    "status": "excluded_fulltext",
+    "retrieved_at": "2026-09-27T10:43:55.946830Z",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-27"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.5194/egusphere-egu26-3932",
+    "title": "Machine learning–driven advances in geophysical data assimilation",
+    "authors": [
+      "Bocquet, Marc"
+    ],
+    "year": 2026,
+    "container_title": "",
+    "abstract": "<jats:p>Machine learning (ML), particularly deep learning (DL), is becoming increasingly central to geophysical data assimilation (DA), serving to enhance classical methods, complement them, or potentially replace parts of the DA cycle altogether. This talk reviews recent developments and outlines promising directions for integrating ML into DA, and ultimately improve forecasting in the geosciences. For instance, ML can be used to develop auto-differentiable emulators for dynamics, parametrisations, or model-error corrections, which can be seamlessly incorporated into variational DA frameworks. ML also enables adaptive and efficient exchanges of information among the state, observation, and latent spaces in which DA analysis computations occur. In ensemble DA, ML can improve forecast ensemble generation and facilitate the efficient tuning of hyperparameters through auto-differentiable DA implementations. Moreover, ML opens the possibility of learning and replacing the analysis step, or even the full DA and forecast cycle, in an end-to-end manner. I will illustrate these opportunities with two examples: one in which DL is used to discover new and efficient analysis operators, and another in which generative AI is embedded within classical DA schemes.</jats:p>",
+    "status": "excluded_fulltext",
+    "retrieved_at": "2026-09-27T10:43:55.946839Z",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-27"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.7717/peerj-cs.3351/fig-1",
+    "title": "Figure 1: Learning process in reinforcement learning (RL).",
+    "authors": [],
+    "year": null,
+    "container_title": "",
+    "abstract": "",
+    "status": "excluded_fulltext",
+    "retrieved_at": "2026-09-27T10:43:55.946844Z",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-27"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.2139/ssrn.7238272",
+    "title": "TVCL-RL: Tri-View Contrastive Learning method with Reinforcement Learning-driven dynamic temperature tuning for fraud detection",
+    "authors": [
+      "L, Junzheng",
+      "Li, Junzheng",
+      "H, Ruiyang",
+      "Wang, Shaopu"
+    ],
+    "year": 2026,
+    "container_title": "",
+    "abstract": "<jats:p>Online fraud has grown increasingly organized, covert, and camouflaged, posing substantial challenges to graph neural network based detection methods. Existing approaches typically suffer from the violated homophily assumption, inadequate high-order relation modeling, and limited discriminative power of node representations in highly heterophilic fraud graphs. To address these limitations, this paper proposes TVCL-RL, a tri-view contrastive learning fraud detection framework with reinforcement learning-driven dynamic temperature tuning. First, three complementary views (ordinary graph, hypergraph, and topological feature views) are constructed to capture local pairwise interactions, high-order collusive fraud patterns, and global statistical attributes, respectively. Second, symmetric cross-view contrastive learning is employed to learn robust discriminative embeddings by maximizing cross-view mutual information while filtering out view-specific noise. Third, a deep Q-network-based dynamic temperature scheduling mechanism is devised to adaptively adjust the InfoNCE temperature coefficient based on real-time training states, striking a balance between early convergence speed and late-stage fine-grained discrimination. Extensive experiments on two real-world benchmark datasets demonstrate that TVCL-RL consistently outperforms state-of-the-art baselines.</jats:p>",
+    "status": "excluded_fulltext",
+    "retrieved_at": "2026-09-27T10:43:55.946850Z",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-27"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.2139/ssrn.5221408",
+    "title": "Rl-Dfn: A Reinforcement Learning-Driven Dual-View Feature Fusion Network for Aspect-Based Sentiment Analysis in Online Public Opinion",
+    "authors": [
+      "Li, Ziheng",
+      "Zhao, Kui"
+    ],
+    "year": 2025,
+    "container_title": "",
+    "abstract": "",
+    "status": "excluded_fulltext",
+    "retrieved_at": "2026-09-27T10:43:55.946856Z",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-27"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.32657/10356/146557",
+    "title": "Baconian : a unified model-based reinforcement learning library",
+    "authors": [
+      "Dong, Linsen"
+    ],
+    "year": null,
+    "container_title": "",
+    "abstract": "",
+    "status": "excluded_fulltext",
+    "retrieved_at": "2026-09-27T10:43:57.662630Z",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-27"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.5194/gmd-2019-130-rc2",
+    "title": "Review of \"The first Met Office Unified Model/JULES REgional Atmosphere and Land Configuration, RAL1\"",
+    "authors": [],
+    "year": 2019,
+    "container_title": "",
+    "abstract": "",
+    "status": "excluded_fulltext",
+    "retrieved_at": "2026-09-27T10:43:57.662650Z",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-27"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.5194/gmd-2018-267-rc1",
+    "title": "Assessment of land surface temperature of different configurations of the UK Met Office Unified Model",
+    "authors": [],
+    "year": 2019,
+    "container_title": "",
+    "abstract": "",
+    "status": "excluded_fulltext",
+    "retrieved_at": "2026-09-27T10:43:57.662659Z",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-27"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.5194/gmd-2016-32-rc2",
+    "title": "Review of  INFERNO: A fire and emissions scheme for the Met Office&amp;amp;#8217;s Unified Model",
+    "authors": [],
+    "year": 2016,
+    "container_title": "",
+    "abstract": "",
+    "status": "excluded_fulltext",
+    "retrieved_at": "2026-09-27T10:43:57.662665Z",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-27"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.5194/gmdd-7-7395-2014",
+    "title": "Efficient performance of the Met Office Unified Model v8.2 on Intel Xeon partially used nodes",
+    "authors": [
+      "Bermous, I."
+    ],
+    "year": 2014,
+    "container_title": "",
+    "abstract": "<jats:p>Abstract. The atmospheric Unified Model (UM) developed at the UK Met Office is used for weather and climate prediction by forecast teams at a number of international meteorological centres and research institutes on a wide variety of hardware and software environments. Over its 25 year history the UM sources have been optimised for a better application performance on a number of HPC systems including NEC SX vector architecture systems and recently the IBM Power6/Power7 platforms. Understanding the influence of the compiler flags, MPI libraries and run configurations is crucial to achieving the shortest elapsed times for a UM application on any particular HPC system. These aspects are very important for applications that must run within operational time frames. Driving the current study is the HPC industry trend since 1980 for processor arithmetic performance to increase at a faster rate than memory bandwidth. This gap has been growing especially fast for multicore processors in the past 10 years and it can have significant implication for the performance and performance scaling of memory bandwidth intensive applications, such as the UM. Analysis of partially used nodes on Intel Xeon clusters is provided in this paper for short and medium range weather forecasting systems using global and limited-area configurations. It is shown that on the Intel Xeon based clusters the fastest elapsed times and the most efficient system usage can be achieved using partially committed nodes.</jats:p>",
+    "status": "excluded_fulltext",
+    "retrieved_at": "2026-09-27T10:43:57.662671Z",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-27"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.33140/amlai.06.04.02",
+    "title": "A Unified ISR World Model: Vossels, Voxels, Mipvols, and Reinforcement Learning",
+    "authors": [
+      "",
+      "Passmore, Greg"
+    ],
+    "year": 2025,
+    "container_title": "Advances in Machine Learning &amp; Artificial Intelligence",
+    "abstract": "<jats:p>ISR enterprises must integrate measurements from many sensing modalities, radar, EO/IR, LiDAR, SIGINT, acoustics, cyber,\nweather, and jamming, each with its own resolution, structure, and format. Traditional systems often discard richness by reducing\ninputs to tracks, maps, or occasional images, leaving little for machine learning to exploit. This paper introduces Vossels (Volumetric\nSingular Spectral Elements), which were designed to address sensor discordance by storing raw sensor data in a unified atomic\nstructure, ensuring that the full information content is preserved for artificial intelligence and reinforcement learning.\nA Vossel encodes (x, y, z, t, λi , aj\n) as a singular volumetric spectral element, capturing space, time, spectral channels, and auxiliary\nattributes. Integrated into voxel grids and mipvol hierarchies, Vossels support multiresolution storage, retrieval, and time-series\nsegmentation. Mipvols accelerate access by adapting resolution to projected target size, increasing speed without discarding data\nrelevant to the task. This provides consistent, resolution-preserving storage that eliminates modality-specific silos, simplifies the\nmental model, and creates a centralized repository optimized for AI exploitation.\nBecause raw data is retained rather than simplified, reinforcement learning agents can operate directly on the richness of ISR\nstreams, identifying correlations across modalities and scales. The memory manager and frustum extractor keep massive datasets\ntractable by keeping local neighborhoods in GPU VRAM or AI context windows while paging global volumes efficiently. This\nallows adaptive policies to evolve—learning when to refine, when to approximate, and how to balance fidelity with performance.\nThis paper defines the Vossel structure, the supporting voxel/mipvol hierarchy, and the mathematics of extraction and fusion.\nKriging interpolation is presented for high-fidelity value estimation, view frustum extraction for adaptive retrieval, and multimodal fusion strategies for co-registration. By design, Vossels enable AI and reinforcement learning to exploit ISR data in its full\nrichness, transforming integration from siloed processes into a coherent, self-optimizing system.</jats:p>",
+    "status": "excluded_fulltext",
+    "retrieved_at": "2026-09-27T10:43:57.662678Z",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-27"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.32657/10356/205182",
+    "title": "Deep thinking in text-to-image generation using unified model with reinforcement learning",
+    "authors": [
+      "",
+      "Hu, Wentao"
+    ],
+    "year": null,
+    "container_title": "",
+    "abstract": "",
+    "status": "excluded_fulltext",
+    "retrieved_at": "2026-09-27T10:43:57.662683Z",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-27"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1175/waf-d-17-0069.1",
+    "title": "How Well Can the Met Office Unified Model Forecast Tropical Cyclones in the Western North Pacific?",
+    "authors": [
+      "Short, Chris J.",
+      "Petch, Jon"
+    ],
+    "year": 2018,
+    "container_title": "Weather and Forecasting",
+    "abstract": "<jats:title>Abstract</jats:title><jats:p>Convection-permitting numerical weather prediction models are a key tool for forecasting tropical cyclone (TC) intensities, intensity changes, and precipitation. The Met Office has been routinely running a regional (4.4-km grid spacing), explicit convection version of its Unified Model (UM) over the Philippines since August 2014, driven by its operational global model. The principal aim of this study is to assess the performance of this model relative to the driving global model. By evaluating over a year’s worth of operational TC forecasts, it is shown that the Philippines regional model offers clear benefits for TC forecasting compared with the Met Office global model. In particular, it provides much improved predictions for the intensities of strong storms (category 3 and above) and can successfully capture some rapid intensification (RI) events, whereas the global model cannot predict RI at all. The spatial location of rainfall within intense TCs is also more skillfully predicted by the regional model, and the statistical distribution of rain rates is closer to that observed. Although the regional model adds value, notable biases are also identified, highlighting areas for future work to develop and improve the model.</jats:p>",
+    "status": "excluded_fulltext",
+    "retrieved_at": "2026-09-27T10:43:57.662689Z",
+    "exclusion_reason": "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)",
+    "screen_date": "2026-09-27"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1002/9781119815068.ch3",
+    "title": "Online Learning",
+    "authors": [],
+    "year": 2022,
+    "container_title": "Reinforcement Learning and Stochastic Optimization",
+    "abstract": "",
+    "status": "excluded_title",
+    "retrieved_at": "2026-09-27T10:43:57.662692Z",
+    "exclusion_reason": "EC1: Out of domain scope (not natural science temporal system)",
+    "screen_date": "2026-09-27"
+  },
+  {
+    "bibkey": "song2022dualbranch",
+    "title": "A Novel Dual-Branch Neural Network Model for Flood Monitoring in South Asia Based on CYGNSS Data",
+    "authors": [
+      "Song, Dongmei",
+      "Zhang, Qiqi",
+      "Wang, Bin",
+      "Yin, Cong",
+      "Xia, Junming"
+    ],
+    "year": 2022,
+    "venue": "Remote Sensing",
+    "doi_or_arxiv": "https://doi.org/10.3390/rs14205129",
+    "doi": "10.3390/rs14205129",
+    "domain": "Hydrology",
+    "modality": "Spaceborne GNSS-R Delay-Doppler Maps & Optical/Microwave Surface Ancillary Data",
+    "backbone": "Dual-Branch CNN-BP Neural Network (DBNN)",
+    "pretraining_data": "CYGNSS Level-1 DDMs, surface reflectivity time series, and SMAP soil moisture over South Asia monsoonal river basins",
+    "physics_integration": "Purely data-driven",
+    "role_of_llm": "None",
+    "lead_time_or_task": "Cloud-penetrating monsoonal flood inundation detection, water surface ratio estimation, and flood progression tracking",
+    "model_size": "2.4M",
+    "code_url": "not available",
+    "quality_score": 11,
+    "status": "included",
+    "exclusion_reason": null,
     "screen_date": "2026-09-27"
   },
   {

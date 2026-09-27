@@ -225,6 +225,13 @@ def run_search():
         ("Crossref", "Scale-Translation Equivariant Network for Oceanic Internal Solitary Wave Wan"),
         ("Crossref", "Large Language Models for Constrained-Based Causal Discovery Cohrs"),
         ("Crossref", "Foundations of Causal Discovery on Groups of Variables Wahl Runge"),
+        # Iteration 12 Additions: Gravity Wave Drag Closures, CYGNSS Hydrology, Multi-Agent Targeted Assimilation
+        ("Crossref", "Machine Learning Emulation of Gravity Wave Drag Chantry"),
+        ("Crossref", "Machine Learning Gravity Wave Parameterization Generalizes QBO Espinosa"),
+        ("Crossref", "Quasi Global Assessment of Deep Learning CYGNSS Soil Moisture Nabi Senyurek"),
+        ("Crossref", "A Novel Dual Branch Neural Network Model for Flood Monitoring CYGNSS Song"),
+        ("Crossref", "RL-DAUNCE Reinforcement Learning Driven Data Assimilation Behnoudfar Chen"),
+        ("Crossref", "Online Reinforcement Learning Met Office Unified Model Nath"),
     ]
 
     verified_arxiv_ids = [
@@ -315,6 +322,9 @@ def run_search():
         "2406.13060",  # STE Oceanic Internal Solitary Waves (Wan et al.)
         "2406.07378",  # LLMs for Causal Discovery (Cohrs et al.)
         "2306.07047",  # Causal Discovery on Variable Groups (Wahl et al.)
+        # Iteration 12 arXiv Additions
+        "2505.05452",  # RL-DAUNCE (Behnoudfar & Chen)
+        "2609.02566",  # Online RL Met Office Unified Model (Nath et al.)
     ]
 
     candidates = {}
@@ -412,6 +422,11 @@ def run_search():
         "10.1038/s41559-023-02206-6",  # Global Canopy Height Model (Lang et al., Nature Ecol Evol)
         # Iteration 11 Additions
         "10.1017/jfm.2023.331",        # Machine Learning Wall Model (Lozano-Durán & Bae, JFM)
+        # Iteration 12 Additions
+        "10.1029/2021ms002477",        # Gravity wave drag emulation (Chantry et al., JAMES)
+        "10.1029/2022gl098174",        # ML gravity wave parameterization QBO (Espinosa et al., GRL)
+        "10.1109/jstars.2023.3287591", # Quasi-global CYGNSS soil moisture (Nabi et al., IEEE JSTARS)
+        "10.3390/rs14205129",          # Dual-branch CYGNSS flood monitoring (Song et al., Remote Sensing)
     ]
     prev_doi = len(candidates)
     for doi in verified_dois:

@@ -1,7 +1,7 @@
 # Awesome Scientific Multimodal Time Series Foundation Models and Reasoning LLMs
 ## 科学多模态时序大模型与科学推理大模型前沿进展精选
 
-[![Survey PDF](https://img.shields.io/badge/Paper-PDF-red.svg)](paper/main.pdf) [![PRISMA Included](https://img.shields.io/badge/PRISMA%20Included-89%20papers-brightgreen.svg)](#prisma-systematic-review-statistics) [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE) [![Maintenance](https://img.shields.io/badge/Maintained%20by-Antigravity%20CLI-purple.svg)](#how-this-survey-is-maintained)
+[![Survey PDF](https://img.shields.io/badge/Paper-PDF-red.svg)](paper/main.pdf) [![PRISMA Included](https://img.shields.io/badge/PRISMA%20Included-95%20papers-brightgreen.svg)](#prisma-systematic-review-statistics) [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE) [![Maintenance](https://img.shields.io/badge/Maintained%20by-Antigravity%20CLI-purple.svg)](#how-this-survey-is-maintained)
 
 ## Overview / 项目概述
 
@@ -28,12 +28,12 @@ The taxonomy categorizes the literature across four core dimensions:
 
 ![PRISMA 2020 Flow](paper/figures/prisma_flow.png)
 
-- **Records Identified across Academic APIs**: 1032
-- **Unique Candidates Evaluated**: 779
-- **Title/Abstract Excluded**: 191
-- **Full-Text Assessed for Eligibility**: 588
-- **Full-Text Excluded (narrow/regional)**: 499
-- **Studies Rigorously Included**: 89
+- **Records Identified across Academic APIs**: 1120
+- **Unique Candidates Evaluated**: 834
+- **Title/Abstract Excluded**: 194
+- **Full-Text Assessed for Eligibility**: 640
+- **Full-Text Excluded (narrow/regional)**: 545
+- **Studies Rigorously Included**: 95
 
 ## Research Landscape & Milestone Timeline
 
@@ -220,6 +220,21 @@ The taxonomy categorizes the literature across four core dimensions:
   - *Architecture*: `Dual-Branch Building-Block Classifier & Stress Predictor` | *Params*: `0.12M` | *Physics*: `Hybrid PDE solver`
   - *Links*: [Paper / DOI](https://doi.org/10.1017/jfm.2023.331) | [![Code](https://img.shields.io/badge/Code-GitHub-blue.svg)](not reported)
 
+- **Online Reinforcement Learning in the Met Office Unified Model through Distributed Model-Agent Coupling** (arXiv:2609.02566 2026)
+  - *Authors*: Nath, Pritthijit, Schemm, Sebastian, Haynes, Peter et al.
+  - *Architecture*: `Distributed Deep Deterministic Policy Gradient (DDPG) Coupled Agent` | *Params*: `12.4M` | *Physics*: `Soft physics loss with bounded potential-temperature tendency constraints`
+  - *Links*: [Paper / DOI](https://arxiv.org/abs/2609.02566) | [![Code](https://img.shields.io/badge/Code-GitHub-blue.svg)](not reported)
+
+- **Machine Learning Emulation of Gravity Wave Drag in Numerical Weather Forecasting** (Journal of Advances in Modeling Earth Systems 2021)
+  - *Authors*: Chantry, Matthew, Hatfield, Sam, Dueben, Peter et al.
+  - *Architecture*: `Multi-Layer Perceptron Atmospheric Parameterization Emulator` | *Params*: `0.14M` | *Physics*: `Soft physics loss with momentum conservation`
+  - *Links*: [Paper / DOI](https://doi.org/10.1029/2021MS002477) | `[Code not available]`
+
+- **Machine Learning Gravity Wave Parameterization Generalizes to Capture the QBO and Response to Increased CO2** (Geophysical Research Letters 2022)
+  - *Authors*: Espinosa, Zachary I., Sheshadri, Aditi, Cain, Gerald R. et al.
+  - *Architecture*: `Physics-Constrained Neural Network Parameterization` | *Params*: `0.22M` | *Physics*: `Soft physics loss`
+  - *Links*: [Paper / DOI](https://doi.org/10.1029/2022GL098174) | [![Code](https://img.shields.io/badge/Code-GitHub-blue.svg)](not reported)
+
 ### Polar Cryosphere & Sea Ice Dynamics (极地冰冻圈与海冰动力学大模型)
 
 - **IceBench: A Benchmark for Deep Learning based Sea Ice Type Classification** (arXiv:2503.17877 2025)
@@ -320,6 +335,16 @@ The taxonomy categorizes the literature across four core dimensions:
   - *Authors*: Ji, Peilin, Xue, Xiao, Wang, Simeng et al.
   - *Architecture*: `Hierarchical Multi-Agent LLM (H-J) with Knowledge Graphs` | *Params*: `not reported` | *Physics*: `Soft physics loss`
   - *Links*: [Paper / DOI](https://arxiv.org/abs/2508.14654) | `[Code not available]`
+
+- **Quasi-Global Assessment of Deep Learning-Based CYGNSS Soil Moisture Retrieval** (IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing 2023)
+  - *Authors*: Nabi, M M, Senyurek, Volkan, Lei, Fangni et al.
+  - *Architecture*: `Convolutional Neural Network with Multi-Sensor Fusion` | *Params*: `1.8M` | *Physics*: `Purely data-driven`
+  - *Links*: [Paper / DOI](https://doi.org/10.1109/JSTARS.2023.3287591) | `[Code not available]`
+
+- **A Novel Dual-Branch Neural Network Model for Flood Monitoring in South Asia Based on CYGNSS Data** (Remote Sensing 2022)
+  - *Authors*: Song, Dongmei, Zhang, Qiqi, Wang, Bin et al.
+  - *Architecture*: `Dual-Branch CNN-BP Neural Network (DBNN)` | *Params*: `2.4M` | *Physics*: `Purely data-driven`
+  - *Links*: [Paper / DOI](https://doi.org/10.3390/rs14205129) | `[Code not available]`
 
 ### Ocean Dynamics & Marine Forecasting (海洋动力与数值预报)
 
@@ -475,6 +500,11 @@ The taxonomy categorizes the literature across four core dimensions:
   - *Authors*: Wahl, Jonas, Ninad, Urmi, Runge, Jakob
   - *Architecture*: `Group-Level Constraint-Based Causal Discovery (Group-PCMCI)` | *Params*: `Non-parametric / kernel-based causal estimators` | *Physics*: `Purely data-driven`
   - *Links*: [Paper / DOI](https://arxiv.org/abs/2306.07047) | [![Code](https://img.shields.io/badge/Code-GitHub-blue.svg)](https://github.com/jakobrunge/tigramite)
+
+- **RL-DAUNCE: Reinforcement Learning-Driven Data Assimilation with Uncertainty-Aware Constrained Ensembles** (Journal of Computational Physics / arXiv:2505.05452 2025)
+  - *Authors*: Behnoudfar, Pouria, Chen, Nan
+  - *Architecture*: `Reinforcement Learning-Driven Constrained Ensemble Network` | *Params*: `5.6M` | *Physics*: `Hard constraint projection via primal-dual policy optimization`
+  - *Links*: [Paper / DOI](https://arxiv.org/abs/2505.05452) | [![Code](https://img.shields.io/badge/Code-GitHub-blue.svg)](not reported)
 
 ### Foundational Surveys & Methodology (基础综述与方法学)
 
