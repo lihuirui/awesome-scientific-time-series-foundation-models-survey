@@ -851,7 +851,7 @@
 ## Iteration 16: Convective Precipitation Diffusion, Multiphase Carbon Sequestration & Climate KG Agents (P15 $\to$ P16)
 - **Timestamp**: 2026-09-30T21:15:00+08:00
 - **Phase**: P15 $\to$ P16 (Continuous Updates, Convective Precipitation Physics-Informed Latent Diffusion & Cascaded Nowcasting, Multiphase Subsurface Geological Carbon Sequestration Operators, Climate Knowledge-Graph Agentic Synthesis, Expansion to 107 Studies)
-- **Git Commit**: `pending commit`
+- **Git Commit**: `1773ecf`
 - **Remote Repository**: `https://github.com/lihuirui/awesome-scientific-time-series-foundation-models-survey`
 
 ### Quantitative Metrics
