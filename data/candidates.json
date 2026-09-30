@@ -13040,5 +13040,844 @@
     "abstract": "<jats:p>Microwave remote sensing is widely applied in flood monitoring due to its independence from severe weather conditions, which usually restrict the usage of optical sensors. However, it is challenging to track the variation process of flood events in a timely manner by traditional active and passive microwave techniques, since they cannot simultaneously provide measurements with high spatial and temporal resolution. The emerging Global Navigation Satellite System Reflectometry (GNSS-R) technique with high spatio-temporal resolution offers a new solution to the dynamic monitoring of flood inundation. Considering the high sensitivity of GNSS-R signals to flooding, this paper proposes a dual-branch neural network (DBNN) with a convolution neural network (CNN) and a back propagation (BP) neural network for flood monitoring. The CNN module is used to automatically extract the abstract features from delay-Doppler maps (DDMs), while the BP module is fed with GNSS-R typical features, such as surface reflectivity and power ratio, as well as vegetation information from Soil Moisture Active Passive satellite (SMAP) data. In the experiments, the superiority of the DBNN method is firstly demonstrated by comparing it with the surface reflectivity and power ratio methods. Then, the spatio-temporal variation process of the 2020 South Asian flood events is analyzed by the proposed method based on Cyclone Global Navigation Satellite System (CYGNSS) data. The understanding of flood change processes could help enhance the capacity for resisting flood disasters.</jats:p>",
     "status": "candidate",
     "retrieved_at": "2026-09-27T10:44:03.639474Z"
+  },
+  {
+    "source": "arXiv",
+    "arxiv_id": "2408.01829",
+    "doi": null,
+    "title": "Neural Network Emulator for Atmospheric Chemical ODE",
+    "authors": [
+      "Zhi-Song Liu",
+      "Petri Clusius",
+      "Michael Boy"
+    ],
+    "year": 2024,
+    "abstract": "Modeling atmospheric chemistry is complex and computationally intense. Given the recent success of Deep neural networks in digital signal processing, we propose a Neural Network Emulator for fast chemical concentration modeling. We consider atmospheric chemistry as a time-dependent Ordinary Differential Equation. To extract the hidden correlations between initial states and future time evolution, we propose ChemNNE, an Attention based Neural Network Emulator (NNE) that can model the atmospheric chemistry as a neural ODE process. To efficiently simulate the chemical changes, we propose the sinusoidal time embedding to estimate the oscillating tendency over time. More importantly, we use the Fourier neural operator to model the ODE process for efficient computation. We also propose three physical-informed losses to supervise the training optimization. To evaluate our model, we propose a large-scale chemical dataset that can be used for neural network training and evaluation. The extensive experiments show that our approach achieves state-of-the-art performance in modeling accuracy and computational speed.",
+    "status": "candidate",
+    "retrieved_at": "2026-09-30T05:00:44.937520Z"
+  },
+  {
+    "source": "arXiv",
+    "arxiv_id": "2607.27152",
+    "doi": null,
+    "title": "Skillful forecasting of offshore winds from satellite scatterometer constellations",
+    "authors": [
+      "Francesco Pinto",
+      "Luca Lanzilao",
+      "Paco Lopez Dekker",
+      "Angela Meyer"
+    ],
+    "year": 2026,
+    "abstract": "Accurate intraday forecasts of offshore wind are becoming increasingly important for power system operation and the integration of growing shares of offshore wind energy. Operational forecasts rely predominantly on numerical weather prediction (NWP), which is not optimized for lead times of minutes to hours, where initial-condition accuracy dominates forecast skill. Although satellite scatterometer observations are routinely assimilated into NWP, they have not previously been used directly for forecasting. Here we present WindCastNet, the first satellite-based nowcasting framework for offshore wind speed and direction, introducing a new paradigm for intraday forecasting that learns from spatiotemporally irregular satellite observations. WindCastNet predicts offshore wind fields from observations acquired by satellite scatterometer constellations. WindCastNet employs a partial convolutional long short-term memory network that exploits microwave radar observations from the European, Chinese, and Indian scatterometers despite their irregular spatial coverage, asynchronous sampling, and variable revisit times. Spatial observation masks and inter-observation intervals are encoded, while a continuous temporal representation enables forecasts at arbitrary lead times. Evaluated over the North Sea, WindCastNet reduces the root-mean-square error by 23% and 7% relative to the HARMONIE MEPS model at lead times of 1 and 2 h, respectively, and outperforms persistence by 9-15% during the first three forecast hours. Forecast skill decreases under strong-wind conditions and spatially non-uniform flow. These results demonstrate that satellite scatterometer constellations can provide an independent and competitive source of short-term offshore wind forecasts, opening new opportunities for renewable energy forecasting but also broader marine weather applications, including tropical cyclone nowcasting.",
+    "status": "candidate",
+    "retrieved_at": "2026-09-30T05:00:44.937586Z"
+  },
+  {
+    "source": "arXiv",
+    "arxiv_id": "2301.11402",
+    "doi": null,
+    "title": "A Hybrid Deep Neural Operator/Finite Element Method for Ice-Sheet Modeling",
+    "authors": [
+      "QiZhi He",
+      "Mauro Perego",
+      "Amanda A. Howard",
+      "George Em Karniadakis",
+      "Panos Stinis"
+    ],
+    "year": 2023,
+    "abstract": "One of the most challenging and consequential problems in climate modeling is to provide probabilistic projections of sea level rise. A large part of the uncertainty of sea level projections is due to uncertainty in ice sheet dynamics. At the moment, accurate quantification of the uncertainty is hindered by the cost of ice sheet computational models. In this work, we develop a hybrid approach to approximate existing ice sheet computational models at a fraction of their cost. Our approach consists of replacing the finite element model for the momentum equations for the ice velocity, the most expensive part of an ice sheet model, with a Deep Operator Network, while retaining a classic finite element discretization for the evolution of the ice thickness. We show that the resulting hybrid model is very accurate and it is an order of magnitude faster than the traditional finite element model. Further, a distinctive feature of the proposed model compared to other neural network approaches, is that it can handle high-dimensional parameter spaces (parameter fields) such as the basal friction at the bed of the glacier, and can therefore be used for generating samples for uncertainty quantification. We study the impact of hyper-parameters, number of unknowns and correlation length of the parameter distribution on the training and accuracy of the Deep Operator Network on a synthetic ice sheet model. We then target the evolution of the Humboldt glacier in Greenland and show that our hybrid model can provide accurate statistics of the glacier mass loss and can be effectively used to accelerate the quantification of uncertainty.",
+    "status": "candidate",
+    "retrieved_at": "2026-09-30T05:00:44.937620Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.31223/x52k7j",
+    "title": "An Online-Learned Neural Network Chemical Solver for Stable Long-Term Global Simulations of Atmospheric Chemistry",
+    "authors": [
+      "Kelp, Makoto",
+      "Jacob, Daniel",
+      "Lin, Haipeng",
+      "Sulprizio, Melissa"
+    ],
+    "year": 2022,
+    "container_title": "",
+    "abstract": "<jats:p>A major computational barrier in global modeling of atmospheric chemistry is the numerical integration of the coupled kinetic equations describing the chemical mechanism. Machine-learned (ML) solvers can offer order-of-magnitude speedup relative to conventional implicit solvers, but past implementations have suffered from fast error growth and only run for short simulation times (&lt;1 month). A successful ML solver for global models must avoid error growth over year-long simulations and allow for re-initialization of the chemical trajectory by transport at every time step. Here we explore the capability of a neural network solver equipped with an autoencoder to achieve stable full-year simulations of tropospheric oxidant chemistry in the global 3-D GEOS-Chem model, replacing its standard mechanism (228 species) by the Super-Fast mechanism (12 species) to avoid the curse of dimensionality. We find that online training of the ML solver within GEOS-Chem is essential for accuracy, whereas offline training from archived GEOS-Chem inputs/outputs produces large errors. After online training we achieve stable 1-year simulations with five-fold speedup compared to the standard implicit Rosenbrock solver with global tropospheric normalized mean biases of -0.3% for ozone, 1% for hydrogen oxide radicals, and -5% for nitrogen oxides. The ML solver captures the diurnal and synoptic variability of surface ozone at polluted and clean sites. There are however large regional biases for ozone and NOx under remote conditions where chemical aging leads to error accumulation. These regional biases remain a major limitation for practical application, and ML emulation would be more difficult in a more complex mechanism.</jats:p>",
+    "status": "candidate",
+    "retrieved_at": "2026-09-30T05:00:47.118437Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.31223/osf.io/8vy6j",
+    "title": "Toward stable, general machine-learned models of the atmospheric chemical system",
+    "authors": [
+      "Kelp, Makoto",
+      "Jacob, Daniel",
+      "Kutz, J.",
+      "Marshall, Julian",
+      "Tessum, Christopher"
+    ],
+    "year": 2020,
+    "container_title": "",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-30T05:00:47.118472Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1109/gcat52182.2021.9587866",
+    "title": "Online Handwritten Mathematical Expression Solver Using Artificial Neural Network",
+    "authors": [
+      "Tank, Kanchi"
+    ],
+    "year": 2021,
+    "container_title": "2021 2nd Global Conference for Advancement in Technology (GCAT)",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-30T05:00:47.118481Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.5194/gmd-2024-198",
+    "title": "FastCTM (v1.0): Atmospheric chemical transport modelling with a principle-informed neural network for air quality simulations",
+    "authors": [
+      "Lyu, Baolei",
+      "Huang, Ran",
+      "Wang, Xinlu",
+      "Wang, Weiguo",
+      "Hu, Yongtao"
+    ],
+    "year": 2024,
+    "container_title": "",
+    "abstract": "<jats:p>Abstract. Chemical transport models (CTM) have wide and profound applications in air quality simulations and managements. However, its applications are often constrained by high computational burdens. In this study, we developed a neural network based CTM model (FastCTM) to efficiently simulate ten air pollutant composition variables, including major PM2.5 species of SO42-, NO3-, NH4+, organic matters and other inorganic components, coarse part of PM10, SO2, NO2, CO and O3. The FastCTM has a principle-informed structure by explicitly encoding atmospheric physical and chemical processes in a basic simulator. Specifically, in the simulator, five neural network modules are proposed to respectively represent five major atmospheric processes of primary emissions, transport, diffusion, chemical reactions and depositions. Given 1-hour initial condition data, the FastCTM is able to simulate future 24-hour concentrations of the ten air pollutants with corresponding meteorology fields and emissions as input. The FastCTM is trained with operational forecast data from a numerical CTM model named Community Multiscale Air Quality (CMAQ) in 2018–2022. The well-trained FastCTM is evaluated comparing to the long-term CMAQ forecast in an independent year 2023, and achieves high agreements with mean RMSE values of 9.1, 11.9, 4.4, 4.0, 48.9 and 10.9 μg/m3 and R2 values of 0.8, 0.81, 0.8, 0.83, 0.9 and 0.7 for PM2.5, PM10, SO2, NO2, CO, and O3. Besides, assessed against hourly site observations of six criteria pollutants, the RMSE values of FastCTM have small relative differences of 4.3 %, 4.2 %, -2.8 %, -1.7 %, -0.3 % and -3.2 % compared to that of CMAQ. The FastCTM model also exhibited reasonable responses of air quality to meteorological variables of air temperature, wind speed and planetary boundary layer height, as well as to input pollutant emissions. Furthermore, due to the principles-oriented structure, internal process analysis could be performed by FastCTM to quantify the specific contribution from each of the five processes for hourly air pollutant concentration changes. In a nutshell, FastCTM has multi-functional advantages in air pollutant concentration simulations, sensitivity analysis and internal process analysis with high computation efficiencies on GPU and accuracy. </jats:p>",
+    "status": "candidate",
+    "retrieved_at": "2026-09-30T05:00:47.118490Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.2139/ssrn.3571403",
+    "title": "Prediction of Atmospheric Air Temperature Using Long Short-Term Memory (LSTM) Recurrent Neural Network",
+    "authors": [
+      "Ozbek, Arif",
+      "Sekertekin, Aliihsan",
+      "Bilgili, Mehmet",
+      "Arslan, Niyazi"
+    ],
+    "year": 2020,
+    "container_title": "",
+    "abstract": "<jats:p>Atmospheric Air Temperature (AAT) is a very important weather element whose value can change at any time. Prediction of AAT time series is an important issue as it gives information to the society and sustainability for future planning. Thus, predicting AAT with high accuracy is required for reliable decision making in different areas. Recently, the utilization of artificial intelligence methods in predicting has become increasingly popular. Therefore, in this study, a deep learning method, namely, Long Short-Term Memory (LSTM) network model, based on one-step-ahead prediction approach was proposed to predict AAT using the actual observed time series data of AAT. For the proposed prediction method, a set of measurement data in 10-minute and hourly intervals obtained from Mersin Station and Belen Station, respectively, which are located in the Eastern Mediterranean Region of Turkey was used. Mean Absolute Percentage Error (MAPE), Root Mean Square Error (RMSE), Correlation Coefficient (R), Mean Absolute Error (MAE) and Average Bias were used as evaluation criteria. The predicted AAT values from the LSTM network were compared with the actual observed AAT data in order to define their errors. According to the testing process (prediction phase), the RMSE, MAPE, MAE, R and Bias values for the hourly AAT from Belen station were calculated as 0.61 oC, 1.85%, 0.43 oC, 0.945 and -0.013 oC, respectively. Considering the prediction results of the 10-minute AAT from Mersin station, the above statistical metrics with the same order were obtained as 0.35 oC, 1.40%, 0.25 oC, 0.995 and 0.074 oC. The experimental results from two stations show that the prediction of AATs using LSTM can provide high accuracy results for short-term prediction using data with a long period of time. Thanks to prediction of AATs, decision makers may prepare an action plan in case of an emergency scenario.</jats:p>",
+    "status": "candidate",
+    "retrieved_at": "2026-09-30T05:00:47.118502Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.5194/acp-2018-322-rc2",
+    "title": "Review of Song et al: Long-term trends of global marine primary and secondary aerosol production during the recent global warming hiatus (2000-2015)",
+    "authors": [
+      "Anonymous"
+    ],
+    "year": 2018,
+    "container_title": "",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-30T05:00:47.118509Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.5194/acp-2018-322-rc1",
+    "title": "Review of Song et al., Long-term trends of global marine primary and secondary aerosol production during the recent global warming hiatus (2000-2015) in ACPD",
+    "authors": [
+      "Anonymous"
+    ],
+    "year": 2018,
+    "container_title": "",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-30T05:00:47.118518Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.5194/gmd-2024-198-supplement",
+    "title": "Supplementary material to \"FastCTM (v1.0): Atmospheric chemical transport modelling with a principle-informed neural network for air quality simulations\"",
+    "authors": [
+      "Lyu, Baolei",
+      "Huang, Ran",
+      "Wang, Xinlu",
+      "Wang, Weiguo",
+      "Hu, Yongtao"
+    ],
+    "year": 2024,
+    "container_title": "",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-30T05:00:47.118526Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.5194/egusphere-2026-2381-supplement",
+    "title": "Supplementary material to \"BoxMART v1.1 – Box Model for Atmospheric Research and Teaching version 1.1\"",
+    "authors": [
+      "Zhou, Putian",
+      "Cui, Zeqi",
+      "Clusius, Petri",
+      "Makkonen, Risto",
+      "Fu, Zihao",
+      "Kerminen, Veli-Matti",
+      "Kulmala, Markku",
+      "Boy, Michael"
+    ],
+    "year": 2026,
+    "container_title": "",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-30T05:00:48.900371Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.5194/egusphere-2023-1415",
+    "title": "Towards a mechanistic description of autoxidation chemistry: from precursors to atmospheric implications",
+    "authors": [
+      "Pichelstorfer, Lukas",
+      "Roldin, Pontus",
+      "Rissanen, Matti",
+      "Hyttinen, Noora",
+      "Garmash, Olga",
+      "Xavier, Carlton",
+      "Zhou, Putian",
+      "Clusius, Petri",
+      "Foreback, Benjamin",
+      "Golin Almeida, Thomas",
+      "Deng, Chenjuan",
+      "Baykara, Metin",
+      "Kurten, Theo",
+      "Boy, Michael"
+    ],
+    "year": 2023,
+    "container_title": "",
+    "abstract": "<jats:p>Abstract. In the last decades, atmospheric formation of secondary organic aerosol (SOA) gained increasing attention due to its impact on air quality and climate. However, methods to predict its abundance are mainly empirical and may fail at real atmospheric conditions. In this work, a close-to mechanistic approach allowing SOA quantification is presented, with focus on a chain-like chemical reaction called “autoxidation”. A novel framework is employed to a) describe the gas-phase chemistry, b) predict the products’ molecular structures and c) explore the contribution of autoxidation chemistry on SOA formation under various conditions. As a proof of concept, the method is applied to benzene, an important anthropogenic SOA precursor. Our results suggest autoxidation to explain up to 100 % of the benzene-SOA formed under low-NOx laboratory conditions. While under atmospheric-like day-time conditions, the calculated aerosol mass continuously increases, as expected based on prior work. Additionally, a prompt increase, driven by the NO3 radical, is predicted at dawn. This increase has not yet been observed experimentally and questions the applicability of the widely accepted concept of OH-based SOA mass yield in the atmosphere.</jats:p>",
+    "status": "candidate",
+    "retrieved_at": "2026-09-30T05:00:48.900397Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.3233/faia251040",
+    "title": "SPIN-ODE: Stiff Physics-Informed Neural ODE for Chemical Reaction Rate Estimation",
+    "authors": [
+      "Peng, Wenqing",
+      "Liu, Zhi-Song",
+      "Boy, Michael"
+    ],
+    "year": 2025,
+    "container_title": "Frontiers in Artificial Intelligence and Applications",
+    "abstract": "<jats:p>Estimating rate coefficients from complex chemical reactions is essential for advancing detailed chemistry. However, the stiffness inherent in real-world atmospheric chemistry systems poses severe challenges, leading to training instability and poor convergence, which hinder effective rate coefficient estimation using learning-based approaches. To address this, we propose a Stiff Physics-Informed Neural ODE framework (SPIN-ODE) for chemical reaction modelling. Our method introduces a three-stage optimisation process: first, a black-box neural ODE is trained to fit concentration trajectories; second, a Chemical Reaction Neural Network (CRNN) is pre-trained to learn the mapping between concentrations and their time derivatives; and third, the rate coefficients are fine-tuned by integrating with the pre-trained CRNN. Extensive experiments on both synthetic and newly proposed real-world datasets validate the effectiveness and robustness of our approach. As the first work addressing stiff neural ODE for chemical rate coefficient discovery, our study opens promising directions for integrating neural networks with detailed chemistry.</jats:p>",
+    "status": "candidate",
+    "retrieved_at": "2026-09-30T05:00:48.900408Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.3390/rs18193325",
+    "title": "Physics-Informed Liquid Neural Network Emulator for CRTM with Atmospheric-Layer Jacobian Capability",
+    "authors": [
+      "Zhang, Feng",
+      "Cao, Changyong",
+      "Chen, Yong",
+      "Shao, Xi",
+      "Liu, Tung-Chang"
+    ],
+    "year": 2026,
+    "container_title": "Remote Sensing",
+    "abstract": "<jats:p>Physics-based fast radiative transfer models (RTMs), such as the Community Radiative Transfer Model (CRTM), face increasing computational demands from growing satellite data volumes and model complexity. We developed a physics-informed Liquid Neural Network emulator for CRTM (CRTM-LNN) that draws on continuous dynamical-system concepts while retaining physical interpretability. The framework combines an Ordinary Differential Equation (ODE)-inspired Liquid Neural Network for layer-by-layer optical-depth modeling with an analytic, differentiable radiative-transfer solver. This design preserves the explicit optical-depth-to-radiance pathway and incorporates physical constraints directly into the forward calculation. In the implementation evaluated in this study, the LNN uses discrete hidden-state updates on the fixed European Centre for Medium-Range Weather 91-layer (ECMWF91L) grid under clear-sky, absorption-only assumptions. Evaluation using Infrared Atmospheric Sounding Interferometer (IASI) observations and ECMWF91L forecast profiles shows that CRTM–LNN closely reproduces the reference CRTM simulations, with global, channel-mean brightness-temperature biases below 0.1 K in magnitude. Regional bias magnitudes nevertheless reach approximately 0.2–0.4 K for selected channels and latitude bands. Correlations with CRTM exceed 0.97 for cumulative optical depth, transmittance, and weighting functions in regimes with cumulative optical depth below five. It accelerates forward calculations by up to 18-fold and efficiently generates Jacobians through automatic differentiation. Compared with a conventional multilayer perceptron CRTM emulator, CRTM-LNN produces smoother and more physically consistent Jacobians, with improved vertical localization and fewer spurious oscillations. Absolute centroid-pressure errors for temperature Jacobians are reduced across all evaluated channels, ranging from 1.77 to 5.01 hPa for CRTM-LNN versus 5.88–8.17 hPa for CRTM–MLP, although the magnitude of improvement varies by channel. These results highlight the potential of the integrated CRTM–LNN framework, which combines ODE-driven neural emulation with physics-based radiative-transfer modeling, to provide a scalable foundation for atmospheric retrievals, satellite data assimilation, and near-real-time radiative-transfer applications. Current limitations and opportunities for extension to more complex radiative processes are also discussed.</jats:p>",
+    "status": "candidate",
+    "retrieved_at": "2026-09-30T05:00:48.900419Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1007/978-94-009-0643-3_2",
+    "title": "A Hardware Emulator for Binary Neural Networks",
+    "authors": [
+      "Skubiszewski, Marcin"
+    ],
+    "year": 1990,
+    "container_title": "International Neural Network Conference",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-30T05:00:48.900426Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.5194/egusphere-2023-1415-supplement",
+    "title": "Supplementary material to \"Towards a mechanistic description of autoxidation chemistry: from precursors to atmospheric implications\"",
+    "authors": [
+      "Pichelstorfer, Lukas",
+      "Roldin, Pontus",
+      "Rissanen, Matti",
+      "Hyttinen, Noora",
+      "Garmash, Olga",
+      "Xavier, Carlton",
+      "Zhou, Putian",
+      "Clusius, Petri",
+      "Foreback, Benjamin",
+      "Golin Almeida, Thomas",
+      "Deng, Chenjuan",
+      "Baykara, Metin",
+      "Kurten, Theo",
+      "Boy, Michael"
+    ],
+    "year": 2023,
+    "container_title": "",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-30T05:00:48.900438Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.5194/egusphere-egu26-12174",
+    "title": "Coupling of NEMO to a neural network emulator of PISCES",
+    "authors": [
+      "Gow-Smith, Edward",
+      "Séférian, Roland"
+    ],
+    "year": 2026,
+    "container_title": "",
+    "abstract": "<jats:p>The Pelagic Interaction Scheme for Carbon and Ecosystem Studies (PISCES) is a marine biogeochemical model that is used in several IPCC-Class Earth System models. PISCES simulates the distribution of nutrients (four macronutrients and one micronutrient) that regulate the growth of two phytoplankton classes (nanophytoplankton and diatoms). It also simulates the ocean carbon cycle with a complete representation of the marine carbonate systems. PISCES includes 24 state variables, and increases the runtime of NEMO, the physical ocean model with which it is coupled, by a factor of 3.4, indicating a high computational cost.PISCES-AI has been developed as a U-Net based machine learning PISCES emulator, which takes a small number of input variables (TOS, ZOS, SOS, PAR, atmospheric CO2), and predicts two output variables: surface chlorophyll and the difference in partial pressure of CO2 between the atmosphere and the ocean. These are the only outputs which have a direct influence on climate simulations by Earth system models. Previous work has shown the predictive power of PISCES-AI across multiple timescales, and in an out-of-domain setting.In this work, we couple the AI emulator of PISCES to NEMO, using Eophis and Morays for Python-Fortran interaction. We evaluate its performance, as well as its computational efficiency, to give a holistic picture of the challenges and opportunites for AI emulation of ocean biogeochemistry. With a particular interest in the computational speed, we find that inference for a single time-step to be around 10ms, with a much larger preliminary bottleneck due to CPU-GPU transfer (200ms per timestep). Even with this bottleneck, with our implementation we obtain a speed-up of factor 3 compared to PISCES, and we explore ways in which the data transfer bottleneck could be reduced.</jats:p>",
+    "status": "candidate",
+    "retrieved_at": "2026-09-30T05:00:48.900446Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.5194/egusphere-egu24-15144",
+    "title": "A Graph Neural Network emulator for greenhouse gas emissions inference",
+    "authors": [
+      "Fillola, Elena",
+      "Santos-Rodriguez, Raul",
+      "Rigby, Matt"
+    ],
+    "year": 2025,
+    "container_title": "",
+    "abstract": "<jats:p>Inverse modelling systems relying on Lagrangian Particle Dispersion Models (LPDMs) are a popular way to quantify greenhouse gas emissions using atmospheric observations, providing independent evaluation of countries' self-reported emissions. For each GHG measurement, the LPDM performs backward-running simulations of particle transport in the atmosphere, calculating source-receptor relationships (&amp;#8220;footprints&amp;#8221;). These reflect the upwind areas where emissions would contribute to the measurement. However, the increased volume of satellite measurements from high-resolution instruments like TROPOMI cause computational bottlenecks, limiting the amount of data that can be processed for inference. Previous approaches to speed up footprint generation revolve around interpolation, therefore still requiring expensive new runs. In this work, we present the first machine learning-driven LPDM emulator that once trained, can approximate satellite footprints using only meteorology and topography. The emulator uses Graph Neural Networks in an Encode-Process-Decode structure, similar to Google&amp;#8217;s Graphcast [1], representing latitude-longitude coordinates as nodes in a graph. We apply the model for GOSAT measurements over Brazil to emulate footprints produced by the UK Met Office&amp;#8217;s NAME LPDM, training on data for 2014 and 2015 on a domain of size approximately 1600x1200km at a resolution of 0.352x0.234 degrees. Once trained, the emulator can produce footprints for a domain of up to approximately 6500x5000km, leveraging the flexibility of GNNs. We evaluate the emulator for footprints produced across 2016 on the 6500x5000km domain size, achieving intersection-over-union scores of over 40% and normalised mean absolute errors of under 30% for simulated CH4 concentrations. As well as demonstrating the emulator as a standalone AI application, we show how to integrate it with the full GHG emissions pipeline to quantify Brazil&amp;#8217;s emissions. This method demonstrates the potential of GNNs for atmospheric dispersion applications and paves the way for large-scale near-real time emissions emulation.&amp;#160;[1] Remi Lam et al.,Learning skillful medium-range global weather forecasting. Science 382,1416-1421 (2023). DOI:10.1126/science.adi233</jats:p>",
+    "status": "candidate",
+    "retrieved_at": "2026-09-30T05:00:48.900453Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.5194/epsc2026-187",
+    "title": "A graph neural network emulator predicting planet formation through the giant impact stage",
+    "authors": [
+      "Ishida, Yuichiro",
+      "Kokubo, Eiichiro"
+    ],
+    "year": 2026,
+    "container_title": "",
+    "abstract": "<jats:p>Terrestrial exoplanetary systems exhibit a wide diversity in masses and orbital architectures. Planetary population synthesis models are used to investigate the origin of this diversity. The final phase of terrestrial planet formation is the giant impact stage. During this stage, protoplanets undergo mutual collisions, altering their masses and orbits. This stage plays a key role in setting the final multiplicity, orbital excitation, and mass distribution of terrestrial planets. Planetary population synthesis models employ either semi-analytical models or N-body simulations for the giant-impact stage. However, both approaches suffer from important limitations: the latest semi-analytical models tend to overestimate the planet multiplicity over time and cannot treat orbital inclinations, while direct N-body simulations are computationally expensive and difficult to apply to large parameter surveys. Recently, machine-learning models have been proposed to accelerate these predictions; however, their applicability remains limited to close-in regions. To overcome these limitations, we develop a machine-learning emulator for the giant-impact stage that reproduces the time evolution of planetary systems and incorporates orbital inclinations. We adopt Graph Neural Networks (GNNs), as planetary systems can be naturally represented as graphs, with planets as nodes and mutual gravitational interactions as edges. To handle the decreasing number of planets caused by collisions, we employ a Transformer architecture that allows the model to process a variable number of planets. The emulator decomposes the planetary system evolution into two coupled tasks: (Task A) a GNN that predicts the next colliding planet pair and the time to collision, with predictive uncertainties quantified via Monte Carlo dropout; and (Task B) a probabilistic GNN that predicts changes in orbital elements due to collisions and secular perturbations occurring between collision events. By iteratively coupling Tasks A and B, the emulator generates sequences of collision events and emulates the full evolution of planetary systems through the giant impact stage. For training, we construct a dataset of 9000 samples derived from 800 N-body simulation runs by segmenting each simulation track into individual collisional events. The GNN emulator achieves a speedup of approximately four orders of magnitude compared to direct N-body simulations, while reproducing the key statistical properties of the final planetary systems.As shown in Figure 1, the GNN emulator reproduces the N-body results across multiple statistical metrics, including the final number of surviving planets, mean orbital spacing, mean eccentricity, and mass dispersion. Furthermore, Figure 2 shows that the emulator tracks the time evolution of the number of planets due to collisions across different regions. This capability represents a improvement over previous semi-analytical approaches, particularly in capturing the time evolution of planet multiplicity. Comparisons with both semi-analytical models and previous machine-learning approaches show that our GNN emulator maintains robust performance over a wider radial range. These results demonstrate that our approach enables efficient and accurate exploration of the giant-impact stage in planetary population synthesis.</jats:p>",
+    "status": "candidate",
+    "retrieved_at": "2026-09-30T05:00:48.900460Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1109/oceans.1989.592881",
+    "title": "Seasat-a Satellite Scatterometer Measurements Of Equatorial Pacific Surface Winds",
+    "authors": [
+      "Halpern, D.",
+      "Newman, C."
+    ],
+    "year": null,
+    "container_title": "Proceedings OCEANS",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-30T05:00:50.976510Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1002/we.2503/v2/review1",
+    "title": "Review for \"A comparison between Advanced Scatterometer and Weather Research and Forecasting wind speeds for the Japanese offshore wind resource map\"",
+    "authors": [],
+    "year": 2020,
+    "container_title": "",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-30T05:00:50.976531Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1109/36.739159",
+    "title": "Retrieval of ocean winds from satellite scatterometer by a neural network",
+    "authors": [
+      "Chen, K.S.",
+      "Tzeng, Y.C.",
+      "Chen, P.C."
+    ],
+    "year": 1999,
+    "container_title": "IEEE Transactions on Geoscience and Remote Sensing",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-30T05:00:50.976545Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1029/jc094ic04p04829",
+    "title": "Seasat A satellite scatterometer measurements of equatorial surface winds",
+    "authors": [
+      "Halpern, David"
+    ],
+    "year": 1989,
+    "container_title": "Journal of Geophysical Research: Oceans",
+    "abstract": "<jats:p>Seasat A Satellite Scatterometer measurements of surface wind components were made under normal weather conditions with unsurpassed space and time resolutions during August and September 1978. Longitudinal distributions of the monthly mean zonal component were markedly different in each ocean: in the Pacific the zonal profile resembled a semicircle; a linear change occurred in the Atlantic, and quasi‐uniform values prevailed in the Indian Ocean. Only in the Atlantic and Pacific was the prevailing direction of the zonal component westward. In the Pacific the monthly mean standard deviations increased towards the west. This indicated that the larger day‐to‐day wind variability observed at the western islands compared to moored buoy measurements in the eastern region was a natural phenomenon and not caused by islands. The average monthly mean slope of the wave number spectra throughout the 550‐ to 2200‐km wavelength band was −1.7, which was approximately equal to the −5/3 power law associated with turbulent motions. That the spectra levels of the zonal wind, but not the meridional component, were substantially different in each equatorial ocean represents an enigma. Largest spectral values occurred in the Atlantic where variances were nearly 10 times greater than in the Pacific, which contained the smallest values.</jats:p>",
+    "status": "candidate",
+    "retrieved_at": "2026-09-30T05:00:50.976551Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1109/biosciencesworld.2010.22",
+    "title": "New Method to Measure High-Resolution Wind from a Decade of NASA Satellite Scatterometer Data for Offshore Wind Energy Development",
+    "authors": [
+      "Nghiem, S. V.",
+      "Neumann, G."
+    ],
+    "year": 2010,
+    "container_title": "2010 International Conference on Biosciences",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-30T05:00:50.976560Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1109/oceans.1982.1151769",
+    "title": "Analysis of satellite scatterometer data and its impact on weather forecasting",
+    "authors": [
+      "Atlas, R.",
+      "Peteherych, S.",
+      "Woiceshyn, P.",
+      "Wurtele, M."
+    ],
+    "year": 1982,
+    "container_title": "OCEANS 82",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-30T05:00:50.976565Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1002/we.2503/v1/decision1",
+    "title": "Decision letter for \"A comparison between Advanced Scatterometer and Weather Research and Forecasting wind speeds for the Japanese offshore wind resource map\"",
+    "authors": [],
+    "year": 2019,
+    "container_title": "",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-30T05:00:50.976571Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1029/2024jh000165",
+    "title": "Sea Surface Wind Speed Estimation From the Combination of Satellite Scatterometer and Radiometer Parameters",
+    "authors": [
+      "Xiang, Kunsheng",
+      "Zhou, Wu",
+      "Bao, Qingliu"
+    ],
+    "year": 2024,
+    "container_title": "Journal of Geophysical Research: Machine Learning and Computation",
+    "abstract": "<jats:title>Abstract</jats:title><jats:p>Satellite research on global sea surface winds is crucial for understanding and monitoring the dynamics of earth's oceans, providing valuable insights into weather patterns, climate changes, and oceanographic processes. This study investigates the fusion of active (microwave scatterometer) and passive (microwave radiometer) satellite data using Machine learning (ML) for sea surface wind speed estimation. Employing Random Forest Regression (RF), Convolutional Neural Network Regression (CNN), and Multiple Linear Regression (MLR). Evaluation against reference data sets (Advanced Scatterometer, ERA5, Cross‐Calibrated Multi‐Platform (CCMP), buoy wind speeds) highlights the robustness of the proposed models. The research findings indicate that both RF and CNN exhibit superior accuracy in the active, passive, and joint active‐passive models compared to the simplistic MLR model. The joint models of the three regression methods outperform the individual active or passive models. The root mean square deviation (RMSD) accuracy of RF and CNN joint models, when compared with ASCAT, is in the order of 0.7 m/s, and when compared with buoys, the RMSD accuracy is around 1.1 m/s. The ML models, especially RF and CNN, demonstrate superior performance, providing accurate and reliable estimations crucial for meteorological and oceanographic applications. These findings underscore the potential operational use of ML techniques in enhancing remote sensing applications.</jats:p>",
+    "status": "candidate",
+    "retrieved_at": "2026-09-30T05:00:53.376887Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1109/icspcc.2017.8242627",
+    "title": "Sea surface wind speed estimation by using HY-2A scatterometer wind and ocean ambient noise",
+    "authors": [
+      "Wei, Shiyan",
+      "Yang, Sheng",
+      "Xu, Dewei"
+    ],
+    "year": 2017,
+    "container_title": "2017 IEEE International Conference on Signal Processing, Communications and Computing (ICSPCC)",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-30T05:00:53.376908Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1109/oceans.1989.586718",
+    "title": "Optimum Scatterometer Frequency for Sensing SEA Surface Wind Speed in Cloudy Conditions",
+    "authors": [
+      "Sarkar, A.",
+      "Kumar, R.",
+      "Mohan, M."
+    ],
+    "year": null,
+    "container_title": "Proceedings OCEANS",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-30T05:00:53.376914Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1017/s0954102019000154",
+    "title": "Comparison of sea ice classification methods based on satellite scatterometer and radiometer data in the Weddell Sea, Antarctica",
+    "authors": [
+      "Pang, Xiaoping",
+      "Gao, Xiang",
+      "Ji, Qing"
+    ],
+    "year": 2019,
+    "container_title": "Antarctic Science",
+    "abstract": "<jats:title>Abstract</jats:title><jats:p>Information on sea ice type is an important factor for deriving sea ice parameters from satellite remote sensing data, such as sea ice concentration, extent and thickness. In this study, sea ice in the Weddell Sea was classified by the histogram threshold (HT) method, the Spreen model (SM) method from satellite scatterometer data and the strong contrast (SC) method from radiometer data, and this information was compared with Antarctic Sea Ice Processes and Climate (ASPeCt) sea ice-type ship-based observations. The results show that all three methods can distinguish the multi-year (MY) ice and first-year (FY) ice using Ku-band scatterometer data and radiometer data during the ice growth season, while C-band scatterometer data are not suitable for MY ice and FY ice discrimination using HT and SM methods. The SM model has a smaller MY ice classification extent than the HT method from scatterometer data. The classification accuracy of the SM method is the higher compared to ship-based observations. It can be concluded that the SM method is a promising method for discriminating MY ice from FY ice. These results provide a reference for further retrieval of long-term sea ice-type information for the whole of Antarctica.</jats:p>",
+    "status": "candidate",
+    "retrieved_at": "2026-09-30T05:00:53.376920Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.3390/rs12121997",
+    "title": "Global Calibration and Error Estimation of Altimeter, Scatterometer, and Radiometer Wind Speed Using Triple Collocation",
+    "authors": [
+      "Ribal, Agustinus",
+      "Young, Ian R."
+    ],
+    "year": 2020,
+    "container_title": "Remote Sensing",
+    "abstract": "<jats:p>The accuracy of wind speed measurements is important in many applications. In the present work, error standard deviations of wind speed measured by satellites and National Data Buoy Center (NDBC) buoys were estimated using triple collocation. The satellites included six altimeters, three scatterometers, and four radiometers. The six altimeters were TOPEX, ERS-2, JASON-1, ENVISAT, JASON-2, and CRYOSAT-2, whilst the three scatterometers were QUIKSCAT, METOP-A, and METOP-B and the four radiometers included SSMI-F15, AMSR-2, WINDSAT, and GMI. Hence, a total of 14 platform measurements, including NDBC buoy data, were used and the error standard deviations of each estimated. It was found that altimeters have the smallest error standard deviations for wind speed measurements followed by scatterometers and then radiometers. NDBC buoys have the largest error standard deviation. Since triple collocation can simultaneously perform error estimation as well as calibration for a given reference, this method enables us to perform intercalibration between platform measurements including NDBC buoy. In addition, the calibration relations obtained from triple collocation were compared with the calibrations obtained from the widely used reduced major axis (RMA) regression approach. This method, to some extent, can accommodate measurements in which both platforms contain errors. The results showed that calibration relations obtained from RMA and triple collocation are very similar, as indicated by statistical parameters such as RMSE, correlation coefficient, scatter index, and bias.</jats:p>",
+    "status": "candidate",
+    "retrieved_at": "2026-09-30T05:00:53.376927Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1109/igarss.2018.8519042",
+    "title": "Evaluation of All-Weather SEA Surface Wind Speed Product from GCOM-W/AMSR2 Microwave Radiometer",
+    "authors": [
+      "Ebuchi, Naoto"
+    ],
+    "year": 2018,
+    "container_title": "IGARSS 2018 - 2018 IEEE International Geoscience and Remote Sensing Symposium",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-30T05:00:53.376932Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1109/igarss.2005.1526193",
+    "title": "Land-surface parameters estimation from ERS Wind Scatterometer: a case study in China",
+    "authors": [
+      "Chen, Q.",
+      "Zhen Li",
+      "Lei Wang"
+    ],
+    "year": null,
+    "container_title": "Proceedings. 2005 IEEE International Geoscience and Remote Sensing Symposium, 2005. IGARSS '05.",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-30T05:00:53.376938Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1016/j.asr.2005.06.075",
+    "title": "Estimation of sea surface temperature, wind speed and water vapor with microwave radiometer data based on simulated annealing",
+    "authors": [
+      "Arai, K.",
+      "Sakakibara, J."
+    ],
+    "year": 2006,
+    "container_title": "Advances in Space Research",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-30T05:00:53.376943Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1109/igarss.2017.8126979",
+    "title": "Validation of SMAP radiometer extreme wind speed data product with rapid scatterometer and stepped frequency microwave radiometer",
+    "authors": [
+      "Fore, A.",
+      "Yueh, S.",
+      "Tang, W.",
+      "Stiles, B.",
+      "Hayashi, A."
+    ],
+    "year": 2017,
+    "container_title": "2017 IEEE International Geoscience and Remote Sensing Symposium (IGARSS)",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-30T05:00:53.376949Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1109/oceans.1980.1151352",
+    "title": "Comparison of Conventionally Measured Sea Surface Temperature and Wind Speed with Data Retrieved from Satellite-borne Microwave Radiometry",
+    "authors": [
+      "Hofer, R.",
+      "Njoku, E."
+    ],
+    "year": 1980,
+    "container_title": "OCEANS '80",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-30T05:00:53.376955Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.26226/m.64c26778632e9539aa87daf7",
+    "title": "A Hybrid Operator Network-Finite Element Method for Ice-Sheet Modeling",
+    "authors": [
+      "He, Qizhi",
+      "Perego, Mauro",
+      "Howard, Amanda",
+      "Karniadakis, George",
+      "Stinis, Panagiotis"
+    ],
+    "year": 2023,
+    "container_title": "",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-30T05:00:55.400724Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.2172/2431411",
+    "title": "An Optimal Modal Finite-Element Discretization For Ice-Sheet Modeling",
+    "authors": [
+      "Perego, Mauro"
+    ],
+    "year": 2023,
+    "container_title": "CFC 2023 - Cannes, , France - April - 2023",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-30T05:00:55.400751Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.2172/3378145",
+    "title": "Neural operator surrogates for ice-sheet models to accelerate probabilistic projections of sea-level rise",
+    "authors": [
+      "",
+      "He, Qizhi",
+      "",
+      "",
+      "Perego, Mauro",
+      "Jakeman, John",
+      "Howard, Amanda",
+      "Stinis, Panos",
+      "Karniadakis, George"
+    ],
+    "year": 2024,
+    "container_title": "",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-30T05:00:55.400759Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.2172/1888409",
+    "title": "Modeling land ice with deep operator networks.",
+    "authors": [
+      "He, Qizhi",
+      "Perego, Mauro"
+    ],
+    "year": 2021,
+    "container_title": "Proposed for presentation at the SIAM Southeastern Atlantic Section Conference held September 18-19, 2021 in ,",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-30T05:00:55.400764Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.5194/egusphere-egu26-4488",
+    "title": "A Hybrid Neural Network-Finite Element Method for the Viscous-Plastic Sea-Ice Model",
+    "authors": [
+      "Margenberg, Nils",
+      "Mehlmann, Carolin"
+    ],
+    "year": 2026,
+    "container_title": "",
+    "abstract": "<jats:p>We present an efficient hybrid Neural Network–Finite Element Method (NN-FEM) for the viscous–plastic (VP) sea-ice model used in climate simulations. VP solvers are costly due to the strongly nonlinear material law, with cost per degree of freedom increasing rapidly under mesh refinement. However, high resolution is needed to capture narrow deformation bands (linear kinematic features). Our approach enriches coarse-mesh FEM solutions with fine-scale corrections predicted by a locally applied neural network trained on high-resolution data. The patch-based network is small, parallelizable, and generalizes across right-hand sides and domains. Numerically, the method achieves comparable accuracy at approximately 11× lower cost and speeds Newton iterations by up to 10%.</jats:p>",
+    "status": "candidate",
+    "retrieved_at": "2026-09-30T05:00:55.400770Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.2139/ssrn.6764768",
+    "title": "Deep Operator Finite Element Method: A Discrete Variational Neural Operator for Elasticity under Variable Loading",
+    "authors": [
+      "Xiong, Wei",
+      "Long, Xiangyun",
+      "Li, Jinwu",
+      "Bordas, Stéphane  P. A.",
+      "Jiang, Chao"
+    ],
+    "year": 2026,
+    "container_title": "",
+    "abstract": "<jats:p>Learning solution operators for parametric partial differential equations is essential for real-time simulation and engineering analysis. However, existing physics-informed neural operators often suffer from unstable training due to errors in continuously defined physics losses. To address this, we propose the deep operator finite element method (DOFEM), a discrete variational neural operator for elasticity under variable loading. DOFEM extends the deep finite element method to operator learning by embedding DeepONet into a framework where the physics loss is constructed directly from the assembled FEM stiffness matrix and equivalent nodal load vectors. For linear elasticity, this loss is exactly quadratic. Its stationary condition coincides with the discrete FEM equilibrium equation, and the stiffness matrix regularizes the optimization landscape, significantly improving convergence robustness. Numerical experiments demonstrate that DOFEM outperforms standard energy-based PI-DeepONet in stability and accuracy, remaining robust even in 3D problems where baselines fail due to gradient pathologies. Once trained, DOFEM serves as an efficient differentiable surrogate for rapid prediction under unseen loads, effectively bridging discrete variational mechanics and neural operator learning.</jats:p>",
+    "status": "candidate",
+    "retrieved_at": "2026-09-30T05:00:55.400777Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.2139/ssrn.6203162",
+    "title": "The Deep Operator Finite Element Method: A Stable and Efficient Neural Operator for Elasticity Problems with Variable Loading",
+    "authors": [
+      "Xiong, Wei",
+      "Long, Xiangyun",
+      "Li, Jinwu",
+      "Bordas, Stéphane  P. A.",
+      "Jiang, Chao"
+    ],
+    "year": 2026,
+    "container_title": "",
+    "abstract": "<jats:p>Learning solution operators for parametric partial differential equations is crucial for many-query engineering tasks. However, existing neural operators, especially physics-informed variants, are often plagued by training instability and efficiency. To address this challenge, this paper introduces a novel deep operator finite element method (DOFEM) for stable training and real-time prediction of elasticity problems with variable loading. The DOFEM uniquely integrates the DeepONet architecture with a variational energy functional constructed directly from the finite element stiffness matrix. This design allows its physics-informed loss function to circumvent high-order derivative computations and numerical integration errors, ensuring exceptional training stability. Numerical examples demonstrate that the DOFEM significantly outperforms the energy-based Physics-Informed DeepONet in both stability and accuracy, remaining robust in three-dimensional problems where the latter fails to converge. Furthermore, the model exhibits strong generalization to unseen loads and provides smoother, physically regularized solutions for singular loads compared to the standard finite element method. DOFEM thus presents an efficient and reliable paradigm for the rapid analysis of complex engineering systems under diverse operating conditions.</jats:p>",
+    "status": "candidate",
+    "retrieved_at": "2026-09-30T05:00:55.400783Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.3189/2012jog11j063",
+    "title": "Parallel finite-element implementation for higher-order ice-sheet models",
+    "authors": [
+      "Perego, Mauro",
+      "Gunzburger, Max",
+      "Burkardt, John"
+    ],
+    "year": 2012,
+    "container_title": "Journal of Glaciology",
+    "abstract": "<jats:title>Abstract</jats:title><jats:p>Higher-order models represent a computationally less expensive alternative to the Stokes model for ice-sheet modeling. In this work, we develop linear and quadratic finite-element methods, implemented on parallel architectures, for the three-dimensional first-order model of Dukowicz and others (2010) that is based on the Blatter-Pattyn model, and for the depth-integrated model of Schoof and Hindmarsh (2010). We then apply our computational models to three of the ISMIP-HOM benchmark test cases (Pattyn and others, 2008). We compare results obtained from our models with those obtained using a reliable Stokes computational model, showing that our first-order model implementation produces reliable and accurate solutions for almost all characteristic length scales of the test geometries considered. Good agreement with the reference Stokes solution is also obtained by our depth-integrated model implementation in fast-sliding regimes and for medium to large length scales. We also provide a comprehensive comparison between results obtained from our first-order model implementation and implementations developed by ISMIP-HOM participants; this study shows that our implementation is at least as good as the previous ones. Finally, a comparison between linear and quadratic finite- element approximations is carried out, showing, as expected, the better accuracy of the quadratic finite-element method.</jats:p>",
+    "status": "candidate",
+    "retrieved_at": "2026-09-30T05:00:55.400788Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.5194/tc-2020-231-rc1",
+    "title": "Review of &amp;amp;#8222;Calving Front Machine (CALFIN): Glacial Termini Dataset and Automated Deep Learning Extraction Method for Greenland, 1972-2019&amp;amp;#8221;",
+    "authors": [],
+    "year": 2020,
+    "container_title": "",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-30T05:00:57.341280Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.5194/tc-2020-231-rc2",
+    "title": "Interactive comment on &amp;amp;#8220;Calving Front Machine (CALFIN): Glacial Termini Dataset and Automated Deep Learning Extraction Method for Greenland, 1972&amp;amp;#8211;2019&amp;amp;#8221; by Daniel Cheng et al.",
+    "authors": [],
+    "year": 2020,
+    "container_title": "",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-30T05:00:57.341304Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.5194/tc-15-1663-2021",
+    "title": "Calving Front Machine (CALFIN): glacial termini dataset and automated deep learning extraction method for Greenland, 1972–2019",
+    "authors": [
+      "Cheng, Daniel",
+      "Hayes, Wayne",
+      "Larour, Eric",
+      "Mohajerani, Yara",
+      "Wood, Michael",
+      "Velicogna, Isabella",
+      "Rignot, Eric"
+    ],
+    "year": 2021,
+    "container_title": "The Cryosphere",
+    "abstract": "<jats:p>Sea level contributions from the Greenland Ice Sheet are influenced by the rapid changes in glacial terminus positions. The documentation of these evolving calving front positions, for which satellite imagery forms the basis, is therefore important. However, the manual delineation of these calving fronts is time consuming, which limits the availability of these data across a wide spatial and temporal range. Automated methods face challenges that include the handling of clouds, illumination differences, sea ice mélange, and Landsat 7 scan line corrector errors. To address these needs, we develop the Calving Front Machine (CALFIN), an automated method for extracting calving fronts from satellite images of marine-terminating glaciers, using neural networks. The results are often indistinguishable from manually curated fronts, deviating by on average 86.76 ± 1.43 m from the measured front. Landsat imagery from 1972 to 2019 is used to generate 22 678 calving front lines across 66 Greenlandic glaciers. This improves on the state of the art in terms of the spatiotemporal coverage and accuracy of its outputs and is validated through a comprehensive intercomparison with existing studies. The current implementation offers a new opportunity to explore subseasonal and regional trends on the extent of Greenland's margins and supplies new constraints for simulations of the evolution of the mass balance of the Greenland Ice Sheet and its contributions to future sea level rise.</jats:p>",
+    "status": "candidate",
+    "retrieved_at": "2026-09-30T05:00:57.341319Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.5194/tc-2020-231-supplement",
+    "title": "Supplementary material to \"Calving Front Machine (CALFIN): Glacial Termini Dataset and Automated Deep Learning Extraction Method for Greenland, 1972–2019\"",
+    "authors": [
+      "Cheng, Daniel",
+      "Hayes, Wayne",
+      "Larour, Eric",
+      "Mohajerani, Yara",
+      "Wood, Michael",
+      "Velicogna, Isabella",
+      "Rignot, Eric"
+    ],
+    "year": 2020,
+    "container_title": "",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-30T05:00:57.341333Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.5194/egusphere-egu21-15039",
+    "title": "Dense Glacial Termini Time Series Analysis: Insights from Calving Front Machine (CALFIN)",
+    "authors": [
+      "Cheng, Daniel",
+      "Larour, Eric",
+      "Hayes, Wayne"
+    ],
+    "year": 2021,
+    "container_title": "",
+    "abstract": "<jats:p>&amp;lt;p&amp;gt;Sea level contributions from the Greenland Ice Sheet are influenced by the rapid changes in glacial terminus positions. While manual delineation is labor intensive, recent developments in the field of automated calving front extraction have allowed for high spatio-temporal resolution analysis of Greenlandic glaciers. Specifically, we analyze new developments and results from the Calving Front Machine (CALFIN). CALFIN uses machine learning in the form of deep neural networks to automatically generate 25,000+ calving front positions from 1972 to 2020 across 80+ Greenlandic basins, using Landsat and Sentinel-1 imagery. With this data, we perform a correlative analysis between area changes, centerline length changes, discharge, thickness, bed topography, and temperature, among others. Trends on the local and regional scales are examined for insights in conjunction with existing studies in the field. Ultimately, the current implementation offers a new opportunity to explore trends on the extent of Greenland's margins, and supplies new constraints for simulations of the evolution of the mass balance of the Greenland Ice Sheet and its contributions to future sea level rise. We welcome any critiques, suggestions, or questions regarding the dataset and/or our methods. This work was conducted as a collaboration between NASA&amp;amp;#8217;s Jet Propulsion Laboratory and the University of California, Irvine.&amp;lt;/p&amp;gt;</jats:p>",
+    "status": "candidate",
+    "retrieved_at": "2026-09-30T05:00:57.341340Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.5194/egusphere-egu2020-19979",
+    "title": "Calving Front Machine (CALFIN): Automated Calving Front Dataset and Deep Learning Methodology for East/West Greenland, 1972-2019",
+    "authors": [
+      "Cheng, Daniel",
+      "Mohajerani, Yara",
+      "Wood, Michael",
+      "Larour, Eric",
+      "Hayes, Wayne",
+      "Velicogna, Isabella",
+      "Rignot, Eric"
+    ],
+    "year": 2020,
+    "container_title": "",
+    "abstract": "<jats:p>\n        &amp;lt;p&amp;gt;We present Calving Front Machine (CALFIN), an automated method for extracting calving fronts from satellite imagery. We generate results for 66 glaciers along East/West Greenland from 1972 to 2019. We output these results as a dataset, and provide new constraints on glacial evolution over the time period. This method is uniquely robust to clouds, illumination differences, ice m&amp;amp;#233;lange, and Landsat-7 Scan Line Corrector errors. The current implementation offers a new opportunity to explore previous trends, and validate existing models moving forward.&amp;lt;/p&amp;gt;&amp;lt;p&amp;gt;This method utilizes deep learning, in the form of the Google DeeplabV3+ Xception derived CALFIN Neural Network. This approach builds on existing work by Mohajerani et al., Zhang et al., and Baumhoer et al. Additional post-processing techniques allow our method to achieve accurate and useful segmentation of raw images into Shapefile outputs.&amp;amp;#160;&amp;lt;/p&amp;gt;&amp;lt;p&amp;gt;We achieve are often indistinguishable from the manually-curated fronts, deviating from such test data by 1 pixel (about 80 meters) or less XXX% of the time across 162 test images.&amp;lt;/p&amp;gt;&amp;lt;p&amp;gt;CALFIN excels among the current state of the art. We show this by performing a model inter-comparison to evaluate CALFIN's performance against existing methodologies. We also showcase CALFIN's ability to generalize to SAR and MODIS imagery. We achieve a mean error of 2.25 pixels (86.76 meters) from the true front on a diverse set of 162 testing images.&amp;lt;/p&amp;gt;\n        </jats:p>",
+    "status": "candidate",
+    "retrieved_at": "2026-09-30T05:00:57.341348Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.5194/egusphere-egu23-11891",
+    "title": "Seismological Monitoring of Calving Events in Greenland: A Machine Learning Approach",
+    "authors": [
+      "Pirot, Emilie",
+      "Hibert, Clément",
+      "Mangeney, Anne"
+    ],
+    "year": 2023,
+    "container_title": "",
+    "abstract": "<jats:p>Greenland and other polar regions are highly sensitive to global warming. The impact of climate change on Greenland's glaciers can be seen through an increase in calving events. To better understand this impact, it is important to quantify and document calving activity. However, direct observations are difficult to perform repeatedly over long periods of time due to the hostile climatic conditions, the lack of human witnesses and of the possibility to install in-situ sensors in these remote areas.With the installation of a regional seismological network in Greenland in the 2000&amp;#8217; ,and the densification of the one in north-eastern Canada, seismic signals caused by large volume calving events, known as glacial earthquakes, were recorded at distances of hundreds of km from the source. These signals have a wide range of frequencies, making it hard to distinguish them from tectonic events, anthropogenic noise, and other natural noise. Using two catalogs of known events - one of 444 glacial earthquakes that occurred between 1993 and 2013, and one for 400 earthquakes that occurred during the same time period selected from USGC - we trained and tested a detection algorithm based on the STA/LTA method to extract event signals from continuous data. We then trained a supervised machine learning algorithm (Random Forest) to automatically classify these signals into two different classes : glacial earthquakes and earthquakes, with a probability of belonging to each class.With a workflow designed to limit the false alarm rate based on the probability scores of each events, we finally analyzed over 800 days of data from the Greenland regional seismic network and identified almost 1500 new glacial earthquake events using the trained machine learning model. Our detection methods makes it possible to detect four times more ice-quake than the original catalogue.</jats:p>",
+    "status": "candidate",
+    "retrieved_at": "2026-09-30T05:00:57.341361Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.5194/egusphere-egu21-4528",
+    "title": "Automated extraction of calving front locations from multi-spectral satellite imagery using deep learning: methodology and application to Greenland outlet glaciers",
+    "authors": [
+      "Loebel, Erik",
+      "Scheinert, Mirko",
+      "Christmann, Julia",
+      "Heidler, Konrad",
+      "Horwath, Martin",
+      "Humbert, Angelika"
+    ],
+    "year": 2021,
+    "container_title": "",
+    "abstract": "<jats:p>&amp;lt;p&amp;gt;&amp;lt;span&amp;gt;&amp;lt;span&amp;gt;The c&amp;lt;/span&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;span&amp;gt;&amp;lt;span&amp;gt;alving of tidewater glaciers &amp;lt;/span&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;span&amp;gt;&amp;lt;span&amp;gt;has&amp;lt;/span&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;span&amp;gt;&amp;lt;span&amp;gt; a strong impact on the stresses of outlet glaciers and their discharge. However, it is still underrepresented in current ice-sheet models incorporating the dynamics of marine-terminating glaciers. This has an impact on simulation results when projecting future sea-level contributions of the Greenland ice sheet. The increasing availability and quality of remote sensing imagery enable us to realize a continuous and precise mapping &amp;lt;/span&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;span&amp;gt;&amp;lt;span&amp;gt;of&amp;lt;/span&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;span&amp;gt; &amp;lt;/span&amp;gt;&amp;lt;span&amp;gt;&amp;lt;span&amp;gt;relevant parameters such as &amp;lt;/span&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;span&amp;gt;&amp;lt;span&amp;gt;calving front locations. However, the huge amount of data also accentuates the necessity for intelligent analysis strategies.&amp;lt;/span&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;/p&amp;gt;&amp;lt;p&amp;gt;&amp;lt;span&amp;gt;In this contribution, we apply an automated workflow to extract calving front positions from multi-spectral Landsat-8 imagery utilizing deep learning. The core of the proposed workflow comprises a convolutional neural network (CNN) for image segmentation exploiting the full range of Landsat-8 multi-spectral capabilities, a statistical textural feature analysis performed on the high-resolution panchromatic band as well as topography model data. The proposed method is evaluated by an independent set of diverse test images as well as by comparing with already available ESA-CCI, MEaSUREs and PROMICE data products. With an estimated prediction error of fewer than two pixels (which equals a spatial resolution of 60 m), automatically extracted calving front locations show very small or even non-distinguishable differences to manually delineated locations. The importance of multi-spectral, textural and topographic features used as input for the CNN is estimated by a permute-and-relearn approach emphasizing their benefit, especially in challenging ice-melange, cloud, and illumination conditions. Jointly with the proposed methodology we present an exceedingly dense dataset for 20 of the most important Greenlandic outlet glaciers for the period from 2013 to 2021.&amp;lt;/span&amp;gt;&amp;lt;/p&amp;gt;&amp;lt;p&amp;gt;&amp;lt;span&amp;gt;Eventually, the derived calving front positions are incorporated into the Ice Sheet and Sea-Level System Model (ISSM). For this, we engage a level set method. This method allows deriving a continuous function in time and space from discrete information at satellite acquisition time steps. As the satellite data is mainly available for fast-flowing outlet glaciers, we use simulated front positions for all remaining ice margins. An alpha-shape method seamlessly links the temporal changing calving fronts to the Greenlandic ice sheet.&amp;lt;/span&amp;gt;&amp;lt;/p&amp;gt;</jats:p>",
+    "status": "candidate",
+    "retrieved_at": "2026-09-30T05:00:57.341369Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1063/1.2982109",
+    "title": "Calving icebergs may cause glacial earthquakes in Greenland",
+    "authors": [
+      "Wilson, Mark"
+    ],
+    "year": 2008,
+    "container_title": "Physics Today",
+    "abstract": "<jats:p>Recent local measurements and numerical simulations constrain the possible mechanisms for glacial dynamics that occur on the time scale of minutes.</jats:p>",
+    "status": "candidate",
+    "retrieved_at": "2026-09-30T05:00:57.341374Z"
   }
 ]

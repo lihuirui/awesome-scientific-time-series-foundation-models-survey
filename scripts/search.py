@@ -232,6 +232,13 @@ def run_search():
         ("Crossref", "A Novel Dual Branch Neural Network Model for Flood Monitoring CYGNSS Song"),
         ("Crossref", "RL-DAUNCE Reinforcement Learning Driven Data Assimilation Behnoudfar Chen"),
         ("Crossref", "Online Reinforcement Learning Met Office Unified Model Nath"),
+        # Iteration 15 Additions: Atmospheric Chemistry Kinetics, Scatterometer Wind Vectors, Ice-Sheet Rheology
+        ("Crossref", "An Online-Learned Neural Network Chemical Solver for Stable Long-Term Global Simulations of Atmospheric Chemistry Kelp"),
+        ("Crossref", "Neural Network Emulator for Atmospheric Chemical ODE Liu Clusius Boy"),
+        ("Crossref", "Skillful forecasting of offshore winds from satellite scatterometer constellations WindCastNet"),
+        ("Crossref", "Sea Surface Wind Speed Estimation From the Combination of Satellite Scatterometer and Radiometer Parameters Xiang"),
+        ("Crossref", "A hybrid deep neural operator finite element method for ice-sheet modeling He Perego Karniadakis"),
+        ("Crossref", "Calving Front Machine CALFIN glacial termini dataset deep learning Greenland Cheng"),
     ]
 
     verified_arxiv_ids = [
@@ -325,6 +332,10 @@ def run_search():
         # Iteration 12 arXiv Additions
         "2505.05452",  # RL-DAUNCE (Behnoudfar & Chen)
         "2609.02566",  # Online RL Met Office Unified Model (Nath et al.)
+        # Iteration 15 arXiv Additions
+        "2408.01829",  # Atmospheric Chemical ODE Emulator (Liu et al.)
+        "2607.27152",  # WindCastNet Scatterometer Forecasting (Pinto et al.)
+        "2301.11402",  # Hybrid DeepONet / FEM Ice-Sheet (He et al.)
     ]
 
     candidates = {}
@@ -427,6 +438,12 @@ def run_search():
         "10.1029/2022gl098174",        # ML gravity wave parameterization QBO (Espinosa et al., GRL)
         "10.1109/jstars.2023.3287591", # Quasi-global CYGNSS soil moisture (Nabi et al., IEEE JSTARS)
         "10.3390/rs14205129",          # Dual-branch CYGNSS flood monitoring (Song et al., Remote Sensing)
+        # Iteration 15 Additions
+        "10.1029/2021ms002926",        # Online chemical solver GEOS-Chem (Kelp et al., JAMES)
+        "10.1016/j.neunet.2024.107106",# Atmospheric chemical ODE emulator (Liu et al., Neural Networks)
+        "10.1029/2024jh000165",        # Scatterometer & radiometer wind speed (Xiang et al., JGR ML & Comp)
+        "10.1016/j.jcp.2023.112428",   # Hybrid neural operator ice sheet (He et al., JCP)
+        "10.5194/tc-15-1663-2021",     # CALFIN Greenland calving front (Cheng et al., The Cryosphere)
     ]
     prev_doi = len(candidates)
     for doi in verified_dois:

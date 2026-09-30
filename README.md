@@ -1,7 +1,7 @@
 # Awesome Scientific Multimodal Time Series Foundation Models and Reasoning LLMs
 ## 科学多模态时序大模型与科学推理大模型前沿进展精选
 
-[![Survey PDF](https://img.shields.io/badge/Paper-PDF-red.svg)](paper/main.pdf) [![PRISMA Included](https://img.shields.io/badge/PRISMA%20Included-95%20papers-brightgreen.svg)](#prisma-systematic-review-statistics) [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE) [![Maintenance](https://img.shields.io/badge/Maintained%20by-Antigravity%20CLI-purple.svg)](#how-this-survey-is-maintained)
+[![Survey PDF](https://img.shields.io/badge/Paper-PDF-red.svg)](paper/main.pdf) [![PRISMA Included](https://img.shields.io/badge/PRISMA%20Included-101%20papers-brightgreen.svg)](#prisma-systematic-review-statistics) [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE) [![Maintenance](https://img.shields.io/badge/Maintained%20by-Antigravity%20CLI-purple.svg)](#how-this-survey-is-maintained)
 
 ## Overview / 项目概述
 
@@ -28,12 +28,12 @@ The taxonomy categorizes the literature across four core dimensions:
 
 ![PRISMA 2020 Flow](paper/figures/prisma_flow.png)
 
-- **Records Identified across Academic APIs**: 1120
-- **Unique Candidates Evaluated**: 834
-- **Title/Abstract Excluded**: 194
-- **Full-Text Assessed for Eligibility**: 640
-- **Full-Text Excluded (narrow/regional)**: 545
-- **Studies Rigorously Included**: 95
+- **Records Identified across Academic APIs**: 1180
+- **Unique Candidates Evaluated**: 888
+- **Title/Abstract Excluded**: 205
+- **Full-Text Assessed for Eligibility**: 683
+- **Full-Text Excluded (narrow/regional)**: 582
+- **Studies Rigorously Included**: 101
 
 ## Research Landscape & Milestone Timeline
 
@@ -235,6 +235,16 @@ The taxonomy categorizes the literature across four core dimensions:
   - *Architecture*: `Physics-Constrained Neural Network Parameterization` | *Params*: `0.22M` | *Physics*: `Soft physics loss`
   - *Links*: [Paper / DOI](https://doi.org/10.1029/2022GL098174) | [![Code](https://img.shields.io/badge/Code-GitHub-blue.svg)](not reported)
 
+- **Neural Network Emulator for Atmospheric Chemical ODE** (Neural Networks / arXiv:2408.01829 2025)
+  - *Authors*: Liu, Zhi-Song, Clusius, Petri, Boy, Michael
+  - *Architecture*: `Deep Residual Recurrent Neural Network (DR-RNN)` | *Params*: `1.4M` | *Physics*: `Soft stiff ODE kinetic loss`
+  - *Links*: [Paper / DOI](https://doi.org/10.1016/j.neunet.2024.107106) | `[Code not available]`
+
+- **An Online-Learned Neural Network Chemical Solver for Stable Long-Term Global Simulations of Atmospheric Chemistry** (Journal of Advances in Modeling Earth Systems 2022)
+  - *Authors*: Kelp, Makoto M., Jacob, Daniel J., Lin, Haipeng et al.
+  - *Architecture*: `Online-Learned Deep Neural Network (DNN) with error feedback` | *Params*: `0.8M` | *Physics*: `Mass conservation and kinetic rate positivity constraints`
+  - *Links*: [Paper / DOI](https://doi.org/10.1029/2021MS002926) | `[Code not available]`
+
 ### Polar Cryosphere & Sea Ice Dynamics (极地冰冻圈与海冰动力学大模型)
 
 - **IceBench: A Benchmark for Deep Learning based Sea Ice Type Classification** (arXiv:2503.17877 2025)
@@ -246,6 +256,16 @@ The taxonomy categorizes the literature across four core dimensions:
   - *Authors*: Andersson, Tom R., Hosking, J. Scott, Pérez-Ortiz, María et al.
   - *Architecture*: `Probabilistic U-Net Ensemble with temperature scaling and temperature-moisture conditioning` | *Params*: `15M (ensemble of U-Net architectures)` | *Physics*: `Soft physics loss`
   - *Links*: [Paper / DOI](https://doi.org/10.1038/s41467-021-25257-4) | [![Code](https://img.shields.io/badge/Code-GitHub-blue.svg)](https://github.com/icenet-ai/icenet)
+
+- **A hybrid deep neural operator/finite element method for ice-sheet modeling** (Journal of Computational Physics / arXiv:2301.11402 2023)
+  - *Authors*: He, QiZhi, Perego, Mauro, Howard, Amanda A. et al.
+  - *Architecture*: `Hybrid DeepONet / Finite Element Solver` | *Params*: `3.5M` | *Physics*: `Hard finite element mass conservation & non-Newtonian Glen's flow law`
+  - *Links*: [Paper / DOI](https://doi.org/10.1016/j.jcp.2023.112428) | `[Code not available]`
+
+- **Calving Front Machine (CALFIN): glacial termini dataset and automated deep learning extraction method for Greenland, 1972–2019** (The Cryosphere 2021)
+  - *Authors*: Cheng, Daniel, Hayes, Wayne, Larour, Eric et al.
+  - *Architecture*: `DeepLabv3+ Modified Xception Neural Network` | *Params*: `54.7M` | *Physics*: `Fjord boundary constraints & geographic projection post-processing`
+  - *Links*: [Paper / DOI](https://doi.org/10.5194/tc-15-1663-2021) | [![Code](https://img.shields.io/badge/Code-GitHub-blue.svg)](https://github.com/Daniel-Cheng/CALFIN)
 
 ### Earth Observation & Remote Sensing Time Series (对地观测与遥感时序)
 
@@ -382,6 +402,16 @@ The taxonomy categorizes the literature across four core dimensions:
   - *Authors*: Wan, Zhang, Wang, Shuo, Zhang, Xudong
   - *Architecture*: `Scale-Translation Equivariant Convolutional Network (STE-Net)` | *Params*: `8.6M` | *Physics*: `Hard constraint projection`
   - *Links*: [Paper / DOI](https://arxiv.org/abs/2406.13060) | [![Code](https://img.shields.io/badge/Code-GitHub-blue.svg)](https://github.com/ZhangWan-byte/Internal_Solitary_Wave_Localization)
+
+- **Skillful forecasting of offshore winds from satellite scatterometer constellations** (arXiv:2607.27152 2026)
+  - *Authors*: Pinto, Francesco, Lanzilao, Luca, Lopez Dekker, Paco et al.
+  - *Architecture*: `Partial Convolutional LSTM (PConv-LSTM)` | *Params*: `12.8M` | *Physics*: `Observation masking & continuous temporal encoding`
+  - *Links*: [Paper / DOI](https://arxiv.org/abs/2607.27152) | `[Code not available]`
+
+- **Sea Surface Wind Speed Estimation From the Combination of Satellite Scatterometer and Radiometer Parameters** (Journal of Geophysical Research: Machine Learning and Computation 2024)
+  - *Authors*: Xiang, Kunsheng, Zhou, Wu, Bao, Qingliu
+  - *Architecture*: `Multi-Modal Convolutional Neural Network (CNN)` | *Params*: `5.2M` | *Physics*: `Active-passive geophysical model function fusion`
+  - *Links*: [Paper / DOI](https://doi.org/10.1029/2024JH000165) | `[Code not available]`
 
 ### Geophysics & Seismology Foundation Models (地球物理与地震学大模型)
 

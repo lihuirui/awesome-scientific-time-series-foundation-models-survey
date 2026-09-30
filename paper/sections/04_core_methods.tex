@@ -627,4 +627,50 @@ Espinosa et al.~\cite{espinosa2022gravity} deployed a physics-constrained neural
 
 Furthermore, Espinosa et al. subjected the trained neural parameterization to extreme out-of-distribution climate perturbations by forcing the host general circulation model with quadrupled carbon dioxide concentrations ($4\times \text{CO}_2$). Without retraining or parameter recalibration, the neural parameterization accurately captured the physically expected deceleration and vertical displacement of the QBO under extreme greenhouse warming. This benchmark established that neural parameterizations can capture genuine physical causal dynamics rather than superficial statistical correlations, clearing a major hurdle for the integration of data-driven gravity wave operators into decadal Earth system models.
 
+\subsection{Physics-Guided Neural Operators for Atmospheric Chemistry and Stiff Chemical Kinetics}
+\label{sec:atmospheric_chemistry_kinetics}
+
+A formidable computational bottleneck in comprehensive Earth system and air quality modeling is the numerical integration of atmospheric chemical kinetics. Atmospheric composition dictates radiative forcing (via ozone $\text{O}_3$ and aerosols), cloud condensation nuclei activation, and human health hazards (fine particulate matter $\text{PM}_{2.5}$). In global chemical transport models (CTMs, such as GEOS-Chem, WRF-Chem, and CMAQ), the time evolution of a chemically reactive atmospheric column is governed by a system of coupled non-linear Ordinary Differential Equations (ODEs):
+\begin{equation}
+    \frac{d\mathbf{c}}{dt} = \mathbf{P}(\mathbf{c}, T, J) - \mathbf{L}(\mathbf{c}, T, J) \odot \mathbf{c} \equiv \mathbf{f}(\mathbf{c}, T, J),
+    \label{eq:chemical_ode}
+\end{equation}
+where $\mathbf{c} \in \mathbb{R}^K$ is the concentration vector of $K$ reactive chemical species ($K \sim 100\text{--}300$ for tropospheric oxidant-aerosol mechanisms), $\mathbf{P} \in \mathbb{R}^K$ represents non-linear chemical production rates from bi- and tri-molecular collisions, $\mathbf{L} \in \mathbb{R}^K$ represents the pseudo-first-order chemical loss frequency vector, $T$ is temperature, and $J$ denotes actinic photolysis rate coefficients.
+
+\subsubsection{Extreme Numerical Stiffness in Atmospheric Chemical Networks}
+The defining challenge of Eq.~(\ref{eq:chemical_ode}) is its severe numerical stiffness. Atmospheric chemical timescales span more than twelve orders of magnitude: radical propagation reactions (e.g., hydroxyl radical $\text{OH}$, singlet oxygen $\text{O}(^1D)$, and peroxy radicals $\text{RO}_2$) reach local photochemical equilibrium within milliseconds ($\tau_{\text{OH}} \sim 10^{-3}\text{--}1\text{ s}$), whereas secondary trace gases and greenhouse reservoirs (e.g., methane $\text{CH}_4$, carbon monoxide $\text{CO}$, and ozone) persist for weeks to decades. 
+
+Formally, the Jacobian matrix of the chemical reaction network,
+\begin{equation}
+    \mathbf{J}_{ij} = \frac{\partial f_i}{\partial c_j}, \quad \mathbf{J} \in \mathbb{R}^{K \times K},
+\end{equation}
+exhibits eigenvalues $\lambda_k(\mathbf{J})$ whose real negative components span multiple orders of magnitude ($|\text{Re}(\lambda_{\min})| \sim 10^{-9}\text{ s}^{-1}$ while $|\text{Re}(\lambda_{\max})| > 10^5\text{ s}^{-1}$), yielding condition numbers exceeding $\kappa(\mathbf{J}) > 10^{14}$. Classical explicit Runge--Kutta integrators are constrained by Courant-like stability limits requiring step sizes $\Delta t < 2 / |\lambda_{\max}| \sim 10^{-5}\text{ s}$, which is computationally prohibitive for global multi-year climate runs. Consequently, operational atmospheric models rely on implicit stiff ODE solvers (such as the Kinetic PreProcessor [KPP] Rosenbrock integrator or multi-step Gear methods), which require iterative LU factorizations and sparse matrix inversions at every operator-splitting timestep ($\Delta t_{\text{chem}} \sim 10\text{--}30\text{ min}$). These implicit solvers routinely consume \textbf{85\% to 95\% of total compute time} in global atmospheric chemistry simulations.
+
+\subsubsection{Online-Learned Neural Chemical Solvers: Kelp et al.}
+While offline supervised neural networks can approximate chemical state transitions over isolated single timesteps, classical offline training fails catastrophically when coupled into multi-step climate rollouts: prediction errors compound recursively, generating unphysical negative concentrations, artificial mass creation, and explosive numerical divergence within days.
+
+Kelp et al.~\cite{kelp2022online} overcame this instability by developing an \textbf{online-learned neural network chemical solver} directly integrated into the global GEOS-Chem atmospheric chemistry model. Rather than training strictly on pre-computed static simulation snapshots, Kelp et al. implemented an online feedback learning paradigm: the neural emulator is recursively integrated inside the host dynamical core alongside atmospheric advection, boundary-layer turbulence, and emissions. When the neural solver encounters out-of-distribution regional regimes or stiff chemical transitions, adaptive error gradients from the numerical solver backpropagate through operator-splitting cycles, stabilizing the learned trajectory.
+
+Crucially, the architecture incorporates hard physical conservation projections:
+\begin{enumerate}
+    \item \textbf{Family Element Conservation}: Total reactive nitrogen ($\text{NO}_y = \text{NO} + \text{NO}_2 + \text{HNO}_3 + \dots$) and total sulfur ($\text{SO}_x = \text{SO}_2 + \text{SO}_4^{2-}$) are preserved through mass-weighted linear projection heads $\mathbf{c}_{\text{conserved}} = \mathbf{P}_{\text{elem}} \mathbf{c}$;
+    \item \textbf{Non-Negativity Constraint}: Chemical concentrations are enforced strictly positive via rectified linear activations, eliminating unphysical negative mass hallucinations.
+\end{enumerate}
+In full prognostic 1-year global simulations at $4^\circ \times 5^\circ$ resolution, Kelp et al. demonstrated that the online-learned neural solver achieves unconditional numerical stability, matching GEOS-Chem benchmark concentrations for tropospheric ozone, nitrogen oxides, and sulfate aerosols ($R^2 \ge 0.95$) while delivering a \textbf{$12\times$ acceleration} over the operational KPP stiff Rosenbrock solver.
+
+\subsubsection{Deep Residual Recurrent Emulators for Stiff Chemical ODEs: Liu et al.}
+Addressing stiff chemical kinetics from a deep operator perspective, Liu et al.~\cite{liu2025atmospheric} formulated a \textbf{Deep Residual Recurrent Neural Network (DR-RNN)} emulator for time-dependent atmospheric chemical ODEs. Rather than treating the chemical state transition $\mathbf{c}_t \to \mathbf{c}_{t+\Delta t}$ as a black-box regression, DR-RNN parameterizes the continuous rate increment:
+\begin{equation}
+    \mathbf{c}_{t+\Delta t} = \mathbf{c}_t + \Delta t \cdot \mathcal{N}_\theta(\mathbf{c}_t, \mathbf{h}_t, T_t, J_t),
+    \label{eq:dr_rnn_formulation}
+\end{equation}
+where $\mathbf{h}_t$ represents recurrent memory states capturing the multi-step history of radical chain propagation.
+
+To enforce kinetic consistency without requiring expensive numerical Jacobian inversions, Liu et al. introduced a stiff ODE kinetic loss combining trajectory MSE with the residual of the analytical chemical production-loss rate:
+\begin{equation}
+    \mathcal{L}_{\text{kinetic}} = \|\mathbf{c}_{t+\Delta t} - \hat{\mathbf{c}}_{t+\Delta t}\|_2^2 + \lambda_{\text{stiff}} \left\| \frac{\hat{\mathbf{c}}_{t+\Delta t} - \mathbf{c}_t}{\Delta t} - \mathbf{f}(\mathbf{c}_t, T_t, J_t) \right\|_2^2.
+    \label{eq:stiff_ode_loss}
+\end{equation}
+Evaluated across atmospheric oxidation mechanisms governing sulfuric acid ($\text{H}_2\text{SO}_4$) aerosol nucleation and monoterpene secondary organic aerosol (SOA) formation, DR-RNN tracks steep non-linear photochemical spikes with relative errors below \textbf{1.2\%}, while executing \textbf{over $50\times$ faster} than standard CVODE/VODE numerical solvers. By bypassing stiff matrix factorizations, physics-guided chemical neural operators provide a scalable foundation for integrating complex gas-aerosol chemistry directly into planetary foundation models.
+
 

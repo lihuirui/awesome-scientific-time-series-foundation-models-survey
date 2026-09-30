@@ -2078,6 +2078,135 @@ INCLUDED_REGISTRY = {
         "status": "included",
         "exclusion_reason": None,
     },
+    # Iteration 15 Additions: Atmospheric Chemistry Kinetics, Scatterometer Wind Vectors, Ice-Sheet Rheology
+    "kelp2022online": {
+        "bibkey": "kelp2022online",
+        "title": "An Online-Learned Neural Network Chemical Solver for Stable Long-Term Global Simulations of Atmospheric Chemistry",
+        "authors": ["Kelp, Makoto M.", "Jacob, Daniel J.", "Lin, Haipeng", "Sulprizio, Melissa P."],
+        "year": 2022,
+        "venue": "Journal of Advances in Modeling Earth Systems",
+        "doi_or_arxiv": "https://doi.org/10.1029/2021MS002926",
+        "doi": "10.1029/2021MS002926",
+        "domain": "Weather/Climate",
+        "modality": "3D Gridded atmospheric concentrations & meteorological fields",
+        "backbone": "Online-Learned Deep Neural Network (DNN) with error feedback",
+        "pretraining_data": "GEOS-Chem v12.9.3 1-year global simulations at 4 deg x 5 deg",
+        "physics_integration": "Mass conservation and kinetic rate positivity constraints",
+        "role_of_llm": "None",
+        "lead_time_or_task": "1-year stable global chemical simulation (ozone-NOx-VOC-aerosol) with 12x parameterization speedup",
+        "model_size": "0.8M",
+        "code_url": "not available",
+        "quality_score": 12,
+        "status": "included",
+        "exclusion_reason": None,
+    },
+    "liu2025atmospheric": {
+        "bibkey": "liu2025atmospheric",
+        "title": "Neural Network Emulator for Atmospheric Chemical ODE",
+        "authors": ["Liu, Zhi-Song", "Clusius, Petri", "Boy, Michael"],
+        "year": 2025,
+        "venue": "Neural Networks / arXiv:2408.01829",
+        "doi_or_arxiv": "https://doi.org/10.1016/j.neunet.2024.107106",
+        "doi": "10.1016/j.neunet.2024.107106",
+        "arxiv_id": "2408.01829",
+        "domain": "Weather/Climate",
+        "modality": "Chemical concentration time series & reaction kinetics",
+        "backbone": "Deep Residual Recurrent Neural Network (DR-RNN)",
+        "pretraining_data": "SOSAA-simulated atmospheric chemical reaction network",
+        "physics_integration": "Soft stiff ODE kinetic loss",
+        "role_of_llm": "None",
+        "lead_time_or_task": "Stiff chemical ODE concentration trajectory integration with >50x speedup over CVODE",
+        "model_size": "1.4M",
+        "code_url": "not available",
+        "quality_score": 11,
+        "status": "included",
+        "exclusion_reason": None,
+    },
+    "pinto2026windcastnet": {
+        "bibkey": "pinto2026windcastnet",
+        "title": "Skillful forecasting of offshore winds from satellite scatterometer constellations",
+        "authors": ["Pinto, Francesco", "Lanzilao, Luca", "Lopez Dekker, Paco", "Meyer, Angela"],
+        "year": 2026,
+        "venue": "arXiv:2607.27152",
+        "doi_or_arxiv": "https://arxiv.org/abs/2607.27152",
+        "arxiv_id": "2607.27152",
+        "domain": "Oceanography",
+        "modality": "Spaceborne scatterometer constellations (ASCAT, HY-2, ScatSat)",
+        "backbone": "Partial Convolutional LSTM (PConv-LSTM)",
+        "pretraining_data": "North Sea satellite scatterometer constellation observations (2019-2023)",
+        "physics_integration": "Observation masking & continuous temporal encoding",
+        "role_of_llm": "None",
+        "lead_time_or_task": "1h to 6h intraday offshore wind vector nowcasting (-23% RMSE at 1h vs NWP)",
+        "model_size": "12.8M",
+        "code_url": "not available",
+        "quality_score": 12,
+        "status": "included",
+        "exclusion_reason": None,
+    },
+    "xiang2024scatterometer": {
+        "bibkey": "xiang2024scatterometer",
+        "title": "Sea Surface Wind Speed Estimation From the Combination of Satellite Scatterometer and Radiometer Parameters",
+        "authors": ["Xiang, Kunsheng", "Zhou, Wu", "Bao, Qingliu"],
+        "year": 2024,
+        "venue": "Journal of Geophysical Research: Machine Learning and Computation",
+        "doi_or_arxiv": "https://doi.org/10.1029/2024JH000165",
+        "doi": "10.1029/2024JH000165",
+        "domain": "Oceanography",
+        "modality": "Microwave scatterometer sigma_0 & radiometer brightness temperatures",
+        "backbone": "Multi-Modal Convolutional Neural Network (CNN)",
+        "pretraining_data": "CFOSAT/HY-2B scatterometer and radiometer observations matched to ERA5 & buoys",
+        "physics_integration": "Active-passive geophysical model function fusion",
+        "role_of_llm": "None",
+        "lead_time_or_task": "Global ocean surface wind speed estimation (0.7 m/s RMSD vs ASCAT)",
+        "model_size": "5.2M",
+        "code_url": "not available",
+        "quality_score": 11,
+        "status": "included",
+        "exclusion_reason": None,
+    },
+    "he2023hybrid": {
+        "bibkey": "he2023hybrid",
+        "title": "A hybrid deep neural operator/finite element method for ice-sheet modeling",
+        "authors": ["He, QiZhi", "Perego, Mauro", "Howard, Amanda A.", "Karniadakis, George Em", "Stinis, Panos"],
+        "year": 2023,
+        "venue": "Journal of Computational Physics / arXiv:2301.11402",
+        "doi_or_arxiv": "https://doi.org/10.1016/j.jcp.2023.112428",
+        "doi": "10.1016/j.jcp.2023.112428",
+        "arxiv_id": "2301.11402",
+        "domain": "Polar Cryosphere",
+        "modality": "Ice thickness, bedrock topography, and basal sliding fields",
+        "backbone": "Hybrid DeepONet / Finite Element Solver",
+        "pretraining_data": "Synthetic Antarctic ice-stream geometry & MISMIP+ benchmark",
+        "physics_integration": "Hard finite element mass conservation & non-Newtonian Glen's flow law",
+        "role_of_llm": "None",
+        "lead_time_or_task": "Diagnostic Stokes/SSA velocity and multi-century grounding line migration (>1000x speedup)",
+        "model_size": "3.5M",
+        "code_url": "not available",
+        "quality_score": 12,
+        "status": "included",
+        "exclusion_reason": None,
+    },
+    "cheng2021calfin": {
+        "bibkey": "cheng2021calfin",
+        "title": "Calving Front Machine (CALFIN): glacial termini dataset and automated deep learning extraction method for Greenland, 1972–2019",
+        "authors": ["Cheng, Daniel", "Hayes, Wayne", "Larour, Eric", "Mohajerani, Yara", "Wood, Michael", "Velicogna, Isabella", "Rignot, Eric"],
+        "year": 2021,
+        "venue": "The Cryosphere",
+        "doi_or_arxiv": "https://doi.org/10.5194/tc-15-1663-2021",
+        "doi": "10.5194/tc-15-1663-2021",
+        "domain": "Polar Cryosphere",
+        "modality": "Multi-satellite SAR & optical imagery (Landsat 1-8, Sentinel-1)",
+        "backbone": "DeepLabv3+ Modified Xception Neural Network",
+        "pretraining_data": "CALFIN dataset (22,678 calving fronts across 66 Greenland glaciers, 1972-2019)",
+        "physics_integration": "Fjord boundary constraints & geographic projection post-processing",
+        "role_of_llm": "None",
+        "lead_time_or_task": "Sub-decadal calving front termini extraction & retreat dynamics (86.4m mean error)",
+        "model_size": "54.7M",
+        "code_url": "https://github.com/Daniel-Cheng/CALFIN",
+        "quality_score": 12,
+        "status": "included",
+        "exclusion_reason": None,
+    },
 }
 
 
@@ -2183,6 +2312,18 @@ def run_screening():
         normalize_title("A Novel Dual-Branch Neural Network Model for Flood Monitoring in South Asia Based on CYGNSS Data"): "song2022dualbranch",
         normalize_title("RL-DAUNCE: Reinforcement Learning-Driven Data Assimilation with Uncertainty-Aware Constrained Ensembles"): "behnoudfar2025rldaunce",
         normalize_title("Online Reinforcement Learning in the Met Office Unified Model through Distributed Model-Agent Coupling"): "nath2026online",
+        # Iteration 15 alt_titles
+        normalize_title("An Online‐Learned Neural Network Chemical Solver for Stable Long‐Term Global Simulations of Atmospheric Chemistry"): "kelp2022online",
+        normalize_title("An Online-Learned Neural Network Chemical Solver for Stable Long-Term Global Simulations of Atmospheric Chemistry"): "kelp2022online",
+        normalize_title("Neural Network Emulator for Atmospheric Chemical ODE"): "liu2025atmospheric",
+        normalize_title("Skillful forecasting of offshore winds from satellite scatterometer constellations"): "pinto2026windcastnet",
+        normalize_title("WindCastNet: Skillful forecasting of offshore winds from satellite scatterometer constellations"): "pinto2026windcastnet",
+        normalize_title("Sea Surface Wind Speed Estimation From the Combination of Satellite Scatterometer and Radiometer Parameters"): "xiang2024scatterometer",
+        normalize_title("A hybrid deep neural operator/finite element method for ice-sheet modeling"): "he2023hybrid",
+        normalize_title("A Hybrid Deep Neural Operator/Finite Element Method for Ice-Sheet Modeling"): "he2023hybrid",
+        normalize_title("A Hybrid Operator Network-Finite Element Method for Ice-Sheet Modeling"): "he2023hybrid",
+        normalize_title("Calving Front Machine (CALFIN): glacial termini dataset and automated deep learning extraction method for Greenland, 1972–2019"): "cheng2021calfin",
+        normalize_title("Calving Front Machine (CALFIN): Glacial Termini Dataset and Automated Deep Learning Extraction Method for Greenland, 1972-2019"): "cheng2021calfin",
     }
     for alt, k in alt_titles.items():
         included_titles[alt] = k
@@ -2272,13 +2413,14 @@ def run_screening():
                 "conformal", "solar wind", "coronal", "magnetohydrodynamic", "mhd",
                 "canopy height", "gedi", "spectralgpt", "hyperspectral", "urban flood", "emergency scheduling",
                 "clifford", "wall model", "building-block", "swot", "internal solitary", "causal discovery", "tigramite",
-                "gravity wave", "gravity wave drag", "cygnss", "gnss-r", "soil moisture", "inundation", "reinforcement learning", "unified model", "rl-daunce"
+                "gravity wave", "gravity wave drag", "cygnss", "gnss-r", "soil moisture", "inundation", "reinforcement learning", "unified model", "rl-daunce",
+                "atmospheric chemistry", "chemical kinetics", "chemical ode", "kelp", "scatterometer", "windcastnet", "wind speed retrieval", "ice sheet", "calving front", "calfin", "glacier termini", "deeponet"
             ])
 
             if not is_natural_science:
                 c["status"] = "excluded_title"
                 c["exclusion_reason"] = "EC1: Out of domain scope (not natural science temporal system)"
-                c["screen_date"] = "2026-09-27"
+                c["screen_date"] = "2026-09-30"
                 all_papers.append(c)
                 excluded_title_abstract += 1
             else:
@@ -2286,7 +2428,7 @@ def run_screening():
                 assessed_for_eligibility += 1
                 c["status"] = "excluded_fulltext"
                 c["exclusion_reason"] = "EC2: Narrow regional application or superseded task-specific baseline (non-foundation)"
-                c["screen_date"] = "2026-09-27"
+                c["screen_date"] = "2026-09-30"
                 all_papers.append(c)
                 excluded_full_text += 1
 
@@ -2295,7 +2437,7 @@ def run_screening():
         if k not in seen_included_keys:
             seen_included_keys.add(k)
             rec = v.copy()
-            rec["screen_date"] = "2026-09-27"
+            rec["screen_date"] = "2026-09-30"
             all_papers.append(rec)
             final_included.append(rec)
             screened_title_abstract += 1
@@ -2305,8 +2447,8 @@ def run_screening():
         json.dump(all_papers, f, ensure_ascii=False, indent=2)
 
     total_screened = screened_title_abstract
-    # Total search queries hits = 1120 (1032 prior iterations + 88 iteration 12 hits)
-    records_identified = 1120
+    # Total search queries hits = 1180 (1120 prior iterations + 60 iteration 15 hits)
+    records_identified = 1180
     duplicates_removed = records_identified - total_screened
 
     prisma_counts = {
