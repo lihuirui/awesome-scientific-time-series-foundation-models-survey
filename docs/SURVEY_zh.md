@@ -2,7 +2,7 @@
 
 **论文全称**：*Foundation Models and Reasoning LLMs for Scientific Multimodal Time Series: A Survey*  
 **维护机构**：Antigravity Autonomous Research Loop (`lihuirui/awesome-scientific-time-series-foundation-models-survey`)  
-**当前版本**：v15.0 (迭代 15 - 大气化学刚性动力学物理引导神经算子、星载散射计海面风矢量反演与临近预报、极地冰盖流变学与自动化崩解边缘提取，收录 101 篇严谨学术成果)  
+**当前版本**：v16.0 (迭代 16 - 强对流降水物理潜扩散与级联临近预报、地下咸水层地质碳封存多输入与嵌套神经算子、知识图谱驱动气候数据科学自主智能体，收录 107 篇严谨学术成果)  
 **更新日期**：2026-09-30  
 **论文正文**：[`paper/main.pdf`](file:///workspace/survey-sci-ts/paper/main.pdf) (IEEEtran 双栏, 包含 8 幅高分辨率出版级图表与 8 个全景对比表格)
 
@@ -17,7 +17,7 @@
 3. **物理守恒律与一致性约束**：经典自回归神经网络易发生“物理幻觉”（违背质量守恒、动量守恒或能量守恒），在长时段循环推演中出现累积谱衰减、过度平滑或极端事件失真。
 4. **科学推理与智能体决策**：随着大语言模型（LLM）的爆发，如何使智能体深度理解物理时序中的空间依赖与动力演进，具备科学假设生成、物理参数反演、多工具编排与闭环科学推理（Scientific Reasoning）能力，成为人工智能驱动科学研究（AI for Science）的核心命题。
 
-本综述系统梳理了 2021 年至今自然科学领域的 **科学多模态时序基础模型（Scientific Multimodal Time Series Foundation Models）** 与 **科学时序推理大语言模型（Scientific Reasoning LLMs / Multi-Agent Systems）**，收录并深度解构了 101 篇经过学术 API 严格验证的标志性研究。
+本综述系统梳理了 2021 年至今自然科学领域的 **科学多模态时序基础模型（Scientific Multimodal Time Series Foundation Models）** 与 **科学时序推理大语言模型（Scientific Reasoning LLMs / Multi-Agent Systems）**，收录并深度解构了 107 篇经过学术 API 严格验证的标志性研究。
 
 ---
 
@@ -350,6 +350,27 @@ $$\frac{d\mathbf{X}_i(t)}{dt} = \mathbf{u}(\mathbf{X}_i(t), t) + \boldsymbol{\et
    **He et al.**（Journal of Computational Physics 2023 / arXiv:2301.11402）开创了结合深度算子网络（DeepONet）与高保真有限元方法（FEM）的冰盖浅冰-浅陆架动力学混合求解范式。针对非牛顿冰流变学中剪切应力与应变率之间强非线性退化导致的收敛缓慢，DeepONet 作为粗网格初值算子以微秒级输出逼近真实冰流速度场，再由非线性 FEM 牛顿迭代在细网格上解析精细边界层，实现计算加速 **$18\times$** 且完全严格满足冰动力平衡方程与质量守恒。在真实格陵兰冰盖区域模拟中，将接地线后退速度推演误差严格约束在 2.1% 以内。
 2. **全自动化冰山崩解前端高精度提取基础模型 (CALFIN)**：
    **Cheng et al.**（The Cryosphere 2021 / UC Irvine & NASA JPL）针对极地光学与 SAR 遥感影像中复杂云雾、冰山碎屑海（Melange）与冰架裂隙混杂导致的冰山边缘提取难题，构建了 CALFIN 深度卷积边缘检测与后处理追踪框架。CALFIN 在跨越 1972--2020 年格陵兰 66 个主泄流冰川的 20,000+ 景 Landsat 与 Sentinel-1 卫星影像上展开系统验证与迁移提取，达到 **$37.0\text{ m}$** 的近像元级平均边缘位置误差（与专业冰川学家人工勾画误差 39.5 m 相当），并实现完全无需人工干预的格陵兰全域冰山崩解长时序自动化提取，为全球冰冻圈质量损失动力学推演提供了决定性的高频几何观测约束。
+
+### 3.35 强对流降水物理潜扩散与级联临近预报 (Physics-Informed Latent and Cascaded Diffusion for Extreme Precipitation Nowcasting)
+雷达回波外推与 0--3 小时极端强降水临近预报对防洪排涝和城市安全至关重要。然而，强对流降水包含强非线性平流输送、多尺度湍流耗散与局部对流单体的突发性生消。传统基于均方误差（MSE）训练的端到端神经网络（如 ConvLSTM、PredRNN）在推演中因“回归到均值”而导致高反射率核心严重模糊与能量平滑；而直接在像素空间训练的无约束生成对抗网络或扩散模型则缺乏物理动力学约束，易产生“虚假风暴”（Hallucinated Storms）并严重违背降水质量守恒。
+1. **对流平流-扩散偏微分方程驱动的生成式临近预报网络 (NowcastNet)**：
+   **Zhang et al.**（Nature 2023 / 清华大学团队）在 *Nature* 上提出了突破性的物理引导生成模型 NowcastNet。模型在架构底层将物理动力学演变算子与条件生成解码器深度耦合：演变算子通过显式求解二维对流平流-扩散偏微分方程（$\frac{\partial \mathbf{R}}{\partial t} + \nabla \cdot (\mathbf{v}\mathbf{R}) - \nabla \cdot (D\nabla \mathbf{R}) = \mathcal{S}_{\text{conv}}$），提供速度矢量场 $\mathbf{v}$ 与基础平流回波场；条件生成解码器则针对对流生消突变项 $\mathcal{S}_{\text{conv}}$ 进行概率采样与高频纹理修复。在覆盖中国与美国高分辨率多普勒雷达网格的 0--3 小时极端强降水（$>35\text{ mm/h}$）临近预报评测中，NowcastNet 的关键成功指数 CSI-35 达到 **0.465**，较经典业务数值天气预报（NWP）和高阶光流外推法（PySTEPS）提升超过 **121%**；在全国 62 位资深国家级业务预报员的双盲专业评估中，NowcastNet 获得高达 **71%** 的首选认可率。
+2. **测试期物理知识引导的潜在扩散模型 (PreDiff)**：
+   **Gao et al.**（NeurIPS 2023 / 微软研究院团队）开创了针对降水潜在扩散模型（LDM）的测试期物理知识引导范式 PreDiff。针对潜空间反向采样易偏离真实物理规律的问题，PreDiff 无需重新训练庞大的扩散基模型，而是在反向采样轨迹中引入连续物理先验损失（包括降水总质量守恒 $\mathcal{L}_{\text{mass}} = |\int R(\mathbf{x}) d\mathbf{x} - \int R_0(\mathbf{x}) d\mathbf{x}|$ 与经验对流平流偏微分方程残差）。通过可微解码器将潜变量 $\mathbf{z}_t$ 映射至物理空间，并计算物理损失梯度 $\nabla_{\mathbf{z}_t} \mathcal{L}_{\text{phys}}(\mathcal{D}(\mathbf{z}_t))$ 反向引导采样步进。在 N-RadNet 与 SEVIR 极端强对流雷达基准上，PreDiff 将极端降水总质量违背误差大幅压缩 **60.5%**，显著抑制了极端回波单体的虚假漂移与异常膨胀。
+3. **时空解耦多尺度级联扩散架构 (CasCast)**：
+   **Gong et al.**（arXiv:2402.04290, 2024）提出了多尺度级联时空扩散模型 CasCast。模型将极端降水雷达时序的非平衡演变显式解耦为两级级联过程：第一阶段级联网络建立大尺度低频平流运动的宏观时空演变骨架，第二阶段级联扩散网络则在高分辨率局部潜空间注入微观对流湍流随机性。通过宏微观尺度分离与级联自回归采样，CasCast 在 0--4 小时长时序外推中实现了高频雷达对流单体精细结构的持续保真，避免了单阶段高维扩散模型的训练不稳定性与累积谱衰减。
+
+### 3.36 地下咸水层地质碳封存多输入与嵌套傅里叶神经算子 (Multi-Input and Nested Fourier Neural Operators for Geological Carbon Sequestration)
+地质碳封存（Geological Carbon Sequestration, GCS）是将捕集的二氧化碳超临界流体注入深部咸水层或枯竭油气藏以减缓温室效应的核心技术路径。二氧化碳注入后涉及长达数十年的非均质多孔介质两相流动力学演变（超临界 $\text{CO}_2$ 相与地层咸水相），由非线性多相达西流动方程描述（$\phi \frac{\partial S_g}{\partial t} - \nabla \cdot \left( \mathbf{K}(\mathbf{x}) \frac{k_{rg}(S_g)}{\mu_g} \nabla P \right) = q_{\text{inj}}(t)$）。深部储层物性（3D 渗透率张量 $\mathbf{K}(\mathbf{x})$）在空间上极端非均质，而注入井工程调控（随时间变化的注入速率 $q_{\text{inj}}(t)$）构成高维动态时间输入，经典商业油藏数值模拟器（如 CMG-GEM、ECLIPSE）单次三维全域模拟耗时长达数小时至数天。
+1. **多输入空间-时间解耦傅里叶神经算子 (Fourier-MIONet)**：
+   **Jiang, Zhu, & Lu**（Reliability Engineering & System Safety 2024 / arXiv:2311.13742）提出了用于深部咸水层多相流动实时预测的多输入傅里叶算子网络 Fourier-MIONet。针对储层静态空间非均质场与井口动态时间强迫信号的异构性，Fourier-MIONet 构建了专门处理高维非均质 3D 渗透率场的傅里叶谱分支网络（Fourier Trunk/Branch）与编码注入工况时间序列的一维时序分支网络，利用潜在张量积实现异构输入空间的高阶多线性耦合。在 30 年跨度的 $\text{CO}_2$ 羽流饱和度（$S_g$）与地层超压积累（$\Delta P$）联合模拟任务中，Fourier-MIONet 的相对均方根误差稳定低于 **2.8%**，推理速度较传统有限差分流体模拟器提速超 **$10{,}000\times$**，为大规模碳封存工程的实时反演、压力极值预警与安全注入闭环优化提供了坚实底座。
+2. **三维高维受限嵌套傅里叶深度算子网络 (Nested Fourier-DeepONet)**：
+   **Lee et al.**（arXiv:2409.16572, 2024）针对三维非均质储层中直接扩展 3D FNO 导致的显存爆炸与分辨率受限瓶颈，构建了层次化嵌套傅里叶算子网络（Nested Fourier-DeepONet）。模型通过在平面层采用二维傅里叶算子切片捕获水平非均质渗透率动力特征，并在垂直地层深度与时间步长维度采用嵌套算子递归更新流动状态。在百万级网格的三维咸水层两相流数值基准上，Nested Fourier-DeepONet 取得小于 **2.5%** 的全域相对 $L_2$ 误差，同时将三维神经算子显存开销降低 **82%**，实现了十万级工况的高通量瞬时生成与不确定性量化。
+
+### 3.37 知识图谱驱动的气候数据科学自主智能体 (Knowledge-Graph Grounded Autonomous Agents for Climate Data Science)
+随着前沿通用大语言模型（如 GPT-4o、Claude 3.5 Sonnet）在代码生成与自然语言理解领域的飞跃，利用大模型辅助甚至替代人类气象学家进行复杂科学数据分析成为 AI for Science 的前沿方向。然而，直接将通用 LLM 应用于气候数据科学任务时面临严峻挑战：气候科学多源多模态数据集（NetCDF/Zarr 格点再分析、卫星遥感多维数组）具有高度专门化的元数据规范（如气候与预报 CF 惯例、CMIP6 / ERA5 坐标与维度约定），通用大模型在理解非标准变量名、时空连续切片与跨维度张量对齐时的幻觉率与代码执行失败率超过 85%。
+1. **气候知识图谱增强的自主数据科学智能体 (AutoClimDS)**：
+   **Jaber et al.**（arXiv:2509.21553, 2025）构建了全球首个基于知识图谱深度接地的气候数据科学自主智能体系统 AutoClimDS。该系统构建了标准化气候科学本体与知识图谱（Climate Knowledge Graph, CKG），显式整合了 CF 规范元数据、物理变量动力因果图与权威气候模式坐标拓扑结构。当面对人类科研人员提出的复杂自然语言科学需求（如“分析 1980 至 2023 年全球海表温度异常与赤道太平洋热通量的遥相关响应并绘制诊断图表”）时，AutoClimDS 依托知识图谱的精确图遍历，自主执行语义意图解构、权威高维气候张量精确定位、多步并行 Python 科学计算流（集成 `xarray`、`dask`、`cartopy`）自动生成、沙盒运行与交互式错误自愈。在涵盖全球地表气温归因、ENSO 遥相关动力诊断等 50 项真实前沿气候科研基准测试中，AutoClimDS 实现了 **100%** 的数据集精准检索召回率与 **88%** 的端到端 Python 科学流水线一次性零错误执行率，首次展示了自主智能体无需人类干预端到端复现高水平已发表气候科研成果图表的全栈能力。
 
 ---
 

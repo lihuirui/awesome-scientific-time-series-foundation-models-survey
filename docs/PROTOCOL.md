@@ -132,3 +132,19 @@ PRISMA metrics are maintained in `data/prisma_counts.json`:
 - `reports_assessed_for_eligibility`: Fully analyzed works.
 - `reports_excluded_full_text`: Excluded with explicit reason.
 - `studies_included_in_review`: Final included systematic corpus.
+
+---
+
+## 7. Protocol Amendments & Iteration Changelog
+
+- **2026-09-24 (Iteration 1)**: Initial protocol formalization, research questions RQ1--RQ8 established, initial PRISMA tracking schema deployed.
+- **2026-09-25 (Iteration 2--4)**: Expansion of domain coverage to hydrology and oceanography; integration of WeatherBench 2 quantitative metrics.
+- **2026-09-26 (Iteration 5--7)**: Incorporation of satellite foundation models (AnySat, DOFA, CROMA) and spaceborne geophysics; enforcement of arithmetic consistency checks.
+- **2026-09-27 (Iteration 8--10)**: Incorporation of polar cryosphere foundations (IceNet, IceBench) and seismological waveform operators (WaveFNO, SeisBench); hard physical conservation benchmarking (AC-NN, ACE).
+- **2026-09-28 (Iteration 11--13)**: Expansion into multi-agent climate reasoning, spatio-temporal causal discovery (Group-PCMCI, LLM-CIT), and subgrid gravity wave drag parameterization.
+- **2026-09-29 (Iteration 14--15)**: Inclusion of spaceborne GNSS-R hydrology, online reinforcement learning data assimilation (RL-DAUNCE, Met Office UM online RL), stiff atmospheric chemistry kinetics (GEOS-Chem neural emulator, DR-RNN), satellite scatterometry ocean wind nowcasting (WindCastNet), and non-Newtonian ice sheet rheology (DeepONet-FEM, CALFIN) reaching 101 studies.
+- **2026-09-30 (Iteration 16)**:
+  - **Search Expansion**: Executed systematic Crossref and arXiv API queries for precipitation diffusion models, multiphase neural operators for carbon sequestration, and climate knowledge-graph agentic systems.
+  - **PRISMA Accounting**: Records identified: 1240; duplicates removed: 323; records screened (title/abstract): 917; records excluded (title/abstract): 215; reports sought for retrieval: 702; reports excluded (full text): 595; studies included in review: **107**. Verified arithmetic: $1240 - 323 = 917$; $917 - 215 = 702$; $702 - 595 = 107$.
+  - **Included Studies**: `zhang2023nowcastnet` (Nature 2023), `gao2023prediff` (NeurIPS 2023), `gong2024cascast` (arXiv:2402.04290), `jiang2024fouriermionet` (RESS 2024), `lee2024nested` (arXiv:2409.16572), and `jaber2025autoclimds` (arXiv:2509.21553).
+

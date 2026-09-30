@@ -1,7 +1,7 @@
 # Awesome Scientific Multimodal Time Series Foundation Models and Reasoning LLMs
 ## 科学多模态时序大模型与科学推理大模型前沿进展精选
 
-[![Survey PDF](https://img.shields.io/badge/Paper-PDF-red.svg)](paper/main.pdf) [![PRISMA Included](https://img.shields.io/badge/PRISMA%20Included-101%20papers-brightgreen.svg)](#prisma-systematic-review-statistics) [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE) [![Maintenance](https://img.shields.io/badge/Maintained%20by-Antigravity%20CLI-purple.svg)](#how-this-survey-is-maintained)
+[![Survey PDF](https://img.shields.io/badge/Paper-PDF-red.svg)](paper/main.pdf) [![PRISMA Included](https://img.shields.io/badge/PRISMA%20Included-107%20papers-brightgreen.svg)](#prisma-systematic-review-statistics) [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE) [![Maintenance](https://img.shields.io/badge/Maintained%20by-Antigravity%20CLI-purple.svg)](#how-this-survey-is-maintained)
 
 ## Overview / 项目概述
 
@@ -28,12 +28,12 @@ The taxonomy categorizes the literature across four core dimensions:
 
 ![PRISMA 2020 Flow](paper/figures/prisma_flow.png)
 
-- **Records Identified across Academic APIs**: 1180
-- **Unique Candidates Evaluated**: 888
-- **Title/Abstract Excluded**: 205
-- **Full-Text Assessed for Eligibility**: 683
-- **Full-Text Excluded (narrow/regional)**: 582
-- **Studies Rigorously Included**: 101
+- **Records Identified across Academic APIs**: 1240
+- **Unique Candidates Evaluated**: 917
+- **Title/Abstract Excluded**: 215
+- **Full-Text Assessed for Eligibility**: 702
+- **Full-Text Excluded (narrow/regional)**: 595
+- **Studies Rigorously Included**: 107
 
 ## Research Landscape & Milestone Timeline
 
@@ -245,6 +245,21 @@ The taxonomy categorizes the literature across four core dimensions:
   - *Architecture*: `Online-Learned Deep Neural Network (DNN) with error feedback` | *Params*: `0.8M` | *Physics*: `Mass conservation and kinetic rate positivity constraints`
   - *Links*: [Paper / DOI](https://doi.org/10.1029/2021MS002926) | `[Code not available]`
 
+- **PreDiff: Precipitation Nowcasting with Latent Diffusion Models** (NeurIPS 2023 / arXiv:2307.10422 2023)
+  - *Authors*: Gao, Zhihan, Shi, Xingjian, Han, Boran et al.
+  - *Architecture*: `Latent Diffusion Model with Spatio-Temporal Autoencoder and Knowledge-Guided Conditioning` | *Params*: `120M` | *Physics*: `Physics-based conditioning loss (explicit guidance on advection consistency and rainfall accumulation preservation)`
+  - *Links*: [Paper / DOI](https://arxiv.org/abs/2307.10422) | [![Code](https://img.shields.io/badge/Code-GitHub-blue.svg)](https://github.com/gaozhihan/PreDiff)
+
+- **CasCast: Skillful High-resolution Precipitation Nowcasting via Cascaded Modelling** (arXiv:2402.04290 2024)
+  - *Authors*: Gong, Junchao, Bai, Lei, Ye, Peng et al.
+  - *Architecture*: `Cascaded Spatio-Temporal Diffusion Framework (Deterministic Macro Predictor + Stochastic High-Res Residual Diffusion)` | *Params*: `Cascaded transformer-diffusion` | *Physics*: `Cascaded multi-scale structural decomposition constraining high-frequency convective cell evolution`
+  - *Links*: [Paper / DOI](https://arxiv.org/abs/2402.04290) | `[Code not available]`
+
+- **Skilful nowcasting of extreme precipitation with NowcastNet** (Nature 2023)
+  - *Authors*: Zhang, Yuchen, Long, Mingsheng, Chen, Kaiyuan et al.
+  - *Architecture*: `Physical-generative neural network (advection-diffusion PDE solver + generative neural operator)` | *Params*: `Generative advection-diffusion network` | *Physics*: `Physical advection-diffusion equations with continuity constraints and motion fields`
+  - *Links*: [Paper / DOI](https://doi.org/10.1038/s41586-023-06184-4) | `[Code not available]`
+
 ### Polar Cryosphere & Sea Ice Dynamics (极地冰冻圈与海冰动力学大模型)
 
 - **IceBench: A Benchmark for Deep Learning based Sea Ice Type Classification** (arXiv:2503.17877 2025)
@@ -447,6 +462,16 @@ The taxonomy categorizes the literature across four core dimensions:
   - *Architecture*: `Coupled multi-scale CNN/FNO suite with data-driven equation of state (EOS)` | *Params*: `14.8M parameters (suite total)` | *Physics*: `Thermodynamic equation-of-state coupling and mass conservation`
   - *Links*: [Paper / DOI](https://doi.org/10.1016/j.advwatres.2021.104009) | [![Code](https://img.shields.io/badge/Code-GitHub-blue.svg)](https://github.com/gegewen/ccsnet_v1.0)
 
+- **Efficient and generalizable nested Fourier-DeepONet for three-dimensional geological carbon sequestration** (arXiv:2409.16572 2024)
+  - *Authors*: Lee, Jonathan E., Zhu, Min, Xi, Ziqiao et al.
+  - *Architecture*: `Nested Fourier-DeepONet (hierarchical decomposition with outer spatial operator and inner temporal-pressure trunk)` | *Params*: `Nested operator network` | *Physics*: `Governing multiphase porous flow equations with boundary trapping constraints`
+  - *Links*: [Paper / DOI](https://arxiv.org/abs/2409.16572) | `[Code not available]`
+
+- **Fourier-MIONet: Fourier-enhanced multiple-input neural operators for multiphase modeling of geological carbon sequestration** (Reliability Engineering & System Safety 2024)
+  - *Authors*: Jiang, Zhongyi, Zhu, Min, Lu, Lu
+  - *Architecture*: `Fourier-enhanced Multiple-Input Neural Operator (Fourier-MIONet combining Fourier spectral layers with branch-trunk operator nets)` | *Params*: `15M` | *Physics*: `Multiphase Darcy flow governing equations, mass conservation, capillary pressure-saturation relations`
+  - *Links*: [Paper / DOI](https://doi.org/10.1016/j.ress.2024.110392) | [![Code](https://img.shields.io/badge/Code-GitHub-blue.svg)](https://github.com/lu-group/Fourier-MIONet)
+
 ### Space Weather & Heliophysics (空间天气与日地物理)
 
 - **Surya: Foundation Model for Heliophysics** (arXiv:2508.14112 2025)
@@ -535,6 +560,11 @@ The taxonomy categorizes the literature across four core dimensions:
   - *Authors*: Behnoudfar, Pouria, Chen, Nan
   - *Architecture*: `Reinforcement Learning-Driven Constrained Ensemble Network` | *Params*: `5.6M` | *Physics*: `Hard constraint projection via primal-dual policy optimization`
   - *Links*: [Paper / DOI](https://arxiv.org/abs/2505.05452) | [![Code](https://img.shields.io/badge/Code-GitHub-blue.svg)](not reported)
+
+- **AutoClimDS: Climate Data Science Agentic AI -- A Knowledge Graph is All You Need** (arXiv:2509.21553 2025)
+  - *Authors*: Jaber, Ahmed, Zhu, Wangshu, Roy, Ayon et al.
+  - *Architecture*: `Agentic AI Orchestrator with Curated Climate Knowledge Graph and Sandboxed Python Code Synthesis` | *Params*: `Frontier LLM agent orchestrator` | *Physics*: `Domain knowledge graph ontology grounding, automated verification of physical units and CF coordinates`
+  - *Links*: [Paper / DOI](https://arxiv.org/abs/2509.21553) | `[Code not available]`
 
 ### Foundational Surveys & Methodology (基础综述与方法学)
 

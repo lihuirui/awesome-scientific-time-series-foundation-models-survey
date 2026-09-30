@@ -13879,5 +13879,465 @@
     "abstract": "<jats:p>Recent local measurements and numerical simulations constrain the possible mechanisms for glacial dynamics that occur on the time scale of minutes.</jats:p>",
     "status": "candidate",
     "retrieved_at": "2026-09-30T05:00:57.341374Z"
+  },
+  {
+    "source": "arXiv",
+    "arxiv_id": "2307.10422",
+    "doi": null,
+    "title": "PreDiff: Precipitation Nowcasting with Latent Diffusion Models",
+    "authors": [
+      "Zhihan Gao",
+      "Xingjian Shi",
+      "Boran Han",
+      "Hao Wang",
+      "Xiaoyong Jin",
+      "Danielle Maddix",
+      "Yi Zhu",
+      "Mu Li",
+      "Yuyang Wang"
+    ],
+    "year": 2023,
+    "abstract": "Earth system forecasting has traditionally relied on complex physical models that are computationally expensive and require significant domain expertise. In the past decade, the unprecedented increase in spatiotemporal Earth observation data has enabled data-driven forecasting models using deep learning techniques. These models have shown promise for diverse Earth system forecasting tasks but either struggle with handling uncertainty or neglect domain-specific prior knowledge, resulting in averaging possible futures to blurred forecasts or generating physically implausible predictions. To address these limitations, we propose a two-stage pipeline for probabilistic spatiotemporal forecasting: 1) We develop PreDiff, a conditional latent diffusion model capable of probabilistic forecasts. 2) We incorporate an explicit knowledge alignment mechanism to align forecasts with domain-specific physical constraints. This is achieved by estimating the deviation from imposed constraints at each denoising step and adjusting the transition distribution accordingly. We conduct empirical studies on two datasets: N-body MNIST, a synthetic dataset with chaotic behavior, and SEVIR, a real-world precipitation nowcasting dataset. Specifically, we impose the law of conservation of energy in N-body MNIST and anticipated precipitation intensity in SEVIR. Experiments demonstrate the effectiveness of PreDiff in handling uncertainty, incorporating domain-specific prior knowledge, and generating forecasts that exhibit high operational utility.",
+    "status": "candidate",
+    "retrieved_at": "2026-09-30T13:01:40.032828Z"
+  },
+  {
+    "source": "arXiv",
+    "arxiv_id": "2402.04290",
+    "doi": null,
+    "title": "CasCast: Skillful High-resolution Precipitation Nowcasting via Cascaded Modelling",
+    "authors": [
+      "Junchao Gong",
+      "Lei Bai",
+      "Peng Ye",
+      "Wanghan Xu",
+      "Na Liu",
+      "Jianhua Dai",
+      "Xiaokang Yang",
+      "Wanli Ouyang"
+    ],
+    "year": 2024,
+    "abstract": "Precipitation nowcasting based on radar data plays a crucial role in extreme weather prediction and has broad implications for disaster management. Despite progresses have been made based on deep learning, two key challenges of precipitation nowcasting are not well-solved: (i) the modeling of complex precipitation system evolutions with different scales, and (ii) accurate forecasts for extreme precipitation. In this work, we propose CasCast, a cascaded framework composed of a deterministic and a probabilistic part to decouple the predictions for mesoscale precipitation distributions and small-scale patterns. Then, we explore training the cascaded framework at the high resolution and conducting the probabilistic modeling in a low dimensional latent space with a frame-wise-guided diffusion transformer for enhancing the optimization of extreme events while reducing computational costs. Extensive experiments on three benchmark radar precipitation datasets show that CasCast achieves competitive performance. Especially, CasCast significantly surpasses the baseline (up to +91.8%) for regional extreme-precipitation nowcasting.",
+    "status": "candidate",
+    "retrieved_at": "2026-09-30T13:01:40.032972Z"
+  },
+  {
+    "source": "arXiv",
+    "arxiv_id": "2409.16572",
+    "doi": null,
+    "title": "Efficient and generalizable nested Fourier-DeepONet for three-dimensional geological carbon sequestration",
+    "authors": [
+      "Jonathan E. Lee",
+      "Min Zhu",
+      "Ziqiao Xi",
+      "Kun Wang",
+      "Yanhua O. Yuan",
+      "Lu Lu"
+    ],
+    "year": 2024,
+    "abstract": "Geological carbon sequestration (GCS) involves injecting CO$_2$ into subsurface geological formations for permanent storage. Numerical simulations could guide decisions in GCS projects by predicting CO$_2$ migration pathways and the pressure distribution in storage formation. However, these simulations are often computationally expensive due to highly coupled physics and large spatial-temporal simulation domains. Surrogate modeling with data-driven machine learning has become a promising alternative to accelerate physics-based simulations. Among these, the Fourier neural operator (FNO) has been applied to three-dimensional synthetic subsurface models. Here, to further improve performance, we have developed a nested Fourier-DeepONet by combining the expressiveness of the FNO with the modularity of a deep operator network (DeepONet). This new framework is twice as efficient as a nested FNO for training and has at least 80% lower GPU memory requirement due to its flexibility to treat temporal coordinates separately. These performance improvements are achieved without compromising prediction accuracy. In addition, the generalization and extrapolation ability of nested Fourier-DeepONet beyond the training range has been thoroughly evaluated. Nested Fourier-DeepONet outperformed the nested FNO for extrapolation in time with more than 50% reduced error. It also exhibited good extrapolation accuracy beyond the training range in terms of reservoir properties, number of wells, and injection rate.",
+    "status": "candidate",
+    "retrieved_at": "2026-09-30T13:01:40.033023Z"
+  },
+  {
+    "source": "arXiv",
+    "arxiv_id": "2509.21553",
+    "doi": null,
+    "title": "AutoClimDS: Climate Data Science Agentic AI -- A Knowledge Graph is All You Need",
+    "authors": [
+      "Ahmed Jaber",
+      "Wangshu Zhu",
+      "Ayon Roy",
+      "Karthick Jayavelu",
+      "Justin Downes",
+      "Sameer Mohamed",
+      "Candace Agonafir",
+      "Linnia Hawkins",
+      "Tian Zheng"
+    ],
+    "year": 2025,
+    "abstract": "Climate data science remains constrained by fragmented data sources, heterogeneous formats, and steep technical expertise requirements. These barriers slow discovery, limit participation, and undermine reproducibility. We present AutoClimDS, a Minimum Viable Product (MVP) Agentic AI system that addresses these challenges by integrating a curated climate knowledge graph (KG) with a set of Agentic AI workflows designed for cloud-native scientific analysis. The KG unifies datasets, metadata, tools, and workflows into a machine-interpretable structure, while AI agents, powered by generative models, enable natural-language query interpretation, automated data discovery, programmatic data acquisition, and end-to-end climate analysis. A key result is that AutoClimDS can reproduce published scientific figures and analyses from natural-language instructions alone, completing the entire workflow from dataset selection to preprocessing to modeling. When given the same tasks, state-of-the-art general-purpose LLMs (e.g., ChatGPT GPT-5.1) cannot independently identify authoritative datasets or construct valid retrieval workflows using standard web access. This highlights the necessity of structured scientific memory for agentic scientific reasoning. By encoding procedural workflow knowledge into a KG and integrating it with existing technologies (cloud APIs, LLMs, sandboxed execution), AutoClimDS demonstrates that the KG serves as the essential enabling component, the irreplaceable structural foundation, for autonomous climate data science. This approach provides a pathway toward democratizing climate research through human-AI collaboration.",
+    "status": "candidate",
+    "retrieved_at": "2026-09-30T13:01:40.033071Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1038/s41586-023-06184-4",
+    "title": "Skilful nowcasting of extreme precipitation with NowcastNet",
+    "authors": [
+      "Zhang, Yuchen",
+      "Long, Mingsheng",
+      "Chen, Kaiyuan",
+      "Xing, Lanxiang",
+      "Jin, Ronghua",
+      "Jordan, Michael I.",
+      "Wang, Jianmin"
+    ],
+    "year": 2023,
+    "container_title": "Nature",
+    "abstract": "<jats:title>Abstract</jats:title>\n                  <jats:p>\n                    Extreme precipitation is a considerable contributor to meteorological disasters and there is a great need to mitigate its socioeconomic effects through skilful nowcasting that has high resolution, long lead times and local details\n                    <jats:sup>1–3</jats:sup>\n                    . Current methods are subject to blur, dissipation, intensity or location errors, with physics-based numerical methods struggling to capture pivotal chaotic dynamics such as convective initiation\n                    <jats:sup>4</jats:sup>\n                    and data-driven learning methods failing to obey intrinsic physical laws such as advective conservation\n                    <jats:sup>5</jats:sup>\n                    . We present NowcastNet, a nonlinear nowcasting model for extreme precipitation that unifies physical-evolution schemes and conditional-learning methods into a neural-network framework with end-to-end forecast error optimization. On the basis of radar observations from the USA and China, our model produces physically plausible precipitation nowcasts with sharp multiscale patterns over regions of 2,048 km × 2,048 km and with lead times of up to 3 h. In a systematic evaluation by 62 professional meteorologists from across China, our model ranks first in 71% of cases against the leading methods. NowcastNet provides skilful forecasts at light-to-heavy rain rates, particularly for extreme-precipitation events accompanied by advective or convective processes that were previously considered intractable.\n                  </jats:p>",
+    "status": "candidate",
+    "retrieved_at": "2026-09-30T13:01:42.267194Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.5194/egusphere-egu26-3224",
+    "title": "IMPA-Net: Meteorology-Aware Multi-Scale Fusion and Dynamic Loss for Extreme Radar-Based Precipitation Nowcasting",
+    "authors": [
+      "He, Guangxin",
+      "Cui, Haofei"
+    ],
+    "year": 2026,
+    "container_title": "",
+    "abstract": "<jats:p>Minimizing pixel-wise errors in precipitation nowcasting inherently biases models toward smooth predictions, causing failures in resolving extreme convective events. To address this, we propose IMPA-Net, a meteorology-aware framework centered on spectral consistency. The architecture integrates three innovations: a parameter-free Spatial Mixer to encode multi-variate physical interactions (e.g., terrain-wind coupling); an Integrated Multi-scale Predictive Attention (IMPA) module to capture dynamics from Meso-β to Meso-γ scales; and a Meteorology-Aware Dynamic Loss (MAD-Loss) that employs asymmetric penalties to counteract regression-to-the-mean. Experiments demonstrate a 37.3% relative improvement in HSS for severe convection (≥45 dBZ). Crucially, RAPSD analysis confirms that IMPA-Net maintains spectral energy consistency across high-frequency bands, enabling it to successfully simulate the complex \"dissipation-initiation\" lifecycle that existing baselines fail to capture. These findings validate that integrating domain knowledge advances the physical plausibility of data-driven forecasting.</jats:p>",
+    "status": "candidate",
+    "retrieved_at": "2026-09-30T13:01:42.267238Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.5194/egusphere-egu24-15431",
+    "title": "Nowcasting of extreme precipitation events: performance assessment of Generative Deep Learning methods",
+    "authors": [
+      "Franch, Gabriele",
+      "Tomasi, Elena",
+      "Wanjari, Rishabh Umesh",
+      "Cristoforetti, Marco"
+    ],
+    "year": 2025,
+    "container_title": "",
+    "abstract": "<jats:p>Radar-based precipitation nowcasting is one of the most prominent applications of deep learning (DL) in weather forecasting. The accurate forecast of extreme precipitation events remains a significant challenge for deep learning models, primarily due to their complex dynamics and the scarcity of data on such events. In this work we present the application of the latest state-of-the-art generative architectures for radar-based nowcasting, focusing on extreme event forecasting performance. We analyze a declination for the nowcasting task of all the three main current architectural approaches for generative modeling, namely: Generative Adversarial Networks (DGMRs), Latent Diffusion (LDCast), and our novel proposed Transformer architecture (GPTCast). These models are trained on a comprehensive 1-km scale, 5-minute timestep radar precipitation dataset that integrates multiple radar data sources from the US, Germany, the UK, and France. To ensure a robust evaluation and to test the generalization ability of the models, we concentrate on a collection of out-of-domain extreme precipitation events over the Italian peninsula extracted from the last 5 years. This focus allows us to assess the improvements these techniques offer compared to extrapolation methods, evaluating continuous (MSE, MAE) and categorical scores (CSI, POD, FAR), ensemble reliability, uncertainty quantification, and warning lead time. Finally, we analyze the computational requirements of these new techniques and highlight the caveats that must be considered when operational usage of these methods is envisaged.&amp;#160;</jats:p>",
+    "status": "candidate",
+    "retrieved_at": "2026-09-30T13:01:42.267260Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1109/hpec.2019.8916416",
+    "title": "Distributed Deep Learning for Precipitation Nowcasting",
+    "authors": [
+      "Samsi, Siddharth",
+      "Mattioli, Christopher J.",
+      "Veillette, Mark S."
+    ],
+    "year": 2019,
+    "container_title": "2019 IEEE High Performance Extreme Computing Conference (HPEC)",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-30T13:01:42.267270Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.5194/wes-2020-4-rc2",
+    "title": "Nowcasting of precipitation",
+    "authors": [],
+    "year": 2020,
+    "container_title": "",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-30T13:01:42.267276Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1109/ciacon70148.2026.11689357",
+    "title": "HorizonUNet: A Structure-Aware Spatiotemporal Mamba Architecture for Extreme Precipitation Nowcasting",
+    "authors": [
+      "R, Siva Senthil Manikkam",
+      "Srinivasan, Kathiravan"
+    ],
+    "year": 2026,
+    "container_title": "2026 International Conference on Computing, Intelligence, and Applications (CIACON)",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-30T13:01:42.267286Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1016/j.knosys.2024.112612",
+    "title": "GA-SmaAt-GNet: Generative adversarial small attention GNet for extreme precipitation nowcasting",
+    "authors": [
+      "Reulen, Eloy",
+      "Shi, Jie",
+      "Mehrkanoon, Siamak"
+    ],
+    "year": 2024,
+    "container_title": "Knowledge-Based Systems",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-30T13:01:42.267301Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.14711/thesis-991013401045003412",
+    "title": "EnsDiff : ensemble precipitation nowcasting with diffusion",
+    "authors": [
+      "Wong, Chi Ho"
+    ],
+    "year": null,
+    "container_title": "",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-30T13:01:42.267310Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.3390/atmos11030267",
+    "title": "Precipitation Nowcasting with Orographic Enhanced Stacked Generalization: Improving Deep Learning Predictions on Extreme Events",
+    "authors": [
+      "Franch, Gabriele",
+      "Nerini, Daniele",
+      "Pendesini, Marta",
+      "Coviello, Luca",
+      "Jurman, Giuseppe",
+      "Furlanello, Cesare"
+    ],
+    "year": 2020,
+    "container_title": "Atmosphere",
+    "abstract": "<jats:p>One of the most crucial applications of radar-based precipitation nowcasting systems is the short-term forecast of extreme rainfall events such as flash floods and severe thunderstorms. While deep learning nowcasting models have recently shown to provide better overall skill than traditional echo extrapolation models, they suffer from conditional bias, sometimes reporting lower skill on extreme rain rates compared to Lagrangian persistence, due to excessive prediction smoothing. This work presents a novel method to improve deep learning prediction skills in particular for extreme rainfall regimes. The solution is based on model stacking, where a convolutional neural network is trained to combine an ensemble of deep learning models with orographic features, doubling the prediction skills with respect to the ensemble members and their average on extreme rain rates, and outperforming them on all rain regimes. The proposed architecture was applied on the recently released TAASRAD19 radar dataset: the initial ensemble was built by training four models with the same TrajGRU architecture over different rainfall thresholds on the first six years of the dataset, while the following three years of data were used for the stacked model. The stacked model can reach the same skill of Lagrangian persistence on extreme rain rates while retaining superior performance on lower rain regimes.</jats:p>",
+    "status": "candidate",
+    "retrieved_at": "2026-09-30T13:01:42.267321Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1109/tgrs.2025.3564916",
+    "title": "Extreme Precipitation Nowcasting Using Multitask Latent Diffusion Models",
+    "authors": [
+      "Li, Chaorong",
+      "Ling, Xudong",
+      "Yang, Qiang",
+      "Chen, Mingxiang",
+      "Qin, Fengqing",
+      "Huang, Yuanyuan"
+    ],
+    "year": 2025,
+    "container_title": "IEEE Transactions on Geoscience and Remote Sensing",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-30T13:01:44.539522Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.5194/ems2024-192",
+    "title": "Integrated nowcasting of convective precipitation with Transformer-based models&amp;#160;",
+    "authors": [
+      "Küçük, Çağlar",
+      "Atencia, Aitor",
+      "Dabernig, Markus"
+    ],
+    "year": 2024,
+    "container_title": "",
+    "abstract": "<jats:p>Precipitation nowcasting remains a challenging topic in weather prediction, particularly in the initial stages of convective activity. Ground-based weather radar observations have generally been used to estimate the motion vectors of precipitation fields, and have a pivotal role in precipitation nowcasting. However, during convection initiation, such data hold limited information, which hampers prediction performance. Nevertheless, different data streams, such as lightning activity and geostationary satellite infrared channels, have demonstrated skill in the early detection of convective activity. Therefore,&amp;#160;there is a need to integrate data from various domains to improve nowcasting of convective precipitation, and data-driven approaches offer robust solutions for integrating large volumes of data and extracting the information therein.&amp;#160;\n\nHere, we present a Transformer-based precipitation nowcasting model that integrates data from various sources. To train the model, we created a dataset by harmonising space- and ground-based observations with precipitation reanalysis and convective information data from the Integrated Nowcasting through Comprehensive Analysis (INCA) model over the spatial domain of INCA. Space-based observations include four infrared channels of the Meteosat Second Generation, while ground-based observations comprise lightning and weather radar data with 5-minute temporal resolution and a spatial resolution varying from 1 to 8 kilometres depending on the data source.&amp;#160;The data is sampled over 5 years of observations from convective seasons&amp;#160;to target convective precipitation events, which are particularly challenging for prediction. Trained on this dataset, our model can nowcast precipitation over the INCA domain for a lead time of 90 minutes. While the model reproduces the shape and location of the fields, the performance in reproducing the structure of the precipitation fields is limited at longer lead times, resulting in blurred predictions.\nWe will present the model, analyse its performance, present case studies, compare it against the operational INCA predictions, and provide insights through model interpretation experiments. We will also elaborate on the details of developing the dataset, a critical but often underrated step for enhancing model performance. The model offers a novel approach to integrated nowcasting of convective precipitation and motivates further studies with a data-driven perspective.&amp;#160;</jats:p>",
+    "status": "candidate",
+    "retrieved_at": "2026-09-30T13:01:44.539561Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.5194/egusphere-egu25-5319",
+    "title": "Precipitation nowcasting diffusion model based on turbulence theory and multi-source data",
+    "authors": [
+      "Li, Dawei",
+      "Deng, Kefeng",
+      "Zhang, Di",
+      "Leng, Hongze",
+      "Ren, Kaijun",
+      "Song, Junqiang"
+    ],
+    "year": 2025,
+    "container_title": "",
+    "abstract": "<jats:p>Precipitation nowcasting is a long-standing challenge due to the inherent unpredictability, which often lead to significant risks and damage. While traditional approaches focus on modeling the nonlinear relationship between initial precipitation states and future states, these methods often fail to capture accurate precipitation dynamics, such as its distribution and intensity. The absence of guidance from physical theory limits data-driven methods in disclosing the chaotic nature of precipitation. To address this, we integrate Prandtl&amp;#8217;s mixing length theory from fluid dynamics with diffusion models commonly used in computer vision to enhance the prediction of precipitation distributions and details over the next 200 minutes. This integration accounts for the turbulent properties of precipitation, improving both accuracy and granularity in forecasts. Additionally, we leverage multi-source data, particularly lightning observations, to train a control network for our diffusion model. This enhancement allows for more accurate and controllable predictions of precipitation initiation, decay, and overall spatial-temporal patterns. Our approach advances the state of the art in precipitation nowcasting, offering a robust framework that bridges physical theory with modern deep learning techniques.</jats:p>",
+    "status": "candidate",
+    "retrieved_at": "2026-09-30T13:01:44.539571Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.2139/ssrn.4408632",
+    "title": "Fourier-Mionet: Fourier-Enhanced Multiple-Input Neural Operators for Multiphase Modeling of Geological Carbon Sequestration",
+    "authors": [
+      "Jiang, Zhongyi",
+      "Zhu, Min",
+      "Li, Dongzhuo",
+      "Li, Qiuzi",
+      "Yuan, Yanhua  O.",
+      "Lu, Lu"
+    ],
+    "year": 2023,
+    "container_title": "",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-30T13:01:46.706197Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1190/image2022-3722848.1",
+    "title": "Learned coupled inversion for carbon sequestration monitoring and forecasting with Fourier neural operators",
+    "authors": [
+      "Yin, Ziyi",
+      "Siahkoohi, Ali",
+      "Louboutin, Mathias",
+      "Herrmann, Felix J."
+    ],
+    "year": 2022,
+    "container_title": "International Meeting for Applied Geoscience &amp; Energy",
+    "abstract": "<jats:p>Seismic monitoring of carbon storage sequestration is a challenging problem involving both fluid-flow physics and wave physics. Additionally, monitoring usually requires the solvers for these physics to be coupled and differentiable to effectively invert for the subsurface properties of interest. To drastically reduce the computational cost, we introduce a learned coupled inversion framework based on the wave modeling operator, rock property conversion and a proxy fluid-flow simulator. We show that we can accurately use a Fourier neural operator as a proxy for the fluid-flow simulator for a fraction of the computational cost. We demonstrate the efficacy of our proposed method by means of a synthetic experiment. Finally, our framework is extended to carbon sequestration forecasting, where we effectively use the surrogate Fourier neural operator to forecast the CO2 plume in the future at near-zero additional cost.</jats:p>",
+    "status": "candidate",
+    "retrieved_at": "2026-09-30T13:01:46.706226Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.2139/ssrn.4933573",
+    "title": "Transfer Learning with Fourier Neural Operator for Geological Carbon Storage Forecasting in Diverse Geological and Engineering Scenarios",
+    "authors": [
+      "Falola, Yusuf",
+      "Misra, Siddharth",
+      "Nunez, Andres"
+    ],
+    "year": 2024,
+    "container_title": "",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-30T13:01:46.706234Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.70251/hyjr2348.36432448",
+    "title": "Multiple Input Neural Network with  Fourier Series to Classify Variable Stars",
+    "authors": [
+      "Kochhar, Jayveer"
+    ],
+    "year": 2025,
+    "container_title": "American Journal of Student Research",
+    "abstract": "<jats:p>Measurement of astronomical distances, understanding of stellar evolution, and improvement of \nour knowledge of galactic structure depend on accurate classification of variable stars. Conventional \nclassification techniques find it difficult to handle the rising volume of data produced by massive sky \nsurveys such as Large Synoptic Survey Telescope (LSST), All Sky Automated Survey for Supernovae \n(ASAS-SN), and Optical Gravitational Lensing Experiment (OGLE). This work offers a hybrid deep \nlearning method using Multiple-Input Neural Networks (MINN) to improve classification accuracy by \nmeans of image-based light curve analysis combined with astrophysical parameters derived via Fourier \ndecomposition and skewness analysis. Problems including class imbalance, phase misalignment, and \nsubtype distinction are addressed in the suggested approach. Minima Phase Standardization aligns \nphase-folded light curves for uniformity; the Fourier Best Fit model extracts important coefficients \nreflecting light curve shape. A Variable Star Light Curve Simulator creates synthetic data for \nunderrepresented classes, especially ACeps and Type II Cepheids, to reduce dataset imbalance, \ntherefore guaranteeing a more balanced training dataset. In ten epochs, the hybrid model attained \nan overall classification accuracy of 89.8%; considerable gains for rare classes were obtained. For \ncommon classes, the convolutional neural network (CNN) alone achieved 98.1% accuracy. This work \nemphasizes, especially for rare and underrepresented variable star types, the need of integrating deep \nlearning with astrophysical insights to increase classification accuracy. By laying the groundwork for \nautomated, large-scale classification of variable stars, the proposed framework accelerates the study \nof huge astronomical datasets and improves our knowledge of the structure and development of the \nuniverse.</jats:p>",
+    "status": "candidate",
+    "retrieved_at": "2026-09-30T13:01:46.706241Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1145/3786335.3813169",
+    "title": "LiveGraph: A Compound AI System for Evolving Knowledge Graph Construction from Streaming Data",
+    "authors": [
+      "Agrawal, Rakshit",
+      "Kanani, Pritesh",
+      "Sudan, Madhu",
+      "Gujarathi, Ashish",
+      "Srivastava, Dhruv",
+      "Reut, Mikita",
+      "Shrivastava, Naveen"
+    ],
+    "year": 2026,
+    "container_title": "Proceedings of the ACM Conference on AI and Agentic Systems",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-30T13:01:49.107755Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1109/cloudcom67567.2025.11331500",
+    "title": "Agentic AI for Knowledge Graph Construction and Evolution in Cloud-Edge Federated Environments",
+    "authors": [
+      "Rohitha Kaza, Phani",
+      "Chowdary Manduva, Vinay"
+    ],
+    "year": 2025,
+    "container_title": "2025 lEEE International Conference on Cloud Computing Technology and Science (CloudCom)",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-30T13:01:49.107779Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.2196/preprints.100769",
+    "title": "Graph-Constrained Skill Loading for Domain-Adapted Agentic AI in Clinical Trial Data Pipelines: A Controlled Evaluation (Preprint)",
+    "authors": [
+      "Yan, Jaime"
+    ],
+    "year": 2026,
+    "container_title": "",
+    "abstract": "<sec>\n                  <title>BACKGROUND</title>\n                  <p>Clinical trial data pipelines require strict adherence to Clinical Data Interchange Standards Consortium (CDISC) regulatory standards, including the Study Data Tabulation Model (SDTM) and the Analysis Data Model (ADaM). General-purpose large language models (LLMs) frequently violate these requirements through terminology hallucinations, noncompliant variable mappings, and fabricated derivation logic. Standard domain adaptation techniques, including retrieval-augmented generation (RAG) and fine-tuning, do not encode the structured workflow dependencies inherent in layered regulatory pipelines. No prior work has systematically evaluated AI-assisted regulatory statistical programming with domain-specific knowledge injection constrained by workflow topology.</p>\n                </sec>\n                <sec>\n                  <title>OBJECTIVE</title>\n                  <p>This study aimed to evaluate whether graph-constrained skill loading—a mechanism that injects domain-specific regulatory knowledge into an agentic AI system based on workflow position within a directed acyclic graph (DAG)—can improve the regulatory compliance quality of AI-generated clinical data artifacts compared with an unconstrained baseline.</p>\n                </sec>\n                <sec>\n                  <title>METHODS</title>\n                  <p>The clinical trial evidence pipeline was modeled as a 45-node DAG spanning 7 procedural layers. An Adaptive Priority Scheduler selectively loads domain-specific skills (59 SKILL.md rule files containing CDISC dictionaries, derivation logic, and validation protocols) based on graph proximity within a fixed token budget. We conducted a controlled evaluation comparing 3 conditions—unbounded baseline, graph-constrained framework, and framework with distilled principles—across 10 regulatory tasks (n=30 runs per condition, N=90 total). Performance was assessed using automated code-density metrics and a blinded LLM-as-a-judge evaluation protocol with 2 independent panels.</p>\n                </sec>\n                <sec>\n                  <title>RESULTS</title>\n                  <p>Graph-constrained skill loading significantly improved overall output quality (+0.47 on a 5-point scale; 95% confidence interval [CI] 0.12–0.80; P=.004), regulatory structure compliance (+0.63; P&lt;.001), and terminology precision (+0.50; P=.01). The LLM-based compliance evaluation corroborated these findings, with a compliance margin of +0.64 (framework: 4.34 vs baseline: 3.70) and substantial interpanel agreement (Cohen κ=0.76; Pearson r=0.95). The constraint mechanism incurred a modest 12% increase in token cost. An exploratory condition adding distilled global principles showed slight performance degradation (−0.13), suggesting attention saturation from redundant constraints.</p>\n                </sec>\n                <sec>\n                  <title>CONCLUSIONS</title>\n                  <p>Graph-constrained skill loading produces statistically significant improvements in regulatory compliance quality for clinical trial data generation, with favorable cost-efficiency ratios compared with general-purpose agentic approaches. The consistent improvements across multiple assessment tiers and the identification of boundary limitations (eg, metadata synthesis tasks) provide a foundation for future validation with real-world clinical trial data and practicing domain experts. All code and evaluation materials are publicly available.</p>\n                </sec>",
+    "status": "candidate",
+    "retrieved_at": "2026-09-30T13:01:49.107788Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.70593/978-93-7185-416-0_4",
+    "title": "Generative AI in Insurance: Synthetic Data, Scenario Simulation, and Knowledge Generation",
+    "authors": [
+      "Amistapuram, Keerthi"
+    ],
+    "year": 2026,
+    "container_title": "From Data Pipelines to Decision Autonomy: Deep Learning and Agentic AI Architectures for Intelligent Insurance Platforms",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-30T13:01:49.107795Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1007/978-3-032-29372-5_22",
+    "title": "Deep Semantic Linking of Scientific Knowledge: An Agentic AI Framework for Knowledge Graph Construction",
+    "authors": [
+      "Schaftner, Sandra",
+      "Gaedke, Martin"
+    ],
+    "year": 2026,
+    "container_title": "Lecture Notes in Computer Science",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-30T13:01:49.107803Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1109/ica67499.2025.00041",
+    "title": "TSSE: A Two-step Semantic Extraction Framework for Knowledge Graph Construction",
+    "authors": [
+      "Tan, Jun",
+      "Li, Hao",
+      "Du, Xu",
+      "Ma, Bing",
+      "Zhang, Wenhao",
+      "Pu, Xu"
+    ],
+    "year": 2025,
+    "container_title": "2025 IEEE International Conference on Agentic AI (ICA)",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-30T13:01:49.107810Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1007/979-8-8688-2199-8_1",
+    "title": "Introduction to Data Engineering with Generative and Agentic AI on AWS",
+    "authors": [
+      "Leto, Justin J."
+    ],
+    "year": 2026,
+    "container_title": "Data Engineering with Generative and Agentic AI on AWS",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-30T13:01:49.107816Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.1016/b978-0-443-29654-3.00009-0",
+    "title": "Chronological reasoning in knowledge graphs using AI and ML: A novel framework",
+    "authors": [
+      "Ghosh, Debosree"
+    ],
+    "year": 2025,
+    "container_title": "Applied Graph Data Science",
+    "abstract": "",
+    "status": "candidate",
+    "retrieved_at": "2026-09-30T13:01:49.107821Z"
+  },
+  {
+    "source": "Crossref",
+    "doi": "10.20944/preprints202603.1818.v1",
+    "title": "An Agentic Reinforcement Learning Model for Polymorphic Adversarial AI Threats Using Graph Neural Defense",
+    "authors": [
+      "Fondo, Edward",
+      "Tole, Kevin",
+      "Mwakondo, Fullgence"
+    ],
+    "year": 2026,
+    "container_title": "",
+    "abstract": "<jats:p>Polymorphic adversarial agents that dynamically mutate their behavior present significant challenges to conventional intrusion detection systems, which often rely on static feature representations or fixed signature based models. Existing deep learning approaches, including CNNs, transformers, and graph neural networks (GNNs), demonstrate strong detection capabilities but exhibit limitations in handling continuously evolv ing attack patterns. In this paper, we propose an integrated entropy-driven agentic cyber defense model that combines graph neural network-based anomaly detection, generative adversarial network (GAN) poly morphic attack simulation, reinforcement learning-based mitigation, and game-theoretic attacker–defender modeling. It models the stochastic mutation of adversarial agents using entropy gradients, captures relational network structures through GNNs, simulates realistic polymorphic attacks using GANs, and dynamically adapts mitigation strategies via reinforcement learning. Experimental evaluation on the CICIoT2023 dataset demonstrates that the proposed model achieves superior performance over existing state-of-the-art methods, with an accuracy of 98.3%, F1-score of 0.98, and significant improvements in robustness against polymor phic attacks compared to CNN-based (93.2% accuracy, 0.92 F1), transformer-based (95.4%, 0.94 F1), and conventional GNN-based (96.1%, 0.95 F1) intrusion detection systems. Additional ablation studies confirm the contribution of entropy modeling, GNN embeddings, and RL-based mitigation to overall system effec tiveness. Future work will explore federated and distributed cyber defense architectures, integration with edge computing for IoT environments, and adaptive policy learning under large-scale network conditions, enabling real-time resilience against highly sophisticated adaptive cyber threats.</jats:p>",
+    "status": "candidate",
+    "retrieved_at": "2026-09-30T13:01:49.107828Z"
   }
 ]

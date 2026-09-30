@@ -239,6 +239,11 @@ def run_search():
         ("Crossref", "Sea Surface Wind Speed Estimation From the Combination of Satellite Scatterometer and Radiometer Parameters Xiang"),
         ("Crossref", "A hybrid deep neural operator finite element method for ice-sheet modeling He Perego Karniadakis"),
         ("Crossref", "Calving Front Machine CALFIN glacial termini dataset deep learning Greenland Cheng"),
+        # Iteration 16 Additions: Convective Diffusion Nowcasting, Subsurface Carbon Sequestration, Agentic Climate Science
+        ("Crossref", "Skilful nowcasting of extreme precipitation with NowcastNet Zhang"),
+        ("Crossref", "PreDiff Precipitation Nowcasting with Latent Diffusion Models Gao"),
+        ("Crossref", "Fourier-MIONet Fourier-enhanced multiple-input neural operators geological carbon sequestration Jiang"),
+        ("Crossref", "AutoClimDS Climate Data Science Agentic AI Knowledge Graph Jaber"),
     ]
 
     verified_arxiv_ids = [
@@ -336,6 +341,11 @@ def run_search():
         "2408.01829",  # Atmospheric Chemical ODE Emulator (Liu et al.)
         "2607.27152",  # WindCastNet Scatterometer Forecasting (Pinto et al.)
         "2301.11402",  # Hybrid DeepONet / FEM Ice-Sheet (He et al.)
+        # Iteration 16 arXiv Additions
+        "2307.10422",  # PreDiff Latent Diffusion Nowcasting (Gao et al.)
+        "2402.04290",  # CasCast Cascaded Diffusion Nowcasting (Gong et al.)
+        "2409.16572",  # Nested Fourier-DeepONet 3D Carbon Sequestration (Lee et al.)
+        "2509.21553",  # AutoClimDS Climate Data Science Multi-Agent (Jaber et al.)
     ]
 
     candidates = {}
@@ -359,8 +369,8 @@ def run_search():
                     "doi": None,
                     "title": rec["title"],
                     "authors": rec["authors"],
-                    "year": rec["year"],
-                    "abstract": rec.get("abstract", ""),
+                    "year": rec.get("year", int(rec["published"][:4]) if "published" in rec else None),
+                    "abstract": rec.get("abstract", rec.get("summary", "")),
                     "status": "candidate",
                     "retrieved_at": datetime.utcnow().isoformat() + "Z",
                 }
@@ -444,6 +454,9 @@ def run_search():
         "10.1029/2024jh000165",        # Scatterometer & radiometer wind speed (Xiang et al., JGR ML & Comp)
         "10.1016/j.jcp.2023.112428",   # Hybrid neural operator ice sheet (He et al., JCP)
         "10.5194/tc-15-1663-2021",     # CALFIN Greenland calving front (Cheng et al., The Cryosphere)
+        # Iteration 16 Additions
+        "10.1038/s41586-023-06184-4",  # NowcastNet Nature (Zhang et al.)
+        "10.1016/j.ress.2024.110392",  # Fourier-MIONet RESS (Jiang et al.)
     ]
     prev_doi = len(candidates)
     for doi in verified_dois:

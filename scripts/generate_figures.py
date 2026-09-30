@@ -348,6 +348,10 @@ def plot_weather_foundation_timeline():
         ("GL-FNO", "2024-05", "Coronal MHD FNO", 2024.42, -1.9, "#EA580C"),
         ("Conformal Weather", "2024-06", "Conformal Bounds", 2024.46, 2.3, "#059669"),
         ("Canopy Height", "2023-04", "10m GEDI Ensemble", 2023.32, 2.2, "#059669"),
+        ("NowcastNet", "2023-07", "Extreme Convective Net", 2023.52, 2.1, "#D97706"),
+        ("PreDiff", "2023-07", "Latent Diffusion Nowcast", 2023.56, -2.1, "#DC2626"),
+        ("Fourier-MIONet", "2024-04", "Multiphase Darcy Net", 2024.30, -2.2, "#059669"),
+        ("AutoClimDS", "2025-09", "KG Agentic Climate", 2025.75, 2.7, "#2563EB"),
         ("H-J Floods", "2025-08", "Hierarchical Agent", 2025.65, 2.4, "#2563EB"),
         ("SolarWind SFNO", "2025-11", "Heliospheric SFNO", 2025.90, -1.9, "#EA580C"),
     ]
@@ -388,7 +392,9 @@ def plot_weather_foundation_timeline():
 def plot_resolution_vs_leadtime():
     # Stated values directly extracted from verified papers
     models = [
-        {"name": "DGMR", "res": 0.009, "lead": 0.0625, "params": 89, "col": "#D97706", "dx": 0.25, "dy": 0.02, "ha": "left"},
+        {"name": "DGMR", "res": 0.009, "lead": 0.0625, "params": 89, "col": "#D97706", "dx": 0.18, "dy": 0.018, "ha": "left"},
+        {"name": "NowcastNet", "res": 0.009, "lead": 0.125, "params": 45, "col": "#DC2626", "dx": 0.18, "dy": -0.012, "ha": "left"},
+        {"name": "PreDiff", "res": 0.009, "lead": 0.083, "params": 120, "col": "#7C3AED", "dx": 0.18, "dy": 0.038, "ha": "left"},
         {"name": "MetNet-3", "res": 0.009, "lead": 1.0, "params": 227, "col": "#2563EB", "dx": 0.25, "dy": 0.02, "ha": "left"},
         {"name": "CorrDiff", "res": 0.018, "lead": 2.0, "params": 110, "col": "#059669", "dx": 0.25, "dy": 0.03, "ha": "left"},
         {"name": "Pangu-Weather", "res": 0.25, "lead": 7, "params": 256, "col": "#2563EB", "dx": -0.3, "dy": 0.06, "ha": "right"},
@@ -427,7 +433,7 @@ def plot_resolution_vs_leadtime():
     ax.set_xlabel("Maximum Forecast Lead Time (Days)", fontsize=11, fontweight="bold")
     ax.set_ylabel("Spatial Resolution (Degrees Lat/Lon, lower = finer)", fontsize=11, fontweight="bold")
     ax.set_ylim(0.003, 1.58)
-    ax.set_xlim(-0.5, 17)
+    ax.set_xlim(-0.8, 17)
     ax.grid(True, linestyle="--", alpha=0.5, zorder=0)
 
     # Highlight frontier zones

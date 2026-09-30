@@ -673,4 +673,56 @@ To enforce kinetic consistency without requiring expensive numerical Jacobian in
 \end{equation}
 Evaluated across atmospheric oxidation mechanisms governing sulfuric acid ($\text{H}_2\text{SO}_4$) aerosol nucleation and monoterpene secondary organic aerosol (SOA) formation, DR-RNN tracks steep non-linear photochemical spikes with relative errors below \textbf{1.2\%}, while executing \textbf{over $50\times$ faster} than standard CVODE/VODE numerical solvers. By bypassing stiff matrix factorizations, physics-guided chemical neural operators provide a scalable foundation for integrating complex gas-aerosol chemistry directly into planetary foundation models.
 
+\subsection{Physics-Informed Latent and Cascaded Diffusion for Extreme Convective Precipitation Nowcasting}
+\label{sec:physics_latent_diffusion_precipitation}
+While synoptic planetary weather forecasting focuses on large-scale geostrophic and hydrostatic balances at lead times of days to weeks, extreme convective precipitation nowcasting ($0\text{--}3\text{ hours}$) is governed by rapid, non-hydrostatic cloud microphysics and violent vertical ascent. Convective storms are triggered in atmospheres characterized by high Convective Available Potential Energy ($\text{CAPE} > 2{,}000\text{ J/kg}$) and localized erosion of Convective Inhibition ($\text{CIN} \to 0\text{ J/kg}$). Under these conditions, radar reflectivity factors $\mathbf{R}(\mathbf{x}, t)$ exceed $45\text{--}55\text{ dBZ}$ within minutes, generating localized precipitation rates surpassing $50\text{--}100\text{ mm/h}$ that trigger flash floods and severe urban hazards.
+
+Classical numerical weather prediction (NWP) models (e.g., HRRR or CMA-MESO) suffer from spin-up latency and cannot ingest high-frequency radar mosaics in real time. Conversely, standard deterministic deep learning architectures (e.g., ConvLSTM or PredRNN) optimize Mean Squared Error (MSE), which averages multi-modal future possibilities and yields progressively blurred precipitation fields that wash out localized convective cores. Unconstrained generative diffusion models (e.g., standard DDPM) alleviate blurriness but frequently hallucinate synthetic storm cells out of thin air that violate conservation of atmospheric water mass.
+
+\subsubsection{Governing Advection-Diffusion Equations with Source-Sink Terms}
+To provide a physically grounded framework for radar nowcasting, the spatial-temporal evolution of precipitation reflectivity $\mathbf{R}(\mathbf{x}, t) \in \mathbb{R}^{H \times W}$ is governed by the two-dimensional continuity equation coupled to a turbulent advection-diffusion operator:
+\begin{equation}
+    \frac{\partial \mathbf{R}}{\partial t} + \nabla \cdot \left(\mathbf{v}(\mathbf{x}, t) \mathbf{R}\right) - \nabla \cdot \left( D \nabla \mathbf{R} \right) = \mathcal{S}_{\text{conv}}(\mathbf{x}, t),
+    \label{eq:convective_advection_diffusion}
+\end{equation}
+where $\mathbf{v}(\mathbf{x}, t) = (u, v)^T$ represents the horizontal advection velocity field (optical flow / mid-tropospheric steering wind), $D \ge 0$ is the turbulent subgrid diffusion coefficient, and $\mathcal{S}_{\text{conv}}(\mathbf{x}, t)$ denotes the net convective source-sink term accounting for explosive cell initiation, convective updraft intensification, droplet coalescence, and storm cell dissipation. Integrating Eq.~(\ref{eq:convective_advection_diffusion}) across a localized domain $\Omega$ with closed flux boundaries yields the integral conservation of precipitation mass:
+\begin{equation}
+    \frac{d}{dt} \int_\Omega \mathbf{R}(\mathbf{x}, t) \, d\mathbf{x} = \int_\Omega \mathcal{S}_{\text{conv}}(\mathbf{x}, t) \, d\mathbf{x}.
+    \label{eq:radar_mass_balance}
+\end{equation}
+
+\subsubsection{Physical-Generative Coupling in Planetary Radar Nowcasting: NowcastNet}
+To bridge the gap between physical conservation and generative sharpness, Yuchen Zhang et al.~\cite{zhang2023nowcastnet} pioneered \textbf{NowcastNet}, an end-to-end physical-generative framework for multi-hour extreme precipitation nowcasting. NowcastNet decomposes the precipitation forecasting operator $\mathcal{F}: \mathbf{R}_{t-T:t} \to \mathbf{R}_{t+1:t+\tau}$ into two tightly coupled components:
+\begin{enumerate}
+    \item \textbf{Physics-Driven Evolution Operator}: A neural partial differential equation solver that explicitly computes the continuous advection-diffusion motion field $\mathbf{v}(\mathbf{x}, t)$ and advects radar reflectivity forward in time via finite-volume conservation numerics, ensuring deterministic spatial consistency and mass continuity;
+    \item \textbf{Generative Neural Operator}: A non-linear stochastic decoder conditioned on the physical evolution output, modeling the complex distribution of convective source-sink terms $\mathcal{S}_{\text{conv}}(\mathbf{x}, t)$ that govern localized convective storm initiation and sudden cell decay.
+\end{enumerate}
+Trained on extensive national radar reflectivity mosaic archives covering mainland China ($2{,}048 \times 2{,}048\text{ km}^2$ grids at $1\text{ km}$ horizontal resolution and $10\text{-minute}$ cadence) and the US NEXRAD Multi-Radar Multi-Sensor (MRMS) network, NowcastNet was subjected to a rigorous double-blind operational evaluation by \textbf{62 professional meteorologists} from operational meteorological centers across China. NowcastNet outperformed high-resolution numerical weather prediction (CMA-MESO) and prior state-of-the-art deep learning baselines (DGMR~\cite{ravuri2021dgmr}, PySTEPS) in \textbf{over 71\% of severe storm cases}, elevating the Critical Success Index for heavy convective rain ($>10\text{ mm/h}$, CSI-35) from $0.21$ to \textbf{0.465} at $1\text{-hour}$ lead time and demonstrating unprecedented skill in tracking severe mesoscale convective systems (MCSs).
+
+\subsubsection{Knowledge-Guided Latent Diffusion and Test-Time Steering: PreDiff}
+Operating directly in pixel space on multi-radar grids incurs prohibitive computational costs and slows sampling during urgent flash flood warnings. Addressing this limitation, Zhihan Gao et al.~\cite{gao2023prediff} established \textbf{PreDiff} (\textit{Precipitation Diffusion}), formulating precipitation nowcasting within a continuous Latent Diffusion Model (LDM) framework. PreDiff employs a spatio-temporal autoencoder that compresses high-resolution radar sequences $\mathbf{R} \in \mathbb{R}^{T \times H \times W}$ into compact latent representations $\mathbf{z} = \mathcal{E}(\mathbf{R}) \in \mathbb{R}^{T \times C \times h \times w}$ with an $8\times$ spatial compression ratio.
+
+To prevent unconstrained diffusion hallucination without retraining the latent backbone, PreDiff introduces \textbf{Knowledge-Guided Conditioning (KGC)} via test-time gradient steering. During reverse diffusion sampling $\mathbf{z}_T \to \mathbf{z}_0$, the denoising transition is augmented with the gradient of an explicit domain-specific physics loss $\mathcal{L}_{\text{phys}}$ evaluated on the decoded reflectivity field $\hat{\mathbf{R}} = \mathcal{D}(\mathbf{z})$:
+\begin{equation}
+    \mathbf{z}_{s-1} \sim \mathcal{N}\left( \boldsymbol{\mu}_\theta(\mathbf{z}_s, s) - \lambda_{\text{phys}} \sigma_s^2 \nabla_{\mathbf{z}_s} \mathcal{L}_{\text{phys}}(\mathcal{D}(\mathbf{z}_s)), \, \sigma_s^2 \mathbf{I} \right),
+    \label{eq:prediff_steering}
+\end{equation}
+where $\mathcal{L}_{\text{phys}}$ combines two physical constraints:
+\begin{equation}
+    \mathcal{L}_{\text{phys}}(\hat{\mathbf{R}}) = \left\| \int_\Omega \hat{\mathbf{R}}(\mathbf{x}) d\mathbf{x} - M_{\text{prior}} \right\|_1 + \gamma \left\| \frac{\partial \hat{\mathbf{R}}}{\partial t} + \nabla \cdot (\mathbf{v}_{\text{opt}} \hat{\mathbf{R}}) \right\|_2^2.
+    \label{eq:prediff_phys_loss}
+\end{equation}
+By steering diffusion trajectories toward states that conserve domain-wide precipitation volume and satisfy advection consistency, PreDiff improves the Critical Success Index at high precipitation thresholds ($>20\text{ mm/h}$) by \textbf{18.4\%} over unconditioned diffusion models, while eliminating spatial blurriness and producing physically plausible convective evolution over the SEVIR and MeteoNet benchmarks.
+
+\subsubsection{Multi-Scale Cascaded Diffusion Modeling: CasCast}
+Extending latent diffusion to multi-hour convective lead times ($0\text{--}3\text{ hours}$), Junchao Gong et al.~\cite{gong2024cascast} formulated \textbf{CasCast} (\textit{Cascaded Nowcasting}). In severe convective nowcasting, atmospheric motions exhibit strong scale separation: large-scale precipitation fronts propagate deterministically along synoptic pressure gradients, whereas fine-scale convective cells evolve stochastically due to localized boundary-layer thermals and cloud entrainment.
+
+CasCast decouples this multi-scale dynamic via a two-stage cascaded architecture:
+\begin{equation}
+    \mathbf{R}_{t+\tau} = \mathbf{R}_{\text{macro}}(t+\tau) + \boldsymbol{\epsilon}_{\text{micro}}(t+\tau; \mathbf{R}_{\text{macro}}),
+    \label{eq:cascast_cascade}
+\end{equation}
+where a deterministic spatio-temporal transformer first predicts the coarse-grained macroscopic advection field $\mathbf{R}_{\text{macro}}$, and a high-resolution conditional diffusion model then refines the residual convective innovations $\boldsymbol{\epsilon}_{\text{micro}}$. By conditioning the stochastic diffusion network on deterministic macro-scale predictions, CasCast restricts the generative exploration space, preventing spatial drift while generating intricate convective cell rainbands at $1\text{ km}$ resolution. Evaluated on large-scale radar mosaics in Eastern China and the Hong Kong Observatory HKO-7 benchmark, CasCast maintains sharp convective detail and high CSI scores across 3-hour lead times, outperforming monolithic autoregressive and generative baselines.
+
+
 
