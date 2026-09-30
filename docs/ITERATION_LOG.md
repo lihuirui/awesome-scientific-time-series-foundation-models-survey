@@ -780,7 +780,7 @@
 ## Iteration 15: Atmospheric Chemistry Kinetics, Scatterometer Wind Nowcasting & Ice-Sheet Rheology (P14 $\to$ P15)
 - **Timestamp**: 2026-09-30T13:00:00+08:00
 - **Phase**: P14 $\to$ P15 (Continuous Updates, Stiff Atmospheric Chemistry Kinetics & Online Feedback, Satellite Scatterometer Vector Wind Nowcasting & Active-Passive Fusion, Ice-Sheet Glen Rheology & Calving Dynamics)
-- **Git Commit**: `pending`
+- **Git Commit**: `c40aa59`
 - **Remote Repository**: `https://github.com/lihuirui/awesome-scientific-time-series-foundation-models-survey`
 
 ### Quantitative Metrics
